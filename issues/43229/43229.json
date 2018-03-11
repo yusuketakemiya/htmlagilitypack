@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you have a malformed HTML document where a starting tag doesn't match the ending tag, iterating through the html tree via SelectNodes cause an endless loop and terminate with an OutOfMemoryException :\n\nhttps://gist.github.com/anonymous/a09a66b9e2138af180ab\n\n* The HtmlDocument loads successfully\n* HAP handles the malformed html 'as correctly as maybe possible' (ignores the wrong end-tag, but does not add a `</div>`)\n* SelectNodes() works normally at first\n* after DOM manipulation via AppendChild etc., the next call to SelectNodes throws OutOfMemoryException\n\nWorkaround: reload the html via `html.LoadHtml(html.DocumentNode.WriteTo());`",
+    "LastUpdatedDate": "2015-08-26T10:49:30.573-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-08-25T06:46:19.73-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OutOfMemoryException when Parsing malformed HTML",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43229
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Does this out of memory exception only happen when you try to select nodes or on the .load of the html document?",
+      "PostedDate": "2015-08-25T22:45:17.887-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I investigated further. It wasn't easy to reconstruct this issue.\r\n\r\nThe html loads correctly and HAP can handle the malformedness: `html.DocumentNode.WriteTo();` returns the code without the section end-tag. Also, calling SelectNodes() works normally, at first.\r\n\r\nProblems occur only, when you do some manipulation to your HTML document and then try to call SelectNodes().\r\n\r\nHere's a small example:\nhttps://gist.github.com/anonymous/a09a66b9e2138af180ab\r\n\r\nThere are two div's in the body with a \"data-group\" tag. The first one contains malformed html.\nThe two divs are removed from the body-tag and re-appended in reversed order.\nAfter that, the OutOfMemoryException occurs in the SelectNodes() call.",
+      "PostedDate": "2015-08-26T03:32:13.923-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Workaround: just reload the HtmlDocument via `html.LoadHtml(html.DocumentNode.WriteTo());` after the DOM manipulation with `body.ChildNodes.Clear` and `body.AppendChild`.",
+      "PostedDate": "2015-08-26T04:34:14.117-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-08-26T06:42:16.37-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-08-26T10:49:30.573-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

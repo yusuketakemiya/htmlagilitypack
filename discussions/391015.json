@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "898112",
+    "ThreadId": "391015",
+    "Html": "\r\n<p>Hi folks</p>\r\n<p>Can anybody give me an idea if Html Agility Pack would be the right way to go for an issue I need to solve? I have isolated fragments of HTML code, stripped out of a page as &lt;p&gt; nodes each as a string. I need to be able to modify each &lt;p&gt; node,\r\n e.g., remove all the attributes from each &lt;p&gt; node. Can I have HAP individual strings, and ask it to remove all the attributes from within the opening &lt;p .... &gt; node markup? In other words, I would need to change this:</p>\r\n<p>&lt;p class=&quot;foo&quot; tabindex=&quot;bar&quot; ...&gt;My first node content&lt;/p&gt;</p>\r\n<p>&lt;p class=&quot;foo&quot; tabindex=&quot;bar&quot; ...&gt;My second node content&lt;/p&gt;</p>\r\n<p>into this:</p>\r\n<p>&lt;p&gt;My first node content&lt;/p&gt;</p>\r\n<p>&lt;p&gt;My second node content&lt;/p&gt;</p>\r\n<p>But I have already extracted the nodes above as strings, so in other words I would not be providing HAP with a reference to a full HTML document, just HTML fragments.</p>\r\n<p>If anybody knew whether HAP would be a good way forward to do this, I would be very grateful to find out ...</p>\r\n<p>Regards</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-08-10T09:00:17.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

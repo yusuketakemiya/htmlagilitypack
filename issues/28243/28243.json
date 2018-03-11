@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Maybe I have found a bug. See http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=220987",
+    "LastUpdatedDate": "2013-02-21T18:47:13.757-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-07-23T07:21:22.723-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "InnerText gives different result",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 28243
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Are you familiar with &lt; and &gt;?",
+      "PostedDate": "2010-10-06T00:12:09.21-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:13.757-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

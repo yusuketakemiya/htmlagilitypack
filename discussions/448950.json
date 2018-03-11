@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1064055",
+    "ThreadId": "448950",
+    "Html": "some page have ajax link for pagination. Like this page below:\r<br />\n<a href=\"http://realtors.realtylink.org/page/realtors/ezlist_members_.aspx\" rel=\"nofollow\">http://realtors.realtylink.org/page/realtors/ezlist_members_.aspx</a>\r<br />\n<br />\nHow I can got to page 2 or 4 or 5 with htmlagility<br />\n",
+    "PostedDate": "2013-07-03T04:56:26.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

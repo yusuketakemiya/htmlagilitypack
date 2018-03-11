@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "11058",
+    "ThreadId": "3485",
+    "Html": "\r\nExamle:<br />//...some precode<br />HtmlNode nc = doc.DocumentNode.SelectSingleNode(\"//option<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40value%3d%27a%27\">@value='a'</a>/@value\");<br />bool isAllWorkGood = (nc.InnerHtml == \"a\");//nc not null there<br /><br />if we use real XmlDocument - the isAllWorkGood is true<br />but Html Agility Pack there is false.<br /><br />XmlDocument xdoc = new XmlDocument();<br />xdoc.LoadXml(\"&lt;option value='a' /&gt;\");<br />XmlNode xnc = xdoc.SelectSingleNode(\"//option<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40value%3d%27a%27\">@value='a'</a>/@value\");<br />xnc.InnerXml == \"a\" is true there...<br />",
+    "PostedDate": "2007-01-11T10:54:25.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

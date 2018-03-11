@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1023709",
+    "ThreadId": "438651",
+    "Html": "I'm interested in fixing a bunch of issues and contributing to this project. What's the status of HAP right now? Is there anyone maintaining it? There has been no commits for a while and issues seem to be ignored.\r<br />\n<br />\nI really appreciate the efforts that has been put in to this project and it would be a shame if it died.<br />\n",
+    "PostedDate": "2013-04-01T03:28:32.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025086",
+    "ThreadId": "438651",
+    "Html": "Just wanted to let you know that i've decided to fork this project and put it on <a href=\"https://github.com/alexandernyquist/HtmlAgilityPack\" rel=\"nofollow\">GitHub</a>. My fork will be very lightweight and several features will be removed. I hope you don't mind. If so, please let me know.<br />\n<br />\nDon't hesitate to contact me if you have some issues that you feel needs to be resolved. The repository can be found over at <a href=\"https://github.com/alexandernyquist/HtmlAgilityPack\" rel=\"nofollow\">https://github.com/alexandernyquist/HtmlAgilityPack</a>.<br />\n",
+    "PostedDate": "2013-04-03T13:51:46.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025779",
+    "ThreadId": "438651",
+    "Html": "Could you elaborate a little on what you are going to take out in your fork? I may be interested in switching to your fork, as I too worry a little about the inactivity. Thanks!<br />\n",
+    "PostedDate": "2013-04-04T19:35:50.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

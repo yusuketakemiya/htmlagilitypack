@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "999956",
+    "ThreadId": "432824",
+    "Html": "The SL5 assemblies are actually targeting SL4\r<br />\n<br />\nGetting the source and changing it gives a compile error on this line:\r<br />\nStackFrame sf = new StackFrame(1, true);\r<br />\n<br />\nChanging to \r<br />\nStackFrame sf = new StackFrame(1);\r<br />\n<br />\nallows both SL4 and SL5 solutions to compile. Not sure what this impact this has on functionality as I don't use this class.\r<br />\n<br />\nCheers<br />\n",
+    "PostedDate": "2013-02-12T04:10:05.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

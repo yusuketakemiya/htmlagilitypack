@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "452082",
+    "ThreadId": "215074",
+    "Html": "<p>I just blogged about new projects I've added to the Html Agility Pack version control.</p>\r\n<p><a href=\"http://blog.j-maxx.net/2010/06/06/NewHtmlAgilityPackVersionsAndFeatures.aspx\">http://blog.j-maxx.net/2010/06/06/NewHtmlAgilityPackVersionsAndFeatures.aspx</a></p>\r\n<p>As a quick recap there are 4 new projects added. HAPLight for silverlight, HAPCompact for .NET CF 3.5, HtmlAgilityPack.fx.4.0 for .NET 4.0 features and HtmlAgilityPack.Tests for unit tests. The first 3 should be considered alphas and thus there will be no binary releases for them. When I feel like they've reached a usable level I will make beta binary releases for them.</p>",
+    "PostedDate": "2010-06-05T17:39:34.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126000",
+    "ThreadId": "215074",
+    "Html": "i found HtmlAgilityPack.fx.4.0.csproj share the same source code in the same folder at Trunk\\HtmlAgilityPack.\r<br />\nso source for  HtmlAgilityPack.fx.4.0  is same as normal version?<br />\n",
+    "PostedDate": "2013-11-18T05:55:08.75-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

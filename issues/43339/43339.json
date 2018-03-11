@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nIn HTMLWeb.cs, in \n\n\t\tprivate HttpStatusCode Get(Uri uri, string method, string path, HtmlDocument doc, IWebProxy proxy,\n\t\t\t\t\t\t\t\t   ICredentials creds)\n\nThere is : \n\n```\n\t\t\tEncoding respenc = !string.IsNullOrEmpty(resp.ContentEncoding)\n\t\t\t\t\t\t\t\t   ? Encoding.GetEncoding(resp.ContentEncoding)\n\t\t\t\t\t\t\t\t   : null;\n\t\t\tif (OverrideEncoding != null)\n\t\t\t\trespenc = OverrideEncoding;\n```\n\nIt should be : \n\n```\n\t\t\tEncoding respenc = !string.IsNullOrEmpty(resp.CharacterSet)\n                                   ? Encoding.GetEncoding(resp.CharacterSet)\n\t\t\t\t\t\t\t\t   : null;\n\t\t\tif (OverrideEncoding != null)\n\t\t\t\trespenc = OverrideEncoding;\n```\n\nSince ContentEncoding is only for compression purposes.",
+    "LastUpdatedDate": "2016-02-01T07:05:00.737-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-02-01T07:03:41.66-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Mistake in charset detection with patch",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43339
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

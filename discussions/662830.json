@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1496125",
+    "ThreadId": "662830",
+    "Html": "Hi, \r<br />\n<br />\nI have HTML comment with attributes, which I need to parse. For example:<br />\n&lt;!-- size w=10, h=20 --&gt;\r\nI have to fetch w &amp; h, and they are not coming as part of attributes in either HTMLNode or HTMLCommentNode. Do we have a way to read these or I need to do string parsing??<br />\n",
+    "PostedDate": "2017-05-05T02:03:55.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

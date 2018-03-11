@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "860985",
+    "ThreadId": "363132",
+    "Html": "\r\n<p>Hello there</p>\r\n<p>We've tried using the excellent HtmlToTxt sample:</p>\r\n<p><a href=\"http://htmlagilitypack.codeplex.com/SourceControl/changeset/view/98677#1010173\">http://htmlagilitypack.codeplex.com/SourceControl/changeset/view/98677#1010173</a></p>\r\n<p>Whilst it converts text great, removed the CSS etc,&nbsp;it fails to handle &lt;li&gt; tags, specifically, they all apear on 1 line, how would one adapt HtmlConvert.cs to replace &lt;li&gt;&lt;/li&gt; with a linebreak?</p>\r\n<p>This would also need to handle a missing &lt;/li&gt;.</p>\r\n<p>Any ideas?</p>\r\n<p>Many thanks</p>\r\n<p>Regards</p>\r\n<p>Jordon</p>\r\n",
+    "PostedDate": "2012-07-12T05:49:42.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1471667",
+    "ThreadId": "363132",
+    "Html": "This works however all the lists are numerical. If you can figure out how to have the style change (decimal then alpha then roman...) for sub-ordered lists let me know.<br />\n<br />\nAdd the following to: internal static void ConvertTo(HtmlNode node, TextWriter outText, PreceedingDomTextInfo textInfo)<br />\n<pre><code>case &quot;li&quot;:\n                                if (textInfo.ListIndex &gt; 0)\n                                {\n                                    outText.Write(&quot;\\r\\n\\t{0}.&quot;, textInfo.ListIndex++);\n                                }\n                                else\n                                {\n                                    outText.Write(&quot;\\r\\n\\t•&quot;); //using '*' as bullet char, with tab after, but whatever you want eg &quot;\\t-&gt;&quot;, if utf-8 0x2022\n                                }\n                                isInline = false;\n                                break;\n                            case &quot;ol&quot;:\n                                listIndex = 1;\n                                goto case &quot;ul&quot;;\n                            case &quot;ul&quot;: //not handling nested lists any differently at this stage - that is getting close to rendering problems\n                                endElementString = &quot;\\r\\n&quot;;\n                                isInline = false;\n                                break;</code></pre>\n\n",
+    "PostedDate": "2016-04-28T12:53:28.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

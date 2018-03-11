@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If I have \"<p>text\" HtmlDocument dont fix it:\n \n        html = \"<p>text\"\n        HtmlDocument doc = new HtmlDocument();\n        //doc.OptionFixNestedTags = true;\n        doc.LoadHtml(html);\n        StringWriter stringWriter = new StringWriter();\n        doc.Save(stringWriter);\n        return stringWriter.ToString(); \n \nreturn \"<p>text\", but if html = \"<b>text\" it returns \"<b>text\"",
+    "LastUpdatedDate": "2013-02-21T18:47:04.543-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-08-19T18:44:05.867-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Why dont fix unclosed <p>?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 31292
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'm pretty sure this is a duplicate of case http://htmlagilitypack.codeplex.com/workitem/29218 - there's a patch for the issue there.",
+      "PostedDate": "2011-11-06T03:31:22.787-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:04.543-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

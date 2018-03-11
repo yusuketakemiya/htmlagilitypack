@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "292703",
+    "ThreadId": "85969",
+    "Html": "<p>Hello,</p>\r\n<p>I've been trying to use the following code to login to another website USING ASP.NET</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">string</span> strUserName = <span style=\"color:#A31515\">&quot;username&quot;</span>;\r\n        <span style=\"color:Blue\">string</span> strPassword = <span style=\"color:#A31515\">&quot;pass&quot;</span>;\r\n\r\n        FormProcessor fp = <span style=\"color:Blue\">new</span> FormProcessor();        \r\n        Form form = fp.GetForm(<span style=\"color:#A31515\">&quot;http://www.peopleaggregator.net/login.php&quot;</span>, <span style=\"color:#A31515\">&quot;//form[@name='login_form']&quot;</span>, FormQueryModeEnum.Nested);\r\n        form[<span style=\"color:#A31515\">&quot;username&quot;</span>].SetAttributeValue(<span style=\"color:#A31515\">&quot;value&quot;</span>, strUserName);\r\n        form[<span style=\"color:#A31515\">&quot;password&quot;</span>].SetAttributeValue(<span style=\"color:#A31515\">&quot;value&quot;</span>, strPassword);\r\n        HtmlDocument login = fp.SubmitForm(form);\r\n        <span style=\"color:Green\">//next part used just to show the results in a literal</span>\r\n        StringWriter sw = <span style=\"color:Blue\">new</span> StringWriter();\r\n        ConvertTo(login.DocumentNode, sw);        \r\n        Literal1.Text = sw.ToString();\r\n        sw.Flush();\r\n        sw.Close();\r\n</pre>\r\n</div>\r\n</p>\r\n<p>When I run the project(actually a website) it says:&nbsp;&nbsp;&nbsp; Notice: Undefined index: HTTP_USER_AGENT in /var/www/peopleaggregator.net/htdocs/pa/pacore/api/Login/PA_Login.class.php on line 88 Warning: Cannot modify header information - headers already sent by (output started at /var/www/peopleaggregator.net/htdocs/pa/pacore/api/Login/PA_Login.class.php:88) in /var/www/peopleaggregator.net/htdocs/pa/pacore/api/Login/PA_Login.class.php on line 99Warning: Cannot modify header information - headers already sent by (output started at /var/www/peopleaggregator.net/htdocs/pa/pacore/api/Login/PA_Login.class.php:88) in /var/www/peopleaggregator.net/htdocs/pa/pacore/web/dologin.php on line 154</p>\r\n<p>I'm guessing that in a webBrowser thing are different because the webBrowser control is actually a clone of IE</p>\r\n<p>How to do it in ASP.NET ?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-02-19T08:48:51.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "292914",
+    "ThreadId": "85969",
+    "Html": "<p>I don't use FormProcessor; but, you can use HttpWebRequest, and, HttpWebResponse Objects to perform this Task.</p>\r\n<p>&nbsp;</p>\r\n<p>Also, are you sure that you are sending all the Post Data that is required? &nbsp;If you grab a copy of Fiddler, per se, and watch the traffic that goes in/out whilst you log in via IE/FF etc... You can&nbsp;</p>\r\n<p>verify if you are correctly passing the post data content.</p>\r\n<p>Good luck.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>~K</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-19T21:23:54.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "292915",
+    "ThreadId": "85969",
+    "Html": "<p>I just checked that Web_Site out at the page where you are grabbing the Form in question.</p>\r\n<p>&nbsp;</p>\r\n<p>You are not showing in code here, unless it's abstracted via the FormProcessor, any of the other variables shown in that form&nbsp;</p>\r\n<p>that are required for logging in with your credentials.</p>\r\n<p>&nbsp;</p>\r\n<p>So, again, I would suggest grabbing a sniffer tool like Fiddler. &nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>~K</p>",
+    "PostedDate": "2010-02-19T21:27:00.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

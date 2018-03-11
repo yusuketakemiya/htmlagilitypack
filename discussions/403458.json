@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "942600",
+    "ThreadId": "403458",
+    "Html": "\r\n<p>StackOverflow link for more details:&nbsp;http://stackoverflow.com/questions/13400493/htmlagilitypack-htmlweb-load-returning-empty-document</p>\r\n<p>I've been a happy user of HtmlAgilityPack for 2 months with no problems. &nbsp;But I have no idea why trying to load this website</p>\r\n<pre><code><span class=\"str\">&quot;http://www.prettygreen.com/&quot;</span></code></pre>\r\n<p>and get an empty document. &nbsp;What is strange, is I can load this website like normal&nbsp;</p>\r\n<pre><code><span class=\"str\">&quot;http://www.prettygreen.com/news/&quot;</span></code></pre>\r\n<p>Any ideas why this may be the case?</p>\r\n<p>Edit: Also doesn't work with&nbsp;</p>\r\n<pre>&quot;http://www.prettygreen.com/shop/category/parkas/?label=black&quot;</pre>\r\n",
+    "PostedDate": "2012-11-16T01:34:25.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

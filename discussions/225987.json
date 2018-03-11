@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "488966",
+    "ThreadId": "225987",
+    "Html": "<p>this bundle seems working for desktop applications.<br>doesnt working for asp.net<br><br>HtmlWeb hw = new HtmlWeb();<br>HtmlDocument doc = hw.Load(&quot;http://www.google.com&quot;);<br><br>2nd line always throws error &quot;Unable to connect to the remote server&quot;(debug mode) on asp.net @localhost.<br>didnt try if working on normal website for now.<br><br>it seems not webclient class nor htmlagility pack can retrieve responses of an external webpage if testing at asp.net page on localhost.</p>",
+    "PostedDate": "2010-09-03T10:23:10.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

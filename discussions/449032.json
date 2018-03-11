@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1064392",
+    "ThreadId": "449032",
+    "Html": "see  code below, what ignore four string: &amp;, &gt;, &lt;,&quot;??<br />\npublic static string HtmlEncode(string html)<br />\n<pre><code>    {\n        if (html == null)\n        {\n            throw new ArgumentNullException(&quot;html&quot;);\n        }\n        // replace &amp; by &amp;amp; but only once!\n        Regex rx = new Regex(&quot;&amp;(?!(amp;)|(lt;)|(gt;)|(quot;))&quot;, RegexOptions.IgnoreCase);\n        return rx.Replace(html, &quot;&amp;amp;&quot;).Replace(&quot;&lt;&quot;, &quot;&amp;lt;&quot;).Replace(&quot;&gt;&quot;, &quot;&amp;gt;&quot;).Replace(&quot;\\&quot;&quot;, &quot;&amp;quot;&quot;);\n    }\n</code></pre>\n\nif the html input are &amp;#1288; and &amp;#1288, they will have same output, which are not my expected answer<br />\ncan anyone help me?<br />\n",
+    "PostedDate": "2013-07-03T23:28:56.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

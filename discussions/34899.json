@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "115928",
+    "ThreadId": "34899",
+    "Html": "It is not clear to me how CC-BY-SA applies to software. If I dynamically link to HTML Agility Pack assemblies without modifying them, is it a Collective Work, or is it a Derived Work? In other words, do I need to put my own assemblies under CC-BY-SA, or not?",
+    "PostedDate": "2008-09-04T01:09:26.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "117880",
+    "ThreadId": "34899",
+    "Html": "I don't know either.&nbsp; I think the current licensing agreement says that if you perform an interpretive dance about HtmlAgilityPack, then you would have to display the URL somewhere on the stage.\r\n",
+    "PostedDate": "2008-09-11T09:32:24.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1211349",
+    "ThreadId": "533200",
+    "Html": "Hi there. There is some interesting behavior when searching nodes. I'll  show it in example.<br />\nSo the problem is when I have tr nodes collection, and goes through it using &quot;foreach&quot; I expect that //td[@class='name'] will select <strong>every name tag in current tr tag</strong>. But I always get only first name tag. So the result string will look like &quot;Volcano Name,Volcano Name,Volcano Name,Volcano Name,&quot; Is this correct? Or I do not fully understand logic of //?<br />\n<br />\nUsing td[@class='name'] helps to collect exactly what is needed.<br />\nThis is html, used for searching some names:<br />\n<pre><code> &lt;html&gt;\n&lt;body&gt;\n&lt;table&gt;\n    &lt;tr&gt;\n        &lt;td class=&quot;name&quot;&gt;Volcano Name&lt;/td&gt;\n        &lt;td&gt;Location&lt;/td&gt;\n        &lt;td&gt;Last Major Eruption&lt;/td&gt;\n        &lt;td&gt;Type of Eruption&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n        &lt;td class=&quot;name&quot;&gt;Mt. Lassen&lt;/td&gt;\n        &lt;td&gt;California&lt;/td&gt;\n        &lt;td&gt;1914-17&lt;/td&gt;\n        &lt;td&gt;Explosive Eruption&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n        &lt;td class=&quot;name&quot;&gt;Mt. Hood&lt;/td&gt;\n        &lt;td&gt;Oregon&lt;/td&gt;\n        &lt;td&gt;1790s&lt;/td&gt;\n        &lt;td&gt;Pyroclastic flows and Mudflows&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n        &lt;td class=&quot;name&quot;&gt;Mt .St. Helens&lt;/td&gt;\n        &lt;td&gt;Washington&lt;/td&gt;\n        &lt;td&gt;1980&lt;/td&gt;\n        &lt;td&gt;Explosive Eruption&lt;/td&gt;\n    &lt;/tr&gt;\n&lt;/table&gt;\n&lt;/body&gt;\n&lt;/html&gt;</code></pre>\n\nAnd here you have C# example:<br />\n<pre><code>class HtmlParser\n    {\n        private HtmlDocument Document = new HtmlDocument();\n\n        public HtmlParser(String file)\n        {\n            Document.Load(file);\n        }\n\n        public String Parse()\n        {\n            var table = Document.DocumentNode.SelectSingleNode(&quot;//table&quot;);\n            var trCollection = table.SelectNodes(&quot;tr&quot;);\n\n            var result = String.Empty;\n            foreach (var trNode in trCollection)\n            {\n                var nameNode = trNode.SelectSingleNode(&quot;//td[@class='name']&quot;);\n                var name = nameNode.InnerText;\n                result += name + &quot;,&quot;;\n            }\n            return result;\n        }\n    }</code></pre>\n\n",
+    "PostedDate": "2014-02-20T12:08:26.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1220066",
+    "ThreadId": "533200",
+    "Html": "In Xpath // means go back to the root node.\r<br />\nIn xpath .// means relative to the current node.\r<br />\n<br />\nDoes it work if you use this:<br />\n<pre><code>var nameNode = trNode.SelectSingleNode(&quot;.//td[@class='name']&quot;);</code></pre>\n\n",
+    "PostedDate": "2014-03-06T13:30:48.96-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

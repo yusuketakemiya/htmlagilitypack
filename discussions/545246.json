@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1244964",
+    "ThreadId": "545246",
+    "Html": "is it possible to use the html agility pack to remove the html tags that are being displayed in my pdf and just display the text with the proper formatting? I have an mvc application and I am also using pdf sharp. i have a line of code that is displaying all the html tags included with the text. \r<br />\nhere is the code creating the text from the description field :<br />\n<pre><code>        graphics.DrawString(&quot;&quot; + report.Description, font2, XBrushes.Black, new XRect(margin + 90, page.Height - (lineHeight * 35), page.Width, page.Height), XStringFormats.TopLeft);\n\n</code></pre>\n\nhere is the publis class model :<br />\n<pre><code>    public string Description { get; set; }\n</code></pre>\n\nand this is what i was using to strip the tags but i dont get any of the proper bolding or italics it is supposed to display: \r<br />\n<br />\nreport.Description = Regex.Replace(report.Description, &quot;&lt;.*?&gt;|&nbsp;&quot;, string.Empty);\r<br />\n<br />\nany advice or support would be greatly appreciated. i have never used the html agility pack but i had some suggestions to try it and just need some help getting started. please let me no if this is possible. \r<br />\n<br />\nthank u in advance. and please let me no if you need anymore info. <br />\n",
+    "PostedDate": "2014-05-13T12:19:55.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

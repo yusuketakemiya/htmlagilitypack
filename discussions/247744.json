@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "572765",
+    "ThreadId": "247744",
+    "Html": "\r\n<p>Hi, I am using HAP 1.4.0 with this HTML file:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">html</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">body</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">div</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">p</span><span style=\"color:blue\">&gt;</span>p text 1<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">p</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">p</span><span style=\"color:blue\">&gt;</span>p text 2<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">p</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">div</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">body</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">html</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>The innerText property of the div node gave me a string of</p>\r\n<p></p>\r\n<pre>p text 1p text 2</pre>\r\nin stead of\r\n<p></p>\r\n<p></p>\r\n<pre>p text 1\\r\\np text 2</pre>\r\n<p></p>\r\n<p>In other words, a line breaker was missing. javascript gave the correct innerText. So I guess it's a bug?</p>\r\n<p>Any one had the same problem? Any fix? Thanks in advance.</p>\r\n",
+    "PostedDate": "2011-02-27T04:55:07.803-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "574250",
+    "ThreadId": "247744",
+    "Html": "<p>It's a feature, not a bug :-)</p>",
+    "PostedDate": "2011-03-02T01:02:12.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578250",
+    "ThreadId": "247744",
+    "Html": "<p>I'm joinning to this question. How to disable this bug/feature and get usual behaviour from InnerText property?? As it works everywhere.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>",
+    "PostedDate": "2011-03-10T00:23:28.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

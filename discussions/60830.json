@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "206123",
+    "ThreadId": "60830",
+    "Html": "<p>Maybe I'm still too novice to XPath to figure this out, but I'm having trouble.&nbsp; Not sure if this is a bug or what.</p>\r\n<p>&nbsp;</p>\r\n<p>I have a webpage I want to parse through that has two forms on it.&nbsp; I want to be able to use HtmlAgilityPack to select all the inputs, selects, etc for each form in my app.</p>\r\n<p>When I do SelectNodes(&quot;//form[1]/input&quot;) I get a null.</p>\r\n<p>Also, if I do SelectNodes(&quot;//form[1]&quot;) I get a Collection of my two forms.</p>\r\n<p>&nbsp;</p>\r\n<p>Subsequently,&nbsp; I commented out the Empty flag for the form element, but it didn't help.</p>",
+    "PostedDate": "2009-06-26T18:42:54.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

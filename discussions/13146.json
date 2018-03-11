@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "42930",
+    "ThreadId": "13146",
+    "Html": "\r\nhi sir<br />i need to login programattically and scrapping data from a website which is the next page after login .<br />for this i m using html agility pack.<br />i m using the link http://www.dotnetjunkies.com/WebLog/joshuagough/archive/2006/01/20/134825.aspx<br />as reference .<br />for trial i m trying to login in gmail and code is as following........................<br />using System;<br />using System.Data;<br />using System.Configuration;<br />using System.Web;<br />using System.Web.Security;<br />using System.Web.UI;<br />using System.Web.UI.WebControls;<br />using System.Web.UI.WebControls.WebParts;<br />using System.Web.UI.HtmlControls;<br /><br /><br />public partial class _Default : System.Web.UI.Page<br />{<br />protected void Page_Load(object sender, EventArgs e)<br />{<br />FormProcessor p = new FormProcessor();<br />string userName = \"*****************\";<br />string password = \"******************\";<br />Form form = p.GetForm(\"https://Gmail.com\",\"//form@name='loginForm'\", FormQueryModeEnum.Nested);<br />form\"j_username\".SetAttributeValue(\"value\", userName);<br />form\"j_password\".SetAttributeValue(\"value\", password);<br />HtmlDocument doc = p.SubmitForm(form);<br />string strBal = doc.DocumentNode.SelectSingleNode<br />(\"//span@class='redText'\").InnerText;<br />strBal = System.Web.HttpUtility.HtmlDecode(strBal);<br />strBal = strBal.Substring(1).Trim();<br />}<br />}<br /><br />in which i m facing problem in xpath //form@name='loginForm' the error is node not found.<br />i want to know that how can i compose the xpath for any website . plz tell me complete reference about it.<br /><br />thanks in advance<br /><br />sharad soni<br />",
+    "PostedDate": "2007-07-29T23:39:53.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

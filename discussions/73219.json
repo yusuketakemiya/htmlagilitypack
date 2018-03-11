@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "250157",
+    "ThreadId": "73219",
+    "Html": "<p>Could someone explain why this would fail?  Am I thinking about it wrong?  I'd like to purge a tag and all its children, but put a marker for later reference.  I'm getting a <span style=\"color:#800000\">System.ArgumentOutOfRangeException: Node &quot;&lt;div id=&quot;search&quot;&gt;&lt;/div&gt;&quot; was not found in the collection</span> error.  The node is clearly being found, but maybe not during replace?</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>_doc.DocumentNode.ReplaceChild(\r\n\tHtmlNode.CreateNode(<span style=\"color:#A31515\">&quot;&lt;!-- removed search --&gt;&quot;</span>),\r\n\t_doc.DocumentNode.SelectSingleNode(<span style=\"color:#A31515\">&quot;//div[@id='search']&quot;</span>)\r\n);\r\n<br><br><br></pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-27T06:28:42.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

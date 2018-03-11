@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "236538",
+    "ThreadId": "69507",
+    "Html": "<p>I'm using htmlagilitypack to parse forms.&nbsp; i commented out the line that makes the form have no innerhtml because i use that property in my code.</p>\r\n<p>&nbsp;</p>\r\n<p>ElementsFlags.Add(&quot;form&quot;, HtmlElementFlag.CanOverlap/* | HtmlElementFlag.Empty*/);<br><br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// they sometimes contain, and sometimes they don 't...<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//ElementsFlags.Add(&quot;option&quot;, HtmlElementFlag.Empty);</p>\r\n<p>&nbsp;</p>\r\n<p>My problem is with a specific form.&nbsp; its not getting all the inner html.&nbsp; some options and inputs are missing (like it got cut off).&nbsp; not sure if this is an issue with the xpath by microsoft or htmlagilitypack.</p>\r\n<p>&nbsp;</p>\r\n<p>the line of code is</p>\r\n<p>HtmlDocument doc = new HtmlDocument();</p>\r\n<p>doc.Load(&quot;testparseform.html&quot;);</p>\r\n<p>HtmlNodeCollection coll = doc.DocumentNode.SelectNodes(&quot;//form&quot;);</p>\r\n<p>//coll[0].InnerHtml has problems</p>\r\n<p>&nbsp;</p>\r\n<p>testparseform.html is a random survey form i saved the source for, the link is:&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>http://www.edurg.com/questionnaire.asp</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-19T23:50:42.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236591",
+    "ThreadId": "69507",
+    "Html": "<p>I'm&nbsp; figuring it has something to do with how HtmlDocument.Parse() parses this particular page.&nbsp; It stops looking for childnodes (i assume) after a new table tag is found inside this form.&nbsp;</p>\r\n<p>&lt;input id=&quot;gwProxy&quot; type=&quot;hidden&quot; /&gt;&lt;input id=&quot;jsProxy&quot; onclick=&quot;jsCall();&quot; type=&quot;hidden&quot; /&gt;</p>",
+    "PostedDate": "2009-09-20T07:22:15.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237080",
+    "ThreadId": "69507",
+    "Html": "<p>actually, what i've been wanting to do is modify the code so that FORM, INPUT, OPTION, TEXTAREA etc are placed in a separate tree of the html body.&nbsp; I'm wondering if someone can point me to some links and documentation to help me with the learning curve of altering the htmldocument class.</p>\r\n<p>&lt;input id=&quot;gwProxy&quot; type=&quot;hidden&quot; /&gt;&lt;input id=&quot;jsProxy&quot; onclick=&quot;jsCall();&quot; type=&quot;hidden&quot; /&gt;</p>",
+    "PostedDate": "2009-09-21T16:50:48.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "241575",
+    "ThreadId": "69507",
+    "Html": "<p>I'm not going to be able to be too much help on modifying the parsing engine. I'm still learning it myself. There's no documentation on it that I'm aware of. Simon the developer who created this is probably the only person that knows it well and he's a rather busy man.</p>\r\n<p>I did hit up that URL and was able to get all 407 input elements from it using</p>\r\n<p>var nodes = _html.DocumentNode.Descendants(&quot;input&quot;).Count();</p>\r\n<p>(with the lates 1.4.0 beta 1)</p>\r\n<p>I did a count on the source code of all &quot;&lt;input&quot; strings that could be found it was 407.</p>\r\n<p>I think the XpathNavigator may be the culprit</p>",
+    "PostedDate": "2009-10-02T21:02:49.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "254159",
+    "ThreadId": "69507",
+    "Html": "<p>Mozilla firefox&nbsp; highlighter add on causes the problem, try to disable the plugin and test it again</p>",
+    "PostedDate": "2009-11-06T01:37:00.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

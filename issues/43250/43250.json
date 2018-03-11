@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Can the Html Agility Pack to remove the extra characters who himself created? \nI'm talking about the \"/r\", \"/n\" and \"/\" and others. I do not want to clean the line each time from these tags.",
+    "LastUpdatedDate": "2015-09-25T11:44:31.807-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-09-25T11:44:31.807-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to remove the extra characters",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43250
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

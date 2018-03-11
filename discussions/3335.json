@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "10557",
+    "ThreadId": "3335",
+    "Html": "\r\nHi,<br /><br />I am trying to save the HTML document as XML and have it loaded into an XMLdocument for manipulation.  I have saved the document to a memory stream and am trying to load that to an XML document but it does not work.  Something about and unclosed literal.  If I save the document to an xml file and then load it it works fine.<br /><br />Here is what I have.<br />            MemoryStream myStream = new MemoryStream();<br />\t\tHtmlDocument doc = new HtmlDocument();<br />           doc.Load(@\"c:\\test2.htm\");<br />            doc.OptionOutputAsXml = true;<br />            doc.OptionOutputOptimizeAttributeValues = true;<br />//            doc.Save(myStream);<br />            MemoryStream loadStream = new MemoryStream();<br />            XmlDocument myXML = new XmlDocument();<br />            byte[] byteArray = myStream.ToArray();<br />            loadStream.Write(byteArray, 0, byteArray.Length);<br />            loadStream.Position = 0;<br />            myXML.Load(loadStream);<br /><br /><br />AnyIdeas?<br /><br />Thanks<br />",
+    "PostedDate": "2007-01-05T08:13:28.157-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "65302",
+    "ThreadId": "3335",
+    "Html": "\r\nThis seemed to work for me:<br /><br />public static XmlDocument getXmlDoc(String HTML)<br />        {<br /><br /><br />                HtmlDocument htmlDoc = new HtmlDocument();<br />                htmlDoc.LoadHtml(HTML);<br />                htmlDoc.OptionOutputAsXml = true;<br /><br />                System.IO.MemoryStream stream = new System.IO.MemoryStream();<br /><br />                XmlTextWriter xtw = new XmlTextWriter(stream, null);<br />                // Load the content into the writer<br /><br />                htmlDoc.Save(xtw);<br /><br />                // Rewind the memory stream<br />                stream.Position = 0;<br /><br />                XmlDocument xmlDoc = new XmlDocument();                <br />                xmlDoc.LoadXml((new System.IO.StreamReader(stream)).ReadToEnd());<br />                return xmlDoc;            <br /><br />        }<br />",
+    "PostedDate": "2007-12-28T22:15:44.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "68011",
+    "ThreadId": "3335",
+    "Html": "\r\nDear daximus:<br />Would it be possible to help me how to make your program work?<br />And I am not sure the code of \"htmlDoc.LoadHtml(HTML)\" .Do it can load specific file of html?<br />Thank you for your kindly help.<br />",
+    "PostedDate": "2008-01-15T06:31:02.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

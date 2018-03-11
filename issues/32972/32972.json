@@ -1,0 +1,95 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When setting innerHtml for a node the closing slash of an img tag dissappears. Noticed in C#, here is code to reproduce:\n \n    Debug.WriteLine(HtmlNode.CreateNode(\"<img id=\\\"a\\\" />\").OuterHtml);\n \nExpected output: \"<img id=\"a\" />\" or <img id=\"a\"></img>\"\n \nActual output: \"<img id=\"a\">\"\n \nUsing a HtmlDocument with OptionOutputAsXml:\n \n    HtmlDocument doc = new HtmlDocument();\n    doc.OptionOutputAsXml = true;\n    HtmlNode node = doc.CreateElement(\"x\");\n    node.InnerHtml = \"<img id=\\\"bla\\\" />\";\n    doc.DocumentNode.AppendChild(node);\n    Debug.WriteLine(doc.DocumentNode.OuterHtml);\n \nExpected output: \"<x><img id=\"bla\" /></x>\" or \"<x><img id=\"bla\"></img></x>\".\n \nActual output: \"<x><img id=\"bla\"></x>\".\n \nIf I replace \"img\" with \"MyImageTag\" output is as expected: \"<myimagetag id=\"bla\"></myimagetag>\".",
+    "LastUpdatedDate": "2015-10-27T02:31:07.16-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-07-26T02:18:57.19-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Self-closing slash dissappears for img nodes",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 32972
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The CodePlex issue tracker is not very good, is it?",
+      "PostedDate": "2012-07-26T02:19:50.58-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This is also reproducible using input HTML like \"<img id=\"bla\"></img>\".\r\nOutput for that is yet again \"<img id=\"bla\">\".",
+      "PostedDate": "2012-07-26T02:21:37.597-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Apparently not. This issue is also reproducible using <input> tags.",
+      "PostedDate": "2012-08-23T08:56:06.36-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-09-26T13:32:52.253-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-10-02T16:28:22.493-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-12-18T00:45:24.217-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-12-26T15:57:24.857-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:57.96-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-16T03:19:27.437-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-05-19T14:57:11.637-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-10-27T02:31:07.16-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

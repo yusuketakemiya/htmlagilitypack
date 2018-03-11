@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "281089",
+    "ThreadId": "81850",
+    "Html": "<p>I think it's nice to have XPath queries but why the Descendants(string name) has to be removed ? it was a nice override and we were able to do simple queries like that :</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;var videoNodes = (from node in mainNodes</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;from subnode in node.DescendantNodes()</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;where subnode.Name == &quot;embed&quot;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;select subnode).FirstOrDefault();</div>\r\n<p>\r\n<p>&nbsp;var myNodes = (from node in doc.DocumentNode.Descendants(&quot;div&quot;)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;from subnode in node.DescendantNodes()</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;where subnode.Name == &quot;embed&quot;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;select subnode).FirstOrDefault();</p>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p>XPath can be complex, can't we give the choice between two API ? In the example of the trunk I see only .NET 2.0 framework code ?</p>",
+    "PostedDate": "2010-01-24T09:46:03.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281206",
+    "ThreadId": "81850",
+    "Html": "<p>It has not been removed. Trunk is the previous release, I've been doing all the new development in a branch. I will be merging into trunk when I can get a chance to get everything together and build the final 1.4.0 release. I got a new computer recently and need to get all the sandcastle and docproject stuff set back up.</p>",
+    "PostedDate": "2010-01-24T15:58:11.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

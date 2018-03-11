@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "620783",
+    "ThreadId": "259650",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I do not know whether I am at the right place here. I got a big problem with the HAP:</p>\r\n<p>bei HtmlAgilityPack.HtmlDocument.ReadDocumentEncoding(HtmlNode node) in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:Zeile 1916.<br>\r\n&nbsp;&nbsp; bei HtmlAgilityPack.HtmlDocument.PushNodeEnd(Int32 index, Boolean close) in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:Zeile 1805.<br>\r\n&nbsp;&nbsp; bei HtmlAgilityPack.HtmlDocument.Parse() in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:Zeile 1492.<br>\r\n&nbsp;&nbsp; bei HtmlAgilityPack.HtmlDocument.Load(TextReader reader) in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:Zeile 769.</p>\r\n<p>I have only tried to load a HttpWebResponse-ResponseStream&nbsp;into my HtmlDocument. Why do I get this Exception. Other responses have no problem to be loaded into a HtmlDocument.</p>\r\n<p>Please give me a hint. Thx</p>\r\n",
+    "PostedDate": "2011-05-31T06:54:55.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

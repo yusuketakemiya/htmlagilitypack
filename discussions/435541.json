@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1011006",
+    "ThreadId": "435541",
+    "Html": "Hi , <br />\n<br />\nIn HAP i found &quot;|&quot; works as &quot;and&quot; condition, then what's the alternative or &quot;or&quot; condition.<br />\n<br />\neg: i want the list of element which <strong>neither</strong> have &quot;abc&quot; <strong>nor</strong> &quot;xyz&quot; as their attributes.<br />\n<br />\nhtmldoc.DocumentNode.SelectNodes(&quot;//*[not(@abc| @xyz)]&quot;);<br />\n<br />\nbut this list the element which does not have both &quot;abc&quot; <strong>and</strong> &quot;xyz&quot; <br />\n<br />\n<br />\nAny help will be appreciated.<br />\n",
+    "PostedDate": "2013-03-05T23:37:37.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

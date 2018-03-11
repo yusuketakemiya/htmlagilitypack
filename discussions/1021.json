@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "3321",
+    "ThreadId": "1021",
+    "Html": "\r\nHi Simon,<br />I am loving HtmlAgilityPack. Great work!!!<br />Few questions for you, <br /><br />1. How can I use HtmlWeb to POST to a website with ASP.NET \"__VIEWSTATE\" on it? It would be awesome if you can provide us with an example of HtmlWeb usage for POSTING Data!!!<br /><br />2. How can I use HtmlWeb with a proxy server???<br /><br />3. How can I retrieve cookies from HtmlWeb??<br /><br />4. How can I enable compression while using HtmlWeb??<br /><br />If you can answer a few of my above questions, it will be awesome.<br /><br />Thanks so much<br />Indo.<br />",
+    "PostedDate": "2006-08-24T17:03:25.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3336",
+    "ThreadId": "1021",
+    "Html": "\r\nHi<br /><br />1. How can I use HtmlWeb to POST to a website with ASP.NET \"__VIEWSTATE\" on it? It would be awesome if you can provide us with an example of HtmlWeb usage for POSTING Data!!!<br /><br />Please see this blog for some (advanced) samples:<br /><br />http://blogs.wdevs.com/ultravioletconsulting/<br />http://blogs.wdevs.com/ultravioletconsulting/archive/2005/09/11/10517.aspx<br /><br /><br />2. How can I use HtmlWeb with a proxy server???<br /><br />You can hook the HttpRequest used by the Html Agility Pack before the request is actually run:<br /><br />static void SafeMain(string[] args)<br />{<br /> HtmlWeb hw = new HtmlWeb();<br /> hw.PreRequest = new HtmlAgilityPack.HtmlWeb.PreRequestHandler(OnPreRequest);<br /> string url = @\"http://www.codefluent.com\";<br /> HtmlDocument doc = hw.Load(url);<br /> doc.Save(\"codefluent.htm\");<br />}<br /><br />static bool OnPreRequest(HttpWebRequest request)<br />{<br /> WebProxy myProxy = new WebProxy(\"http://myproxy:812\");<br /> request.Proxy = myProxy;<br /> return true; // ok, go on<br />}<br /><br /><br />3. How can I retrieve cookies from HtmlWeb??<br />Same story, but instead of using PreRequest you would use PostResponse.<br /><br /><br />4. How can I enable compression while using HtmlWeb??.<br />You would have to A) add the properheader on the PreRequest, to inform the server you're ok to get compressed stream, B) detect the type of content on the PostResponse, and if it's compressed, C) decompress the stream (using existing c# Deflate code you can find in libraries like SharpZipLib for example)<br /><br />Simon<br />",
+    "PostedDate": "2006-08-25T00:11:21.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3426",
+    "ThreadId": "1021",
+    "Html": "\r\nThank you so much Simon. Extremely helpful posting.<br />",
+    "PostedDate": "2006-08-26T08:48:47.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

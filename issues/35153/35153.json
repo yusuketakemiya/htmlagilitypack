@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi there,\n\nI have a HTML document that I'm trying to parse using HTML Agility Pack. I then use the XPath Navigator to get the branches that I want to access, once the document is loaded in the DOM. All seems fine, it even bypasses JavaScript in the HTML, but HtmlAgilityPack seems to completely ignore <a> tags. I tried running the debugger in Visual Studio to display the XPath property of an element in the page, and sure enough the XPath property is missing the <a> tag. \n\nPlease advice, this is quite urgent as I've been stuck on this issue for two days now. \n\nRegards,\nJo",
+    "LastUpdatedDate": "2015-02-20T09:35:39.62-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-04-24T00:55:28.217-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "<a> tag is being ignored by HtmlAgilityPack",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35153
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Please post the code you are using to retrieve the a tags, I get the a tags from html documents using agility pack all the time.\r\n\r\nyou can use HtmlNodeCollection htmlNodes = htmlDocument.DocumentNode.SelectNodes(\"//a\");\r\n\r\nand if you want the href values you can use\r\n\r\nHtmlNodeCollection htmlNodes = htmlDocument.DocumentNode.SelectNodes(\"//a[@href]\");",
+      "PostedDate": "2015-02-20T09:35:39.62-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

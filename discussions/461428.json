@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1104595",
+    "ThreadId": "461428",
+    "Html": "Would it be difficult to make this great project a Portable Class Library (PCL)?\r<br />\n<br />\nI would like to embed it inside a Windows Store App but I can't at the moment because this project target .NET Fx 4.5 only.\r<br />\n<br />\nI haven't look at the internal code but by experience, it's pretty easy to convert it as long as you don't play with graphics.<br />\n",
+    "PostedDate": "2013-10-07T08:50:43.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1236914",
+    "ThreadId": "461428",
+    "Html": "Hope, someone will answer here. PCL build is a must.<br />\n",
+    "PostedDate": "2014-04-23T00:51:10.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

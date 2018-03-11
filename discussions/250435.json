@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "583365",
+    "ThreadId": "250435",
+    "Html": "\r\n<p>I'm using Visual Studio 2010 and have included the reference for the agility pack.</p>\r\n<p>&nbsp;</p>\r\n<p>I'm using the example from the codeplex page and VS 2010 is complaining that doc.DocumentElement does not exist and it does not appear in the object browser either.</p>\r\n",
+    "PostedDate": "2011-03-20T12:21:24.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "583931",
+    "ThreadId": "250435",
+    "Html": "<p>Should be DocumentNode (I keep accidentally typing DocumentElement..). I think I might just add DocumentElement in 2.0 to be more in line with .NET XML namespace</p>",
+    "PostedDate": "2011-03-21T12:44:57.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "584139",
+    "ThreadId": "250435",
+    "Html": "<p>Ah, thank you for the clarification. Further how would one access the &lt;title&gt; element of an html document?</p>",
+    "PostedDate": "2011-03-21T19:21:19.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

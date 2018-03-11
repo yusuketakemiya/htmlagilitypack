@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1358694",
+    "ThreadId": "583973",
+    "Html": "When I try to install via NuGet I get this error:<br />\n<pre><code>PM&gt; Install-Package HtmlAgilityPack\nInstall-Package : File contains corrupted data.\nAt line:1 char:1\n+ Install-Package HtmlAgilityPack\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : NotSpecified: (:) [Install-Package], FileFormatException\n    + FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCommand</code></pre>\n\nI have a small amount of experience with NuGet packages so there may be something I am missing?<br />\n",
+    "PostedDate": "2015-03-02T02:50:58.093-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1359259",
+    "ThreadId": "583973",
+    "Html": "Solved it with the help of kaufmed on Experts Exchange.\r<br />\n<br />\nThe issue was firstly Windows 8 and secondly that I had not updated the NuGet installation. Once I had done this it installed fine.<br />\n",
+    "PostedDate": "2015-03-03T03:22:14.42-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2015-03-03T03:22:18.913-08:00"
+  }
+]

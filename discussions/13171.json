@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "43012",
+    "ThreadId": "13171",
+    "Html": "\r\nHello,<br /><br />I'm wondering what steps I need to take to find a node by searching for a text in it's innerText?<br /><br />Thanks.<br />Eclipse<br />",
+    "PostedDate": "2007-07-30T09:56:56.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "43370",
+    "ThreadId": "13171",
+    "Html": "\r\nBelow is what I did to accomplish the task in VB.  The Code only returns the first occurence of the string, but can be easily modified to return a collection.<br /><br />\tPublic Function GetNodeByInnerText(ByVal sHTML As String, ByVal sText As String) As HtmlNode<br />\t\tDim doc As New HtmlAgilityPack.HtmlDocument<br />\t\tdoc.LoadHtml(sHtml)<br />\t\tDim Position As Integer = sHtml.ToString.IndexOf(sText)<br />\t\tReturn FindNodeByPosition(doc.DocumentNode, Position)<br />\tEnd Function<br /><br />\tPrivate Function FindNodeByPosition(ByVal node As HtmlNode, ByVal Position As Integer) As HtmlNode<br />\t\tDim foundNode As HtmlNode = Nothing<br />\t\tFor Each child As HtmlNode In node.ChildNodes<br />\t\t\tIf child.StreamPosition &lt;= Position And (IsNothing(child.NextSibling) OrElse child.NextSibling.StreamPosition &gt; Position) Then<br />\t\t\t\tIf child.ChildNodes.Count &gt; 0 And Not (child.ChildNodes.Count = 1 AndAlso child.InnerHtml = child.FirstChild.InnerHtml) Then<br />\t\t\t\t\tfoundNode = FindNodeByPosition(child, Position)<br />\t\t\t\t\tExit For<br />\t\t\t\tElse<br />\t\t\t\t\tReturn child<br />\t\t\t\tEnd If<br />\t\t\tEnd If<br />\t\tNext<br />\t\tReturn foundNode<br />\tEnd Function<br /><br /><div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />eclipse wrote:<br />Hello,<br /><br />I'm wondering what steps I need to take to find a node by searching for a text in it's innerText?<br /><br />Thanks.<br />Eclipse<br /><br /></div>",
+    "PostedDate": "2007-08-01T14:30:22.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "44108",
+    "ThreadId": "13171",
+    "Html": "\r\nI replaced doing this with using XPath query instead, which is more accurate than searching text.  I added another post where I created a new property to the Html Node that returns the node's XPath <a href=\"http://www.codeplex.com/htmlagilitypack/Thread/View.aspx?ThreadId=13527\" class=\"externalLink\">http://www.codeplex.com/htmlagilitypack/Thread/View.aspx?ThreadId=13527<span class=\"externalLinkIcon\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"></span></a><br />",
+    "PostedDate": "2007-08-07T14:23:59.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

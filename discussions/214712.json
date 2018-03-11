@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "450553",
+    "ThreadId": "214712",
+    "Html": "<p>Hi There,&nbsp;</p>\r\n<p>So, I had a stackoverflow bug in my htmlagilitypack from january.</p>\r\n<p>The bug is this: If I call attributes.removeall on a node with no attributes, it rarely but sometimes result in a stackoverflow bug when exporting the text to a string (either using doc.save() or otherwise)..</p>\r\n<p>&nbsp;</p>\r\n<p>So the removal of the attributes works fine. Its when exporting the stackoverflow occurs.</p>\r\n<p>Currently I fixed it with an extension:</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;public static void ClearAttributes(this HtmlAgilityPack.HtmlNode node)&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (node.Attributes.Count &gt; 0)&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;node.Attributes.RemoveAll();&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>that I call instead. That seems to have fixed the problem.</p>\r\n<p>Sincerely yours</p>\r\n<p>- Sky</p>\r\n<p>Btw. thank you for a fantastic product. :)</p>",
+    "PostedDate": "2010-06-02T05:52:35.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

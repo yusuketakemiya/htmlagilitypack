@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "There is now an alternative, use Descendants&#40;string name&#41; on the node itself. This will return an IEnumerable&#60;HtmlNode&#62; that is yeilded to be inline with Linq to Objects. ",
+    "ClosedDate": "2009-10-03T07:53:09.14-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It would be nice if I could use SelectNodes() from a child node and have it only select those type of nodes from the child nodes rather then from the entire tree.\n \nA good example, would be that I need to find all links from a specific table.  I search for the Table I want, Now all the links I want are child nodes of the table node.  \n \nRight now, if I do TableNode.SelectNodes(\"//a\"), it gets ALL links in the document. \n \nI have coded a work around, but it would be a very useful feature that would save a lot of extra code down the road.",
+    "LastUpdatedDate": "2013-05-16T05:33:00.91-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2007-10-03T20:30:48.417-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "SelectNodes from ChildNodes",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 13102
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This issue is not valid., you are using the wrong XPath query.  Instead of \"//a\", you should be using \".//a\" or just \"a\" to tell XPath to start at the current node.",
+      "PostedDate": "2008-07-14T11:57:30.99-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-09-17T06:27:02.183-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-14T14:50:35.697-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I also have fallen on this mistake.\r\nUsing the dot (example .//a) the problem is resolved.\r\nBut i think that if it is a common misunderstanding it has somewhat reason.\r\nDoesn't it?\r\n\r\nThanks ",
+      "PostedDate": "2009-02-14T14:54:20.697-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-03T07:53:09.14-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:28.047-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:33:00.91-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

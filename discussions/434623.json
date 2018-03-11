@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "1007287",
+    "ThreadId": "434623",
+    "Html": "Hello all ... I am trying to use HAP to pull player stats from this URL:\r<br />\n<a href=\"http://sports.yahoo.com/nhl/stats/byposition?pos=C%2CRW%2CLW%2CD&amp;sort=14&amp;conference=NHL&amp;year=season_2012\" rel=\"nofollow\">http://sports.yahoo.com/nhl/stats/byposition?pos=C%2CRW%2CLW%2CD&sort=14&conference=NHL&year=season_2012</a>\r<br />\n<br />\nI would like to get all the available stats of all the players into a table of some sorts that I can then query.  Can anyone give me a hand on how to scrape this data?  Any help would be greatly appreciated.  Thanks.<br />\n",
+    "PostedDate": "2013-02-26T16:11:49.403-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007457",
+    "ThreadId": "434623",
+    "Html": "Hi nbrege,\r<br />\n<br />\nHere is something to get you started.. <br />\n<pre><code>public string GetHtml(string url){\n    WebRequest wr2 = WebRequest.Create(Url);\n    wr2.Method = &quot;GET&quot;;\n    ((HttpWebRequest)wr2).UserAgent = &quot;Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17&quot;;\n    HttpWebResponse wrr = (HttpWebResponse)wr2.GetResponse();\n    Stream s = wrr.GetResponseStream();\n    HTMLReader sr = new HTMLReader(s, wrr);\n    string html = sr.ReadToEnd();\n    return html;\n}\n\npublic void Start(){\n\n\n    string url = string.Format(&quot;http://sports.yahoo.com/nhl/stats/byposition?pos=C%2CRW%2CLW%2CD&amp;sort=14&amp;conference=NHL&amp;year=season_2012&quot;);\n\n    HtmlDocument hd = new AP.HtmlDocument();\n    string test = GetHtml(url);\n    hd.LoadHtml(test);\n    HtmlNodeCollection nodes = hd.DocumentNode.SelectNodes(&quot;//tr[contains(@class,\\&quot;ysprow\\&quot;)]&quot;);\n    foreach (HtmlNode node in nodes)\n    {\n        string name = node.SelectSingleNode(&quot;./td[position() = 1]/a&quot;).InnerText;\n        string team = node.SelectSingleNode(&quot;./td[position() = 2]/a&quot;).InnerText;\n        string gp = node.SelectSingleNode(&quot;./td[position() = 3]&quot;).InnerText;\n    }\n\n}</code></pre>\n\nthis should work for you.\r<br />\n<br />\nLee<br />\n",
+    "PostedDate": "2013-02-27T01:18:09.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007895",
+    "ThreadId": "434623",
+    "Html": "Thanks for the reply.  I'm getting this error now:<br />\n<br />\nAn unhandled exception of type 'System.Xml.XPath.XPathException' occurred in System.Xml.dll<br />\nAdditional information: '//tr[contains(@class,\\&quot;ysprow\\&quot;)]' has an invalid token.<br />\n<br />\nAny ideas?<br />\n",
+    "PostedDate": "2013-02-27T14:33:20.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007904",
+    "ThreadId": "434623",
+    "Html": "No problem.. assume you fixed the errors issues in the code as didn't check before published. HTMLReader is a class I created :)\r<br />\n<br />\nCan you check the version that you are using as I tested the code to make sure its working and I'm not getting an issue.\r<br />\n<br />\nIf you could put up the following line of code exactly as you have it.\r<br />\n<br />\nHtmlNodeCollection nodes = hd.DocumentNode.SelectNodes(&quot;//tr[contains(@class,\\&quot;ysprow\\&quot;)]&quot;);\r<br />\n<br />\nyou need to make sure your on version 1.4.6.0 as versions have caused issues before.\r<br />\n<br />\nLee<br />\n",
+    "PostedDate": "2013-02-27T14:50:21.297-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007913",
+    "ThreadId": "434623",
+    "Html": "The version I'm using is 1.4.0.0  If I change the Xpath to &quot;//tr[contains(@class,&quot;&quot;ysprow&quot;&quot;)]&quot; then it works. (removed the 2 &quot;\\&quot; characters)\r<br />\nI will update to the latest version &amp; try it again.  Thanks for the help so far...<br />\n",
+    "PostedDate": "2013-02-27T15:19:50.983-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007915",
+    "ThreadId": "434623",
+    "Html": "the 2 &quot;\\&quot; characters are used as escape chars for the string you might have the @sign at the beginning of the string. The version shouldn't matter in that case. <br />\n",
+    "PostedDate": "2013-02-27T15:22:15.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007929",
+    "ThreadId": "434623",
+    "Html": "The new version made no difference, still get the error when I include the 2 &quot;\\&quot; characters previously noted.\r<br />\n<br />\nHow would I get the stats from these 2 rows (the 16 &amp; the 30)?\r<br />\n<br />\n&lt;td class=&quot;yspscores&quot;&gt;&nbsp;&lt;/td&gt;&lt;td class=&quot;yspscores&quot;&gt;16&lt;/td&gt;\r<br />\n&lt;td class=&quot;yspscores&quot;&gt;&nbsp;&lt;/td&gt;&lt;td class=&quot;ysptblclbg6&quot;&gt;&lt;span class=&quot;yspscores&quot;&gt;30&lt;/span&gt;&lt;/td&gt;<br />\n",
+    "PostedDate": "2013-02-27T16:40:38.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007931",
+    "ThreadId": "434623",
+    "Html": "string a = node.SelectSingleNode(&quot;./td[position() = 5]&quot;).InnerText;\r<br />\nstring pts = node.SelectSingleNode(&quot;./td[position() = 6]/span&quot;).InnerText;\r<br />\n<br />\nyou are looking for the 6th td &quot;td[position() = 6]&quot; in the row and then the span inside that td &quot;/span&quot; and then to get the text inside the span..<br />\n",
+    "PostedDate": "2013-02-27T16:46:36.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007935",
+    "ThreadId": "434623",
+    "Html": "For some reason those 2 lines didn't paste in right.  This is how they look in the page source code:<br />\n<br />\n&lt;td class=&quot;yspscores&quot;&gt;&amp; nbsp;&lt;/td&gt;&lt;td class=&quot;yspscores&quot;&gt;16&lt;/td&gt;<br />\n&lt;td class=&quot;yspscores&quot;&gt;&amp; nbsp;&lt;/td&gt;&lt;td class=&quot;ysptblclbg6&quot;&gt;&lt;span class=&quot;yspscores&quot;&gt;30&lt;/span&gt;&lt;/td&gt;<br />\n<br />\nThere is a &quot;&amp; nbsp;&quot; in there. (I have to type a space between the &amp; and the nbsp for it to display on here).<br />\n",
+    "PostedDate": "2013-02-27T17:18:03.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007937",
+    "ThreadId": "434623",
+    "Html": "This is the final code that seems to work:<br />\n<pre><code>        Dim htmlWeb As New HtmlWeb()\n        Dim document As HtmlAgilityPack.HtmlDocument = htmlWeb.Load(urlString)\n\n        document.OptionFixNestedTags = True\n        document.OptionOutputAsXml = True\n\n        Dim nodes As HtmlNodeCollection = document.DocumentNode.SelectNodes(&quot;//tr[contains(@class,&quot;&quot;ysprow&quot;&quot;)]&quot;)\n\n        For Each node As HtmlNode In nodes\n\n            Dim name As String = node.SelectSingleNode(&quot;./td[position() = 1]/a&quot;).InnerText\n            Dim team As String = node.SelectSingleNode(&quot;./td[position() = 2]/a&quot;).InnerText\n            Dim gp As String = node.SelectSingleNode(&quot;./td[position() = 3]&quot;).InnerText\n            Dim goals As String = node.SelectSingleNode(&quot;./td[position() = 5]&quot;).InnerText\n            Dim assists As String = node.SelectSingleNode(&quot;./td[position() = 7]&quot;).InnerText\n            Dim points As String = node.SelectSingleNode(&quot;./td[position() = 9]&quot;).InnerText\n            Dim plusminus As String = node.SelectSingleNode(&quot;./td[position() = 11]&quot;).InnerText\n            Dim pims As String = node.SelectSingleNode(&quot;./td[position() = 13]&quot;).InnerText\n            Dim hits As String = node.SelectSingleNode(&quot;./td[position() = 15]&quot;).InnerText\n\n            Me.DataGridView1.Rows.Add(name, team, gp, goals, assists, points, plusminus, pims, hits)\n\n        Next</code></pre>\n\nThanks again for your help...<br />\n",
+    "PostedDate": "2013-02-27T17:30:30.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007939",
+    "ThreadId": "434623",
+    "Html": "PS ... why doesn't the bold &amp; italic formatting work on here?<br />\n",
+    "PostedDate": "2013-02-27T17:35:43.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007941",
+    "ThreadId": "434623",
+    "Html": "No problem.. I see why the 2 &quot;\\&quot; chars didn't work.. My sample was in C# and your using VB.Net :) \r<br />\n<br />\nbest of luck with it.. <br />\n",
+    "PostedDate": "2013-02-27T17:37:25.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

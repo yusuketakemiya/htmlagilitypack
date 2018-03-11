@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "462129",
+    "ThreadId": "217998",
+    "Html": "<p>i want to get HTML output in<br><br>http://www.belmondo.si/turisticna-ponudba/pocitnice/kratkirezultati?cid=ID&amp;cityid=DPS&amp;izhid=&amp;trajanjeid=&amp;oskrbaid=&amp;kategorijaid=&amp;ooseb=2&amp;otrok=0&amp;lasten=1&amp;prvic=1&amp;rid=0-1&amp;subtemplate=eksotika<br><br>but i always get<br><br>HTTPWEBRESPONSE The remote server returned an error: (403) Forbidden<br><br>I am using HttpWebResponse<br><br>protected string GetHtmlStringA(string url)<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string sHtml = &amp;quot;&amp;quot;;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HttpWebRequest request;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HttpWebResponse response = null;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Stream stream = null;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; request = (HttpWebRequest)WebRequest.Create(url);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; response = (HttpWebResponse)request.GetResponse();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stream = response.GetResponseStream();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StreamReader sr = new StreamReader(stream, System.Text.Encoding.Default);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sHtml = sr.ReadToEnd();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (stream != null) stream.Close();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (response != null) response.Close();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return sHtml;<br>&nbsp;&nbsp;&nbsp; }<br><br><br>i also try with UserAgent but it is the same<br><br>req.request=&nbsp; &amp;quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.0.13) Gecko/2009073022 Firefox/3.0.13&amp;quot;;<br><br>I also try with HTMLDocument in HTML agility pack but is the same. Any idea why. From browser page is normally visible...<br><br>i can't find any solution on forums or internet<br><br></p>",
+    "PostedDate": "2010-07-01T04:38:06.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

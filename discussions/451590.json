@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1073848",
+    "ThreadId": "451590",
+    "Html": "Hi guys brand new to Html Agility Pack, and not much wiser when it come to c# however; trying to get the fundamentals rolling and fallen at the first hurdle.<br />\n<pre><code>        HtmlAgilityPack.HtmlDocument htmlDoc = new HtmlAgilityPack.HtmlDocument();\n        htmlDoc.LoadHtml(strHTML);  //Use to load from a string</code></pre>\n\nTrying to load the string its throwing a DirectoryNotFoundException and looking for D:\\Source\\htmlagilitypack.new\\Trunk\\HtmlAgilityPack\\HTMLDocument.cs\r<br />\n<br />\nI've had similar problems with sqlite interop I think it was and the advice was dump the pdb file associated with the assembly dll I tried that with this but it just recreates it! Can anybody set my right ?\r<br />\nThanks<br />\n",
+    "PostedDate": "2013-07-27T09:19:48.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1078313",
+    "ThreadId": "451590",
+    "Html": "Hi Andy,\r<br />\n<br />\nWhat is the value of strHTML?  It should be HTML source.  If it contains a path you should be using the Load() method.<br />\n",
+    "PostedDate": "2013-08-08T09:33:42.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1078494",
+    "ThreadId": "451590",
+    "Html": "Its a string containing html - extracted from the body of an email contained in outlook. Not a file which I believe is what is required for load()\r<br />\n<br />\nLoadHtml() works fine now.\r<br />\n \r<br />\nIn the end I resolved this problem however after reinstalling using NuGet whilst the problem was still evident, deleting the pdb file as mentioned above worked - to be frank I dont know what was different between the NuGet and prior install but I dint have time to analyse the issue further.\r<br />\n<br />\nThanks for coming back anyhow Matt<br />\n",
+    "PostedDate": "2013-08-08T16:52:28.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

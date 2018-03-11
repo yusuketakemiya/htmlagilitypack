@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1040504",
+    "ThreadId": "442843",
+    "Html": "I am running the following line of HtmlAgilityPack code within a C# program in MSVS Express, but chartStrings remains null after execution: \r<br />\n<br />\nHtmlNodeCollection chartStrings = hChart.DocumentNode.SelectNodes(&quot;/Html/Head/Title&quot;);\r<br />\n<br />\nI know that hChart does in fact contain HTML.  Any ideas?<br />\n",
+    "PostedDate": "2013-05-07T10:38:09.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

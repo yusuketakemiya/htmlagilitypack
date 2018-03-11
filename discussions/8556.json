@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "27864",
+    "ThreadId": "8556",
+    "Html": "\r\nhi to all. i would like to know how can i modify the output of an .aspx page on the fly.<br />i'm developing a cms engine, and have this dir structure:<br /><br />/admin<br />/templates/template0/page.aspx<br /><br />with an http handler i rewrite paths so i can use paths like;<br />/it/mypage.aspx (tha reads /templates/template0/page.aspx)<br /><br />tha problem is that i would like to parse and modify the outputstream ON-THE-FLY so i can adjust images paths (and other tag attributes)...<br />i try to use: <br /><br />\t\tprivate void parseMe() <br />\t\t{<br />\t\t\tHtmlDocument doc = new HtmlDocument();<br />\t\t\tdoc.Load(Response.OutputStream);<br /><br />\t\t}<br /><br />but it tells me: \"Stream was not readable\". <br />obviously i miss something: can someone help me ? <br />cheers, Antonio. :-)<br />",
+    "PostedDate": "2007-03-26T03:44:06.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "986708",
+    "ThreadId": "8556",
+    "Html": "\r\n<p>Bump for this issue. I'm seeing it myself.</p>\r\n<p>Using .NET 4.5 and HtmlAgilityPack&nbsp;1.4.6:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">using</span> (<span style=\"color:blue\">var</span> client = <span style=\"color:blue\">new</span> WebClient())\r\n<span style=\"color:blue\">using</span> (<span style=\"color:blue\">var</span> stream = client.OpenRead(uri))\r\n{\r\n    <span style=\"color:blue\">var</span> html = <span style=\"color:blue\">new</span> HtmlDocument();\r\n    html.Load(stream); <span style=\"color:green\">// throws here</span>\r\n    <span style=\"color:green\">// ...</span>\r\n}</pre>\r\n</div>\r\n<p><span style=\"font-size:10pt\">I checked in WireShark, and the content was transferred across the wire successfully and in full.</span></p>\r\n<p>The exception is&nbsp;<span style=\"font-size:10pt\">ArgumentException:&nbsp;</span><span style=\"font-size:10pt\">Stream was not readable.</span></p>\r\n<p><code></p>\r\n<pre>mscorlib.dll!System.IO.StreamReader.StreamReader(System.IO.Stream stream, System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks, int bufferSize, bool leaveOpen) + 0x168 bytes\r\nmscorlib.dll!System.IO.StreamReader.StreamReader(System.IO.Stream stream, System.Text.Encoding encoding) + 0x1d bytes  \r\nHtmlAgilityPack.dll!HtmlAgilityPack.HtmlDocument.Load(System.IO.Stream stream) Line 517 + 0x40 bytes C#</pre>\r\n</code>\r\n<p></p>\r\n",
+    "PostedDate": "2013-01-14T13:38:15.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "986719",
+    "ThreadId": "8556",
+    "Html": "\r\n<p>What's more, if I run this on the stream returned by OpenRead(uri)</p>\r\n<p><span style=\"font-size:10pt\">new StreamReader(stream).ReadToEnd()</span></p>\r\n<p>I get the full string, as expected.</p>\r\n<p>In the end, the only way I found was to pass a string to HtmlDocument.Load. I suspect there is a bug in the stream processing code of the various HtmlDocument.Load overloads.</p>\r\n",
+    "PostedDate": "2013-01-14T14:00:39.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

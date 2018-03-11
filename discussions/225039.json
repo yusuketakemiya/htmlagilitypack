@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "485592",
+    "ThreadId": "225039",
+    "Html": "<p>In some localities like Turkish, ToUpper() and ToLower() fail to convert the element names containing an &quot;I&quot; correctly. Instead, ToUpperInvariant should be used.</p>\r\n<p>http://en.wikipedia.org/wiki/Dotted_and_dotless_I</p>",
+    "PostedDate": "2010-08-27T02:38:00.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

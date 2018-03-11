@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "265470",
+    "ThreadId": "77640",
+    "Html": "<p>I downloaded the latest version of the software, I added a reference in my project but get the error: &quot;Unknown build error, 'Could not load file or assembly 'file:///C:\\Program Files\\HTMLAgilityPack\\HtmlAgilityPack.dll' or one of its dependencies. Operation is not supported. (Exception from HRESULT: 0x80131515)'&quot;.&nbsp; I also tried to add the DLL to the 'bin' folder of my project but no dice.&nbsp; Please do tell how to get this working!<br><br>Thanks for your help!</p>\r\n<p>Eric</p>",
+    "PostedDate": "2009-12-09T14:18:22.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265793",
+    "ThreadId": "77640",
+    "Html": "<p>What kind of project are you doing: Web Project, Web Site, Windows Console, etc... usually you right click&nbsp; on references then add then browse to the existing lib location (where you stored it). U are using Visual studio right?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-10T09:37:12.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270359",
+    "ThreadId": "77640",
+    "Html": "<p>I suppose you're using the (very unfinished) VS 2010. please have a look at this <a href=\"http://blogs.msdn.com/brada/archive/2009/12/11/visual-studio-project-sample-loading-error-assembly-could-not-be-loaded-and-will-be-ignored-could-not-load-file-or-assembly-or-one-of-its-dependencies-operation-is-not-supported-exception-from-hresult-0x80131515.aspx\">http://blogs.msdn.com/brada/archive/2009/12/11/visual-studio-project-sample-loading-error-assembly-could-not-be-loaded-and-will-be-ignored-could-not-load-file-or-assembly-or-one-of-its-dependencies-operation-is-not-supported-exception-from-hresult-0x80131515.aspx</a></p>",
+    "PostedDate": "2009-12-23T09:53:38.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

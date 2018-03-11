@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1038355",
+    "ThreadId": "442289",
+    "Html": "&lt;%@ WebService Language=&quot;VBScript&quot; Class=&quot;TempConvert&quot; %&gt;\r<br />\n<br />\nImports System\r<br />\nImports System.Web.Services\r<br />\n<br />\nPublic Class TempConvert :Inherits WebService\r<br />\n<br />\n&lt;WebMethod()&gt; Public Function FahrenheitToCelsius\r<br />\n(ByVal Fahrenheit As String) As String\r<br />\n  dim fahr\r<br />\n  fahr=trim(replace(Fahrenheit,&quot;,&quot;,&quot;.&quot;))\r<br />\n  if fahr=&quot;&quot; or IsNumeric(fahr)=false then return &quot;Error&quot;\r<br />\n  return ((((fahr) - 32) / 9) * 5)\r<br />\nend function\r<br />\n<br />\n&lt;WebMethod()&gt; Public Function CelsiusToFahrenheit\r<br />\n(ByVal Celsius As String) As String\r<br />\n  dim cel\r<br />\n  cel=trim(replace(Celsius,&quot;,&quot;,&quot;.&quot;))\r<br />\n  if cel=&quot;&quot; or IsNumeric(cel)=false then return &quot;Error&quot;\r<br />\n  return ((((cel) * 9) / 5) + 32)\r<br />\nend function\r<br />\n<br />\nend class\r<br />\n<br />\nHow to explain it?\r<br />\n<a href=\"http://www.44lan.cn/lan_web/webservice/web_example.aspx\" rel=\"nofollow\">web services</a><br />\n",
+    "PostedDate": "2013-05-01T18:06:31.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

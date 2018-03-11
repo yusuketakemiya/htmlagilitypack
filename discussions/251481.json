@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "587563",
+    "ThreadId": "251481",
+    "Html": "\r\n<p>First: Very good work, HAP closes an important gap in what MS libs currently offer!</p>\r\n<p>I'd like to get HAP to work from within Excel / VBA, but despite a lot of searching and trying I could not get this to work.</p>\r\n<p><strong>Is there a plan to make HAP work from within Office applications using VBA, i.e. to provide HAP as a COM component</strong>, in particular from Excel? (So far I could not manage to create a &quot;Reference&quot; to the HAP DLL from Excel, nor to use RegAsm\r\n for registering it sucessfully... at least for me, using Windows 7, Office 2010, .NET FW 4.0.30319.1)</p>\r\n<p>Or, if not, is there a way to get this to work which I have missed?</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-03-28T06:52:03.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

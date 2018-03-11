@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I wrote following code to download and save list of groups of my University:\n\n```\nHtmlWeb webDoc = new HtmlWeb();\ntry\n{\n     webDoc.Get(@\"http://timetable.tusur.ru/faculties/rtf\", @\"F:\\list.htm\");\n}\ncatch (Exception)\n{\n      Console.Write(\"Some infomation\");\n}\n```\n...but after programm complete its work, I haven't file \"list.htm\" on my hard drive. I tried do this for other sited, result exaclty the same. What did I do wrong?",
+    "LastUpdatedDate": "2013-07-02T03:21:53.93-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-07-02T03:21:53.93-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HttpWeb.Get(string, string) method issue",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 34222
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

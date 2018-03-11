@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1331328",
+    "ThreadId": "574770",
+    "Html": "I'm currently using HtmlAgilityPack to parse some HTML files and I would like to know if there is a way to detect if an HtmlAgilityPack node is an inline/block element or it is displayed inline/block. Thanks.<br />\n",
+    "PostedDate": "2014-12-12T05:55:32.973-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

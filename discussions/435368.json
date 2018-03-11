@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1010271",
+    "ThreadId": "435368",
+    "Html": "So I ran into a most unusual issue, for which I'm assuming the answer is trivial, but for some reason it appears to escape my gaze.\r<br />\n<br />\nI have the following XML document (Names had been modified to protect the innocent):\r<br />\n<code>&lt;A&gt;&lt;B&gt;C&lt;/B&gt;&lt;/A&gt;</code>\r<br />\n<br />\nI load it as a document, and run multiple searches on it, all return the expected results. Except for the last, simplest one.\r<br />\n<code>doc.DocumentNode.SelectNodes(&quot;//B&quot;);</code> returns null. It shouldn't. It should return a single node.\r<br />\nI thought my XPath was off, but loading the same XML string as a <code>System.Xml.Document</code> and running <code>SelectNodes(&quot;//B&quot;);</code> Does indeed return the desired node.\r<br />\n<br />\nWhat am I doing wrong?<br />\n",
+    "PostedDate": "2013-03-04T17:19:29.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010286",
+    "ThreadId": "435368",
+    "Html": "Lowercase. It has to be lower case.\r<br />\nIt happened to me last time. I made a huge note which I disregarded. I wish there was a note in the implementation, or in the documentation. But oh well.\r<br />\n<code>//b</code> saves the day.<br />\n",
+    "PostedDate": "2013-03-04T18:05:33.797-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010289",
+    "ThreadId": "435368",
+    "Html": "Hi itamaram,\r<br />\n<br />\nWhat version do you have? Think I came across this before with someone but the new version it works   1.4.6\r<br />\n<br />\nJust checking now<br />\n",
+    "PostedDate": "2013-03-04T18:08:49.293-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010294",
+    "ThreadId": "435368",
+    "Html": "Ok my mistake.. the search string has to be lowercase but the html can be upper or lowercase.<br />\n",
+    "PostedDate": "2013-03-04T18:18:38.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010328",
+    "ThreadId": "435368",
+    "Html": "shouldn't it return an empty List&lt;Node&gt; ? why null ?<br />\n",
+    "PostedDate": "2013-03-04T19:58:33.457-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

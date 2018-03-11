@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "1234229",
+    "ThreadId": "542283",
+    "Html": "HtmlAgility doesn't work with new universal app. There is any solutions?<br />\n",
+    "PostedDate": "2014-04-15T02:07:42.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1235878",
+    "ThreadId": "542283",
+    "Html": "I have this problem also, they need to make an update for the Windows Phone 8.1 and Windows 8.1..\r<br />\n<br />\nI sincerely hope that they will fix this issue! :) <br />\n",
+    "PostedDate": "2014-04-20T07:01:00.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1237525",
+    "ThreadId": "542283",
+    "Html": "+1<br />\n",
+    "PostedDate": "2014-04-24T05:51:59.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240064",
+    "ThreadId": "542283",
+    "Html": "+1<br />\n",
+    "PostedDate": "2014-04-30T14:47:32.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1243727",
+    "ThreadId": "542283",
+    "Html": "I just tried manually referencing the 'winrt45' dll, and it works fine so far in both the Windows and Windows Phone projects of the Universal app. Has anyone seen any issues with doing this? <br />\n<br />\nOtherwise this seems to be a sufficient workaround until the NuGet package gets updated.<br />\n",
+    "PostedDate": "2014-05-09T18:57:04.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1270085",
+    "ThreadId": "542283",
+    "Html": "+1<br />\n",
+    "PostedDate": "2014-07-16T18:07:28.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1279904",
+    "ThreadId": "542283",
+    "Html": "+1<br />\n",
+    "PostedDate": "2014-08-01T02:52:36.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1288929",
+    "ThreadId": "542283",
+    "Html": "Could you please explain more how did you referenced it manually. I need this get fixed quickly.<br />\n",
+    "PostedDate": "2014-08-11T09:20:32.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1288972",
+    "ThreadId": "542283",
+    "Html": "<strong>faysal515 wrote:</strong><br />\n<blockquote>\nCould you please explain more how did you referenced it manually. I need this get fixed quickly.<br />\n</blockquote>\nYou're basically referencing assemblies the &quot;old&quot; way. Download the package from this Codeplex project, and put it somewhere you can find it in your project folder. Then right-click on &quot;References&quot; in your project, just like you would get a NuGet package, except select &quot;Add Reference&quot; this time. Then go to &quot;Browse&quot; and locate the HtmlAgilityPack.dll file from the &quot;winrt45&quot; folder.\r<br />\n<br />\nI'm not sure if everything works, but everything I use it for does work.<br />\n",
+    "PostedDate": "2014-08-11T11:34:33.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1352711",
+    "ThreadId": "542283",
+    "Html": "+1\r<br />\n<br />\nPlease update HTMLAgilityPack to work with universal app. Thanks!<br />\n",
+    "PostedDate": "2015-02-14T16:23:43.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1359154",
+    "ThreadId": "542283",
+    "Html": "I still see it does work on universal app.<br />\n",
+    "PostedDate": "2015-03-02T22:05:06.407-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

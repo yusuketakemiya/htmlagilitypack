@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "93143",
+    "ThreadId": "27908",
+    "Html": "I submitted a patch (ID=1258) that upgrades the pack to 08 and .net 3.5, then added an extension method to convert a HtmlDocument to a LINQ to XML XDocument.<br>\r\nNow that LINQ to XML is around, I can trash all that XPath syntax from my brain (yay - another DSL is hidden!).<br>\r\nI called the extension method ToXDocument, but perhaps there's a better name that is closer to the Save semantics.<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-05-17T05:41:18.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "95313",
+    "ThreadId": "27908",
+    "Html": "+1<br>\r\n<br>\r\nHow can I get a copy of this patch?<br>\r\n<br>\r\nI've noticed that a lot of web sites won't validate as XHTML. Does this fix this?  If not, would setting up the HTML Agility Pack to directly support LINQ be a better idea?\r\n",
+    "PostedDate": "2008-05-28T14:07:40.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "95360",
+    "ThreadId": "27908",
+    "Html": "You can get the patch form from the source code tab in the patches area. <br>\r\n<br>\r\nAlot of websites dont validate as XHTML because they're probably not. they're HTML, which isn't exactly XML. In addition to that, the parsers have evolved to be very lenient to malformed X/HTML. This allows browsers to open a wider range of sketchy files, but makes scraping harder without a browsers parser.<br>\r\n<br>\r\nEnter, htmlagility pack.<br>\r\n<br>\r\nThis is a gem IMHO in the C# OSS world. It brings a very lenient html parser and offers a set of external format converters, XML being one of them.<br>\r\n<br>\r\nMy patch simply uses the XML converter to stream data into the linq2xml XDocument parser. Very simple.<br>\r\nCheck out my post at, <br>\r\nhttp://vijay.screamingpens.com/archive/2008/05/26/linq-amp-lambda-part-3-html-agility-pack-to-linq.aspx<br>\r\n<br>\r\nI chose to use linq because my team needed to do some scraping work tasks and weren't very profficient in XPath, but had enough linq skills to parse xml. I prefer linq instead of xpath because it's easier to read in my opinion. It may be a bit slower, but perf is rarely something I particularly care about until we stress test and performance benchmark our apps. That said, sometimes from the start we're sure performance is going to be an issue (like on embedded devices), and we take care to design for performance early and give ourselves enough time for optimization. But I digress.<br>\r\n<br>\r\n-CV<br>\r\n",
+    "PostedDate": "2008-05-28T16:56:37.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

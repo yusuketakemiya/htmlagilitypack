@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "72607",
+    "ThreadId": "21794",
+    "Html": "\r\nAfter downloading the latest zip file, unzipping to a local drive and attempting to open with Visual Studio 2005, I got a message that \" the project location is not trusted...\" .  This is due to the fact that the zip was built on a different server than the one that I extracted to.  The solution is found at the BOTTOM of this article: http://msdn2.microsoft.com/en-us/library/bs2bkwxc(VS.80).aspx<br /><br />In summary, delete all of the extracted files, right click on the zip and click properties, click on the Unblock button and say OK.  Reextract and you're all set<br />",
+    "PostedDate": "2008-02-08T07:37:11.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "77017",
+    "ThreadId": "21794",
+    "Html": "\r\nNo, you have extracted this zip file on a network share. Everytime you start a solution form a networkshare, visual studio will bring this message up.<br />",
+    "PostedDate": "2008-02-28T03:22:14.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

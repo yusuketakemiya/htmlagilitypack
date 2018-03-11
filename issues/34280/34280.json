@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nI really like the work you've done.\n\nHowever, we are getting strange exceptions in our Outlook 2010 Add-In I'm using the library in.\n\nI noticed that don't dispose of unmanaged objects nor use a using() block.\n\nDo you plan to add this to your code?\n\nFor example this code found in many places \"StreamReader sr = reader as StreamReader\" is never disposed of.\n\nKarl",
+    "LastUpdatedDate": "2017-03-10T15:57:10.387-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-07-22T13:51:13.73-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Not disposing unmanaged objects",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 34280
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hello, \r\n\r\nIm ok with you.\r\n\r\nIt would be necessary to be able to\n```\nusing (HtlmDocument doc = new HtlmDocument() )\n{\n   //some code here\n}\n```\r\n\r\nIt does not collect enough often for the amount of allocation I make with HtmlAgilityPack.\r\n\r\nI have make some test comparaison with Visual Studio and another project who parse the Dom to.\r\n\r\nHere the test code:\n```\n  Stopwatch chrono = new Stopwatch();\n            long HtmlAgilityPackTimer, AngleSHarpTimer;\r\n\r\n            chrono.Start();\n            for (int i = 0; i < 100; i++)\n            {\n                HtmlAgilityPack.HtmlDocument Hdocument = new HtmlAgilityPack.HtmlDocument();\n                Hdocument.LoadHtml(contentToTest);\n            }\n            chrono.Stop();\n            HtmlAgilityPackTimer = chrono.ElapsedMilliseconds;\n            chrono.Reset();\r\n\r\n            chrono.Start();\n            for (int i = 0; i < 100; i++)\n            {\n                AngleSharp.Parser.Html.HtmlParser parser = new AngleSharp.Parser.Html.HtmlParser();\n                var document = parser.Parse(contentToTest);\n            }\n            chrono.Stop();\n            AngleSHarpTimer = chrono.ElapsedMilliseconds;\r\n\r\n            MessageBox.Show(\"HtmlAgilityPack: \" + HtmlAgilityPackTimer + \"ms\" + Environment.NewLine +\n               \"AngleSharp: \" + AngleSHarpTimer + \"ms\");\n```\nThe \"contentToTest\" var is a dump of a simple DOM.\r\n\r\nHere the results:\n![Image](http://img4.hostingpics.net/pics/654254Capture2.jpg)\r\n\r\nYou are the most fastest and it's because i prefere to use your project.\r\n\r\nHere the results of memory allocation:\n![Image](http://img4.hostingpics.net/pics/487765comparaison.jpg)\nIn yellow the number of byte allocated.\r\n\r\nHtmlAgilityPack use a lot of memory.\r\n\r\nPlease make the HtmlDocument Disposable for make the world great again.\r\n\r\nThank you !\r\n\r\nPs: Sorry for my english\n",
+      "PostedDate": "2017-03-10T15:57:10.387-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

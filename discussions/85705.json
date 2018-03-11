@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "291897",
+    "ThreadId": "85705",
+    "Html": "<p>It seems to me that the caching feature of HtmlWeb&nbsp;doesn't take URL parameters into account. Am I correct?</p>\r\n<p>This is bad because it makes the cache unusable with any dynamic page (e.g. <a href=\"http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=3169\">Details.aspx?id=3169</a>&nbsp;with a varying id).</p>\r\n<p>Also, it would be nice if the cache supported multithreading. Currently it just throws an exception because the file is already in use. Web access often has a big latency and it's very useful (performance-wise) to request several pages at the same time. Currently to do so, one has to deactivate the HtmlWeb cache.</p>",
+    "PostedDate": "2010-02-17T14:25:38.96-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1108254",
+    "ThreadId": "85705",
+    "Html": "I have the same issue since I would like to loop over some url.\r<br />\n<br />\nI havre tried  the following code but I have the same data on each loop    \r<br />\n<pre><code>     for (int i = 1; i &lt;= Convert.ToInt32(NbrePage); i++)\n            {\n                url = urlBase + i.ToString();\n                doc = null;\n                doc = new HtmlAgilityPack.HtmlDocument();\n                HtmlWeb web = new HtmlWeb();\n                web.UsingCache = false;\n                doc = web.Load(url)   ;</code></pre>\n\n",
+    "PostedDate": "2013-10-16T05:32:40.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

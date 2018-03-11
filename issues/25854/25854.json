@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n \nI want to extract all links from html page. I am able to do this.\nBut I need absolute link instead of relative links.\n \nPlease any body help me.\n \nThanks in Advance.\n \nRegards,\nAlpesh",
+    "LastUpdatedDate": "2013-02-21T18:47:20.37-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-01-06T00:54:02.513-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "get absolute link of anchor tag from html document",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 25854
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "this is not an \"issue\" with HAP and should be posted in the Discussions form. I will be closing this issue, please repost in the Discussions. HAP has no capability of getting the absolute link, combining the site's domain and the relative links is up to you. You'll want to look at the .NET Uri class and particularly the Segments property http://msdn.microsoft.com/en-us/library/system.uri.segments.aspx ",
+      "PostedDate": "2010-01-06T06:37:17.05-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:20.37-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

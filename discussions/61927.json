@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "210218",
+    "ThreadId": "61927",
+    "Html": "<p>Hello!</p>\r\n<p>I just downloaded and used the Html Agility Pack to do some web scraping, works absolutely great! Only thing that slightly worries me is that the project doesn't look very active. What are the plans? Are there still bug fixes being made when encountered?</p>\r\n<p>Keep up the great work, great job. If you guys would charge perhaps $100 for this library that would be quite reasonable still even. I'd rather pay some cash and have active development than something free that ends up dead (it's more costly to switch to another component in the future).</p>\r\n<p>Thanks!</p>\r\n<p>Wout</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-08T17:23:35.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "210222",
+    "ThreadId": "61927",
+    "Html": "<p>I'm hoping to start contributing. I've been updating it to be more linq compatible and have fixed some bugs when dealing with aspx files and keeping original formatting when saving.</p>\r\n<p>Unfortunately I've been unable to get ahold of anyone on the project. I've tried contacting Simon the project lead in about 4 different ways so far (on here, direct email, contact form on his blog and an email to his company). So far over the last month I've had no response.</p>\r\n<p>I may end up forking it if I can't find out an answer sooner than later.</p>",
+    "PostedDate": "2009-07-08T17:47:16.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211170",
+    "ThreadId": "61927",
+    "Html": "<p>Go ahead and fork it :)</p>\r\n<p>Wout</p>",
+    "PostedDate": "2009-07-12T02:45:35.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

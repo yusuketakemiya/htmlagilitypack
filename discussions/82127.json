@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "282160",
+    "ThreadId": "82127",
+    "Html": "<p>I wanna traverse the &nbsp;whole DOM tree to get a preorder tags string, but when meet the &lt;form&gt; tag, it's OuterHtml is &quot;&lt;form&gt;&quot;, not &quot;&lt;form&gt;...&lt;/form&gt;&quot;</p>\r\n<p>could anyone help me? &nbsp;Thanks!</p>",
+    "PostedDate": "2010-01-26T23:11:57.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282941",
+    "ThreadId": "82127",
+    "Html": "<p>Can you post the html sample of what you were trying to parse?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-28T13:23:15.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283079",
+    "ThreadId": "82127",
+    "Html": "I have fixed it by removing &quot;ElementsFlags.Add(&quot;form&quot;, HtmlElementFlag.CanOverlap | HtmlElementFlag.Empty);&quot; from HtmlNode.cs<div>Thanks a lot.<br><br><div>2010/1/29 kurtnelle <span dir=ltr>&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span><br>\r\n<blockquote style=\"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex\">   <div> <p>From: kurtnelle</p> <div><p>Can you post the html sample of what you were trying to parse?</p>\r\n<p> </p>\r\n<p> </p></div> <div> <p>Read the <a href=\"http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=82127&ANCHOR#Post282941\">full discussion online</a>.</p> <p>To add a post to this discussion, reply to this email (<a href=\"mailto:htmlagilitypack@discussions.codeplex.com?subject=[htmlagilitypack:82127]\">htmlagilitypack@discussions.codeplex.com</a>)</p>\r\n <p>To start a new discussion for this project, email <a href=\"mailto:htmlagilitypack@discussions.codeplex.com\">htmlagilitypack@discussions.codeplex.com</a></p> <p>You are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"http://www.codeplex.com/site/discussions/thread/unsubscribe/82127\">unsubscribe</a> on CodePlex.com.</p>\r\n <p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at CodePlex.com</p> </div> </div> </blockquote></div><br></div>",
+    "PostedDate": "2010-01-28T18:07:02.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

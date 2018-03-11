@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "659865",
+    "ThreadId": "269527",
+    "Html": "\r\n<p><span style=\"color:black; font-size:10pt\">I am tring to parse an html file with this syntex:</span></p>\r\n<p><span style=\"color:maroon; font-size:10pt\">&lt;div&gt;&lt;form&gt;</span><span style=\"color:black; font-size:10pt\">...</span><span style=\"color:maroon; font-size:10pt\">&lt;/div&gt;</span><span style=\"color:black; font-size:10pt\">...</span><span style=\"color:maroon; font-size:10pt\">&lt;/form&gt;</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">the problem is that the HtmlAgilityPack automatically close the form tag before the div ending tag:\r\n</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">&lt;div&gt;&lt;form&gt;...&lt;/form&gt;&lt;/div&gt;...&lt;/form&gt;</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">&nbsp;so I lost many form elements. I already tried:</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">htmlDoc.</span><span style=\"color:#2b91af; font-size:10pt\">OptionFixNestedTags</span><span style=\"color:black; font-size:10pt\"> =\r\n</span><span style=\"color:darkblue; font-size:10pt\">false</span><span style=\"color:black; font-size:10pt\">;<br>\r\nhtmlDoc.</span><span style=\"color:#2b91af; font-size:10pt\">OptionAutoCloseOnEnd</span><span style=\"color:black; font-size:10pt\"> =\r\n</span><span style=\"color:darkblue; font-size:10pt\">false</span><span style=\"color:black; font-size:10pt\">;<br>\r\nhtmlDoc.</span><span style=\"color:#2b91af; font-size:10pt\">OptionCheckSyntax</span><span style=\"color:black; font-size:10pt\"> =\r\n</span><span style=\"color:darkblue; font-size:10pt\">false</span><span style=\"color:black; font-size:10pt\">;<br>\r\n</span><span style=\"color:#2b91af; font-size:10pt\">HtmlNode</span><span style=\"color:black; font-size:10pt\">.</span><span style=\"color:#2b91af; font-size:10pt\">ElementsFlags</span><span style=\"color:black; font-size:10pt\">.</span><span style=\"color:#2b91af; font-size:10pt\">Remove</span><span style=\"color:black; font-size:10pt\">(</span><span style=\"color:maroon; font-size:10pt\">&quot;form&quot;</span><span style=\"color:black; font-size:10pt\">);<br>\r\n</span><span style=\"color:#2b91af; font-size:10pt\">HtmlNode</span><span style=\"color:black; font-size:10pt\">.</span><span style=\"color:#2b91af; font-size:10pt\">ElementsFlags</span><span style=\"color:black; font-size:10pt\">.</span><span style=\"color:#2b91af; font-size:10pt\">Add</span><span style=\"color:black; font-size:10pt\">(</span><span style=\"color:maroon; font-size:10pt\">&quot;form&quot;</span><span style=\"color:black; font-size:10pt\">,\r\n</span><span style=\"color:#2b91af; font-size:10pt\">HtmlElementFlag</span><span style=\"color:black; font-size:10pt\">.</span><span style=\"color:#2b91af; font-size:10pt\">CanOverlap</span><span style=\"color:black; font-size:10pt\">);<br>\r\n</span><span style=\"color:#2b91af; font-size:10pt\">HtmlNode</span><span style=\"color:black; font-size:10pt\">.</span><span style=\"color:#2b91af; font-size:10pt\">ElementsFlags</span><span style=\"color:black; font-size:10pt\">.</span><span style=\"color:#2b91af; font-size:10pt\">Add</span><span style=\"color:black; font-size:10pt\">(</span><span style=\"color:maroon; font-size:10pt\">&quot;div&quot;</span><span style=\"color:black; font-size:10pt\">,\r\n</span><span style=\"color:#2b91af; font-size:10pt\">HtmlElementFlag</span><span style=\"color:black; font-size:10pt\">.</span><span style=\"color:#2b91af; font-size:10pt\">CanOverlap</span><span style=\"color:black; font-size:10pt\">);</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">But nothing helps!</span></p>\r\n<p><span style=\"color:black; font-size:10pt\">thanks for you help!</span></p>\r\n",
+    "PostedDate": "2011-08-18T02:00:51.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "660287",
+    "ThreadId": "269527",
+    "Html": "<p>Mate, I think these markup is not correct.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre style=\"color: black;\"><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">div</span><span style=\"color: blue;\">&gt;</span>\r\n\r\n<span style=\"color: blue;\"><span style=\"white-space: pre;\">\t</span>&lt;</span><span style=\"color: #a31515;\">form</span><span style=\"color: blue;\">&gt;</span>\r\n\r\n<span style=\"color: blue;\"><span style=\"white-space: pre;\">\t</span>&lt;/</span><span style=\"color: #a31515;\">div</span><span style=\"color: blue;\">&gt;</span>\r\n\r\n<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">form</span><span style=\"color: blue;\">&gt;</span></pre>\r\n<pre>Should be:</pre>\r\n<pre>&lt;div&gt;</pre>\r\n<pre><span style=\"white-space: pre;\">\t</span>&lt;form&gt;</pre>\r\n<pre><span style=\"white-space: pre;\">\t</span>&lt;/form&gt;<span style=\"white-space: pre;\">\t</span></pre>\r\n<pre>&lt;/div&gt;</pre>\r\n<pre><br /></pre>\r\n<pre>Perhaps that's causing the error.</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-08-18T16:18:57.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "660371",
+    "ThreadId": "269527",
+    "Html": "<p>Well, I am parsing a site that I have no control over...</p>",
+    "PostedDate": "2011-08-18T22:30:32.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "668283",
+    "ThreadId": "269527",
+    "Html": "<p>Html agility pack turns out to be... not so agile.</p>\n<p>If \"<em>The parser is very tolerant with \"real world\" malformed HTML</em>\" as the front page of this project says, then why can't it handle a simple task of retrieving inputs that belong to a particular form?</p>",
+    "PostedDate": "2011-09-06T14:08:28.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "668294",
+    "ThreadId": "269527",
+    "Html": "<p>@dovydasm, stop whining and try to find a solution for that.</p>",
+    "PostedDate": "2011-09-06T14:36:48.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

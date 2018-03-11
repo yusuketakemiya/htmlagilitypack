@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "657467",
+    "ThreadId": "268920",
+    "Html": "\r\n<p>Hello, I can't see to find the proper documentation for this.</p>\r\n<p>I know it's possible to get the start index of a node, I'm trying to find where does the node ends.</p>\r\n<p>Is this possible ? Or would I have to customize the source code to attatch the property I'm looking for.</p>\r\n",
+    "PostedDate": "2011-08-12T15:21:16.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "657493",
+    "ThreadId": "268920",
+    "Html": "<p>I've been tryting to edit the source code to add this property I'm looking for , I believe I must get the line position in which in the ending node is found.</p>\r\n<p>I think that happens in the&nbsp;CloseCurrentNode() function in the HtmlDocument.cs file, but it's very difficult to understand what's going on in the code when there are not comments to indicate what that code is doing.</p>\r\n<p>&nbsp;</p>\r\n<p>Can anyone help me out ? Cheers</p>",
+    "PostedDate": "2011-08-12T17:20:38.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "657892",
+    "ThreadId": "268920",
+    "Html": "<p>From my understanding of the code, it doesn't actually process nodes like \"&lt;/div&gt;\" \"&lt;/body\", does it ?</p>\r\n<p>Can anyone give me some guidance ?</p>",
+    "PostedDate": "2011-08-13T18:30:47.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1124407",
+    "ThreadId": "469052",
+    "Html": "Hi,\r<br />\n<br />\nI am new to HtmlAgilityPack, and was told to load the meta data by using HtmlAgilityPack, this works perfect. But the issue I have to face, is that when loading the major websites such as Google and Facebook, their description isn't shown and their title is different. For Facebook it is Update your browser | Facebook.\r<br />\n<br />\nHow to prevent this? I mean what type of browser is used to load the data? I have recently downloaded the pack from NuGet gallery, so which means this is latest. And the code I am using is ow to prevent this? I mean what type of browser is used to load the data? I have recently downloaded the pack from NuGet gallery, so which means this is latest. And the code I am using is <br />\n<pre><code>@using HtmlAgilityPack;\n@{\n    Layout = &quot;~/_SiteLayout.cshtml&quot;;\n    var Title = &quot;&quot;;\n    var Description = &quot;&quot;;\n    using(var client = new WebClient()){\n        var html = client.DownloadString(&quot;http://www.facebook.com&quot;);\n        var doc = new HtmlDocument();\n        doc.LoadHtml(html);\n        var title = doc.DocumentNode.Descendants(&quot;title&quot;).FirstOrDefault();\n        if(title != null){\n            Title = title.InnerText;\n        }\n        var description = doc.DocumentNode.Descendants(&quot;meta&quot;)\n                                          .Where(n =&gt; n.GetAttributeValue(&quot;name&quot;, String.Empty)\n                                          .Contains(&quot;description&quot;)).FirstOrDefault();\n        if(description != null){\n            Description = description.GetAttributeValue(&quot;content&quot;, string.Empty);\n        }\n    }\n}</code></pre>\n\nAny guidance?<br />\n",
+    "PostedDate": "2013-11-16T08:17:24.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "679795",
+    "ThreadId": "274714",
+    "Html": "\r\n<p>i have this code in csharp but i'm getting an error on the line:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">object</span> val = el.Attributes(<span style=\"color:#a31515\">&quot;value&quot;</span>).Value;\r\n<span>Error</span><span> </span><span>1</span><span> </span><span>Non</span><span>-</span><span>invocable member </span><span class=\"str\">'HtmlAgilityPack.HtmlNode.Attributes'</span><span> cannot be used like a method</span><span>.</span>\r\n</pre>\r\n</div>\r\n<div style=\"color:black; background-color:white\">\r\n<pre> how to fix it?</pre>\r\n<pre><span style=\"color:blue\">string</span> pageUrl = <span style=\"color:#a31515\">&quot;site1&quot;</span>; //hidden site\r\n\r\n            HtmlAgilityPack.HtmlWeb hDoc = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlWeb();\r\n            <span style=\"color:blue\">var</span> doc = hDoc.Load(pageUrl);\r\n\r\n            <span style=\"color:green\">//find the div containing the flash code </span>\r\n            <span style=\"color:blue\">var</span> div = doc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//div[@id='animador_noar']&quot;</span>);\r\n           \r\n            \r\n            \r\n            <span style=\"color:green\">//find the params node with the name 'movie' </span>\r\n            <span style=\"color:blue\">var</span> el = div.SelectSingleNode(<span style=\"color:#a31515\">&quot;//param[@name='movie']&quot;</span>);\r\n            \r\n            <span style=\"color:green\">//find the value of the value tag </span>\r\n            <span style=\"color:blue\">object</span> val = el.Attributes(<span style=\"color:#a31515\">&quot;value&quot;</span>).Value;\r\n           \r\n           \r\n             \r\n\r\n            <span style=\"color:green\">//do something with the value. </span>\r\n            Response.Write(val);\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2011-10-04T06:59:16.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

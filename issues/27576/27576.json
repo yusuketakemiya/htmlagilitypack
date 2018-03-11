@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi I have some issues parsing html based CFM file ColdFusion file, the Html Agility parse parses 98 % of the file correct, at the end of the file, the parser flag a tag as a text, I tried it in code, and using Html Agility Pack Tester, and I got the same result, the paser classified the tag </form> as text..  The following is the file:  The issue is in the 3rd tag from the end, the closing of form tag </form>\n \n I attached the file \"indexContact.cfm.htm\" that made issue",
+    "LastUpdatedDate": "2013-02-21T18:47:15.203-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-06-15T01:41:45.203-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "In correct parsing of HTML based CFM file",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 27576
+  },
+  "FileAttachments": [
+    {
+      "FileId": 10444,
+      "FileName": "indexContact.cfm.htm",
+      "DownloadUrl": ".\\10444"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This the file the made issues",
+      "PostedDate": "2010-06-15T01:43:16.82-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-15T01:45:00.91-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Some feed back will be appreciated ",
+      "PostedDate": "2010-06-15T01:45:53.79-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:15.203-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

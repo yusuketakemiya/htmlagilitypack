@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "5487",
+    "ThreadId": "1726",
+    "Html": "\r\nHi All,<br /><br />just starting to work with the Agility-Pack i have a (simple?) Question. Via:<br /><br />HtmlAgilityPack.HtmlWeb      oWeb = new HtmlAgilityPack.HtmlWeb();<br />HtmlAgilityPack.HtmlDocument oDoc = oWeb.Load(sURL);<br /><br />i get the requested Htmldocument. To find a specific table, i iterate through the Elements/Nodes and there Childnotes as long as i have the wanted Node representing the Table.<br /><br />This Iteration is not so lovely - as well as i know what Table i want and i have an Attribute, in this case a class=\"Hello\". In Htmlcode as:<br /><br />&lt;table class=\"Hello\" border=0&gt;<br /><br />Is it possible to search directly for an specific Node? For Example something like this:<br /><br />oDoc.GetNodeByAttribute(\"table\",\"class\",\"Hello\")<br /><br />Thanks in Advance !!<br /><br />Regards<br />Jan Waiz<br /><br />",
+    "PostedDate": "2006-10-06T04:11:59.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "5714",
+    "ThreadId": "1726",
+    "Html": "\r\nTake a look at SelectNodes() and SelectSingleNode() with an XPATH:<br /><br />doc.DocumentNode.SelectSingleNode(\"//table<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40class%3d%5c%22Hello%5c%22\">@class=\\\"Hello\\\"</a>\");<br />",
+    "PostedDate": "2006-10-12T18:35:42.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "5918",
+    "ThreadId": "1726",
+    "Html": "\r\nThanks for your Replay - but i did not have Success...<br /><br />Take this Url for Example:<br />http://www.nikotel.de/nikotel-tarife-standard.html<br />and search for that Table as class=\"ratesContent\"<br /><br />I use it as:<br />HtmlAgilityPack.HtmlNode TableNode = oRootNode.SelectSingleNode(\"//table@class=\\\"ratesContent\\\"\");<br /><br />I get an Error as this:<br />'//table@class=\"ratesContent\"' is an unguilty Token<br /><br />Any Idea ?<br /><br />Thanks a lot in Advance !!!<br /><br />Regards<br />Jan Waiz<br />",
+    "PostedDate": "2006-10-18T05:53:10.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "5919",
+    "ThreadId": "1726",
+    "Html": "\r\nSorry - here is the complete code:<br /><br />HtmlAgilityPack.HtmlWeb      oWeb = new HtmlAgilityPack.HtmlWeb();<br />HtmlAgilityPack.HtmlDocument oDoc = oWeb.Load(sURL);<br /><br />HtmlAgilityPack.HtmlNode oRootNode = oDoc.DocumentNode;<br /><br />if (oRootNode == null)<br />{ throw new Exception(\"RootNode not found...\"); }<br /><br />HtmlAgilityPack.HtmlNode oTableNode = oRootNode.SelectSingleNode(\"//table@class=\\\"ratesContent\\\"\");<br />",
+    "PostedDate": "2006-10-18T05:55:07.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "6906",
+    "ThreadId": "1726",
+    "Html": "\r\nLooks like CodePlex is turning his text into an href.<br /><br />In XPath, you place brackets '<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%27%20and%20%27\">' and '</a>' around your matching expression for a node.<br /><br />Where you see hyperlinks in the code he provided, put brackets around the text that is hyperlinked.<br />",
+    "PostedDate": "2006-11-03T07:21:09.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "6907",
+    "ThreadId": "1726",
+    "Html": "\r\nHa, it did it to me too.<br /><br />Brackets: <br /><br /><ul><ul><ul><li>      ***</li></ul></ul><li>          *</li><li>          *</li><ul><ul><li>      ***</li></ul></ul></ul><br />Anybody know if there is an escape to prevent brackets from creating links in codeplex?<br />",
+    "PostedDate": "2006-11-03T07:22:39.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "6908",
+    "ThreadId": "1726",
+    "Html": "\r\nSeriously, codeplex's auto-formatting of character combo's is annoying.<br />",
+    "PostedDate": "2006-11-03T07:23:23.797-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

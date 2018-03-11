@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "485001",
+    "ThreadId": "224892",
+    "Html": "<p>Hi all,</p>\r\n<p>I know it may be of my noobness in XPath, but let me ask to make sure, cuz I've googled enough.</p>\r\n<p>I have a website and wanna get the news headings from it: www.farsnews.com (it is Persian)</p>\r\n<p>Using FireBug and FireXpath extensions under firefox and by hand I extract and test multiple Xpath expressions that matches the headings, such as:</p>\r\n<ul>\r\n<li>html/body/div[2]/div[2]/div[2]/div[*]/div[2]/a/div[2]</li>\r\n<li>.//*[@class=&quot;topnewsinfotitle &quot;]</li>\r\n<li>.//div[@class=&quot;topnewsinfotitle &quot;]</li>\r\n</ul>\r\n<p>I also tested these using XPather extension and they seem to work pretty well, but when I get to test them... the SelectNodes returns null!</p>\r\n<p>Any clue or hint?</p>\r\n<p>here is a chunk of the code:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>listBox2.ResetText();\r\n\r\n            HtmlAgilityPack.HtmlWeb w = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlWeb();\r\n            HtmlAgilityPack.HtmlDocument doc = w.Load(<span style=\"color:#a31515\">&quot;http://www.farsnews.com&quot;</span>);\r\n            HtmlAgilityPack.HtmlNodeCollection nc = doc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;.//div[@class=\\&quot;topnewsinfotitle \\&quot;]&quot;</span>);\r\n            \r\n            listBox2.Items.Add(nc.Count+<span style=\"color:#a31515\">&quot; Items selected!&quot;</span>);\r\n\r\n            <span style=\"color:blue\">foreach</span> (HtmlAgilityPack.HtmlNode node <span style=\"color:blue\">in</span> nc) {\r\n                listBox2.Items.Add(node.InnerText);\r\n            }\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-08-26T00:39:24.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "485926",
+    "ThreadId": "224892",
+    "Html": "<p>nothing?</p>",
+    "PostedDate": "2010-08-27T23:00:33.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "486527",
+    "ThreadId": "224892",
+    "Html": "<pre><span style=\"color:#a31515\"><br>I would use <br><br>&quot;//div[@class='topnewsinfotitle ']&quot;<br><br>I'm not sure is there difference between &quot;&quot;&quot; and &quot;'&quot;, but it's simpler. I used similar expressions many times and they worked.</span></pre>",
+    "PostedDate": "2010-08-30T10:58:38.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

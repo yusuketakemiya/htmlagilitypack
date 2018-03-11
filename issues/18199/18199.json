@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "There are some limits to the output. But as the comment say, you can use the OptionWriteEmptyNodes property",
+    "ClosedDate": "2009-05-17T23:43:18.05-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nI have a quick query, This package is awesome, but I am slightly confused as using HtmlDocument strips out all valid XHTML tags like <br /> and <hr /> becomes <br> and <hr>.\n \nWhat do I have to tweak to get the results I need?\n \nCode snippet:\nusing HtmlAgilityPack;\n \npublic string ReplaceLinkManagement(string match, string targetfield, string sourcetext)\n\t\t{\n\t\t\t HtmlDocument doc = new HtmlDocument();\n\t\t\t doc.LoadHtml(sourcetext);\n \n\t\t\t HtmlNodeCollection atts = doc.DocumentNode.SelectNodes(\"//a[@href]\");\n \n\t\t\tif (atts == null)\n\t\t\t{\n\t\t\t\treturn sourcetext;\n\t\t\t}\n \netc...\n \n}\n \nHelp will really be appreciated.\nThanks.",
+    "LastUpdatedDate": "2013-05-16T05:33:00.02-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-08-28T09:16:22.007-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Valid XHTML",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 9,
+    "Id": 18199
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Try setting the OptionOutputAsXml property of your document to true",
+      "PostedDate": "2009-01-11T13:31:59.293-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-17T03:48:38.863-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The closing />'s will only be written is the OptionWriteEmptyNodes option is set to true (it's false by default).  The code logic appears in HtmlNode.cs, line 1603:\r\n\r\nif ((_ownerdocument.OptionWriteEmptyNodes) || (_ownerdocument.OptionOutputAsXml))\r\n{\r\n\toutText.Write(\" />\");\r\n}\r\nelse\r\n{\r\n\tif (Name.Length > 0)\r\n\t{\r\n\t\tif (Name[0] == '?')\r\n\t\t{\r\n\t\t\toutText.Write(\"?\");\r\n\t\t}\r\n\t}\r\n\r\n\toutText.Write(\">\");\r\n}\r\n\r\n\r\nI went so far as to change the default option to true,  via HtmlDocument.cs, line 72.",
+      "PostedDate": "2009-05-10T11:23:23.143-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-10T11:23:42.627-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-17T23:43:18.05-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:25.507-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:33:00.02-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

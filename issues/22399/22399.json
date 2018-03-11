@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This is by design. You should use the PreRequest property on HtmlWeb and change it in your code, not in the Html Agility Pack code.",
+    "ClosedDate": "2009-05-17T23:34:04.6-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "First of all let me say how great the Html Agility Pack is. I just started using it and I love it. Anyway...\n \nThe user agent is never set for the HttpWebRequest object. This will cause websites like http://www.microsoft.com/ to fail/return bad data because they look for a valid agent.\n \nLine 320 of HtmlWeb.cs should be:\nreq.UserAgent = \"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)\";",
+    "LastUpdatedDate": "2013-05-16T05:32:58.93-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-05-14T19:03:09.393-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HttpWebRequest User Agent",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 22399
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'm sorry; I didn't provide an example. Try the following code before adding the user agent and then again once you add it:\r\n\r\nUsing the Html2Txt example add this to the HtmlConvert class:\r\npublic string Convert(string url)\r\n{\r\n    HtmlWeb htmlWeb = new HtmlWeb();\r\n    HtmlDocument htmlDocument = htmlWeb.Load(url);\r\n    StringWriter stringWriter = new StringWriter();\r\n    ConvertTo(htmlDocument.DocumentNode, stringWriter);\r\n    stringWriter.Flush();\r\n    return stringWriter.ToString();\r\n}\r\n\r\nThen change the test function in the Html2Txt.cs to:\r\nstatic void Test()\r\n{\r\n    HtmlToText htt = new HtmlToText();\r\n    string s = htt.Convert(\"http://www.microsoft.com/\");\r\n    StreamWriter sw = new StreamWriter(\"Microsoft.txt\");\r\n    sw.Write(s);\r\n    sw.Flush();\r\n    sw.Close();\r\n}",
+      "PostedDate": "2009-05-14T19:21:42.497-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-17T23:34:04.6-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:23.35-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:58.93-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

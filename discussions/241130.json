@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "546591",
+    "ThreadId": "241130",
+    "Html": "\r\n<p>I need to remove malformed html. So &lt;div&gt;This is some&lt;strong&gt;text&lt;div&gt; would end up being &lt;div&gt;This is some text&lt;/div&gt;.</p>\r\n<p>Can HAP do this and how?</p>\r\n",
+    "PostedDate": "2011-01-10T04:26:18.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

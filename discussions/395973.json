@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "914241",
+    "ThreadId": "395973",
+    "Html": "\r\n<p><span>hi, i want to &nbsp;select &nbsp;a div &nbsp;<span>which its &nbsp;contain &quot;post-1&quot;, &quot;post-2&quot;, &quot;post-3&quot; is there any chance for me ?</span></span></p>\r\n<p>&nbsp;</p>\r\n<p><span>&lt;div&nbsp;</span><span>id</span><span>=&quot;</span><span>post-405</span><span>&quot;\r\n</span><span>class</span><span>=&quot;</span><span>post-405 post type-post status</span><span>&quot;&gt;</span></p>\r\n<p><span>&lt;div id=&quot;post-105&quot;&nbsp;class=&quot;post-105 post type-post status&quot;&gt;</span></p>\r\n<p><span>&lt;div id=&quot;post-5&quot;&nbsp;class=&quot;post-5 post type-post status&quot;&gt;</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>now i m using this but its cant get .</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;HtmlNode Blog = doc.DocumentNode.SelectNodes(@&quot;//div[@class=&quot;post&quot;]))</p>\r\n",
+    "PostedDate": "2012-09-18T10:39:17.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914338",
+    "ThreadId": "395973",
+    "Html": "<p>I'd recommend using the LINQ compatible functions</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">var</span> results = doc.DocumentNode\r\n                 .Descendants(<span style=\"color: #a31515;\">\"div\"</span>)\r\n                 .Where(x=&gt;x.Attributes.Contains(<span style=\"color: #a31515;\">\"class\"</span>) &amp;&amp;\r\n                           x.Attributes[<span style=\"color: #a31515;\">\"class\"</span>].Value.Contains(<span style=\"color: #a31515;\">\"post\"</span>));\r\n</pre>\r\n</div>\r\nThis will get a list of all divs that contain a the word post in the class attribute</p>",
+    "PostedDate": "2012-09-18T14:58:25.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

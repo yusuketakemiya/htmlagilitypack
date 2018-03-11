@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "271447",
+    "ThreadId": "79288",
+    "Html": "<p>I am not sure it is the right area to ask this questions.</p>\r\n<p>I am working on a project where I have to make REST Api call,as a response i am getting back xml response.</p>\r\n<p>For which I have to generate an html output,which i am not sure but i think i can use xpath and xsl to generate html.</p>\r\n<p>Can i do it with htmlagilitypack?</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-29T08:03:14.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271451",
+    "ThreadId": "79288",
+    "Html": "<p>Actually XSLT is perfect for doing that. I remember a time back when it was all the rage to dynamically generate HTML pages from XML using XSLT. I've done it in .NET and PHP. I don't think HtmlAgilityPack will help you, it is more useful for going the other direction, Html to XML.</p>\r\n<p><br>XSLT is meant for transforming XML into other XML or something else. Though I must say while it is meant for that it has the drawback of being rather complex and hard to maintain. It may be easier to use LINQ to XML to dynamically generate the HTML.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-29T08:11:41.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271458",
+    "ThreadId": "79288",
+    "Html": "<p>Darth,</p>\r\n<p>Thank You..</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-29T08:24:44.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

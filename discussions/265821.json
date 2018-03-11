@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "644774",
+    "ThreadId": "265821",
+    "Html": "\r\n<p>i try to htmlagilitypack to get document link http://vsd.vn/p4c22/tin-thanh-vien.htm following code:</p>\r\n<p>HtmlWeb htmlweb= new HtmlWeb();</p>\r\n<p>HtmlDocument doc=htmlweb.load(&quot;http://vsd.vn/p4c22/tin-thanh-vien.htm&quot;);</p>\r\n<p>and then</p>\r\n<p>i get all Nodes</p>\r\n<p>NewsListNode = doc.DocumentNode.SelectNodes(&quot;//*[@id='VSD_DanhSachTinTuc']/ul[1]//a&quot;);</p>\r\n<p>but NewsListNode= null</p>\r\n<p>because node Div have not childnode but response to browser debug by firebug have result</p>\r\n<p>help me</p>\r\n<p>thanks all</p>\r\n",
+    "PostedDate": "2011-07-19T21:03:59.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "426994",
+    "ThreadId": "208216",
+    "Html": "<p>Hi ! First, thanks for this very cool library !</p>\r\n<p>Is there an envisaged method for extracting the doctype of the document ?</p>\r\n<p>I can make it with a small regex, but I will not reinvent the well if there is a function. Thanks !</p>",
+    "PostedDate": "2010-04-02T22:02:03.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

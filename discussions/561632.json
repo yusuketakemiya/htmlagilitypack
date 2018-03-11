@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1291523",
+    "ThreadId": "561632",
+    "Html": "Thread on SA : <a href=\"http://stackoverflow.com/questions/25395547/how-to-set-encoding-when-using-htmlagilitypack-htmldocument-loadhtml\" rel=\"nofollow\">http://stackoverflow.com/questions/25395547/how-to-set-encoding-when-using-htmlagilitypack-htmldocument-loadhtml</a>\r<br />\n<br />\n<br />\n<br />\nI already have the source of HTML page so i am using<br />\n<pre><code>string html_page_source=&quot;bla bla some source&quot;;\nHtmlDocument hdMyDoc = new HtmlDocument();\nhdMyDoc.LoadHtml(html_page_source);</code></pre>\n\nHowever i see not decoded characters such as<br />\n<pre><code>&amp;nbsp; \ni&amp;ccedil;erisinde \ng&amp;ouml;r&amp;uuml;nd&amp;uuml;ğ&amp;uuml;nden &amp;ccedil;ok\n.\n.</code></pre>\n\nSo how can i set auto decode at htmldocument ?\r<br />\n<br />\nHow can i set default encoding to solve this problem ?\r<br />\n<br />\nAnd would this below method a good practice ?\r<br />\n<br />\n<strong>hdMyDoc.LoadHtml(HttpUtility.HtmlDecode(html_page_source));</strong>\r<br />\n<br />\nC# .net 4.5 latest , WPF application<br />\n",
+    "PostedDate": "2014-08-19T18:54:38.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

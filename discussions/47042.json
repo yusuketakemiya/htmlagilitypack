@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "157343",
+    "ThreadId": "47042",
+    "Html": "Hello,<br>\r\n<br>\r\nI have question... I've been using Html Agility Pack for a while, and it really doing well. Infact, I use it in order to scarp content from a certain site. Although it works well, I've encounterd a problem: In a specific case, I need to click on a link button before I'll try to process the page. The link button itself casuses a postback by pointing to the following href:<br>\r\n &quot;<em>javascript:__doPostBack('ctl00$SideMenu1$aSrc','')</em>&quot;<br>\r\nI've tried to call formProcessor.Web.Load() with the specific JS code but with no success.<br>\r\n<br>\r\nI wonder if anyone has a solution to this specific problem? Any help will be greatly appreciated! :-)<br>\r\nThank you very much, and have a pleasent day.<br>\r\n<br>\r\nNadav Yeheskel,<br>\r\n<a href=\"http://www.any-techs.co.il\">www.any-techs.co.il</a><br>\r\n<a href=\"http://www.any-techs.com\">www.any-techs.com</a>\r\n",
+    "PostedDate": "2009-02-13T01:45:20.403-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166353",
+    "ThreadId": "47042",
+    "Html": "Phhfttt... talk about a nightmare about doing that in C#. I know search engine crawlers do stuff like this, but I'd imagine the best approach for them is to literally fork code from browser code to keep behaviour consistent.<br>\r\n<br>\r\nUnless you've got google resources, might be best to load an instance of a browser exe from your app, then create a pipe between that server-side browser instance and your application.<br>\r\n<br>\r\nThat way, the page will behave properly.<br>\r\n<br>\r\nI'm sure someone on the net has tried/done this.<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-09T22:01:00.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

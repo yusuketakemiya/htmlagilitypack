@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "512819",
+    "ThreadId": "232386",
+    "Html": "\r\n<p>Hi,<br>\r\nMy question is why when I get the InnerText property of a field whose contents has html entities, the returned string still has these entities.</p>\r\n<p>By example:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">p</span><span style=\"color:blue\">&gt;</span>Filosof<span style=\"color:red\">&amp;iacute;</span>a<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">p</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>When I do p.InnerText, I should get: Filosof&iacute;a <br>\r\nBut I get: Filosof&amp;iacute;a</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2010-10-26T09:51:31.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

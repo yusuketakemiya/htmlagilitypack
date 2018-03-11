@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "```\nPM> Install-Package HtmlAgilityPack\nInstall-Package : Unable to find package 'HtmlAgilityPack'\nAt line:1 char:16\n+ Install-Package <<<<  HtmlAgilityPack\n    + CategoryInfo          : NotSpecified: (:) [Install-Package], Exception\n    + FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PackageManagement.PowerShellCmdlets.InstallPackageCommand\n \n```",
+    "LastUpdatedDate": "2016-01-15T10:45:39.737-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-08-18T11:58:06.003-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "VS 2015 Unable to find package 'HtmlAgilityPack'",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43218
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks, my default nuget is Microsoft and .NET, change to nuget.org and add this nuget fo solution. Close",
+      "PostedDate": "2015-08-18T12:17:34.07-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I believe you have to have an OPEN project to perform this \"Install-Package\".\r\n\r\nRegards,\nMark Ward\nCarson, CA",
+      "PostedDate": "2016-01-15T10:45:39.737-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

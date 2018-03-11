@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "667139",
+    "ThreadId": "271367",
+    "Html": "\r\n<p>Hi all,</p>\r\n<p>&nbsp;</p>\r\n<p>Some time ago I read a log post from which I think was the creator of HAP, stating that he would no longer dedicate time to the library, and things thatwere left to be done, etc. I seem not to be able to find the post now.</p>\r\n<p>At the same time, I now see thruogh Twitter that there's some kind of maintenance , and lots of people seem to be using it. As I am starting some new projects I'd like to know what's the situation looking forward? Is there any plan on improving it by implementing\r\n new features, bug fixes, tuning performance, etc?</p>\r\n<p>The library works great but we all know this is a fast moving world, so I wonder if it will be able to coup with the changes nad keep improving or not.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a lot.</p>\r\n<p>&nbsp;</p>\r\n<p>P.S: Of course, this is not to discredit the author and people who have been involved in this great software, because it is and I love it, just my concerns for the future.</p>\r\n",
+    "PostedDate": "2011-09-03T05:28:47.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "667283",
+    "ThreadId": "271367",
+    "Html": "<p>I have posted in here in the past on some ideas/plans for 2.0. I still hope to bring HAP forward to it but over the last year or so I've been from one tight deadline to the next.&nbsp;</p>\r\n<p>I do have a rather large list of items I want to target for the 2.0 series. Unfortunately many some of the big things are rather large undertakings, like fixing stackoverflow on large html docs. Any changes that deal with the parsing engine directly need to be done with great care and attention. The parser is extremely efficient for performance and thus rather complex.</p>\r\n<p>Here are some high level items/ideas.</p>\r\n<ul>\r\n<li>TONS of unit tests</li>\r\n<li>Change default parsing options to coform with HTML5 and modern expectations. HAP was built with HTML 3 in mind.</li>\r\n<li>Overhaul the XPATH support for attribute selection and more xpath function support.</li>\r\n<li>Add quicker to access useful functions</li>\r\n<li>Make the parsing options more discoverable and centralized. Basically create a new configuration class that can be passed in, instead of different properties on the document that are only used during parsing. Also like the elements configuration collection</li>\r\n<li>Overhaul HtmlWeb: better credential and proxy support, easier to understand encoding options.&nbsp;</li>\r\n<li>Possibly integrate Fizzler or a system like it</li>\r\n<li>Build many examples</li>\r\n</ul>\r\n<p>The big thing 2.0 will have many, many breaking changes. The API currently reflects conventions of .NET 1.0 and System.Xml. I really would like to change it to more reflect LINQ to XML.</p>",
+    "PostedDate": "2011-09-03T16:59:48.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "667787",
+    "ThreadId": "271367",
+    "Html": "<p>Thanks for answering darthobiwan,</p>\r\n<p>Hope I could help, and that's why I can't ask for anything but be very grateful for being provided with this. I truly love the library but I know it's not a trivial thing, and many other similar projects have been discontinued or are in a similar situation in which it's difficult for them to keep going forward.</p>\r\n<p>&nbsp;</p>\r\n<p>Good news about the 2.0 release though, whenever it comes, specially the part of conforming it with HTML5 and the new things on the web.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you for all the hard work. Cheers!</p>",
+    "PostedDate": "2011-09-05T09:47:52.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

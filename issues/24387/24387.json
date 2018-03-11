@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "HtmlTextNode's Text property and HtmlAttribute's Value property returns unresolved entities in value.\nTo resolve them, I may use HtmlEntity.DeEntitize, but it is not legal way. These properties must returns plain resolved values.\nHtmlTextNode.Text simple returns OuterHtml, but they are not the same!",
+    "LastUpdatedDate": "2013-02-21T18:47:22.637-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-08-20T11:21:40.15-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlTextNode.Text and HtmlAttribute.Value returns unresolved entities",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 24387
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

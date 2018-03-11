@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I was finding that some html pages from the wild had html attribute names that started with a number, or were entirely a number, e.g.\n \n<p 2.5=\"\">something</p>\n \nSo a made a patch to htmlagilitypack-63084/Trunk/HtmlAgilityPack/HtmlDocument.cs\nso that such a thing could be output as xml.\n \npublic static string GetXmlName(string name)\n{\n...\n if ((name.Length == 0) || ((!((name[0]>='a') && (name[0]<='z'))) && name[0] != '_'))\n {\n  // to handle attributes names such as 2.4 which is of course garbage.\n  xmlname += \"_\";\n }\n...\n}",
+    "LastUpdatedDate": "2013-02-21T18:47:17.9-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-03-30T09:26:09.057-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "GetXmlName is too permissive, with a Patch",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 26634
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

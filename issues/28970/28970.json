@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "There are two projects out there doing jquery selectors for .NET http://code.google.com/p/fizzler/\nand http://code.google.com/p/sharp-query/\n \nWould be cool to add this onto HAP - see discussion http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=76383",
+    "LastUpdatedDate": "2016-08-31T01:26:05.97-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-09-26T20:00:48.193-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add CSS Selector Query Engine onto HTMLAgilityPack",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 23,
+    "Id": 28970
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "In the meantime you can use css2xpath https://bitbucket.org/MostThingsWeb/css2xpath-reloaded and attach it to HtmlAgilityPack via extension methods",
+      "PostedDate": "2016-08-31T01:26:05.97-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

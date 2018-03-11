@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "242679",
+    "ThreadId": "71157",
+    "Html": "<p>&nbsp;</p>\r\n<p>Hi,</p>\r\n<p>I'm trying to use HAP within a Asp.net page (VB.net).</p>\r\n<p>The app doesn't compile and causes the following error:</p>\r\n<p>System.Security.SecurityException: That assembly does not allow partially trusted callers.</p>\r\n<p>Does anyone has an idea how to solve that beside changing the .Net trust level on server side. The app runs on a hosted web space where I do not have the chance to change this.</p>\r\n<p>Would it be possible to ad the necessary information to the assambly?</p>\r\n<p>Thanks</p>\r\n<p>Oliver</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-06T12:30:52.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242681",
+    "ThreadId": "71157",
+    "Html": "<p>You can add an attribute to the assembly to allow partial trust but depending on how you use HAP you may need to remove some code. HAP utilizes Mime information from the registry which requires full trust in ASP.NET</p>",
+    "PostedDate": "2009-10-06T12:35:10.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "243240",
+    "ThreadId": "71157",
+    "Html": "<p>I just committed an update to allow HAP to run in Medium Trust environments. The biggest issue lay in the registry usage in the HtmlWeb class. I added a default list of extensions and content types to be used when the registry is not available. (this may also make the library compatible with Silverlight, though not yet tested)</p>",
+    "PostedDate": "2009-10-07T20:26:17.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "255901",
+    "ThreadId": "71157",
+    "Html": "<p>Hi, ran into the same problem.</p>\r\n<p>&nbsp;</p>\r\n<p>Where can I get a holp of the update?</p>",
+    "PostedDate": "2009-11-11T02:23:13.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

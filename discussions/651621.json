@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1463972",
+    "ThreadId": "651621",
+    "Html": "Hi,\r<br />\n<br />\nI have heard from my friend that it is possible to parse html document using HTMLAgilityPack with predefined template.Could you please suggest whether it is possible to define template and parse html document using this templates?\r<br />\n<br />\nFor example,html document looks like \r<br />\n<br />\n&lt;html&gt;\r<br />\n&lt;body&gt;<br />\n&lt;div id=&quot;id1&quot;&gt;\r\n      &lt;div id=&quot;id2&quot;&gt;some content &lt;/div&gt;\r\n      &lt;div id=&quot;id3&quot;&gt;some other content&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/body&gt;\r<br />\n<br />\n&lt;html&gt;\r<br />\n<br />\nTemplate will look like\r<br />\n<br />\n&lt;template id=&quot;id1&quot;&gt;\r<br />\n   &lt;template id=&quot;id3&quot;&gt;&lt;/template&gt;\r<br />\n&lt;/template&gt;<br />\n",
+    "PostedDate": "2016-02-22T08:42:15.28-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1469346",
+    "ThreadId": "651621",
+    "Html": "Hi everyone;\r<br />\nPlease could you help me  I have a big problem\r<br />\nI got this web page  <a href=\"http://www.brh.net/tableaux/tauxdujour.htm\" rel=\"nofollow\">http://www.brh.net/tableaux/tauxdujour.htm</a>\r<br />\nand I want to extrat this data from the table   where  &lt;td class=&quot;x187&quot;&gt; ...data... &lt;/td&gt;\r<br />\n<br />\nI try several times to extract the data but it doesn't work\r<br />\nPlease Help me<br />\n",
+    "PostedDate": "2016-04-07T09:13:57.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1469379",
+    "ThreadId": "651621",
+    "Html": "\r\n<div>\r\n<div style=\"font-family:Calibri,sans-serif; font-size:11pt\">Can you guys show your code, or make a sample to demonstrate it? Or fabricate an example that works for testing but not from real source?</div>\r\n</div>\r\n<div dir=\"ltr\">\r\n<hr>\r\n<span style=\"font-family:Calibri,sans-serif; font-size:11pt; font-weight:bold\">Fra:\r\n</span><span style=\"font-family:Calibri,sans-serif; font-size:11pt\">[email removed]</span><br>\r\n<span style=\"font-family:Calibri,sans-serif; font-size:11pt; font-weight:bold\">Sendt:\r\n</span><span style=\"font-family:Calibri,sans-serif; font-size:11pt\">‎07.‎04.‎2016 18:14</span><br>\r\n<span style=\"font-family:Calibri,sans-serif; font-size:11pt; font-weight:bold\">Til:\r\n</span><span style=\"font-family:Calibri,sans-serif; font-size:11pt\">[email removed]</span><br>\r\n<span style=\"font-family:Calibri,sans-serif; font-size:11pt; font-weight:bold\">Emne:\r\n</span><span style=\"font-family:Calibri,sans-serif; font-size:11pt\">Re: HtmlAgilityPack parsing html using templates[htmlagilitypack:651621]</span><br>\r\n<br>\r\n</div>\r\n<p>From: tobeaman</p>\r\n<div id=\"ThreadNotificationPostBody\">Hi everyone; <br>\r\nPlease could you help me I have a big problem <br>\r\nI got this web page <a href=\"http://www.brh.net/tableaux/tauxdujour.htm\" rel=\"nofollow\">\r\nhttp://www.brh.net/tableaux/tauxdujour.htm</a> <br>\r\nand I want to extrat this data from the table where ...data... <br>\r\n<br>\r\nI try several times to extract the data but it doesn't work <br>\r\nPlease Help me<br>\r\n</div>\r\n",
+    "PostedDate": "2016-04-07T13:18:41.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

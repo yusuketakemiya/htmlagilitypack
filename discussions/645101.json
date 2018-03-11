@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1444847",
+    "ThreadId": "645101",
+    "Html": "Hi,<br />\nI'm trying to get the following information in the following HTML document (07:34,16:22,08:47) at the bottom of the page . How should I parse the HTML? I have problems finding the right string:<br />\n<pre><code>HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();\ndoc.LoadHtml(sb);\nHtmlNodeCollection title =doc.DocumentNode.SelectNodes(???????????????????????????)</code></pre>\n\nthanks<br />\n<pre><code>&lt;div class=&quot;col-sm-10 col-md-8&quot;&gt;\n                &lt;table class=&quot;table table-striped table-hover well&quot;&gt;\n                    &lt;thead&gt;\n                        &lt;tr&gt;\n                            &lt;th&gt;Date&lt;/th&gt;\n                            &lt;th&gt;Sunrise&lt;/th&gt;\n                            &lt;th&gt;Sunset&lt;/th&gt;\n                            &lt;th&gt;Day length&lt;/th&gt;\n                        &lt;/tr&gt;\n                        &lt;tr&gt;\n                            &lt;th colspan=&quot;4&quot;&gt;\n                                &lt;script async src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;\n                                &lt;!-- sunResTimesMonthCenter --&gt;\n                                &lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block&quot; data-ad-client=&quot;ca-pub-9603966150990290&quot; data-ad-slot=&quot;6680811280&quot; data-ad-format=&quot;auto&quot;&gt;&lt;/ins&gt;\n                                &lt;script&gt;(adsbygoogle=window.adsbygoogle||[]).push({});&lt;/script&gt;\n                            &lt;/th&gt;\n                        &lt;/tr&gt;\n                    &lt;/thead&gt;\n                    &lt;tbody&gt;\n                                                                &lt;tr&gt;\n                                                        &lt;td&gt;&lt;a href=&quot;/en/sun/canada/dorval/2015/january/1&quot; title=&quot;Sunrise and sunset times Dorval, January 1, 2015&quot;&gt;1 January 2015&lt;span class=&quot;hidden-xs hidden-sm underlined&quot;&gt;, Thursday&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;\n                            &lt;td&gt;07:34&lt;/td&gt;\n                            &lt;td&gt;16:22&lt;/td&gt;\n                            &lt;td&gt;08:47&lt;/td&gt;\n                        &lt;/tr&gt;</code></pre>\n\n",
+    "PostedDate": "2015-09-17T13:00:07.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1449752",
+    "ThreadId": "645101",
+    "Html": "I am not sure what you are trying to parse out of that HTML. But, for example, if you need href of all anchor tags, you could do:<br />\n<pre><code>foreach (var link in doc.DocumentNode.SelectNodes(&quot;//a[@href]&quot;))\n{\n    foreach (var linkAtt in link.Attributes)\n    {\n        linkAtt.Value.Dump();\n    }\n}\n</code></pre>\n\nAnd you can change parameter for SelectNodes method to be be &quot;//td&quot; or &quot;//div&quot;<br />\n<br />\nYeah, unfortunately, I don't find complete documentation as well. Would be nice if anyone could point out where to look for.<br />\n",
+    "PostedDate": "2015-10-26T10:02:44.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

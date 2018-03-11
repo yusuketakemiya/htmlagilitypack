@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "246260",
+    "ThreadId": "72151",
+    "Html": "<p>Hi -</p>\r\n<p>I am writing a simple app to parse international web pages. Unfortunately anytime I load a document, diatrics are lost and can't figure if I can fix the problem without recompiling the agility pack. I am loading the doc as follow:</p>\r\n<p>\r\n<p><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\">HtmlWeb</span></span></span><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"> hw = </span></span><span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\"><span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\"><span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\">new</span></span></span><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"> </span></span><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\">HtmlWeb</span></span></span><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\">();</span></span></p>\r\n<p><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\">HtmlDocument</span></span></span><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"> doc = hw.Load(url);</span></span></p>\r\n<p>Am I doing anything wrong?</p>\r\n<p>&nbsp;</p>\r\n<p>thx</p>\r\n</p>",
+    "PostedDate": "2009-10-15T14:52:19.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

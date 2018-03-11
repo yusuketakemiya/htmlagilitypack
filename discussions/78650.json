@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "269293",
+    "ThreadId": "78650",
+    "Html": "<p>Hey, I think I found a bug with whatever populates the InnerText value.</p>\r\n<p>In my application, I select this node:</p>\r\n<pre>&lt;option value=&quot;AE&quot;&gt;<br>Aerospace Engineering<br>&nbsp;&nbsp;&lt;/option&gt;<br><br></pre>\r\n<p>And the InnerText (or InnerHtml) property on the node is string.Empty.&nbsp; I suspect that because the inner text doesn't start until a new line, it doesn't catch it.&nbsp; Can anyone confirm this? or even better tell me what I should do to fix this?</p>",
+    "PostedDate": "2009-12-19T13:22:30.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "269296",
+    "ThreadId": "78650",
+    "Html": "<p>I grabbed the source code and took a peek inside.&nbsp; It seems Html Agility is classifying that node as an &quot;element&quot; with no child nodes.&nbsp; Thus returns string.Empty (HtmlNode.cs line 396).</p>\r\n<p>Anyone know why this is labeled as an element?</p>",
+    "PostedDate": "2009-12-19T13:34:32.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270355",
+    "ThreadId": "78650",
+    "Html": "<p>Because of ... history!</p>\r\n<p>Back then 10 years ago, HTML 3.2 allowed opening tags (such as &lt;OPTION&gt;) without a matching closing tag.&nbsp;Just change the Elements flags if you feel you don't want this &quot;legacy&quot; behavior :)</p>",
+    "PostedDate": "2009-12-23T09:49:25.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

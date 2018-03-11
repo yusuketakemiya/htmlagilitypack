@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "is there a way to load an HTMLDocument without loosing diatrics?",
+    "LastUpdatedDate": "2013-02-21T18:47:22.137-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-10-15T00:19:10.56-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "can't load diacritics",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 24925
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Can you add a file that contains 'diatrics' for a test purposes?",
+      "PostedDate": "2011-04-30T08:59:44.07-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "You mean like accents? What carecter set would you be intrested in seeing? I suppose Unicode would be the default.",
+      "PostedDate": "2011-05-01T07:27:34.127-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:22.137-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

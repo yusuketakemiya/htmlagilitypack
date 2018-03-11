@@ -1,0 +1,864 @@
+Index: Trunk/HtmlAgilityPack/HtmlAttributeCollection.cs
+===================================================================
+--- Trunk/HtmlAgilityPack/HtmlAttributeCollection.cs	(revision 88790)
++++ Trunk/HtmlAgilityPack/HtmlAttributeCollection.cs	(working copy)
+@@ -42,7 +42,7 @@
+                 }
+                 return Hashitems.ContainsKey(name.ToLower()) ? Hashitems[name.ToLower()] : null;
+             }
+-            set { Append(value); }
++            set { Append(value); }//TODO:this is misleading - which name is used?
+         }
+ 
+         #endregion
+@@ -88,7 +88,7 @@
+         /// </summary>
+         void ICollection<HtmlAttribute>.Clear()
+         {
+-            items.Clear();
++            items.Clear();//TODO:Hashitems?
+         }
+ 
+         /// <summary>
+Index: Trunk/HtmlAgilityPack/HtmlDocument.cs
+===================================================================
+--- Trunk/HtmlAgilityPack/HtmlDocument.cs	(revision 88790)
++++ Trunk/HtmlAgilityPack/HtmlDocument.cs	(working copy)
+@@ -1,10 +1,14 @@
+-// HtmlAgilityPack V1.0 - Simon Mourier <simon underscore mourier at hotmail dot com>
++//#define LOG
++//HtmlAgilityPack V1.0 - Simon Mourier <simon underscore mourier at hotmail dot com>
++//2011-05-14: with modifications by Eamon Nerbonne <eamon at nerbonne dot org>
++// - support for HTML optional end tags; support for 'p' doesn't detect nesting of block level elements.
+ using System;
+ using System.Collections.Generic;
+ using System.IO;
+ using System.Text;
+ using System.Text.RegularExpressions;
+ using System.Xml;
++using System.Diagnostics;
+ 
+ namespace HtmlAgilityPack
+ {
+@@ -23,7 +27,7 @@
+         private HtmlNode _documentnode;
+         private bool _fullcomment;
+         private int _index;
+-        internal Dictionary<string, HtmlNode> Lastnodes = new Dictionary<string, HtmlNode>();
++        internal Dictionary<string, HtmlNode> opennodesByName = new Dictionary<string, HtmlNode>();
+         private HtmlNode _lastparentnode;
+         private int _line;
+         private int _lineposition, _maxlineposition;
+@@ -82,9 +86,9 @@
+         public int OptionExtractErrorSourceTextMaxLength = 100;
+ 
+         /// <summary>
+-        /// Defines if LI, TR, TH, TD tags must be partially fixed when nesting errors are detected. Default is false.
++        /// Defines if optional html end tags should be inserted per the html spec or as late as possible. Default is true.
+         /// </summary>
+-        public bool OptionFixNestedTags; // fix li, tr, th, td tags
++        public bool OptionSupportOptionalEndTags = true; // fix li, tr, th, td tags
+ 
+         /// <summary>
+         /// Defines if output must conform to XML, instead of HTML.
+@@ -445,33 +449,12 @@
+                 throw new ArgumentNullException("reader");
+             }
+             _onlyDetectEncoding = true;
+-            if (OptionCheckSyntax)
+-            {
+-                Openednodes = new Dictionary<int, HtmlNode>();
+-            }
+-            else
+-            {
+-                Openednodes = null;
+-            }
++            Openednodes = OptionCheckSyntax ? new Dictionary<int, HtmlNode>() : null;
+ 
+-            if (OptionUseIdAttribute)
+-            {
+-                Nodesid = new Dictionary<string, HtmlNode>();
+-            }
+-            else
+-            {
+-                Nodesid = null;
+-            }
++            Nodesid = OptionUseIdAttribute ? new Dictionary<string, HtmlNode>() : null;
+ 
+             StreamReader sr = reader as StreamReader;
+-            if (sr != null)
+-            {
+-                _streamencoding = sr.CurrentEncoding;
+-            }
+-            else
+-            {
+-                _streamencoding = null;
+-            }
++            _streamencoding = sr != null ? sr.CurrentEncoding : null;
+             _declaredencoding = null;
+ 
+             Text = reader.ReadToEnd();
+@@ -509,15 +492,7 @@
+             {
+                 throw new ArgumentNullException("path");
+             }
+-            Encoding enc;
+-            if (detectEncoding)
+-            {
+-                enc = DetectEncoding(path);
+-            }
+-            else
+-            {
+-                enc = null;
+-            }
++            Encoding enc = detectEncoding ? DetectEncoding(path) : null;
+ 
+             if (enc == null)
+             {
+@@ -714,19 +689,9 @@
+ 
+             _onlyDetectEncoding = false;
+ 
+-            if (OptionCheckSyntax)
+-                Openednodes = new Dictionary<int, HtmlNode>();
+-            else
+-                Openednodes = null;
++            Openednodes = OptionCheckSyntax ? new Dictionary<int, HtmlNode>() : null;
+ 
+-            if (OptionUseIdAttribute)
+-            {
+-                Nodesid = new Dictionary<string, HtmlNode>();
+-            }
+-            else
+-            {
+-                Nodesid = null;
+-            }
++            Nodesid = OptionUseIdAttribute ? new Dictionary<string, HtmlNode>() : null;
+ 
+             StreamReader sr = reader as StreamReader;
+             if (sr != null)
+@@ -956,21 +921,84 @@
+ 
+         internal void UpdateLastParentNode()
+         {
+-            do
++            while (_lastparentnode.Closed)
+             {
+-                if (_lastparentnode.Closed)
+-                    _lastparentnode = _lastparentnode.ParentNode;
+-
+-            } while ((_lastparentnode != null) && (_lastparentnode.Closed));
+-
+-            if (_lastparentnode == null)
+-                _lastparentnode = _documentnode;
++                _lastparentnode = _lastparentnode.ParentNode;
++                if (_lastparentnode == null)
++                {
++                    _lastparentnode = _documentnode;
++                    break;
++                }
++            }
+         }
+ 
+         #endregion
+ 
+         #region Private Methods
+ 
++        HtmlNode GetLastOpenNode(string name)
++        {
++            HtmlNode retval;
++            opennodesByName.TryGetValue(name, out retval);
++            return retval;
++        }
++
++        internal void RegisterNodeClose(string name, HtmlNode lastHit)
++        {
++            HtmlNode old;
++            Debug.Assert(lastHit.Closed, "Node must be closed");
++            Debug.Assert(opennodesByName.TryGetValue(name, out old) && old == lastHit, "Invalid state: attemping to deregister a node(" + lastHit.Name + ") that's not at the head of the open list:  " + GetDebugstack());
++            Debug.Assert(name == lastHit.Name);
++            Debug.Assert(lastHit.NodeType == HtmlNodeType.Element);
++
++            HtmlNode prevWithSameName = lastHit._prevwithsamename;
++            if (lastHit._prevwithsamename == null)
++                opennodesByName.Remove(name);
++            else
++                opennodesByName[name] = prevWithSameName;
++        }
++
++        void RegisterNodeOpen(HtmlNode newOpenNode)
++        {
++            Debug.Assert(!newOpenNode.Closed);
++            Debug.Assert(newOpenNode._prevwithsamename == null);
++            HtmlNode prevOpen = GetLastOpenNode(newOpenNode.Name);
++            newOpenNode._prevwithsamename = prevOpen;
++            opennodesByName[newOpenNode.Name] = newOpenNode;
++        }
++
++        IEnumerable<HtmlNode> nodestack
++        {
++            get
++            {
++                HtmlNode parent = _lastparentnode;
++                while (parent != null)
++                {
++                    yield return parent;
++                    parent = parent.ParentNode;
++                }
++            }
++        }
++
++        string GetDebugstack()
++        {
++            List<HtmlNode> prevtracker = new List<HtmlNode>();
++            List<string> nametracker = new List<string>();
++            StringBuilder sb = new StringBuilder();
++            sb.Append("(" + _currentnode.Name + ")");
++            foreach (HtmlNode n in nodestack)
++            {
++                sb.Append("::");
++                if (n.Closed) sb.Append("!");
++                sb.Append(n.Name);
++                if (GetLastOpenNode(n.Name) == n) sb.Append("#1");
++                if (!prevtracker.Contains(n) && nametracker.Contains(n.Name)) sb.Append("*");
++                prevtracker.Add(n._prevwithsamename);
++                nametracker.Add(n.Name);
++            }
++            return sb.ToString();
++        }
++
+         private void AddError(HtmlParseErrorCode code, int line, int linePosition, int streamPosition, string sourceText, string reason)
+         {
+             HtmlParseError err = new HtmlParseError(code, line, linePosition, streamPosition, sourceText, reason);
+@@ -984,14 +1012,19 @@
+                 return;
+ 
+             bool error = false;
+-            HtmlNode prev = Utilities.GetDictionaryValueOrNull(Lastnodes, _currentnode.Name);
++            HtmlNode prevOpen = GetLastOpenNode(_currentnode.Name);
+ 
+             // find last node of this kind
+-            if (prev == null)
++            if (prevOpen == null)
+             {
++
+                 if (HtmlNode.IsClosedElement(_currentnode.Name))
+                 {
+                     // </br> will be seen as <br>
++
++                    //Eamon note: we've found a closing tag for an element that's already closed, if it exists at all
++                    //this previously could happen for <p> tags, but now is hardly really worth it; it permits empty tags like <img> or <br> to have kids.
++                    RegisterNodeOpen(_currentnode);
+                     _currentnode.CloseNode(_currentnode);
+ 
+                     // add to parent node
+@@ -1064,38 +1097,16 @@
+             }
+             else
+             {
+-
+-
+-                if (OptionFixNestedTags)
+-                {
+-                    if (FindResetterNodes(prev, GetResetters(_currentnode.Name)))
+-                    {
+-                        AddError(
+-                            HtmlParseErrorCode.EndTagInvalidHere,
+-                            _currentnode._line, _currentnode._lineposition,
+-                            _currentnode._streamposition, _currentnode.OuterHtml,
+-                            "End tag </" + _currentnode.Name + "> invalid here");
+-                        error = true;
+-                    }
+-                }
+-
+-                if (!error)
+-                {
+-                    Lastnodes[_currentnode.Name] = prev._prevwithsamename;
+-                    prev.CloseNode(_currentnode);
+-                }
++                prevOpen.CloseNode(_currentnode);
+             }
+ 
+ 
+             // we close this node, get grandparent
+-            if (!error)
++            if (!error
++                && _lastparentnode != null
++                && (!HtmlNode.IsClosedElement(_currentnode.Name) || _currentnode._starttag))
+             {
+-                if ((_lastparentnode != null) &&
+-                    ((!HtmlNode.IsClosedElement(_currentnode.Name)) ||
+-                     (_currentnode._starttag)))
+-                {
+-                    UpdateLastParentNode();
+-                }
++                UpdateLastParentNode();
+             }
+         }
+ 
+@@ -1119,78 +1130,80 @@
+             }
+         }
+ 
+-        private HtmlNode FindResetterNode(HtmlNode node)
++        private void FixNestedParagraphs()
+         {
+-            HtmlNode resetter = Utilities.GetDictionaryValueOrNull(Lastnodes, _currentnode.Name);
+-            if (resetter == null)
+-                return null;
+-
+-            if (resetter.Closed)
+-                return null;
+-
+-            return resetter._streamposition < node._streamposition ? null : resetter;
++            //precondition: current node is a start "p" node
++            // we are only interested by start tags, not closing tags
++            if (_lastparentnode.Name == "p")
++            {
++                HtmlNode prevOpenPEnd = new HtmlNode(_lastparentnode.NodeType, this, -1);
++                _lastparentnode.CloseNode(prevOpenPEnd);
++            }
+         }
+ 
+-        private bool FindResetterNodes(HtmlNode node, string[] names)
++        private void FixNestedTags()
+         {
+-            if (names == null)
+-                return false;
+-
+-            for (int i = 0; i < names.Length; i++)
++            // we are only interested by start tags, not closing tags
++            if (!_currentnode._starttag) return;
++            string currentNodeName = CurrentNodeName();
++            if (currentNodeName == "p")
++                FixNestedParagraphs();
++            else
+             {
+-                if (FindResetterNode(node) != null)
+-                    return true;
++                string[] resetters = GetResetters(currentNodeName);
++                if (resetters != null)
++                    AddOptionalEndTag(resetters);
+             }
+-            return false;
+         }
+ 
+-        private void FixNestedTag(string name, string[] resetters)
++        private void AddOptionalEndTag(string[] resetters)
+         {
+-            if (resetters == null)
+-                return;
+-
+-            HtmlNode prev = Utilities.GetDictionaryValueOrNull(Lastnodes, _currentnode.Name);
+-            // if we find a previous unclosed same name node, without a resetter node between, we must close it
+-            if (prev == null || (Lastnodes[name].Closed)) return;
+-            // try to find a resetter node, if found, we do nothing
+-            if (FindResetterNodes(prev, resetters))
++            HtmlNode contextNode = null;
++            foreach (HtmlNode ancestor in nodestack)
+             {
+-                return;
++                if (Array.BinarySearch(resetters, ancestor.Name) >= 0)
++                {//found container, close unclosed stuff!
++                    if (contextNode != null)
++                    {
++                        HtmlNode contextNodeEnd = new HtmlNode(contextNode.NodeType, this, -1);
++                        contextNode.CloseNode(contextNodeEnd);
++                        UpdateLastParentNode();
++                    }
++                    break;
++                }
++                else
++                {
++                    contextNode = ancestor;
++                }
+             }
+-
+-            // ok we need to close the prev now
+-            // create a fake closer node
+-            HtmlNode close = new HtmlNode(prev.NodeType, this, -1);
+-            close._endnode = close;
+-            prev.CloseNode(close);
+         }
+ 
+-        private void FixNestedTags()
+-        {
+-            // we are only interested by start tags, not closing tags
+-            if (!_currentnode._starttag)
+-                return;
++        static string[] Sorted(params string[] arr) { Array.Sort(arr); return arr; }
+ 
+-            string name = CurrentNodeName();
+-            FixNestedTag(name, GetResetters(name));
+-        }
++        static readonly string[]
++            P_ul_ol = Sorted("ul", "ol"),
++            P_thead_tfoot_tbody_table = Sorted("table", "tbody", "tfoot", "thead"),
++            P_thead_tfoot_tbody_table_tr = Sorted("tr",   /*antiborked*/         "table", "tfoot", "thead", "tbody"),
++            P_dl = Sorted("dl"),
++            P_table = Sorted("table"),
++            P_select_optgroup = Sorted("select", "optgroup");
+ 
+-        private string[] GetResetters(string name)
++        private static string[] GetResetters(string name)
+         {
+             switch (name)
+             {
+-                case "li":
+-                    return new string[] { "ul" };
+-
+-                case "tr":
+-                    return new string[] { "table" };
+-
++                case "li": return P_ul_ol;
++                case "tr": return P_thead_tfoot_tbody_table;
+                 case "th":
+-                case "td":
+-                    return new string[] { "tr", "table" };
+-
+-                default:
+-                    return null;
++                case "td": return P_thead_tfoot_tbody_table_tr;
++                case "dt":
++                case "dd": return P_dl;
++                case "thead":
++                case "tfoot":
++                case "tbody":
++                case "colgroup": return P_table;
++                case "option": return P_select_optgroup;
++                default: return null;
+             }
+         }
+ 
+@@ -1288,7 +1301,7 @@
+                 _crc32 = new Crc32();
+             }
+ 
+-            Lastnodes = new Dictionary<string, HtmlNode>();
++            opennodesByName = new Dictionary<string, HtmlNode>();
+             _c = 0;
+             _fullcomment = false;
+             _parseerrors = new List<HtmlParseError>();
+@@ -1661,7 +1674,7 @@
+             PushNodeEnd(_index, false);
+ 
+             // we don't need this anymore
+-            Lastnodes.Clear();
++            opennodesByName = null;
+         }
+ 
+         private void PushAttributeNameEnd(int index)
+@@ -1727,11 +1740,8 @@
+                     ReadDocumentEncoding(_currentnode);
+ 
+                     // remember last node of this kind
+-                    HtmlNode prev = Utilities.GetDictionaryValueOrNull(Lastnodes, _currentnode.Name);
++                    RegisterNodeOpen(_currentnode);
+ 
+-                    _currentnode._prevwithsamename = prev;
+-                    Lastnodes[_currentnode.Name] = _currentnode;
+-
+                     // change parent?
+                     if ((_currentnode.NodeType == HtmlNodeType.Document) ||
+                         (_currentnode.NodeType == HtmlNodeType.Element))
+@@ -1771,10 +1781,10 @@
+         private void PushNodeNameEnd(int index)
+         {
+             _currentnode._namelength = index - _currentnode._namestartindex;
+-            if (OptionFixNestedTags)
+-            {
++            //			if(_currentnode._starttag) DEBUGLINE("<"+ (_currentnode._starttag?"":"/") + _currentnode.Name + ">");
++
++            if (OptionSupportOptionalEndTags)
+                 FixNestedTags();
+-            }
+         }
+ 
+         private void PushNodeNameStart(bool starttag, int index)
+Index: Trunk/HtmlAgilityPack/HtmlNode.cs
+===================================================================
+--- Trunk/HtmlAgilityPack/HtmlNode.cs	(revision 88790)
++++ Trunk/HtmlAgilityPack/HtmlNode.cs	(working copy)
+@@ -111,7 +111,6 @@
+             // <p>bla<p>bla will be transformed into <p>bla<p>bla and not <p>bla></p><p>bla</p> or <p>bla<p>bla</p></p>
+             //<br> see above
+             ElementsFlags.Add("br", HtmlElementFlag.Empty | HtmlElementFlag.Closed);
+-            ElementsFlags.Add("p", HtmlElementFlag.Empty | HtmlElementFlag.Closed);
+         }
+ 
+         /// <summary>
+@@ -1692,17 +1691,11 @@
+             if (!Closed)
+             {
+                 _endnode = endnode;
++                _ownerdocument.RegisterNodeClose(Name, this);
+ 
+                 if (_ownerdocument.Openednodes != null)
+                     _ownerdocument.Openednodes.Remove(_outerstartindex);
+ 
+-                HtmlNode self = Utilities.GetDictionaryValueOrNull(_ownerdocument.Lastnodes,Name);
+-                if (self == this)
+-                {
+-                    _ownerdocument.Lastnodes.Remove(Name);
+-                    _ownerdocument.UpdateLastParentNode();
+-                }
+-
+                 if (endnode == this)
+                     return;
+ 
+Index: Trunk/HtmlAgilityPack/HtmlNodeNavigator.cs
+===================================================================
+--- Trunk/HtmlAgilityPack/HtmlNodeNavigator.cs	(revision 88790)
++++ Trunk/HtmlAgilityPack/HtmlNodeNavigator.cs	(working copy)
+@@ -15,10 +15,10 @@
+     {
+         #region Fields
+ 
+-        private int _attindex;
+-        private HtmlNode _currentnode;
+-        private HtmlDocument _doc = new HtmlDocument();
+-        private HtmlNameTable _nametable = new HtmlNameTable();
++        int _attindex;
++        HtmlNode _currentnode;
++        HtmlDocument _doc = new HtmlDocument();
++        HtmlNameTable _nametable = new HtmlNameTable();
+ 
+         internal bool Trace;
+ 
+@@ -226,8 +226,13 @@
+         {
+             get
+             {
+-                InternalTrace(">" + (_currentnode.Attributes.Count > 0));
+-                return (_currentnode.Attributes.Count > 0);
++                bool retval = false;
++                foreach (HtmlAttribute attr in _currentnode.Attributes)
++                    if (attr.Name != "xmlns" && !attr.Name.StartsWith("xmlns:"))
++                        retval = true;
++
++                InternalTrace(">" + retval);
++                return retval;
+             }
+         }
+ 
+@@ -250,9 +255,9 @@
+         {
+             get
+             {
+-                InternalTrace(">" + !HasChildren);
++                InternalTrace(">" + (!HasChildren && _currentnode.NodeType == HtmlNodeType.Element));
+                 // REVIEW: is this ok?
+-                return !HasChildren;
++                return !HasChildren && _currentnode.NodeType == HtmlNodeType.Element;
+             }
+         }
+ 
+@@ -280,8 +285,7 @@
+         {
+             get
+             {
+-                InternalTrace(">" + _currentnode.Name);
+-                return _nametable.GetOrAdd(_currentnode.Name);
++                return LocalName;
+             }
+         }
+ 
+@@ -322,14 +326,13 @@
+                     case HtmlNodeType.Comment:
+                         InternalTrace(">" + XPathNodeType.Comment);
+                         return XPathNodeType.Comment;
+-
+                     case HtmlNodeType.Document:
+                         InternalTrace(">" + XPathNodeType.Root);
+                         return XPathNodeType.Root;
+ 
+                     case HtmlNodeType.Text:
+                         InternalTrace(">" + XPathNodeType.Text);
+-                        return XPathNodeType.Text;
++                        return XPathNodeType.Text; 
+ 
+                     case HtmlNodeType.Element:
+                         {
+@@ -373,16 +376,16 @@
+                 switch (_currentnode.NodeType)
+                 {
+                     case HtmlNodeType.Comment:
+-                        InternalTrace(">" + ((HtmlCommentNode) _currentnode).Comment);
+-                        return ((HtmlCommentNode) _currentnode).Comment;
++                        InternalTrace(">" + ((HtmlCommentNode)_currentnode).Comment);
++                        return ((HtmlCommentNode)_currentnode).Comment;
+ 
+                     case HtmlNodeType.Document:
+                         InternalTrace(">");
+                         return "";
+ 
+                     case HtmlNodeType.Text:
+-                        InternalTrace(">" + ((HtmlTextNode) _currentnode).Text);
+-                        return ((HtmlTextNode) _currentnode).Text;
++                        InternalTrace(">" + ((HtmlTextNode)_currentnode).Text);
++                        return ((HtmlTextNode)_currentnode).Text;
+ 
+                     case HtmlNodeType.Element:
+                         {
+@@ -472,8 +475,8 @@
+                 InternalTrace(">false");
+                 return false;
+             }
+-            InternalTrace(">" + (nav._currentnode == _currentnode));
+-            return (nav._currentnode == _currentnode);
++            InternalTrace(">" + (nav._currentnode == _currentnode && nav._attindex == _attindex));
++            return (nav._currentnode == _currentnode && nav._attindex == _attindex);//TODO:Eamon: changed to include attindex.
+         }
+ 
+         /// <summary>
+@@ -497,6 +500,7 @@
+             {
+                 _currentnode = nav._currentnode;
+                 _attindex = nav._attindex;
++                //_haveSeenRootElement = nav._haveSeenRootElement;
+                 InternalTrace(">true");
+                 return true;
+             }
+@@ -520,30 +524,66 @@
+                 InternalTrace(">false");
+                 return false;
+             }
+-            _attindex = index;
+-            InternalTrace(">true");
+-            return true;
++            return MovePastXmlns(index);
+         }
+ 
++        bool MovePastXmlns(int lastindex)
++        {
++            while (lastindex < _currentnode.Attributes.Count)
++            {
++                string attrName = _currentnode.Attributes[lastindex].Name;
++                if (attrName != "xmlns" && !attrName.StartsWith("xmlns:"))
++                {
++                    _attindex = lastindex;
++                    InternalTrace(">true");
++                    return true;
++                }
++                lastindex++;
++            }
++            InternalTrace(">false");
++            return false;
++        }
++
++        bool MovePastInitialWhitespace(HtmlNode node)
++        {
++            if (node != null && node.ParentNode != null && node.ParentNode.ParentNode != null)
++            {
++                //this node exists, it has a parent node, and that parent node is not the document node: always OK.
++                _currentnode = node;
++                _attindex = -1;
++                InternalTrace(">true");
++                return true;
++            }
++            while (node != null)
++            { //first entry: node!=null  AND this is the document node or a child thereof: skip text.
++                if (node.NodeType != HtmlNodeType.Text)
++                {
++                    //_haveSeenRootElement = node.NodeType == HtmlNodeType.Element;
++                    _currentnode = node;
++                    _attindex = -1;
++                    InternalTrace(">true");
++                    return true;
++                }
++                node = node.NextSibling;
++            }
++            InternalTrace(">false");
++            return false;
++        }
++
++
+         /// <summary>
+         /// Moves to the first sibling of the current node.
+         /// </summary>
+         /// <returns>true if the navigator is successful moving to the first sibling node, false if there is no first sibling or if the navigator is currently positioned on an attribute node.</returns>
+         public override bool MoveToFirst()
+         {
+-            if (_currentnode.ParentNode == null)
++            if (_attindex != -1 || _currentnode.ParentNode == null || _currentnode.ParentNode.FirstChild == null)
+             {
+                 InternalTrace(">false");
+                 return false;
+             }
+-            if (_currentnode.ParentNode.FirstChild == null)
+-            {
+-                InternalTrace(">false");
+-                return false;
+-            }
+-            _currentnode = _currentnode.ParentNode.FirstChild;
+-            InternalTrace(">true");
+-            return true;
++
++            return MovePastInitialWhitespace(_currentnode.ParentNode.FirstChild);
+         }
+ 
+         /// <summary>
+@@ -557,9 +597,7 @@
+                 InternalTrace(">false");
+                 return false;
+             }
+-            _attindex = 0;
+-            InternalTrace(">true");
+-            return true;
++            return MovePastXmlns(0);
+         }
+ 
+         /// <summary>
+@@ -568,14 +606,7 @@
+         /// <returns>true if there is a first child node, otherwise false.</returns>
+         public override bool MoveToFirstChild()
+         {
+-            if (!_currentnode.HasChildNodes)
+-            {
+-                InternalTrace(">false");
+-                return false;
+-            }
+-            _currentnode = _currentnode.ChildNodes[0];
+-            InternalTrace(">true");
+-            return true;
++            return MovePastInitialWhitespace(_currentnode.FirstChild);
+         }
+ 
+         /// <summary>
+@@ -605,6 +636,8 @@
+                 return false;
+             }
+             _currentnode = node;
++            _attindex = -1;
++            //_haveSeenRootElement = true;
+             InternalTrace(">true");
+             return true;
+         }
+@@ -627,16 +660,12 @@
+         /// <returns>true if the navigator is successful moving to the next sibling node, false if there are no more siblings or if the navigator is currently positioned on an attribute node. If false, the position of the navigator is unchanged.</returns>
+         public override bool MoveToNext()
+         {
+-            if (_currentnode.NextSibling == null)
++            if (_currentnode.NextSibling != null)
+             {
+-                InternalTrace(">false");
+-                return false;
++                InternalTrace("_c=" + _currentnode.CloneNode(false).OuterHtml);
++                InternalTrace("_n=" + _currentnode.NextSibling.CloneNode(false).OuterHtml);
+             }
+-            InternalTrace("_c=" + _currentnode.CloneNode(false).OuterHtml);
+-            InternalTrace("_n=" + _currentnode.NextSibling.CloneNode(false).OuterHtml);
+-            _currentnode = _currentnode.NextSibling;
+-            InternalTrace(">true");
+-            return true;
++            return MovePastInitialWhitespace(_currentnode.NextSibling);
+         }
+ 
+         /// <summary>
+@@ -646,14 +675,7 @@
+         public override bool MoveToNextAttribute()
+         {
+             InternalTrace(null);
+-            if (_attindex >= (_currentnode.Attributes.Count - 1))
+-            {
+-                InternalTrace(">false");
+-                return false;
+-            }
+-            _attindex++;
+-            InternalTrace(">true");
+-            return true;
++            return MovePastXmlns(_attindex + 1);
+         }
+ 
+         /// <summary>
+@@ -674,14 +696,13 @@
+         /// <returns>true if there is a parent node, otherwise false.</returns>
+         public override bool MoveToParent()
+         {
+-            if (_currentnode.ParentNode == null)
++            if (_attindex != -1)
+             {
+-                InternalTrace(">false");
+-                return false;
++                _attindex = -1;
++                InternalTrace(">true");
++                return true;
+             }
+-            _currentnode = _currentnode.ParentNode;
+-            InternalTrace(">true");
+-            return true;
++            return MovePastInitialWhitespace(_currentnode.ParentNode);
+         }
+ 
+         /// <summary>
+@@ -690,12 +711,13 @@
+         /// <returns>true if the navigator is successful moving to the previous sibling node, false if there is no previous sibling or if the navigator is currently positioned on an attribute node.</returns>
+         public override bool MoveToPrevious()
+         {
+-            if (_currentnode.PreviousSibling == null)
++            if (_currentnode.PreviousSibling == null)//TODO:doesn't do initial whitespace handling
+             {
+                 InternalTrace(">false");
+                 return false;
+             }
+             _currentnode = _currentnode.PreviousSibling;
++            _attindex = -1;
+             InternalTrace(">true");
+             return true;
+         }
+@@ -706,6 +728,7 @@
+         public override void MoveToRoot()
+         {
+             _currentnode = _doc.DocumentNode;
++            _attindex = -1;
+             InternalTrace(null);
+         }
+ 
+@@ -733,7 +756,7 @@
+                 switch (_currentnode.NodeType)
+                 {
+                     case HtmlNodeType.Comment:
+-                        nodevalue = ((HtmlCommentNode) _currentnode).Comment;
++                        nodevalue = ((HtmlCommentNode)_currentnode).Comment;
+                         break;
+ 
+                     case HtmlNodeType.Document:
+@@ -741,7 +764,7 @@
+                         break;
+ 
+                     case HtmlNodeType.Text:
+-                        nodevalue = ((HtmlTextNode) _currentnode).Text;
++                        nodevalue = ((HtmlTextNode)_currentnode).Text;
+                         break;
+ 
+                     default:
+@@ -749,7 +772,7 @@
+                         break;
+                 }
+             }
+-           
++
+             HtmlAgilityPack.Trace.WriteLine(string.Format("oid={0},n={1},a={2},v={3},{4}", GetHashCode(), nodename, _attindex, nodevalue, traceValue), "N!" + name);
+         }
+ 
+@@ -762,6 +785,7 @@
+             InternalTrace(null);
+             _currentnode = _doc.DocumentNode;
+             _attindex = -1;
++            //_haveSeenRootElement = false;
+         }
+ 
+         #endregion
+Index: Trunk/HtmlAgilityPack/HtmlWeb.cs
+===================================================================
+--- Trunk/HtmlAgilityPack/HtmlWeb.cs	(revision 88790)
++++ Trunk/HtmlAgilityPack/HtmlWeb.cs	(working copy)
+@@ -1468,7 +1468,7 @@
+ 		{
+ 			HtmlDocument doc = new HtmlDocument();
+ 			doc.OptionAutoCloseOnEnd = false;
+-			doc.OptionFixNestedTags = true;
++			doc.OptionSupportOptionalEndTags = true;
+ 			_statusCode = Get(uri, method, null, doc, proxy, creds);
+ 			if (_statusCode == HttpStatusCode.NotModified)
+ 			{

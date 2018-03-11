@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1079327",
+    "ThreadId": "453102",
+    "Html": "I wants to fetch the search result form a webpage e.g. search tool on the website <a href=\"http://www.test.com\" rel=\"nofollow\">www.test.com</a> led to this page <a href=\"https://www.test.com/search?q=My+Search\" rel=\"nofollow\">https://www.test.com/search?q=My+Search</a> ; I want to show the search result which includes the hyperlinks+headings (excluding description). So how to use this pack to get the desired result?<br />\n",
+    "PostedDate": "2013-08-11T14:54:13.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

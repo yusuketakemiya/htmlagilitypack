@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "915316",
+    "ThreadId": "396299",
+    "Html": "\r\n<p>We have a webapp that pulls content from other sites, but when we serve up that content we need to re-write all of the URLs for links, images, CSS files, JS files etc to give the appearance this content is coming from another site. &nbsp;Currently we do\r\n this whith a whole slew of regular expressions. &nbsp;Is there a way to use HtmlAgility to do this to simplify and optimize this process?</p>\r\n",
+    "PostedDate": "2012-09-20T11:49:54.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

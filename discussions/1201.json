@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "3872",
+    "ThreadId": "1201",
+    "Html": "\r\nI am working with files that have both text and html components to them.  I am using the HTML Agility pack to basically convert the html components to text.  However, I want to save the href/img attribute in the text as well.<br /><br />In the files I am running across malformed tags with links in them like<br />&lt;http://linkwithoutatag&gt; and I want to capture the data in the tag if it contains http.  What is the best way to capture this data.  When this happens the node does not seem to have any innertext / innerhtml etc?<br /><br />THanks<br />Darrell<br />",
+    "PostedDate": "2006-09-02T20:48:13.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3909",
+    "ThreadId": "1201",
+    "Html": "\r\nWow,<br /><br />&lt;http://blabla&gt; is a really badly formed html :-)<br />Although the Html Agility Pack does not break or choke on this, it is not equipped to really use/program/read it.<br /><br />One solution could be to run a regex before running the Html parser, and it's quite easy for this type of strange tag.<br /><br />Hope this helps :P<br />Simon.<br />",
+    "PostedDate": "2006-09-04T01:25:00.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

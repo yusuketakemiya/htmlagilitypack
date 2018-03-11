@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\nI have downloaded the source code but the HAPPhone.7.1 doesn't compile due to XPath. The project has a reference to System.Xml.XPath that doesn't exist in WP7.1.\n \nPaolo.",
+    "LastUpdatedDate": "2013-02-21T18:46:58.933-08:00",
+    "PlannedForRelease": "1.4.7",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-06-20T00:00:33.303-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HAPPhone.7.1 solution doesn't compile due to XPath",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32872
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The System.Xml.Xpath.dll file from the Silverlight 4 SDK needs to be referenced. Otherwise remove the *.Xpath.cs files from the solution",
+      "PostedDate": "2012-08-06T19:45:16.363-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "this will be updated in the next nuget release",
+      "PostedDate": "2012-10-09T16:57:40.787-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:58.933-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When actuall using the HtmlNodeNavigator and XSLT's, there is a bug with HtmlNodeNavigator, as the XsltCompiledTransofrm class uses MoveToParent  during attribute enumeration to put the focus on the current attribute's element, not the parent of that element. I believe the following code should be added on line 700 (MoveToParent) of HtmlNodeNavigator.cs:\n \nif (_attindex != -1)\n{\n    _attindex = -1;\n    return true;\n}\n \nWhen I was writing my own XPath navigator for an interface to our database I saw this behavior, and found out MoveToParent is intended to be used this way.  If needed, I can provide an example XSLT and HTML that's very simple and has an infinite loop because of this code not being in MoveToParent.",
+    "LastUpdatedDate": "2013-03-12T08:59:23.46-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-08-06T21:22:11.173-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug with XPath HtmlNodeNavigator",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 31198
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

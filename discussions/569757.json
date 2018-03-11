@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1313153",
+    "ThreadId": "569757",
+    "Html": "Nuget says 1.4.9 (2014), project page says 1.4.6 (2012).\r<br />\n<br />\nproblem with nuget is that it says it installed, but there are no dlls or references added to the project. It only puts a line in the package.config file and nothing else. (Windows phone silverlight 8.1 project).\r<br />\n<br />\nSo where are all the new versions being uploaded to?<br />\n",
+    "PostedDate": "2014-10-14T07:17:51.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

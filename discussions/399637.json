@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "927598",
+    "ThreadId": "399637",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I'm just getting started with HtmlAgilityPack and I could use some help. I'm not sure if what i want to do can be done with HtmlAgilityPack, though i search the internet for resources.</p>\r\n<p>I would like to parse a complex html file and save inner text into a table as I show in pseudocode below.</p>\r\n<p>I tried some of the examples I found but none of them can get the inner text based on the classname and not the id.</p>\r\n<p><span style=\"color:#0000ff\"><em>read (&quot;test.html&quot;);</em></span></p>\r\n<p><span style=\"color:#0000ff\"><em>search only body</em></span></p>\r\n<p><span style=\"color:#0000ff\"><em>for each element &lt;table r=i&gt; (i=1; i&lt;50; i&#43;&#43;)</em></span></p>\r\n<p><span style=\"color:#0000ff\"><em>if element is &lt;div class=&quot;first&quot; --&gt;write innerText into a table at place [i][column1]</em></span></p>\r\n<p><span style=\"color:#0000ff\"><em>if element is &lt;div class=&quot;second&quot; --&gt; write innerText into the same table in [i][column2]</em></span></p>\r\n<p>I would appreciate any kind of help.</p>\r\n<p>Thank you in advance.</p>\r\n",
+    "PostedDate": "2012-10-16T11:58:49.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "603032",
+    "ThreadId": "255321",
+    "Html": "\r\n<p>Hello all,</p>\r\n<p>I was excited to find that the HAP supports mixed content, e.g. the actual file contents of an aspx or ascx file. &nbsp;This is precisely what I need for an internal tool that parses these files to find all text elements. &nbsp;However, I downloaded the\r\n 1.4 stable version of the source and tried to use HAP to parse a rather simple ascx file and bam, I get a StackOverflowException. &nbsp;This brings me to the questions -</p>\r\n<p>Does the HAP actually support parsing ascx, or even aspx files? &nbsp;Has anybody had success with this? &nbsp;Should I try a later version?</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2011-04-26T09:50:16.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "652484",
+    "ThreadId": "255321",
+    "Html": "<p>*bump*</p>",
+    "PostedDate": "2011-08-04T09:21:06.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "908408",
+    "ThreadId": "255321",
+    "Html": "<p>one year later. I have the same question :D<br />can you help meeeee&nbsp;</p>",
+    "PostedDate": "2012-09-04T17:34:19.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

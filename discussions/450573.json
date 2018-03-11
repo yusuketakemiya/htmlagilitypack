@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1070418",
+    "ThreadId": "450573",
+    "Html": "I have added the nodes to existing Node using the following code. Im not able to find the newly added node in the 'htmldoc'. <br />\n<pre><code>       HtmlDocument htmldoc = new HtmlDocument();\n                        htmldoc.LoadHtml(reportHTML);\n                        var newNode = HtmlNode.CreateNode(headerHTML);\n\n       HtmlNodeCollection trnodes = htmldoc.DocumentNode.SelectNodes(&quot;//tr&quot;);\n\n       int trcount = trnodes.Count();\n                        if (trnodes != null)\n                        {\n                            int introw = 1;\n                            for (int i=0; i&lt;=trcount; i++)\n                            {\n                                if (introw &gt;= 25)\n                                {\n                                    trnodes.Insert(i, newNode);\n                                    introw = 1;\n                                }\n                                introw++;\n                            }\n\n                        }</code></pre>\n\n",
+    "PostedDate": "2013-07-19T04:13:48.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

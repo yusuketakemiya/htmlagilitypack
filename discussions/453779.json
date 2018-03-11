@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1081995",
+    "ThreadId": "453779",
+    "Html": "I'm try to extract the text of a html file, but inside of &lt;h3&gt; tag appears the following text :<br />\n<pre><code>&lt;h3&gt;Café&lt;h3&gt;</code></pre>\n\nand when extract the text using <br />\n<pre><code>htmlDocument.DocumentNode.SelectSingleNode(&quot;some XPath&quot;).InnerText;</code></pre>\n\nobtain this &quot;CafÃ©direct&quot;  . How could fix this ?<br />\n",
+    "PostedDate": "2013-08-18T23:23:53.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "863281",
+    "ThreadId": "365066",
+    "Html": "\r\n<p>I am just loading a single html page into a single HtmlDocument object. I want to scrape different 4-6 sections of the page using a Parallel loop in .net 4.0. Is this library thread safe for read-only access?</p>\r\n",
+    "PostedDate": "2012-07-12T21:48:08.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

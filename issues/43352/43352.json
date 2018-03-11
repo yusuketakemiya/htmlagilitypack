@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Try this program:\n```C#\nusing HtmlAgilityPack;\nusing System;\n\nclass Program\n{\n  const string test = @\"\n<html>\n<body>\n<span>\n<p>Foo</span></p>\n<p>Bar</p>\n</body></html>\";\n  static void Main(string[] args)\n  {\n    HtmlDocument doc = new HtmlDocument();\n    doc.LoadHtml(test);\n    Console.WriteLine(doc.DocumentNode.OuterHtml);\n    Console.ReadLine();\n  }\n}\n```\n\nIt outputs the following html:\n```html\n\n<html>\n<body>\n<span>\n<p>Foo</span><p>\n<p>Bar</p>\n</body></html>\n```\n\nNote that the first p endtag has suddenly become a start tag, i.e. HtmlAgilityPack is somehow *generating* malformed html in this case.",
+    "LastUpdatedDate": "2016-03-28T18:44:10.593-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-02-12T07:16:19.31-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Tag mixing *generates* invalid html",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43352
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Note that the generated dom in Chrome for this is:\n```html\n<html><head></head><body>\n<span>\n<p>Foo</p>\n<p>Bar</p>\r\n\r\n</span></body></html>\n```\r\n\r\nAlso note that if we use font instead of span then Chrome sees it as:\n```html\n<html><head></head><body>\n<font>\n</font><p><font>Foo</font></p>\n<p>Bar</p>\r\n\r\n</body></html>\n```",
+      "PostedDate": "2016-02-12T07:24:55.85-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Just wanted to point out that the html in the input string is itself incorrect. Doesn't change the fact that the output is incorrect though.",
+      "PostedDate": "2016-03-28T18:44:10.593-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

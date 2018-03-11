@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I note that InnerText for Comment node returns comment text, which I regard as wrong. InnerText should normally return a plaintext representation of what is visible on screen.\n \nTo avoid breaking code, I suggest adding a document option: \nOptionCommentInnerTextAsEmpty\nwhich if set to true would force an empty string to be returned for comment nodes.\n \ni.e. in InnerText in HtmlNode.cs\n \n                if (_nodetype == HtmlNodeType.Comment)\n                    if (_ownerdocument.OptionCommentInnerTextAsEmpty)\n                        return string.Empty;\n                    else\n                        return ((HtmlCommentNode)this).Comment;",
+    "LastUpdatedDate": "2013-02-21T18:46:58.113-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-07-23T17:29:28.047-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "InnerText for Comment node returns comment text",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32961
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

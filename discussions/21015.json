@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "69901",
+    "ThreadId": "21015",
+    "Html": "\r\nHi, I am planning to design a program to parse the HTML file into XML format. I need to utilize the XmlDocument Class to implement this program. However, the Sharp Developer shows that the complier cannot find out the XmlDocument Class even if I \"using\" the HtmlAgilityPack namespace. Please do me a favor. Thanks.<br />",
+    "PostedDate": "2008-01-25T03:05:31.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "70047",
+    "ThreadId": "21015",
+    "Html": "\r\nXmlDocument isnt part of HtmlAgilityPack.  It's included with System.Xml<br />",
+    "PostedDate": "2008-01-25T15:57:42.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

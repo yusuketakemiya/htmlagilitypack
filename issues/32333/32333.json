@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The code goes out of its way to strip closing tags from elements that do not require them (per the HTML specifications).  These are considered \"Empty\" tags, and the HTML Agility Pack engine prevents any existing close tags from being rendered.\n \nThe OptionWriteEmptyNodes flag in the HtmlDocument() does not correct this.\n \nThis is creating a problem with the Mvc.RazorEngine...which throws an exception when detecting mal-formed HTML elements.\n \nIn short, if I LoadHtml() and Save()...MY CLOSING TAGS DISAPPEAR...even though they exist in the original HTML...for things like <img>, <option>, etc.  Even self-closing tags get modified (<img /> gets rendered as <img>).\n \nIn the HtmlNode constructor, you can see these elements being defined as \"Empty\".  And the code removes all self-closing or explicit </name> closing of the element.\n \nThe question is why?\n \nIf it is optional, then fine.  However, if it exists in the HTML, then it should be loaded and rendered.\n \nWhat am I missing here?\n \nI have a fix if anyone is interested.\n \nScott",
+    "LastUpdatedDate": "2013-02-21T18:47:01.703-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-02-29T04:27:46.697-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Why not close element tags?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32333
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'm interested. What fix did you come up with? I have the same issue with option tags. Also, I want to note that although the closing tags are optional, they are still recommended! This basically allows HTML to be flexible for the purposes of rendering, but we should definitely keep them in the HTML and include them in new HTML5 files as well. I read this somewhere in the HTML5 documentation a while back and decided to always use closing tags for <li> tags, for example. On the other hand, it'd be nice if we could keep the file light-weight and throw these closing tags away.",
+      "PostedDate": "2012-03-26T19:37:58.573-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Indeed. \r\n\r\nCan anyone at least say if there are any other tags whose closing tags are STRIPPED OFF?  It doesn't happen with <li> as the comment above implies.  Just <option> as far as I can tell.  The solution is of course to do\r\n\r\nHtmlNode.ElementsFlags.Remove(\"option\");\r\n\r\nBut it seems silly to have to do this to prevent an existing closing tag from being stripped. ",
+      "PostedDate": "2012-09-10T10:47:42.393-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Same Problem. Option Tag is not closed! ",
+      "PostedDate": "2012-09-17T04:40:05.7-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:01.703-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

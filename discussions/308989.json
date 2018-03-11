@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "758765",
+    "ThreadId": "308989",
+    "Html": "\r\n<p>I'm passing an HtmlNode as a method argument, and getting the following warning:</p>\r\n<p style=\"padding-left:30px\">Argument type 'HtmlAgilityPack.HtmlNode' is not CLS-compliant</p>\r\n<p>My assembly is marked as being CLS compliant. I got rid of the warning by marking the method as not CLS compliant per this post on\r\n<a href=\"http://stackoverflow.com/questions/1797648/net-framework-argument-type-uint-is-not-cls-compliant-on-p-invoke\">\r\nStackOverflow</a>:</p>\r\n<p style=\"padding-left:30px\">[CLSCompliantAttribute( false )]</p>\r\n<p>I searched the discussions and issues and didn't really find anything on this issue, just wondering if there is a better solution, and if this is a known issue.</p>\r\n<p>Maybe nobody else has marked their assemblies as CLS compliant? I use FX-Cop and it complains about that, so that's why I have marked my assembly that way.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-02-12T06:47:12.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

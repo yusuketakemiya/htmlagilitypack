@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1086636",
+    "ThreadId": "455008",
+    "Html": "I've tried doing add-type .\\htmlagilitypack.dll with powershell v2 and powershell v3 but continue to get the below error. I've also tried loading the DLL from the net20, net40-client, and net45 folders. All produce the below error.\r<br />\n<br />\nPS D:\\htmlagilitypack\\net40&gt; Add-Type .\\HtmlAgilityPack.dll\r<br />\nAdd-Type : c:\\Users\\XXXX\\AppData\\Local\\Temp\\bww4lrx3.0.cs(1) : Unexpected character '\\'\r<br />\nc:\\Users\\XXXX\\AppData\\Local\\Temp\\bww4lrx3.0.cs(1) : &gt;&gt;&gt; .\\HtmlAgilityPack.dll\r<br />\nAt line:1 char:1<br />\n<ul>\n<li>Add-Type .\\HtmlAgilityPack.dll</li>\n<li>\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />\n<ul>\n<li>CategoryInfo          : InvalidData: (c:\\Users...d character '\\':CompilerError) [Add-Type], Exception</li>\n<li>\nFullyQualifiedErrorId : SOURCE_CODE_ERROR,Microsoft.PowerShell.Commands.AddTypeCommand<br />\n</li>\n</ul>\n</li>\n</ul>\nAdd-Type : c:\\Users\\XXXX\\AppData\\Local\\Temp\\bww4lrx3.0.cs(1) : A namespace cannot directly contain members such\r<br />\nas fields or methods\r<br />\nc:\\Users\\XXXX\\AppData\\Local\\Temp\\bww4lrx3.0.cs(1) : &gt;&gt;&gt; .\\HtmlAgilityPack.dll\r<br />\nAt line:1 char:1<br />\n<ul>\n<li>Add-Type .\\HtmlAgilityPack.dll</li>\n<li>\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />\n<ul>\n<li>CategoryInfo          : InvalidData: (c:\\Users..elds or methods:CompilerError) [Add-Type], Exception</li>\n<li>\nFullyQualifiedErrorId : SOURCE_CODE_ERROR,Microsoft.PowerShell.Commands.AddTypeCommand<br />\n</li>\n</ul>\n</li>\n</ul>\nAdd-Type : Cannot add type. There were compilation errors.\r<br />\nAt line:1 char:1<br />\n<ul>\n<li>Add-Type .\\HtmlAgilityPack.dll</li>\n<li>\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n<ul>\n<li>CategoryInfo          : InvalidData: (:) [Add-Type], InvalidOperationException</li>\n<li>FullyQualifiedErrorId : COMPILER_ERRORS,Microsoft.PowerShell.Commands.AddTypeCommand</li>\n</ul>\n</li>\n</ul>\n",
+    "PostedDate": "2013-08-30T06:55:42.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224729",
+    "ThreadId": "455008",
+    "Html": "I used this code and it works at home (Windows 8.1) . Now I am at work (Windows 8.1 in domain) and I get the same error . <br />\n<br />\nNow I am trying something smart to detect the CLRversion and to loadt the corresponding Assembly, but without success. <br />\n<pre><code>$CLRVersion = &quot;Net&quot;+ $PSVersionTable.CLRVersion.Major + $PSVersionTable.CLRVersion.Minor\n$HtmlAgilityPack = Join-Path (Join-Path (Split-Path $MyInvocation.MyCommand.Path) $CLRVersion) HtmlAgilityPack.dll\nAdd-Type -Path $HtmlAgilityPack</code></pre>\n\nHappyWindowsAdmin, try to use the following construct:<br />\n<pre><code>[system.reflection.assembly]::LoadFile('c:\\Data\\Development\\ServiceStar\\HtmlAgilityPack.dll')</code></pre>\n\nYou must use an absolute path here. <br />\n<h2><strong>Solved!!!!!</strong></h2>\nThe assembly I am trying is from an internet location. PowerShell does not like to load assemblies from the Internet. To solve , do this:<br />\n<ul>\n<li>Open properties of the DDL file</li>\n<li>\nOn the General page, under Security, clock [Unblock]<br />\n</li>\n</ul>\n",
+    "PostedDate": "2014-03-20T03:36:47.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1265104",
+    "ThreadId": "455008",
+    "Html": "Sikkepitje, thanks for sharing the resolution... I was hitting the head for last two hours!\r<br />\n<br />\nThanks a lot!!<br />\n",
+    "PostedDate": "2014-07-12T05:08:45.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

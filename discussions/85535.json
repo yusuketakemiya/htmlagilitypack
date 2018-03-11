@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "291290",
+    "ThreadId": "85535",
+    "Html": "<p>Hi,</p>\r\n<p>I am trying to build a web page parser, and need to retreive CSS styles applied to each HTML element.</p>\r\n<p>I am able to get CSS style applied at element level, but not able to retreieve CSS styles coming through include file or via inheritance.</p>\r\n<p>Is there a way to get that information programatically?</p>\r\n<p>Any pointers will be helpful.</p>\r\n<p>thanks</p>",
+    "PostedDate": "2010-02-16T08:50:22.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "291297",
+    "ThreadId": "85535",
+    "Html": "<p>HAP doesn't provide CSS information past the &quot;class&quot; attribute. For this you will probably be best served using the IE or Gecko# controls and query their DOM implementations.</p>",
+    "PostedDate": "2010-02-16T09:02:02.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

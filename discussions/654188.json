@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1471846",
+    "ThreadId": "654188",
+    "Html": "Embarrasingly trivial problem, but I've only ever used HAP for scraping websites and never tried to manipulate the html.\r<br />\n<br />\nI'm trying to remove an img node and neither of the approaches listed below seem to work.\r<br />\n<br />\n(A) <br />\n<pre><code>HtmlAgilityPack.HtmlNode tipGif = \n                    doc.DocumentNode.SelectSingleNode(&quot;//img[@src = 'http://www.stuff.com/ico/annoying-gif.gif']&quot;);\n\n                if (tipGif != null)\n                {\n                    var nodesToRemove = doc.DocumentNode\n                    .SelectNodes(&quot;//img[@src = 'http://www.stuff.com/ico/annoying-gif.gif']&quot;)\n                   .ToList();\n\n                    foreach (var node in nodesToRemove)\n                       node.Remove();</code></pre>\n\n<pre><code>            }\n</code></pre>\n\n(B)<br />\n<pre><code>var RL = doc.DocumentNode.SelectSingleNode(&quot;//img[@src = '\nhttp://www.stuff.com/ico/annoying-gif.gif']&quot;);\nRL.Remove();</code></pre>\n\nI think I'm missing something fundamental about how this method works. I can post an example of the html but it's very vanilla.\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2016-04-29T16:49:16.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "671150",
+    "ThreadId": "272431",
+    "Html": "\r\n<p>this statement finds me the first occurance of &quot;bfTbl&quot; in doc but there are a number of nodes that are class &quot;bfTbl&quot; that I want to find in doc</p>\r\n<p>how can i seperate all htmlNodes from doc with class &quot;bfTbl&quot;?</p>\r\n<p>&nbsp;</p>\r\n<p>Dim table As HtmlNode = doc.DocumentNode.FindNodeByClass(&quot;bfTbl&quot;)</p>\r\n<p>&nbsp;</p>\r\n<p>sorry, i'm a real newbie at this, but trying hard to learn</p>\r\n",
+    "PostedDate": "2011-09-13T06:32:52.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

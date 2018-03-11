@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "753529",
+    "ThreadId": "304217",
+    "Html": "\r\n<p>I saw the following code in one of the sites and tried it for my Windows Phone 7 project.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlWeb web = new HtmlWeb();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc = web.Load(&quot;http://jsbin.com/owobe3&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNode rateNode = doc.DocumentNode.SelectSingleNode(&quot;//div[@id='rate']&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string rate = rateNode.InnerText;</p>\r\n<p>What i am getting is the following error:</p>\r\n<p>Error&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 'HtmlAgilityPack.HtmlWeb' does not contain a definition for 'Load' and no extension method 'Load' accepting a first argument of type 'HtmlAgilityPack.HtmlWeb' could be found (are you missing a using directive or\r\n an assembly reference?)</p>\r\n<p>I am using Visual Studio 2010 Express for Windows Phone</p>\r\n<p>Please help.</p>\r\n",
+    "PostedDate": "2012-02-10T10:16:35.347-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993631",
+    "ThreadId": "304217",
+    "Html": "\r\n<p>Do you solve your problem?&nbsp;</p>\r\n<p>I have this same =(</p>\r\n",
+    "PostedDate": "2013-01-29T06:11:53.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

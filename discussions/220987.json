@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "471630",
+    "ThreadId": "220987",
+    "Html": "<p>Hello,</p>\r\n<p>&nbsp;I have the following HTML:</p>\r\n<p>&lt;html&gt;<br>&lt;body&gt;<br>1&lt;2&nbsp;test &lt;img src=&quot;images/test.jpg&quot;&gt;&nbsp;sample a&lt;b e&nbsp;test b&gt;c<br>&lt;/body&gt;<br>&lt;/html&gt;</p>\r\n<p>If I open it with any browser, I can read some text. That's ok. If instead I get the .InnerText using HtmlAgilityPack, it returns a different text than the browser. Basically, it seems it fails to understand the tags.</p>\r\n<p>Is this a bug? I need that .InnerText returns the same text as displayed in the browser.</p>\r\n<p>Thank you!</p>\r\n<p>Paul</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-23T07:18:57.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

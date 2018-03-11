@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "513744",
+    "ThreadId": "232596",
+    "Html": "\r\n<p>First, thanks for a wonderful tool. It really is quite awesome in the way that it works.</p>\r\n<p>&nbsp;</p>\r\n<p>I've tried to go through the source to see if I could make HAP case insensitive (for HTML) by having a Load option that converts all the input to lowerecase (tag names and attribute names only and not the content). That way, queries can be written in lower\r\n case for ALL scrapings and it can be made more extensive in the way that it works.</p>\r\n<p>&nbsp;</p>\r\n<p>My only problem is that after walking through the code, I am still at a loss for how to achieve this? Could anyone point me to where I can plop in my function to do the conversion?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2010-10-27T21:09:40.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

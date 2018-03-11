@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "238976",
+    "ThreadId": "70161",
+    "Html": "<p>when i use an Xpath of //element on a particular node, why am I getting all the nodes of the entire document of type //element rather than just the nodes within the node I call SelectNode on?&nbsp; Is it possible to just query the node with SelectNodes for only childnodes with that element tag?</p>",
+    "PostedDate": "2009-09-25T14:04:25.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "241566",
+    "ThreadId": "70161",
+    "Html": "<p>Yes, it does grab all then nodes in the document. Internally it creates a navigator from the root of the document and then runs the xpath.</p>\r\n<p>One of the new Methods HtmlNode.Descendants(string name) may be more to your liking.</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">var</span> nodes = thenode.Descendants(<span style=\"color:#A31515\">&quot;input&quot;</span>);\r\n<span style=\"color:Blue\">foreach</span>(<span style=\"color:Blue\">var</span> node <span style=\"color:Blue\">in</span> nodes)\r\n  <span style=\"color:Green\">//do something with the node</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p>You can also go a step further and do</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">var</span> nodes = thenode.Descendants(<span style=\"color:#A31515\">&quot;input&quot;</span>)\r\n                   .Where(x =&gt; x.Attributes.Contains(<span style=\"color:#A31515\">&quot;type&quot;</span>) &amp;&amp; \r\n                          x.Attributes[<span style=\"color:#A31515\">&quot;type&quot;</span>].Value.ToLower().Contains(<span style=\"color:#A31515\">&quot;hidden&quot;</span>));\r\n\r\n<span style=\"color:Blue\">foreach</span> (<span style=\"color:Blue\">var</span> node <span style=\"color:Blue\">in</span> nodes)\r\n    <span style=\"color:Green\">//do something with the node</span>\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>You can also use CreateNavigator but be warned the types it returns are System.Xml types, not HAP types.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-02T20:18:59.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

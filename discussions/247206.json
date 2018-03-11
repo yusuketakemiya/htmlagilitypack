@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "570734",
+    "ThreadId": "247206",
+    "Html": "\r\n<p>I've found that after parsing any &lt;form/&gt; node does not have any child nodes. All nodes that should be inside the form (&lt;input/&gt;, &lt;select/&gt;, etc.) are created as it's siblings rather then children.</p>\r\n<p>Is it intended behavior (if it is why)? Or is it a bug?</p>\r\n",
+    "PostedDate": "2011-02-23T05:09:19.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "574253",
+    "ThreadId": "247206",
+    "Html": "<p>In Html specification form tag can overlap, so Htmlagilitypack handle this node a little different.&nbsp; So what you can do:</p>\r\n<pre><code>HtmlNode.ElementsFlags.Remove(\"form\");</code></pre>",
+    "PostedDate": "2011-03-02T01:07:35.427-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "574274",
+    "ThreadId": "247206",
+    "Html": "<p>It helped. After adding this call all form elements are added as children. Many thanks for the tip.</p>",
+    "PostedDate": "2011-03-02T01:47:24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "579159",
+    "ThreadId": "247206",
+    "Html": "<p>Hello,</p>\r\n<p>&nbsp;</p>\r\n<p>I have the same problem but after adding \"HtmlNode.ElementsFlags.Remove(\"form\");\" child nodes are empty, I can select childs by using selectnodes(\".//input\")</p>\r\n<p>I have 2 forms on page</p>\r\n<p>Can anyone help?&nbsp;<br /><br />var forms = doc.DocumentNode.Descendants(\"form\");<br /> foreach (var form in forms)<br /> {<br />//this works correctly<br /> foreach (HtmlNode element in form.SelectNodes(\".//input\")) <br /> {<br /> if (!element.Attributes.Contains(\"name\")) continue;<br /> Console.WriteLine(\"Name-input: \" + element.Attributes[\"name\"].Value);<br /> }<br /> <br />//this not work<br /> var inputs = form.ChildNodes<br /> .Where&lt;HtmlNode&gt;(a =&gt; a.OriginalName.Contains(\"input\")); <br /><br /> Console.WriteLine(form.Attributes[0].Value + \" attributes:\" + Environment.NewLine + \"------------------\");<br /> foreach (var input in inputs)<br /> {<br /> IEnumerable&lt;HtmlAttribute&gt; attributes;<br /> attributes = input.Attributes;<br /> foreach (var att in attributes)<br /> {<br /> Console.WriteLine(\"Name: \" + att.Name + Environment.NewLine<br /> + \"Value: \" + att.Value + Environment.NewLine);<br /> }<br /> }<br /> Console.WriteLine(); <br /> }</p>",
+    "PostedDate": "2011-03-11T10:33:08.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "579169",
+    "ThreadId": "247206",
+    "Html": "<p>2&nbsp;mrjozo</p>\r\n<p>Are you sure that inputs are direct descendants of the form? If your input elements are in divs or table then your search in ChildNodes will yield empty set.</p>",
+    "PostedDate": "2011-03-11T10:46:43.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "579264",
+    "ThreadId": "247206",
+    "Html": "<p>Ariman You are right, there are in divs</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2011-03-11T14:08:50.777-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "798155",
+    "ThreadId": "247206",
+    "Html": "<blockquote style=\"border: 0.1em solid #cccccc; font-style: italic; margin: 0.25em 1em 0pt; padding: 0pt 0.25em;\"><strong>VikciaR wrote:</strong><br />\r\n<p>In Html specification form tag can overlap, so Htmlagilitypack handle this node a little different.&nbsp; So what you can do:</p>\r\n<pre><code>HtmlNode.ElementsFlags.Remove(\"form\");</code></pre>\r\n</blockquote>\r\n<p>Thanks this worked!</p>",
+    "PostedDate": "2012-02-23T12:23:07.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "911520",
+    "ThreadId": "247206",
+    "Html": "<p>i am also facing same problem even \"HtmlNode.ElementsFlags.Remove(\"form\");\" did not help me , all i am getting is just form starting tag nothing else ,&nbsp;</p>\r\n<p>input fields are directly under the form tag</p>\r\n<p>childnode count is 0.</p>\r\n<p>please help me to find the correct way of doing this&nbsp;</p>\r\n<p>please help as soon as possible....</p>",
+    "PostedDate": "2012-09-12T06:19:03.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068172",
+    "ThreadId": "247206",
+    "Html": "<blockquote>\nIn Html specification form tag can overlap, so Htmlagilitypack handle this node a little different. <br />\n</blockquote>\nCan you clarify what you mean here? This is pretty confusing default behavior.<br />\n",
+    "PostedDate": "2013-07-14T18:10:50.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

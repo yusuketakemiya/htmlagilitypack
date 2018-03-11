@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The current source requires useage like this: \n \n   HtmlDocument doc = new HtmlDocument();\n   doc.Load(stream); \n \n \nIt would be better to use this: \n \n   HtmlDocument doc = HtmlDocument.Load(stream); \n \n \nSame with all the Load overloads.",
+    "LastUpdatedDate": "2013-02-21T18:47:17.61-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-03-31T12:04:36.657-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlDocument.Load methods should be static",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 26663
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "That might be better for some people, but it would be inconsistent with the api for XmlDocument, which would make things more difficult for most people.",
+      "PostedDate": "2010-04-05T06:39:49.977-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:17.61-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

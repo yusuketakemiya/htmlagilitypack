@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "286532",
+    "ThreadId": "83328",
+    "Html": "<p>I want to swap place of 2 elements in a html&nbsp;document . But there is no any methods for this.</p>\r\n<p>Example</p>\r\n<p>&lt;div&gt;</p>\r\n<p>&lt;div id=&quot;d1&quot;&gt;thi is first node&lt;/div&gt;</p>\r\n<p>&lt;div id=&quot;d2&quot;&gt;thi is second node&lt;/div&gt;</p>\r\n<p>&lt;/div&gt;</p>\r\n<p>I need a method for change place of div#d1 width div#d2</p>\r\n<p>&lt;div&gt;</p>\r\n<p>&lt;div id=&quot;d2&quot;&gt;thi is second node&lt;/div&gt;</p>\r\n<p>&lt;div id=&quot;d1&quot;&gt;thi is first node&lt;/div&gt;</p>\r\n<p>&lt;/div&gt;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-05T23:11:08.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

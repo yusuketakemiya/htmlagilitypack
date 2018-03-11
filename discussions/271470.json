@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "667530",
+    "ThreadId": "271470",
+    "Html": "<p>hi all.</p>\n<p>i read and parse site html and save to database i use htmlagilitypack to parse</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre>documentHtml = htmlweb.Load(<span style=\"color: #a31515;\">\"http://vsd.vn\"</span> + link.Href);\n                        documentHtml.OptionReadEncoding = <span style=\"color: blue;\">true</span>;\n                        documentHtml.OptionDefaultStreamEncoding =Encoding.UTF8;\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>but my data on database like as \"UBCKNN y&amp;#234;u cầu c&amp;#225;c C&amp;#244;ng ty chứng kho&amp;#225;n, c&amp;#225;c C&amp;#244;ng ty quản l&amp;#253; Quỹ, c&amp;#225;c Ng&amp;#226;n h&amp;#224;ng lưu k&amp;#253;, Ng&amp;#226;n h&amp;#224;ng gi&amp;#225;m s&amp;#225;t tu&amp;#226;n thủ Luật chứng kho&amp;#225;n\".</p>\n<p>please a way to fix it</p>\n<p>i used htmlEntity.DeEntity but not work</p>\n<p>thank alot</p>",
+    "PostedDate": "2011-09-04T21:42:43.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Take the attached document as an example. Without adding the doctype I am unable to do something like \"doc.Document.Decendents(\"tr\")\". Seems like a missing doctype should be supported in some default way and\\or an exception indicating the issue. There were no parse errors.",
+    "LastUpdatedDate": "2013-02-21T18:47:03.767-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-09-22T19:32:42.623-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Doesn't work without doctype",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 31489
+  },
+  "FileAttachments": [
+    {
+      "FileId": 12121,
+      "FileName": "XMLFile1.xml",
+      "DownloadUrl": ".\\12121"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Nevermind, this was my error.",
+      "PostedDate": "2011-09-22T19:37:41.757-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:03.767-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm having trouble with a PCL project referencing the HAP portable libraries, then a .NET4.5 app referencing both. It was unable to load the assembly. I tracked it down, and when I signed the portable assembly with the key, the .NET4.5 app was able to continue.",
+    "LastUpdatedDate": "2016-07-21T10:16:27.39-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-02-17T17:38:06.343-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Portable assemblies should be signed",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 35854
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

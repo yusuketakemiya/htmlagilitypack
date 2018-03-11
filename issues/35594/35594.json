@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I was creating a new Windows Phone 8 app and when I went to reference HtmlAgilityPack, even after installing the Nuget package I keep being told that VS is unable to find a reference to both it, and HtmlDocumentLoadedComplete.\n\nI tried to create another new project to see if it was just a one off, but it wont work either.\n\nDoes anyone have suggestions?",
+    "LastUpdatedDate": "2014-10-05T12:59:13.543-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-10-05T12:45:12.567-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlAgilityPack not working for new programs in VS2013",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35594
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "SOLVED: Well sort of.\nI just downgraded the version.",
+      "PostedDate": "2014-10-05T12:59:13.543-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

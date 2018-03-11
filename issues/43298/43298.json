@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If there are no matches for a given XPath that is fed to SelectNodes() the result is null.  Not only is this incorrect, but this forces us to have to check to see if the resulting collection is null before iterating over it.\n\nIf there are no matches, the collection should have ZERO nodes not NULL nodes.  Zero and null are different concepts, and in this case, null is being used incorrectly and inconveniently.",
+    "LastUpdatedDate": "2016-08-31T01:23:07.667-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-11-24T07:33:45.93-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "SelectNodes() returns null",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 43298
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This one is pretty easy:\r\n\r\nComment out the following lines in HtmlNode.Xpath.cs (SelectNodes function):\r\n\r\n            //if (list.Count == 0)\n            //{\n            //    return null;\n            //}\r\n\r\nRegards,\nMark Ward\nCarson, CA",
+      "PostedDate": "2016-01-15T10:38:48.513-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-01-15T10:39:35.35-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-03-04T02:11:55.387-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-08-31T01:23:07.667-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n\nI have a question about the implementation of the FindFirst method from the HtmlNodeCollection class.\n\nWhy has it been implemented with a \"Contains\" instead of an equality comparer? It could lead to some issues: for example, if I search an element named \"a\" and the first element of my collection is a \"span\", it will wrongly returns the \"span\" node.",
+    "LastUpdatedDate": "2017-02-08T15:42:31.633-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2017-02-08T15:42:31.633-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Question about the HtmlNodeCollection.FindFirst method",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43572
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

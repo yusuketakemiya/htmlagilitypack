@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "626562",
+    "ThreadId": "261101",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I just started with Html Agility Pack and I am trying to find out, if it fits my needs.</p>\r\n<p>Is it possible to get all Nodes (Elements) which have a given &quot;keyword&quot; in innerHTML or innerText (using LINQ)?</p>\r\n<p>And how do I build a loop to get <strong>all </strong>Nodes for a document?</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-06-12T06:09:08.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Here's a simple snippet which attempts to strip out the span element while keeping everything else:\n\n            var document = new HtmlDocument();\n            document.LoadHtml(\"<div><span>a<em>b</em>c</span></div>\");\n            var span = document.DocumentNode.Descendants().First(n => n.Name == \"span\");\n            span.ParentNode.RemoveChild(span, true);\n            var result = document.DocumentNode.OuterHtml;\n\nStrangely, once the span element is stripped out, the `a` and `c` characters switches positions.\n\nResult:\n<div>c<em>b</em>a</div>\n\nExpected behavior:\n<div>a<em>b</em>c</div>\n\nAnyone know why this is happening?  Is it a bug?",
+    "LastUpdatedDate": "2017-01-10T02:23:43.24-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2017-01-06T06:48:35.023-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "RemoveChild (keepGrandChildren) with em inside returns strange results",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43552
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Appears to be a duplicate of these two issues:\nhttps://htmlagilitypack.codeplex.com/workitem/9113\nhttps://htmlagilitypack.codeplex.com/workitem/28756",
+      "PostedDate": "2017-01-09T16:36:17.19-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "@LoganHollins yes, it seems that his is a duplicate of the other 2.  I will close this issue.",
+      "PostedDate": "2017-01-10T02:22:29.197-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "It doesn't look like I can close this issue so hopefully a moderator will do that.",
+      "PostedDate": "2017-01-10T02:23:43.24-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

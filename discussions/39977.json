@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "132704",
+    "ThreadId": "39977",
+    "Html": "Hi,<br>\r\n<br>\r\nHow can I force the embedded httprequest to ignore untrusted sites or sites with invalid certificates. I can do it with normal httprequest object. How can I do it using the HTMLAgility pack with the formsProcessor add-on?!!!<br>\r\n",
+    "PostedDate": "2008-11-14T12:17:37.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

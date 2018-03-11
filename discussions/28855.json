@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "96197",
+    "ThreadId": "28855",
+    "Html": "Hello there everyone! First of all thanks for this great pack. It has really helped me a lot!<br>\r\n<br>\r\nI have a couple of questions and if someone would be willing to help me it would be great!<br>\r\n<br>\r\nI am doing a project in which I have to extract three things from a webpage. <br>\r\n1. All of the links (urls) which are inside it.<br>\r\n2. It's pure text (which is the page's html without the tags etc.) and<br>\r\n3. After i've found the links I need to go there in the html file and get 10 words before and 10 words after each one of them.<br>\r\n<br>\r\nThe first one isn't that hard.With: HtmlNodeCollection myanchors = htmlData.DocumentNode.SelectNodes(&quot;//a[@href]&quot;); i can find the links. But what about the other 2 parts?<br>\r\n<br>\r\nThanks in advance<br>\r\nGeorge<br>\r\n",
+    "PostedDate": "2008-06-02T04:20:42.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "104111",
+    "ThreadId": "28855",
+    "Html": "For 2 I would use the innerText attribute on the body tag.<br>\r\nFor 3 you should probably look at the outerText property (never used it, I might be wrong!)<br>\r\n",
+    "PostedDate": "2008-07-11T02:27:16.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

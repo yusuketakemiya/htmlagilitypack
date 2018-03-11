@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "248450",
+    "ThreadId": "72745",
+    "Html": "<p>Hi Guys,</p>\r\n<p>im trying to use hap to parse out embed flash movies on webpages and then view the movie on my computer full screen instead of the webpages dimensions. &nbsp;So far i have this code</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>WebClient w = <span style=\"color:Blue\">new</span> WebClient();\r\n            <span style=\"color:Blue\">string</span> html = w.DownloadString(<span style=\"color:#A31515\">&quot;http://www.animeshippuuden.com/category/naruto-shippuuden/&quot;</span>);\r\n\r\n            HtmlDocument doc = <span style=\"color:Blue\">new</span> HtmlDocument();\r\n            doc.LoadHtml(html);\r\n\r\n            HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes(<span style=\"color:#A31515\">&quot;//embed[@flashvars]&quot;</span>);\r\n            <span style=\"color:Blue\">foreach</span> (HtmlNode node <span style=\"color:Blue\">in</span> nodes)\r\n            {\r\n                Console.WriteLine(node.InnerHtml);\r\n            }\r\n</pre>\r\n</div>\r\n<p>however because theres another flash advertisement it will list 2 node for the embed tag. &nbsp;Is there any xpath that can select only src attributes ending with a .flv?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-22T00:31:21.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248451",
+    "ThreadId": "72745",
+    "Html": "<p>oops small correction the foreach loop should have&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>Console.WriteLine(node.Attributes[<span style=\"color:#A31515\">&quot;flashvars&quot;</span>].Value);\r\n</pre>\r\n</div>\r\n<p>instead</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-22T00:33:18.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248537",
+    "ThreadId": "72745",
+    "Html": "<p>Can't you just but an If statement in there where?</p>\r\n<pre><div style=\"color:Black;background-color:White\"><pre><span style=\"color:Blue\">if</span>(node.Attributes[<span style=\"color:#A31515\">&quot;flashvars&quot;</span>].Value.Contains(<span style=\"color:#A31515\">&quot;flv&quot;</span>))\r\n{\r\n  <span style=\"color:Green\">//Do Magic</span>\r\n}\r\n</pre>\r\n</div>\r\n</pre>",
+    "PostedDate": "2009-10-22T06:02:56.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

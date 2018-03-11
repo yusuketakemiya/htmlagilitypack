@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        #results textarea {
+            min-width: 480px;
+            min-height: 300px;
+        }
+    </style>
+    <script type="text/javascript">
+    function runTest() {
+        var testEl = document.getElementById('testEl');
+        var innerTextEl = document.getElementById('innerTextEl');
+        var textContentEl = document.getElementById('textContentEl');
+
+        innerTextEl.value = testEl.innerText;
+        textContentEl.value = testEl.textContent;
+    }
+    </script>
+
+</head>
+<body onload="runTest()">
+    <div id="testEl" class="4D1211C2"><table id="layoutsTable" style="width:100%"><tbody><tr style="vertical-align:top"><td style="width:100%"><div class="ms-rte-layoutszone-outer" style="width:100%"><div class="ms-rte-layoutszone-inner" role="textbox" aria-haspopup="true" aria-multiline="true" aria-autocomplete="both"> test test test test 123 567</div></div></td></tr></tbody></table>
+
+    <span id="layoutsData" style="display:none">false,false,1</span></div>
+
+    <hr/>
+    <table id="results">
+        <thead>
+            <tr><th>innerText</th><th>textContent</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><textarea id="innerTextEl"></textarea></td>
+                <td><textarea id="textContentEl"></textarea></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

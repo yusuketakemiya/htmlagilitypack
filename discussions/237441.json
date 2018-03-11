@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "532288",
+    "ThreadId": "237441",
+    "Html": "\r\n<p>I have a dynamically created table on a web page that I need to extract only the first 2 columns. The layout of the table is this:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">table</span> <span style=\"color:red\">summary</span> <span style=\"color:blue\">=</span> <span style=\"color:blue\">&quot;&quot; id=&quot;data&quot;</span> <span style=\"color:red\">border</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;1&quot;</span> <span style=\"color:red\">cellpadding</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;2&quot;</span> <span style=\"color:red\">cellspacing</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;1&quot;</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">tr</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>column1<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>column2<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>column3<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>column4<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>column5<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>column6<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>column7<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">th</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">tr</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">thead</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">tr</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data1<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data2<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data3<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data4<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data5<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data6<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data7<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">tr</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">tr</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data1<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data2<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data3<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data4<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data5<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data6<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>data7<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">tr</span><span style=\"color:blue\">&gt;</span>\r\n\r\nOnce the table is loaded dynamically, I only need the first 2 columns of data to be shown in a textbox. I have the following code, but it is displaying <br>only one cell in the 7th column from the 6th row. <br><br><div style=\"color:black; background-color:white\"><pre>HtmlWeb web = <span style=\"color:blue\">new</span> HtmlWeb();\r\nHtmlAgilityPack.HtmlDocument doc = web.Load(<span style=\"color:#a31515\">&quot;http://www.website.com&quot;</span>);\r\n\r\n <span style=\"color:green\">// Get all columns in the document</span>\r\nHtmlNodeCollection tables = doc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//table[1]&quot;</span>);\r\n\r\n<span style=\"color:green\">// Iterate all rows in the first table</span>\r\nHtmlNodeCollection rows = tables[0].SelectNodes(<span style=\"color:#a31515\">&quot;//tr&quot;</span>);\r\n<span style=\"color:blue\">for</span> (<span style=\"color:blue\">int</span> i = 0; i &lt; rows.Count; &#43;&#43;i)\r\n{\r\n    <span style=\"color:green\">// Iterate all columns in this row</span>\r\n    HtmlNodeCollection cols = rows[i].SelectNodes(<span style=\"color:#a31515\">&quot;//td&quot;</span>);\r\n    <span style=\"color:blue\">for</span> (<span style=\"color:blue\">int</span> j = 0; j &lt; cols.Count; &#43;&#43;j)\r\n    {\r\n         <span style=\"color:green\">// Get the value of the column and print it</span>\r\n         <span style=\"color:blue\">string</span> value = cols[j].InnerText;\r\n         txtBox1.Text = value;\r\n     }\r\n}\r\n</pre>\r\n</div>\r\n</pre>\r\n</div>\r\nAny suggestions? Thanks.\r\n<p></p>\r\n",
+    "PostedDate": "2010-12-07T07:01:26.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "532699",
+    "ThreadId": "237441",
+    "Html": "\r\n<p>I don't see in your code anything that says: show me first cell. I see this: iterate through cells and show last (show all cells one after other, but after all - it will display only last one).</p>\r\n<p>BTW, thead tag doesn't opens and table - doesn't closes.</p>\r\n",
+    "PostedDate": "2010-12-07T23:41:10.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "532846",
+    "ThreadId": "237441",
+    "Html": "\r\n<p>So what should be changed? I'm rather new to all this so any help would be appreciated. Thanks for your reply.</p>\r\n",
+    "PostedDate": "2010-12-08T06:05:49.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "533258",
+    "ThreadId": "237441",
+    "Html": "\r\n<p>Maybe I was unclear in my first post. So what you do in your code:</p>\r\n<ol>\r\n<li>Load page </li><li>Find first table </li><li>Find rows in table </li><li>For each row in rows:\r\n<ol>\r\n<li>Find cell in row </li><li>Cell content write to textbox </li></ol>\r\n</li></ol>\r\n<p>So where you see answer to your problem:<br>\r\nI only need the first 2 columns of data to be shown in a textbox.</p>\r\n<pre><br>You have i rows, with j columns and you must somewhere say something like: textbox1.text = rowCells[1].Value (in your code rowCells is cols). <br>Also you write: I need 2 columns. But you have only one textbox. So what you put into that textbox? first column? second? Merged? Table has many rows: what you want show there?\r\n<ol><li>Load page\r\n</li><li>Find first table\r\n</li><li>Find rows in table\r\n</li><li>In each row:\r\n<ol><li>Do something with cell[neededFirstColumnIndex]</li><li>Do something with cell[neededSecondColumnIndex]</li></ol></li></ol></pre>\r\n",
+    "PostedDate": "2010-12-08T23:48:32.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "533409",
+    "ThreadId": "237441",
+    "Html": "\r\n<p>I guess what I'm having trouble with is understanding the //th and //td. How do I differentiate between all of them? If I only need 2 columns from the table, how would i grab the info from just the first 2 //th? Btw, there is only one table on the page.</p>\r\n",
+    "PostedDate": "2010-12-09T06:51:59.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "533638",
+    "ThreadId": "237441",
+    "Html": "\r\n<p>If I have 2 textboxes, I would have column 1 data in textbox1 and column 2 data in textbox2.</p>\r\n",
+    "PostedDate": "2010-12-09T13:39:37.427-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "533851",
+    "ThreadId": "237441",
+    "Html": "\r\n<pre><pre><div style=\"color:black; background-color:white\"><pre><div style=\"color:black; background-color:white\"><pre>HtmlWeb web = <span style=\"color:blue\">new</span> HtmlWeb();\r\nHtmlAgilityPack.HtmlDocument doc = web.Load(<span style=\"color:#a31515\">&quot;http://www.website.com&quot;</span>);\r\n\r\n <span style=\"color:green\">// Get all columns in the document</span>\r\nHtmlNodeCollection tables = doc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//table[1]&quot;</span>);\r\n\r\n<span style=\"color:green\">// Iterate all rows in the first table</span>\r\nHtmlNodeCollection headCells = tables[0].SelectNodes(<span style=\"color:#a31515\">&quot;//tr/thead/th&quot;</span>); <span style=\"color:green\">// if you fix your html, else you can</span>\r\n<span style=\"color:green\">//HtmlNodeCollection headCells = tables[0].SelectNodes(&quot;//tr//th&quot;);</span>\r\n\r\n<span style=\"color:blue\">if</span> (headCells == <span style=\"color:blue\">null</span> || headCells.Count &lt;2)\r\n{\r\n   MessageBox.Show(<span style=\"color:#a31515\">&quot;Error. Cells not found. &quot;</span>);\r\n   <span style=\"color:blue\">return</span>;\r\n}\r\ntextBox1.Text = headcells[0].Value;\r\ntextBox2.Text = headcells[1].Value;\r\n\r\n</pre>\r\n</div>\r\nI don't think that this will help you...</pre>\r\n</div>\r\n</pre>\r\n</pre>\r\n",
+    "PostedDate": "2010-12-10T04:58:48.853-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "533908",
+    "ThreadId": "237441",
+    "Html": "\r\n<p>This helps somewhat. But it only returns the first row of data that I need. How would I get all the rows?</p>\r\n",
+    "PostedDate": "2010-12-10T07:07:49.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "534006",
+    "ThreadId": "237441",
+    "Html": "\r\n<p>Read the book about C# - this will help you most. As I said before:</p>\r\n<pre>You have i rows, with j columns and you must somewhere say something like: textbox1.text = rowCells[1].Value (in your code rowCells is cols). <br>Also you write: I need 2 columns. But you have only one textbox. So what you put into that textbox? first column? second? Merged? Table has many rows: what you want show there?<br><br>This is my last post in this thread. <br></pre>\r\n",
+    "PostedDate": "2010-12-10T09:59:35.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

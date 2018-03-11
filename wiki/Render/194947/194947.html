@@ -1,0 +1,10 @@
+<div class="wikidoc"><b>Html Agility Pack Examples</b><br /><br />For example, here is how you would fix all hrefs in an HTML file: <br /><pre>
+ HtmlDocument doc = new HtmlDocument();
+ doc.Load(&quot;file.htm&quot;);
+ foreach(HtmlNode link in doc.DocumentElement.SelectNodes(&quot;//a[@href&quot;])
+ {
+    HtmlAttribute att = link[&quot;href&quot;];
+    att.Value = FixLink(att);
+ }
+ doc.Save(&quot;file.htm&quot;);
+</pre></div><div class="ClearBoth"></div>

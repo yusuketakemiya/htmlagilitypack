@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "228521",
+    "ThreadId": "67224",
+    "Html": "<p>I have a HTML page which I get from another url. In this HTML there is one table which data I need to extract.<br>Basically I need to loop through all the rows in the table and then for each cell in that row I will need to get the data in it.</p>\r\n<p>The table I need starts with: &lt;table width=&quot;700&quot; cellspacing=&quot;1&quot; cellpadding=&quot;1&quot; border=&quot;1&quot; bgcolor=&quot;#555555&quot;&gt;<br><br>So I need to get the entire table from this point up to the &lt;/table&gt;<br><br>How can I get this table from the HTML AND how can I loop through the table rows and cells?<br><br>Can anyone provide me with a good example using HTML agility pack, which btw looks cool and exactly what I need for this! :)<br><br>Thanks!</p>",
+    "PostedDate": "2009-08-27T13:14:18.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228611",
+    "ThreadId": "67224",
+    "Html": "<p><span style=\"font-size:x-small\">\r\n<p>use SelectSingleNode with the relevant xpath: &quot;html/body/table/&quot;</p>\r\n</span></p>",
+    "PostedDate": "2009-08-28T00:16:29.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228629",
+    "ThreadId": "67224",
+    "Html": "<p>Ok, I thin I can get the table with:<br><br>SelectSingleNode(/html/body/div/table[5]/tbody/tr/td[2]/table[2])<br><br>But how do I loop through the rows and cells of the table..im looking for an example :)<br><br>Thanks!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-28T01:36:05.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228791",
+    "ThreadId": "67224",
+    "Html": "<p>I am looking for examples too. plesae keep me posted.&nbsp; thanks.</p>",
+    "PostedDate": "2009-08-28T10:57:36.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228981",
+    "ThreadId": "67224",
+    "Html": "<p>There are 2 key classes to know, besides HtmlDocument ofcourse.</p>\r\n<p>HtmlNode<br>HtmlNodeCollection</p>\r\n<p>To &quot;read&quot; the nodes of a HtmlDocument, use DocumentNode property. DocumentNode is a HtmlNode object.</p>\r\n<p>Another important thing to KNOW about is that SelectSingleNode and SelectNodes return null when no nodes are found. So in this code, you should test for null. Pretend table.SelectNodes(&quot;./tr&quot;) returns null, and there are 3 tables in the html document, your code will not go past the first one, and throw an exception.</p>\r\n<p>HtmlDocument doc = HtmlWeb.Load(&quot;sample.html&quot;);<br>foreach(HtmlNode table in doc.SelectNodes(&quot;//table&quot;))<br>{<br>&nbsp;&nbsp;&nbsp; foreach(HtmlNode tr in table.SelectNodes(&quot;./tr&quot;))<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNodeCollection tds = tr.SelectNodes(&quot;./td&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(tds == null )<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; continue;<br>&nbsp;&nbsp;&nbsp; }<br>}</p>\r\n<p>I am writing this off my mind, so it might not compile at all. But it is just a reference sample.</p>\r\n<p>If you add the HAP project to your solution, you can more easily figure out how HAP works than using only the HtmlAgilityPack.dll.</p>\r\n<p>Good luck!</p>",
+    "PostedDate": "2009-08-29T08:29:16.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "412877",
+    "ThreadId": "67224",
+    "Html": "<p>I was using the sample below as an example and came up with:</p>\r\n<p>&nbsp;</p>\r\n<p>HtmlDocument doc = hw.Load(&quot;http://xxxxxxxxxx/GeneralContent/Active/PrintPage/PrintPage.aspx?PageId=3270&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get all columns in the document<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNodeCollection table = doc.DocumentNode.SelectNodes(&quot;//table&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get the value of the column and print it<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (HtmlNode col in table)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNodeCollection rows = col.SelectNodes(&quot;//tr&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (HtmlNode row in rows)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNodeCollection td = row.SelectNodes(&quot;//td&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (HtmlNode cell in td)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Write(cell.InnerText);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>My question is; why does my outer loop for the TR tags only get hit once? Basically all content on the page exists in the TD node. This could be how the xml is structured I just wanted to verify this was true?</p>",
+    "PostedDate": "2010-03-01T13:33:15.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "818880",
+    "ThreadId": "67224",
+    "Html": "<p>I want to know&nbsp;what is&nbsp;line and line position means in HAP. How they are related to xpath?</p>",
+    "PostedDate": "2012-04-02T10:42:16.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

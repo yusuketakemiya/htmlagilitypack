@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1107539",
+    "ThreadId": "462184",
+    "Html": "Sorry for asking, however I am a bit lost here. \r<br />\n<br />\nI need to parse the DOM tree, and when I encounter specific Attribute, use the information to substitute all occurrences of specific symbols within the scope of that node: could be &lt;body&gt; or some low-level &lt;div&gt;\r<br />\n<br />\nIs there an example which I can use?\r<br />\n<br />\nOr - what docco should I read? <br />\n",
+    "PostedDate": "2013-10-15T02:09:09.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

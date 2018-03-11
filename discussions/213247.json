@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "445218",
+    "ThreadId": "213247",
+    "Html": "<p>Hello! I need find in html page block which is most contently look. So i have to find&nbsp; all nodes and select only each of them which contains text. Then i have to look this text and count number of words, characters, commas and give some score to this node depend on this data.<br>-50 score if attribute class is: footer, footnote, navigation, menu etc.('cause these block doesn't contain main content, for example div class=&quot;footer&quot;).<br>-50 score if attribute id is the same(for example div id=&quot;footer&quot;).<br>+25 if attribute class contain /((^|\\s)(post|entry|entry[-]?(content|text|body)?|article[-]?(content|text|body)?)(\\\\s|$))/ (div class=&quot;post&quot;-content, post, article etc)<br>+25 the same with id(div id=post-content, post, article etc)<br>+1 for each paragraph which contain more that 10 characters.<br>+ number of commas in paragraph.<br><br>After it i know which block on page is most-contently look and i must show it/<br><br>Please each of you who may be interesting in this post help or give me some code to try and go on )</p>",
+    "PostedDate": "2010-05-19T20:12:02.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

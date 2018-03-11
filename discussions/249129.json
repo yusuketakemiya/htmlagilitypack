@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "578211",
+    "ThreadId": "249129",
+    "Html": "\r\n<p>Hello everyone, When I use foreach to get a lot of html note, then I go through all the note,and try to SelectSingleNode in each htmlnode. However, it seems doen' work. I still serach the whole document,not current html node value.</p>\r\n<p>This is my previous code which has these wired problem.</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">foreach</span> (HtmlNode item <span style=\"color:blue\">in</span> doc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//div[@class=\\&quot;bookMain seeMoreItem\\&quot;]&quot;</span>))\r\n\r\n            {\r\n\r\n                KindleNote note = <span style=\"color:blue\">new</span> KindleNote();\r\n\r\n                note.Content= item.SelectSingleNode(<span style=\"color:#a31515\">&quot;//div[@class=\\&quot;singleHighlight\\&quot;]/span&quot;</span>).InnerText;\r\n\r\n                note.Tag = item.SelectSingleNode(<span style=\"color:#a31515\">&quot;//div[@class=\\&quot;note\\&quot;]&quot;</span>).InnerText;\r\n\r\n                <span style=\"color:blue\">string</span> date = item.SelectSingleNode(<span style=\"color:#a31515\">&quot;//div[@class=\\&quot;sharedOn\\&quot;]&quot;</span>).InnerText;\r\n\r\n\r\n                <span style=\"color:blue\">string</span>[] str = Regex.Replace(date.Trim(<span style=\"color:#a31515\">'\\n'</span>), <span style=\"color:#a31515\">@&quot;( |\\t|\\r?\\n)\\1&#43;&quot;</span>, <span style=\"color:#a31515\">&quot;$1&quot;</span>).Trim(<span style=\"color:#a31515\">' '</span>).Split(<span style=\"color:#a31515\">' '</span>);\r\n\r\n                DateTime dt = ConvertToDateTime(str[2], str[3], str[4]);\r\n\r\n                 note.SharedTime = dt;\r\n\r\n                rawKindleList.Add(note);\r\n\r\n            }\r\n\r\n \r\n\r\n        }\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>So I change the code to this ,and it works fine.</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">foreach</span> (HtmlNode item <span style=\"color:blue\">in</span> doc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//div[@class=\\&quot;bookMain seeMoreItem\\&quot;]&quot;</span>))\r\n            {\r\n\r\n                KindleNote note = <span style=\"color:blue\">new</span> KindleNote();\r\n                HtmlDocument divDoc = <span style=\"color:blue\">new</span> HtmlDocument();\r\n                divDoc.LoadHtml(item.InnerHtml);\r\n\r\n                note.Content = divDoc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//div[@class=\\&quot;singleHighlight\\&quot;]/span&quot;</span>).InnerText;\r\n\r\n                note.Tag = divDoc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//div[@class=\\&quot;note\\&quot;]&quot;</span>).InnerText;\r\n\r\n                <span style=\"color:blue\">string</span> date = divDoc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//div[@class=\\&quot;sharedOn\\&quot;]&quot;</span>).InnerText;\r\n\r\n                <span style=\"color:blue\">string</span>[] str = Regex.Replace(date.Trim(<span style=\"color:#a31515\">'\\n'</span>), <span style=\"color:#a31515\">@&quot;( |\\t|\\r?\\n)\\1&#43;&quot;</span>, <span style=\"color:#a31515\">&quot;$1&quot;</span>).Trim(<span style=\"color:#a31515\">' '</span>).Split(<span style=\"color:#a31515\">' '</span>);\r\n\r\n                DateTime dt = ConvertToDateTime(str[2], str[3], str[4]);\r\n                note.SharedTime = dt;\r\n                rawKindleList.Add(note);\r\n            }\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n<p>I just wonder to know, why my first way doesn't work and can we improve this?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-03-09T21:46:57.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578281",
+    "ThreadId": "249129",
+    "Html": "<p>maybe you can change&nbsp;<span style=\"font-family: Consolas, 'Courier New', Courier, monospace; white-space: pre;\">note.Content= item.SelectSingleNode(<span>\"//div[@class=\\\"singleHighlight\\\"]/span\"</span>).InnerText;</span></p>\r\n<p><span style=\"font-family: Consolas, 'Courier New', Courier, monospace; white-space: pre;\">to ./div[@class=\\\"singleHighlight\\\"]/span\"</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-family: Consolas, 'Courier New', Courier, monospace; white-space: pre;\">then try again !</span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-03-10T01:38:59.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "642803",
+    "ThreadId": "249129",
+    "Html": "<p>I have the same problem with billmoling.</p>\r\n<p>When I change \"//div\" to \"./div\", it returns null.</p>\r\n<p>Is there some way to solve the problem?</p>",
+    "PostedDate": "2011-07-15T00:48:13.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "642865",
+    "ThreadId": "249129",
+    "Html": "<p>This does look like an XPath issue: however, you shouldn't change //div to ./div but rather to .//div.&nbsp; An XPath starting with a / means \"search from document root\", so the behavior is correct.&nbsp; // means search all descendants; so what you want is .// which searches all descendants of the current node.&nbsp; Equivalently, you could use \"descendant::div\" to make this explicit.</p>",
+    "PostedDate": "2011-07-15T04:04:42.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "643539",
+    "ThreadId": "249129",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>emn13 wrote:</strong><br />\r\n<p>This does look like an XPath issue: however, you shouldn't change //div to ./div but rather to .//div.&nbsp; An XPath starting with a / means \"search from document root\", so the behavior is correct.&nbsp; // means search all descendants; so what you want is .// which  searches all descendants of the current node.&nbsp; Equivalently, you could use \"descendant::div\" to make this explicit.</p>\r\n</blockquote>\r\n<p>It works, thanks!</p>",
+    "PostedDate": "2011-07-17T19:52:59.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

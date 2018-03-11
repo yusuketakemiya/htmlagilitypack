@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If in any way a text node ends up with _outerchanged == true (setting an attribute will set this flag to true, for example) and _text == null, getting OuterHTML causes a StackOverflow:\n \n(HtmlTextNode)OuterHTML_get() ->base.OuterHTML_get() -> WriteTo() -> WriteTo(StringWriter) -> (HtmlTextNode).Text_get() -> (HtmlTextNode)OuterHTML_get()",
+    "LastUpdatedDate": "2013-08-04T19:58:19.31-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-10-07T07:35:57.63-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Setting attributes on a text node causes StackOverflow",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 18821
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I came across this because I blindly ran `RemoveAll()` on the `HtmlAttributeCollection` of an entire node tree, including text nodes.",
+      "PostedDate": "2013-08-04T19:58:19.31-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

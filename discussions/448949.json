@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1064053",
+    "ThreadId": "448949",
+    "Html": "Hi , How can i highlight the text color?<br />\n",
+    "PostedDate": "2013-07-03T04:49:18.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064056",
+    "ThreadId": "448949",
+    "Html": "hi ,\r<br />\n<br />\nI got the solution using the text property &quot;text.Highlight(Highlight)&quot;.<br />\n",
+    "PostedDate": "2013-07-03T04:56:29.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

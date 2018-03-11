@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "612961",
+    "ThreadId": "257682",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Is there a way to force HAP use double quotes when wrapping attributes values? (e.g. &lt;p style=&quot;blahblah;&quot;&gt;..)</p>\r\n<p>at the moment, if my input has single quote it will remain as such, and if it doesn't HAP will add double quote.</p>\r\n",
+    "PostedDate": "2011-05-15T06:51:26.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

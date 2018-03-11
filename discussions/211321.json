@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "438105",
+    "ThreadId": "211321",
+    "Html": "<p>First off, here's the code I'm having trouble with.</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>            HtmlAgilityPack.HtmlDocument html = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlDocument();\r\n            <span style=\"color:blue\">string</span> url = urlBox.Text;\r\n\r\n\r\n            html.LoadHtml(<span style=\"color:#a31515\">&quot;http://siteexplorer.search.yahoo.com/search?p=&quot;</span> + url + <span style=\"color:#a31515\">&quot;&amp;bwm=i&amp;bwmo=d&amp;bwmf=s&quot;</span>);\r\n            HtmlNodeCollection links = html.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;id('result-list')/x:tbody/x:tr/x:td[2]/a[1]&quot;</span>);\r\n                \r\n            <span style=\"color:blue\">for</span> (<span style=\"color:blue\">int</span> i = 0; i &lt; links.Count(); i++)\r\n            {\r\n                MessageBox.Show(<span style=\"color:#a31515\">&quot;Found: &quot;</span> + links[i]);\r\n            }\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Okay, now on line 4, I'm getting the following error when this code runs.</p>\r\n<p>&quot;Namespace Manager or XsltContext needed. This query has a prefix, variable, or user-defined function.&quot;</p>\r\n<p>I've Googled this, but the trouble is that I'm finding things for the XML Namespace, when I'm using the HTML Agility Pack - which doesn't have an argument for a namespace in the selectnodes method.</p>\r\n<p>So... I'm thinking that my SelectNodes is actually running from System.Xml - but I don't know how to change that.</p>\r\n<p>Any idea on how to fix this would be greatly appreciated.</p>",
+    "PostedDate": "2010-05-02T14:35:33.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "439723",
+    "ThreadId": "211321",
+    "Html": "<p>Hi,</p>\r\n<p>&quot;x:&quot; references a namespace, and the Html Agility Pack&nbsp;does not support namespaces.</p>\r\n<p>You can search this forum for more information on namespaces.</p>",
+    "PostedDate": "2010-05-06T01:43:28.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "439921",
+    "ThreadId": "211321",
+    "Html": "<p>Hmm... I've removed the &quot;x:&quot; but am still getting a null value.</p>\r\n<p>I've changed the code to work on a site of my own, but even then I'm still having issues.</p>\r\n<p>I know for a fact there are &quot;p&quot; tags on my site... so this *should* be showing it, I think.</p>\r\n<p>Here's my modified code.</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>            HtmlAgilityPack.HtmlDocument html = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlDocument();\r\n            <span style=\"color:green\">//string url = urlBox.Text;</span>\r\n            <span style=\"color:blue\">string</span> url = <span style=\"color:#a31515\">&quot;test&quot;</span>;\r\n\r\n\r\n            html.LoadHtml(<span style=\"color:#a31515\">&quot;http://www.seorankfinder.com&quot;</span>);\r\n            HtmlNodeCollection links = html.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;p&quot;</span>);\r\n\r\n            <span style=\"color:blue\">if</span> (links == <span style=\"color:blue\">null</span>)\r\n            {\r\n                MessageBox.Show(<span style=\"color:#a31515\">&quot;None Available&quot;</span>);\r\n            }\r\n            <span style=\"color:blue\">else</span>\r\n            {\r\n                <span style=\"color:blue\">for</span> (<span style=\"color:blue\">int</span> i = 0; i &lt; links.Count(); i++)\r\n                {\r\n                    MessageBox.Show(<span style=\"color:#a31515\">&quot;Found: &quot;</span> + links[i]);\r\n                }\r\n            }\r\n</pre>\r\n</div>\r\n</p>\r\n<p>If my understanding of XPath is correct, simply placing the &quot;p&quot; in SelectNodes should pull out all paragraph tags. Now, I know the site is up, working, and it's straight HTML so I know there's no code to block LoadHtml from working correctly.</p>\r\n<p>Any ideas on what the issue is?</p>",
+    "PostedDate": "2010-05-06T08:40:58.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "439924",
+    "ThreadId": "211321",
+    "Html": "<p>I've also tried using &quot;//p&quot; in SelectNodes and am still getting null.</p>",
+    "PostedDate": "2010-05-06T08:41:57.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "464690",
+    "ThreadId": "211321",
+    "Html": "<p>I am too having the same problem!</p>\r\n<p>Let us request the author to provide option to add namespace while searching nodes</p>\r\n<p>Regards</p>\r\n<p>Raj</p>",
+    "PostedDate": "2010-07-08T00:37:40.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

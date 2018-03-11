@@ -1,0 +1,125 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Why DocumentNode.SelectNodes() returns null. Will be better it to return an empty collection.",
+    "LastUpdatedDate": "2015-06-07T05:40:09.733-07:00",
+    "PlannedForRelease": "2.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-10-15T01:25:53.5-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Why DocumentNode.SelectNodes returns null",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 13,
+    "Id": 29175
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "With the null as return value, a foreach(HtmlNode element in node.SelectNodes(\"//div\")) will crash (NullReferenceException) when there is no <div> present! An empty list would work fine.",
+      "PostedDate": "2011-01-07T06:03:59.91-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-11T06:15:05.73-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This has been covered before, this function is written to mimic the way the System.XML works. Doing so will cause a major breaking change and thus will probably be slated for 2.0",
+      "PostedDate": "2011-01-11T13:27:52.927-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-11T13:30:18.153-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I agree, it should return an empty collection. This breaks the foreach pattern and the usage of LINQ extensions methods like .FirstOfDefault().",
+      "PostedDate": "2011-05-07T02:02:15.943-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-07T02:35:23.2-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Instead you can do (doc.DocumentNode.SelectNodes() ?? new HtmlNodeCollection(null)).FirstOrDefault(); same applies to Descendants.",
+      "PostedDate": "2012-04-04T10:40:23.17-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-12-26T15:54:44.553-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:12.413-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-22T00:06:52.78-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I understand the part of the breaking change, but maybe it is possible to add an optional argument, that *does* enable this behaviour? Not sure how hard implementation would be.",
+      "PostedDate": "2013-08-27T04:02:11.99-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-09-14T06:16:44.94-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-09-24T03:34:17.227-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-12-08T05:39:58.057-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "```\nSystem.Xml.XmlDocument xdoc = new System.Xml.XmlDocument();\nxdoc.LoadXml(\"<root/>\");\nforeach (var item in xdoc.SelectNodes(\"//img\"))\n{\n}\n```\nThis also returns an empty list and doesn't throw any Exceptions...",
+      "PostedDate": "2013-12-08T05:43:36.07-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-06-07T05:11:45.353-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I implemented a extension method to work around this issue:\n```\nstatic class ExtensionToHtmlAgility\n    {\n        public static HtmlNodeCollection NullGuard(this HtmlNodeCollection self)\n        {\n            if (self == null)\n                return new HtmlNodeCollection(null);\n            else\n                return self;\n        }\n    }\n```\nThis way I can continue using linq:\n```\nvar links = htmlDocument.DocumentNode\n                .SelectNodes(\"//a[@href]\").NullGuard()\n                .Select(node => node.GetAttributeValue(\"href\", \"\"));\n```",
+      "PostedDate": "2015-06-07T05:40:09.733-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

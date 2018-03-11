@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When I call \"SelectSingleNode\" on a node, the result ist the first match in the document, not the first match in the node.\nIn the debugging session I saw a call to \"MoveToRoot\" in \"HtmlNodeNavigator\" while doing a \"SelectSingleNode\" on a node.\nWhen I change the line \"_currentnode = _doc.DocumentNode;\" to a comment it works fine. But I can't say anything about the drawbacks.\n \nI am using the following Workaround: Make a new Document out of the node.   => d1.LoadHtml (xy.InnerHtml);\n            \n \nSAMPLE:\n            HtmlWeb hw = new HtmlWeb();\n            HtmlAgilityPack.HtmlDocument doc = hw.Load(\"http://www.eex.com/de\");\n            HtmlNodeCollection n1 = doc.DocumentNode.SelectNodes(\"//table[@class ='electricity list']\");\n            foreach (HtmlNode xy in n1)\n            {\n                HtmlNode node = xy.SelectSingleNode(\"//th[@class ='title']\");\n                String res = node.InnerHtml ;\n            }",
+    "LastUpdatedDate": "2013-02-21T18:47:14.397-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-07-18T08:07:09.48-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem with \"SelectSingleNode\" on a node",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 28146
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I \"second\" this issue, and have to consistently use the \"workaround\" in getting at what is needed.  Maybe a similar function can be added -> selectfromNode and SelectNodesFromNode as not to change the existing code base for people using it this way?",
+      "PostedDate": "2010-09-18T15:55:13.673-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This is not an issue CurrentNode.SelectSingleNode(\".//ElementName\") to search only within the current node.",
+      "PostedDate": "2011-08-02T18:16:05.017-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:14.397-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

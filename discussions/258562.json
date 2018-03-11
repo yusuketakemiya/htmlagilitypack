@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "616498",
+    "ThreadId": "258562",
+    "Html": "\r\n<p>hi,all, I wonder how to use HtmlAgilityPack to remove all the attributes of an element, and replace texts with some specific ones when I walk the DOM tree, coz theres no documentation on interfaces of HtmlAgilityPack, so I have to put the question here.</p>\r\n<p>cheers</p>\r\n<p>daiyue</p>\r\n",
+    "PostedDate": "2011-05-22T16:36:40.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

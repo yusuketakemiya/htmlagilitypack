@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "234764",
+    "ThreadId": "68997",
+    "Html": "<p>I was finally able to get a hold of Simon Mourier the creator and coordinator of Html Agility Pack and he has granted me developer rights on HAP. Over the next week I'm going to work on getting updates in the SVN repository and am shooting for a new release within the next 2 weeks.</p>\r\n<p>The major feature will be Generic Lists and LINQ support. I will also try to include some of the easier bug fixes.</p>",
+    "PostedDate": "2009-09-15T08:47:29.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234866",
+    "ThreadId": "68997",
+    "Html": "<p>Great news, looking forward for this.</p>",
+    "PostedDate": "2009-09-15T12:35:46.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

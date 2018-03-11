@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I manually append a comment node (__var comment = hdoc.CreateComment__, __hdoc__ - an instance of __HtmlDocument__ class, __aNode.AppendChild(comment)__). \nThen I call __hdoc.DocumentNode.OuterHtml__ to see the whole html text. Every comment node in this text is not surronded with common __<--__ and __-->__ symbols, just the text of comment.",
+    "LastUpdatedDate": "2014-01-17T01:57:39.497-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-01-17T01:45:21.093-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DocumentNode.OuterHtml and Comment nodes",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 34908
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

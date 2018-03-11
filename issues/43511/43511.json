@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Dear Devs,\n\nMethod 'Descendants' throws an exception when using Fizzler (css selectors) with HAP.\n\nSomebody has created an issue on this on Fizzler's GitHub:\n\nhttps://github.com/atifaziz/Fizzler/issues/56\n\nThe suspicion seems to be that the fault lies with HAP rather than with Fizzler.\n\nCan you look at it and, if possible, fix it?\n\nSincerely,\n\nJay",
+    "LastUpdatedDate": "2017-05-10T17:00:34.067-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-10-26T10:13:13.627-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Breaking Change In 1.4.9.1, Makes Fizzler Cause Exception",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 43511
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "FWIW, the breaking change affects more than Fizzler.  Here is the details from an Umbraco installation that has the same issue:\r\n\r\n---\r\n\r\nServer Error in '/' Application.\r\n\r\nMethod not found: 'System.Collections.Generic.IEnumerable`1<HtmlAgilityPack.HtmlNode> HtmlAgilityPack.HtmlNode.Descendants()'. \n  Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code. \r\n\r\n Exception Details: System.MissingMethodException: Method not found: 'System.Collections.Generic.IEnumerable`1<HtmlAgilityPack.HtmlNode> HtmlAgilityPack.HtmlNode.Descendants()'.\r\n\r\nSource Error: \r\n\r\n\r\n\r\nLine 1164:        return \"\";\nLine 1165:      }\nLine 1166:    }\nLine 1167:\nLine 1168:    /// <summary>\n  \r\n\r\n Source File:  D:\\ORMG\\Reserve\\Source\\Dev\\V2.0\\FuntavoCommunity\\FuntavoCommunity.Logic\\Application\\AppHelpers.cs    Line:  1166 \r\n\r\nStack Trace: \r\n\r\n\r\n\r\n[MissingMethodException: Method not found: 'System.Collections.Generic.IEnumerable`1<HtmlAgilityPack.HtmlNode> HtmlAgilityPack.HtmlNode.Descendants()'.]\n   FuntavoCommunity.Logic.Application.AppHelpers.RemoveUnwantedTags(String html) in D:\\ORMG\\Reserve\\Source\\Dev\\V2.0\\FuntavoCommunity\\FuntavoCommunity.Logic\\Application\\AppHelpers.cs:1166\n   FuntavoCommunity.Logic.Application.AppHelpers.GetSafeHtml(String html) in D:\\ORMG\\Reserve\\Source\\Dev\\V2.0\\FuntavoCommunity\\FuntavoCommunity.Logic\\Application\\AppHelpers.cs:1019\n   FuntavoCommunity.Logic.Services.PrivateMessageService.SanitizeMessage(PrivateMessage privateMessage) in D:\\ORMG\\Reserve\\Source\\Dev\\V2.0\\FuntavoCommunity\\FuntavoCommunity.Logic\\Services\\PrivateMessageService.cs:35\n   FuntavoCommunity.Logic.Services.PrivateMessageService.Add(PrivateMessage message) in D:\\ORMG\\Reserve\\Source\\Dev\\V2.0\\FuntavoCommunity\\FuntavoCommunity.Logic\\Services\\PrivateMessageService.cs:49\n   FuntavoCommunity.Logic.Controllers.FuntavoMessageController.Create(CreatePrivateMessageViewModel createPrivateMessageViewModel) in D:\\ORMG\\Reserve\\Source\\Dev\\V2.0\\FuntavoCommunity\\FuntavoCommunity.Logic\\Controllers\\FuntavoMessageController.cs:59\n   lambda_method(Closure , ControllerBase , Object[] ) +103\n   System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters) +14\n   System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters) +157\n   System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters) +27\n   System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState) +22\n   System.Web.Mvc.Async.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult) +29\n   System.Web.Mvc.Async.WrappedAsyncResultBase`1.End() +49\n   System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult) +32\n   System.Web.Mvc.Async.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d() +50\n   System.Web.Mvc.Async.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f() +225\n   System.Web.Mvc.Async.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f() +225\n   System.Web.Mvc.Async.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f() +225\n   System.Web.Mvc.Async.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f() +225\n   System.Web.Mvc.Async.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f() +225\n   System.Web.Mvc.Async.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f() +225\n   System.Web.Mvc.Async.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f() +225\n   System.Web.Mvc.Async.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult) +10\n   System.Web.Mvc.Async.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult) +10\n   System.Web.Mvc.Async.WrappedAsyncResultBase`1.End() +49\n   System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult) +34\n   System.Web.Mvc.Async.<>c__DisplayClass2b.<BeginInvokeAction>b__1c() +26\n   System.Web.Mvc.Async.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) +100\n   System.Web.Mvc.Async.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult) +10\n   System.Web.Mvc.Async.WrappedAsyncResultBase`1.End() +49\n   System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult) +27\n   System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState) +13\n   System.Web.Mvc.Async.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult) +29\n   System.Web.Mvc.Async.WrappedAsyncResultBase`1.End() +49\n   System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult) +36\n   System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller) +12\n   System.Web.Mvc.Async.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult) +22\n   System.Web.Mvc.Async.WrappedAsyncResultBase`1.End() +49\n   System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult) +26\n   System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult) +10\n   System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState) +21\n   System.Web.Mvc.Async.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult) +29\n   System.Web.Mvc.Async.WrappedAsyncResultBase`1.End() +49\n   System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult) +28\n   System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result) +9\n   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +9773937\n   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) +155\n",
+      "PostedDate": "2017-01-26T23:28:30.35-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2017-05-10T17:00:34.067-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

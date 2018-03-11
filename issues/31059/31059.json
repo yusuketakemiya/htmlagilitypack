@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The `InnerText` and `OuterHtml` properties of the `HtmlElement` are read only properties.  However the documentation for the properties start off with \"Gets or Sets the...\"\n \nThere are quite a few more inconsistencies on other properties of other classes as well.  The read/write differences are the major ones.  There are a number of minor ones as well such as phrasing (doesn't begin with the usual \"Gets [or sets]\") and various capitalization differences (noticed mostly in the capitalization of the 'S' in \"Gets or Sets...\").\n \n* `HtmlAttribute`\n    - `Name` (read/write): Does not mention it is writable.  Starts with \"Gets the...\"\n    - `OriginalName`: Inconsistent phrasing compared to the rest of the properties.\n    - `QuoteType`: Inconsistent phrasing compared to the rest of the properties.\n \n* `HtmlCommentNode`\n    - `OuterHtml` (read): Is a read only property.  Starts with \"Gets or Sets the...\"\n \n* `HtmlEntity`\n    - `EntityName`: Inconsistent phrasing compared to the rest of the properties.\n    - `EntityValue`: Inconsistent phrasing compared to the rest of the properties.\n \n* `HtmlNode`\n    - `InnerText` (read): Is a read only property.  Starts with \"Gets or Sets the...\"\n    - `OuterHtml` (read): Is a read only property.  Starts with \"Gets or Sets the...\"\n    - `OriginalName`: Inconsistent phrasing compared to the rest of the properties.\n \n* `HtmlNodeCollection`\n    - `IsReadOnly`: Inconsistent phrasing compared to the rest of the properties.\n \n* `HtmlTextNode`\n    - `OuterHtml` (read): Is a read only property.  Starts with \"Gets or Sets the...\"\n \n* `MixedCodeDocumentCodeFragment`\n    - `Code` (read/write): Does not mention it is writable.  Starts with \"Gets the...\"\n \n* `MixedCodeDocumentTextFragment`\n    - `Text` (read/write): Does not mention it is writable.  Starts with \"Gets the...\"",
+    "LastUpdatedDate": "2013-12-08T05:27:48.827-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-07-21T19:44:48.48-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Documentation inconsistencies of some properties",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 31059
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

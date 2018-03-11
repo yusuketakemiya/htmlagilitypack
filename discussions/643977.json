@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1441184",
+    "ThreadId": "643977",
+    "Html": "I'm not yet very familiar with XPath, but what I'm trying to do shouldn't be this difficult. Basically, I'm periodically checking Google finance to see what the current stock price of a few companies. It's nothing fancy, but I've hit a wall.<br />\n<br />\nWhen I read the html, I can see the price is kept in a node with the id called 'price-panel'. Should be easy, but I'm getting an error when I try to get the node.<br />\n<pre><code>string url = &quot;http://www.google.ca/finance?q=&quot;+Symbol;\nvar getHtmlWeb = new HtmlWeb();\nvar document = getHtmlWeb.Load(url);\n\nvar node = document.DocumentNode.SelectNodes(&quot;//[@id='price-panel']&quot;);</code></pre>\n\nAt this point, the following exception gets thrown:<br />\n<pre><code>System.Xml.XPath.XPathException: Expression must evaluate to a node-set.</code></pre>\n\nTaking a quick peek at the HTML from right now, it looks like this:<br />\n<pre><code>&lt;div id=price-panel class=&quot;id-price-panel goog-inline-block&quot;&gt;\n&lt;div&gt;\n&lt;span class=&quot;pr&quot;&gt;\n&lt;span id=&quot;ref_16234934_l&quot;&gt;2.70&lt;/span&gt;\n&lt;/span&gt;\n&lt;div class=&quot;id-price-change nwp&quot;&gt;\n&lt;span class=&quot;ch bld&quot;&gt;&lt;span class=&quot;chr&quot; id=&quot;ref_16234934_c&quot;&gt;-0.05&lt;/span&gt;\n&lt;span class=&quot;chr&quot; id=&quot;ref_16234934_cp&quot;&gt;(-1.82%)&lt;/span&gt;\n&lt;/span&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div&gt;\n&lt;span class=nwp&gt;\nAug 17 - Close\n&lt;/span&gt;\n&lt;div class=mdata-dis&gt;\n&lt;span class=dis-large&gt;&lt;nobr&gt;CVE\ndata delayed by 15 mins -\n&lt;a href=&quot;//www.google.ca/help/stock_disclaimer.html#realtime&quot;  class=dis-large&gt;Disclaimer&lt;/a&gt;\n&lt;/nobr&gt;&lt;/span&gt;\n&lt;div&gt;Currency in CAD&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;</code></pre>\n\nIt's definitely in there. What am I missing?<br />\n",
+    "PostedDate": "2015-08-20T10:40:34.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

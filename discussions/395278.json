@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "911505",
+    "ThreadId": "395278",
+    "Html": "\r\n<p>Hi Community,</p>\r\n<p>I am working on an HTML parsing related utility. During this work HTML Agility Pack is helping me so much.</p>\r\n<p>I am just having a problem, in parsing some html content which is malformed. I want to get all the forms of the html and process them one by one. But on of my forms has an unclosed &lt;li&gt; tag, due to which, the html agility parser, brings all the html\r\n present after its parent form in it.</p>\r\n<p>For example:</p>\r\n<p>&lt;form1&gt;&lt;/form1&gt;</p>\r\n<p>&lt;form2&gt;</p>\r\n<p>&lt;li&gt;</p>\r\n<p>&lt;/form2&gt;</p>\r\n<p>&lt;form3&gt;&lt;/form3&gt;</p>\r\n<p>&lt;form4&gt;&lt;/form4&gt;</p>\r\n<p>Now, when I do something like this:</p>\r\n<p>var _document = new HtmlDocument();</p>\r\n<p>_document.OptionAutoCloseOnEnd = true;</p>\r\n<p>HtmlAgilityPack.HtmlNode.ElementsFlags.Remove(&quot;form&quot;);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; HtmlAgilityPack.HtmlNode.ElementsFlags.Remove(&quot;option&quot;);<br>\r\n_document.Load(@&quot;C:\\HTMLPage1.htm&quot;);<br>\r\nvar formNodes = _document.DocumentNode.SelectNodes(&quot;//form&quot;);</p>\r\n<p>foreach (var node in formNodes)</p>\r\n<p>{</p>\r\n<p>Console.Log(node.OuterHtml);</p>\r\n<p>}</p>\r\n<p>for second form node, it will emit html of form3 and form4 as well.</p>\r\n<p>Any help will be highly appreciated.</p>\r\n<p>Thanks,</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-09-12T06:01:26.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1460507",
+    "ThreadId": "395278",
+    "Html": "Hej there,<br />\n<br />\nI know this discussion is quiet old but I just encountered the same problem with the unclosed &lt;li&gt; tag. I've searched for hours because I did not believe the parser could be the problem rather my incapacity to understand the complex form structure. <br />\n<br />\nI'm using Version 1.4.9 of the html agility pack.<br />\n<br />\nWould be great if the htmlagilitypack would be tolerant enough to parse such malformed html documents as they are quiet often malformed in the web...<br />\n<br />\n<br />\nGreetings<br />\nMexallon<br />\n",
+    "PostedDate": "2016-01-25T01:16:24.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

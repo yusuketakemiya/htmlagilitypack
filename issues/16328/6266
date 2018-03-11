@@ -1,0 +1,34 @@
+using System;
+using System.Globalization;
+using System.Text;
+using System.Threading;
+
+using HtmlAgilityPack;
+
+
+namespace ConsoleApplication1
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			const string html = "<DIV><IMG SRC='...' ID='IXI'></DIV>";
+
+			Console.WriteLine("Source string: {0}", html);
+			Console.WriteLine("Result: {0}\n", useAgilityPack(html));
+
+			Thread.CurrentThread.CurrentCulture = new CultureInfo("tr-TR");
+
+			Console.WriteLine("Source string: {0}", html);
+			Console.WriteLine("Result: {0}\n", useAgilityPack(html));
+		}
+
+		static string useAgilityPack(string html)
+		{
+			HtmlDocument doc = new HtmlDocument();
+			doc.LoadHtml(html);
+
+			return doc.DocumentNode.InnerHtml;
+		}
+	}
+}

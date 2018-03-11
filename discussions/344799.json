@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "799779",
+    "ThreadId": "344799",
+    "Html": "\r\n<p>I have just used htmlagilitypack to extract all link as htmlnode from an html document, but i need this returned from my function as htmlelement</p>\r\n<p><strong>Dim Tags As HtmlNodeCollection = docNode.SelectNodes(strXpath)</strong><br>\r\n<strong>Dim ListResult As New List(Of HtmlElement)</strong><br>\r\n<strong>For Each Tag As HtmlNode In Tags</strong><br>\r\n<strong>ListResult.Add(Tag.Element)</strong><br>\r\n<strong>Next</strong><br>\r\n<strong>Return Nothing</strong></p>\r\n<p>How can i do this?</p>\r\n",
+    "PostedDate": "2012-02-25T03:04:23.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

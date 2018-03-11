@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "288236",
+    "ThreadId": "83932",
+    "Html": "<p>Downloaded Sandcastle, DocProject. Run VS2008. No instructions anywhere for getting the HAP documentation running. Can someone help by listing the steps I need to take to get the HAP documentation working? 1... 2... 3...</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you,</p>\r\n<p>&nbsp;</p>\r\n<p>Clyde</p>",
+    "PostedDate": "2010-02-10T06:27:47.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288240",
+    "ThreadId": "83932",
+    "Html": "<p>After that you should just be able to open up the solution with the documentation project HtmlAgilityPack_Documentation.sln. Then just build the HAPDocumentation project.</p>\r\n<p><br>The latest compiled docs are available on the downloads page. There shouldn't be any significant change between them and the current source code.</p>",
+    "PostedDate": "2010-02-10T06:36:49.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288285",
+    "ThreadId": "83932",
+    "Html": "<p>Thanks,</p>\r\n<p>I did try building the Hap Doc project and it built, guess I'm not really clear what to do with the output of the build. Also tried opening and running the compiled docs:</p>\r\n<p>Opening the .CHM file just gets me an empty shell with section titles but no documentation</p>\r\n<p>Opening the .HxS file doesn't work at all</p>\r\n<p>&nbsp;</p>\r\n<p>Is there some specific program I should be opening these files with? Sandcastle? DocProject?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-10T08:11:43.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288328",
+    "ThreadId": "83932",
+    "Html": "<p>If you're on Vista or higher you need to do some things to enable chm's to work. <a href=\"http://blogs.msdn.com/ericnel/archive/2008/07/18/vista-and-chm-issues.aspx\">http://blogs.msdn.com/ericnel/archive/2008/07/18/vista-and-chm-issues.aspx</a></p>\r\n<p>The HxS can be merged into visual studio 2008's help system. I can't remember the exact command but it can be searched.</p>",
+    "PostedDate": "2010-02-10T09:32:18.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288398",
+    "ThreadId": "83932",
+    "Html": "<p>Thanks for your responsiveness,</p>\r\n<p>Got the docs working through a CHM reader in FF. Only really needed to clean-up the HTML after IE screwed it up. Reading a string in, then writing it out to an HTMLDocument worked like a charm.</p>\r\n<p>Thank you so much for your work on this project. It made my life a lot easier.</p>\r\n<p>&nbsp;</p>\r\n<p>Clyde</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-10T11:37:19.053-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

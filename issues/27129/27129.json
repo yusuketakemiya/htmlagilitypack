@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "in Trace.cs, line 19 - method already defined.  in Trace.FullFramework.cs, line 9, 'partial' is not a permission level.",
+    "LastUpdatedDate": "2013-02-21T18:47:15.88-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-05-20T11:16:24.247-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "compilation errors in rev.66216",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 27129
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "as I mentioned in the latest svn commit\r\n\"WARNING! Do not use code from SVN for now. The code is unstable and under development. For the source code for the current release please download it from the Downloads page or use the code from the Releases/1_4_0 folder in SVN. TRUNK is HIGHLY UNSTABLE right now. \"",
+      "PostedDate": "2010-05-20T11:50:08.88-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:15.88-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

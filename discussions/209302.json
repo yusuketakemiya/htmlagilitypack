@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "430854",
+    "ThreadId": "209302",
+    "Html": "<p>This web is Taiwan Stock Exchange,( <a href=\"http://bsr.twse.com.tw/bshtm/bshtm_report_Messages.aspx?strDate=20100413&StartNumber=2475&FocusIndex=1\">http://bsr.twse.com.tw/bshtm/bshtm_report_Messages.aspx?strDate=20100413&amp;StartNumber=2475&amp;FocusIndex=1</a>)</p>\r\n<p>There are no problems with my usage of Html Agility Pack on other websites.</p>\r\n<p>&nbsp;However, I met some difficulties on this one.</p>\r\n<p>&nbsp;I couldn't get Value from it.</p>\r\n<p>The error &nbsp;is Null of Reference Exception.</p>\r\n<p>Here is my code：</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>Public Sub Main()\r\n\r\n        Dim client As New WebClient()\r\n        Dim ms As New MemoryStream(client.DownloadData(&quot;http://bsr.twse.com.tw/bshtm/bshtm_report_Messages.aspx?strDate=20100413&amp;StartNumber=2475&amp;FocusIndex=1&quot;))\r\n\r\n        Dim doc As New HtmlDocument()\r\n        doc.Load(ms, Encoding.UTF8)\r\n        Dim docStockContext As New HtmlDocument()\r\n        docStockContext.LoadHtml(doc.DocumentNode.SelectSingleNode(&quot;/html/body/form[@id='form1']/span[@id='sp_HtmlCode']/table/tbody/tr[2]/td/table[@id='table2']/tbody/tr/td/table/tbody/tr/td[1]/table&quot;).InnerHtml)\r\n\r\n\r\n        Dim values As String() = docStockContext.DocumentNode.SelectSingleNode(&quot;./tbody/tr[2]/td[2]&quot;).InnerText.Trim().Split(ControlChars.Lf)\r\n\r\n        My.Response.Write(values(0).Trim() &amp; &quot;<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">br</span><span style=\"color:Blue\">/&gt;</span>&quot;)\r\n        doc = Nothing\r\n        docStockContext = Nothing\r\n        client = Nothing\r\n        ms.Close()\r\n\r\n\r\nEnd Sub</pre>\r\n<pre>\r\nPlease help me to solve my problems,THX!</pre>\r\n</div>",
+    "PostedDate": "2010-04-14T04:05:21.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438300",
+    "ThreadId": "209302",
+    "Html": "<p>dislin,</p>\r\n<p>Hello. I'll try to give you some advice on how to solve that based on my own experience crawling websites.</p>\r\n<p>In a first moment, I tried to do it just like you, and started having much trouble with the null references. I'm not with VS now, so syntax can be a bit wrong, but I think it will be enough for you to start working on.</p>\r\n<p>You didn't mention which is the element throwing the exception, but I assume it's the values one. Do the following:</p>\r\n<p>HtmlNodeCollection hnc = docStockContext.DocumentNode.SelectNodes(&quot;//tbody/tr/td&quot;)</p>\r\n<p>Then, in debug, check the structure that hnc has, and use this to find the values you want. And, of course, before it:</p>\r\n<p>if (hnc != null) // C#, sorry... long time no vb :-)</p>\r\n<p>Regards, hope this helps, let me know if anything is not clear.</p>\r\n<p>Marcelo</p>",
+    "PostedDate": "2010-05-03T05:25:58.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438772",
+    "ThreadId": "209302",
+    "Html": "<p>I'm having a similar problem i.e. that the SelectNodes doesn't work with MemoryStreams. It does seem to work with files, though. Instead of DownloadData() use DownloadFile() and rewrite your code accordingly.</p>",
+    "PostedDate": "2010-05-04T05:29:29.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

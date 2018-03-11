@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "662086",
+    "ThreadId": "270088",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I am the coordinator of the Sofa project: We wrapped the AvalonDock docking library to add new features and enhance existing one.</p>\r\n<p>In order to validate the project usability we use Sofa to change &quot;classical&quot; applications into &quot;&quot;Visual Studio like&quot; applications. This has been done for HAP Explorer. You can find it in the\r\n<a href=\"http://sofawpf.codeplex.com/releases/view/60188\">Sofa Additional Examples</a>.</p>\r\n<p>Comments are welcome ...</p>\r\n",
+    "PostedDate": "2011-08-23T06:45:57.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "662126",
+    "ThreadId": "270088",
+    "Html": "<p>As an addition to my previous post: May be this simple example can be the base for a \"HAP studio\": Post a reply if you have HAP based tools/utilities that can usefully be integrated in the example.</p>",
+    "PostedDate": "2011-08-23T08:13:58.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "662828",
+    "ThreadId": "270088",
+    "Html": "<p>I really like the addition of the source view in the top left panel. Makes it easier to navigate the nodes. Also the look and feel is great. Nice work!</p>",
+    "PostedDate": "2011-08-24T11:53:24.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

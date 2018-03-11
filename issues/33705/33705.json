@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "__HtmlEntity.DeEntitize__ method doesn't process unterminated numeric entities.\n\n* Fails to decode Long UTF-8 Unicode encoding without semicolons.\n* Fails to decode Hex encoding without semicolons.\n\nAttached is patched version 1.4.6 code demonstrating defects and proposed solution.  Code uses __Debug.Assert__ to display failed test cases.  Just hit the ignore button to continue with tests.",
+    "LastUpdatedDate": "2014-01-04T09:54:30.977-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-01-25T13:57:09.927-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlEntity.DeEntitize method doesn't process unterminated numeric entities",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 33705
+  },
+  "FileAttachments": [
+    {
+      "FileId": 13086,
+      "FileName": "HtmlEntity.cs",
+      "DownloadUrl": ".\\13086"
+    }
+  ],
+  "Comments": []
+}

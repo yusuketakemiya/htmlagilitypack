@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "160373",
+    "ThreadId": "48067",
+    "Html": "I want to make sure that I'm compiling and referencing this assembly correctly.  Here are the steps that I followed:<br>\r\n<br>\r\n1).  set the Compile | Configuration to 'Release'<br>\r\n2).  added a reference to the assembly in my application by navigating to the HtmlAgilityPack.dll in the Release folder.<br>\r\n<br>\r\nWould it make more sense to simply copy the DLL to my application's BIN directory, then reference it from there?<br>\r\n<br>\r\nThanks.\r\n",
+    "PostedDate": "2009-02-20T21:46:14.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

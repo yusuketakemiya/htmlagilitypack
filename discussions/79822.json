@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "273409",
+    "ThreadId": "79822",
+    "Html": "<p>Hey all,</p>\r\n<p>I'm trying to use the HtmlAgilityPack from unmanaged C++, and I'm just not having any luck. I started with the instructions listed at http://support.microsoft.com/kb/828736.</p>\r\n<p>I thought I was getting somewhere by adding [assembly: ComVisible(true)] to assemblyinfo.cs and rebuilding the project, but still no luck.</p>\r\n<p>Has anyone used the HtmlAgilityPack with native C++? Any chance I can talk you into posting some instructions and/or an example?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-05T10:30:11.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273411",
+    "ThreadId": "79822",
+    "Html": "<p>After setting it to comvisible you'll need to register the assembly as a COM object. you can use the regasm.exe program from .NET to do this. I should be in your windows folder. Mine is at C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727</p>\r\n<p>http://weblogs.asp.net/psteele/archive/2004/06/16/157767.aspx</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-05T10:34:26.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273412",
+    "ThreadId": "79822",
+    "Html": "<p>Another thing I would have to say is this library has not be optimized to be called through COM at all. There may be bugs due to marshaling or unsupported object types</p>",
+    "PostedDate": "2010-01-05T10:35:43.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "569148",
+    "ThreadId": "79822",
+    "Html": "<p>Hi,</p>\r\n<p>I'm trying to use the HtmlAgilityPack as&nbsp;COM object (in MS Word, Excel), register library:</p>\r\n<pre>&gt;RegAsm.exe HtmlAgilityPack.dll /tlb \r\n&gt;Assembly exported to '...\\HtmlAgilityPack.tlb'</pre>\r\n<p>but&nbsp;HtmlAgilityPack.tlb is empty... no type, no class and etc.</p>\r\n<p>When I unregister library</p>\r\n<pre>&gt;RegAsm.exe HtmlAgilityPack.dll /u\r\n&gt;RegAsm : warning RA0000 : No types were un-registered\r\n\r\n</pre>\r\n<p>I right understand, that&nbsp;\"... There may be bugs due to marshaling or unsupported object types\" and&nbsp;HAP don't work as COM object?</p>",
+    "PostedDate": "2011-02-19T23:33:49.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

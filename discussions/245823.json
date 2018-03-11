@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "565324",
+    "ThreadId": "245823",
+    "Html": "\r\n<p>hi everyone,</p>\r\n<p>I have the code using vb.net to catch HTML data say price,high,low and open etc.&nbsp;I dont know what&nbsp;happen why&nbsp;always get an error: System.NullReferenceException in below marking in red. Any expert can help to correct for me??&nbsp;&nbsp;</p>\r\n<p>Imports HtmlAgilityPack<br>\r\nImports System.Net<br>\r\nImports System.IO<br>\r\nImports System.Text</p>\r\n<p>Public Class Form1</p>\r\n<p><br>\r\n&nbsp;&nbsp;&nbsp; Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim client As New WebClient<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim ms = New MemoryStream(client.DownloadData(&quot;<a href=\"http://www.etnet.com.hk/www/tc/stocks/realtime/quote.php?code=3888\">http://www.etnet.com.hk/www/tc/stocks/realtime/quote.php?code=3888</a>&quot;))<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim doc As New HtmlDocument()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim docstockcontext As New HtmlDocument()</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim xnodes(1)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.Load(ms, Encoding.UTF8)</p>\r\n<p><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:#ff00ff\">docstockcontext.LoadHtml(doc.DocumentNode.SelectSingleNode(&quot;/html[1]/body[1]/div[3]/table[2]&quot;).InnerHtml)</span></p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xnodes = docstockcontext.DocumentNode.SelectSingleNode(&quot;./span[1]&quot;).InnerText.Trim().Split(&quot;\\n&quot;)</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Label1.Text = Mid(xnodes(0), 1)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>\r\n&nbsp;&nbsp;&nbsp; End Sub<br>\r\nEnd Class</p>\r\n",
+    "PostedDate": "2011-02-13T01:12:06.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

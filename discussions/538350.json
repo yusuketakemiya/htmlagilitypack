@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1220506",
+    "ThreadId": "538350",
+    "Html": "I'm trying to parse an nginx auto index page to get the links from a download directory and their timestamps.\r<br />\n<br />\nI have successfully retrieved the links and their &quot;names&quot; so to speak but I am struggling with the timestamp.\r<br />\n<br />\nI have the following code:<br />\n<pre><code>return doc.DocumentNode.SelectNodes(&quot;//a&quot;).Select(anchor =&gt; new IndexPageLink\n                {\n                    Link = new Uri(root, anchor.InnerText),\n                    Name = anchor.InnerText\n                })</code></pre>\n\nWhich is parsing the following HTML structure<br />\n<pre><code>&lt;pre&gt;&lt;a href=&quot;../&quot;&gt;../&lt;/a&gt;\n&lt;a href=&quot;file.txt&quot;&gt;file.txt&lt;/a&gt;      24-Jan-2014 01:50    5M\n&lt;/pre&gt;</code></pre>\n\nI've tried looking at the next element, which correctly shows as text element but it only has new line characters. I can definitely see the text when I look at the document from the pre node but it would be nice to process relative to the anchors that I find with the select nodes search.\r<br />\n<br />\nAny ideas?<br />\n",
+    "PostedDate": "2014-03-07T21:45:52.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

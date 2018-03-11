@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "540976",
+    "ThreadId": "239695",
+    "Html": "\r\n<p>Can I access the original/preserved source HTML through HAP? &nbsp;It seems like in order to build it's own DOM it needs to make at least some modifications or fixups... &nbsp;For a specific example, say I have a source HTML fragment with empty elements\r\n like:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span>  <span style=\"color:red\">width</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;15px&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>I then set the HtmlElementFlag to keep HAP from adding a closing&nbsp;<span style=\"font-family:Consolas,'Courier New',Courier,monospace; white-space:pre\"><span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span></span></p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">if</span> (HtmlNode.ElementsFlags.ContainsKey(<span style=\"color:#a31515\">&quot;td&quot;</span>))\r\n{\r\n    HtmlNode.ElementsFlags[<span style=\"color:#a31515\">&quot;td&quot;</span>] = HtmlElementFlag.Empty | HtmlElementFlag.Closed;\r\n}\r\n<span style=\"color:blue\">else</span>\r\n{\r\n    HtmlNode.ElementsFlags.Add(<span style=\"color:#a31515\">&quot;td&quot;</span>, HtmlElementFlag.Empty | HtmlElementFlag.Closed);\r\n}\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>However, I can't get at the original source at all, and accessing the child.OuterHtml through HAP returns a fragment with the trailing &quot;/&quot; missing:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span>  <span style=\"color:red\">width</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;15px&quot;</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>Is there any way I can get at the original HTML source?</p>\r\n",
+    "PostedDate": "2010-12-27T15:09:43.91-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "541151",
+    "ThreadId": "239695",
+    "Html": "\r\n<p>Once the data has been parsed the original source isn't avaliable anymore.</p>\r\n",
+    "PostedDate": "2010-12-28T04:38:50.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "541155",
+    "ThreadId": "239695",
+    "Html": "\r\n<p>Personally I preffer to use HttpWebRequest/HttpWebResponse. Then you have html page in string variable and only then parse with HtmlAgilityPack. Internal web client of HtmlAgilityPack doesn't support POST method. This way original page can be saved for later\r\n debugging or for other purposes.</p>\r\n",
+    "PostedDate": "2010-12-28T04:46:59.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "541305",
+    "ThreadId": "239695",
+    "Html": "\r\n<p>I would be fine to use the original request/response object which I do have access too. &nbsp;But I'd need HAP to give me an offset into it which I don't think it does. &nbsp;Otherwise I'm back to using regex to find the position in the original source code.\r\n &nbsp;My scenario is reporting security issues/vulnerabilities in the HTML code which I then need to display to the user in a report.</p>\r\n",
+    "PostedDate": "2010-12-28T10:57:50.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "547590",
+    "ThreadId": "239695",
+    "Html": "\r\n<p>HAP does keep a reference to the original string but it is an internal field. Right now you could use Reflection to access it. It is the Text field on the HtmlDocument. Though I had actually been contemplating clearing this out since it is the source of\r\n some memory issues when loading large documents. The HtmlDocument object ends up using more than 2x the amount of memory than the original document. So loading a 4mb html file will result in a 8mb&#43; variable. Clearing out this field would help reduce that</p>\r\n",
+    "PostedDate": "2011-01-11T13:49:01.977-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

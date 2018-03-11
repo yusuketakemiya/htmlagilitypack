@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Here is a sample HTML file to illustrate the problem:\n \n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<script type=\"text/javascript\" src=\"../scripts/general.js\" /><title>T24</title>\n</head>\n<form name=\"compositeScreenData\"><input type=\"hidden\" name=\"someName\" value=\"0\" ></form>\n</html>\n \nThe parsing of the HTML does not work correctly when the short notation for tag closing is used (i.e.  />  instead of  </script> ) :\n \nDoesn't work: <script type=\"text/javascript\" src=\"../scripts/general.js\" />\nWorks:            <script type=\"text/javascript\" src=\"../scripts/general.js\"></script>\n \nWhen the parser is in state ParseState.PcData (used for CDATA elements like script, style, noxhtml (see HtmlNode.cs) ) then it always expects the  verbose tag closing  (i.e. </tag>)\n \nHow to fix: \na) Removing ElementsFlags.Add(\"script\", HtmlElementFlag.CData); in HtmlNode.cs might be an easy workaround, but it might have some side effects. \nb) Implementing a proper fix in the Parse() method",
+    "LastUpdatedDate": "2013-02-21T18:47:26.993-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-04-10T07:13:06.857-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "\"End tag </script> was not found\" when using short notation for tag closing",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 16045
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Note that some browsers don't support the empty notation (<script ... />) anyway.",
+      "PostedDate": "2008-06-01T23:13:59.543-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:26.993-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

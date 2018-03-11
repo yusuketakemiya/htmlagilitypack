@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "168368",
+    "ThreadId": "50277",
+    "Html": "Hi, as in the title, Html Agility Pack seems to be converting &quot;&amp;#160;&quot; to &quot;&amp;amp;#160;&quot;, which is obviously screwing things up for me! Does it not understand the '&amp;#...' form of a character? Is this an actual bug or have I missed something?<br>\r\n<br>\r\nAlso, is there a way to get it to read in HTML, fix it, then save it out again? Calling load then save does nothing; the only way I can get it to save out a fixed file is to set &quot;OptionOutputAsXml = true&quot;, but that is doing unexpected things like wrapping &lt;html&gt; in &lt;span&gt;. All I want is to be able to run the XPATH queries using XmlDocument that I used to be able to run, but on HTML files that are not completely well-formed.<br>\r\n",
+    "PostedDate": "2009-03-15T16:18:30.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

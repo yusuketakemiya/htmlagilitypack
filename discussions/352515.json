@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "824685",
+    "ThreadId": "352515",
+    "Html": "<p>I have a class in Viewmodel folder that using HtmlWeb.LoadAsync to get data from web:</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">public</span> <span style=\"color: blue;\">void</span> GetContent(<span style=\"color: blue;\">int</span> index)\n        {\n            <span style=\"color: green;\">//get content</span>\n            HtmlWeb.LoadAsync(Magazines[index].Url, (s, args) =&gt;\n            {\n\n              ....\n\n             <span style=\"color: blue;\">this</span>.Magazines[index].ContentNode = contentNode.InnerHtml;\n            });\n\n}\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>Then I want to get the <strong><em>Magazines[index].contentNode</em></strong> in detailview.xaml like this:</p>\n<p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">protected</span> <span style=\"color: blue;\">override</span> <span style=\"color: blue;\">void</span> OnNavigatedTo(NavigationEventArgs e)\n        {\n            <span style=\"color: blue;\">base</span>.OnNavigatedTo(e);\n            <span style=\"color: blue;\">string</span> selectedIndex = <span style=\"color: #a31515;\">\"\"</span>;\n           \n            <span style=\"color: blue;\">if</span> (NavigationContext.QueryString.TryGetValue(<span style=\"color: #a31515;\">\"selectedItem\"</span>, <span style=\"color: blue;\">out</span> selectedIndex))\n            {\n              index = <span style=\"color: blue;\">int</span>.Parse(selectedIndex);\n              App.MagazineViewModel.GetContent(index);\n              String content = App.MagazineViewModel.Magazines[index].ContentNode;\n              DetailBrser.NavigateToString(\n                 <span style=\"color: #a31515;\">\"&lt;html&gt;&lt;head&gt;&lt;meta name='viewport' content='width=570, user-scalable=yes' /&gt;&lt;/head&gt;&lt;body&gt;\"</span>\n                 + HtmlHelper.EncodeUnicode(content)\n                 + <span style=\"color: #a31515;\">\"&lt;/body&gt;&lt;/html&gt;\"</span>\n                 );\n            }\n</pre>\n</div>\n</p>\n<div style=\"color: black; background-color: white;\"></div>\n<p>But the problem is the <strong><em>loadAsync </em></strong>method has not finished yet, so <strong><em>App.MagazineViewModel.Magazines[index].contentNode </em></strong>is empty<em>.</em> that also make <em><strong>content </strong></em>empty.&nbsp; so how can I check <em><strong>App.MagazineViewModel.GetContent(index)</strong></em> finish in detailview.xaml then set the <em><strong>content</strong></em> string. Or any other idea for this.</p>",
+    "PostedDate": "2012-04-16T23:18:54.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "835190",
+    "ThreadId": "352515",
+    "Html": "<p>Not sure if you thought of this, but why don't you just put all of the code that depends on the loaded content into the method that gets called when LoadAsync finishes? So everything after GetContent(index) in OnNavigatedTo() gets moved into LoadAsync() after</p>\r\n<pre><span style=\"color: blue;\">this</span>.Magazines[index].ContentNode = contentNode.InnerHtml;</pre>",
+    "PostedDate": "2012-05-11T09:23:17.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

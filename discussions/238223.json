@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "535165",
+    "ThreadId": "238223",
+    "Html": "\r\n<p>Hallo,</p>\r\n<p>If i try to parse a html file with php tags for example this one:</p>\r\n<pre>&lt;html&gt;<br>&lt;body&gt;<br>&lt;?<br><span style=\"color:blue\">if</span> (<span style=\"color:#a31515\">&quot;&lt;h1&gt;&lt;h2&gt;&lt;/h2&gt;&lt;/h1&gt;&quot;</span>) {<br>\t<br>}<br><br>?&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br><br>The parser recognize the tags in the string as html tags. With JavaScript it works! the same example works great.<div style=\"color:black; background-color:white\"><pre>&lt;html&gt;\r\n&lt;body&gt;\r\n&lt;script&gt;\r\n<span style=\"color:blue\">if</span> (<span style=\"color:#a31515\">&quot;&lt;h1&gt;&lt;h2&gt;&lt;/h2&gt;&lt;/h1&gt;&quot;</span>) {\r\n\t\r\n}\r\n\r\n&lt;/script&gt;\r\n&lt;/body&gt;\r\n&lt;/html&gt;\r\n\r\n</pre>\r\n</div>\r\nWhat I make wrong or are PHP tags not supported? I only want that they where skipped.</pre>\r\n",
+    "PostedDate": "2010-12-13T12:26:02.97-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

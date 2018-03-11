@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "768285",
+    "ThreadId": "316952",
+    "Html": "\r\n<p><span>I had to do some digging to figure out how to&nbsp;</span><span>save the modified&nbsp;</span><span>HTML</span><span>&nbsp;document as a string, and I've seen a few other&nbsp;</span><span>posts on the web asking the same question. It would be great\r\n if you&nbsp;</span><span>could provide this as an override to ToString() to make it a bit more&nbsp;</span><span>intuitive.</span></p>\r\n<p>I had emailed Simon about this, but didn't get a response. If the powers that be think this suggestion is a bad idea for some reason, that's fine, just let me know.&nbsp;I'd like to contribute more to this project as well, but I want to make sure it's still\r\n active.</p>\r\n<p>Dave</p>\r\n<p>------------------------<br>\r\n<span>for HtmlDocument.cs</span><br>\r\n<br>\r\n<span>&nbsp; &nbsp; &nbsp; &nbsp;/// &lt;summary&gt;</span><br>\r\n<span>&nbsp; &nbsp; &nbsp; &nbsp;/// Outputs the&nbsp;</span><span>HTML</span><span>&nbsp;document to a string</span><br>\r\n<span>&nbsp; &nbsp; &nbsp; &nbsp;/// &lt;/summary&gt;</span><br>\r\n<span>&nbsp; &nbsp; &nbsp; &nbsp;/// &lt;returns&gt;A string representation of the&nbsp;</span><span>HTML</span><span>&nbsp;document&lt;/returns&gt;</span><br>\r\n<span>&nbsp; &nbsp; &nbsp; &nbsp;public override string ToString()</span><br>\r\n<span>&nbsp; &nbsp; &nbsp; &nbsp;{</span><br>\r\n<span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return DocumentNode.OuterHtml;</span><br>\r\n<span>&nbsp; &nbsp; &nbsp; &nbsp;}</span></p>\r\n",
+    "PostedDate": "2012-02-15T13:20:00.973-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

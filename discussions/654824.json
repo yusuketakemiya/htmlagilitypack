@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1473981",
+    "ThreadId": "654824",
+    "Html": "Hi,\r<br />\n<br />\nI needed to introduce some fixes to HTMLAgilityPack\r<br />\nEspecialy the one by NRenaux:\r<br />\n<a href=\"https://htmlagilitypack.codeplex.com/SourceControl/list/patches\" rel=\"nofollow\">https://htmlagilitypack.codeplex.com/SourceControl/list/patches</a>\r<br />\n<a href=\"https://www.codeplex.com/Download?ProjectName=htmlagilitypack&amp;DownloadId=1520775\" rel=\"nofollow\">https://www.codeplex.com/Download?ProjectName=htmlagilitypack&DownloadId=1520775</a>\r<br />\n<br />\nSo I made a fork\r<br />\n<a href=\"https://github.com/tomap/HtmlAgilityPack\" rel=\"nofollow\">https://github.com/tomap/HtmlAgilityPack</a>\r<br />\nand published a new nuget package:\r<br />\n<a href=\"https://www.nuget.org/packages/HtmlAgilityPack.Net45/\" rel=\"nofollow\">https://www.nuget.org/packages/HtmlAgilityPack.Net45/</a>\r<br />\n<br />\nIt has CI on appveyor and is compiled for .Net 4.5 only.\r<br />\nIf anyone has patches to submit, I'll be glad to integrate them\r<br />\n<br />\nRegards,\r<br />\n<br />\nThomas<br />\n",
+    "PostedDate": "2016-05-20T01:28:49.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

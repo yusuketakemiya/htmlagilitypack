@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "244613",
+    "ThreadId": "71700",
+    "Html": "<p>I noticed you released a new version of this &ndash; I&rsquo;d like to be able to use it but I&rsquo;ve customized it too much from the original version I downloaded.&nbsp; Some of my changes were a bit of a kludge for my own fairly specific needs (like having each node remember what the last attribute accessed was), but one change I think you should seriously consider is adding a System.Xml.Xsl.XsltContext parameter to the SelectNodes and SelectSingleNode functions, that can be passed to the underlying HtmlNodeNavigator.Select() function. This enables adding custom XPath functions etc.&nbsp; I also made sure that attribute value matches were reliably case insensitive, so that something like</p>\r\n<p>&nbsp;</p>\r\n<p>doc.DocumentNode.SelectSingleNode(&quot;//input[@type='text']&quot;) would work even if the HTML was all uppercase</p>\r\n<p>&nbsp;</p>\r\n<p>Oh, and I added a public accessor for HtmlDocument._text.</p>\r\n<p><span style=\"color:#1f497d\">&nbsp;</span></p>\r\n<p>I also JUST managed to fix a bug that I&rsquo;d started to explain in this message as a long-standing problem that I&rsquo;d only been able to work around by setting OptionAutoCloseOnEnd for the documents that needed it, but in the process of trying to distill a better example for you I actually finally worked out how to fix it properly.</p>\r\n<p>Even with the latest version the following code causes an exception to be thrown:</p>\r\n<p><span style=\"color:#1f497d\">&nbsp;</span></p>\r\n<p>HtmlDocument doc = new HtmlDocument();</p>\r\n<p>doc.Load(&quot;&lt;table&gt;&lt;tr&gt;&lt;/table&gt;&quot;);</p>\r\n<p><span style=\"color:#2b91af;font-size:10pt\">Console</span><span style=\"font-size:10pt\">.WriteLine(doc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//tr&quot;</span>).InnerHtml); // &lt;- crashes with &ldquo;Length cannot be less than 0&rdquo;</span></p>\r\n<p><span style=\"color:#1f497d\">&nbsp;</span></p>\r\n<p>This is because &nbsp;when it&rsquo;s trying to automatically close unclosed child nodes in Node.CloseNode() nodes, &nbsp;it creates a &ldquo;fake&rdquo; closer node with an _outerstartindex of -1, but this causes the child node&rsquo;s _innerlength property to be invalid (indeed, negative), because it&rsquo;s calculated by subtracting the current <span style=\"font-size:10pt\">_innerstartindex </span>value from the fake node&rsquo;s -1 _outerstartindex value. &nbsp;The _outerlength property is similarly negative, and this can cause both the InnerHtml and OuterHtml accessors to crash &ndash; unless of course _innerchanged or _outerchanged is true, which is exactly the fix I&rsquo;ve made to Node.CloseNode().&nbsp; It now checks before calculating the new _innerlength and _outerlength whether the endnode&rsquo;s _outerstartindex is -1, and if so simply always sets _innerchanged and _outerchanged to true:</p>\r\n<p>&nbsp;</p>\r\n<p><br><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:blue\">if</span> (endnode._outerstartindex &lt; 0)</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _innerchanged = _outerchanged = <span style=\"color:blue\">true</span>;</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:blue\">return</span>;</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>\r\n<p><span style=\"font-size:10pt\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:green\">// create an inner section</span></span></p>\r\n<p>&nbsp;</p>\r\n<p>This seems to be the right solution, because if there are child nodes that are unclosed when the parent is being closed, the HTML should be regenerated anyway.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-12T05:06:04.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "249990",
+    "ThreadId": "71700",
+    "Html": "<p>Any chance you want to provide your modified codebase so I can compare it against 1.3.0 (and then 1.4.0 which changed quite a bit, resharper cleanups and field/property/method arranging). I'll look at the last one you provided and see if it has any other repercussions.</p>",
+    "PostedDate": "2009-10-26T17:58:22.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "250020",
+    "ThreadId": "71700",
+    "Html": "<p>Tried to reply with zip attachment but I guess not supported. Will email you directly.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-26T20:37:49.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

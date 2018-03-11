@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "A line writer.Flush() is missing in the above mentioned method. This could cause loss of contents when saving. The overloaded method Save(XmlWriter writer) already has this line.\n \nThis bug (and solution) where mentioned before in the discussions here:\nhttp://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=1260",
+    "LastUpdatedDate": "2013-02-21T18:47:21.84-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-10-27T03:09:09.323-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug in HtmlDocument.Save(TextWriter writer)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 25104
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I just found another scenario where this causes a problem.\r\nThe ampersand in a link should also not be escaped: <a href=\"mypage.aspx?p=1&h=2\">\r\n\r\nI think this is a vote for using WriteRaw() instead of WriteString().",
+      "PostedDate": "2010-02-01T09:42:21.76-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Sorry, I posted by comment to the wrong issue!",
+      "PostedDate": "2010-02-01T09:48:28.283-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-05-10T07:00:42.453-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-07-22T13:17:43.463-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-26T12:43:21.733-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-07-11T14:19:58.417-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:21.84-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

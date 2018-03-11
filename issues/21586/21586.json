@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "You should check other posts. This is not a bug, but a feature and is configurable. P is treated like this because many HTML pages used P like this, as this was actually a (powerful) feature of original HTML. Now that XML and XHTML exist, everybody assumes that this is an error, but it's not (in HTML 3.2).\nCheck the HtmlNode.cs file, and modify the ElementsFlags collection (or do it at runtime if you prefer)",
+    "ClosedDate": "2009-05-17T23:38:13.663-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nI've been playing with the demos that come with download, and had a go at parsing a html page to an xml file (I saved a copy of a BBC news page just to test), but when it converted it to xml, the contents of some P tags were appearing outside of the P tag in the xml\n \nie\n \nBEFORE\n \n<p>Lorem ipsum dolar</p>\n \nAfter\n \n<p />Lorem ipsum dolar\n \nDoes anybody have any ideas?\n \nMany thanks\n \nMatt",
+    "LastUpdatedDate": "2013-05-16T05:32:59.487-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-03-12T01:51:02.49-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Tag content appears outside the tag when saved to XML",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 21586
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

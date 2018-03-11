@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "278412",
+    "ThreadId": "81147",
+    "Html": "<p>英语比价烂。。。希望能添加Title属性在HtmlDocument类。。。</p>\r\n<p>谢谢。。。</p>",
+    "PostedDate": "2010-01-18T01:07:01.11-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283291",
+    "ThreadId": "81147",
+    "Html": "<p>http://translate.google.com</p>\r\n<div id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_BodyDiv\">\r\n<p>英语比价烂。。。希望能添加Title属性在HtmlDocument类。。。</p>\r\n<p>谢谢。。。</p>\r\n</div>\r\n<div id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_BodyDiv\"></div>\r\n<div>Translated/<span id=\"result_box\"><span style=\"background-color:#ffffff\" title=Translated>翻译</span></span>:</div>\r\n<div></div>\r\n<div>English Pretty bad. Would like to add the Title attribute in the HtmlDocument class<br>Thanks.<span id=\"result_box\"><span style=\"background-color:#ebeff9\" title=\"希望能添加Title属性在HtmlDocument类\"></span></span></div>\r\n<div></div>\r\n<div></div>\r\n<div>Darth help me out here... how do you do that again?</div>\r\n<div><span><span style=\"background-color:#ebeff9\" title=\"希望能添加Title属性在HtmlDocument类\"><br></span></span></div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-29T04:13:13.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

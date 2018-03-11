@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1467177",
+    "ThreadId": "652637",
+    "Html": "Hello, \r<br />\n<br />\nCan anyone tell me how to stop Html Agility Pack from prompting for C# files?\r<br />\n<br />\nI installed Html Agility Pack via Nuget.\r<br />\n<a href=\"https://www.nuget.org/packages/HtmlAgilityPack\" rel=\"nofollow\">https://www.nuget.org/packages/HtmlAgilityPack</a>\r<br />\n<br />\nBut when I try to run or debug it it I get prompted to find HtmlDocument.cs and other C# code files for the Html Agility Pack project.\r<br />\n<br />\nAny suggestions for how to fix this would be most welcomed.\r<br />\n<br />\nthanks!<br />\n",
+    "PostedDate": "2016-03-17T10:51:37.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

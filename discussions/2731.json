@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "8573",
+    "ThreadId": "2731",
+    "Html": "\r\nHey gang.<br /><br />I was wondering if anyone knows of a way to format the OuterHtml so it is more \"pretty\". So if you have the following:<br /><br />&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br /><br />And turns it into:<br />&lt;table&gt;<br />   &lt;tr&gt;<br />      &lt;td&gt;&lt;/td&gt;<br />   &lt;/tr&gt;<br />&lt;/table&gt;<br /><br />I'm sure everyone likes their own different style but if I knew how to insert tabs and new lines properly, I could do this properly.<br /><br />Would I simply #1 re-format OuterHtml or #2 do something more proper such as adding new HtmlNode's to the document with proper formatting?<br /><br />How would I do #1 or #2 depending which is better or any other way you think would be more appropriate?<br /><br />Any help would be greatly appreciated.<br /><br />Thanks and take care.      <br />",
+    "PostedDate": "2006-12-04T15:23:25.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "8574",
+    "ThreadId": "2731",
+    "Html": "\r\nOops this editor is too simple ;) I meant formatted like:<br /><br />&lt;table&gt;<br />&nbsp;",
+    "PostedDate": "2006-12-04T15:24:11.787-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "8970",
+    "ThreadId": "2731",
+    "Html": "\r\nHi,<br /><br />That's a good question (ahh there are so many good questions :-).<br />It's not done out of the box because... it's not so simple! It's a matter of balance between compatibility (change nothing) and normalization (change so it looks or behave or complies better).<br /><br />The Html Agility Pack was clearly design with compatibility in mind. That's why it remembers all whitespaces, even the one that <b>should</b> not exists, or <b>must</b> not exists. It knows very little about what HTML really is.<br /><br />Sometimes, when you remove or add whitespaces, and you browse the modified page again in IE or FF, you just realized it's not rendered the same, in IE or FF, or another one.<br /><br />So, yes, it's feasible, but not quite the same story if you want to make absolutely sure you don't change the page rendering.<br />",
+    "PostedDate": "2006-12-12T00:22:54.293-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

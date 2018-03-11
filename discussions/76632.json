@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "262033",
+    "ThreadId": "76632",
+    "Html": "<p>As you probably have noticed development has slowed recently. I'm working on a large project atm with a very tight deadline of the middle of january. Thus not much free time. I'm hoping to make a few final bug fixes on 1.4.0 beta 2 and make the next version the final 1.4.0 release.</p>\r\n<p>After that I'm going to try to tackle the bigger outstanding issues reported recently and then look into fixing a few of the common problems I'm seeing.</p>\r\n<p>The first being the default list of tags and their parsing options. Many people seem to not realize that HAP has a list of certain tags and options for how those tags should be parsed. Many errors reported over time directly relate to this and having to recompile HAP with different options. I think this is horrible way to configure the parsing engine. I'm going to open it up as an API with a set of defaults that can be changed at anytime. Along with that it will be able to be configured in XML or app.config/web.config form. This way to give people more control over how HAP works with their particular issues.</p>\r\n<p>Beyond the parsing options I've been mulling over a Fluent API for dealing with common tags and attributes. I think <span>fizzler has some good ideas and it might be possible to merge the two projects.&nbsp; </span></p>",
+    "PostedDate": "2009-11-30T14:07:34.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

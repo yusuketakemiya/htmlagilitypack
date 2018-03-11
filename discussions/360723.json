@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "852983",
+    "ThreadId": "360723",
+    "Html": "\r\n<p>Hello</p>\r\n<p>I get the following but and I don't think I am doing anything wrong.</p>\r\n<p>I create a new .net 4 console application in VS 2012 RC (clean machine, no other version of VS installed). I add a reference to HtmlAgilityPack and the code is just:</p>\r\n<p>&nbsp;</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>  <span style=\"color:blue\">Sub</span> Main()\r\n    <span style=\"color:blue\">Dim</span> doc <span style=\"color:blue\">As</span> <span style=\"color:blue\">New</span> HtmlAgilityPack.HtmlDocument()\r\n    <span style=\"color:blue\">Dim</span> st = (<span style=\"color:blue\">New</span> System.Net.WebClient).DownloadString(<span style=\"color:#a31515\">&quot;http://www.google.com/&quot;</span>)\r\n    doc.LoadHtml(st)\r\n    <span style=\"color:blue\">Dim</span> col = doc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//*&quot;</span>)\r\n  <span style=\"color:blue\">End</span> <span style=\"color:blue\">Sub</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>This code breaks on SelectNodes. Interestingly it doesn break if I write a specific path &quot;/html/body etc&quot;. But it does if the query stats with &quot;//&quot;</p>\r\n<p>Charles</p>\r\n<p>&nbsp;</p>\r\n<p>Full exception:</p>\r\n<p>System.ArgumentOutOfRangeException was unhandled&nbsp; HResult=-2146233086&nbsp; Message=Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index&nbsp; ParamName=index&nbsp; Source=HtmlAgilityPack&nbsp;\r\n StackTrace:&nbsp; &nbsp; &nbsp; &nbsp;at HtmlAgilityPack.HtmlNodeNavigator.MoveToFirstChild()&nbsp; &nbsp; &nbsp; &nbsp;at MS.Internal.Xml.XPath.XPathDescendantIterator.MoveNext()&nbsp; &nbsp; &nbsp; &nbsp;at MS.Internal.Xml.XPath.DescendantQuery.Advance()&nbsp;\r\n &nbsp; &nbsp; &nbsp;at MS.Internal.Xml.XPath.XPathSelectionIterator.MoveNext()&nbsp; &nbsp; &nbsp; &nbsp;at HtmlAgilityPack.HtmlNode.SelectNodes(String xpath)&nbsp; &nbsp; &nbsp; &nbsp;at testHTMLAP.Module1.Main() in C:\\Data\\Programming\\vb\\tmp\\testHTMLAP\\testHTMLAP\\Module1.vb:line\r\n 7&nbsp; &nbsp; &nbsp; &nbsp;at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)&nbsp; &nbsp; &nbsp; &nbsp;at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()&nbsp; &nbsp; &nbsp; &nbsp;at System.Threading.ExecutionContext.RunInternal(ExecutionContext\r\n executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)&nbsp; &nbsp; &nbsp; &nbsp;at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)&nbsp;\r\n &nbsp; &nbsp; &nbsp;at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)&nbsp; &nbsp; &nbsp; &nbsp;at System.Threading.ThreadHelper.ThreadStart()&nbsp; InnerException:&nbsp;</p>\r\n",
+    "PostedDate": "2012-06-24T03:49:17.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "853040",
+    "ThreadId": "360723",
+    "Html": "<p>Apparently it was a conflict with another version installed on the machine by a third party component</p>",
+    "PostedDate": "2012-06-24T13:05:55.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

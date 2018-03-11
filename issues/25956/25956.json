@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If there's no problem in doing so, I think it would be nice to be able to do just:\nstring link = htmlnode.Attributes[\"href\"];\ninstead of\nstring link = htmlnode.Attributes[\"href\"].Value;\n \nThis could be achieved by adding the following to HtmlAttribute class:\n \n        public static implicit operator string(HtmlAttribute x)\n        {\n            return x.ToString();\n        }\n        public override string ToString()\n        {\n            return Value.ToString();\n        }",
+    "LastUpdatedDate": "2013-02-21T18:47:20.173-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-01-14T18:46:48.46-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Implicit access to Attribute Value",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 25956
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

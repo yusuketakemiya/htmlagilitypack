@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nIf I have a Windows Phone 7.0 project and get HtmlAgilityPack from nuget, it works fine. But if the project is for Windows Phone 7.1, I get compile time errors about XPath. Forcing VS to use the WP7.0 version by replacing lib\\sl4-windowsphone71 with the contents of lib\\sl3-wp fixes the problem. Do you mind fixing the published nuget package?\n \nBest Regards,\nGustavo Guerra",
+    "LastUpdatedDate": "2013-02-21T18:47:00.28-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-05-06T15:32:43.427-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem with nuget package and Windows Phone",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32678
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Just ran into this myself, fixed packages would be much appreciated",
+      "PostedDate": "2012-09-18T17:17:41.7-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Upon referencing HAP via Nuget a readme.txt opens up in visual studio. It contains the instructions to fix this. Basically you need to reference System.Xml.Xpath from the Silverlight 4 SDK. (WP7.1 is fully compatible with SL4)\r\n\r\nhttp://htmlagilitypack.codeplex.com/SourceControl/changeset/view/99300#1972538",
+      "PostedDate": "2012-09-19T06:57:05.603-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "While the workaround does work I would make a couple of points:\r\n\r\n1 - This README is not in the donwload package available from CodePlex\r\n\r\n2 - This creates problems for NuGet packages that depend on HAP since now we as publishers of dependent packages also have to push out a ReadMe to our users informing them that they have to perform a workaround to use our packages with Windows Phone\r\n\r\nI'm not sure what if anything can be done to avoid this since HAP needs XPath to provide it's full capabilities",
+      "PostedDate": "2012-09-19T09:24:18.537-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I was just reading over the Silverlight 4 SDK License and if I'm reading it right I can actually include the dll with the nuget package. I has a section for distributing it's libraries and their allowed use. \r\n\r\n\"•\tSilverlight Libraries. You may copy and distribute the object code form of code marked as “Silverlight Libraries”, “Client Libraries” and “Server Libraries.”\r\n•\tThird Party Distribution. You may permit distributors of your programs to copy and distribute the Distributable Code as part of those programs.\r\n\"\r\nI'm going to do a little more checking, if this is indeed true then I will update nuget and the binaries here to include the dll in the wp71 folder. ",
+      "PostedDate": "2012-09-19T11:19:12.507-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:00.28-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

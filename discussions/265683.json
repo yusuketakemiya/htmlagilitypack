@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "644176",
+    "ThreadId": "265683",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I've tried finding other discussions about this subject but unable to find any answer for this issue.</p>\r\n<p>The problem is that when I try loading an html with an unrecognized Encoding I get the following error :&nbsp;</p>\r\n<p><span style=\"color:#000080\">Error occur in method System.Globalization.EncodingTable.internalGetCodePageFromName at line 0. ErrorMessage: 'utf-8 &nbsp; &nbsp; &nbsp; ' is not a supported encoding name.</span></p>\r\n<p>I know the problem is with the&nbsp;'utf-8 &nbsp; &nbsp; &nbsp; ' but I can't change the original html page so I have to deal with what I got.</p>\r\n<p>I tried a few solutions in the code regarding the following code:</p>\r\n<p><strong><span style=\"color:#000080\">HtmlAgilityPack.HtmlDocument htmlDoc = new HtmlAgilityPack.HtmlDocument();</span></strong></p>\r\n<p><strong><span style=\"color:#000080\">htmlDoc.OptionReadEncoding = false;</span></strong></p>\r\n<p><strong><span style=\"color:#000080\">htmlDoc.Load(fileName,Encoding.UTF8); or&nbsp;htmlDoc.Load(fileName,Encoding.UTF8,false); etc'.......</span></strong></p>\r\n<p>I'm using the latest version of the package (1.4).</p>\r\n<p><strong><span style=\"color:#000080\">Did anyone had this problem? Any solution??? Please assist urgently!!!</span></strong></p>\r\n<p>Thanks,</p>\r\n<p>Anat.</p>\r\n",
+    "PostedDate": "2011-07-19T01:26:53.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The code scan report said The function Save() in MixedCodeDocument.cs sometimes fails to release a system\nresource allocated by StreamWriter() on line 310 and line 321. I guess StreamWriter did not call sw.Close() so the audthor asked for this, how can I update the code to fullfill this security requirements? Or it is a false alerm? (Checked with latest version, is following can close the connection? \n\npublic void Save(TextWriter writer)\n        {\n            writer.Flush();\n        } \n\nI need a strong reason if need to get exception. Otherrise I need to updated code.",
+    "LastUpdatedDate": "2017-02-21T21:53:15.07-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2017-02-21T21:53:15.07-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Security issues raised by audtor for MixedCodeDocument > StreamWriter",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43580
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

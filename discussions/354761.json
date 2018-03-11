@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "832899",
+    "ThreadId": "354761",
+    "Html": "<p>&nbsp;</p>\n<div id=\"pid_22389010\">hello,<br /> i need to get all the title <span>attributes</span>&nbsp;value ,only those who in the &lt;td class = val&gt;<br /> <br />\n<div>\n<div>Code:</div>\n<div dir=\"ltr\"><code>&lt;td class=\"val\"&gt;&lt;img class=\"r3\" src=\"img/x.gif\" alt=\"ind\" title=\"ind\" /&gt;<br /> 750 &lt;/td&gt;</code></div>\n</div>\n</div>",
+    "PostedDate": "2012-05-07T04:16:09.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "835179",
+    "ThreadId": "354761",
+    "Html": "<p>Here's how I would do it:</p>\n<div style=\"color: black; background-color: white;\">\n<pre>HtmlWeb.LoadAsync(url, handleResults);\n\n<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">void</span> handleResults(<span style=\"color: blue;\">object</span> o, HtmlDocumentLoadCompleted args)\n{\n     IEnumerable&lt;HtmlNode&gt; columns = args.Document.DocumentNode.Descendants(<span style=\"color: #a31515;\">\"td\"</span>).Where(x =&gt; x.GetAttributeValue(<span style=\"color: #a31515;\">\"class\"</span>, <span style=\"color: #a31515;\">\"\"</span>).Equals(<span style=\"color: #a31515;\">\"val\"</span>));\n\n}\n</pre>\n</div>\n<p>If you're looking to get the title inside of each image inside of the column, and assuming each column has exactly one image in it, you could add to this,</p>\n<div style=\"color: black; background-color: white;\">\n<pre>IEnumerable&lt;<span style=\"color: blue;\">string</span>&gt; titles = columns.Select(x =&gt; x.Descendants(<span style=\"color: #a31515;\">\"img\"</span>).Single().GetAttributeValue(<span style=\"color: #a31515;\">\"title\"</span>, <span style=\"color: #a31515;\">\"\"</span>));\n</pre>\n</div>",
+    "PostedDate": "2012-05-11T09:03:56.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

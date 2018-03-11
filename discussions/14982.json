@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "48727",
+    "ThreadId": "14982",
+    "Html": "\r\n(replying to entries in this forum is broken at the moment so I've created a new discussion instead...)<br /><br />Html Agility Pack is HTML only as has been documented by Simon previously. One side effect of this is that the OPTION node in <br />{\"<br />   &lt;select&gt;&lt;option&gt;Option text&lt;/option&gt;<br />\"}<br /><br />has no innerText or innerHtml, because strictly, the above is not HTML (it's XHTML), and so you cannot get the text value above. ASP.NET SELECT controls generate XHTML-style OPTIONs, and so you expect to be able to get the text as well. <br /><br />Great news is that it's easy to change. To change this, simply comment out the exception in HtmlNode.cs, line 91:<br /><br />{\"<br />    // JRH 070910 REMOVED to become XHTML compliant<br />    // ElementsFlags.Add(\"option\", HtmlElementFlag.Empty);<br /><br />\"}<br /><br />You will then get InnerHtml and InnerText being set for your OPTION tags. <br /><br />Enjoy!<br />",
+    "PostedDate": "2007-09-11T05:26:37.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237013",
+    "ThreadId": "14982",
+    "Html": "<p>So, will removing this break the cases where the &lt;option&gt; tag isn't closed?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-21T12:42:11.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064849",
+    "ThreadId": "14982",
+    "Html": "You're forced to modify the source ?<br />\n",
+    "PostedDate": "2013-07-05T04:27:49.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

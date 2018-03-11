@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "45201",
+    "ThreadId": "13878",
+    "Html": "\r\nGreetings,<br />I ve been trying all night to setup/install HtmlAgility and run a successful test to parse a file but have been unsuccessful. <br />Can anyone please provide (or point me to) a step by step tutorial that shows:<br />How to install HtmlAgility<br />How to run it to first parse a local html file. assume i m trying to read content of TD tags in html file below<br />I know this might sound stupid but it is like having a powerful machine with no manual. Your help will be very much appreciated (by many ppl i m sure)<br /><br /><br />&lt;!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"&gt;<br />&lt;html xmlns=\"http://www.w3.org/1999/xhtml\" &gt;<br />&lt;head&gt;<br />    &lt;title&gt;Untitled Page&lt;/title&gt;<br />&lt;/head&gt;<br />&lt;body&gt;<br />&lt;table&gt;<br />&lt;tr&gt;<br />&lt;td&gt;row 0 col 0&lt;/td&gt;<br />&lt;td&gt; row 0 col 1&lt;/td&gt;<br />&lt;/tr&gt;<br />&lt;tr&gt;<br />&lt;td&gt;row 1 col 0&lt;/td&gt;<br />&lt;td&gt; row 1 col 1&lt;/td&gt;<br />&lt;/tr&gt;<br />&lt;/table&gt;<br />&lt;/body&gt;<br />&lt;/html&gt;<br /><br /><br />Thx<br />",
+    "PostedDate": "2007-08-15T23:15:18.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45966",
+    "ThreadId": "13878",
+    "Html": "\r\nTake your time to read through the posts here, there are multiple ones that can give you the answer.  There's not always an easy way out, so you can teach yourself.  :-)<br />",
+    "PostedDate": "2007-08-21T14:49:27.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46189",
+    "ThreadId": "13878",
+    "Html": "\r\nThank you eclipse, I ve been trying but was simply hoping to have such critical (&amp; preliminary) info compiled in one spot rather than been scattered all over the place. Will take your advice and read throught again..<br />",
+    "PostedDate": "2007-08-22T21:12:54.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "57346",
+    "ThreadId": "13878",
+    "Html": "\r\nHi adibous,<br /><br />It's been a while still around?<br /><br />I'm sort of in the same position but I seem to have gotten further.<br /><br />I 'installed' by way of unzipping the download, opening the solution, building it, and then registering the dll in my application to be. <br /><br />The samples are good and there is also a .chm file in the package which is really good info all compiled in one spot... <br />",
+    "PostedDate": "2007-11-08T11:05:26.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "264321",
+    "ThreadId": "77326",
+    "Html": "<p>pls help me to to remove html tags using agility pack</p>",
+    "PostedDate": "2009-12-06T21:29:26.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264492",
+    "ThreadId": "77326",
+    "Html": "<p>So... you just want to remove all html tags, that's non html elements, from the DOM?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-07T07:30:10.94-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264496",
+    "ThreadId": "77326",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>kurtnelle wrote:</strong><br>\r\n<p>So... you just want to remove all html tags, that's non html elements, from the DOM?</p>\r\n<p>&nbsp;</p>\r\n</blockquote>\r\n<p>yes , i just need the text from the page source, but the problem occurs with the pages having no &lt;p&gt; and having multiple &lt;body&gt; tags</p>\r\n<p>so can this pack solve all, How to do that</p>",
+    "PostedDate": "2009-12-07T07:38:55.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264949",
+    "ThreadId": "77326",
+    "Html": "<p>Do you have an example of that html; I'd like to try something.</p>",
+    "PostedDate": "2009-12-08T07:28:55.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264994",
+    "ThreadId": "77326",
+    "Html": "<p>just have a view to page source of these websites - <a href=\"http://www.iitd.ac.in\">www.iitd.ac.in</a>, <a href=\"http://www.iitkgp.ac.in\">www.iitkgp.ac.in</a>, <a href=\"http://www.iitb.ac.in\">www.iitb.ac.in</a> , <a href=\"http://www.cusat.ac.in\">www.cusat.ac.in</a></p>\r\n<p>Let me metion still i'm unable to fiigure out how to use this pack with .net</p>",
+    "PostedDate": "2009-12-08T08:53:23.193-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265397",
+    "ThreadId": "77326",
+    "Html": "<p>Ok, sound like you have a bigger problem. How do you mean you can't figure out how to use the pack? What problem are you getting?</p>\r\n<p>I don't know how to do the text removal thing just yet; Perhaps Darth knows off hand.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-09T10:30:24.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

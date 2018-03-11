@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "444225",
+    "ThreadId": "212997",
+    "Html": "<p>I'm trying to extract the href locations from http://www.actuelewaterdata.nl/waterstandNAP/lokaties.html</p>\r\n<p>I use the expression:</p>\r\n<p>HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes( &quot;//div[class='sublinks']&quot; );</p>\r\n<p>but I keep getting back a null pointer. Anyone know why this Xpath expression doesn't work?</p>",
+    "PostedDate": "2010-05-18T03:31:53.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "444279",
+    "ThreadId": "212997",
+    "Html": "<p>I refined my XPath expression using the FireFox XPather add-on and it now works:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes( <span style=\"color:#a31515\">&quot;//div[@class='sublinks']/a[@target='subcontent']&quot;</span> );  \r\n</pre>\r\n</div>\r\n<br><br><br></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-18T05:32:17.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

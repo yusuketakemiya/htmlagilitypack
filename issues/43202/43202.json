@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "For the following test code:\n\n```\n<test>\n<ref attname=abc/>\n</test>\n\n```\n\nIf I examine attributes of ref tag, its attribute name is \"attname\" and value is \"abc/\".  That slash should not get added to the value, since it belongs to the \"/>\" combo of chars.",
+    "LastUpdatedDate": "2016-01-15T10:56:21.43-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-08-05T13:51:59.64-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "slash from end-of-tag is misparsed",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 43202
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I believe this can be corrected with the following modification to the HtmlDocument.cs (Parse routine):\r\n\r\n\t\t\t\t\tcase ParseState.AttributeValue:\n\t\t\t\t\t\tif (NewCheck())\n\t\t\t\t\t\t\tcontinue;\r\n\r\n\t\t\t\t\t\tif (IsWhiteSpace(_c) || (_c == '/'))\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tPushAttributeValueEnd(_index - 1);\n\t\t\t\t\t\t\t_state = ParseState.BetweenAttributes;\n\t\t\t\t\t\t\tcontinue;\n\t\t\t\t\t\t}\r\n\r\n\nRegards,\nMark Ward\nCarson, CA",
+      "PostedDate": "2016-01-15T10:56:02.22-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-01-15T10:56:21.43-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

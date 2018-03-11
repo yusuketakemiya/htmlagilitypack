@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi. \n \nI don't know if I'm supposed to be doing this at all, but here goes. \n \nI'm using HAP to extract elements from HTML pages. Fine. I need to store some of those elements in their original form. Therefore I can't use HtmlNode.OuterHtml since it has its own way of outputting elements (e.g. '<foo bar=baz>' -> '<foo bar=\"baz\">'). The way I'm doing it is to expose HtmlNode._outerlength through a Property. That way I can extract the element in it's original form by extracting a substring from the original page by using this length and HtmlNode.StreamPosition. \n \nHerein lies the problem. sometimes the length is negative! I suspect this may be a bug in the parsing, where sometimes the code that sets the length is skipped (or whatever). \n \nSo is HtmlNode._outerlength even supposed to be reliable or is there a good reason it's not exposed as a public property? Anyways it would be really cool if this was working in a reliable way. \n \n-- \nChristian Hemmingsen",
+    "LastUpdatedDate": "2013-02-21T18:47:28.757-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2007-04-13T02:33:48.227-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Element length (HtmlNode._outerlength) sometimes negative",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9613
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

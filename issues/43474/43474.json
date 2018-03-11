@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "While trying to work with this HTML\n```\n<div class=\"liste clearfix\">\n    <form name=\"compare_products\" id=\"compare_products\" method=\"post\" action=\"/compare_products\">\n        <ul>\n                            <li class=\"protection\">\n    <a href=\"/safety-goggles/bolle-axis-2-clear\">\n        <div class=\"titre\">\n            <!-- gamme + modГЁle -->\n            <h3 class=\"clearfix\">\n                <span>Safety</span>\n                <strong>Safety Spectacles</strong>\n            </h3>\n            <!-- titre -->\n            <p><strong>Axis 2</strong> Clear 1654101</p>\n        </div>\n        <!-- Photo -->\n                    <img typeof=\"foaf:Image\" src=\"http://www.bollesafety.com.au/sites/default/files/styles/top_produit/public/product_images/1085f6ba95ccc5ca5bf259268740731679680ee8/1654101-axis-2-clear.jpg?itok=TGeD3KNX\" alt=\"\" />                <!-- Sousbloc -->\n        <div class=\"bloc\">\n            <p>\n                <!-- SKU -->\n                Ref.                1654101<br>\n                <span>See this product</span>\n            </p>\n        </div>       \n    </a>\n    <!-- Comparer -->\n    <div class=\"compare\">\n        <label for=\"compare-491\">Compare this product</label>\n        <input type=\"checkbox\" class=\"checkbox compareProducts\"\n               id=\"compare-491\"\n               name=\"products[compare-491]\"\n               value=\"491\" />\n    </div>\n</li>                            <li class=\"protection\">\n    <a href=\"/safety-goggles/bolle-axis-2-smoke\">\n        <div class=\"titre\">\n            <!-- gamme + modГЁle -->\n            <h3 class=\"clearfix\">\n                <span>Safety</span>\n                <strong>Safety Spectacles</strong>\n            </h3>\n            <!-- titre -->\n            <p><strong>Axis 2</strong> Smoke 1654102</p>\n        </div>\n        <!-- Photo -->\n                    <img typeof=\"foaf:Image\" src=\"http://www.bollesafety.com.au/sites/default/files/styles/top_produit/public/product_images/3cfdf2f7c35f1668ca152b96fa45edd2a969f1c0/1654102-axis-2-smoke.jpg?itok=Vz-aObVK\" alt=\"\" />                <!-- Sousbloc -->\n        <div class=\"bloc\">\n            <p>\n                <!-- SKU -->\n                Ref.                1654102<br>\n                <span>See this product</span>\n            </p>\n        </div>       \n    </a>\n    <!-- Comparer -->\n    <div class=\"compare\">\n        <label for=\"compare-492\">Compare this product</label>\n        <input type=\"checkbox\" class=\"checkbox compareProducts\"\n               id=\"compare-492\"\n               name=\"products[compare-492]\"\n               value=\"492\" />\n    </div>\n</li>                            <li class=\"protection\">\n    <a href=\"/safety-goggles/bolle-axis-2-contrast\">\n        <div class=\"titre\">\n            <!-- gamme + modГЁle -->\n            <h3 class=\"clearfix\">\n                <span>Safety</span>\n                <strong>Safety Spectacles</strong>\n            </h3>\n            <!-- titre -->\n            <p><strong>Axis 2</strong> Contrast 1654118</p>\n        </div>\n        <!-- Photo -->\n                    <img typeof=\"foaf:Image\" src=\"http://www.bollesafety.com.au/sites/default/files/styles/top_produit/public/product_images/4d693492a6dfdbea3717204987580d99cf6f66d7/1654118-axis-2-contrast.jpg?itok=glIylp7f\" alt=\"\" />                <!-- Sousbloc -->\n        <div class=\"bloc\">\n            <p>\n                <!-- SKU -->\n                Ref.                1654118<br>\n                <span>See this product</span>\n            </p>\n        </div>       \n    </a>\n    <!-- Comparer -->\n    <div class=\"compare\">\n        <label for=\"compare-493\">Compare this product</label>\n        <input type=\"checkbox\" class=\"checkbox compareProducts\"\n               id=\"compare-493\"\n               name=\"products[compare-493]\"\n               value=\"493\" />\n    </div>\n</li>                    </ul>\n    </form>\n</div>\n```\n\nthis code:\n```\ndoc.DocumentNode.SelectNodes(\"//form\")\n```\nreturns  HtmlNode with no ChildNodes\nso, XPATHs like  \"//form/ul\" or \"//form/ul/li\" does not work at all.",
+    "LastUpdatedDate": "2016-08-17T02:14:55.84-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-08-17T02:14:55.84-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Wrong XPATH for <form><ul>",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43474
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

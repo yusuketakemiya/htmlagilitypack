@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "925520",
+    "ThreadId": "399036",
+    "Html": "\r\n<p>Is it possible to read the original source position and length of a Node's content in the original input data? I know Node already has StreamPosition that points to the character where a Node begins but I couldn't find anything that tells the original length\r\n (or an end position of the Node's content).</p>\r\n<p>I need the position/length to update the input directly after the input has been loaded (through Load() or LoadHtml()).</p>\r\n",
+    "PostedDate": "2012-10-11T14:19:11.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

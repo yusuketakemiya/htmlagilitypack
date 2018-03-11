@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "571573",
+    "ThreadId": "247432",
+    "Html": "\r\n<p>Hello i checked out the project and when i try and compile i get the following error</p>\r\n<p>htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlNode.Dynamic.cs(32,56): error CS0117: 'HtmlAgilityPack.HtmlNodeType' does not contain a definition for 'Attribute'</p>\r\n<p>I checked and the enum isnt declared, any idea's? &nbsp;should the trunk compile or am i overlooking some thing silly.</p>\r\n<p>Andrew.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-02-24T08:32:18.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "573074",
+    "ThreadId": "247432",
+    "Html": "<p>same here :</p>\r\n<p>changeset 85353 complie error</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-02-27T22:57:41.867-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "573075",
+    "ThreadId": "247432",
+    "Html": "<p><span id=\"ReviewListText0\">change set 85353 build error ? i deleted the question marked .snk file  , rebuild , no error  but when referencing this dll ,  FileNotFoundException : Could not load file or assembly  'HtmlAgilityPack, Version=1.9.0.1, Culture=en-US, PublicKeyToken=null'  or one of its dependencies. The system cannot find the file specified. </span></p>",
+    "PostedDate": "2011-02-27T22:59:00.04-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "573237",
+    "ThreadId": "247432",
+    "Html": "<p>@frasera your error has been fixed, it was due to the experimental .NET 4.0 project being included in the solution. I removed that over the weekend</p>\r\n<p>&nbsp;</p>\r\n<p>@dfang</p>\r\n<p>The only place I see the snk error is under&nbsp;htmlagilitypack-85383\\Branches\\2.0.Experimental. That one is listed as version 1.9.0.1 and should not be used, thus the name Experimental</p>\r\n<p>Trunk builds just fine for me. Do not use the fx.4.0 project, that was an experimental test of trying to use the .NET 4.0 dynamic features. Use the main HtmlAgilityPack project under trunk. I downloaded the changeset zip file and it built without a problem through both the HtmlAgilityPack2010.sln and&nbsp;HtmlAgilityPack20008.sln solution files&nbsp;</p>",
+    "PostedDate": "2011-02-28T05:51:35.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "573247",
+    "ThreadId": "247432",
+    "Html": "<p>cool thanks, i did a clean checkout and its working now thanks.</p>",
+    "PostedDate": "2011-02-28T06:16:30.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578276",
+    "ThreadId": "247432",
+    "Html": "<p>thanks very much !</p>",
+    "PostedDate": "2011-03-10T01:24:27.457-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

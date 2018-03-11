@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "588870",
+    "ThreadId": "251811",
+    "Html": "\r\n<p>I got some problem to parse a html file.<br>\r\nHere is a html snippet ...<br>\r\n<br>\r\n&lt;dl&gt;<br>\r\n<br>\r\n&nbsp;&lt;dt&gt;header 1&lt;/dt&gt;<br>\r\n&nbsp;&lt;dd&gt;body text 1&lt;/dd&gt;<br>\r\n<br>\r\n&nbsp;&lt;dt&gt;header 2&lt;/dt&gt;<br>\r\n&nbsp;&lt;dd&gt;body text 2&lt;/dd&gt;<br>\r\n<br>\r\n&nbsp;&lt;dt&gt;header 3&lt;/dt&gt;<br>\r\n&nbsp;&lt;dd&gt;body text 3&lt;/dd&gt;<br>\r\n<br>\r\n&lt;/dl&gt;<br>\r\n<br>\r\nI need to get the text in the dd tags into different variables. I can get the dt tags with this pattern: &quot;.//[dt='header 1']&quot;<br>\r\nIf the dd was a child of dt, then no problem, just add a /dd to pattern, but now it isn't ... So I got problem ;)</p>\r\n<p>And ... The number of dt and dd tags are not fixed, it can change ...<br>\r\nAnyone with any ideas ? VB .NET sample pls if possible :)</p>\r\n<p><br>\r\n/Stefan</p>\r\n",
+    "PostedDate": "2011-03-30T08:21:48.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "589827",
+    "ThreadId": "251811",
+    "Html": "<p>You should be able to do the following to select all the dd tags:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">var</span> ddNodes = htmlDocument.DocumentNode.SelectNodes(<span style=\"color: #a31515;\">\"//dd\"</span>);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Hope this helps.</p>",
+    "PostedDate": "2011-03-31T14:41:17.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "589858",
+    "ThreadId": "251811",
+    "Html": "<p>Thanks Roux ... It will work to get all DD ... But how do I know what is what ?</p>\r\n<p>To show another sample code so you see what I mean ...</p>\r\n<p>Say sometime there is an address, some other times no address ... Or no Last Name ...<br />How do I figure out what is what so I can save it into correct firlds in my db ?</p>\r\n<p>&lt;dl&gt;<br /> <br /> &nbsp;&lt;dt&gt;First Name&lt;/dt&gt;<br /> &nbsp;&lt;dd&gt;James&lt;/dd&gt;<br /> <br /> &nbsp;&lt;dt&gt;Last Name&lt;/dt&gt;<br /> &nbsp;&lt;dd&gt;Bond&lt;/dd&gt;<br /> <br /> &nbsp;&lt;dt&gt;Address&lt;/dt&gt;<br /> &nbsp;&lt;dd&gt;Elm Street&lt;/dd&gt;</p>\r\n<p>&nbsp;&lt;dt&gt;Phone&lt;/dt&gt;<br /> &nbsp;&lt;dd&gt;555-555-5555&lt;/dd&gt;<br /> <br /> &lt;/dl&gt;</p>",
+    "PostedDate": "2011-03-31T15:49:42.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "589880",
+    "ThreadId": "251811",
+    "Html": "<p>Well then you could do it how you were already doing it. &nbsp;Look for the dt node with the correct value, then get it's next sibling, and grab the value out of that. &nbsp;For example...</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: green;\">//look for first name</span>\r\n<span style=\"color: blue;\">var</span> node = document.DocumentNode.SelectSingleNode(<span style=\"color: #a31515;\">\"//[dt='First Name']\"</span>);\r\n<span style=\"color: blue;\">if</span>(node != <span style=\"color: blue;\">null</span> &amp;&amp; node.NextSibling != <span style=\"color: blue;\">null</span> &amp;&amp; <span style=\"color: blue;\">string</span>.Equals(node.NextSibling.Name, <span style=\"color: #a31515;\">\"dd\"</span>))\r\n{\r\n    <span style=\"color: blue;\">string</span> firstName = node.NextSibling.InnerText;\r\n}\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>And you would have to do this for each field you wanted. &nbsp;I would recommend putting this in a function that you can pass in the value you are looking for and have it return node.NextSibling.InnerText.</p>\r\n<p>Hope this helps.</p>",
+    "PostedDate": "2011-03-31T16:25:56.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

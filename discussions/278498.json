@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "694440",
+    "ThreadId": "278498",
+    "Html": "\r\n<p>At this URI &quot;http://wap.kdslife.com/t/1/15/6673395/?u=0&amp;sc=235&amp;rnd=b2be3573d7&quot;</p>\r\n<p>The parsing document is null, and if i access the documentNode it will catch a NullReferenceException error.</p>\r\n<p>how can it be solved?</p>\r\n",
+    "PostedDate": "2011-11-06T05:35:33.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

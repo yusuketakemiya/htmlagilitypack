@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm using HtmlAgilityPack in our project, so that I can display some Html from another of our systems. I ran across this issue in my unit testing, and [posted to StackOverflow](http://stackoverflow.com/questions/17220253/htmlagilitypack-attributes-remove-on-image-only-removes-one-when-there-are-two) to verify that this issue was indeed a bug. Another developer there was able to verify it for me.\n\nBasically, when I call Attributes.Remove, it should remove all instances of that attribute, if there are more than one, but it's only removing one.\n\nIf I have an image, and it has 2 \"src\" values, I'd like to pick one, remove them both, and add one back in with the right path.\n\nSo, here's an example image tag:\n\n```\n<img align=\\\"left\\\" alt=\\\"\\\" src=\\\"/blah.jpg\\\" src=\\\"/knowledge/blah.jpg\\\" border=\\\"0\\\" />\n```\nHere's the code to manipulate the Html:\n\n```\n    public static string FixHtmlLinks(this string html)\n    {\n        var htmlDoc = new HtmlDocument()\n        {\n            OptionWriteEmptyNodes = true\n        };\n        htmlDoc.LoadHtml(html);\n\n        var imagesToCheck = htmlDoc.DocumentNode.SelectNodes(\"//img[@src!='']\");\n\n        if (null != imagesToCheck)\n        {\n            foreach (var image in imagesToCheck.ToList())\n            {\n                var src = image.GetAttributeValue(\"src\", string.Empty);\n                if (Uri.IsWellFormedUriString(src, UriKind.Relative))\n                {\n                    image.Attributes.Remove(\"src\");\n                    image.SetAttributeValue(\"src\", string.Format(RELATIVE_IMAGE_PROTOCOL_AND_HOST, src));\n                }\n                else if (Uri.IsWellFormedUriString(src, UriKind.Absolute))\n                {\n                    image.Attributes.Remove(\"src\");\n                    image.SetAttributeValue(\"src\", src.Replace(ABSOLUTE_IMAGE_HOST_TO_REPLACE, IMAGE_PROTOCOL_AND_HOST));\n                }\n            }\n        }\n\n        return htmlDoc.DocumentNode.OuterHtml;\n    }\n```\nWhen I debug, and it gets to the line \"image.Attributes.Remove(\"src\");\", there are 2 \"src\" values, as expected. After that line runs, there is 1 \"src\" value there, the one that starts with \"/knowledge\". However, I would expect them both to be removed, since the summary for Remove says:\n\n> Removes an attribute from the list, using its name. If there are more than one attributes with this name, they will all be removed.\n\nI checked the source code for the [HtmlAttributeCollection](https://htmlagilitypack.codeplex.com/SourceControl/latest#Trunk/HtmlAgilityPack/HtmlAttributeCollection.cs), and the Remove method puts it through a loop to remove the values, so everything looks like it should work, but it doesn't.\n\nI'm reporting this, but I hope to get a chance soon to find the cause, and maybe submit a fix.",
+    "LastUpdatedDate": "2013-06-20T13:49:49.62-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-06-20T13:49:49.62-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Attributes.Remove on Image Only Removes One, When There Are Two",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 34185
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

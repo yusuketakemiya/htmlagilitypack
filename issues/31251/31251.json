@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hey guys i need some help with the htmlagiltity pack\n \ni got this code and i don't know why it isn't working\n \nthere is no error code or something\n \n(this is made in visual studio express mobile)\n \ni loaded my url in with this\n \nteamsite = \"http://www.knbsb.nl/nw/index.php?option=com_content&view=category&layout=blog&id=382&Itemid=150&lang=nl&LevelID=120&CompID=1580\"\n \n        public static void RequestAsync(Uri url, Action callback)\n        {\n            if (callback == null)\n            {\n                throw new ArgumentNullException(\"callback\");\n            }\n \n            try\n            {\n                var req = WebRequest.CreateHttp(url);\n \n                AsyncCallback getTheResponse = ar =>\n                {\n                    try\n                    {\n                        string responseString;\n \n                        var request = (HttpWebRequest)ar.AsyncState;\n \n                        using (var resp = (HttpWebResponse)request.EndGetResponse(ar))\n                        {\n                            using (var streamResponse = resp.GetResponseStream())\n                            {\n                                using (var streamRead = new StreamReader(streamResponse))\n                                {\n                                    responseString = streamRead.ReadToEnd();\n                                }\n                            }\n                        }\n \n                        callback(responseString, null);\n                    }\n                    catch (Exception ex)\n                    {\n                        callback(null, ex);\n                    }\n                };\n \n                req.BeginGetResponse(getTheResponse, req);\n            }\n            catch (Exception ex)\n            {\n                callback(null, ex);\n            }\n        }\n \n                RequestAsync(\n                new Uri(teamsite),\n                (html, exc) =>\n                {\n                    if (exc == null)\n                    {\n                        m_doc = new HtmlDocument();\n                        Dispatcher.BeginInvoke(() => m_doc.LoadHtml(html));\n                        this.SetRanking();\n                    }\n                    else\n                    {\n                      \n                    }\n                });\n \n \nhere is the parsing of the url\n \n        public void SetRanking()\n        {\n            System.Diagnostics.Debug.WriteLine(m_doc + \" \" + teamsite);\n            string Numhead = \"/html/body/div[4]/div/div[4]/div/div/div/div/div/div/div/div/div/div/div/table/thead/tr/th[1]\";\n            var NumheadResult = m_doc.DocumentNode.SelectNodes((string)Numhead);\n            foreach (var item in NumheadResult)\n            {\n                NumheadBlock.Text = item.Value;\n            }\n \n \n            string Teamhead = \"/html/body/div[4]/div/div[4]/div/div/div/div/div/div/div/div/div/div/div/table/thead/tr/th[2]\";\n            var TeamheadResult = m_doc.DocumentNode.SelectNodes((string)Teamhead);\n            foreach (var item in TeamheadResult)\n            {\n                TeamheadBlock.Text = item.Value;\n            }\n \n            string team_first = \"/html/body/div[4]/div/div[4]/div/div/div/div/div/div/div/div/div/div/div/table/tbody/tr/td[2]\";\n            var team_firstResult = m_doc.DocumentNode.SelectNodes((string)team_first);\n            foreach (var item in team_firstResult)\n            {\n                team_firstBlock.Text = item.Value;\n            }\n        }\n \ni don't get it why it is going wrong,",
+    "LastUpdatedDate": "2013-02-21T18:47:04.84-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-08-12T05:26:31.957-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "I need some help",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 31251
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

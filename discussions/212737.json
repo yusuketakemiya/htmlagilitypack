@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "443201",
+    "ThreadId": "212737",
+    "Html": "<p>Hey ,</p>\r\n<p>I want to know that is there any way that i can load my html page , and then get to the tags in html Body htmlNode , and then change the attributes ( id&nbsp;, src&nbsp; etc ) or add attributes to htmlNode like I want to add (id , omouseover , onmouseout , onclick ) and such attributes, or to change their value.</p>\r\n<p>I do these changes with all descendants of Body tag.</p>\r\n<p>Well, i did all this, but i ve found that, i can change attributes value, but i cannot add new attributes and assign them values, because when i do that the first case, i can save back the changes. but in the second case, when i try to save, my stack overflows, thats some infinite loop.</p>\r\n<p>If I am doing something wrong, please let me know.</p>\r\n<p>Thanx</p>",
+    "PostedDate": "2010-05-15T03:26:26.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443228",
+    "ThreadId": "212737",
+    "Html": "<p>Well , I have found something ,</p>\r\n<p>As i am new to htmlagility, i was doing some wrong i guess, what i was doing,</p>\r\n<p>i got all the descendents from body tag and&nbsp;added/changed the values for attributes</p>\r\n<p>but then i got that in descendents i also get htmlNode with name prop &quot;#text&quot;. that is not like an html tag to add attributes in that.</p>\r\n<p>when i applied a condition to name==&quot;#text&quot; and made changes to the rest of tags. Application got smooth.</p>\r\n<p>My appologize for mispercieving the behaviour.</p>\r\n<p>&nbsp;</p>\r\n<p>N still dear friends, if i am doing anything wrong. I ld be grateful to know, N one more thing,</p>\r\n<p>&nbsp;if anyone can tell me where to find help ,&nbsp;the right way to use this lib , else then .chm file. that doc is kewl and helpful but it does not tell how to do what =/ .</p>",
+    "PostedDate": "2010-05-15T05:25:00.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

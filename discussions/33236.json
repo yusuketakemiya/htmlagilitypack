@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "110148",
+    "ThreadId": "33236",
+    "Html": "Hi there, i am using vb.net 2005 and have added an htmlagilitypack.dll reference<br>\r\n<br>\r\nWith help from other posts i have got so far with this sample<br>\r\n<br>\r\n-Created a sample file with the following taken from another thread:<br>\r\n<br>\r\n&lt;BODY&gt;<br>\r\n&lt;TABLE&gt;<br>\r\n&lt;TR&gt;<br>\r\n&lt;TD&gt;Row 0, Col 0&lt;/TD&gt;<br>\r\n&lt;TD&gt;Row 0, Col 1&lt;/TD&gt;<br>\r\n&lt;/TR&gt;<br>\r\n&lt;TR&gt;<br>\r\n&lt;TD&gt;Row 1, Col 0&lt;/TD&gt;<br>\r\n&lt;TD&gt;Row 1, Col 1&lt;TD&gt;<br>\r\n&lt;/TR&gt;<br>\r\n&lt;/TABLE&gt;<br>\r\n&lt;/BODY&gt; <br>\r\n<br>\r\nnow in vb.net i have:<br>\r\n<br>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">Dim</span><span style=\"font-size:13px\"> web </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">New</span><span style=\"font-size:13px\"> HtmlAgilityPack.HtmlWeb<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">Dim</span><span style=\"font-size:13px\"> doc1 </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">New</span><span style=\"font-size:13px\"> HtmlAgilityPack.HtmlDocument<br>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<span style=\"font-size:13px\">\r\n<p>doc1 = web.Load(</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#a31515\">&quot;...path..\\samplefile.htm&quot;</span><span style=\"font-size:13px\">)<br>\r\n<span style=\"font-size:13px;color:#008000\"><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">Dim</span><span style=\"font-size:13px\"> tables </span><span style=\"font-size:13px;color:#0000ff\">As</span><span style=\"font-size:13px\"> HtmlAgilityPack.HtmlNodeCollection<br>\r\n</span></span><span style=\"font-size:13px\">tables = doc1.DocumentNode.SelectNodes(</span><span style=\"font-size:13px;color:#a31515\">&quot;//TABLE&quot;</span><span style=\"font-size:13px\">)<br>\r\nor <br>\r\n<br>\r\nit always returns nothing. the htmlnodecollection is always nothing. Please, what am i doing wrong<br>\r\n<br>\r\nThanks<br>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-08-09T15:30:22.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "122261",
+    "ThreadId": "33236",
+    "Html": "Hello!<br>\r\n<br>\r\nI resolve this problem, but tag &quot;TD&quot; dont inner tag in tag &quot;TD&quot;...<br>\r\nHow resolve thi problem? <br>\r\n<br>\r\nHtmlNode.cs, LIne 604<br>\r\nInsert code:<br>\r\nif (_innerlength &lt; _innerstartindex)<br>\r\n{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return string.Empty;<br>\r\n}<br>\r\n<br>\r\nGood luck! (Sorry for my english...)<br>\r\n",
+    "PostedDate": "2008-10-01T17:46:23.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

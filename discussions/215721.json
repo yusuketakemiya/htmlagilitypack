@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "454392",
+    "ThreadId": "215721",
+    "Html": "Hello,\r\n\r\nI just started today using HAP and already can see how powerful it is. Thank you for making it :)\r\n\r\nNaturally I have a question :)\r\n\r\nI was playing with table extraction, and I have made some progress already. I need to extract some data from imdb.com (Movies).\r\n\r\nI experimented a lot and found out that following piece of code will display table that contain actors.\r\n \r\n\r\n\r\n\r\n/code\r\n            HtmlWeb web = new HtmlWeb();\r\n            HtmlDocument HD = web.Load(&quot;http://www.imdb.com/title/tt0093870/&quot;);\r\n           \r\n            foreach (HtmlNode table in HD.DocumentNode.SelectNodes(&quot;//table[@class=\\&quot;cast\\&quot;]&quot;))\r\n            {\r\n                          MessageBox.Show(&quot; ACTORS:&quot; + table.InnerText);                    \r\n                }\r\n\r\n/code\r\n\r\n\r\n\r\n\r\nNow I am facing a big roadblock. Let me try to explain. The link that i wrote above (robocop btw), which is http://www.imdb.com/title/tt0093870/. Is the link that I received after performing a search.\r\n\r\nIf I go to www.imdb.com, I must do a search. That is easy. After I do search, I am given another page that has many links. Both relevant and irrelevant ones. There is a pattern there, If I search for Robocop, that second screen will give several versions of robocop movies. I am interested in the first link. It even has name Robocop in it.\r\n\r\nHow do I automatically click that link so it can take me to the other page where I can play with agility pack some more.\r\n\r\nI was thinking to extract that link, but I failed miserably at that.\r\n\r\n\r\nCan some help me with that?\r\n\r\n\r\n\r\nThank you very much. \r\n\r\n\r\nI am sorry if the text I wrote is hard to understand.\r\n\r\n",
+    "PostedDate": "2010-06-11T05:45:33.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454395",
+    "ThreadId": "215721",
+    "Html": "OMG\r\n\r\nWhat happened with my spaces?!?! I don't usually write like that. ",
+    "PostedDate": "2010-06-11T05:47:11.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455624",
+    "ThreadId": "215721",
+    "Html": "<p>You must pick exact xpath query. You can use different xpath expressions, using axis, functions, indexes.</p>\r\n<p>For example, in your case you can use:</p>\r\n<p>\r\n<pre>//td[text()='1.']/following-sibling::td/a\r\nselect 'td', which inner text is '1.', then select next 'td' and get inner 'a' node</pre>\r\n</p>\r\n<p>It's not the best, but first match will hit Robocop 1987.</p>\r\n<p>Did I understood your question right?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-15T06:21:11.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455625",
+    "ThreadId": "215721",
+    "Html": "<p>Thank you very much for answering. Yes, I believe you did understand my question.</p>\r\n<p>&nbsp;</p>\r\n<p>I will play with your code and let you know did it work :)</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you again</p>",
+    "PostedDate": "2010-06-15T06:26:11.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

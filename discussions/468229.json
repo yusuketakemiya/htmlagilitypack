@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1122280",
+    "ThreadId": "468229",
+    "Html": "Hello world !\r<br />\n<br />\nPlease, excuse my bad english, I'm French...\r<br />\n<br />\nI work with Visual Studio 2012 for Web Express. I have to parse some web pages. So, I decided to use HtmlAgilityPack (I used it before with VS 2010 without problem).\r<br />\n<br />\nSo, I installed HAP with NuGet.\r<br />\n<br />\nWhen I tested my code, I had the error message : &quot;Impossible de se connecter au serveur distant&quot; (&quot;unable to connect to distant server&quot;).\r<br />\n<br />\nApparently, the code try to access the file d:\\Source\\htmlagilitypack.new\\Trunk\\HtmlAgilityPack\\HtmlWeb.cs, that does not exist on my computer.\r<br />\n<br />\nThe same code work perfectly with Visual Studio 2010, so I dont understand what I have done wrong.\r<br />\n<br />\nPlease, help me !<br />\n",
+    "PostedDate": "2013-11-12T03:05:16.327-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1342434",
+    "ThreadId": "468229",
+    "Html": "Avez-vous résolu ce problème ? J'ai le même. <br />\n<br />\nJ'ai trouvé. J'étais en mode debug. <br />\n",
+    "PostedDate": "2015-01-15T16:30:22.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

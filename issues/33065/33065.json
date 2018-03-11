@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, i have this html code:\n \n<select name=\"super_attribute[1021]\">\n<option value=\"\">Choose an Option...</option>\n<option value=\"281\">001 Melaike</option>\n<option value=\"280\">002 Taronja</option>\n</select>\n \nMy c# code is \n                HtmlNode.ElementsFlags.Remove(\"option\");                \n                var htmlDoc = new HtmlWeb().Load(@\"\" + url);\n \nWhen examine the htmlDoc object,\n \nhtmlDoc.DocumentNode.InnerHtml it's equal at\n \n<select name=\"super_attribute[1021]\">\n            <option>Choose an Option...</option>\n          </select>\n \nhow can I only have the first option of the select? \n \nthanks,\nregards",
+    "LastUpdatedDate": "2013-07-05T05:47:58.69-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-08-23T11:07:41.443-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Select/Option Problem",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33065
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Same error",
+      "PostedDate": "2013-07-05T04:30:17.813-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Also I have the same problem, how do I fix ?",
+      "PostedDate": "2013-07-05T05:47:58.69-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

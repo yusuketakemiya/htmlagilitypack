@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1496074",
+    "ThreadId": "662807",
+    "Html": "Hi\r<br />\n<br />\nI have added the htmlagilitypack.dll  in my .net windows application in reference.\r<br />\nWhile building my solution its throwing a compile time error as \r<br />\n<br />\nError\t1\tThe type or namespace name 'HtmlAgilityPack' could not be found (are you missing a using directive or an assembly reference?)\tC:\\Prem\\HTMLToTextExtraction\\HTMLToTextExtraction\\HtmlToText.cs\t5\t7\tHTMLToTextExtraction\r<br />\n<br />\n<br />\ncan anyone help me in resolving this issue.<br />\n",
+    "PostedDate": "2017-05-04T00:13:34.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

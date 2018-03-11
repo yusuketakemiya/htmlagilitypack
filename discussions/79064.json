@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "270716",
+    "ThreadId": "79064",
+    "Html": "<p><span id=\"result_box\"><span style=\"background-color:#fff\" title=\"Alguém sabe como faz para connectar\">Does anyone know how to solve this problem below?</span></span></p>\r\n<p><span><span style=\"background-color:#fff\" title=\"Alguém sabe como faz para connectar\">&nbsp;</span></span></p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>HtmlAgilityPack.HtmlDocument doc;\r\ndoc = webBrowser1.Document;\r\n</pre>\r\n</div>\r\n<p>It gives me&nbsp;this error:</p>\r\n<p style=\"padding-left:30px\">Cannot implicitly convert type &quot;System.Windows.Forms.HtmlDocument&quot; to 'HtmlAgilityPack.HtmlDocument'</p>\r\n</p>\r\n<p>I want to parse html from a&nbsp;webbrowser.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-12-25T08:51:01.59-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270719",
+    "ThreadId": "79064",
+    "Html": "<p>the webbrowser controls Document property is not an HtmlAgilityPack HtmlDocument object, it is an HtmlDocument object that belongs to System.Window.Forms . Other than their name, they have no relation to each other.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-25T09:59:40.083-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270937",
+    "ThreadId": "79064",
+    "Html": "<p>You should try this instead</p>\r\n<p>HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();<br>doc.Load(webBrowser1.DocumentStream);</p>\r\n<p>Note: this could be added as a cast&nbsp;operator to the Html Agility Pack HtmlDocument class so your&nbsp;original code would compile as is...</p>",
+    "PostedDate": "2009-12-27T03:26:42.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

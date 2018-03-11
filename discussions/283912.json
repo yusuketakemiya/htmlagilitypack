@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "716146",
+    "ThreadId": "283912",
+    "Html": "\r\n<p>&nbsp;&nbsp; Hi There <br>\r\n<br>\r\nFirst of all, thanks for the people who spend time and energy on such projects.<br>\r\n<br>\r\nAlso, I seem to have a problem with the agilitypack.<br>\r\n<br>\r\n<strong>1 -</strong> I am trying to get all the images from a particular div tag. (images might be embeded in other divs whithin this particular div), my problem is that all the images of the page are returned even the ones located outside the specified tag.\r\n Is there something wrong with my Xpath in there ?<br>\r\n<br>\r\nhere is my code</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>   <span style=\"color:blue\">string</span> PromoLink = <span style=\"color:#a31515\">&quot;http://www.myurl&quot;</span>;\r\n            HtmlWeb webPromo = <span style=\"color:blue\">new</span> HtmlWeb();\r\n            webPromo.PreRequest = <span style=\"color:blue\">new</span> HtmlWeb.PreRequestHandler(OnPreRequest);\r\n            <span style=\"color:blue\">string</span> PromoUrl = PromoLink;\r\n            HtmlDocument PromoDoc = webPromo.Load(PromoUrl);            \r\n            HtmlNode extractDiv = PromoDoc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//div[@id='contentWrapper']&quot;</span>);\r\n            <span style=\"color:blue\">string</span> PromoData = extractDiv.InnerHtml;\r\n            <span style=\"color:blue\">var</span> images = extractDiv.SelectNodes(<span style=\"color:#a31515\">&quot;//img[@src]&quot;</span>);\r\n            \r\n            <span style=\"color:blue\">var</span> nodes = <span style=\"color:blue\">new</span> Dictionary&lt;<span style=\"color:blue\">string</span>, HtmlNode&gt;();\r\n                        \r\n            <span style=\"color:blue\">foreach</span> (<span style=\"color:blue\">var</span> value <span style=\"color:blue\">in</span> images)\r\n            {\r\n                                              \r\n                <span style=\"color:blue\">string</span> s = value.Attributes[<span style=\"color:#a31515\">&quot;src&quot;</span>].Value;\r\n                \r\n                <span style=\"color:blue\">if</span> (!nodes.ContainsKey(s))\r\n                {\r\n                    nodes.Add(s, value);\r\n\r\n                }\r\n\r\n            }\r\n<br><br>Thanks a lot<br><br>Chris <br></pre>\r\n</div>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre> \r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-12-22T07:52:08.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "721513",
+    "ThreadId": "283912",
+    "Html": "<p>from&nbsp;<a href=\"http://htmlagilitypack.codeplex.com/discussions/266083\">http://htmlagilitypack.codeplex.com/discussions/266083</a></p>\r\n<p><span>//div[@class='col3']/p[2]</span><span> </span><span>select the second P, which parent it's a DIV with class='col3'</span></p>",
+    "PostedDate": "2012-01-06T07:33:33.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

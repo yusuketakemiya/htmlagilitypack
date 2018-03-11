@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "936878",
+    "ThreadId": "401989",
+    "Html": "\r\n<p>Hi All,</p>\r\n<p>I'd really love to use htmlAgilityPack, but we're targeting mostly mono platforms and windows &quot;garden&quot; platforms like Windows Store and Win Phone 7.5 and 8. &nbsp;So...</p>\r\n<p>I might &nbsp;a stab at making a Portable Class Library project version of HtmlAgilityPack and this post is my initial request for help. &nbsp;From my understanding we'll need to let go of the XPath dependendent parts of HAP and rely on Linq, which is fine\r\n by me. &nbsp;</p>\r\n<p>Questions:</p>\r\n<p>Is there already a project in the stack that is closest to this &quot;most portable&quot; agenda (HapPhone?) ? &nbsp;</p>\r\n<p>Can anyone see problems, aside from effort required, of refactoring ArrayLists to Lists?</p>\r\n<p>What other questions should I be asking? &nbsp;Is this a bad idea :P ?</p>\r\n<p>Dave G</p>\r\n",
+    "PostedDate": "2012-11-05T11:15:08.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

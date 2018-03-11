@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "HtmlNode.CopyFrom(HtmlNode node, bool deep) documentation for parameter \"deep\" sais: \n \n\"true to recursively clone the subtree under the specified node, false to clone only the node itself.\"\n \nHowever, it works the other way around: \ntrue => shallow copy\nfalse => deep copy.\n \nPerhaps you should just change the parameter name to \"shallow\": would not break the code that is potentially already using this.",
+    "LastUpdatedDate": "2013-02-21T18:47:18.83-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-02-18T10:29:25.947-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlNode.CopyFrom deep parameter works the opposite",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 26247
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "please try parse this and you will see a problem:\n \n<form class=\"patrol\" method=\"post\" id=\"patrolForm\">\n<p class=\"timeleft\">150</p>\n</form>",
+    "LastUpdatedDate": "2013-02-21T18:47:03.113-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-11-07T23:17:27.58-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "incorrect parse <form ...",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 31701
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Duplicate of http://htmlagilitypack.codeplex.com/workitem/32505",
+      "PostedDate": "2012-05-02T01:48:49.81-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The fix seems to be modifying HtmlNode.cs from\r\nElementsFlags.Add(\"form\", HtmlElementFlag.CanOverlap | HtmlElementFlag.Empty);\r\nto\r\nElementsFlags.Add(\"form\", HtmlElementFlag.CanOverlap);\r\n\r\nWorkaround without modifying the source:\r\nHtmlNode.ElementsFlags[\"form\"]=HtmlElementFlag.CanOverlap;\r\n(static change, applies on the entire application)",
+      "PostedDate": "2012-05-02T02:38:05.293-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-09-25T13:08:06.183-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:03.113-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

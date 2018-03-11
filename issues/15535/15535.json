@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The Patch for manual encoding selection as per [protopopov] comment on a main project page.\n \n(Use TortoiseSVN to apply it against the recent HtmlAgilityPack sources.)",
+    "LastUpdatedDate": "2013-02-21T18:47:27.387-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-03-10T04:14:52.923-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Patch for manual encoding selection",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 15535
+  },
+  "FileAttachments": [
+    {
+      "FileId": 6001,
+      "FileName": "Encoding.patch",
+      "DownloadUrl": ".\\6001"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This patch is a must! A lot of pages are corrupted because encoding is not set.",
+      "PostedDate": "2011-05-11T10:10:48-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:27.387-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

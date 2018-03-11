@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "The official package has now been added to NuGethttp&#58;&#47;&#47;htmlagilitypack.codeplex.com&#47;Thread&#47;View.aspx&#63;ThreadId&#61;241939",
+    "ClosedDate": "2011-01-15T17:02:05.953-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I installed the HtmlAgilityPack NuGet package, but the dll was not automatically referenced in the project (I have to do this manually). This seems like a bug in the package.",
+    "LastUpdatedDate": "2013-05-16T05:32:57.793-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-01-11T05:05:54.863-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NuGet package does not reference dll",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 29952
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "There is no official HtmlAgilityPack NuGet package yet. It is on my list of things to do. I have no idea who added it",
+      "PostedDate": "2011-01-11T13:26:00.327-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "hmm.. it is labeled that Simon is the author. I'll look into it. I do want to get out packages for the various versions, like WP7, Silverlight, etc",
+      "PostedDate": "2011-01-11T13:56:45.12-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-15T17:02:05.953-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:09.887-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:57.793-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

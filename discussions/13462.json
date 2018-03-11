@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "43901",
+    "ThreadId": "13462",
+    "Html": "\r\nHello,<br /><br />I noticed today while searching for a parent for a cell, that it was returning the wrong parent node.  In my research of the problem I discovered that in the HtmlDocument, the FixedNestedTag is not getting the correct ResetterNode from the FindResetterNodes function.  Can anyone think of a way around this, or a fix?  For clarity, I have an example below:<br /><br />01 &lt;table&gt;<br />02   &lt;tr&gt;<br />03     &lt;td class=\"cell1\"&gt;<br />04       &lt;table&gt;<br />05         &lt;tr&gt;<br />06           &lt;td class=\"cell2\"&gt;Stuff&lt;/td&gt;<br />07           &lt;/td&gt; &lt;!--Broken Cell Tag--&gt;<br />08           &lt;td class=\"LastCell\"&gt;More Stuff&lt;/td&gt;<br />09         &lt;/tr&gt;<br />10       &lt;/table&gt;<br />11     &lt;/td&gt;<br />12   &lt;/tr&gt;<br />13 &lt;/table&gt;<br /><br />Above we have a broken cell tag in line 07.  When I search for the parent node for the cell in line 08, instead of returning the row node at line 05, it is returning the row node from line 02.  I think this is cause in the HTMLDocument.FindResseterNode function, as it is trying to close the previous node with the same name that hasn't yet been closed.  Therefore in that instance, since the cell node at line 06 is already closed, it looks to the cell node in line 03 and closes that.<br /><br />",
+    "PostedDate": "2007-08-06T09:48:22.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1094283",
+    "ThreadId": "457376",
+    "Html": "I downloaded the source code and made a unit test (appended below) which fails on HAP 1.4.6.  The problem is that HTML character references (e.g. '&amp;#65297;') have the ampersands encoded so that they look like this: '&amp;amp;#65297;'.\r<br />\n<br />\nThe code that does this is HtmlDocument.HtmlCode.  The Regex in this method does not ignore HTML character references.  Modified source code for this method is shown below.  Does this look correct or am I misunderstanding something?<br />\n<pre><code>    public static string HtmlEncode(string html)\n    {\n        if (html == null)\n        {\n            throw new ArgumentNullException(&quot;html&quot;);\n        }\n        // replace &amp; by &amp;amp; but only once!\n        // Bugfix: add '(#)' to the regex so that HTML character references are not corrupted.\n        //  Example: '&amp;#65297;' should NOT be converted to '&amp;amp;#65297;'\n        //Regex rx = new Regex(&quot;&amp;(?!(amp;)|(lt;)|(gt;)|(quot;))&quot;, RegexOptions.IgnoreCase);\n        Regex rx = new Regex(&quot;&amp;(?!(amp;)|(#)|(lt;)|(gt;)|(quot;))&quot;, RegexOptions.IgnoreCase);\n        return rx.Replace(html, &quot;&amp;amp;&quot;).Replace(&quot;&lt;&quot;, &quot;&amp;lt;&quot;).Replace(&quot;&gt;&quot;, &quot;&amp;gt;&quot;).Replace(&quot;\\&quot;&quot;, &quot;&amp;quot;&quot;);\n    }\n\n</code></pre>\n\n// THE UNIT TEST<br />\n<pre><code>    [Test]\n    public void HtmlCharacterEntities()\n    {\n        string html = &quot;&lt;html&gt;&lt;body&gt;&quot;\n            + &quot;&lt;h1&gt;&amp;#65298;&amp;#65296;&amp;#65297;&amp;#65299;&amp;#12469;&amp;#12510;&amp;#12540;&amp;#12461;&amp;#12515;&amp;#12531;&amp;#12506;&amp;#12540;&amp;#12531;&amp;#38283;&amp;#20652;&amp;#20013;&amp;#65281;&lt;/h1&gt;&quot;\n            + &quot;&lt;p&gt;My first paragraph.&lt;/p&gt;&quot;\n            + &quot;&lt;/body&gt;&lt;/html&gt;&quot;;\n\n        HtmlDocument hdoc = new HtmlDocument();\n        hdoc.LoadHtml(html);\n        hdoc.OptionOutputAsXml = true;\n        hdoc.OptionCheckSyntax = true;\n        hdoc.OptionFixNestedTags = true;\n\n        HtmlAgilityPack.HtmlNode htmlNode = hdoc.DocumentNode.SelectSingleNode(&quot;html&quot;);\n\n        string main = htmlNode.OuterHtml;\n        Assert.AreEqual(html, main);\n    }</code></pre>\n\n",
+    "PostedDate": "2013-09-18T19:27:00.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1174542",
+    "ThreadId": "457376",
+    "Html": "A better fix would be to consider all possible Html Entities like this:<br />\n<pre><code>        private const string HtmlEntitiesPattern = @&quot;&amp;amp;([a-z]{2,10}|#\\d{1,10}|#x[0-9a-f]{1,8});&quot;;\n        private static readonly Regex HtmlEntitiesPatternRegex = new Regex(HtmlEntitiesPattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);\n\n        public static string FixDoublEntityEncoding(string document)\n        {\n            return HtmlEntitiesPatternRegex.Replace(document, &quot;&amp;$1;&quot;);\n        }</code></pre>\n\n",
+    "PostedDate": "2014-01-17T11:09:07.527-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

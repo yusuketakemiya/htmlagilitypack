@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "218055",
+    "ThreadId": "64130",
+    "Html": "<p>I am trying to parse an HTML document that contains double quote characters (&quot;) inside quoted attribute values.&nbsp; This is of course causing the HtmlAgilityPack to truncate the attribute value.&nbsp; Does anyone have any ideas on how to handle this?&nbsp; I don't mind if I have to modify the source code for HtmlAgilityPack and run a modified version of it.&nbsp; Here is a snippet of the HTML that I am dealing with:</p>\r\n<p>&nbsp;</p>\r\n<p>&lt;meta name=&quot;description&quot; content=&quot;Hooden sweatshirt with 6&quot; drawstrings.&nbsp; Buy now at half price!&quot; /&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for any help with this.</p>",
+    "PostedDate": "2009-07-31T08:50:21.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218067",
+    "ThreadId": "64130",
+    "Html": "<p>That is because one of the most basic rules of HTML is you use quotes to delimit attribute text. <a href=\"http://www.w3schools.com/HTML/html_attributes.asp\">http://www.w3schools.com/HTML/html_attributes.asp</a> If a browser hits that it automatically goes into quirks mode and throws standards out the window.</p>\r\n<p>Html Agility Pack when parsing will look for quotes to delimit the beginning and ending of a value for an attribute within quotes. You should use a quote html entity in your string. &amp;quot;</p>\r\n<p>HAP and any browser will see this as</p>\r\n<p>tag = Meta</p>\r\n<p>attribute[&quot;name&quot;] = &quot;description&quot;;<br>attribute[&quot;content&quot;] = &quot;Hooden sweatshirt with 6&quot;;<br>attribute[&quot;drawstrings.&quot;] = &quot;&quot;;<br>attribute[&quot;Buy&quot;] = &quot;&quot;;<br>attribute[&quot;now&quot;] = &quot;&quot;; .. you get the picture</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-31T09:10:25.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218074",
+    "ThreadId": "64130",
+    "Html": "<p>Unfortunately, this document was given to me by a client, and it is approximately 70MB in size.&nbsp; Editing the document is not really an option.</p>",
+    "PostedDate": "2009-07-31T09:30:34.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218075",
+    "ThreadId": "64130",
+    "Html": "<p>70MB html document? ouch</p>\r\n<p>Not sure what you can do other than editing it or writing a small program that loads it up in a stream and modifies that one line. Loading all that into memory is going to be large. I've never used HAP on that large of a document, unsure how it will handle it all.</p>\r\n<p>Another thing you can do is add some code to HAP to look for that 6&quot; as it's parsing and ignore it/change it.</p>\r\n<p>WordPad does a decent job of editing large files, it might take a few minutes to load but I've had it load multi-hundred megabyte files before.</p>\r\n<p>But if that's just the head, I'd be afraid of what the rest of it looks like</p>",
+    "PostedDate": "2009-07-31T09:36:16.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218079",
+    "ThreadId": "64130",
+    "Html": "<p>I think I've got it.</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">string</span> description = descNode.Attributes[<span style=\"color:#A31515\">&quot;content&quot;</span>].Value;\r\n\r\n<span style=\"color:Blue\">if</span> (descNode.Attributes.Count &gt; 2)\r\n{\r\n    description += <span style=\"color:#A31515\">&quot;\\&quot;&quot;</span>;\r\n}\r\n\r\n<span style=\"color:Blue\">foreach</span> (HtmlAttribute attrib <span style=\"color:Blue\">in</span> descNode.Attributes)\r\n{\r\n    <span style=\"color:Blue\">if</span> (attrib.Name != <span style=\"color:#A31515\">&quot;name&quot;</span> &amp;&amp; attrib.Name != <span style=\"color:#A31515\">&quot;content&quot;</span>)\r\n    {\r\n        description += <span style=\"color:#A31515\">&quot; &quot;</span> + attrib.Name.TrimEnd(<span style=\"color:#A31515\">'&quot;'</span>);\r\n    }\r\n}\r\n<br>This works because the words after the inch sign are read by HAP as attributes with no values.<br><br>The only thing I had to do to get this to work is remove the ToLower() from line 81 of HtmlAttribute.cs from HAP so that the attribute names don't get set to lower case.<br><br>_name = _ownerdocument._text.Substring(_namestartindex, _namelength).ToLower();</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2009-07-31T09:44:19.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218082",
+    "ThreadId": "64130",
+    "Html": "<p>The other thing I forgot to mention is that I trim the quote character from the end because HAP thinks it is part of the attribute name of the last attribute.</p>",
+    "PostedDate": "2009-07-31T09:47:31.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218083",
+    "ThreadId": "64130",
+    "Html": "<p>Yep, I removed the ToLower in the patch I've submitted. The main update of my Patch was to provide LINQ compatibility to the library but that's one of the things I fixed. You can get it with the OriginalName property.</p>\r\n<p>What's even cooler is you could change that last line do something like String.Join(&quot; &quot;, tag.Attributes.Skip(2).Select(x=&gt;x.OriginalName).ToArray())</p>",
+    "PostedDate": "2009-07-31T09:49:11.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

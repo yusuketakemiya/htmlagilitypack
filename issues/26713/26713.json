@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nIs it possible to add events on HtmlDocument and HtmlNode for events like :\n- Node created\n- Child appended\n- Child removed\n- Node removed\n- Attribute added\n- Attribute modified\n- Attribute removed\n- [...]\n \nSo when modifying the document, we can handle these events...\n \nThanks.",
+    "LastUpdatedDate": "2013-02-21T18:47:17.283-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-04-07T02:00:50.087-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add events for node actions",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 26713
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

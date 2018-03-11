@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "654577",
+    "ThreadId": "268220",
+    "Html": "\r\n<p>Downloaded the documentation, but unfortunately, it doesn't seem to actually display anything (&quot;Navigation to the web page was canceled&quot;). Any chance it might get fixed?</p>\r\n",
+    "PostedDate": "2011-08-08T08:09:02.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "654584",
+    "ThreadId": "268220",
+    "Html": "<p>You need to enable CHMs for you OS. Windows XP SP3, Vista and 7 all do this by default. Right click on the CHM, go to properties and click on the Unblock button</p>",
+    "PostedDate": "2011-08-08T08:12:58.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "654763",
+    "ThreadId": "268220",
+    "Html": "<p>Thanks for the timely reply. I knew about this for .ZIP files, but not for .CHM. Learned something new today!</p>",
+    "PostedDate": "2011-08-08T12:45:42.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "678672",
+    "ThreadId": "268220",
+    "Html": "<p>I'm having the same problem as LDumond. &nbsp;I have unblocked the CHM, but still get \"This program cannot display the webpage.\" &nbsp;I've tried deleting the file and redownloading with the same results. &nbsp;Any help would be greatly appreciated.</p>",
+    "PostedDate": "2011-09-30T07:34:07.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

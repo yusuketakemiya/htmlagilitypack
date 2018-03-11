@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "IF the HTML Source contain's below text \n<ul>\n\t<li>Testing</li>\n<li>Testing1</li>\n<li>Testing2</li>\n<li>Testing3</li>\n</ul>\n \n HtmlAgilityPack.HtmlDocument agDoc = new HtmlAgilityPack.HtmlDocument();\nagDoc.LoadHtml(source);\nIEnumerable<HtmlAgilityPack.HtmlNode> q = docNode.DescendantNodes();\nIEnumerable<HtmlAgilityPack.HtmlNode> elements = q.Where<HtmlAgilityPack.HtmlNode>(p => p.OriginalName == \"li\");\nList<HtmlAgilityPack.HtmlNode> allElementLst = elements.ToList<HtmlAgilityPack.HtmlNode>();\n \n \nIn Above code we will get the 4 HtmlNode with the \"li\" as OriginalName .\n \nWhen we see the innertext for the \nfirst Node: \"Testing \\r\\nTesting1 \\r\\nTesting2 \\r\\nTesting3 \"\nsecond Node: \"Testing1 \\r\\nTesting2 \\r\\nTesting3 \"\nthird Node : \"Testing2 \\r\\nTesting3 \"\nfourth Node: \"Testing3 \"\n \nBut Expected result should be like this \n \nfirst Node: \"Testing\"\nsecond Node: \"Testing1\"\nthird Node : \"Testing2\"\nfourth Node: \"Testing3 \"\n \nCan you please help me by solving this problem.\n \nThanks & Regard's\n \nSai ...",
+    "LastUpdatedDate": "2013-02-21T18:47:05.947-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-07-07T23:54:34.653-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "For HtmlNode LI item innertext is not coming properly",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 30984
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

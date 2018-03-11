@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "600250",
+    "ThreadId": "254616",
+    "Html": "\r\n<p>How do I add script Body's on Load using Html Agility Pack like below example.</p>\r\n<p>Ex:</p>\r\n<p>before html.:</p>\r\n<pre id=\"x_line15\">&lt;<span>body</span><span> class</span>=<span>&quot;...&quot;</span> onLoad=&quot;...;&quot;&gt;    .....&lt;/body&gt;<br><br>after add:<br><pre id=\"x_line15\">&lt;<span>body</span><span> class</span>=<span>&quot;...&quot;</span> onLoad=&quot;...;added script;&quot;&gt;    .....&lt;/body&gt;</pre>\r\n</pre>\r\n",
+    "PostedDate": "2011-04-20T01:39:41.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601297",
+    "ThreadId": "254616",
+    "Html": "<p>Try this:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">var</span> htmlDoc = <span style=\"color: blue;\">new</span> HtmlDocument();\r\nhtmlDoc.LoadHtml(someHtml);\r\n\r\n<span style=\"color: blue;\">var</span> body = htmlDoc.DocumentNode.SelectSingleNode(<span style=\"color: #a31515;\">\"//body\"</span>);\r\nbody.Attributes[<span style=\"color: #a31515;\">\"onLoad\"</span>].Value += <span style=\"color: #a31515;\">\"added script;\"</span>;\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2011-04-21T14:53:42.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

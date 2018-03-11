@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi all, I have such problem with malformed HTML:\n \n<html>\n<head/>\n<body>\n<p><div class=\"mydiv\">this is the text of the paragraph</p><p>this is another paragraph</p></div>\n</body>\n</html>\n \nthat is resolved as \n \n<html>\n<head/>\n<body>\n<p /><div class=\"mydiv\">this is the text of the paragraph<p /><p>this is another paragraph</p></div>\n</body>\n</html>\n \nThere is a way to obtain such result:\n \n \n<html>\n<head/>\n<body>\n<div class=\"mydiv\"><p>this is the text of the paragraph</p><p>this is another paragraph</p></div>\n</body>\n</html>\n \nThis seems a problem of sanitize strategy. There is an option to change it?\n \nThanks\n \nViridovix",
+    "LastUpdatedDate": "2013-02-21T18:47:03.6-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-10-21T06:32:27.45-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Malformed tag resolution priority",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 31622
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

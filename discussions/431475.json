@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "994384",
+    "ThreadId": "431475",
+    "Html": "I am analyzing the timetable of a bus company. I get the necessary data from its website. A node of a bus stop looks like this:<br />\n<pre><code>&lt;tr data-stopcode=&quot;F01093&quot;&gt;\n    &lt;td&gt;5&lt;/td&gt;\n    &lt;td &gt;&lt;span&gt;Fifth street&lt;/span&gt;&lt;/td&gt;\n&lt;/tr&gt;</code></pre>\n\nI have this node in &quot;hmln&quot; and would like to get the name of the stop. I tried two method but only the first was working. Can you tell me what is wrong with the second one?<br />\nWorking:<br />\n<code>hmln.Elements(&quot;td&quot;).Last().FirstChild.InnerText</code><br />\nNot Working: -&gt; &quot;Object reference not set to an instance of an object.&quot;<br />\n<code>hmln.LastChild.FirstChild.InnerText</code><br />\n",
+    "PostedDate": "2013-01-30T13:59:13.213-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994401",
+    "ThreadId": "431475",
+    "Html": "Hi Labu\r<br />\n<br />\nhere is a solution<br />\n<pre><code>AP.HtmlDocument hp = new AP.HtmlDocument();\nhp.LoadHtml(&quot;&lt;tr data-stopcode=\\&quot;F01093\\&quot;&gt;    &lt;td&gt;5&lt;/td&gt;    &lt;td &gt;&lt;span&gt;Fifth street&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&quot;);\n\nvar nodes = hp.DocumentNode.SelectNodes(&quot;//tr[@data-stopcode]//span&quot;);\nforeach (AP.HtmlNode node in nodes)\n{\n    string stopname = node.InnerText;\n}\n</code></pre>\n\nSo I'm looking for all tr nodes with the attribute stopcode and looking for the span after and getting the text from the span.\r<br />\nhope this helps and you can see why it works\r<br />\n<br />\nas for your sample the second one you are looking for the last child of the document which is now tr then the first child which is the spaces you have before the first td and your getting the text which is &quot;    &quot;\r<br />\n<br />\nhp.DocumentNode.LastChild.FirstChild.InnerText = &quot;    &quot;; \r<br />\n<br />\nLee.<br />\n",
+    "PostedDate": "2013-01-30T14:26:16.5-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994421",
+    "ThreadId": "431475",
+    "Html": "Thanks for your answer.\r<br />\nI might not have made myself clear. -&gt; &quot; for your sample the second one you are looking for the last child of the document which is now tr then the first child which is the spaces you have before the first td and your getting the text which is &quot;  &quot;&quot;\r<br />\nHtmlDocument hmln is &lt;tr data-stopcode=&quot;F01093&quot;&gt; not the parent of it. Your solution must be working, but having a distinct &lt;tr data-stopcode=&quot;F01093&quot;&gt; node is better than having only one of its child because I need the first child too, which is the time of the travel.<br />\n",
+    "PostedDate": "2013-01-30T15:43:11.807-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994425",
+    "ThreadId": "431475",
+    "Html": "Ok.. \r<br />\nWhat about <br />\n<pre><code>AP.HtmlDocument hp = new AP.HtmlDocument();\nhp.LoadHtml(&quot;&lt;tr data-stopcode=\\&quot;F01093\\&quot;&gt;&lt;td&gt;5&lt;/td&gt;&lt;td &gt;&lt;span&gt;Fifth street&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&quot;);\n\nvar nodes = hp.DocumentNode.SelectNodes(&quot;//tr[@data-stopcode]&quot;);\nforeach (AP.HtmlNode node in nodes)\n{\n    string stopcode = node.Attributes[&quot;data-stopcode&quot;].Value;\n    string stopname = node.SelectSingleNode(&quot;.//span&quot;).InnerText;\n    string stoptime = node.SelectSingleNode(&quot;.//td[position()=1]&quot;).InnerText;\n}</code></pre>\n\nany better?<br />\n",
+    "PostedDate": "2013-01-30T15:52:44.157-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994596",
+    "ThreadId": "431475",
+    "Html": "Thanks, it's elegant and works fine. But I still don't know why my second trial doesn't work. Could you have a look at that?<br />\n",
+    "PostedDate": "2013-01-31T02:08:58.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994629",
+    "ThreadId": "431475",
+    "Html": "Hi actually both seem to be working for me.. <br />\nWhat version are you using? 1.4.6? <br />\nwhat .Net version?<br />\n<br />\ntried version 1.4.0 and works as well.. <br />\n<br />\nall on one line no spaces.<br />\ntest.xml = &lt;tr data-stopcode=&quot;F01093&quot;&gt;&lt;td&gt;5&lt;/td&gt;&lt;td &gt;&lt;span&gt;Fifth street&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;<br />\n<pre><code>HtmlDocument hp = new HtmlDocument();\n            \nhp.Load(@&quot;C:\\Development\\test.xml&quot;);\nvar tr = hp.DocumentNode.FirstChild;\n// works\nvar txt = tr.Elements(&quot;td&quot;).Last().FirstChild.InnerText;\n// works\nvar txtII = tr.LastChild.FirstChild.InnerText;</code></pre>\n\nWhats your exact code and I'll take a peek.. <br />\n",
+    "PostedDate": "2013-01-31T03:47:55.837-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994648",
+    "ThreadId": "431475",
+    "Html": "I am using HAP 1.4.6 with .Net 4.5<br />\n",
+    "PostedDate": "2013-01-31T04:55:18.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

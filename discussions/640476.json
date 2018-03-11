@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1431942",
+    "ThreadId": "640476",
+    "Html": "I found an error, when I parse a following string:\r<br />\n<br />\n&quot;&lt;h4&gt;text h4&lt;/h4&gt;&lt;/br&gt;&lt;h3&gt;text h3&lt;/h3&gt;&lt;/br&gt;&lt;h2&gt;text h2&lt;/h2&gt;&lt;/br&gt;&lt;h1&gt;text h1&lt;/h1&gt;&quot;\r<br />\n<br />\nI get all the nodes, apart from the node h3 and one br.<br />\n",
+    "PostedDate": "2015-06-26T00:52:01.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

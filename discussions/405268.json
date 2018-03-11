@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "950025",
+    "ThreadId": "405268",
+    "Html": "\r\n<pre><code><span>public</span><span> </span><span>string</span><span> getContent</span><span>(</span><span>string</span><span> webAddress</span><span>)</span><span>\r\n    </span><span>{</span><span>\r\n        </span><span>HtmlAgilityPack</span><span>.</span><span>HtmlWeb</span><span> web </span><span>=</span><span> </span><span>new</span><span> </span><span>HtmlAgilityPack</span><span>.</span><span>HtmlWeb</span><span>();</span><span>\r\n        </span><span>HtmlDocument</span><span> doc </span><span>=</span><span> web</span><span>.</span><span>Load</span><span>(</span><span>webAddress</span><span>);</span><span>\r\n        </span><span>return</span><span> </span><span>string</span><span>.</span><span>Join</span><span>(</span><span class=\"str\">&quot; &quot;</span><span>,</span><span> doc</span><span>.</span><span>DocumentNode</span><span>.</span><span>Descendants</span><span>().</span><span>Select</span><span>(</span><span>x </span><span>=&gt;</span><span> x</span><span>.</span><span>InnerText</span><span>));</span><span>\r\n    </span><span>}</span></code></pre>\r\n<pre><code><span><br></span></code></pre>\r\n<pre><code><span>am using this function to extract content between html tags however  visual studio is showing exception on the line of return! Problem might be in decendant() function! says not found in context! help plz! </span></code></pre>\r\n",
+    "PostedDate": "2012-12-01T12:58:49.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

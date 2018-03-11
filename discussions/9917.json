@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "32239",
+    "ThreadId": "9917",
+    "Html": "\r\nRecognizing that I am not using IE, Opera or Firefox when calling the site, it refuses to grant me access (sayint something like: we only support IE, Opera and Firefox...). <br />I there away to make the server believe that the calling application is one of the supported web browsers?<br /><br />thanx, <br />o<br />",
+    "PostedDate": "2007-05-05T05:43:37.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

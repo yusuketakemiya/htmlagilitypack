@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The following is the content of my page:\n<html>\n<head>\n</head>\n<body>\n<div class='content'>\nthis is a p<0.6 page!\n</div>\n</body>\n</html>\n \nThe code fragment is as follows:\n             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();\n            doc.OptionAutoCloseOnEnd = false;\n            doc.OptionCheckSyntax = false;\n            doc.OptionFixNestedTags = false;\n            doc.LoadHtml(html);\n           HtmlAgilityPack.HtmlNodeCollection htmlnodecols = doc.DocumentNode.SelectNodes(\"//div\");\n           string result=htmlnodecols[0].OuterHtml;\n \nReturns the result:\n<div class='content'>this is a p<0.6 page!=\"\"></0.6></div>\nThis result is wrong, the correct result should be:\n<div class='content'>this is a p<0.6 page!</div>\n \nPlease help me how to solve this problem, thank you",
+    "LastUpdatedDate": "2013-02-21T18:46:59.66-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-06-02T22:35:28.35-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "help me,serious bug",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 32800
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Maybe, the HTML Eskulap can help you. http://sgmleskulapnet.codeplex.com/downloads/get/373048",
+      "PostedDate": "2012-06-11T14:04:56.973-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Your input is wrong HTML, it should be \"this is a p&lt;0.5\". Results are unpredictable when HTML input is wrong.",
+      "PostedDate": "2012-06-15T02:32:49.47-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:59.66-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

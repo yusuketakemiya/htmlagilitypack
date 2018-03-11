@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "603347",
+    "ThreadId": "255383",
+    "Html": "\r\n<p>This is the situation:</p>\r\n<p>I am working with the search engine IDOL. IDOL returns a XML document containing html snippets.</p>\r\n<p>The problem is that HTML tags like href becomes invalid so I need to remove the highlight from all html attributes.</p>\r\n<p>I you search for fodbold and there is a link with fodbold in it then we are in trouble. (fodbold is soccer in danish)</p>\r\n<p>&nbsp;<a href=\"http://www.sporten.dk/fodbold/chok-drillo-skal-afloese-olsen\">http://www.sporten.dk/fodbold/chok-drillo-skal-afloese-olsen</a></p>\r\n<p>&nbsp;Becomes</p>\r\n<p><a href=\"http://www.sporten.dk/%3cem\">http://www.sporten.dk/&lt;em</a> style=&quot;highlight&quot;&gt;fodbold&lt;/em&gt;/chok-drillo-skal-afloese-olsen</p>\r\n<p>Right now I am using this xpath to get all link</p>\r\n<p>links = doc.DocumentNode.SelectNodes(&quot;//a[@href]&quot;);</p>\r\n<p>Is there an easy way to get all html tags like &lt;p&gt; &lt;block&gt; ....</p>\r\n",
+    "PostedDate": "2011-04-26T23:42:01.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "606043",
+    "ThreadId": "255383",
+    "Html": "<p>Try</p>\r\n<p style=\"padding-left: 30px;\">var allNodes = doc.DocumentNode.DescendantNodes();</p>\r\n<div id=\"_mcePaste\" class=\"mcePaste\" style=\"position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;\">\r\n<pre style=\"font-family: Consolas; font-size: 13; color: #f1f2f3; background: #22282a;\">DocumentNode<span style=\"color: #e8e2b7;\">.</span>DescendantNodes();\r\n</pre>\r\n</div>",
+    "PostedDate": "2011-05-02T12:25:55.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

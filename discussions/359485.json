@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "848529",
+    "ThreadId": "359485",
+    "Html": "\r\n<p>I need to be able to process all the HTML elements in sequence, as I'm looking for &quot;context&quot; not just a particular type of node.&nbsp; For example, I want to search for a particular comment, followed by a particular H2, which is then followed by a particular\r\n A.</p>\r\n<p>I have to imagine that there's a way to do this, but I'm coming up empty so far.&nbsp; I'd like to have a HTMLNodeCollection that has a flat collection of the nodes.</p>\r\n<p>&nbsp;</p>\r\n<p>Dan</p>\r\n",
+    "PostedDate": "2012-06-13T10:25:48.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "848595",
+    "ThreadId": "359485",
+    "Html": "<p>HtmlDocument.DocumentNode.Descendants()</p>\r\n<p>;)</p>\r\n<p>This function recurses down through all the nodes in the document in a flat list. It will recurse so as it hits a node the next nodes will be its children.</p>",
+    "PostedDate": "2012-06-13T12:44:28.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "848697",
+    "ThreadId": "359485",
+    "Html": "<p>How do I declare the result of this?&nbsp; It shows as returning an HTMLNode.&lt;DescendantNodes&gt;d_10, which I 'm not sure how to declare.&nbsp; I can do a for each, but I'd like to be able to break out of the loop and then continue where I left off.</p>\r\n<p>&nbsp;</p>\r\n<p>Dan</p>",
+    "PostedDate": "2012-06-13T18:05:38.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

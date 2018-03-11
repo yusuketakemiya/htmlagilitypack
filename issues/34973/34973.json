@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nFirst, I would like to say that the tool is great! However, there is a webpage that HtmlAgilityPack is not finding the correct element when I give the xpath nor it is generating the correct xpath when I choose one element. \n\nThis is the webpage:\n\nhttp://scholar.google.com/citations?user=d2f0VUQAAAAJ&hl=en\n\n(the problem should happen with any google scholar citations example)\n\nIf I search for the xpath: \n\n/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[1]/a[1]\n\nIt returns null. \n\nHowever, in every browser that I tried, it returns the element that I am looking for. For instance, this is the result when I use document.evaluate on chrome:\n\ndocument.evaluate(\"/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[1]/a[1]\", document, null, 9, null).singleNodeValue\n\n<a href=​\"/​citations?view_op=view_citation&hl=en&user=d2f0VUQAAAAJ&citation_for_view=d2f0VUQAAAAJ:​u5HHmVD_uO8C\" class=​\"cit-dark-large-link\">​The S LAM project: debugging system software via static analysis​</a>​\n\nThe problem also happens the other way around. When I get a xpath with HtmlAgilityPack, such as this one:\n\n/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[7]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/a[1]\n\nIt does not work when I try to find the element with the document.evaluate of the browser. I think the problem is related to the tag \"form\". HtmlAgilityPack does not include the children of a form. It says that they are siblings. I think it is the same problem mentioned here:\n\nhttps://htmlagilitypack.codeplex.com/workitem/29782\n\nThank you,\n\nGustavo",
+    "LastUpdatedDate": "2014-06-18T05:55:07.033-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-02-11T13:49:38.057-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect xpath parse",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 34973
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

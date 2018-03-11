@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "444344",
+    "ThreadId": "213034",
+    "Html": "<p>I'm retrieving the &lt;option&gt; items of a &lt;select&gt; and the XPath expression for this works as expected. However, the &lt;option&gt; nodes which I get back do not have the innertext property set, but they do contain the correct 'value' attribute.</p>\r\n<p>http://www.getij.nl/index.cfm?page=getijvoorspellingen2</p>\r\n<p>The XPath expression I use:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes( <span style=\"color:#a31515\">&quot;//div[@name='locations']//select/option&quot;</span> );\r\n<br>Anyone have an idea why the innertext is empty?<br><br><br></pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-18T07:19:57.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

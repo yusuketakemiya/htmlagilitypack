@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "68620",
+    "ThreadId": "20661",
+    "Html": "\r\nIs there a reason that HtmlNameTable isn't implemented as:<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n    internal class HtmlNameTable : NameTable\r\n    {\r\n        internal string GetOrAdd(string array)\r\n        {\r\n            string s = Get(array);\r\n            if (s == null) \r\n                s = Add(array);\r\n            return s;\r\n        }\r\n    }\r\n</pre><br />This is simpler and more straight-forward than the current version. It also solves a problem that I'm having with the Mvp.Xml.Exslt ExsltContext object that expects (for better or for worse) that it can cast an XmlNameTable into a NameTable.<br />",
+    "PostedDate": "2008-01-17T18:01:11.463-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "The file was there as IHtmlBaseNode.cs and the project reference was wrong. I have fixed this in the source control.Please note the 2.0 branch is now defunct, while the features experimented on in there will make it into a future release. The branch code is very different from the current stable code base &#40;mostly in organization&#41;. ",
+    "ClosedDate": "2012-08-23T06:59:39.3-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "\"HtmlBaseNode.cs\" is missing from source control. Can you check in it.",
+    "LastUpdatedDate": "2013-05-16T05:32:56.79-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-06-23T08:10:19.963-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Source file 'HtmlBaseNode.cs' could not be found",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 32882
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Was this ever added or sent to you directly? As of now when I downloaded the code I still see that file is missing from the source.",
+      "PostedDate": "2012-08-17T12:39:06.58-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-08-23T06:59:39.3-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:58.753-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:56.79-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I noticed that the <form> tag was not getting parsed correctly. It was being shown as having no child nodes when in fact it did, and the end tag was being treated as text.\n \nI looked at the source of HtmlNode and noticed this:\n \n    ElementsFlags.Add(\"form\", HtmlElementFlag.CanOverlap | HtmlElementFlag.Empty);\n \nSo the form element is being treated as an element that cannot contain children (such as meta or title.) Is there a reason for this? It seems to be the case going back to at least 1.4.0.",
+    "LastUpdatedDate": "2013-02-21T18:47:00.977-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-03-28T13:51:27.85-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect handling of form tag",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 32505
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Seeing the end tag in the InnerText property of it's containing text indeed.",
+      "PostedDate": "2012-04-04T10:34:09.767-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-02T01:47:48.847-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The reasons for this are explained here: http://stackoverflow.com/questions/4218847/htmlagilitypack-does-form-close-itself-for-some-reason",
+      "PostedDate": "2012-06-15T02:34:30.973-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks for the heads up, Simon. This is still definitely a bug. The end tag being treated as text content? And if I understand correctly, the HtmlElementFlag.Empty means HAP would *never* try to parse contents of the element so I don't think that supports the overlapped elements explanation. If HAP is in fact no longer being developed, maybe someone can fork this over at GitHub and pick it up? I'd do it but I just don't have the time to commit to it.",
+      "PostedDate": "2012-06-15T06:56:26.123-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "HAP is being maintained by me (I just made some changes a few days ago). I've been working on bringing HAP into more .NET platforms, the most recent being WinRT.\r\n\r\nOne of the things I want to do is to make things like this more discoverable and configurable by the HAP users. The idea being configuration items like this would be arguments that can be sent to the parser. \r\n\r\nOf course changing this default behavior in HAP would be a breaking change and thus is slated for 2.0 when I can get to it. I have been getting more time to get back into updating HAP and I'm hopeful I'll be able to actually start off the 2.0 branch this summer.",
+      "PostedDate": "2012-06-15T07:58:16.967-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:00.977-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

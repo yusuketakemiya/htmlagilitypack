@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "498467",
+    "ThreadId": "228589",
+    "Html": "<p>Hi, I wish to use this class also in a Windows Phone 7 project, but there are a lot of non-supported class like xpath, hashtable and arraylist.</p>\r\n<p>Have you some plans to port HtmlAgilityPack also to the Windows Phone 7 platform?</p>\r\n<p>&nbsp;</p>\r\n<p>thanks,<br>Luca S.</p>",
+    "PostedDate": "2010-09-25T17:09:01.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "498485",
+    "ThreadId": "228589",
+    "Html": "<p>I just checked in the HAPPhone project and solution into SVN. I've only done minimal testing but so far everything seems to work. I included a sample phone application that gets a list of links</p>\r\n<p>Removing xpath, hashtable and arraylist had already been done in the current SVN codebase after the 1.4.0 release. I did a HAPLight project for Silverlight 4.0 which paved most of the way for the WP7 version. I really hope that the next version of WP7 is upgraded to SL4. Too many things missing, implicit styles, direct content for buttons, improved XAML parsing...</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-25T19:54:16.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "HtmlDocument.cs : 1901 \n                    try\n                    {\n                        _declaredencoding = Encoding.GetEncoding(charset);\n                    }\n                    catch (ArgumentException)\n                    {\n                        _declaredencoding = null;\n                    }\n \nand a few lines later:\n \n                        if (_declaredencoding.WindowsCodePage != _streamencoding.WindowsCodePage)\n \nSo, it can happens that _declaredencoding will be null, and we'll have a null reference exception.",
+    "LastUpdatedDate": "2013-02-21T18:47:07.423-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-05-08T11:33:25.923-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NullReference exception when html has wrong encoding.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 30646
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Just encountered the same thing. Works great if encoding declaration is *missing*, but if it's *unknown*, I get this generic error. I'd like the library to fall back to the default encoding (as if the encoding is missing) and continue as usual.",
+      "PostedDate": "2012-01-26T03:02:22.453-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-01-27T12:08:54.157-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:07.423-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

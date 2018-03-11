@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1339801",
+    "ThreadId": "577094",
+    "Html": "i wirte some code in LINQPad:<br />\n<pre><code>void Main()\n{\n    var html = new HtmlDocument();\n    html.OptionAutoCloseOnEnd = true;\n    html.OptionWriteEmptyNodes = true;  \n    html.OptionFixNestedTags = true;\n\n    html.LoadHtml(&quot;&lt;br /&gt;&quot;);\n    html.DocumentNode.WriteContentTo().Dump();\n    \n    html.DocumentNode.InnerHtml = &quot;&lt;br /&gt;&quot;;\n    html.DocumentNode.WriteContentTo().Dump();\n}</code></pre>\n\noutput:<br />\n<blockquote>\n&lt;br /&gt;<br />\n&lt;br&gt;<br />\n</blockquote>\ni changed the default options of the HtmlDocument, and i want the result is &quot;&lt;br /&gt;&quot;.\r<br />\nbut with &quot;InnerHtml&quot; the result is &quot;&lt;br&gt;&quot;, this isn't what i want.\r<br />\n<br />\nwhy ?\r<br />\n<br />\ni use ilspy to read the source code of InnerHtml : <br />\n<pre><code>public virtual string InnerHtml\n{\n    get...\n    set\n    {\n        HtmlDocument doc = new HtmlDocument();\n        doc.LoadHtml(value);\n        this.RemoveAllChildren();\n        this.AppendChildren(doc.DocumentNode.ChildNodes);\n    }\n}</code></pre>\n\nit create a HtmlDocument object with default options, so the result is wrong!\r<br />\n<br />\ni hope this will be fixed with the next release!<br />\n",
+    "PostedDate": "2015-01-07T09:39:39.86-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

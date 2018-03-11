@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am using HtmlDocument.Save() with an XmlWriter in order to do some special formatting of output.\n \nEverything seems to work great, except that entities (really &amp; in my case) gets written out as &amp;amp;.\nIt appears that the HtmlNode.WriteTo(XmlWriter) sends its \"&amp;\" to XmlWriter.WriteString(), which re-escapes the & in the entity.\nWould using XmlWriter.WriteRaw() be better, or does the encoding of & have to be removed before passing to WriteString() so it can be done correctly?",
+    "LastUpdatedDate": "2013-04-29T12:19:00.56-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-02-01T09:33:45.91-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlDocument.Save(XmlWriter) incorrectly Escapes Entities",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 26100
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I just found another scenario where this causes a problem.\r\nThe ampersand in a link should also not be escaped: <a href=\"mypage.aspx?p=1&h=2\">\r\n\r\nI think this is a vote for using WriteRaw() instead of WriteString().",
+      "PostedDate": "2010-02-01T09:49:04.447-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-18T01:40:15.677-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:19.49-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-04-29T12:19:00.56-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

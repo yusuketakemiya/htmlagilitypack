@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "470970",
+    "ThreadId": "220730",
+    "Html": "<p>Hi, I have an application that uses the HtmAgilityPack to parse, then save various HTML pages. I've stumbled across the following url which causes a StackoverflowException. The page will render fine in a broswer: any suggestions as to why this occurs and how I can handle the situation, other than not loading this site? This type of exception cannot be caught with a try/catch.</p>\r\n<p>Pasting the following into a Console app will recreate the error...</p>\r\n<p>-----------------------------------------------------------------------------------------------------------------------------------------------------------</p>\r\n<p>String url = http:<span style=\"color:green\">//rewarding.me/active-tel-domains/index.php/index.php?rescan=amour.tel&amp;w=A&amp;url=&amp;by=us&amp;limits=0&quot;;</span><br>WebRequest request = System.Net.HttpWebRequest.Create(url);<br>HtmlDocument htmlDocument = <span style=\"color:blue\">new</span> HtmlDocument();<br>htmlDocument.Load(( request.GetResponse() ).GetResponseStream());<br>Stream memoryStream = <span style=\"color:blue\">new</span> MemoryStream();<br>htmlDocument.Save(memoryStream);</p>\r\n<p><br>-----------------------------------------------------------------------------------------------------------------------------------------------------------</p>\r\n<p>Regards,</p>\r\n<p>AArnie</p>",
+    "PostedDate": "2010-07-22T05:05:43.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "470991",
+    "ThreadId": "220730",
+    "Html": "this is a known problem in the save method. It needs to be re-written to get the C# compiler to output a MSIL &quot;tail&quot; call to avoid this. The reason this is happening is because the save method recursively steps through the entire node tree and eventually on larger pages hits the max call stack limit in the CLR. ",
+    "PostedDate": "2010-07-22T05:42:18.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "470996",
+    "ThreadId": "220730",
+    "Html": "<p>Thanks for the quick&nbsp;response.</p>\r\n<p>Are you aware of&nbsp;a reliable way of knowing whether or not the call stack limit is being approached, or&nbsp;of an HtmlAgility object&nbsp;property that would be suitable to monitor, to avoid hitting the limit?</p>\r\n<p>Regards,</p>\r\n<p>AArnie</p>",
+    "PostedDate": "2010-07-22T05:48:42.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "471000",
+    "ThreadId": "220730",
+    "Html": "Right now I don't know of a way within .NET to check the current stack without majorly affecting performance. The limit changes based on the CLR and the working environment. I believe that 64-bit has a higher limit. ",
+    "PostedDate": "2010-07-22T05:51:16.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "478166",
+    "ThreadId": "220730",
+    "Html": "<p>so this is not a infinite loop? can I just increase the max stack size as a work-around? Thanks.</p>",
+    "PostedDate": "2010-08-09T08:38:30.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "495870",
+    "ThreadId": "220730",
+    "Html": "<p>As a work-around, how would one increase the stack size? I know you can do it on a specific thread, but I think it's still limited to the default max anyway.</p>\r\n<p>@Darth: Do we have a test that proves this problem so that we can solve it?</p>",
+    "PostedDate": "2010-09-20T02:20:06.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "498380",
+    "ThreadId": "220730",
+    "Html": "<p>Hi @Darth,</p>\r\n<p>The code example I posted at the top of this thread will cause the issue to occur. I have since found another example, but have filed somewhere that's not to hand at the moment. I'll hunt it out and post it asap.</p>\r\n<p>Regards,</p>\r\n<p>AArnie</p>",
+    "PostedDate": "2010-09-25T05:02:21.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "502752",
+    "ThreadId": "220730",
+    "Html": "<p>Hello,</p>\r\n<p>I did a quick workaround for this:</p>\r\n<p><a href=\"http://devva.net/blog/post/Workaround-for-the-HtmlAgilityPack-StackOverflowException-bug.aspx\">http://devva.net/blog/post/Workaround-for-the-HtmlAgilityPack-StackOverflowException-bug.aspx</a></p>",
+    "PostedDate": "2010-10-05T16:31:53.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "556904",
+    "ThreadId": "220730",
+    "Html": "\r\n<p>Why can't HtmlAgilityPack use a Stack (as in an instance of the Stack class) of its own to store the elements to be written out? That's how you would normally get rid of recursion and it seems the right way to go, otherwise you will always be limited by\r\n the stack size (1MB by default).</p>\r\n",
+    "PostedDate": "2011-01-28T08:10:31.22-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "559449",
+    "ThreadId": "220730",
+    "Html": "\r\n<p>This is making HAP unusuable for me. I can't get it to save even the most simple XHTML file after modifying an element's attributes. The workaround doesn't help because it just makes the exception trappable but doesn't allow me to save.</p>\r\n",
+    "PostedDate": "2011-02-02T08:09:34.69-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126001",
+    "ThreadId": "220730",
+    "Html": "it seem it still not solved nowadays at 1.46.<br />\n",
+    "PostedDate": "2013-11-18T05:56:26.11-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

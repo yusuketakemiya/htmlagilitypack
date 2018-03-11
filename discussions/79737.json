@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "273083",
+    "ThreadId": "79737",
+    "Html": "<p>&iquest;how to update HtmlAgilityPack with .patch patches?</p>",
+    "PostedDate": "2010-01-04T14:33:37.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273099",
+    "ThreadId": "79737",
+    "Html": "<p>You can use Tortoise SVN to apply the patch file.</p>\r\n<p>All patches in the source code page that have been marked as applied are in the current code base. If you download the latest source file from here http://htmlagilitypack.codeplex.com/SourceControl/list/changesets and go into the 1.4.0 branch you can get the latest and greatest version of HAP</p>",
+    "PostedDate": "2010-01-04T15:15:51.787-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273145",
+    "ThreadId": "79737",
+    "Html": "<p>thank you :)</p>",
+    "PostedDate": "2010-01-04T19:33:05.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

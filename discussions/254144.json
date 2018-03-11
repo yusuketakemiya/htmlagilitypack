@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "598321",
+    "ThreadId": "254144",
+    "Html": "\r\n<p>In my work,I got HtmlNode's InnerHtml and &nbsp;InnerText ,OuterHtml,Name Very slowly.</p>\r\n<p>The code like this:</p>\r\n<p>public class HtmlFragment{<span> </span>public HtmlFragment(HtmlNode hNode)&nbsp;&nbsp; &nbsp;\r\n</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">class</span> HtmlFragment\r\n{\r\n\t <span style=\"color:blue\">public</span> HtmlFragment(HtmlNode hNode)\r\n     {\r\n            <span style=\"color:blue\">this</span>.HNode = hNode;\r\n            <span style=\"color:green\">//Init always take a long time</span>\r\n            Init();\r\n      }\r\n      <span style=\"color:blue\">public</span> HtmlNode HNode{<span style=\"color:blue\">get</span>;<span style=\"color:blue\">set</span>;}\r\n      <span style=\"color:blue\">public</span> <span style=\"color:blue\">void</span> Init(){\r\n      \t\t<span style=\"color:blue\">string</span> tagName=TagName.Name;\r\n      \t\t<span style=\"color:blue\">string</span> outHtml=<span style=\"color:blue\">this</span>.HNode.OuterHtml;\r\n      \t\t<span style=\"color:blue\">string</span> innerText=<span style=\"color:blue\">this</span>.HNode.InnerText;\r\n      \t\t<span style=\"color:blue\">string</span> innerHTML=<span style=\"color:blue\">this</span>.HNode.InnerHtml;\r\n      }\r\n}</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2011-04-15T22:23:39.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

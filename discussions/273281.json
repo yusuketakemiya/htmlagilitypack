@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "674550",
+    "ThreadId": "273281",
+    "Html": "\r\n<p>Is there a way to programmatically evaluate expression of&nbsp;Html Agility Pack&nbsp;string such as:&nbsp;</p>\r\n<p>string ss = href.Attributes[&quot;href&quot;].OwnerNode.ParentNode.ParentNode.InnerText;</p>\r\n<p>to invoke this string</p>\r\n<p>thanks</p>\r\n<p>chani</p>\r\n",
+    "PostedDate": "2011-09-20T23:54:22.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

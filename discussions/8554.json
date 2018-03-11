@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "27859",
+    "ThreadId": "8554",
+    "Html": "\r\nHi,<br />  I'm parsing 7000+ HTML pages.  Each has a common table that is extracted and processed for information. Currently, I am retrieving the data using the SelectNodes method of HtmlNode object.  Is there a way to precompile or cache the query to SelectNodes to speed things up across each URL request?<br /><br />Thanks<br />",
+    "PostedDate": "2007-03-26T02:49:20.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "42928",
+    "ThreadId": "8554",
+    "Html": "\r\nhi sir<br />i need to login programattically and scrapping data from a website which is the next page after login .<br />for this i m using html agility pack. <br />i m using the link http://www.dotnetjunkies.com/WebLog/joshuagough/archive/2006/01/20/134825.aspx<br />as reference .<br />for trial i m trying to login in gmail and code is as following........................<br />using System;<br />using System.Data;<br />using System.Configuration;<br />using System.Web;<br />using System.Web.Security;<br />using System.Web.UI;<br />using System.Web.UI.WebControls;<br />using System.Web.UI.WebControls.WebParts;<br />using System.Web.UI.HtmlControls;<br /><br /><br />public partial class _Default : System.Web.UI.Page <br />{<br />    protected void Page_Load(object sender, EventArgs e)<br />    {<br />          FormProcessor p = new FormProcessor();<br />          string userName = \"*****************\";<br />          string password = \"******************\";<br />     Form form = p.GetForm(\"https://Gmail.com\",\"//form<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40name%3d%27loginForm%27\">@name='loginForm'</a>\", FormQueryModeEnum.Nested);<br />     form<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22j_username%22\">\"j_username\"</a>.SetAttributeValue(\"value\", userName);<br />     form<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22j_password%22\">\"j_password\"</a>.SetAttributeValue(\"value\", password);<br />     HtmlDocument doc = p.SubmitForm(form);<br />     string strBal = doc.DocumentNode.SelectSingleNode<br />     (\"//span<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40class%3d%27redText%27\">@class='redText'</a>\").InnerText;<br />     strBal = System.Web.HttpUtility.HtmlDecode(strBal);<br />     strBal = strBal.Substring(1).Trim();<br />    }<br />}<br /><br />in which i m facing problem in xpath //form<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40name%3d%27loginForm%27\">@name='loginForm'</a> the error is node not found.<br />i want to know that how can i compose the xpath for any website . plz tell me complete reference about it.<br /><br />thanks in advance <br /><br />sharad soni<br />",
+    "PostedDate": "2007-07-29T23:08:31.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "42929",
+    "ThreadId": "8554",
+    "Html": "\r\nthanks<br />",
+    "PostedDate": "2007-07-29T23:08:36.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

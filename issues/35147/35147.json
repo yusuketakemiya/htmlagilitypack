@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi!\n\nWe started using fortify to scan our builds and the following \"critical issue\" came up:\n\n__XML Injection (Input Validation and Representation, Data flow)__\nOn line 1612 of HtmlNode.cs, the method WriteTo() writes XML unvalidated input.  This call could allow an attacker to inject arbitrary elements or attributes into the XML document.\n\nIf necessary I can also provide the analysis traces, but they are hard to export :/",
+    "LastUpdatedDate": "2014-04-23T00:19:36.44-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-04-23T00:19:36.44-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Fortify reports XML injection possibility",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35147
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "577989",
+    "ThreadId": "249087",
+    "Html": "\r\n<p>Hello!</p>\r\n<p>I can't load site in HtmlDocument. Then I try it, I get this error in VS2010 (in\r\n<em>public void Load(string path)</em> in <em>HtmlDocument.cs</em>):</p>\r\n<p><em>MethodAccessExeption was unhandled</em></p>\r\n<p><em>Attempt to access the method failed: System.IO.StreamReader..ctor(System.String, System.Text.Encoding)</em></p>\r\n<p>At the same time HtmlDocument.LoadHtml() works perfectly.</p>\r\n<p>May be, I do something wrong. Please, give me advice.</p>\r\n",
+    "PostedDate": "2011-03-09T12:30:56.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

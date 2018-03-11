@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "646441",
+    "ThreadId": "266291",
+    "Html": "\r\n<p>Hello I explain what I would do immediately:<br>\r\nI have to extract data from a table using html htmlAgility Pack<br>\r\nThis 'my code that when executed gives me' a reference error.<br>\r\nI can not figure out what is wrong, I am more 'I can not do this<br>\r\n<br>\r\nPrivate Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click&nbsp;<br>\r\nDim web As New HtmlAgilityPack.HtmlWeb()&nbsp;<br>\r\nDim doc As New HtmlAgilityPack.HtmlDocument()&nbsp;<br>\r\ndoc = web.Load(&quot;http://www.mia_pagina&quot;)&nbsp;<br>\r\nDim tables As HtmlAgilityPack.HtmlNodeCollection&nbsp;<br>\r\ntables = doc.DocumentNode.SelectNodes(&quot;//TABLE&quot;)&nbsp;<br>\r\nDim rows As HtmlAgilityPack.HtmlNodeCollection&nbsp;<br>\r\nrows = tables(0).SelectNodes(&quot;./tr&quot;)&nbsp;<br>\r\nFor i As Integer = 0 To rows.Count - 1&nbsp;<br>\r\n'Iterare all columns in this row&nbsp;<br>\r\nDim cols As HtmlAgilityPack.HtmlNodeCollection = rows(i).SelectNodes(&quot;./td&quot;)&nbsp;<br>\r\nFor j As Integer = 0 To cols.Count - 1&nbsp;<br>\r\n'get the value of the colum and print&nbsp;<br>\r\nDim value As String = cols(j).InnerText&nbsp;<br>\r\nListBox1.Items.Add(value)&nbsp;<br>\r\n<br>\r\nNext&nbsp;<br>\r\n<br>\r\nNext&nbsp;<br>\r\n<br>\r\nEnd Sub</p>\r\n",
+    "PostedDate": "2011-07-23T03:18:08.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

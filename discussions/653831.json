@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1470854",
+    "ThreadId": "653831",
+    "Html": "Hi,\r<br />\n<br />\nI have recently started working on an old project which uses version 1.3.0.0 version of this library.\r<br />\nI restored the same package version and tried running the project. There is a part of code where it tries to find a index of a character in HtmlDocument which results in following error\r<br />\n<br />\n&quot;Method not found: 'Int32 HtmlAgility Pack.HtmlDocument.TextIndexOf(Char, Int32)'\r<br />\n<br />\nSo I think the method is deprecated. Any idea about this?\r<br />\n<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2016-04-20T15:23:53.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

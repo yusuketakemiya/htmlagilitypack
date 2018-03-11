@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "436263",
+    "ThreadId": "210784",
+    "Html": "<p>Hello everyone,</p>\r\n<p>Is HtmlAgilityPack usable with F#? Has anyone tried, and can provide some info on how to do it/samples?</p>\r\n<p>thanks, Marcelo</p>",
+    "PostedDate": "2010-04-27T19:06:26.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436274",
+    "ThreadId": "210784",
+    "Html": "<p>As with any .NET library Html Agility Pack can be used with F#. That being said nothing has been done specifically for F#. F# doesn't like mutability and as such you'll need to declare any HAP objects as Mutable. Using HAP in F# would be a lot like using the System.Xml classes. I do not have any examples of using it in F# though. I've only had some minor dabbling with the language thus far. I'd be interested in any suggestions you may have to make it work nicer with F#.</p>",
+    "PostedDate": "2010-04-27T20:12:56.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436277",
+    "ThreadId": "210784",
+    "Html": "<p>Thanks for the reply. I'm starting with it too. I have some crawlers that I'd like to turn into F# due to parallelism. I don't even get to compile using the reference to the dll, unfortunately.</p>\r\n<p>Anything that comes to my mind, I'll let you know.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-27T20:16:47.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438295",
+    "ThreadId": "210784",
+    "Html": "<p>Darthobiwan</p>\r\n<p>Just to let you know, I downloaded the latest version, tried with F# and it was a wonderful experience.</p>\r\n<p>The crawling worked just as it should, I felt it was a little slower than the C# code, but again, maybe my code needs some optimization. Still, it's wonderful how parallelism can be achieved in a so easy way with F#.</p>\r\n<p>Regards</p>\r\n<p>Marcelo</p>",
+    "PostedDate": "2010-05-03T05:18:28.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438296",
+    "ThreadId": "210784",
+    "Html": "<p>[removed by the author due to double posting. sorry]</p>",
+    "PostedDate": "2010-05-03T05:18:30.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

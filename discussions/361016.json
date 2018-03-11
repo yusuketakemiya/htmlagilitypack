@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "853937",
+    "ThreadId": "361016",
+    "Html": "\r\n<p>Hmm... How do we find out the details of this software?</p>\r\n<p>There is nothing under the CodePlex Documentation tab, and the downloadable documentation is a CHM file that I cannot read on Windows 7 (I get the index, but the content pane always says &quot;Navigation to the webpage was canceled&quot;.</p>\r\n",
+    "PostedDate": "2012-06-26T10:14:34.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "854712",
+    "ThreadId": "361016",
+    "Html": "<p>Right click on the .chm file and select \"properties\"</p>\r\n<p>click on the \"unblock\" button</p>\r\n<p>you should then be able to read it.</p>\r\n<p>&nbsp;</p>\r\n<p>it's a restriction in recent OSes designed to prevent auto-running of active content downloaded from the web.</p>",
+    "PostedDate": "2012-06-27T20:43:16.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "859885",
+    "ThreadId": "361016",
+    "Html": "<p>tks ;-D</p>",
+    "PostedDate": "2012-07-10T12:02:40.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1479884",
+    "ThreadId": "361016",
+    "Html": "That does not work under windows 10.  Even if it is unblocked, only the index displays.\r<br />\n<br />\nThe error for every selection is:\r<br />\n<br />\nThis page can’t be displayed\r<br />\nMake sure the web address //ieframe.dll/dnserrordiagoff.htm# is correct. \r<br />\nLook for the page with your search engine. \r<br />\nRefresh the page in a few minutes. \r<br />\nCheck that all network cables are plugged in. \r<br />\nVerify that airplane mode is turned off. \r<br />\nMake sure your wireless switch is turned on. \r<br />\nSee if you can connect to mobile broadband. \r<br />\nRestart your router. <br />\n",
+    "PostedDate": "2016-07-26T17:24:37.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1485066",
+    "ThreadId": "361016",
+    "Html": "<strong>ncolvin wrote:</strong><br />\n<blockquote>\nThat does not work under windows 10.  Even if it is unblocked, only the index displays.<br />\n</blockquote>\nThe most simple workaround is:<br />\n<ol>\n<li>Zip the Documentation.chm file.</li>\n<li>Go inside the zip and double-click Documentation.chm there.</li>\n</ol>\n",
+    "PostedDate": "2016-10-01T01:09:18.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

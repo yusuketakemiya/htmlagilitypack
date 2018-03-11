@@ -1,0 +1,161 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Here's a test that exercises the behavior:\n \n        [TestMethod]\n        public void TestMethod1()\n        {\n            var doc = new HtmlDocument();\n            doc.LoadHtml(\"<div><p>Zero</p><code><p>One</p><p>Two</p></code><p>Three</p></div>\");\n \n            var div = doc.DocumentNode.SelectSingleNode(\"//div\");\n            var code = doc.DocumentNode.SelectSingleNode(\"//code\");\n \n            div.RemoveChild(code, true);\n \n            Assert.AreEqual(\"<div><p>Zero</p><p>One</p><p>Two</p><p>Three</p></div>\", Html(doc));\n        }\n \nExpected: \"<div><p>Zero</p><p>One</p><p>Two</p><p>Three</p></div>\"\nActual: \"<div><p>Zero</p><p>Two</p><p>One</p><p>Three</p></div>\"",
+    "LastUpdatedDate": "2017-01-10T02:25:37.2-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-09-01T15:55:22.54-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "RemoveChild(node, true) reverses the order of the grandchildren it keeps",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 14,
+    "Id": 28756
+  },
+  "FileAttachments": [
+    {
+      "FileId": 10887,
+      "FileName": "remove_children.diff",
+      "DownloadUrl": ".\\10887"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I attached a patch to fix the behavior.",
+      "PostedDate": "2010-09-01T15:57:04.193-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-08T12:33:01.887-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "You question is wrong itself\r\ndoc.LoadHtml(\"<div><p>Zero</p><code​><p>One</p><p>Two</p></code><p>Thre​e</p></div>\");\r\nvar div = doc.DocumentNode.SelectSingleNode(\"​//div\");\r\nvar code = doc.DocumentNode.SelectSingleNode(\"​//code\");\r\n\r\ndiv.RemoveChild(code, true);\r\n\r\nExpected: \"<div><p>Zero</p><p>One</p><p>Two</​p><p>Three</p></div>\"\r\nActual: \"<div><p>Zero</p><p>Two</p><p>One</​p><p>Three</p></div>\"\r\n\r\nExpected should be\r\n<div><p>Zero</p><p>Thre​e</p></div>",
+      "PostedDate": "2010-11-11T05:05:18.347-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "@xmen\r\n\r\nThe true in div.RemoveChild(code, true) is to instruct it to keep the removed node's children.\r\n\r\nSo, unless I'm mistaken the expected result is that <p>One</p> and <p>Two</p> will be preserved and become the children of the <div>.",
+      "PostedDate": "2010-11-11T07:52:59.623-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Ah...never used that method :D just read its name",
+      "PostedDate": "2010-11-11T09:04:40.283-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "this is the same issue as http://htmlagilitypack.codeplex.com/workitem/9113",
+      "PostedDate": "2010-11-18T12:41:49.877-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-18T12:42:08.417-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The \"prev\" reference is unnecessary.  Looping backwards through the children and inserting after the parent works.  Here is the updated RemoveChild method.\r\n\r\n        public HtmlNode RemoveChild(HtmlNode oldChild, bool keepGrandChildren)\r\n        {\r\n            if (oldChild == null)\r\n            {\r\n                throw new ArgumentNullException(\"oldChild\");\r\n            }\r\n\r\n            if ((oldChild._childnodes != null) && keepGrandChildren)\r\n            {\r\n                // get prev sibling\r\n                //HtmlNode prev = oldChild.PreviousSibling;\r\n\t\t\t\tint count = oldChild._childnodes.Count;\r\n\r\n                // reroute grand children to ourselves\r\n\t\t\t\tfor (var i = count - 1; i >= 0; i--)\r\n\t\t\t\t{\r\n\t\t\t\t\t//looping through children backwards allows us to insert after the parent \r\n\t\t\t\t\t//and end up with the same node order\r\n\t\t\t\t\tHtmlNode grandchild = oldChild._childnodes[i];\r\n\t\t\t\t\t//InsertAfter(grandchild, prev);\r\n\t\t\t\t\tInsertAfter(grandchild, oldChild);\r\n\t\t\t\t}\r\n            }\r\n            RemoveChild(oldChild);\r\n            _outerchanged = true;\r\n            _innerchanged = true;\r\n            return oldChild;\r\n        }",
+      "PostedDate": "2011-01-16T17:30:17.627-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-02-03T18:21:55.76-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-10-20T05:05:25.157-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-12-14T04:34:00.37-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:13.083-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-08-10T03:44:25.323-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-10-29T14:54:54.633-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-03-19T11:13:02.407-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-12-04T02:24:57.023-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-01-14T07:12:16.533-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Sysmo posted code to fix this problem 4 years ago.\r\n\r\nWhy has this not been corrected yet?\r\n\r\nWhy is this also a Low impact?  Reordering the child nodes incorrect is bad.  When used to strip unwanted HTML from paragraphs and sentences, it reorders the sentences or words which totally messes up the original content.",
+      "PostedDate": "2015-01-14T07:16:55.8-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-07-07T02:09:57.04-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please fix this.",
+      "PostedDate": "2016-01-07T07:01:01.747-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-01-07T07:04:01.363-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-09-06T03:41:01.31-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "It would be really nice if the patch can be merged. We're similarly impacted by this bug as everyone else on this thread.",
+      "PostedDate": "2017-01-10T02:25:37.2-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

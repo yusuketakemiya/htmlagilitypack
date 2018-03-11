@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "645808",
+    "ThreadId": "266114",
+    "Html": "\r\n<p>hi,</p>\r\n<p>could nunit be please included within the svn branch?<br>\r\n(there shouldn't be license issues on this, its license is very permissive)</p>\r\n<p>this would make the solution compile out of the box and ease contribution.</p>\r\n<p>btw, the referred nunit version is quite old, 2.5.5 - there's a stable 2.5.10</p>\r\n<p>thank you&nbsp;</p>\r\n<p>Federico</p>\r\n",
+    "PostedDate": "2011-07-21T14:26:35.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "646184",
+    "ThreadId": "266114",
+    "Html": "<p>I look forward to NUNit being 2.5.10 being included together with some unit tests. I have recently stylecopped HTML Agliity Pack. I have just checked and Resharper could not find any unit tests to run!</p>",
+    "PostedDate": "2011-07-22T08:51:41.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

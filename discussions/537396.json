@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1218242",
+    "ThreadId": "537396",
+    "Html": "I don't want it to &quot;fix&quot; my code (which is not even an entire page, it's a string passed to my method [in which I will utilize HAP], which contains a portion of the page). I just want it to load the html given to it, make the manipulations I specify and spit out the result.  I don't want to know about errors or anything it finds odd or have it think itself smart and impulsively &quot;fix&quot; (ie: break) my html.\r<br />\n<br />\nIs this possible?<br />\n",
+    "PostedDate": "2014-03-03T11:39:14.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1223594",
+    "ThreadId": "537396",
+    "Html": "I would also be interested if this is possible.<br />\n",
+    "PostedDate": "2014-03-17T10:00:31.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

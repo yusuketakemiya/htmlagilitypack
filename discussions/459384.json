@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1099812",
+    "ThreadId": "459384",
+    "Html": "Hello\r<br />\n<br />\nI'm looking to parse an html email searching for phone number patterns. When I detect a number I want to insert an Hyperlink.\r<br />\n<br />\nSome pattern may detect the same number twice, so I want to analyse if this number is enclosed with Hyperlink tag, if so go to next.\r<br />\n<br />\nAny idea how can this be done with Html Agility Pack?<br />\n",
+    "PostedDate": "2013-09-26T12:41:21.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

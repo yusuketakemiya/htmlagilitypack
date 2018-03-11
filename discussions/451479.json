@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1073350",
+    "ThreadId": "451479",
+    "Html": "Why did the function SelectNodes from any element starts looking from DocumentNode not from  the current element? Is it have any backlashes?<br />\n",
+    "PostedDate": "2013-07-26T01:02:27.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1078621",
+    "ThreadId": "451479",
+    "Html": "Yes, faced with same issue. It looks a bug..<br />\n",
+    "PostedDate": "2013-08-09T02:21:58.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1078623",
+    "ThreadId": "451479",
+    "Html": "Maybe we can fix it somehow? In my opinion it is quite straightforward. But I can be wrong.<br />\n",
+    "PostedDate": "2013-08-09T02:28:32.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082204",
+    "ThreadId": "451479",
+    "Html": "I suppose that this project is based on xml. So you should just SelectNodes('.//Field') instead of SelectNodes('//Field') to search relative to current path.\r<br />\n<br />\nsource: <a href=\"http://stackoverflow.com/questions/7143629/xpath-expression-to-select-all-nodes\" rel=\"nofollow\">http://stackoverflow.com/questions/7143629/xpath-expression-to-select-all-nodes</a><br />\n",
+    "PostedDate": "2013-08-19T08:01:55.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082242",
+    "ThreadId": "451479",
+    "Html": "<strong>gooleem wrote:</strong><br />\n<blockquote>\nI suppose that this project is based on xml. So you should just SelectNodes('.//Field') instead of SelectNodes('//Field') to search relative to current path.<br />\n<br />\nsource: <a href=\"http://stackoverflow.com/questions/7143629/xpath-expression-to-select-all-nodes\" rel=\"nofollow\">http://stackoverflow.com/questions/7143629/xpath-expression-to-select-all-nodes</a><br />\n</blockquote>\nYes, you are right, it works for me.<br />\n",
+    "PostedDate": "2013-08-19T08:58:43.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

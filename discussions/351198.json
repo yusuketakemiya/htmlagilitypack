@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "819940",
+    "ThreadId": "351198",
+    "Html": "\r\n<p>I'm using a modified version of the ConvertTo method found in HtmlConvert.cs (Html2Txt project that comes with HAP source code) to iterate through the entire HtmlDocument's DocumentNode and manipulate the node tree (for ex. by removing certain nodes). The\r\n problem is that ConvertTo method processes child nodes in a recursive fashion:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> ConvertContentTo(HtmlNode node, TextWriter outText)\r\n{\r\n      <span style=\"color:blue\">foreach</span> (HtmlNode subnode <span style=\"color:blue\">in</span> node.ChildNodes)\r\n      {\r\n            ConvertTo(subnode, outText);\r\n      }\r\n}<br>&nbsp;</pre>\r\n</div>\r\n<p>In the old 1.3 version of HAP, this code would work fine when I would remove nodes in ConvertTo method; however, the new version 1.4 throws an error:</p>\r\n<p>&quot;Collection was modified; enumeration operation may not execute&quot;</p>\r\n<p>because node.ChildNodes collection has been modified inside ConvertTo (when I removed nodes from it). Any ideas on how to deal with this?</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-04-04T10:04:10.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "820140",
+    "ThreadId": "351198",
+    "Html": "<p>Fixed with this code:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">private</span> <span style=\"color: blue;\">void</span> ConvertContentTo(HtmlNode node)\r\n{\r\n      <span style=\"color: blue;\">int</span> i = 0;\r\n      <span style=\"color: blue;\">int</span> childNodeCount = node.ChildNodes.Count;\r\n      <span style=\"color: blue;\">while</span> (i &lt; childNodeCount)\r\n      {\r\n           ConvertTo(node.ChildNodes[i]);\r\n           childNodeCount = node.ChildNodes.Count;\r\n           i++;\r\n      }\r\n}\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2012-04-04T19:00:29.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

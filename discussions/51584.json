@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "173021",
+    "ThreadId": "51584",
+    "Html": "I can't tell you how awesome this project is. I have immense praise for it.<br>\r\nHowever, where are the authors for patches.updates and changes? What's the status of this project?<br>\r\n<br>\r\nIt seems like the issues, patches and discussions are piling up without notice from contributors. It would be nice if the authors opened up the project a little. I will happily contributing patches and fix bugs if I knew there was a chance of integration, but there hasn't been any word from authors in a long while.<br>\r\n<br>\r\nMaybe someone else has information about this.<br>\r\n<br>\r\nI personally would like a handful of changes:<br>\r\n<ul>\r\n    <li>Upgrade to 3.5 and generics</li>\r\n    <li>Fix of some various known bugs</li>\r\n    <li>Fizzler integration (http://code.google.com/p/fizzler/)</li>\r\n    <li>HtmlDoc to XDoc converter</li>\r\n</ul>\r\nRegards,<br>\r\nCV<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-28T00:46:55.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185028",
+    "ThreadId": "51584",
+    "Html": "Are you volunteering?&nbsp; :)<br>\r\n",
+    "PostedDate": "2009-04-29T08:25:25.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "188613",
+    "ThreadId": "51584",
+    "Html": "<p>Sure, if it helps to move this project along.</p>",
+    "PostedDate": "2009-05-10T07:00:28.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "191324",
+    "ThreadId": "51584",
+    "Html": "<p>I am still alive :)</p>",
+    "PostedDate": "2009-05-17T23:51:11.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "191328",
+    "ThreadId": "51584",
+    "Html": "<p>Yay! Glad to hear it Simon!</p>\r\n<p>Do you have any plans for HtmlAgilityPack in the future?</p>\r\n<p>I would be interested in contributing or helping with rolling in patches/upgrades?</p>\r\n<p>It's kinda perfect as-as, but some small changes would make it even more perfect :)</p>",
+    "PostedDate": "2009-05-17T23:53:55.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

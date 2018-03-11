@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "596227",
+    "ThreadId": "253636",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I have used HTML Agility Pack to read a complete HTML file like the following coding:</p>\r\n<p><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre> <span style=\"color:blue\">protected</span> <span style=\"color:blue\">void</span> Page_Load(<span style=\"color:blue\">object</span> sender, EventArgs e)\r\n        {\r\n            String l_pfad = <span style=\"color:blue\">this</span> .Server .MapPath (<span style=\"color:#a31515\">&quot;Besucher_Text.htm&quot;</span>);\r\n            HtmlAgilityPack.HtmlDocument l_file = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlDocument();\r\n            \r\n            l_file.Load( l_pfad);\r\n\r\n            Besucher_publicDynamic.InnerHtml = l_file.DocumentNode.InnerHtml;\r\n         }</pre>\r\n<pre>\r\nIn my HTML page, there is a DIV tag with ID &quot;Besucher_publicDynamic&quot; in order to display the loaded HTML content from file.<br></pre>\r\n<pre><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"></span></span>This works perfectly for HTML formatted text. If I insert an image into the HTML file &quot;Besucher_Text.htm&quot;, the embedded image file will not be displayed.</pre>\r\n<pre><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"></span></span>I created the HTML document with Word 2010 and have saved to htm.</pre>\r\n<pre><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"></span></span>What can be done to get the image displayed as well?</pre>\r\n</div>\r\n</span></span></span>\r\n<p></p>\r\n",
+    "PostedDate": "2011-04-12T15:11:37.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

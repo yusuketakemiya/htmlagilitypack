@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "728466",
+    "ThreadId": "286885",
+    "Html": "\r\n<p>Line 79 of NameValuePairList appears to be incorrect.</p>\r\n<p>Replaced with:</p>\r\n<p style=\"padding-left:30px\">string[] onep = pv.Split(new char[] { '=' }, 2);</p>\r\n",
+    "PostedDate": "2012-01-20T13:46:14.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

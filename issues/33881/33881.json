@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi ,\nI use Powershell, and HtmlAgilityPack processing page.\nProcessing supermicro product page (http://www.supermicro.com/products/chassis/3U/836/SC836TQ-R500.cfm), HTMLDocument.LoadHTML return Null.\n\n\n```\nadd-type -Path 'e:\\MyDownloads\\FTP\\Powershell\\HtmlAgilityPack.dll'\n\n\t$HTMLDocument = New-Object HtmlAgilityPack.HtmlDocument\n\t$wc = New-Object System.Net.WebClient\n\t$wc.Encoding= [System.Text.Encoding]::UTF8 \n\n\t$uri= \"http://www.supermicro.com/products/chassis/3U/836/SC836TQ-R500.cfm\"\n\n\tWrite-Host \"获取内容 \" $uri ...\n\t$pagecontent=$wc.DownloadString($uri)\n\n\t$result = $HTMLDocument.LoadHTML($pagecontent)\n\t\n```",
+    "LastUpdatedDate": "2013-03-15T10:45:22.673-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-03-15T10:45:22.673-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "return null",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33881
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

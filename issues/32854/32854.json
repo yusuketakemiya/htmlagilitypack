@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "two proposals to improve HtmlConvert.ConvertTo in Html2Txt project (see attached patch)\n- currently new lines are only added at the *beginning* of paragraphs. It seems to me more logical to add a new line at the end of the paragraph. The same rule should apply to titles tags (h1, h2, ...) \n- for <li> I suggest : \n-- add a <tab> character at the starting tag\n-- add a new line for closing tag\n \nSo\n<h1>My title</h1>\n<p>My parag</p>\n<ul><li>item1</li><li>item2</li></ul>\n \nwould be converted to :\n \nMy title \nMy parag\n  item1\n  item2\n \nThanks for this project it's a great tool",
+    "LastUpdatedDate": "2013-02-21T18:46:59.403-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-06-14T16:55:27.74-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Improve Html2Txt text formatting",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32854
+  },
+  "FileAttachments": [
+    {
+      "FileId": 12715,
+      "FileName": "HtmlConvert.patch",
+      "DownloadUrl": ".\\12715"
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1201471",
+    "ThreadId": "528578",
+    "Html": "Hi - I see that it is been asked at few places but it will be great if someone can clear it for me.<br />\n<br />\nCan i use this in a commercial application freely?<br />\n",
+    "PostedDate": "2014-01-31T12:31:59.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1204196",
+    "ThreadId": "528578",
+    "Html": "I'm also want to ensure that is it free for the commercial use.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2014-02-07T03:46:34.57-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1219668",
+    "ThreadId": "528578",
+    "Html": "While I am not an attorney, so this isn't expert legal advice, I am going to tell you what I think:\r<br />\n<br />\nAs this is posted as M-PL, it is a green license. For those who don't know. That means you are free to use it commercially and distribute it.\r<br />\n<br />\nGreen licenses: BSD, Apache, MIT, MP-L are all green, which means good to go. All you have to do is leave the license in place.<br />\n",
+    "PostedDate": "2014-03-05T14:27:07.573-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

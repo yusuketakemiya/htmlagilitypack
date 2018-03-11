@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1312636",
+    "ThreadId": "569623",
+    "Html": "Hi.<br />\nFirst of all I'm a beginner in programming.<br />\n<br />\nI just want to get the text of a class from a html file (website).<br />\n<br />\nHere is the html code (the selected class &quot;lyrics-body&quot;):<br />\n<img src=\"http://s14.directupload.net/images/141013/rrh3ix46.jpg\" alt=\"Image\" /><br />\n<br />\nAnd my code:<br />\n<pre><code>String strLyricsWebsite = &quot;http://www.lyricsmania.com/&quot;;\nString strInterpReplace = strInterp.Replace(&quot; &quot;, &quot;_&quot;);\nString strSongReplace = strSong.Replace(&quot; &quot;, &quot;_&quot;);\nString strUrlZusammen = String.Concat(strLyricsWebsite, strSongReplace, &quot;_lyrics_&quot;, strInterpReplace, &quot;.html&quot;);\n\nlblUrlTest.Text = strUrlZusammen;\n\n                    HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();\n                    doc.LoadHtml(strUrlZusammen);\n                    HtmlNode node = doc.DocumentNode.SelectSingleNode(&quot;//div[@class='lyrics-body']&quot;);\n                    string webText = node.InnerText;\n\n                    strPfadDatei = webText;\n</code></pre>\n\nwhats the problem with my code ?<br />\nthe program is crashing with that code. <br />\n<br />\nWhy is there such an easy command for an ID ( GetElementbyID) but not for a class ? :/<br />\n<br />\nI've searched for hours for a resolution but nothing worked :(<br />\nRemember: I'm a total beginner in programming^^<br />\n<br />\nSorry for my bad english<br />\nHope you can help me<br />\n",
+    "PostedDate": "2014-10-12T23:02:23.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

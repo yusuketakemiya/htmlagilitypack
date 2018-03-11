@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "438342",
+    "ThreadId": "211389",
+    "Html": "<p>I have something like this</p>\r\n<p>&nbsp;</p>\r\n<p>&lt;div name='locations';&gt;</p>\r\n<p>&lt;p&gt;&amp;nbsp;&lt;/p&gt;</p>\r\n<p>&lt;span&gt;some text&lt;/span&gt;</p>\r\n<p>&lt;p&gt;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; &lt;select&gt;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;option&gt;&lt;/option&gt;&nbsp;&nbsp;&nbsp; &lt;=== many option items here</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/select&gt;</p>\r\n<p>&lt;/div&gt;</p>\r\n<p>The second &lt;p&gt; does not have a closing tag because of sloppy coding. I'm trying to get the &lt;option&gt; values inside the &lt;select&gt;. I'm using</p>\r\n<p>doc.DocumentNode.SelectNodes( &quot;//div[@name='locations']/p/select&quot;);</p>\r\n<p>However, this doesn't work and I get a null back. I can do:</p>\r\n<p>doc.DocumentNode.SelectNodes( &quot;//div[@name='locations']/p/);</p>\r\n<p>and get back two nodes, the second one which should contain the &lt;select&gt; has innerhtml and innertext both an empty string.</p>\r\n<p>So it seems that HtmlAgility isn't&nbsp; cleaning up the HTML before running the xpath query. IIRC the documentaton said that Html Agility Pack was 'tolerant' of malformed HTML but I'm not sure if it corrects malformed stuff in the DOM. Do I need to pass it through Tidy.NET first before handing it to HTML Agility Pack?</p>\r\n<p>Or I'm doing something wrong. Can someone set me straight?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-03T07:01:28.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438803",
+    "ThreadId": "211389",
+    "Html": "<p>I've now ran the html through Tidy.NET before handing it over to Html Agility Pack and I keep getting the same error, namely that it can't find the nodes I specify in the XPath query.</p>\r\n<p>I can do this:</p>\r\n<p>&nbsp;</p>\r\n<p>doc.DocumentNode.SelectNodes( &quot;//div[@name='locations']&quot;);</p>\r\n<p>and get a single node whose inner html contains the two &lt;p&gt; and single &lt;span&gt;.</p>\r\n<p>But as soon as I do this:</p>\r\n<p>doc.DocumentNode.SelectNodes( &quot;//div[@name='locations']/p&quot;);</p>\r\n<p>I get two &lt;p&gt; nodes, one of them contains the &amp;nbsp; and the other has an *empty* inner html!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-04T06:38:49.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "439288",
+    "ThreadId": "211389",
+    "Html": "<p>Hello BigPilot,</p>\r\n<p>&lt;div name='locations';&gt;</p>\r\n<p>&lt;p&gt;&amp;nbsp;&lt;/p&gt; &lt;- p node #1</p>\r\n<p>&lt;span&gt;some text&lt;/span&gt;</p>\r\n<p>&lt;p&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;- p node #2</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; &lt;select&gt;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;option&gt;&lt;/option&gt;&nbsp;&nbsp;&nbsp; &lt;=== many option  items here</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/select&gt;</p>\r\n<p>&lt;/div&gt;</p>\r\n<p>//div[@name='locations']/p/select &lt;- won't run because p node #1 doesn't have a select child node.</p>\r\n<p>Perhaps it's better to say</p>\r\n<p>doc.DocumentNode.SelectNodes(&quot;//div[@name='locations']//select&quot;);</p>\r\n<p>Let us know how it goes... once you find the solution</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-05T07:36:21.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "439719",
+    "ThreadId": "211389",
+    "Html": "<p>Hi everyone (yes, I'm still alive :)</p>\r\n<p><br>bigpilot, the Html Agility Pack *is* cleaning the HTML you gave.</p>\r\n<p><br>But... by default, it's tailored for HTML 3.x, and in HTML 3.x, you *don't always have* to close tags. It means a &lt;p&gt; alone is perfectly valid, so it's automatically closed, because there is no corresponding &lt;/p&gt; found. If you try the same HTML in a browser, you will see that browser behave exactly like this (unless you set DOCTYPES to more strict parsing).</p>\r\n<p><br>So the parsed tree is like this:</p>\r\n<p><br>+div<br>&nbsp; +p<br>&nbsp; +span<br>&nbsp; +p<br>&nbsp; +select<br>&nbsp;&nbsp;&nbsp; +option</p>\r\n<p><br>Here, the &lt;select&gt; is not a child of &lt;p&gt; but the next sibling. You can get the &lt;select&gt; with this xpath: //div[@name='locations']/select or what is suggested by kurtnelle.</p>\r\n<p>Now, you can tweak the HTML agility pack to better suit what you expect using the HtmlNode.ElementFlags static property (please search for this in this forum for more information, or have a look into HtmlNode.cs). What you can do is tell it you don't want to support unclosed &lt;p&gt; tags:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNode.ElementsFlags.Remove(&quot;p&quot;); // remove the Empty and Closed flags<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlDocument doc = new HtmlDocument();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.Load(...);</p>\r\n<p>And bingo, the pack has closed the malformed &lt;p&gt; because it's not valid anymore, and your original xpath works, because now the parsed tree is:</p>\r\n<p>+div<br>&nbsp; +p<br>&nbsp; +span<br>&nbsp; +p<br>&nbsp;&nbsp;&nbsp; +select<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +option</p>\r\n<p><br>Cheers!</p>",
+    "PostedDate": "2010-05-06T01:36:51.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441046",
+    "ThreadId": "211389",
+    "Html": "<p>@kurtnelle: thanks for your advice. My XPath query was indeed incorrect. Got it working now</p>\r\n<p>@simonm: thanks for the advice, I later learned that a paragraph closing tag is indeed not mandatory, so it seems that&nbsp; HTML Agility Pack was not to blame.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-10T05:56:12.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

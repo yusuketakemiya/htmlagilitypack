@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "657407",
+    "ThreadId": "268908",
+    "Html": "\r\n<p>Hello, im trying to get some information from a website (http://wowhead.com) now most if it is easy enough with html agility pack, but im stuck on how to get information after a java script tag.</p>\r\n<p>&nbsp;</p>\r\n<p>The source what im trying to get info from is&nbsp;</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">script</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;text/javascript&quot;</span><span style=\"color:blue\">&gt;</span><span style=\"color:green\">//&lt;![CDATA[</span>\r\nMarkup.printHtml(<span style=\"color:#a31515\">&quot;[ul][li]Level: 49[/li][li]Requires level 47[/li][li]Loremaster: [url=/achievement=4931]Felwood[/url][/li][li]Side: [span class=icon-horde]Horde[/span][/li][li][icon name=quest_start]Start: [url=/npc=48127]Darla Drilldozer[/url][/icon][/li][li][icon name=quest_end]End: [url=/npc=48127]Darla Drilldozer[/url][/icon][/li][li]Sharable[/li][li]Difficulty: [color=r2]47[/color][small] &amp;nbsp;[/small][color=r3]52[/color][small] &amp;nbsp;[/small][color=r4]59[/color][/li][li]Added in patch 4.0.3[/li][/ul]&quot;</span>, <span style=\"color:#a31515\">&quot;sdhafcuvh0&quot;</span>, { allow: Markup.CLASS_STAFF, dbpage: <span style=\"color:blue\">true</span> });\r\n<span style=\"color:green\">//]]&gt;</span><span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">script</span><span style=\"color:blue\">&gt;</span> \r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n<p>Now from all that, the only thing im&nbsp;interested&nbsp;in is the info from&nbsp;</p>\r\n<pre><span>[url=/npc=48127]Darla Drilldozer[/url]</span></pre>\r\n<pre><span><br></span></pre>\r\n<pre><span>From which i only want do display 48127 and Darla Drilldozer.</span></pre>\r\n<pre><br></pre>\r\n<pre>Is there anyway to do this?</pre>\r\n",
+    "PostedDate": "2011-08-12T13:28:58.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

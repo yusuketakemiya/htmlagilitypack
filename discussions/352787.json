@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "825786",
+    "ThreadId": "352787",
+    "Html": "\r\n<div style=\"color:black; background-color:white\">\r\n<pre>The methods </pre>\r\n<pre>&quot;public void Save(Stream outStream, Encoding encoding)&quot;</pre>\r\n<pre>and </pre>\r\n<pre>&quot;&nbsp;public void Save(Stream outStream)&quot;</pre>\r\n<pre> in class HtmlDocument,declare a StreamWriter for writing data to stream with default bufferSize.</pre>\r\n<pre>But not with a flush or close method at end of wirte.So some data in buffer will be lost.</pre>\r\n<pre>eg:</pre>\r\n<pre>System.IO.MemoryStream ms = <span style=\"color:blue\">new</span> MemoryStream();\r\n htmldoc.Save(ms, System.Text.Encoding.UTF8);\t\t</pre>\r\n<pre>&nbsp;</pre>\r\n<pre>Chang the method &quot;public void Save(StreamWriter writer)&quot; in HtmlDocument as following:</pre>\r\n<pre><div style=\"color:black; background-color:white\"><pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">void</span> Save(StreamWriter writer)\r\n        {\r\n            Save((TextWriter)writer);\r\n            writer.Flush();       //add Flush method to write buffer data to stream\r\n        }\r\n</pre>\r\n</div>\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2012-04-18T23:31:55.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

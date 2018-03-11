@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi!\n\nI want to select all html nodes which contains a attribute started with 'on' e.g. onsubmit, onselect, onclick, etc.\n\nWith the XPath Visualizer Tool v1.3.0.6 it works with this simple XPath expression:\n//@*[starts-with(name(), 'on')]\n\nBut with HTML-Agility-Pack this not works: doc.DocumentNode.SelectNodes(\"//@*[starts-with(name(), 'on')]\")\n\nThanks :)",
+    "LastUpdatedDate": "2015-01-14T02:04:37.917-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-06-01T12:30:56.77-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XPath Select Nodes Issue",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 35264
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

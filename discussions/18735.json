@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "61370",
+    "ThreadId": "18735",
+    "Html": "\r\nHello,<br /><br />there is a bug? in the HTMLWeb. Yesterday I took a download of an EBAY<br />to scan with HTMLAgilityPack such :<br /><br /><a href=\"http://feedback.ebay.de/ws/eBayISAPI.dll?ViewFeedback2&amp;ftab=AllFeedback&amp;userid=ebayer\" class=\"externalLink\">http://feedback.ebay.de/ws/eBayISAPI.dll?ViewFeedback2&amp;ftab=AllFeedback&amp;userid=ebayer<span class=\"externalLinkIcon\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"></span></a><br /><br />The content is in \"iso-8859-1\" and contains the text \"Verkäufer\" for instance.<br />HTMLWeb says \"utf-8\" for the \"StreamEncoding\" and \"iso-8859-1\" for<br />\"Encoding\" and \"DeclaredEncoding\". But XPath has the data from the<br />\"utf-8\" encoding. So the query fails.<br /><br />My workaround is a download with System.Net.WebClient.DownloadString<br />and HtmlAgilityPack.HtmlDocument.LoadHtml, than it works right. So I can<br />make queries like : \"td[starts-with(text(), 'Verkäufer')]\"<br />",
+    "PostedDate": "2007-12-05T13:46:34.94-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "63883",
+    "ThreadId": "18735",
+    "Html": "\r\nThis is actually really a problem, as soon as I try to get the content as Unicode I'm getting an exception:<br /><br /> public static XmlDocument GetHtmlAsXml(string spyURL)<br />        {<br />            MemoryStream stream = new MemoryStream();<br />            XmlTextWriter writer = new XmlTextWriter(stream, System.Text.Encoding.Unicode);<br />            HtmlWeb web = new HtmlWeb();<br />            web.LoadHtmlAsXml(spyURL, writer);<br />            XmlDocument xml = LoadFromStream(stream);<br />            return xml;<br />        }<br />.. XmlReader reader = XmlReader.Create(stream);<br />            xml.Load(reader); .. throws this error:<br />'.', hex Value 0x00, is an invalid char. Line 2, Position 1.<br /><br /><br />When I'm using utf-8 I can't read text contain german Umlauts (e.g.) äöü .. anyone knows how to fix this with XPath?<br /><br />",
+    "PostedDate": "2007-12-18T12:17:19.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "64041",
+    "ThreadId": "18735",
+    "Html": "\r\nOk, I just read the other thread about this issue, we just shouldn't use HtmlWeb. Thanks :)<br />",
+    "PostedDate": "2007-12-19T02:38:03.357-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

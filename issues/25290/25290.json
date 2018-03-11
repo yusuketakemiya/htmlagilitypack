@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Many people create a javascript code that write more script code such as the following example.\nThe Html Parsing recognize the '</script>' string as an end tag while it's part of the string value.\nThis result is an incorrect parsing. \n \n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<script  >\n var code = '<sc'+'ript>';\ncode += 'alert(\"this is a demo, I can put any code here\");'\ncode += '</script>';\ndocument.write(code);\nalert('this code is part of the script');\n</script>\n<title>test</title>\n</head>\n<b>normal text</b>\n</html>",
+    "LastUpdatedDate": "2013-02-21T18:47:21.143-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-11-10T01:15:09.69-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "end tag </script> tag in javascript string code is missed read",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 25290
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Did you know that  the Mozilla Firefox has the same behavior?",
+      "PostedDate": "2011-04-30T08:53:00.683-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:21.143-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It appears the when an xpath expression is evaluated to an attribute the LocalName of the navigator is set to the attribute name, but the Name value still is set to the name of the parent node.   This \"may\" be the cause of some invalid expression results.",
+    "LastUpdatedDate": "2014-06-04T10:12:45.887-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-06-04T10:12:44.817-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XPathNodeIterator returning invalid Name value for attributes",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35273
+  },
+  "FileAttachments": [
+    {
+      "FileId": 13864,
+      "FileName": "HtmlAgilityError.JPG",
+      "DownloadUrl": ".\\13864"
+    }
+  ],
+  "Comments": []
+}

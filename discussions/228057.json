@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "496677",
+    "ThreadId": "228057",
+    "Html": "<p>Hello, I have problem when using XPath to select dynamically created nodes. See comments in example:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> head = doc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//head&quot;</span>) <span style=\"color:blue\">as</span> HtmlNode;\r\n            \r\nHtmlNode node = <span style=\"color:blue\">new</span> HtmlNode(HtmlNodeType.Element, doc, 1);\r\nnode.Name = <span style=\"color:#a31515\">&quot;meta&quot;</span>;\r\nnode.Attributes.Add(<span style=\"color:#a31515\">&quot;http-equiv&quot;</span>, <span style=\"color:#a31515\">&quot;content-type&quot;</span>);\r\nnode.Attributes.Add(<span style=\"color:#a31515\">&quot;content&quot;</span>, <span style=\"color:#a31515\">&quot;text/html; charset=iso-8859-1&quot;</span>);\r\nhead.ChildNodes.Add(node);\r\n\r\n<span style=\"color:green\">//couldn't find node here</span>\r\n<span style=\"color:blue\">var</span> meta = head.SelectNodes(<span style=\"color:#a31515\">&quot;//meta&quot;</span>);\r\n\r\n<span style=\"color:green\">//after reloading document, it works fine</span>\r\ndoc.LoadHtml(doc.DocumentNode.OuterHtml);\r\n<span style=\"color:blue\">var</span> meta2 = head.SelectNodes(<span style=\"color:#a31515\">&quot;//meta&quot;</span>);\r\n\r\n</pre>\r\n</div>\r\nCan I (we) expect this to be fixed? I used 1.4 version in demo, because I had some problems to load 1.9, but in my app I'm using 1.9 version, and results are same.</p>",
+    "PostedDate": "2010-09-21T12:46:34.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "1. Create a new HtmlDocument\n2. Create an attribute using HtmlDocument.CreateAttribute(stirng)\n3. Access HtmlAttribute.Value\n \nNullReferenceException is thrown. I guess there is similar problem on more places - e.g. document.DocumentNode.OuterText getter.",
+    "LastUpdatedDate": "2013-03-12T08:40:47.16-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-03-12T03:28:42.267-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlAttribute.Value throws NullReferenceException when OwnerDocument.Text is null",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33869
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I guess fix to this particular issue is easy, add null check to the property getter.",
+      "PostedDate": "2013-03-12T08:40:47.16-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

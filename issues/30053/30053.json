@@ -1,0 +1,125 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When you modify the DOM, the _innerchanged and _outerchanged fields get reset for the parent node that has been modified, but the properties do not get reset further up the tree. Therefore this test case would fail:\n \nvar initialHtml = document.DocumentNode.OuterHtml;\nvar newNode = document.CreateElement(\"p\");\ndocument.DocumentNode.Element(\"body\").Element(\"div\").AppendChild(newNode);\nvar newHtml = document.DocumentNode.OuterHtml;\nAssert.NotEqual(initialHtml, newHtml);",
+    "LastUpdatedDate": "2015-11-08T14:24:02.37-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-01-26T01:12:25.5-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Modifying DOM does not clear cached InnerHtml and OuterHtml properties",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 9,
+    "Id": 30053
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I am having the same issue.  I modify a child node, for instance.... child.InnerHtml += \" Hello World!\";.  then when i call     string newHtml = htmlDoc.DocumentNode.WriteTo();, sometimes the newHtml does not reflect the \"Hello World!\" change that i just made.",
+      "PostedDate": "2011-01-31T13:20:21.417-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-31T13:20:28.027-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "When you call .InnerHtml,  the boolean variable _innerchanged is checked first. If it is false, the old stored value is returned. Otherwise, the string is recalculated. The same occurs with .OuterHtml and _outerchanged.\r\nThe issue is that many of the methods in the HtmlNode Class alter those variable only in the current node and not in the ancestors.\r\n\r\nIf solved this in my copy by replacing all the lines\r\n    _innerchanged = true;\r\n    _outerchanged = true;\r\nin file HtmlNode.cs by\r\n   InnerOuterChanged(this);\r\n\r\nand by adding the following method:\r\n\r\n        internal static void InnerOuterChanged(HtmlNode node)\r\n        {\r\n            node._innerchanged = true;\r\n            node._outerchanged = true;\r\n            if (node.ParentNode != null)\r\n                InnerOuterChanged(node.ParentNode);\r\n        }\r\n\r\nHope this helps.",
+      "PostedDate": "2011-10-18T09:56:51.29-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-10-18T09:57:10.16-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-10-18T11:06:57.37-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Rafael - thanks for you helpful comments.  I was having the same issue and you saved me a lot of time tracking down this problem.\r\n\r\nA few other notes:\r\n\r\n1) the _innerchanged / _outerchanged properties are also set in HtmlAttribute.cs and HtmlAttributeCollection.cs, so you need to insert calls to InnerOuterChanged() in those files also\r\n\r\n2) you need to insert a call to InnerOuterChanged() at the end of the setter method for .InnerHtml",
+      "PostedDate": "2011-10-18T12:49:58.083-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "jrhinderks, thank you for the observation on HtmlAttibutte and HtmlAttributeCollection. I wasn't dealing wih attributes and completely missed that.\r\nI just updated my code.\r\nI don't know if the call at the end of the setter method for .InnerHtml is necessary, since the AppendChildren method will call it. Anyway, is better to be in the safer side and I'll add a call there too. Thanks!",
+      "PostedDate": "2011-10-18T14:28:34.9-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "You're right, for the base HtmlNode class, I don't think the call to InnerOuterChanged() is needed in the setter for .InnerHtml.\r\n\r\nHowever, I think that it is needed in the setter for .InnerHtml for the derived HtmlCommentNode class and the setters for .InnerHtml and .Text for the HtmlTextNode class.\r\n\r\nThis turned out to be the source of the problem I was having -- changes to the innerhtml of a text node were not showing up in the innerhtml of the parent.",
+      "PostedDate": "2011-10-18T21:03:14.01-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:09.723-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-08-02T06:49:20.32-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I ran into the same problem.\nI have code removing and adding rows to an HTML table.\nThe Inner and Outer HTML are not refreshing.\nI later do a global repace in the Inner and set it to the inner and my table changes are lost.\nHas this been fixed?\nI am using HtmlAgilityPack version 1.4.6.0.\r\n\r\nSincerely, Joe",
+      "PostedDate": "2013-08-02T06:51:20.783-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The following does not build, but it does execute in the Immediate windows:\r\n\r\n                doc.DocumentNode._innerchanged = true;\n                doc.DocumentNode._outerchanged = true;\r\n\r\nWhen I execute these statements in the Immediate window it does resolve the problem.\r\n\r\nThis defect really kills the usefulness of the HtmlAgilityPack.\nIs there a work around or do I need to take the source code and fix it myself and use my own compiled dll?\r\n\r\nJoe",
+      "PostedDate": "2013-08-02T07:10:14.53-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "In case anyone else wants to move past this problem on their own:\r\n\r\n// HtmlAgilityPack has a bug\n// Modifying DOM does not clear cached InnerHtml and OuterHtml properties\n// https://htmlagilitypack.codeplex.com/workitem/30053\n// The following is a work around.\n// doc.DocumentNode._innerchanged = true;\n// doc.DocumentNode._outerchanged = true;\nType htmlNode = doc.DocumentNode.GetType();\nFieldInfo _innerchangedField = htmlNode.GetField(\"_innerchanged\", BindingFlags.NonPublic | BindingFlags.Instance);\n_innerchangedField.SetValue(doc.DocumentNode, true);\nFieldInfo _outerchangedField = htmlNode.GetField(\"_outerchanged\", BindingFlags.NonPublic | BindingFlags.Instance);\n_outerchangedField.SetValue(doc.DocumentNode, true);\r\n\r\nI hope this helps.\nJoe",
+      "PostedDate": "2013-08-02T07:39:07.227-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-11-15T08:19:54.32-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-07-02T19:09:07.71-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Just in case, here is an update of Joe's code to get it working with more recent versions of HtmlAgilityPack (1.4.9 here):\r\n\r\n```\nType htmlNode = HtmlDocument.DocumentNode.GetType();\nFieldInfo _changedField = htmlNode.GetField(\"_changed\", BindingFlags.NonPublic | BindingFlags.Instance);\n_changedField.SetValue(HtmlDocument.DocumentNode, true);\n```\nBTW, thank you Joe for the tip ;)",
+      "PostedDate": "2015-04-02T06:02:23.907-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-11-08T14:24:02.37-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello\nWhen i go to view the node all the aspx controls are in lowercase. is there a way to get it in propercase?\n\nExample:\nvar doc = new HtmlAgilityPack.HtmlDocument();\ndoc.OptionOutputOriginalCase = true;\ndoc.LoadHtml(\"<html><asp:Content ID='Content1' ContentPlaceHolderID='head'     runat='Server'/></html>\");\nvar html = doc.DocumentNode.InnerHtml;",
+    "LastUpdatedDate": "2016-08-19T14:05:11.517-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-01-21T08:13:40.993-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Not case correct, how to pull case correct",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43329
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "HTML is case insensitive for tag names.\r\n\r\nhttps://www.w3.org/TR/html-markup/documents.html#case-insensitivity\r\n\r\nNot sure what you are trying to do generating server side controls, but it is almost certainly not what this library was designed for.",
+      "PostedDate": "2016-08-19T14:05:11.517-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

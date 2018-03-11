@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "421986",
+    "ThreadId": "206836",
+    "Html": "<p>I want to parse html content using Html Agility Pack. I want to extract the tabular information from html file. Now in some cases there are missing ending tags in some html files, so where there is missing ending tag the information is not parsed properly. So does the html agility pack insert the ending tags where necessary , is there any option like it&nbsp; or does html agility pack perform html tidy before parsing the html content ?</p>",
+    "PostedDate": "2010-03-21T23:55:27.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422981",
+    "ThreadId": "206836",
+    "Html": "<p>It fixes the end tag, <strong>while </strong>parsing the html content</p>",
+    "PostedDate": "2010-03-24T04:20:45.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422983",
+    "ThreadId": "206836",
+    "Html": "<p>No it does not because the result with parsing of the table</p>\r\n<p>&lt;table&gt;</p>\r\n<p>&lt;tr&gt;&lt;td&gt;Id&lt;/td&gt;&lt;td&gt;Name&lt;/td&gt;</p>\r\n<p>&lt;tr&gt;&lt;td&gt;00001&lt;/td&gt;&lt;td&gt;Mr.Aleson&lt;/td&gt;</p>\r\n<p>&lt;tr&gt;&lt;td&gt;00002&lt;/td&gt;&lt;td&gt;Mr.Bill&lt;/td&gt;</p>\r\n<p>&lt;/table&gt;</p>\r\n<p>gives me wrong output instead of</p>\r\n<table border=0>\r\n<tbody>\r\n<tr>\r\n<td>Id</td>\r\n<td>Name</td>\r\n</tr>\r\n<tr>\r\n<td>00001</td>\r\n<td>Mr.Aleson</td>\r\n</tr>\r\n<tr>\r\n<td>00002</td>\r\n<td>Mr.Bill</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "PostedDate": "2010-03-24T04:27:14.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

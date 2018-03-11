@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "check comments",
+    "ClosedDate": "2009-05-17T23:39:08.74-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am trying to use HtmlDocument to process some HTML snippets, and I am noticing that any snippet less than 1024 characters is getting lost. I am reading and writing from a string, so I do not know if the StreamReader or MemoryStreams themselves have anything to do with this. Here is my proof of concept code:\n \n\t\t\tHtmlAgilityPack.HtmlDocument hDoc = new HtmlAgilityPack.HtmlDocument();\n\t\t\tstring strHtml = null;\n\t\t\tstring strResult = null;\n\t\t\tMemoryStream mStream = null;\n\t\t\tStreamReader sReader = null;\n \n\t\t\t// Fill strHtml with 1024 characters\n\t\t\tfor (int i = 0; i < 1024; i++)\n\t\t\t\tstrHtml += \"W\";\n \n\t\t\thDoc.LoadHtml( strHtml );\n\t\t\tmStream = new MemoryStream( strHtml.Length );\n\t\t\thDoc.Save( mStream );\n\t\t\tsReader = new StreamReader( mStream, Encoding.Default, false, strHtml.Length );\n\t\t\tmStream.Position = 0;\n\t\t\tstrResult = sReader.ReadToEnd();\n\t\t\t//strResult.Length == 0, why!?\n \n\t\t\tstrHtml += \"W\";\t\t// strHtml.Length == 1025 now\n\t\t\thDoc.LoadHtml( strHtml );\n\t\t\tmStream = new MemoryStream( strHtml.Length );\n\t\t\thDoc.Save( mStream );\n\t\t\tsReader = new StreamReader( mStream, Encoding.Default, false, strHtml.Length );\n\t\t\tmStream.Position = 0;\n\t\t\tstrResult = sReader.ReadToEnd();\n\t\t\t//strResult.Length == 1024 now instead of 1025",
+    "LastUpdatedDate": "2013-05-16T05:32:59.633-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-03-06T14:56:50.06-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HTML < 1024 bytes gets lost",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 21529
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hello Mike - The problem is you were setting the MemoryStream capacity, but never writing anything to it. Change the following:\r\n\r\nCHANGE THIS\r\n//--Only sets the capacity of the memory stream, but never writes to it\r\nmStream = new MemoryStream( strHtml.Length );\r\n\r\nTO THIS\r\n//--Writes the actual data to the memory stream\r\nmStream = new MemoryStream(hDoc.Encoding.GetBytes(strHtml));",
+      "PostedDate": "2009-05-15T05:28:46.113-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-17T23:39:08.74-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:24.36-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:59.633-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

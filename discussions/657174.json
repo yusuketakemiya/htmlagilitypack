@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1481269",
+    "ThreadId": "657174",
+    "Html": "Hi\r<br />\nI'm getting strange results parsing unclosed html.<br />\n<pre><code>&lt;a href=&quot;http&quot;//some.url.goes here |&lt; end of input</code></pre>\n\nis converted into<br />\n<pre><code>&lt;a href=&quot;http://some.url.goes.here href=&quot;&quot;&gt;&lt;/a href=&quot;http://some.url.goes.here&gt;</code></pre>\n\nAny ideas how to get it closed correctly?<br />\n",
+    "PostedDate": "2016-08-16T03:34:51.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

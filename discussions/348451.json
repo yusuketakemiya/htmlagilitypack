@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "809751",
+    "ThreadId": "348451",
+    "Html": "\r\n<p>I have te following:&nbsp;</p>\r\n<p><span style=\"color:blue\">foreach</span><span style=\"background-color:white\">(HtmlNode link\r\n</span><span style=\"color:blue\">in</span><span style=\"background-color:white\"> doc.DocumentNode.SelectNodes(</span><span style=\"color:#a31515\">&quot;//tbody/tr/td&quot;</span><span style=\"background-color:white\">)</span></p>\r\n<p><span style=\"background-color:white\">&nbsp;</span><span style=\"background-color:white\">Console.WriteLine(</span><span style=\"background-color:white\">link.InnerText);</span></p>\r\n<p>It is currently printing all the information on the table from the first &quot;link&quot;.<br>\r\nShouldn't each &quot;link&quot; be a td from the table so I could access them individually?</p>\r\n<p>Thanks for your help.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-03-13T10:17:54.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The public HtmlWeb interface in 1.4.0 is using references to WebProxy, but should probably be using references to IWebProxy instead. WebRequest.GetSystemWebProxy() for example seems to return an IWebProxy which cannot be cast to a WebProxy instance. Just changing all method signatures to use IWebProxy and recompiling seems to work fine.\n \nCheers,\n \nThomas Luzat",
+    "LastUpdatedDate": "2013-10-29T07:28:18.35-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-05-08T05:35:38.103-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Use IWebProxy (vs. WebProxy) within HtmlWeb",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 30645
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

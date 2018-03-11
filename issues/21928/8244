@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>TITLE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="generator" content="Quanta+">
+
+<link rel="stylesheet" type="text/css" href="base/templates/style.css">
+<link rel="stylesheet" type="text/css" href="libs/jquery/tabs/tabs.css">
+<link rel="stylesheet" type="text/css" href="libs/jquery/jquery-treeview/jquery.treeview.css">
+<link rel="stylesheet" type="text/css" href="libs/jquery/jquery-tooltip/jquery.tooltip.css">
+<link rel="stylesheet" type="text/css" href="libs/jscalendar/calendar-system.css">
+<link rel="stylesheet" type="text/css" href="libs/jquery/tabs/tabs_ie.css">
+<link rel="stylesheet" type="text/css" href="libs/jquery/autocomplete/auto.complete.css">
+<link rel="stylesheet" type="text/css" href="mods/VJabber/styleVJabber.css">
+<script type="text/javascript" src="libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="libs/jquery/history-remote/jquery.history.pack.js"></script>
+<script type="text/javascript" src="libs/jquery/history/jquery.history.js"></script>
+<script type="text/javascript" src="libs/jquery/dimensions/jquery.dimensions.pack.js"></script>
+<script type="text/javascript" src="libs/jquery/form/jquery.form.js"></script>
+<script type="text/javascript" src="libs/jquery/tabs/jquery.tabs.pack.js"></script>
+<script type="text/javascript" src="libs/jquery/jquery.block.js"></script>
+<script type="text/javascript" src="libs/jquery/autocomplete/auto.complete.js"></script>
+<script type="text/javascript" src="libs/jquery/jquery-treeview/jquery.treeview.pack.js"></script>
+<script type="text/javascript" src="libs/jquery/jquery-tooltip/jquery.tooltip.pack.js"></script>
+<script type="text/javascript" src="libs/jscalendar/calendar_stripped.js"></script>
+<script type="text/javascript" src="libs/jscalendar/lang/calendar-en.js"></script>
+<script type="text/javascript" src="libs/jscalendar/calendar-setup_stripped.js"></script>
+<script type="text/javascript" src="libs/fckeditor/fckeditor.js"></script>
+<script type="text/javascript" src="libs/JsHttpRequest/JsHttpRequest.js"></script>
+<script type="text/javascript" src="base/scripts/page.js"></script>
+<script type="text/javascript" src="mods/VDiary/templates/script.js"></script>
+<script type="text/javascript" src="mods/VJabber/storages/jsjac.js"></script>
+<script type="text/javascript" src="mods/VJabber/storages/jabber.js.php"></script>
+
+<link rel="SHORTCUT ICON" href="favicon.gif" type="image/gif">
+
+</head>
+
+<body>
+<script> autoLogoutTimer = 7200000; </script>
+<div id="pendingSound" style="visibility: visible;"></div>
+
+<div id="description" style="position: absolute; top: 20px; left: 20px; padding-left: 10px; padding-right: 10px; z-index: 4000; background-color: #EFEFEF; font-size: 13px; font-family: Arial; border: 1px solid #000000; visibility: hidden; color: #000000;"></div>
+
+<table width="100%" border="0">
+	<tr>
+				<td align="left" style="width: 200px;"><img src="base/templates/images/logo_stable.png" alt="vo logo"></td>
+				<td style="text-align: right; vertical-align: top;">
+		<table border="0" width="100%" height="130px">
+			<tr>
+				<td valign="bottom" align="right">
+				<h1 style="background-color: #DDDDDD; font-size: 18px;">April 3rd Friday, 2009</h1>
+				</td>
+				<td valign="bottom" align="left" width="15%">
+				<div id="clock" style="font-weight: bold; padding-left: 5px; width: 150px; height: 20px; border: 0px solid red;"></div>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" align="right"><a href="index.php?mod=diary&amp;do=day" class="content mail_link">Events
+				on today</a></td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		</td>
+				<td width="200px" align="right"><img src="base/templates/images/v__logo_stable.png" width="200" height="129" alt="vo logo" border="0">
+		</td>
+			</tr>
+</table>
+
+<table width="100%" border="0">
+	<tr>
+			<td valign="top" style="width: 250px;">
+		<ul>
+			<!--TODO: only include MainMenu.tpl.php here, not copy-paste -->
+					<li style="margin-top: 0; padding-top: 0;">
+			<ul id="wraper">
+
+								<li class="leftmenuheader" style="">
+				<h3 title="xxx">xxx</h3>
+				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?act=webmail&amp;do=newmsg&amp;box=24011" class="content"><img border="0" src="mods/WebMail/images/NewMessage.png" class="icons" alt="New Message"> New Message</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><img border="0" src="mods/WebMail/images/Inbox.png" class="icons imgop" alt="Inbox"><a href="?mod=webmail&amp;do=viewfolder&amp;folder=1&amp;sortfield=date&amp;sortDirection=DESC&amp;pageId=1&amp;box=24011&amp;seacrhClean=1" class="content">Inbox (<span id="mcnt-24011-1" class="msgcount">0</span><span id="mcnt1-24011-1" class="msgcount">&#047;4</span>)</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><img border="0" src="mods/WebMail/images/Sent.png" class="icons imgop" alt="Sent"><a href="?mod=webmail&amp;do=viewfolder&amp;folder=2&amp;sortfield=date&amp;sortDirection=DESC&amp;pageId=1&amp;box=24011&amp;seacrhClean=1" class=""> Sent (<span id="mcnt-24011-2" style="font: bold; color: yellow;">77</span><span id="mcnt1-24011-2" style="font: bold; color: white;">&#047;78</span>)</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><img border="0" src="mods/WebMail/images/Spam.gif" class="icons imgop" alt="Spam"><a href="?mod=webmail&amp;do=viewfolder&amp;folder=3&amp;sortfield=date&amp;sortDirection=DESC&amp;pageId=1&amp;box=24011&amp;seacrhClean=1" class="content"> Spam (<span id="mcnt-24011-3" class="msgcount">0</span><span id="mcnt1-24011-3" class="msgcount">&#047;0</span>)</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><img border="0" src="mods/WebMail/images/Inbox.png" class="icons imgop" alt="Draft"><a href="?mod=webmail&amp;do=viewfolder&amp;folder=5&amp;sortfield=date&amp;sortDirection=DESC&amp;pageId=1&amp;box=24011&amp;seacrhClean=1" class="content"> Draft (<span id="mcnt-24011-5" class="msgcount">0</span><span id="mcnt1-24011-5" class="msgcount">&#047;0</span>)</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><img border="0" src="mods/WebMail/images/TrashFull.png" class="icons imgop" alt="Trash"><a href="?mod=webmail&amp;do=viewfolder&amp;folder=4&amp;sortfield=date&amp;sortDirection=DESC&amp;pageId=1&amp;box=24011&amp;seacrhClean=1" class="content"> Recycle Bin (<span id="mcnt-24011-4" class="msgcount">0</span><span id="mcnt1-24011-4" class="msgcount">&#047;1</span>)</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?mod=webmail&amp;do=filters&amp;box=24011" class="content">Filters</a>
+				</h2>
+
+				 				</li>
+							</ul>
+						<li style="margin-top: 0; padding-top: 0;">
+			<ul>
+
+								<li class="leftmenuheader" style="">
+				<h3 title="">Address Book</h3>
+				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?act=addressbook&amp;do=view" class="content"><img border="0" src="mods/VContact/images/AddressBook.png" class="icons" alt="Address Book"> Address Book</a>
+				</h2>
+
+				 				</li>
+							</ul>
+						<li style="margin-top: 0; padding-top: 0;">
+			<ul>
+
+								<li class="leftmenuheader" style="">
+				<h3 title="">Diary</h3>
+				</li>
+												<li id="diaryupdate">
+				<h2 style="font-size: 13px;"><img border="0" src="mods/VDiary/images/NearestEvents.png" class="icons" alt="Nearest events"><a href="?mod=diary&amp;do=nearest" class="content">Nearest events <span id="cnt-nearest"></span></a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?mod=diary&amp;do=day" class="content"><img border="0" src="mods/VDiary/images/Today.png" class="icons" alt="Today"> Today</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?mod=diary&amp;do=week" class="content"><img border="0" src="mods/VDiary/images/Diary.png" class="icons" alt="This week"> This week</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?mod=diary&amp;do=month" class="content"><img border="0" src="mods/VDiary/images/Diary.png" class="icons" alt="This month"> This month</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?mod=diary&amp;do=year" class="content"><img border="0" src="mods/VDiary/images/Diary.png" class="icons" alt="This year"> This year</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?mod=diary&amp;do=tasks" class="content"><img border="0" src="mods/VDiary/images/NearestEvents.png" class="icons" alt="Nearest tasks"> Pending tasks</a>
+				</h2>
+
+				 				</li>
+							</ul>
+						<li style="margin-top: 0; padding-top: 0;">
+			<ul>
+
+								<li class="leftmenuheader" style="">
+				<h3 title="">Jabber for xxx</h3>
+				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?mod=vjabber&do=enterchat" class="content"><div id="jabber_menue"></div></a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?mod=vjabber&do=enterchat" class="content"><div id="jabber_event">You have message from<br></div></a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?mod=vjabber&do=testserver" class="content">server test</a>
+				</h2>
+
+				 				</li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?mod=vjabber&do=enterchat" class="content"><div id="jabber_roster" style="display:none;"> </div></a>
+				</h2>
+
+				 				</li>
+							</ul>
+							<li class="leftnavheader" style="height: 2px; margin: 0px;"></li>
+												<li id="">
+				<h2 style="font-size: 13px;"><a href="?act=logout" class="">Logout</a>
+				</h2>
+
+				 				</li>
+							</li></li></li></li></ul>
+					
+		
+		</td>
+				<td valign="top">
+		<div id="maincontent"><h1 style="height: 21px;"><font size="3">You are now in Inbox&nbsp;for X.X@Z.com</font></h1>
+<div>
+<h1 style="background-color: rgb(198, 221, 251);">
+<table>
+	<tr>
+		<td>		</td>
+		<td>
+		<form action="?mod=webmail&amp;do=viewfolder&search" method="get" class="ajaxForm form">
+		<div><input type="hidden" name="folder" value="1"> <input type="hidden" name="sortfield" value="date"> <input type="hidden" name="sortDirection" value="DESC"> <input type="hidden" name="pageId" value="1"> <input name="case" type="text" value="">&nbsp;<input type="submit" class="all_button" name="search" value="Go"> <label><input align="top" name="searchfield[]" type="checkbox" value="1"><font size="3"> Sender</font></label>
+		<label><input name="searchfield[]" type="checkbox" value="3"><font size="3"> Recipient</font></label>
+		<label><input name="searchfield[]" type="checkbox" value="2"><font size="3"> Date</font></label>
+		<label><input name="searchfield[]" type="checkbox" value="4"><font size="3"> Subject</font></label>
+		</div>
+		</form>
+		</td>
+	</tr>
+</table>
+</h1>
+</div>
+
+<form action="?act=webmail&amp;do=viewmessage" method="post" class="ajaxForm">
+<table style="background-color: #8098B0;" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" width="100%" align="left">
+	<tr class="leftnavheader">
+		<th width="5%"><input type="checkbox" class="checker" value="ON"></th>
+		<th width="5%"><img src="mods/WebMail/images/mail-attachment16.png" alt="attachment" title="Message has attachment(s)"></th>
+		<th width="19%"><a class="content" href="?mod=webmail&amp;do=viewfolder&amp;folder=1&amp;sortfield=date&amp;sortDirection=asc&amp;pageId=1" onmouseover="this.style.color='#FFFFFF'; this.style.textDecoration='none';">
+		Date </a></th>
+				<th width="20%"><a class="content" href="?mod=webmail&amp;do=viewfolder&amp;folder=1&amp;sortfield=sender&amp;sortDirection=asc&amp;pageId=1" onmouseover="this.style.color='#FFFFFF'; this.style.textDecoration='none';">
+		Sender: </a></th>
+				<th width="48%"><a class="content" href="?mod=webmail&amp;do=viewfolder&amp;folder=1&amp;sortfield=subject&amp;sortDirection=asc&amp;pageId=1" onmouseover="this.style.color='#FFFFFF'; this.style.textDecoration='none';">
+		Subject </a></th>
+		<th>Size</th>
+	</tr>
+				<tr>
+		<td class="mail_row">
+		<div align="center"><input class="selector" type="checkbox" value="1845476" name="deleteMessage[]"></div>
+		</td>
+		<td class="mail_row">&nbsp;</td>
+		<td class="mail_row nowrap">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1845476" title="2009-02-13 14:36:52">2009-02-13 14:36:52</a></div>
+		</td>
+				<td class="mail_row">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1845476" title="&lt;galina.mokrinskaia@Z.com&gt;">&lt;galina.mokrinskaia@Z.com&gt;</a></div>
+		</td>
+				<td class="mail_row">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1845476" title="Re:Test Reply All">Re:Test Reply All</a></div>
+		</td>
+		<td class="mail_row nowrap" style="text-align: right">
+		<div>5 kB</div>
+		</td>
+	</tr>
+			<tr>
+		<td class="mail_row">
+		<div align="center"><input class="selector" type="checkbox" value="1845460" name="deleteMessage[]"></div>
+		</td>
+		<td class="mail_row">&nbsp;</td>
+		<td class="mail_row nowrap">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1845460" title="2009-02-13 14:31:12">2009-02-13 14:31:12</a></div>
+		</td>
+				<td class="mail_row">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1845460" title="&quot;Olga Struc&quot; &lt;olga_struc@yahoo.co.uk&gt;">&quot;Olga Struc&quot; &lt;olga_struc@yahoo.co.uk&gt;</a></div>
+		</td>
+				<td class="mail_row">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1845460" title="Test Reply All">Test Reply All</a></div>
+		</td>
+		<td class="mail_row nowrap" style="text-align: right">
+		<div>2 kB</div>
+		</td>
+	</tr>
+			<tr>
+		<td class="mail_row">
+		<div align="center"><input class="selector" type="checkbox" value="1806265" name="deleteMessage[]"></div>
+		</td>
+		<td class="mail_row">&nbsp;</td>
+		<td class="mail_row nowrap">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1806265" title="2009-01-22 07:41:03">2009-01-22 07:41:03</a></div>
+		</td>
+				<td class="mail_row">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1806265" title="&lt;gradinari.andrei@Z.com&gt;">&lt;gradinari.andrei@Z.com&gt;</a></div>
+		</td>
+				<td class="mail_row">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1806265" title="SVN account">SVN account</a></div>
+		</td>
+		<td class="mail_row nowrap" style="text-align: right">
+		<div>3 kB</div>
+		</td>
+	</tr>
+			<tr>
+		<td class="mail_row">
+		<div align="center"><input class="selector" type="checkbox" value="1806251" name="deleteMessage[]"></div>
+		</td>
+		<td class="mail_row">&nbsp;</td>
+		<td class="mail_row nowrap">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1806251" title="2009-01-22 07:32:04">2009-01-22 07:32:04</a></div>
+		</td>
+				<td class="mail_row">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1806251" title="&lt;gradinari.andrei@Z.com&gt;">&lt;gradinari.andrei@Z.com&gt;</a></div>
+		</td>
+				<td class="mail_row">
+		<div><a class="mail_link" href="?mod=webmail&amp;folder=1&amp;do=viewmessage&amp;msg=1806251" title="Your new accounts">Your new accounts</a></div>
+		</td>
+		<td class="mail_row nowrap" style="text-align: right">
+		<div>4 kB</div>
+		</td>
+	</tr>
+			<tr class="leftnavheader">
+		<th width="5%"><input type="checkbox" class="checker" value="ON"></th>
+		<th width="5%"><img src="mods/WebMail/images/mail-attachment16.png" alt="attachment" title="Message has attachment(s)"></th>
+		<th width="19%"><a class="content" href="?mod=webmail&amp;do=viewfolder&amp;folder=1&amp;sortfield=date&amp;sortDirection=asc&amp;pageId=1" onmouseover="this.style.color='#FFFFFF'; this.style.textDecoration='none';">
+		Date </a></th>
+				<th width="20%"><a class="content" href="?mod=webmail&amp;do=viewfolder&amp;folder=1&amp;sortfield=sender&amp;sortDirection=asc&amp;pageId=1" onmouseover="this.style.color='#FFFFFF'; this.style.textDecoration='none';">
+		Sender: </a></th>
+				<th width="48%"><a class="content" href="?mod=webmail&amp;do=viewfolder&amp;folder=1&amp;sortfield=subject&amp;sortDirection=asc&amp;pageId=1">
+		Subject </a></th>
+		<th>Size</th>
+	</tr>
+	<tr align="center">
+
+
+		<td class="pagination" colspan="6">		 		<table>
+			<tr>
+				<td> </td>
+				<td>				 <span style="color: #8098B0;">.:1:.</span>
+													</td>
+				<td></td>
+			</tr>
+		</table>
+
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4">
+		<table border="0" width="100%">
+			<tr>
+				<td>
+				<table cellpadding="0" cellspacing="0">
+					<tr>
+						<td style="border-style: solid; border-color: #8098B0;">  <input type="submit" name="delete" value=" " style="cursor: pointer; background-color: #8098B0; background-repeat: no-repeat; background-image: url(../mods/WebMail/images/d.png); height: 33px; width: 35px; border: 0px;" class="all_button confirm" title="Remove selected messages"> <a href="?mod=webmail&amp;do=managefolder" class="content !all_button_link" title="Manage Folder" style=""><img src="mods/WebMail/images/manage_folder.png" width="30px"></a></td>
+						<td valign="bottom" style="border-style: groove; border-color: #DDDDDD;"><input type="submit" name="move_to" value=" " class="!all_button confirm" title="Move selected messages" style="cursor: pointer; background-color: #8098B0; background-repeat: no-repeat; background-image: url(../mods/WebMail/images/move_to.png); height: 33px; width: 35px; border: 0px;">
+						<select name="fid">
+													<option value="1">Inbox
+														<option value="2">Sent
+														<option value="3">Spam
+													</select> </td>
+						<td align="left"></td>
+					</tr>
+				</table>
+				</td>
+				<td align="center" width="15%"><span style="font-weight: bold; color: #FFFFFF; align: cenetr;">.: 1 :.</span>
+
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td style="text-align: right" colspan="2"><select name="diraction" id="maildir-action" class="changesubmit">
+			<option value="0">Actions
+			<optgroup label="Mark as">
+				<option value="markread">Read
+				<option value="markunread">Unread
+			</optgroup>
+			<optgroup label="Apply filter">
+						</optgroup>
+		</select> <input id="maildir-action-arg" name="diractionarg" type="hidden" value=""> <select name="mailboxes" id="maibox_select">
+						<option value="24011" selected="selected">
+				X.X@Z.com
+						</select></td>
+	</tr>
+</table>
+
+</form>
+<script type="text/javascript">
+mailbox.count({
+	mailbox: 24011,
+	folder: 1,
+	total: 4,
+	unread: 0 })
+</script>
+
+</div>
+		<div id="loadcontent" style="display: none; background-color: #DDDDDD;">&nbsp;</div>
+		</td>
+	</tr>
+</table>
+<div style="color: #DDDDDD;">WebFramework revision: 20813AccountsModule: 20813Dashboard: 20813LogoutModule: 20813RegularLogin: 20813VContact: 20813VDiary: 20813WebMail: 20813VJabber: 20813</div>
+
+</body>
+<div id="load-notification">Loading...</div>
+</html>

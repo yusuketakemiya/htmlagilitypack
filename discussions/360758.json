@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "853079",
+    "ThreadId": "360758",
+    "Html": "\r\n<p>Due to issues with the latest releases of the AntiXSS library the Html Agility Pack is being suggested in a lot of places for sanitizing input to prevent XSS attacks. E.g.</p>\r\n<ul>\r\n<li><a href=\"http://wpl.codeplex.com/releases/view/80289#ReviewsAnchor\">http://wpl.codeplex.com/releases/view/80289#ReviewsAnchor</a>\r\n</li><li><a href=\"http://htmlagilitypack.codeplex.com/discussions/24346\">http://htmlagilitypack.codeplex.com/discussions/24346</a>\r\n</li><li><a href=\"https://eksith.wordpress.com/2011/06/14/whitelist-santize-htmlagilitypack/\">https://eksith.wordpress.com/2011/06/14/whitelist-santize-htmlagilitypack/</a>\r\n</li></ul>\r\n<p>I was wondering if the project maintainers could comment on the actual suitability of the pack for this task as my impression was that was not it's intended goal. For example is it going to cope with the list of attacks listed here?</p>\r\n<p style=\"padding-left:30px\"><a href=\"http://ha.ckers.org/xss.html\">http://ha.ckers.org/xss.html</a></p>\r\n<p>If the library is indeed up to the task than that's great.</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-06-24T19:35:37.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "460329",
+    "ThreadId": "217471",
+    "Html": "<p>Hi,</p>\r\n<p>I've done some searching but haven't found a solution for this.</p>\r\n<p>I do the following:</p>\r\n<pre>HtmlWeb web = new HtmlWeb();\r\nHtmlDocument htmlDoc = web.Load(&lt;my url&gt;);</pre>\r\n<p>but when I examine htmlDoc.DocumentElement.InnerHtml all I see is:</p>\r\n<pre>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0&quot;&gt;</pre>\r\n<p>Yet the page renders correctly in the browser.</p>\r\n<p>If I do another call to web.Load I get &quot;Refresh Error&quot;.</p>\r\n<p>How do I get the page HTML correctly in this circumstance?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-06-27T04:22:41.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460785",
+    "ThreadId": "217471",
+    "Html": "<p>I found the issue.</p>\r\n<p>The site was setting a cookie, then doing a refresh. The next page expected the cookie to exist.</p>\r\n<p>I needed to attach the cookie to the request.</p>",
+    "PostedDate": "2010-06-28T12:11:35.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

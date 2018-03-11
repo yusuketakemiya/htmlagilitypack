@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "223524",
+    "ThreadId": "65703",
+    "Html": "<ol>\r\n<li>I've tried this and really like it, but don't want to have to go through all of the Discussions and Issues to find the various patches and apply them in the correct order (let alone correctly!).&nbsp; It would be a great help if someone, who has already done this, could load their version to the Issue Tracker, please.</li>\r\n<li>Has anyone updated the HtmlAgilityPack.chm with these patches and additions?</li>\r\n<li>I'm a VB.Net developer and am curious if anyone has converted this to VB?</li>\r\n</ol>\r\n<p><br>Thank you,</p>\r\n<p>Jim</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-14T07:54:24.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223546",
+    "ThreadId": "65703",
+    "Html": "<p>I have the most recent two patches submitted in my codebase. The 3rd one is made obsolete by the most recent one. When I get a chance I'll post my current codebase. I do not have all the &quot;patches&quot; that are in the issue tracker yet. Hopefully in the next few weeks I'll begin my active development with the library again and I can hit some of the issues.</p>\r\n<p>I'm not aware of a VB conversions that are done.</p>",
+    "PostedDate": "2009-08-14T08:27:43.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223608",
+    "ThreadId": "65703",
+    "Html": "<p>Thank you!</p>\r\n<p>Would it be OK if I try to convert it to VB?&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-14T10:43:48.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223610",
+    "ThreadId": "65703",
+    "Html": "<p>That's up to you, right now no one can commit any code to the repository. I'm not sure if maintaining a C# and VB versions are at all necessary since it can just be used in library form.</p>\r\n<p>I'm close to forking the project but am just trying to hold out hope Simon will come on here soon. I finally got a little bit of info from him in an auto-responder that said he was on vacation till Aug 27th.</p>",
+    "PostedDate": "2009-08-14T10:47:55.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235637",
+    "ThreadId": "65703",
+    "Html": "<p>There's a new version of the codebase in the Branches folder. Version 1.4.0</p>",
+    "PostedDate": "2009-09-17T08:44:55.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

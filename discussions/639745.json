@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1429832",
+    "ThreadId": "639745",
+    "Html": "i have a simple html code<br />\n<pre><code>&lt;p style=&quot;background-color:#FFFFFF;&quot; align=&quot;center&quot;&gt;CHAPTER XIII&lt;/p&gt;\n&lt;p style=&quot;background-color:#FFFFFF;&quot; align=&quot;center&quot;&gt;&lt;span class&quot;font0&quot;&gt;AUSTRALIAN AIRMEN IN FRANCE&lt;/span&gt;&lt;/p&gt;</code></pre>\n\ni want to remove all childnode in &lt;p&gt; tag and keep innerText of &lt;p&gt; as plaint text<br />\ni use this code<br />\n<pre><code>foreach (HtmlNode note in doc.DocumentNode.SelectNodes(&quot;//p&quot;))\n            {       \n                \n              string innerText = string.Empty;\n                foreach (HtmlNode childnode in note.ChildNodes)\n                {\n                    innerText += childnode.InnerText;\n                    note.RemoveAllChildren();\n                    note.InnerText = innerText;\n                }\n                try\n                {                    \n                    note.Attributes[&quot;style&quot;].Remove();\n                    note.Attributes[&quot;align&quot;].Remove();\n                }\n                catch { ; }\n            }</code></pre>\n\nbut it not work, because note.InnerText is ReadOnly.<br />\nSo, how do i can change the innerText of &lt;p&gt;.<br />\nThanks for read!<br />\n",
+    "PostedDate": "2015-06-09T21:28:27.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

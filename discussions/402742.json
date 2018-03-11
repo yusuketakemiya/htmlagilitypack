@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "939782",
+    "ThreadId": "402742",
+    "Html": "\r\n<p>I need to flatten the document, is there a way at all to do that with the API?</p>\r\n<p>Like if the doc is this</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">div</span><span style=\"color:blue\">&gt;</span>\r\n   <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">div</span><span style=\"color:blue\">&gt;</span>\r\n      text1\r\n   <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">div</span><span style=\"color:blue\">&gt;</span>\r\n   text2\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">div</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>It would just give me two text nodes of</p>\r\n<p>text1<br>\r\ntext2</p>\r\n<p>?</p>\r\n<p><br>\r\nThanks,<br>\r\nSteve</p>\r\n",
+    "PostedDate": "2012-11-10T21:32:14.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

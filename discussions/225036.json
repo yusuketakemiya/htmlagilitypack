@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "485588",
+    "ThreadId": "225036",
+    "Html": "<p>In wild world, I've come across some HTML comments ending with --!&gt;, all sample follows.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>&lt;!---------comment---------!&gt;\r\n</pre>\r\n</div>\r\n<p>Firefox and IE has workarounds for this. What to do with this situation?</p>\r\n<p>I've impelemented a workaround and share it if it's neccessary.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-27T02:34:01.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I keep getting stackoverflow on the attached file.",
+    "LastUpdatedDate": "2013-08-20T17:15:33.55-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-06-12T01:23:23.263-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "StackOverflowException",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 30837
+  },
+  "FileAttachments": [
+    {
+      "FileId": 11741,
+      "FileName": "1.htm",
+      "DownloadUrl": ".\\11741"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Just submitted a patch for this. Check the patch list.",
+      "PostedDate": "2013-03-08T13:24:21.917-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Simply setting OptionAutoCloseOnEnd to true seems to resolve (at-least as a workaround) the Stack Overflow error on large documents. Tested with marinagre's test webpage and sjdirect's test webpages (in patch 14038).\r\n\r\nAny ideas or thoughts?!",
+      "PostedDate": "2013-08-20T17:15:33.55-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

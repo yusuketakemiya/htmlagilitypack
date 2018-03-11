@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "129264",
+    "ThreadId": "38953",
+    "Html": "hi I writing that simple code <br>\r\nstring description =&quot;&lt;p&gt;It is easy to dev&quot;;<br>\r\nHtmlNode node = doc.DocumentNode.SelectSingleNode(&quot;.//*[starts-with(.,\\&quot;&quot; + description + &quot;\\&quot;)]&quot;);<br>\r\n<br>\r\nGetting node= null but this string is available in my documnet.<br>\r\n<br>\r\nif i remove HTML tag &lt;p&gt; both form description string and Document it work.<br>\r\n<br>\r\nWhy it is not working if HTML tag available ? <br>\r\n<br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2008-10-31T12:49:48.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "987402",
+    "ThreadId": "429745",
+    "Html": "\r\n<p><span>I’m trying to do something very simple with HtmlAgilityPack, I just don’t know anything about xml or nodes and I am having a lot of trouble pulling simple info from an HTML website. &nbsp;Currently I am doing a VERY slow version using String manipulation\r\n of pure HTML, I could be parsing with xpaths or whatever, but I don't have a clue how to get started.… Can someone please help me with this?</span></p>\r\n",
+    "PostedDate": "2013-01-15T21:54:33.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "991878",
+    "ThreadId": "429745",
+    "Html": "\r\n<p>If you give a sample we might be able to help solve it and show you how.</p>\r\n<p>&nbsp;</p>\r\n<p>Lee</p>\r\n",
+    "PostedDate": "2013-01-24T22:50:09.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992837",
+    "ThreadId": "429745",
+    "Html": "\r\n<p>Here is an example url from which I would be trying to pull information such as prices and shipping prices for each item on the list, currently I have accomplished this using very SLOW String manipulation and searching loops.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>http://www.amazon.com/gp/offer-listing/4871877094/ref=dp_olp_used?ie=UTF8&condition=used</p>\r\n",
+    "PostedDate": "2013-01-27T18:00:28.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992960",
+    "ThreadId": "429745",
+    "Html": "\r\n<p>Here you go here is an example of how i would do it..</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"white-space:pre\">\t</span>    StreamReader sr = <span style=\"color:blue\">new</span> StreamReader(<span style=\"color:#a31515\">@&quot;C:\\Development\\sample.htm&quot;</span>);\n            <span style=\"color:blue\">string</span> lines = sr.ReadToEnd();\n\n            HtmlDocument hp = <span style=\"color:blue\">new</span> HtmlDocument();\n            hp.LoadHtml(lines);\n\n            <span style=\"color:blue\">var</span> nodes = hp.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//tbody[@class='result']&quot;</span>);\n            <span style=\"color:blue\">foreach</span> (<span style=\"color:blue\">var</span> item <span style=\"color:blue\">in</span> nodes)\n            {\n                <span style=\"color:blue\">var</span> price = item.SelectSingleNode(<span style=\"color:#a31515\">&quot;.//span[@class='price']&quot;</span>).InnerText;\n                <span style=\"color:blue\">var</span> shipping_block = item.SelectSingleNode(<span style=\"color:#a31515\">&quot;.//div[@class='shipping_block']&quot;</span>);\n                <span style=\"color:blue\">var</span> price_shipping = shipping_block.SelectSingleNode(<span style=\"color:#a31515\">&quot;.//span[@class='price_shipping']&quot;</span>).InnerText;\n                <span style=\"color:blue\">var</span> word_shipping = shipping_block.SelectSingleNode(<span style=\"color:#a31515\">&quot;.//span[@class='word_shipping']&quot;</span>).InnerText;\n            }\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>Hope this points you in the right direction..</p>\r\n<p>&nbsp;what i looked for was the table which held the results. so i looked for tbody where the class attribute was result. then looked for any child of that that was a span with the class attribute price and got the txt from that. and did similar for the\r\n shippimg details.</p>\r\n<p>&nbsp;</p>\r\n<p>lee</p>\r\n",
+    "PostedDate": "2013-01-28T02:22:34.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994431",
+    "ThreadId": "429745",
+    "Html": "Thanks for the response and code Lee.  I am getting an error right now though...  &quot;Object reference not set to an instance of an object.&quot; for this line:\r<br />\n<br />\nvar price_shipping = shipping_block.SelectSingleNode(&quot;<a href=\"mailto:.//span[@class='price_shipping']&quot;).InnerText;\r\n\r\nDo\" rel=\"nofollow\">.//span[@class='price_shipping']\").InnerText;\r\n\r\nDo</a> you know why this is happening?<br />\n",
+    "PostedDate": "2013-01-30T15:59:57.317-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994440",
+    "ThreadId": "429745",
+    "Html": "Its probably that there isn't a shipping price for the item. you would need to check that the div with class = 'shipping_block' exists\r<br />\n<br />\nif (shipping_block != null)\r<br />\n{\r<br />\n<br />\n}\r<br />\n<br />\nLee<br />\n",
+    "PostedDate": "2013-01-30T16:10:30.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994447",
+    "ThreadId": "429745",
+    "Html": "It's working now, now I have to look at the code and figure out exactly how it's working...  Thanks so much!<br />\n",
+    "PostedDate": "2013-01-30T16:30:30.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

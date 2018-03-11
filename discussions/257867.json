@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "613722",
+    "ThreadId": "257867",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I am new to the HTML Agility Pack but will need to use it to migrate some legacy websites over to our new system.&nbsp; I was wondering whether it is possible to extract only the tags and attributes and discard the content?</p>\r\n<p>E.g.</p>\r\n<p>&lt;div id=&quot;id1&quot;&gt;</p>\r\n<p>&lt;p&gt;Text1&lt;/P&gt;</p>\r\n<p>&lt;p&gt;Text2&lt;/p&gt;</p>\r\n<p>&lt;/div&gt;</p>\r\n<p>will become just:</p>\r\n<p>&lt;div id=&quot;id1&quot;&gt;</p>\r\n<p>&lt;p&gt;&lt;/p&gt;</p>\r\n<p>&lt;p&gt;&lt;/p&gt;</p>\r\n<p>&lt;/div&gt;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-05-16T23:29:06.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

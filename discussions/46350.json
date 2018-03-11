@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "154829",
+    "ThreadId": "46350",
+    "Html": "Hi,<br>\r\n<br>\r\nI use HTML agility API's tp fix relative URI after fetching the raw html from a web site. Bit when I save the HtmlDocument .... I see new nodes which really wasn't there. So it is changing the DOC tree which is unexpected behaviour. It changes the layout of the page completely.<br>\r\n<br>\r\nAny flags I need to set to get around the behavior.<br>\r\n<br>\r\nTahnsk,<br>\r\nPiali\r\n",
+    "PostedDate": "2009-02-05T13:53:13.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166352",
+    "ThreadId": "46350",
+    "Html": "You're going to need to write this relative URI resolver yourself, AFAIK.<br>\r\n<br>\r\nBrowsers resolve relative URLs based on base URL (if exists) and the URL itself.<br>\r\n<br>\r\nAFAIK, the cross browser resolver is consistent.<br>\r\n<br>\r\nThere are plenty of articles about this on the net, for example, http://webtips.dan.info/url.html seems pretty good<br>\r\n<br>\r\nCV<br>\r\n",
+    "PostedDate": "2009-03-09T21:56:52.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166356",
+    "ThreadId": "46350",
+    "Html": "Heaps of <a href=\"http://www.google.com.au/search?q=relative+URLS+in+html&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-GB:official&client=firefox-a\">articles on google</a><br>\r\n",
+    "PostedDate": "2009-03-09T22:08:31.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

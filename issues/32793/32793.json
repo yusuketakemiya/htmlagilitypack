@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\nI have created a WP7 project (OS 7.1) in Visual Studio 2010.\nUsing Nuget I have installed HtmlAgilityPack and now I have the referenced DLL from the folowing path <myProjectDir>\\packages\\HtmlAgilityPack.1.4.3\\lib\\sl4-windowsphone71\\HtmlAgilityPack.dll.\nIn the MainPage constructor I simple have the following line of code :\n \nHtmlWeb htmlWeb = new HtmlWeb();\n \nwith using HtmlAgilityPack; on top.\nWhen I run the app, the MainPage constructor isn't called and the app crashes so the App.cs method RootFrame_NavigationFailed is executed. The exception is the following \"TargetInvocationException\" and \nSystem.TypeLoadException: Could not load type 'HtmlAgilityPack.HtmlWeb' from assembly 'HtmlAgilityPack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.\n \nWhy ?\n \nThanks,\nPaolo.",
+    "LastUpdatedDate": "2013-02-21T18:46:59.883-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-05-30T10:49:03.75-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Crash on startup using HtmlAgilityPack from Nuget in WP7 project",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32793
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "That is strange, I just tried referencing 1.4.3 and tried the same thing and it worked perfectly.\r\n\r\nThe stranger thing is it says Version=1.0.0.0 as if the reference didn't take well.\r\n",
+      "PostedDate": "2012-06-12T15:53:43.607-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-08-30T09:36:46.383-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "add reference \"C:\\Program Files (x86)\\Microsoft SDKs\\Silverlight\\v4.0\\Libraries\\Client\\System.Xml.XPath.dll\"",
+      "PostedDate": "2013-01-31T20:31:28.373-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:59.883-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

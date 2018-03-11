@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "First off, thanks for making this available, very useful.\n \nThe InnerXml value for an element with text and an image seems wrong.\n \nGiven this simple html file:\n \n<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\" lang=\"en-gb\" xml:lang=\"en-gb\">\n<div>Text<img src=\"source\">\n</div>\n</html>\n \nIf you resolve the InnerXml of the div node, say using a call to SelectSingleNode( \".//div\" ).InnerXml;\nThe result looks unexpected:\n \n\"Text<img src=\\\"source\\\">Text\\r\\n\\r\\n</img>\"\n \nThe \"Text\"has been duplicated inside the img element.\n \nFWIW, if you check the value of InnerHtml, it is correct.\nI've tested both the latest beta release and the 1.3 production release.\n \n--Alan",
+    "LastUpdatedDate": "2013-03-20T23:06:05.92-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-02-07T13:20:15.06-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "InnerXml value not correct",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 26144
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "####Workaround:\r\n\r\nI found an workaround for this issue which at least is working for myself:\nCast the result of ```SelectSingleNode``` to ```HtmlAgilityPack.HtmlNodeNavigator``` and then use the ```CurrentNode.InnerHtml``` property which hopefully has the correct value.\r\n\r\n####Example:\ninstead of writing \n```\nel.SelectSingleNode(\"div\").InnerXml\n```\r\n\r\nuse the following:\n```\n((HtmlAgilityPack.HtmlNodeNavigator)(el.SelectSingleNode(\"div\"))).CurrentNode.InnerHtml\n```",
+      "PostedDate": "2013-03-20T23:06:05.92-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hey guys,\nI think its a small glitch. The option tag mus be have flag HtmlElementFlag.CanOverlap not empty. It can contain lets say country flag image and should be rendered all the times with closing tag to render correctly in older IE\n\n```\n\t\t/// <summary>\n\t\t/// Initialize HtmlNode. Builds a list of all tags that have special allowances\n\t\t/// </summary>\n\t\tstatic HtmlNode()\n\t\t{\n                        .....\n\t\t\t// they sometimes contain, and sometimes they don 't...\n\t\t\tElementsFlags.Add(\"option\", HtmlElementFlag.Empty);\n                        ........\n                }\n```\nIt should be\n                    /* J.B options can over lap not empty */\n                    { \"option\", HtmlElementFlag.CanOverlap },\n\n\nExample :\n                 ElementsFlags.Add(\"input\", HtmlElementFlag.Empty);\nnot the same as\n                 ElementsFlags.Add(\"option\", HtmlElementFlag.Empty);",
+    "LastUpdatedDate": "2014-06-24T10:17:48.26-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-06-24T10:17:48.26-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlNode glitch ?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35321
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

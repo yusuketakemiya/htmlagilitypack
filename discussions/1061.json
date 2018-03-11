@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "3454",
+    "ThreadId": "1061",
+    "Html": "\r\nHi Simon,<br /><br />I've been working on an app using the HTMLAgilityPack to download a page, fill data into the value attribute's of an input control, and then resubmit the page.  I'm getting errors when I try to assign values to the value attribute of input controls of the HTML page I grab.  A piece of the code I'm using is below:<br /><br />HtmlNodeCollection inputControls = singleFormNode.SelectNodes(\".//input | .//select | .//textarea | .//button\");<br /><br />//Loop through each input control found<br />foreach(HtmlNode inputControl in inputControls)<br />{<br />   //Check for a type attribute<br />   if (inputControl.Attributes<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22type%22\">\"type\"</a> != null)<br />   {<br />      //Give the control a value if it's of type \"text\"<br />      if (inputControl.Attributes<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22type%22\">\"type\"</a>.Value.Equals(\"text\") &amp;&amp; inputControl.Attributes<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22value%22\">\"value\"</a> != null)<br />      {<br /><br />-----&gt;  ERROR is seen on the assignment below<br />         inputControl.Attributes<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22value%22\">\"value\"</a>.Value = \"test\";<br />      }<br />   }<br />}<br /><br />If I comment out the line above that gives the error, the code correctly grabs the page and outputs all the input controls with associated information.  Any idea what the problem is?  Thanks!<br />",
+    "PostedDate": "2006-08-26T19:13:00.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3828",
+    "ThreadId": "1061",
+    "Html": "\r\nWhat kind of error do you get? Compile error? Runtime error? Please copy/paste the details.<br /><br />(alternatively, you can use Node.SetAttributeValue to set attributes' value)<br />",
+    "PostedDate": "2006-09-01T13:58:44.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

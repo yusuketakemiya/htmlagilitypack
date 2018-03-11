@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If a comment has three dashes in a row then Replace(\"--\",\" - -\") is no good, because it generates \" - --\" which still has two dashes in a row.\nSo the patch is to change that to Replace(\"--\",\" - - \").\n \nThe smallest legal xml comment is <!----> but the html parser is also accepting <!--> as the smallest legal comment.\nIn fact, even in html I don't think that <!--> is a legal comment. So the parser really should not terminate on that.\n \nBe that as it may, to handle this case there is this patch:\n \nif (s.Length < 7) return(\"\");\n \nNote: I was working from the source code htmlagilitypack-63084/Trunk/HtmlAgilityPack/HtmlNode.cs\n \nI ran a test using over 20 thousand very strange html pages from a real web site. It passed with flying colors.\n \nHere is my final version of the GetXmlComment method.\n \ninternal static string GetXmlComment(HtmlCommentNode comment)\n{\n string s = comment.Comment;\n if (s.Length < 7) return(\"\");\n return s.Substring(4, s.Length-7).Replace(\"--\", \" - - \");\n}",
+    "LastUpdatedDate": "2013-02-21T18:47:18.043-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-03-30T09:22:02.33-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "bugs in GetXmlComment with patchs",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 26633
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

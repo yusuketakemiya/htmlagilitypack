@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Supposedly this is the fix...\n\nModified line 774 of HtmlEntity.cs to check for key in dictionary:\n\nstring entity = _entityName.ContainsKey(code) \n                    ? _entityName[code] as string\n                    : null;",
+    "LastUpdatedDate": "2017-02-02T09:36:53.103-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-05-31T11:36:33.983-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlEntity.DeEntitize throws KeyNotFoundException if there is an & in the text",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 34122
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

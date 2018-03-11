@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "218171",
+    "ThreadId": "64161",
+    "Html": "<p>Hi,</p>\r\n<p>I am trying to use &quot;SelectSingleNode&quot;, but i am still having a problem. Plese see my code below for example.</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">HtmlNodeCollection tableCol = docNew.DocumentNode.SelectNodes(&quot;//tbody[@class='result']//tr&quot;);</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;foreach (HtmlNode tableNode in tableCol)</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HtmlNode sellInfo = tableNode.SelectSingleNode(&quot;ul[@class='sellerInformation']&quot;);</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HtmlNode sellPrice = sellInfo.SelectSingleNode(&quot;div[@class='seller']//b&quot;);</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp; &nbsp;HtmlNodeCollection tableCol = docNew.DocumentNode.SelectNodes(&quot;//tbody[@class='result']//tr&quot;);</p>\r\n<p><span style=\"white-space:pre\"> </span>&nbsp;foreach (HtmlNode tableNode in tableCol)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HtmlNode Info = tableNode.SelectSingleNode(&quot;ul[@class='Information']&quot;);</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp;</p>\r\n<p>each time that the code loop thrugh &quot;tableCol&quot; Why the &quot;Info&quot; always returns only first ChildNodes?&nbsp;</p>\r\n<p>Any experts please advise,</p>\r\n<p>Thanks,</p>",
+    "PostedDate": "2009-07-31T14:43:10.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218436",
+    "ThreadId": "64161",
+    "Html": "<p>Hi</p>\r\n<p>So you are looking for an UL-element inside TR-elements? Usually such elements are within TD-elements. You are sure that the UL is a child of a TR and not a TD? Did you mean:</p>\r\n<p>SelectSingleNode(&quot;td/ul[@class='Information']&quot;);</p>\r\n<p>Also, it is important to know what Info.Name is, so you can compare it to the actual (X)HTML you are reading from, so you may see where the error lies.</p>",
+    "PostedDate": "2009-08-02T03:50:13.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218846",
+    "ThreadId": "64161",
+    "Html": "<p>Thank you so much CoolSpin. It works now. :)</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-03T09:30:14.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

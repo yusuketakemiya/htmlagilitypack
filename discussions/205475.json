@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "420211",
+    "ThreadId": "205475",
+    "Html": "<p>Thanks for great library first of all.</p>\r\n<p>We are testing HtmlAgilityPack on MonoTouch&nbsp; and I want to notify you that HtmlConsoleListener and HtmlWeb which are not conceptually part of the core HtmlAgilityPack cause link time errors.It would be better if you remove these files from the HtmlAgilityPack project and place them on a seperate Utility project.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-19T05:07:12.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "420232",
+    "ThreadId": "205475",
+    "Html": "<p>Have you seen the most recent patch uploaded? It includes a way to get it running up on MonoTouch.</p>\r\n<p>After next month I will probably have time again to get back to doing some HAP development. I'm hoping to get access to a MonoTouch development environment so I can test this stuff out and get it into the source treen.</p>",
+    "PostedDate": "2010-03-19T06:16:19.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

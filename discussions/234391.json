@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "520863",
+    "ThreadId": "234391",
+    "Html": "\r\n<p>when the input has &lt;br/&gt; it will be returned as &lt;br&gt;...duh</p>\r\n",
+    "PostedDate": "2010-11-11T18:03:26.28-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "525953",
+    "ThreadId": "234391",
+    "Html": "\r\n<p>I have the same problem. Did you find any solution to this problem?</p>\r\n",
+    "PostedDate": "2010-11-23T09:33:34.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "526484",
+    "ThreadId": "234391",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>nordquist wrote:</strong><br>\r\n<p>I have the same problem. Did you find any solution to this problem?</p>\r\n</blockquote>\r\n<p>&nbsp;</p>\r\n<p>&nbsp; haha yes, replace &lt;br&gt; with &lt;br/&gt;</p>\r\n",
+    "PostedDate": "2010-11-24T08:11:27.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "526504",
+    "ThreadId": "234391",
+    "Html": "\r\n<p>Where does this replacement take place?</p>\r\n<p>This is what I do:</p>\r\n<p>HtmlDocument doc = new HtmlDocument();<br>\r\ndoc.Load(url);<br>\r\ndoc.GetElementbyId(&quot;elementId&quot;).InnerHtml = &quot;&lt;br/&gt;&quot;;</p>\r\n<p>This is where &lt;br/&gt; changes into &lt;br&gt;.</p>\r\n",
+    "PostedDate": "2010-11-24T08:35:59.637-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "526515",
+    "ThreadId": "234391",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>nordquist wrote:</strong><br>\r\n<p>Where does this replacement take place?</p>\r\n<p>This is what I do:</p>\r\n<p>HtmlDocument doc = new HtmlDocument();<br>\r\ndoc.Load(url);<br>\r\ndoc.GetElementbyId(&quot;elementId&quot;).InnerHtml = &quot;&lt;br/&gt;&quot;;</p>\r\n<p>This is where &lt;br/&gt; changes into &lt;br&gt;.</p>\r\n</blockquote>\r\n<p>I was talking about the document output after removing some tags.</p>\r\n",
+    "PostedDate": "2010-11-24T08:53:21.527-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "547356",
+    "ThreadId": "234391",
+    "Html": "\r\n<p>You must to do something like this:</p>\r\n<p>&nbsp;</p>\r\n<p>HtmlDocument htmlDoc = new HtmlDocument();</p>\r\n<p>htmlDoc.<strong>OptionWriteEmptyNodes </strong>= true;<br>\r\nhtmlDoc.Load(url);</p>\r\n<pre style=\"font-family:consolas\"><br></pre>\r\n",
+    "PostedDate": "2011-01-11T08:39:06.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "548726",
+    "ThreadId": "234391",
+    "Html": "\r\n<p>Huh, that's this magical OptionWriteEmptyNodes for...</p>\r\n",
+    "PostedDate": "2011-01-13T07:15:40.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "552747",
+    "ThreadId": "234391",
+    "Html": "\r\n<p>jmoreno, thanks</p>\r\n",
+    "PostedDate": "2011-01-20T10:39:05.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "553102",
+    "ThreadId": "234391",
+    "Html": "\r\n<p>@xmen, ;-)</p>\r\n",
+    "PostedDate": "2011-01-21T02:37:40.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

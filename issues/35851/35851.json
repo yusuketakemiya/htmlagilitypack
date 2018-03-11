@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "As the title says, HtmlNode.SelectNodes is missing in PCL. There may be others, I'm not sure.",
+    "LastUpdatedDate": "2015-04-23T05:50:59.473-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-02-16T16:47:41.823-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlNode.SelectNodes is missing in PCL",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 35851
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "XPath isn't supported in WinRT or Windows Phone Silverlight which are both supported by the PCL build. Thus anything that uses XPATH is not available",
+      "PostedDate": "2015-02-16T18:58:59.683-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Ah, I see. Thanks.",
+      "PostedDate": "2015-02-16T20:35:00.197-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please; incluide in new versions HtmlNode.SelectNodes; I use it with HAP 1.4.6 and when I update referens then proyects don't run.",
+      "PostedDate": "2015-03-20T03:43:04.313-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-03-26T17:58:45.557-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-23T05:50:59.473-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

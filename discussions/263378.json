@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "635273",
+    "ThreadId": "263378",
+    "Html": "\r\n<p>&nbsp; &lt;td valign=&quot;top&quot; class=&quot;productListBody&quot;&gt;</p>\r\n<p><span style=\"white-space:pre\"></span>&nbsp;&lt;b&gt;hi&lt;/b&gt; xvxvxcvxc&lt;br /&gt;</p>\r\n<p><span style=\"white-space:pre\"></span>&lt;b&gt;dsfds:&lt;/b&gt; 2011&lt;br&gt; &nbsp;</p>\r\n<p><span style=\"white-space:pre\"></span>&nbsp;&lt;b&gt;sdfdsf&lt;/b&gt; Bsdfdsl&lt;br&gt;</p>\r\n<p><span style=\"white-space:pre\"></span>&lt;b&gt;Leveringstid:&lt;/b&gt;&amp;nbsp;2-5 dager&lt;br /&gt;&nbsp;</p>\r\n<p><span style=\"white-space:pre\"></span><strong><span style=\"text-decoration:underline\"><span style=\"color:#888888\">&lt;b&gt;Pris:&lt;/b&gt; 399,-&lt;br /&gt;</span></span></strong><span>\r\n</span></p>\r\n<p>&lt;/td&gt;</p>\r\n<p>I want to extract the Content after Pris: . How can i achieve this</p>\r\n<p>using This expression &nbsp; &nbsp;<span style=\"text-decoration:underline\"><strong>//td[@class='productListBody']/b[5]</strong></span></p>\r\n<p>i am getting the &lt;b&gt; tag only .</p>\r\n<p>Here is my code</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>HtmlWeb htmlWeb = <span style=\"color:blue\">new</span> HtmlWeb();            HtmlAgilityPack.HtmlDocument document = htmlWeb.Load(weburl);\r\nproduktId=9788205413191<span style=\"color:#a31515\">&quot;            HtmlNode someNode = null;                       if (xpathQry != &quot;</span>&quot;) \r\n     someNode =    document.DocumentNode.SelectSingleNode(xpathQry);  \r\n\r\n<span style=\"color:blue\">if</span> (someNode != <span style=\"color:blue\">null</span>)            \r\n    _bookprice = someNode.InnerText;\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2011-06-30T02:02:39.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

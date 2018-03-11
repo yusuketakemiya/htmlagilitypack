@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "696818",
+    "ThreadId": "279072",
+    "Html": "\r\n<p>Hi there,</p>\r\n<p>I'm writing a c# program to extract content of webpage and save extracted content to a collection. I looked for documentation but I wasn't successful finding the right method to do so. I'm wondering whether what I'm intending to do can be achieved using\r\n HtmlAgilityPack? Can anyone help? It would be really helpful if you guys can post what to use and how to use it....</p>\r\n<p>I want to look for each src=&quot;.........&quot; and the get the argument from between the quotation marks....</p>\r\n<p>Thanks for helping out.</p>\r\n",
+    "PostedDate": "2011-11-10T22:30:54.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

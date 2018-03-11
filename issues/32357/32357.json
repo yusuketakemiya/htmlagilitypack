@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If a script tag has a src attribute, the parser will stop there and ignore the rest of the website.",
+    "LastUpdatedDate": "2013-02-21T18:47:01.547-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-03-06T07:15:22.66-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "<script> tag with src attribute: stop parsing",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32357
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This is covered by HtmlDocumentTests.TestParse() since //script[position()=2] in \"files\\mshome.htm\" has a src attribute:\r\n\r\n<script language=\"JavaScript\" src=\"/homepage/toolbar.js\"></script>",
+      "PostedDate": "2012-03-15T13:16:26.657-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-03-16T04:52:57.47-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:01.547-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

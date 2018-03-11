@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "6931",
+    "ThreadId": "2185",
+    "Html": "\r\nI'm going to test this, but to validate my tests (or if someone else knows before I finish), does the HtmlAgilityPack work case insensitively? I.E., if I search for a node using one case, but the HTML is another, will it still find it?<br /><br />For example, will:<br />htmlDoc.DocumentNode.SelectSingleNode( \"//BODY\" );<br /><br />return the body node if in the HTML it is '&lt;body&gt;'?<br />",
+    "PostedDate": "2006-11-03T11:21:02.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "6933",
+    "ThreadId": "2185",
+    "Html": "\r\nMy preliminary testing suggests that it IS case insensitive. Very nice. <br />",
+    "PostedDate": "2006-11-03T11:26:36.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "7205",
+    "ThreadId": "2185",
+    "Html": "\r\nHi,<br /><br />Absolutely. This is due to the fact that XML / XPATH is case sensitive.<br />",
+    "PostedDate": "2006-11-09T03:22:18.57-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "11727",
+    "ThreadId": "2185",
+    "Html": "\r\n public static string XpathElementCaseInsensitive(string elementName) <br />        { <br />            return string.Format(\"//node()<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=translate%28name%28%29%2c%20%27%7b0%7d%27%2c%20%27%7b1%7d%27%29%20%3d%20%27%7b1%7d%27\">translate(name(), '{0}', '{1}') = '{1}'</a>\", elementName.ToLower(), elementName.ToUpper()); <br />        } <br /><br /><br />doc.SelectSingleNode(XpathElementCaseInsensitive(\"body\"));<br />",
+    "PostedDate": "2007-01-18T11:26:47.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "889469",
+    "ThreadId": "2185",
+    "Html": "\r\n<p>tests are case sensitive</p>\r\n<p>some node names aren't</p>\r\n<p>you have to either do 3 queries for&nbsp;&quot;url&quot;, &quot;Url&quot;, &quot;URL&quot; or use the translation function to get the redirect url</p>\r\n<pre>//meta[contains(@content, 'url')]</pre>\r\n<p>I can confirm that META, CONTENT, A and HREF are case insensitive.</p>\r\n<p><span style=\"font-family:Arial\"><span style=\"font-family:Verdana\">translate&nbsp;</span></span><span>should work in XPath 1 whereas lower-case() is an XPath 2.0 function - It would be really nice to be able to use this.</span></p>\r\n<p>&nbsp;</p>\r\n<p><span>I wrote a little function for getting the redirect url. &nbsp;It could be a lot simpler if i could figure out how to use translate with it.</span></p>\r\n<p>&nbsp;</p>\r\n<p><span>&nbsp;</span></p>\r\n<pre>        static string getRedirectUrl(string html)\n        {\n            HtmlDocument doc = new HtmlDocument();\n            doc.LoadHtml(html);\n            //meta content contains url=, but 'url' is case sensitive in this case\n            //will only test for aaa,Aaa,AAA but nothing crazier than that\n\n            string[] _URL = { &quot;url&quot;, &quot;Url&quot;, &quot;URL&quot; };\n            for (int mode_URL = 0; mode_URL &lt; _URL.Length; mode_URL&#43;&#43;)\n            {\n                var p = doc.DocumentNode.SelectNodes(string.Format(&quot;//meta[contains(@content, '{0}')]&quot;, _URL[mode_URL]));\n                if (p != null)\n                {\n                    if (p.Count() == 1)\n                    {\n                        string redirectURL = &quot;&quot;;\n                        var node = p.Where(k =&gt; k.Attributes[&quot;content&quot;] != null).Single();\n                        if (node != null)\n                            try\n                            {\n                                string rawValue = node.Attributes[&quot;content&quot;].Value;\n                                int pos1 = rawValue.IndexOf('=');\n                                if (pos1 &gt; -1)\n                                    redirectURL = rawValue.Substring(pos1 &#43; 1).Trim();\n                            }\n                            catch { }\n                        if (!string.IsNullOrEmpty(redirectURL))\n                        {\n                            return redirectURL;\n                        }\n                    }\n                }\n            }\n            return &quot;&quot;;\n        }</pre>\r\n",
+    "PostedDate": "2012-07-23T23:11:02.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993050",
+    "ThreadId": "2185",
+    "Html": "\r\n<p>Hi ,</p>\r\n<p>Can you please suggest what is the solution for this.</p>\r\n<p>How to search for a node without case sensitivity?</p>\r\n<p>&nbsp;</p>\r\n<p>Can any one explain me what are&nbsp;</p>\r\n<p>&quot;<strong>OptionOutputUpperCase</strong>&quot; and &nbsp;&quot;<strong>OptionOutputOriginalCase</strong>&quot; &nbsp;are?</p>\r\n<p>Any help will be appreciated.</p>\r\n",
+    "PostedDate": "2013-01-28T06:20:56.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

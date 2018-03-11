@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "For a html page like below. charset is empty or invalid string\n<html>\n...\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=\">\n</head>\n...\n</html>\n \nParsing of the document would throw a ArgumentException. This is not user-friendly. It is preferable to have HtmlAgility ignore invalid charset value.\n \nRoot cause is in file HtmlDocument.cs, function ReadDocumentEncoding, Encoding.GetEncoding(charset) throws a ArgumentException if the argument is not invalid charset name.",
+    "LastUpdatedDate": "2013-06-14T00:35:58.153-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2007-02-27T21:49:33.093-08:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Throw ArgumentException If Charset Is Invalid",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 8541
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Successfully parses encoding in:\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\r\n\r\nbut fails to parse\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset= ISO-8859-1\">\r\n(with the whitespace preceding the encoding name)",
+      "PostedDate": "2009-09-15T07:38:40.23-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "this appears to be partially fixed in the current build. I was however able to find if the charset is set to a string that is not a valid encoding it will still throw the exception. I have added in a default of utf-8 and a property to allow it to be set if needed. \r\nUsage would be \r\nHtmlDocument.DefaultEncodingCharSet = \"ISO-8859-1\"\r\nvar doc = new HtmlDocument();\r\ndoc.Load(\"somefile.html\");",
+      "PostedDate": "2009-12-31T19:37:04.64-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-12-31T19:37:38.063-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:29.103-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:33:01.437-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:33:01.543-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:35:58.153-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

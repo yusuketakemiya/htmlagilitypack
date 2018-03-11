@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "You should check other posts. This is not a bug, but a feature and is configurable. FORM is treated like this because many HTML pages used to have overlapping forms, as this was actually a (powerful) feature of original HTML. Now that XML and XHTML exist, everybody assumes that overlapping is an error, but it's not (in HTML 3.2).\nCheck the HtmlNode.cs file, and modify the ElementsFlags collection (or do it at runtime if you prefer)",
+    "ClosedDate": "2009-05-17T23:36:59.147-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am parsing 'www.google.co.jp' using HtmlAgilityPack and facing the this problem.\nOn tracking the tag \"html/body/center/form\", I've found that the childNodes of\n<form>are coming null ( instead the chid Nodes of <form> are coming as the \nchild Nodes of <center> tag).\n \nSo, the child nodes of <form> (which are <input>,<input>,<input> and <div>) are coming\nas its sibling.\n \nThe source code snipplet of 'google.co.jp' is:\n \n       <form action=\"/search\" name=\"f\">\n\t        <input name=\"hl\" type=\"hidden\" value=\"ja\"/>\n\t        <input autocomplete=\"off\" maxlength=\"2048\" name=\"q\" size=\"55\" title=\"Google 検索\" value=\"\"/> \n\t        <input name=\"btnG\" type=\"submit\" value=\"Google 検索\" style=\"height:1.8em\"/>\n\t        <div style=\"padding:5px 0\">\n                <font size=\"-1\">\n\t                <input id=\"all\" type=\"radio\" name=\"meta\" value=\"lr=\" checked/>\n\t                <label for=\"all\"> ウェブ全体から検索 </label>\n                    <input id=\"il\" type=\"radio\" name=\"meta\" value=\"lr=lang_ja\"/>\n\t                <label for=\"il\"> 日本語のページを検索 </label>\n\t            </font>\n\t            <font size=\"-1\">&nbsp;&nbsp;\n\t                <a href=\"/advanced_search?hl=ja\">検索オプション</a>&nbsp;|&nbsp;\n\t                <a href=\"/preferences?hl=ja\">表示設定</a>&nbsp;|&nbsp;\n\t                <a href=\"/language_tools?hl=ja\">言語ツール</a>\n\t            </font>\n\t        </div>\n        </form>",
+    "LastUpdatedDate": "2013-05-16T05:32:59.36-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-03-25T22:30:15.92-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Parsing of <form> tag is not proper",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 21782
+  },
+  "FileAttachments": [
+    {
+      "FileId": 8199,
+      "FileName": "google_source.cs",
+      "DownloadUrl": ".\\8199"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "You should check other posts. This is not a bug, but a feature and is configurable. FORM is treated like this because many HTML pages used to have overlapping forms, as this was actually a (powerful) feature of original HTML. Now that XML and XHTML exist, everybody assumes that overlapping is an error, but it's not (in HTML 3.2).\r\nCheck the HtmlNode.cs file, and modify the ElementsFlags collection (or do it at runtime if you prefer)",
+      "PostedDate": "2009-05-17T23:28:08.447-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-17T23:36:59.147-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:23.907-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:59.36-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

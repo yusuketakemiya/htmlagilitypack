@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm currently working on a project where the HTML is not well formed, the developer has forgot to close one of their DD tags before opening the next dd tag.\n \nIn browser or for other tags this results in an auto close, where as with HtmlAgility this is current causing it to catch all of the subsequent dd tags.\n \nHere is the HTML\n \n\"<dd>36 - SHORT                                                           <div class=\\\"invMsg0\\\">          In Stock.         </div>                                                      <dt>Price:</dt>                                                                                                                                                                                     <dd style=\\\"margin-bottom: 15px;\\\"><span class=\\\"strike intlPrice\\\" usprice='$350.00'> $350.00 </span>&nbsp;&nbsp;                           <span class=\\\"sale intlPrice\\\" usprice='$122.50'>          $122.50         </span>                                \\r\\\nn                                                                                                                                                                 <span class=\\\"price intlPrice\\\" usprice='$122.50'>$122.50</span>                                   </dd>                                                                   <dt><label for=\\\"qty2\\\">Qty:</label></dt>                                <dd>          <select id=\\\"qty2\\\" name=\\\"quantity_1\\\" onchange=\\\"javascript:updateSCupdate(this.value, '315201_3539253');\\\">                           <option selected=\\\"\\\" value=\\\"1\\\">1                        <option value=\\\"2\\\">2                      \n  <option value=\\\"3\\\">3                        <option value=\\\"4\\\">4                        <option value=\\\"5\\\">5                        <option value=\\\"6\\\">6                        <option value=\\\"7\\\">7                        <option value=\\\"8\\\">8                        <option value=\\\"9\\\">9                        <option value=\\\"10\\\">10                     </select>                             </dd>                     </dd>\"\n \n \nAs we can see the first DD isn't closed properly, but either when it hits the DT or next DD tag",
+    "LastUpdatedDate": "2013-02-21T18:46:57.34-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-09-01T18:39:36.883-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Not auto closing dd tags",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33086
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

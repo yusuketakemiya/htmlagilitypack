@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1078387",
+    "ThreadId": "452857",
+    "Html": "Hello,\r<br />\n<br />\nWhat I wanted to achieve is a kind of html content preview/summary but instead of using InnerText that strips tags I wanted to do this while preserving tags. Any suggestions on how should I go about doing this?<br />\n",
+    "PostedDate": "2013-08-08T12:13:17.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

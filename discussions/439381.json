@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1026684",
+    "ThreadId": "439381",
+    "Html": "Hello,\r<br />\n<br />\nI am trying to implement a solution where I want to change the image URL and CSS src before I send the HTML page back to client. I am doing this in C#.(Basically instead of pointing image url to server I want to point them to CDN)\r<br />\n<br />\nI have almost implemented the solution but when I use load the HTML using Agility pack. I am seeing few weird things.<br />\n<ol>\n<li>It closes the form tag right way even though the HTML is properly formatted.</li>\n<li>\nOption tag within Select are also not rendered correctly.<br />\n</li>\n</ol>\nCan any one please tell me if this is possible to do with agility pack?\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-04-06T18:17:16.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

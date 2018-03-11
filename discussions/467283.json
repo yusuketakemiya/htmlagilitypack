@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1120801",
+    "ThreadId": "467283",
+    "Html": "Hi,\r<br />\n<br />\nWhen I use the full path on my laptop, dochouse retreives the file no problem. When I use a relative path, it does not find it.\r<br />\n<br />\nI have tried:\r<br />\n<a href=\"mailto:docHouse.Load(@&quot;..\\App_Data\\Request.txt&quot;,\" rel=\"nofollow\">docHouse.Load(@\"..\\App_Data\\Request.txt\",</a> false);\r<br />\n<a href=\"mailto:docHouse.Load(@&quot;~\\App_Data\\Request.txt&quot;,\" rel=\"nofollow\">docHouse.Load(@\"~\\App_Data\\Request.txt\",</a> false);\r<br />\n<br />\nAnd both are not working.\r<br />\n<br />\nANy suggestion?\r<br />\n<br />\nthanks\r<br />\n<br />\nAcheo<br />\n",
+    "PostedDate": "2013-11-09T07:06:44.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

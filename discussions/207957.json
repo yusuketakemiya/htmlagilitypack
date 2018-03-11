@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "426128",
+    "ThreadId": "207957",
+    "Html": "<p>Hi</p>\r\n<p>I've an html-page and have to replace an table after FORM with other html-code.</p>\r\n<p>&nbsp;</p>\r\n<p>&lt;form&gt;<br>&lt;table&gt;</p>\r\n<p>.....</p>\r\n<p>&lt;/table&gt;</p>\r\n<p>&lt;/form&gt;</p>\r\n<p>I've tried it with:</p>\r\n<p>oMainHtmlRootNode.ReplaceChild(oNewMailHtmlNode, oMainHtmlRootNode.SelectSingleNode(&quot;//form//following-sibling::table&quot;))</p>\r\n<p>This raises an Exception: Node &quot;....&quot; was not found in the collection ....</p>\r\n<p>What ist wrong and how can I do it?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards</p>\r\n<p>Christoph Schmid</p>",
+    "PostedDate": "2010-03-31T11:45:42.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

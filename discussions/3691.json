@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "11752",
+    "ThreadId": "3691",
+    "Html": "\r\nHi Simonm, Thank you for your effort on HtmlAgilityPack. I found a small bug today. <br />For HtmlDocument, if you use OptionOutputAsXml to convert html into xml, following html generate error. <br /><br />html:<br />&lt;script&gt;if(0&lt;1){document.write(1);}&lt;/script&gt;<br /><br />HtmlAgilityPack Xml Output (Not Right):<br />&lt;script&gt;<br />//&lt;![CDATA[<br />if(0&lt;1){document.write(1);}<br />//]]&gt;//<br />&lt;/script&gt;<br /><br />Right Output:<br />&lt;script&gt;<br />//&lt;![CDATA[<br />if(0&lt;1){document.write(1);}<br />//]]&gt;//<br />&lt;/script&gt;<br /><br />Regards.<br /><br />",
+    "PostedDate": "2007-01-18T18:07:43.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

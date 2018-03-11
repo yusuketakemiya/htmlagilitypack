@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "58694",
+    "ThreadId": "17969",
+    "Html": "\r\nHello.  I just downloaded this nifty code and am trying to spelunk around.  Unfortunately, every link in the CHM file yields \"The program cannot display the webpage\".  I'm connected to the internet, and other CHM files seem to work correctly.  I can see the table of contents, but none of the links work.<br /><br />Anyone else see this?  Suggestions?<br />Thanks!<br />-D<br />",
+    "PostedDate": "2007-11-17T15:23:38.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58731",
+    "ThreadId": "17969",
+    "Html": "\r\nHi!<br /><br />Running Vista?<br /><br />Check this out http://blog.crowe.co.nz/archive/2007/04/13/719.aspx<br /><br />Cheers :-)<br />Simon.<br />",
+    "PostedDate": "2007-11-18T01:13:31.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58987",
+    "ThreadId": "17969",
+    "Html": "\r\nGenius!  It's good ol' XP, but the post you referred me to had another suggestion... I had c# in the pathname, and apparently the # confuses it.  Thanks for your help!<br />-D<br />",
+    "PostedDate": "2007-11-19T21:01:54.46-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

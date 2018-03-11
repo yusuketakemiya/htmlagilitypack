@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2012-09-24T02:01:03.533-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "A DocumentNode is a tree of HtmlNode's. Each node has an InnerHtml (and\nInnerText, but I'll talk only of InnerHtml) property. This property is\ncached and is controlled by a private field in the HtmlNode class called\n\"_innerchanged\". (There's also a private field called \"_outerchanged\".) \n \nSuppose you're, say, three levels deep in the tree. You replace this node via the ReplaceChild API. It sets the\n_innerchanged field to true, so that the next time you refer to that node's\nInnerHtml property it will recalculate the inner HTHML (since _innerchanged\nis true). Which is fine.                                         \n \nBut if you want the HTML for the entire document, and ask for \ndoc.DocumentNode.InnerHtml, *that* node (doc.DocumentNode) *doesn't* have \nthe _innerchanged field set. So what you get is the cached (i.e. old)\nversion of the HTML, which doesn't reflect the changes made to the child\nnode several levels down. \n \nThe solution is a source mod to HtmlNode.cs, method ReplaceChild, which \npropogates the _innerchanged (and _outerchanged) values of the replacement\nnode upwards to its parent (and its parent (and its parent, etc)). The code\nto do this as follows... \n \n\tprivate void PropogateInnerOuterChanged(bool InnerChanged, bool OuterChanged) {\n\t    HtmlNode node = this;\n\t    while (node.ParentNode != null && node.ParentNode is HtmlNode) {\n\t        node = node.ParentNode; \n\t        node._innerchanged = InnerChanged;\n\t        node._outerchanged = OuterChanged; \n\t}\n \nThis routine should be called at the very end of ReplaceChild, just before\nthe \"return\" statement -- PropogateInnerOuterChange(_innerchanged,\n_outerchanged);\n \nNote: There seems to be a related bug in HtmlNode.ReplaceChild(int index,\nHtmlNode node), which doesn't even set the _innerchanged/_outerchanged\nfields, much less propogate the values upwards. But since we don't use that\nAPI, I haven't changed it.",
+    "LastUpdatedDate": "2017-04-30T04:06:46.173-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-11-30T07:30:41.12-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "InnerHtml property not calculated properly",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 31858
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved with changeset 99803.",
+      "PostedDate": "2012-09-24T02:01:03.533-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:02.54-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:57.127-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2017-04-30T04:06:46.173-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

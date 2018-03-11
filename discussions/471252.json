@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1129383",
+    "ThreadId": "471252",
+    "Html": "This code was taken and revised from a previous discussion authored by DarthObiwan. Mainly, I moved removing any children to the end of the recursion cycle. That and I call removeChild in order to keepGrandChildren. Make sure you update the HtmlNode.RemoveChild() method. There is a bug in RemoveChild where the children are out of order. This is issue item # 28756 &quot;RemoveChild(node, true) reverses the order of the grandchildren it keeps&quot;.<br />\n<br />\npublic void RemoveNotInWhiteList(HtmlNode pNode, IEnumerable&lt;string&gt; pWhiteList)<br />\n{<br />\n<pre><code>pNode.Attributes\n     .Where(att =&gt; !pWhiteList.Contains(att.Name))\n     .ToList()\n     .ForEach(att =&gt; att.Remove());            \n\npNode.ChildNodes\n     .ToList()\n     .ForEach(node =&gt; RemoveNotInWhiteList(node, pWhiteList));\n\n// this operation should be performed at the termination of all stack frames.\nif (!pWhiteList.Contains(pNode.Name))\n{\n    pNode.ParentNode.RemoveChild(pNode, true); // preserve children\n}</code></pre>\n\n}<br />\n",
+    "PostedDate": "2013-11-26T16:59:09.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

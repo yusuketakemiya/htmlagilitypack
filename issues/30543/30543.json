@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The HtmlAttribute.Name returns the _name as lower case.  I had a problem when converting SharePoint generated html as the attributes were loosing there case sensitivity.  I believe specifically it had to do with the <ie:menuitem> tags where the attributes like \"onMenuClick\" were being converted to \"onmenuclick\".\n \nIn any case, I simply removed the \"return _name.ToLower();\" and replaced it with \"return _name;\".\n \nI'm not sure if this effects the HtmlAgilityPack elsewhere, but so far it is working for me.\n \nVersion: 1.4.0 Stable",
+    "LastUpdatedDate": "2013-02-21T18:47:08.113-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-04-14T14:45:57.417-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlAttribute.Name",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 30543
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Oh, and this was with 1.4.0.",
+      "PostedDate": "2011-04-14T14:47:13.767-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-04-14T14:48:27.137-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-04-14T14:49:15.58-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-07-02T12:52:37.94-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have the same problem. Thank you for figuring it out.",
+      "PostedDate": "2011-07-02T12:52:54.683-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:08.113-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

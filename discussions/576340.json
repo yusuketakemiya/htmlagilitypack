@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1337352",
+    "ThreadId": "576340",
+    "Html": "I have a link:<a href=\"http://dictionary.cambridge.org/dictionary/british/appeal\" rel=\"nofollow\">http://dictionary.cambridge.org/dictionary/british/appeal</a>, new version have not htmlNode and SelectSingleNode.\r<br />\n<br />\nNow, I want to get content from this link and I want to get that's results:&quot;a request to the public for money, information, or help&quot;.\r<br />\n<br />\nSource of page:\r<br />\n[TEXT](&lt;span class=&quot;sense-body&quot;&gt;<br />\n<pre><code>&lt;span class=&quot;def-block&quot;&gt;\n    &lt;span class=&quot;def-head&quot;&gt;\n        &lt;span class=&quot;def-info&quot;&gt;&lt;/span&gt;\n        &lt;span class=&quot;def&quot;&gt;\n\n            a \n\n            &lt;a class=&quot;query&quot; title=&quot;request&quot; href=&quot;http://dictionary.cambridge.org/dictionary/british/request&quot;&gt;&lt;/a&gt;\n\n             to the \n\n            &lt;a class=&quot;query&quot; title=&quot;public&quot; href=&quot;http://dictionary.cambridge.org/dictionary/british/public&quot;&gt;&lt;/a&gt;\n\n             for \n\n            &lt;a class=&quot;query&quot; title=&quot;money&quot; href=&quot;http://dictionary.cambridge.org/dictionary/british/money&quot;&gt;&lt;/a&gt;\n\n            , \n\n            &lt;a class=&quot;query&quot; title=&quot;information&quot; href=&quot;http://dictionary.cambridge.org/dictionary/british/information&quot;&gt;&lt;/a&gt;\n\n            , or \n\n            &lt;a class=&quot;query&quot; title=&quot;help&quot; href=&quot;http://dictionary.cambridge.org/dictionary/british/help&quot;&gt;&lt;/a&gt;\n\n            : \n\n        &lt;/span&gt;\n    &lt;/span&gt;\n    &lt;span class=&quot;def-body&quot;&gt;&lt;/span&gt;\n&lt;/span&gt;)\n</code></pre>\n\n[TEXT](string url = &quot;<a href=\"http://dictionary.cambridge.org/dictionary/british/appeal&quot;;\" rel=\"nofollow\">http://dictionary.cambridge.org/dictionary/british/appeal\";</a><br />\n<pre><code>    HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();\n    WebRequest request = WebRequest.Create(url);\n    WebResponse response = await request.GetResponseAsync();\n    StreamReader stream = new StreamReader(response.GetResponseStream());\n    string content = await stream.ReadToEndAsync();\n\n    List&lt;string&gt; list = new List&lt;string&gt;();\n\n    foreach (...)\n    {\n       ...\n    })</code></pre>\n\n",
+    "PostedDate": "2014-12-26T17:58:21.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1340248",
+    "ThreadId": "576340",
+    "Html": "<pre><code>doc.LoadHtml(content);\nHtmlNodeCollection defNodes=doc.DocumentNode.SelectNodes(&quot;//span[@class='def']);\nvar defs=from c in defNodes\nwhere c.InnerText.Contains(&quot;serious&quot;)\nselect c;</code></pre>\n\n",
+    "PostedDate": "2015-01-08T21:14:24.413-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

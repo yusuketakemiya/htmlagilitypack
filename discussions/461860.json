@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1106344",
+    "ThreadId": "461860",
+    "Html": "I've got StackOverflowException while scanning sites with complicated DOM. <br />\nHtml documents examples were uploaded by Dzonny here (<a href=\"https://www.codeplex.com/Download?ProjectName=htmlagilitypack&amp;DownloadId=636619\" rel=\"nofollow\">https://www.codeplex.com/Download?ProjectName=htmlagilitypack&DownloadId=636619</a>). <br />\nSo I found an easy workaround running HtmlDocument.Load in separate Thread with increased stack.<br />\n<br />\nJust play with stackSize variable to define big enough value for your tasks.<br />\n<pre><code>namespace StackOverflowTest\n{\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            MyThread mt = new MyThread();\n\n            int stackSize = 10000000;\n            Thread thread = new Thread(mt.Run, stackSize);\n            thread.Start();\n            Thread.Sleep(1000);\n\n            while (mt.Running)\n            {\n                Thread.Sleep(20000);\n            }\n            Console.WriteLine(&quot;done&quot;);\n            \n            //do your stuff\n            var hrefs = mt.page.DocumentNode.SelectNodes(&quot;//a[@href]&quot;);\n        }\n    }\n\n    public class MyThread\n    {\n        public bool Running { get; private set; }\n        public HtmlDocument page { get; private set; }\n\n        public MyThread()\n        {\n            Running = false;\n        }\n\n        public void Run()\n        {\n            Running = true;\n            page = new HtmlDocument();\n            page.Load(&quot;HtmlAgilityPackStackOverflow1.html&quot;);\n            Running = false;\n        }\n    }\n}</code></pre>\n\n",
+    "PostedDate": "2013-10-11T02:52:09.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

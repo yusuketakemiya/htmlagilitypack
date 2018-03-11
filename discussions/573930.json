@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1328474",
+    "ThreadId": "573930",
+    "Html": "I am using HAP 1.4.9 via NuGet in a current Visual Studio project.  I downloaded the source from CodePlex but it is not the same version I am running.\r<br />\n<br />\nI'd like to get the 1.4.9 source.  Is it still public?<br />\n",
+    "PostedDate": "2014-12-03T10:09:39.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1328496",
+    "ThreadId": "573930",
+    "Html": "1.4.9 posted to SVN. The only real update was a fix to the PCL build in the Nuget package. There were no code changes<br />\n",
+    "PostedDate": "2014-12-03T11:07:00.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1328512",
+    "ThreadId": "573930",
+    "Html": "Do you mean the current version under &quot;1.4.0&quot; on CodePlex actually contains the same source as &quot;1.4.9&quot; from NuGet?<br />\n\r<br />\nIn that case can I submit updated code to the repository here?\r<br />\n<br />\nThere is an ordering bug in HtmlNode.RemoveChild() that I have a fix for.\r<br />\n<br />\nSorry about my ignorance; I am a noob.<br />\n",
+    "PostedDate": "2014-12-03T11:42:07.967-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1328516",
+    "ThreadId": "573930",
+    "Html": "The latest source is available here <a href=\"http://htmlagilitypack.codeplex.com/SourceControl/latest\" rel=\"nofollow\">http://htmlagilitypack.codeplex.com/SourceControl/latest</a> .<br />\n",
+    "PostedDate": "2014-12-03T11:52:46.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-12-03T12:43:15.233-08:00"
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When an HtmlNode is of NodeType Text, and an operation happens that changes the OuterHtml there's going to be a StackOverflow whenever the OuterHtml is accessed again.\n\nThe reason is, in the HtmlTextNode class, the call to the OuterHtml property of the base class inside the getter of the Text property when the _outerchanged field is set to true and the _text field hasn't been accessed will cause a StackOverflowException.\n\nA simple example is calling RemoveAll() over a Text node's HtmlAttributeCollection and then accessing the OuterHtml property, like this.\n\n```\nHtmlDocument doc = new HtmlDocument();\ndoc.LoadHtml(\"This is a text node\");\n\nHtmlNode textNode = doc.DocumentNode.ChildNodes[0];\ntextNode.Attributes.RemoveAll();       // Any operation that will set the _outerchanged field to true\nstring text = textNode.OuterHtml;     // StackOverflowException is thrown.\n```",
+    "LastUpdatedDate": "2014-08-14T09:43:15.983-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-08-13T18:36:00.67-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "StackOverflow when accessing the OuterHtml property.",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35461
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Solution in patch mentioned in issue https://htmlagilitypack.codeplex.com/workitem/30059",
+      "PostedDate": "2014-08-14T09:39:54.41-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-08-14T09:43:15.983-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

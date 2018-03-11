@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "43865",
+    "ThreadId": "13456",
+    "Html": "\r\ni am using htmlagilitypack to ligin into site which supports ssl<br /><br />site is developen in jsp  and i think using servlet to login .<br /><br />Site ref : https://eba.sprintpcs.com/Login.jsp  <br /><br />I show u my coding script too<br /><br /><br /><br />HtmlAgilityPack.AddOns.FormProcessor.FormProcessor p = new HtmlAgilityPack.AddOns.FormProcessor.FormProcessor();<br />        string userName = \"******\";<br />        string password = \"*******\";<br /><br />        HtmlAgilityPack.AddOns.FormProcessor.Form form = p.GetForm(\"https://eba.sprintpcs.com/Login.jsp\", \"//form<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40name%3d%27login%27\">@name='login'</a>\", HtmlAgilityPack.AddOns.FormProcessor.FormQueryModeEnum.Nested);<br /><br /><br />        form<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22userID%22\">\"userID\"</a>.SetAttributeValue(\"value\", userName);<br />        form<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22password%22\">\"password\"</a>.SetAttributeValue(\"value\", password);<br /><br /><br />        HtmlDocument doc= p.SubmitForm(form);<br /><br /><br /><br />but  after login it is showing me a blank page<br />anybody who is working on this please help me out<br /><br /><br />another question is using querystring how can i login <br />ref like : https://eba.sprintpcs.com/EBAServlet?userID=<b>****&amp;password=****</b><br />can it possible using this i can login?<br /><br /><br />thanks<br /><br />",
+    "PostedDate": "2007-08-06T05:23:20.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

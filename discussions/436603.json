@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1015136",
+    "ThreadId": "436603",
+    "Html": "Hi , \r<br />\n<br />\nCan any one suggest how can i write the xpath for the following .\r<br />\n<br />\n<br />\n1) if i want &lt;span&gt; tag to have either the text or the &lt;br&gt; tag within it \r<br />\n<br />\nI tried this \r<br />\n _ htmldoc.DocumentNode.SelectNodes(&quot;not[//span//br]&quot;)_     but din't worked.\r<br />\n<br />\n<br />\n2)&lt;a&gt; tag can either have &lt;span&gt; or &lt;img&gt; as its child node , <br />\n",
+    "PostedDate": "2013-03-14T03:53:05.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017226",
+    "ThreadId": "436603",
+    "Html": "1) //span[text() or br]\r<br />\n2) //a[span or img]\r<br />\nthis works for immediate children of &lt;span&gt; or &lt;a&gt;. For children at any level try\r<br />\n1) //span[.//text() or .//br]\r<br />\n2) //a[.//span or .//img]<br />\n",
+    "PostedDate": "2013-03-18T11:00:45.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

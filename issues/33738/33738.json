@@ -1,0 +1,96 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I use the HtmlAgilityPack 14.6 NuGet package, and I noticed that when text containing HTML entities is parsed into an HtmlDocument, or set through HtmlNode.InnerHtml, then later retrieved via HtmlNode.InnerText, these entities are returned verbatim. I would expect the entities to be resolved to the characters they represent.\n\nTo reproduce, see the attached test case for details. Create an empty C# class library project, install NUnit and HtmlAgilityPack from NuGet, then paste the attached code in. Two of the three tests fail because of the behavior described above.",
+    "LastUpdatedDate": "2014-11-05T18:20:06.92-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-02-05T05:59:58.497-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "InnerText returns HTML entities rather than their raw character",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 6,
+    "Id": 33738
+  },
+  "FileAttachments": [
+    {
+      "FileId": 13103,
+      "FileName": "InnerTextFixture.cs",
+      "DownloadUrl": ".\\13103"
+    },
+    {
+      "FileId": 13104,
+      "FileName": "InnerTextFixture_v2.cs",
+      "DownloadUrl": ".\\13104"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "The reverse is also broken, i.e. reading InnerHtml off of an HtmlTextNode also returns incorrect result. See updated test case.",
+      "PostedDate": "2013-02-05T09:40:44.137-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-05T09:49:22.597-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-14T21:45:02.78-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:54.377-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-07-31T04:49:20.3-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-08-28T06:47:47.153-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-03-13T07:09:37.493-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Quick workaround for some cases can be to use the System.Web.HttpUtility class:\r\n\r\ne.g.:  HttpUtility.HtmlDecode(node.InnerText)",
+      "PostedDate": "2014-03-13T07:15:33.757-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-11-05T18:20:06.92-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

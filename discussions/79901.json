@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "273740",
+    "ThreadId": "79901",
+    "Html": "<div style=\"color:Black;background-color:White\">\r\n<pre>Hi</pre>\r\n</div>\r\n<p>I'm using the HTMLWeb object to login to a https site using CONNECT e.g the request header is</p>\r\n<p>CONNECT <a href=\"http://www.XXXXXXXX.com:443\">www.XXXXXXXX.com:443</a> HTTP/1.0</p>\r\n<p><span style=\"font-size:x-small;color:#0a000a\"><span style=\"font-size:x-small;color:#0a000a\">I'm generating it through the Load (&quot;https://www.XXXXXXXX.com:443&quot;, &quot;CONNECT&quot;);</span></span></p>\r\n<p><span style=\"font-size:x-small;color:#0a000a\"><span style=\"font-size:x-small;color:#0a000a\">&nbsp;</span></span>I'm getting a BadResponse from it. However, if I run Fiddler to capture the output, it goes through fine. What I notice is Fiddler is generating a certificate dynamically in the Personal folder when it is capturing output. How should I do it without Fiddler?</p>\r\n<p>I have set the certificate like so</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>ServicePointManager.ServerCertificateValidationCallback = <span style=\"color:Blue\">delegate</span> (<span style=\"color:Blue\">object</span> sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)\r\n{\r\n<span style=\"color:Blue\">   return</span> <span style=\"color:Blue\">true</span>;\r\n};</pre>\r\n</div>",
+    "PostedDate": "2010-01-06T04:49:46.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273893",
+    "ThreadId": "79901",
+    "Html": "<p>Ok, found the answer. It is so simple. I should be using GET. not CONNECT. The webrequest will set the CONNECT itself.</p>",
+    "PostedDate": "2010-01-06T10:10:31.043-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

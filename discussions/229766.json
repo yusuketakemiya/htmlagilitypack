@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "502846",
+    "ThreadId": "229766",
+    "Html": "<p>Hello</p>\r\n<p>I'm brand new to agilitypack and did some searching but did not find what I was looking for. I want to be able to extract the href part of a html link, by the &quot;Link text&quot;.</p>\r\n<p>&lt;a href=&quot;http://<em>link.com</em>&quot;&gt;<em>Link text</em>&lt;/a&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>Can this be done? if so how?</p>\r\n<p>&nbsp;</p>\r\n<p>Best Regards!</p>",
+    "PostedDate": "2010-10-06T00:20:51.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1254221",
+    "ThreadId": "229766",
+    "Html": "I see that this was never answer, but just in case someone else is looking for answer, here is one way of doing it:\r<br />\n<br />\nvar htmlDoc = new HtmlDocument();\r<br />\nhtmlDoc.LoadHtml({yourHtmlContentOrFile});\r<br />\nvar rootNode = htmlDoc.DocumentNode;\r<br />\nvar refs = rootNode.SelectNodes(&quot;//*/a/@href&quot;);\r<br />\nvar link =refs.ElementAt(0).Attributes[&quot;href&quot;].Value;<br />\n",
+    "PostedDate": "2014-06-08T20:57:07.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

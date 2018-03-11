@@ -1,0 +1,85 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I used the HTML Agility Pack library to update a bunch of meta tags on a large website from a database. The meta tags had already been added in the page from a templated file, and were valid XHTML:\n<meta name=\"\" content=\"\" />\n \nWhen the file was saved, the meta tags had the ending / removed from them:\n<meta name=\"\" content=\"\">\n \nWhich fails the w3c validator. Upon further inspection of the files, any tags that do not require a closing tag had been modified this way. This includes br, hr, and img (maybe others?). Please update this when you get the chance.",
+    "LastUpdatedDate": "2015-05-19T14:58:56.61-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-03-10T08:30:24.05-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Library causes valid XHTML code to become invalid by removing closing / on single elements",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 15541
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I've been having this issue with br tags - I'm using the agility pack to remove some class names from some other elements but it also takes all my valid \"<br />\" tags and replaces them with \"<br>\" which is no longer xhtml valid.  I'm currently having to resort to running all content through html tidy any time I use the agility pack as I can't seem to fix this problem.\r\n\r\nInterestingly outputting the content as XML fixes the self closing tags.\r\n\r\nIdeally this should be an option to use self closing tags, maintain the same as passed in, or use html shorthand tags (without self closing).\r\n\r\nI'd also recommend that the impact should be revised as it makes all output containing self closing tags invalid.",
+      "PostedDate": "2010-05-26T10:10:21.787-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-09T04:24:43.83-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-16T13:57:47.393-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-24T06:36:30.283-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Yes, I'd love for this issue to be fixed - if XHTML in, then XHTML out!",
+      "PostedDate": "2011-01-24T06:37:31.927-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-03-30T03:55:49.653-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-12-26T15:55:22.01-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:27.2-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-05-19T14:58:56.61-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

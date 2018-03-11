@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "918772",
+    "ThreadId": "397245",
+    "Html": "\r\n<p>There are some XML tags inside the HTML source code of a website<br>\r\n</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">html</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xml</span> <span style=\"color:red\">id</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;..&quot;</span><span style=\"color:blue\">&gt;</span> <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xml</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">html</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>Can I use Html Agility Pack to load that XML file and read?</p>\r\n<p>Thank you.</p>\r\n",
+    "PostedDate": "2012-09-27T16:57:04.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

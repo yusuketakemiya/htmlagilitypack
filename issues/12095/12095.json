@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It would be nice to see an XPath property of the HTML Node class that return's a node's absolute xpath.",
+    "LastUpdatedDate": "2013-06-14T00:35:57.913-07:00",
+    "PlannedForRelease": "1.4.0 Beta 1",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2007-08-06T08:59:00.463-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlNode.XPath Property",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 12095
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "How would you like to see that? There are thousands of possible xpaths to a single node, and there's no such thing as one true absolute xpath to a node. If you want the path (not xpath) to a node, simply walk the parents until you reach the DocumentNode.",
+      "PostedDate": "2007-08-24T04:17:55.177-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-25T22:47:05.303-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I've added preliminary support for this on HtmlNode and HtmlAttribute . The properties get their relative xpath and add that on to their parent xpath. ",
+      "PostedDate": "2009-09-16T21:57:31.683-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have implemented a property that returns a valid Xpath to that particular node. Beta 1 contains the property but the path created had the #document element on it that was causing the path to not work. The next release will have this fixed",
+      "PostedDate": "2009-10-02T22:44:41.367-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:28.523-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:33:01.193-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:33:01.303-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:35:57.913-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

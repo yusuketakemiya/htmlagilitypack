@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "255997",
+    "ThreadId": "74801",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>I am using the HAP with my asp.net website, when I run the following code I get an error</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>            HtmlDocument htmlDoc = <span style=\"color:Blue\">new</span> HtmlDocument();\r\n\r\n            htmlDoc.OptionFixNestedTags = <span style=\"color:Blue\">true</span>;\r\n\r\n            htmlDoc.Load(url);\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>The last time &quot;htmlDoc.Load&quot; throws an error &quot;URI formats are not supported.&quot;&nbsp; I am doing the development work within Visual Studio 2010 Beta 2 and using the local IIS server to run the website and its using the default home page, this means my url is &quot;http://localhost:14049/default.aspx&quot;</p>\r\n<p>Any ideas how I can fix this??</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance</p>\r\n<p>&nbsp;</p>\r\n<p>Marc</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>This is the stack trace</p>\r\n<p><span style=\"font-family:Arial, Helvetica, Geneva, SunSans-Regular, sans-serif\">\r\n<pre>[ArgumentException: URI formats are not supported.]\r\n   System.IO.Path.NormalizePath(String path, Boolean fullCheck, Int32 maxPathLength) +9457990\r\n   System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath) +370\r\n   System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options) +82\r\n   System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) +84\r\n   System.IO.StreamReader..ctor(String path, Encoding encoding) +16\r\n   HtmlAgilityPack.HtmlDocument.Load(String path) +112\r\n   WebApplication3.WebForm1.newstuff(String urlToConvert) in C:\\Users\\mxg.CONSULT-ALTIUS\\Documents\\Visual Studio 2010\\Projects\\WebApplication3\\WebApplication3\\default.aspx.cs:136\r\n   WebApplication3.WebForm1.convertTwo_Click(Object sender, EventArgs e) in C:\\Users\\mxg.CONSULT-ALTIUS\\Documents\\Visual Studio 2010\\Projects\\WebApplication3\\WebApplication3\\default.aspx.cs:118\r\n   System.Web.UI.WebControls.Button.OnClick(EventArgs e) +111\r\n   System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument) +112\r\n   System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument) +10\r\n   System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument) +13\r\n   System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData) +36\r\n   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +5563\r\n</pre>\r\n</span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-11T07:48:07.447-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "257832",
+    "ThreadId": "74801",
+    "Html": "<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-17T02:33:56.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261557",
+    "ThreadId": "74801",
+    "Html": "<p>I'm not entirely sure but load only loads from disk not the web.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-29T04:47:13.547-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

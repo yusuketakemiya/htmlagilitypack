@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "721511",
+    "ThreadId": "285232",
+    "Html": "\r\n<p>&nbsp;have this code to get the img src link but it just finds for http and not for imgsrc tag and then copy the link so i need to frist find imgsrc within that class and the the http link, how can i get..</p>\r\n<div style=\"background-color:white; color:black\">\r\n<pre>  <span style=\"color:blue\">string</span> pageUrl = <span style=\"color:#a31515\">&quot;http://rr.sapo.pt/&quot;</span>;\r\n\r\n               HAP.HtmlWeb hDoc = <span style=\"color:blue\">new</span> HAP.HtmlWeb();\r\n                <span style=\"color:blue\">var</span> doc = hDoc.Load(pageUrl);\r\n\r\n\r\n                <span style=\"color:blue\">var</span> divNode = doc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//div[@class='pics']&quot;</span>);\r\n                <span style=\"color:blue\">string</span> src1 = divNode.InnerHtml;\r\n\r\n                <span style=\"color:blue\">int</span> startIndex = src1.IndexOf(<span style=\"color:#a31515\">&quot;http&quot;</span>);\r\n                <span style=\"color:blue\">int</span> endIndex = src1.IndexOf(<span style=\"color:#a31515\">&quot;png&quot;</span>)&#43;3;\r\n                <span style=\"color:blue\">string</span> strSrc = src1.Substring(startIndex, (src1.Length - startIndex) - (src1.Length - endIndex));\r\n\r\n</pre>\r\n</div>\r\n<p>so i need to find img src and then the httplink</p>\r\n<p>now is returning <a rel=\"nofollow\" href=\"http://rr.sapo.pt/bolabranca.aspx'%3E%3Cimg\">\r\nhttp://rr.sapo.pt/bolabranca.aspx'&gt;&lt;img</a> src='http://mediaserver.rr.pt/newrr/bola-branca121339c8.pngand i need the httplink after img src</p>\r\n",
+    "PostedDate": "2012-01-06T07:32:10.107-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

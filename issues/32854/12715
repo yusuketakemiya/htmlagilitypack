@@ -1,0 +1,43 @@
+--- C:/Users/Chris/Documents/Visual Studio 2010/Projects/SeleniumTestsLauncher/Html Agility Pack/Html2Txt/HtmlConvert.cs	ven. juin 15 01:38:19 2012
++++ C:/Users/Chris/Documents/Visual Studio 2010/Projects/SeleniumTestsLauncher/Html Agility Pack/Html2Txt/HtmlConvert - Copie.cs	ven. juin 15 01:25:10 2012
+@@ -66,18 +66,35 @@
+                     break;
+ 
+                 case HtmlNodeType.Element:
+-                    switch (node.Name)
++
++					switch (node.Name) {
++						case "li":
++							outText.Write("\t");
++							break;
++					}
++					
++					if (node.HasChildNodes)
+                     {
++                        ConvertContentTo(node, outText);
++                    }
++
++					switch (node.Name)
++                    {
+                         case "p":
+                             // treat paragraphs as crlf
+                             outText.Write("\r\n");
+                             break;
++
++						case "li":
++							outText.Write("\r\n");
++							break;
+                     }
+ 
+-                    if (node.HasChildNodes)
+-                    {
+-                        ConvertContentTo(node, outText);
+-                    }
++					if (node.Name.Length == 2 && node.Name[0] == 'h' && char.IsNumber(node.Name[1])) {
++						// h1 (or h2, h3, ...) tag
++						outText.Write("\r\n");
++					}
++
+                     break;
+             }
+         }

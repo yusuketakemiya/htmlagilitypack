@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "99203",
+    "ThreadId": "29761",
+    "Html": "How can I specify a user name and password for the HtmlWeb class to perform http authentication on a password protected directory?<br>\r\n",
+    "PostedDate": "2008-06-16T22:44:26.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "109130",
+    "ThreadId": "29761",
+    "Html": "Take a look at this.<br>\r\n<br>\r\nThis guy did good job.<br>\r\n<br>\r\n<a href=\"http://www.dotnetjunkies.com/WebLog/joshuagough/archive/2006/01/20/134825.aspx\">http://www.dotnetjunkies.com/WebLog/joshuagough/archive/2006/01/20/134825.aspx</a>\r\n",
+    "PostedDate": "2008-08-05T08:34:58.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "118821",
+    "ThreadId": "29761",
+    "Html": "Hi !<br>\r\nI've downloaded id, but some files are missing, like de assemblyinfo.cs... did any of you solve this?<br>\r\nThanks !\r\n",
+    "PostedDate": "2008-09-16T06:20:08.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

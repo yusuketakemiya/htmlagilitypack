@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nI am using HtmlAgilityPack for web scraping.\nBut when i am trying to read the tag attribute values through nodes, it returns the value \"Login\" instead of actual value. (Even InnerHTML also returing \"Login\" value)\nat the moment i am trying to get the attribute values from http://www.dicksmith.com.au/mobiles-wireless?brand=116\n\nand trying to get 'title' value (which is 'Samsung Galaxy Note 4 Black VF')  from below HTML tag\n\n<a href=\"http://www.dicksmith.com.au/mobiles-wireless/samsung-galaxy-note-4-black-dsau-em5356\" title=\"Samsung Galaxy Note 4 Black VF\">Samsung Galaxy Note 4 Black VF</a>\n\nPlease help me ,why this is happening? are they provide information only to registered customers? in that case, i have created the account,but then how to pass the credentials to that site?\n\nThanks,\nNivas.",
+    "LastUpdatedDate": "2015-07-19T23:26:18.123-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-07-19T23:24:01.7-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "GetAttributeValue returns \"Login\"",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43184
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

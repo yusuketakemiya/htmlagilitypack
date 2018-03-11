@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Using 1.4.0beta2 built from source on my PC with VS2008, it seems that the HtmlDocument's OptionAutoCloseOnEnd is not being honored.  When I set it to false, it is still automatically closing unclosed tags.  For example:\n \nHtmlDocument htmlDoc = new HtmlDocument();\nhtmlDoc.OptionAutoCloseOnEnd = false;\nhtmlDoc.OptionWriteEmptyNodes = true;\nhtmlDoc.OptionOutputAsXml = true;\nhtmlDoc.LoadHtml(\"<div>testing 123<span>bad Html</div>\");\n// Does not throw a parser error\nhtmlDoc.DocumentNode.InnerHtml;  // returns: \"<div>testing 123<span>bad Html</span></div>\"\n \nI expected a parser error to be thrown instead.\n \nPlease try to resolve this soon (or educate me on if I'm doing something wrong).  Thanks!",
+    "LastUpdatedDate": "2013-02-21T18:47:19.65-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-01-25T10:38:36.033-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OptionAutoCloseOnEnd is not being honored (1.4.0beta2)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 26030
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

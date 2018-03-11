@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I downloaded the latest version by url = https://www.nuget.org/api/v2/package/HtmlAgilityPack/1.4.9\nThe file has SHA1 = FA66A9DBE10E8CA93E1459F069B9799CBC854274 and it cannot be unzipped:\n\n```\nl:\\temp\\g>unzip htmlagilitypack.1.4.9.nupkg\nArchive:  htmlagilitypack.1.4.9.nupkg\n extracting: _rels/.rels\n  inflating: HtmlAgilityPack.nuspec\n  inflating: HAPIcon.png\n  inflating: readme.txt\n  inflating: lib/Net20/HtmlAgilityPack.dll\n  inflating: lib/Net20/HtmlAgilityPack.pdb\n  inflating: lib/Net20/HtmlAgilityPack.xml\n  inflating: lib/Net40/HtmlAgilityPack.dll\n  inflating: lib/Net40/HtmlAgilityPack.pdb\n  inflating: lib/Net40/HtmlAgilityPack.XML\n  inflating: lib/Net40-client/HtmlAgilityPack.dll\n  inflating: lib/Net40-client/HtmlAgilityPack.pdb\n  inflating: lib/Net40-client/HtmlAgilityPack.xml\n  inflating: lib/Net45/HtmlAgilityPack.dll\n  inflating: lib/Net45/HtmlAgilityPack.pdb\n  inflating: lib/Net45/HtmlAgilityPack.XML\n  inflating: lib/NetCore45/HtmlAgilityPack.dll\n  inflating: lib/NetCore45/HtmlAgilityPack.pdb\n  inflating: lib/NetCore45/HtmlAgilityPack.pri\n  inflating: lib/NetCore45/HtmlAgilityPack.xml\n  inflating: lib/portable-net45%2Bnetcore45%2Bwp8%2BMonoAndroid%2BMonoTouch/HtmlAgilityPack.dll\n  inflating: lib/portable-net45%2Bnetcore45%2Bwp8%2BMonoAndroid%2BMonoTouch/HtmlAgilityPack.pdb\n  inflating: lib/portable-net45%2Bnetcore45%2Bwpa81%2Bwp8%2BMonoAndroid%2BMonoTouch/HtmlAgilityPack.dll\n  inflating: lib/portable-net45%2Bnetcore45%2Bwpa81%2Bwp8%2BMonoAndroid%2BMonoTouch/HtmlAgilityPack.pdb\n  inflating: lib/sl4/HtmlAgilityPack.dll\n  inflating: lib/sl4/HtmlAgilityPack.pdb\n  inflating: lib/sl4/HtmlAgilityPack.XML\n  inflating: lib/sl5/HtmlAgilityPack.dll\n  inflating: lib/sl5/HtmlAgilityPack.pdb\n  inflating: lib/sl5/HtmlAgilityPack.XML\nlib/sl3-wp/_._:  ucsize 0 <> csize 2 for STORED entry\n         continuing with \"compressed\" size value\n extracting: lib/sl3-wp/_._           bad CRC 6af4413c  (should be 00000000)\n extracting: package/services/metadata/core-properties/43fdb80a5711487696f5a99b6d1418d0.psmdcp\n extracting: [Content_Types].xml\n\nl:\\temp\\g>\n```\n\nUnzipping is needed by Paket package manager, see https://github.com/fsprojects/Paket/issues/484",
+    "LastUpdatedDate": "2015-03-07T00:37:51.103-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-12-29T05:55:41.87-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "1.4.9 NuGet package is a broken zip file",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 35774
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "1.4.8 is also broken. 1.4.6 is fine.",
+      "PostedDate": "2014-12-29T06:19:15.267-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-03-07T00:37:51.103-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

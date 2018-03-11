@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Unfortunately in turkish the capital \"I\" is not an \"i\" in lowercase. \"I\".ToLower() in the turkish culture refers to \"ı\". This is a problem when all the HTML nodes and attributes are converted to lowercase with the standard ToLower() method.\nI wrote a simple program to demonstrate this. You can find it in the attachment. The output is this:\n \nSource string: <DIV><IMG SRC='...' ID='IXI'></DIV>\nResult: <div><img src=\"...\" id=\"IXI\"></div>\n \nSource string: <DIV><IMG SRC='...' ID='IXI'></DIV>\nResult: <dıv><ımg src=\"...\" ıd=\"IXI\"></ımg></dıv>\n \nI could easily fix this issue when I just replaced all occurences of ToLower by ToLowerInvariant and ToUpper by ToUpperInvariant. I don't know if all occurences have to be replaced, but it seems to work for me. Please include this in your next update (I hope there will be one).\n \nCheers,\nMichael",
+    "LastUpdatedDate": "2013-02-21T18:47:26.667-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-04-29T03:31:57.553-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "problem with ToLower() in turkish culture",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 16328
+  },
+  "FileAttachments": [
+    {
+      "FileId": 6266,
+      "FileName": "Program.cs",
+      "DownloadUrl": ".\\6266"
+    },
+    {
+      "FileId": 8797,
+      "FileName": "ToLowerInvariantFix.zip",
+      "DownloadUrl": ".\\8797"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This can be fixed by modifying a few files. You can also drop the files in my attachment directly in the HtmlAgilityPack directory.\r\n\r\nI did not replace the ToLower() for the value of the id attribute. Such as in HtmlDocument.SetIdForNode(HtmlNode,string):828 (842,846) and the rest of those methods. The reason for this is that I am not sure if these attributes are allowed to contain \"special characters\".\r\n\r\nThe first line is the original, the second line is the modification to the original line numbers.\r\n\r\nHtmlDocument.cs:1686\r\nstring name = CurrentNodeName().ToLower();\r\nstring name = CurrentNodeName().ToLowerInvariant();\r\n\r\nHtmlNode.cs:539\r\n_name = _ownerdocument._text.Substring(_namestartindex, _namelength).ToLower();\r\n_name = _ownerdocument._text.Substring(_namestartindex, _namelength).ToLowerInvariant();\r\n\r\nHtmlAttribute.cs:81\r\n_name = _ownerdocument._text.Substring(_namestartindex, _namelength).ToLower();\r\n_name = _ownerdocument._text.Substring(_namestartindex, _namelength).ToLowerInvariant();\r\n\r\nHtmlAttribute.cs:91\r\n_name = value.ToLower();\r\n_name = value.ToLowerInvariant();\r\n\r\nHtmlAttributeCollection::129\r\nstring lname = name.ToLower();\r\nstring lname = name.ToLowerInvariant();\r\n\r\nHtmlAttributeCollection:183\r\nstring lname = name.ToLower();\r\nstring lname = name.ToLowerInvariant();\r\n\r\nHtmlAttributeCollection:203\r\nreturn _hashitems[name.ToLower()] as HtmlAttribute;\r\nreturn _hashitems[name.ToLowerInvariant()] as HtmlAttribute;\r\n",
+      "PostedDate": "2009-07-16T14:01:21.977-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-16T14:01:23.04-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:26.667-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "516138",
+    "ThreadId": "233227",
+    "Html": "\r\n<p>Hi There,</p>\r\n<p>I've downloaded v1.4.0 from this site and extracted the three files in the distro. I've added HtmlAgilityPack.dll as a reference to my VB 2008 Express project and written some test code (to create an HtmlDocument object and load some HTML into it) however\r\n whenever I try to run the code I get VB throwing up a window asking me to point it to the file 'HtmlDocument.cs' - the browser window that pops up has the title 'Find Source: HtmlDocument.cs'.</p>\r\n<p>Am I missing something? Were there some other files to download other than the three that came in the rar file (the .dll, the .pdb and the .xml)?</p>\r\n<p>Have tried searching both this discussion list and a more general Google search and only found one other person with the same issue and no solution!</p>\r\n<p>Any suggestions greatly appreciated.</p>\r\n<p>Many thanks,</p>\r\n<p>Thinqer</p>\r\n",
+    "PostedDate": "2010-11-02T14:20:39.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "517136",
+    "ThreadId": "233227",
+    "Html": "\r\n<p>Come on guys, someone must know what's going on here... If anyone else has sccessfully downloaded and used the DLL in a VB Express 2008&nbsp;.NET project could you please post the steps you took to do this?</p>\r\n<p>Many thanks,</p>\r\n<p>Thinqer</p>\r\n",
+    "PostedDate": "2010-11-04T08:57:37.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "521018",
+    "ThreadId": "233227",
+    "Html": "\r\n<p>Looks like that HtmlAgilityPack with your code raises exception inside HAP. I cant't say anything more without seeing code.</p>\r\n",
+    "PostedDate": "2010-11-12T04:00:50.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549373",
+    "ThreadId": "233227",
+    "Html": "\r\n<p>HtmlAgilityPack correctly detects the encoding from the html data, dutifuly logs a error that the stream encoding doesn't match the page encoding</p>\r\n<p><a href=\"http://howtowinthelotteryguaranteed.info/\">how to win the lottery</a></p>\r\n",
+    "PostedDate": "2011-01-14T07:17:56.353-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

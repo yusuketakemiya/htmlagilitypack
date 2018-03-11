@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "642105",
+    "ThreadId": "265097",
+    "Html": "\r\n<p>IF the HTML Source contain's below text <br>\r\n&lt;ul&gt;<br>\r\n&lt;li&gt;Testing&lt;/li&gt;<br>\r\n&lt;li&gt;Testing1&lt;/li&gt;<br>\r\n&lt;li&gt;Testing2&lt;/li&gt;<br>\r\n&lt;li&gt;Testing3&lt;/li&gt;<br>\r\n&lt;/ul&gt;<br>\r\n<br>\r\nHtmlAgilityPack.HtmlDocument agDoc = new HtmlAgilityPack.HtmlDocument();<br>\r\nagDoc.LoadHtml(source);<br>\r\nIEnumerable&lt;HtmlAgilityPack.HtmlNod</p>\r\n<div id=\"DescriptionPanel\">e&gt; q = docNode.DescendantNodes();<br>\r\nIEnumerable&lt;HtmlAgilityPack.HtmlNode&gt; elements = q.Where&lt;HtmlAgilityPack.HtmlNode&gt;(p =&gt; p.OriginalName == &quot;li&quot;);<br>\r\nList&lt;HtmlAgilityPack.HtmlNode&gt; allElementLst = elements.ToList&lt;HtmlAgilityPack.HtmlNode&gt;();<br>\r\n<br>\r\n<br>\r\nIn Above code we will get the 4 HtmlNode with the &quot;li&quot; as OriginalName .<br>\r\n<br>\r\nWhen we see the innertext for the <br>\r\nfirst Node: &quot;Testing \\r\\nTesting1 \\r\\nTesting2 \\r\\nTesting3 &quot;<br>\r\nsecond Node: &quot;Testing1 \\r\\nTesting2 \\r\\nTesting3 &quot;<br>\r\nthird Node : &quot;Testing2 \\r\\nTesting3 &quot;<br>\r\nfourth Node: &quot;Testing3 &quot;<br>\r\n<br>\r\nBut Expected result should be like this <br>\r\n<br>\r\nfirst Node: &quot;Testing&quot;<br>\r\nsecond Node: &quot;Testing1&quot;<br>\r\nthird Node : &quot;Testing2&quot;<br>\r\nfourth Node: &quot;Testing3 &quot;<br>\r\n<br>\r\nCan you please help me by solving this problem.<br>\r\n<br>\r\nThanks &amp; Regard's<br>\r\n<br>\r\nSai ...</div>\r\n",
+    "PostedDate": "2011-07-13T21:45:23.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "642362",
+    "ThreadId": "265097",
+    "Html": "<p>I used LINQpad to test this with a ref to the agility pack.&nbsp;</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">var</span> html=<span style=\"color: #a31515;\">@\"&lt;ul&gt;\n&lt;li&gt;Testing&lt;/li&gt;\n&lt;li&gt;Testing1&lt;/li&gt;\n&lt;li&gt;Testing2&lt;/li&gt;\n&lt;li&gt;Testing3&lt;/li&gt;\n&lt;/ul&gt;\"</span>;\n\nHtmlAgilityPack.HtmlDocument doc=<span style=\"color: blue;\">new</span> HtmlDocument();\nHtmlAgilityPack.HtmlDocument agDoc = <span style=\"color: blue;\">new</span> HtmlAgilityPack.HtmlDocument();\nagDoc.LoadHtml(html);\nIEnumerable&lt;HtmlNode&gt; q = agDoc.DocumentNode.DescendantNodes();\nIEnumerable&lt;HtmlNode&gt; elements = q.Where(p =&gt; p.OriginalName == <span style=\"color: #a31515;\">\"li\"</span>);\nList&lt;HtmlNode&gt; allElementLst = elements.ToList&lt;HtmlNode&gt;();\n<span style=\"color: blue;\">var</span> result=allElementLst.Select (c =&gt; c.InnerText);\nresult.Dump();//specific to LINQPad. Remove for non LINQPad compilation\n</pre>\n</div>",
+    "PostedDate": "2011-07-14T07:49:11.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

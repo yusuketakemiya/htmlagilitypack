@@ -1,0 +1,146 @@
+[
+  {
+    "Id": "272245",
+    "ThreadId": "79517",
+    "Html": "<p>Im processing a number of non-english html docs with HAP, and realized a number of them are not UTF-8 but use a specific charset instead. I'd like to detect the charset, whether through the meta tag, or any other method, and try to auto-convert it into UTF-8 to simplify my further processing. Are there some enhanced capabilities in HAP for detecting the source charset and/or helping with this conversion? I'd prefer not to resort to having to hack together a bunch of code to try to figure this out.</p>\r\n<p>Thank you</p>",
+    "PostedDate": "2010-01-01T13:43:44.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272260",
+    "ThreadId": "79517",
+    "Html": "<p>HAP supports that fully. First HAP does read the charset declared in the document and will try to use that. If it is not a supported encoding it will throw an ArgumentException. You can however tell it what encoding to use by passing your own Encoding with the Load method. HtmlDocument.DetectEncoding will return an Encoding object based on the charset declared in the html.</p>\r\n<p>var doc = new HtmlDocument();<br>doc.Load(someUrl,Encoding.GetEncoding(&quot;utf-8&quot;));<br>var encoding = doc.DetectEncoding(someUrl); //to get the detected encoding.</p>\r\n<p>You can also use the overload on Load to have HAP detect the encoding from the byte order of the file/stream. This is a binary detection.</p>",
+    "PostedDate": "2010-01-01T15:06:41.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272262",
+    "ThreadId": "79517",
+    "Html": "<p>Thanks Darth, Im off to work on this some more and will post my progress here.</p>",
+    "PostedDate": "2010-01-01T15:12:31.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272379",
+    "ThreadId": "79517",
+    "Html": "<p>if u find&nbsp; a solution can u post it i m also stuck with the encoding</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-02T04:56:59.967-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272433",
+    "ThreadId": "79517",
+    "Html": "<p>ok ive made a few discoveries-</p>\r\n<p>Im using www.sina.com.cn as an example - a chinese website that is *not* using utf-8, but uses codepage (charset) <strong>gb2312</strong> instead.</p>\r\n<p>It seems that some assumptions are made on encoding with HAP, so the chinese text on the page was being corrupted.</p>\r\n<p>If I use:</p>\r\n<pre><div style=\"color:Black;background-color:White\"><pre><span style=\"color:Blue\">var</span> web = <span style=\"color:Blue\">new</span> HtmlAgilityPack.HtmlWeb();\r\nweb.AutoDetectEncoding = <span style=\"color:Blue\">true</span>;\r\ndoc = web.Load(<span style=\"color:#A31515\">&quot;http://www.sina.com.cn&quot;</span>);</pre>\r\n</div>\r\n</pre>\r\n<p><span style=\"color:#008000;font-size:x-small\"><span style=\"color:#000000\">This fails... apparently&nbsp; it loads the page first, then detects the encoding, but it has already converted it into in-memory unicode without knowing that it is gb2312 to start with (and thus is corrupted).</span></span></p>\r\n<p><span style=\"color:#008000;font-size:x-small\">\r\n<p><span style=\"color:#000000\">The way I found to make this work is as follows: </span></p>\r\n</span></p>",
+    "PostedDate": "2010-01-02T12:35:23.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272434",
+    "ThreadId": "79517",
+    "Html": "<p>for some reason my post was cut off above, this is the rest:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Green\">//request page only for detecting the encoding used</span>\r\nHttpWebRequest request =(HttpWebRequest)WebRequest.Create(<span style=\"color:#A31515\">&quot;http://www.sina.com.cn&quot;</span>);\r\nHttpWebResponse response =(HttpWebResponse)request.GetResponse();\r\nEncoding enc = doc.DetectEncoding(response.GetResponseStream()); \r\n<span style=\"color:Green\">//now request it. </span>\r\nrequest = (HttpWebRequest)WebRequest.Create(<span style=\"color:#A31515\">&quot;http://www.sina.com.cn&quot;</span>); \r\nresponse = (HttpWebResponse)request.GetResponse();\r\ndoc.Load(response.GetResponseStream(), enc);\r\n            \r\n</pre>\r\n</div>\r\n<p>What Id like to find is a method that lets this all be done in one request, as this version effectively requests the same page twice.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-02T12:38:07.637-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272443",
+    "ThreadId": "79517",
+    "Html": "<p>Try the DetectEncodingAndLoad method ;)</p>\r\n<p>If you want control over the authentication or user agent use the HtmlWeb class. It has an autodetectencoding property and will use the DetectEncodingAndLoad when it makes the webrequest.</p>",
+    "PostedDate": "2010-01-02T13:38:36.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272473",
+    "ThreadId": "79517",
+    "Html": "<p>Darth, look above and&nbsp; you will see I already tried your approach, and even specficially set the AutoDetectEncoding = true on the HtmlWeb class(to be sure), but it fails to work correctly, at least in this instance. It will have the correct encoding set once it completes, but the text was converted incorrectly and has been corrupted. Let me know if I should log this as a bug.</p>\r\n<p>I think everything works fine when dealing with utf-8 encoded sites, but a site that uses a foreign language codepage (and perhaps just multi-byte codepages?), fails with this approach.</p>",
+    "PostedDate": "2010-01-02T17:10:21.277-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272483",
+    "ThreadId": "79517",
+    "Html": "<p>I see now, looking into it further. The end of you one post got changed into tiny type, missed that. It does seem that it is messing up on the multibyte chars.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-02T18:22:19.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272499",
+    "ThreadId": "79517",
+    "Html": "<p>Excellent, let me know how I can help.</p>",
+    "PostedDate": "2010-01-02T19:53:52.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272515",
+    "ThreadId": "79517",
+    "Html": "<p>Darth, in case this helps, this seems to work (and doesnt require re-downloading the html)</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>HttpWebRequest request =(HttpWebRequest)WebRequest.Create(<span style=\"color:#A31515\">&quot;http://www.sina.com.cn&quot;</span>);\r\nHttpWebResponse response =(HttpWebResponse)request.GetResponse();\r\n<span style=\"color:Blue\">long</span> len = response.ContentLength;\r\n<span style=\"color:Blue\">byte</span>[] barr = <span style=\"color:Blue\">new</span> <span style=\"color:Blue\">byte</span>[len]; \r\nresponse.GetResponseStream().Read(barr, 0, (<span style=\"color:Blue\">int</span>)len); \r\nresponse.Close();\r\n<span style=\"color:Blue\">string</span> data = Encoding.UTF8.GetString(barr); \r\n<span style=\"color:Blue\">var</span> encod = doc.DetectEncodingHtml(data);\r\n<span style=\"color:Blue\">string</span> convstr = Encoding.Unicode.GetString(Encoding.Convert(encod, Encoding.Unicode, barr));\r\ndoc.LoadHtml(convstr); \r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-02T22:18:52.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272604",
+    "ThreadId": "79517",
+    "Html": "<p>Ive already found several other cases that must be addressed differently, so now I think the only version that is not converting correctly is where there is no indication of the charset at all (http headers, meta tag, etc). I believe IE handles these by using heuristics to try to guess at the charset, but I won't worry about these for now.</p>\r\n<p>Darth, if you are interested, I can address this and submit a patch to try to handle all the various methods of determining encoding. Feel free to add me to the dev team if you like, thanks.</p>\r\n<p>I may also be adding in the capability to redirect to alternative pages viw the meta refresh tag (server redirects work ok for now, in theory).</p>\r\n<p>One question while I'm here- are there capabilities built in to decode unicode entity tags? ie, &amp;#x3032; --&gt; convert into a real unicode char.</p>\r\n<p>Brady</p>",
+    "PostedDate": "2010-01-03T13:01:13.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272622",
+    "ThreadId": "79517",
+    "Html": "<p>I just submitted a change to support Unicode Html Enities a few days ago. It was a patch submitted by tsai. It will detect the x and then do a base16 convert instead of base 10.</p>\r\n<p>I'm interested in seeing your patches. I did some delving last night and came to similar code as you posted last night. One of the difficulties is going to be adding more encoding support while not adding more complexity to the library and maintaining backwards compatibility. That is one thing that will probably break in the 2.0 series. I also discovered some things in the encoding detection that did not work how I thought it was and places where it was counter-intuitive. Including when one passes in a particular encoding it is not used when saving the document, it still uses the one that was detected out of the charset. I think it should use whatever was passed in to read the document.</p>\r\n<p>I do not have the power to add new developers, that is up to simonm.</p>",
+    "PostedDate": "2010-01-03T14:07:00.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272673",
+    "ThreadId": "79517",
+    "Html": "<p>Thanks for the update.</p>\r\n<p>Actually I just tested running HtmlDecode() on the text and it seems to convert the hex entities without problem, looks like this might be a solution? Not to stray too far off topic.</p>\r\n<p>Regarding saving the documents - I think saving with the original encoding makes the most sense, perhaps these rules are best:</p>\r\n<p>-If an encoding was detected, us this. <br>-if a specific encoding is assigned for saving, convert to that. <br>-if no encoding was detected and none was assigned, use a default- utf-8 the likely candidate.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-03T17:52:01.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273461",
+    "ThreadId": "79517",
+    "Html": "<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">HtmlAgilityPack/HtmlWeb.cs<span style=\"white-space:pre\"> </span></div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (respenc != null)</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;doc.Load(s, respenc);</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp;- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// doc.Load(s, true); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp;+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; doc.Load(s);&nbsp;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">HtmlAgilityPack/HtmlDocument.cs</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; public void Load(Stream stream)</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp;- &nbsp; &nbsp; &nbsp; &nbsp; // Load(new StreamReader(stream, OptionDefaultStreamEncoding));</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp;+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Load(new StreamReader(stream, System.Text.Encoding.GetEncoding(1252)));&nbsp;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">HtmlAgilityPack/HtmlWeb.cs</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span></div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Encoding respenc = !string.IsNullOrEmpty(resp.ContentEncoding)</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ? Encoding.GetEncoding(resp.ContentEncoding)</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : null;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; if (respenc == null)</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; &nbsp; { &nbsp; string encode= Charset(contentType);</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(encode!=null){</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; respenc = Encoding.GetEncoding(encode);</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">HtmlAgilityPack/HtmlWeb.cs</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp;private string Charset(string contentType)</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Aqui entran campos del tipo &quot;text/html; charset=utf-8; etc...&quot;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/*</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*Lo que se pretende aqui es filtrar el charset y ver cual es su atributo</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;try</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;string[] filtrar = contentType.Split(new string[] { &quot;charset=&quot; }, StringSplitOptions.None);</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;string charset = filtrar[1].Split(';')[0];</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return charset; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;catch (Exception)</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return null;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">+ &nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<p><span style=\"font-family:Arial, sans-serif;font-size:medium\"><span style=\"line-height:24px\">I downloaded the latest version of HAP, and arranged the HtmlWeb class and the class HtmlDocument. This code worked for me excellent.</span></span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>HtmlAgilityPack/HtmlWeb.cs<span style=\"white-space:pre\"> </span></p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (respenc != null)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;doc.Load(s, respenc);</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp;- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// doc.Load(s, true); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp;+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; doc.Load(s);&nbsp;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>HtmlAgilityPack/HtmlDocument.cs</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; public void Load(Stream stream)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>&nbsp;&nbsp;- &nbsp; &nbsp; &nbsp; &nbsp; // Load(new StreamReader(stream, OptionDefaultStreamEncoding));</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//c&oacute;digo modificado por si no tiene un Encode y tiene caracteres especiales</p>\r\n<p>&nbsp;&nbsp;+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Load(new StreamReader(stream, System.Text.Encoding.GetEncoding(1252)));&nbsp;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>HtmlAgilityPack/HtmlWeb.cs</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"white-space:pre\"> _requestDuration = Environment.TickCount - tc; </span></p>\r\n<p><span style=\"white-space:pre\"> _responseUri = resp.ResponseUri; </span></p>\r\n<p><span style=\"white-space:pre\"> -            bool html = IsHtmlContent(resp.ContentType;);</span></p>\r\n<p><span style=\"white-space:pre\"> +           string contentType = resp.ContentType; </span></p>\r\n<p><span style=\"white-space:pre\"> +          bool html = IsHtmlContent(contentType);</span></p>\r\n<p><span style=\"white-space:pre\"><br></span></p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Encoding respenc = !string.IsNullOrEmpty(resp.ContentEncoding)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ? Encoding.GetEncoding(resp.ContentEncoding)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : null;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; if (respenc == null)</p>\r\n<p>&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; &nbsp; { &nbsp; string encode= Charset(contentType);</p>\r\n<p>&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(encode!=null){</p>\r\n<p>&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; respenc = Encoding.GetEncoding(encode);</p>\r\n<p>&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>\r\n<p>&nbsp;&nbsp; + &nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>HtmlAgilityPack/HtmlWeb.cs</p>\r\n<p>&nbsp;</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp;private string Charset(string contentType)</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Aqui entran campos del tipo &quot;text/html; charset=utf-8; etc...&quot;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/*</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*Lo que se pretende aqui es filtrar el charset y ver cual es su atributo</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;try</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;string[] filtrar = contentType.Split(new string[] { &quot;charset=&quot; }, StringSplitOptions.None);</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;string charset = filtrar[1].Split(';')[0];</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return charset; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;catch (Exception)</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return null;</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>\r\n<p>+ &nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-05T12:38:44.37-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273488",
+    "ThreadId": "79517",
+    "Html": "<p>thisi s very similar to what I did, looks good!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-05T13:36:27.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273489",
+    "ThreadId": "79517",
+    "Html": "<p>except, i think this solution will still fail with double/multibyte character sets... like gb2312.</p>",
+    "PostedDate": "2010-01-05T13:38:20.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "423041",
+    "ThreadId": "79517",
+    "Html": "<p>I ran into this issue recently and i found the solution here:</p>\r\n<p>In this years old patch:</p>\r\n<p>http://htmlagilitypack.codeplex.com/WorkItem/View.aspx?WorkItemId=15535</p>",
+    "PostedDate": "2010-03-24T06:58:36.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

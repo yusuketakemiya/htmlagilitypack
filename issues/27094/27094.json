@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am getting the following exception with the latest build, this is not an issue in the last stable release. It seems to be related to node named \"p\"\n \nServer Error in '/' Application.\nThe given key was not present in the dictionary.\nDescription: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.\n \nException Details: System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\n \nSource Error:\n \nLine 1118:            else\nLine 1119:            {\nLine 1120:                prev = Lastnodes[_currentnode.Name];\nLine 1121:\nLine 1122:                if (OptionFixNestedTags)\n \n \nSource File: D:\\Users\\Anthony\\Documents\\My Projects\\OpenQuarters\\WebQuarters\\source\\HtmlAgilityPack\\HtmlAgilityPack\\HtmlDocument.cs    Line: 1120\n \nStack Trace:\n \n[KeyNotFoundException: The given key was not present in the dictionary.]\n   System.ThrowHelper.ThrowKeyNotFoundException() +28\n   System.Collections.Generic.Dictionary`2.get_Item(TKey key) +7456284\n   HtmlAgilityPack.HtmlDocument.CloseCurrentNode() in D:\\Users\\Anthony\\Documents\\My Projects\\OpenQuarters\\WebQuarters\\source\\HtmlAgilityPack\\HtmlAgilityPack\\HtmlDocument.cs:1120\n   HtmlAgilityPack.HtmlDocument.PushNodeEnd(Int32 index, Boolean close) in D:\\Users\\Anthony\\Documents\\My Projects\\OpenQuarters\\WebQuarters\\source\\HtmlAgilityPack\\HtmlAgilityPack\\HtmlDocument.cs:1852\n   HtmlAgilityPack.HtmlDocument.Parse() in D:\\Users\\Anthony\\Documents\\My Projects\\OpenQuarters\\WebQuarters\\source\\HtmlAgilityPack\\HtmlAgilityPack\\HtmlDocument.cs:1446\n   HtmlAgilityPack.HtmlDocument.Load(TextReader reader) in D:\\Users\\Anthony\\Documents\\My Projects\\OpenQuarters\\WebQuarters\\source\\HtmlAgilityPack\\HtmlAgilityPack\\HtmlDocument.cs:773\n   HtmlAgilityPack.HtmlDocument.LoadHtml(String html) in D:\\Users\\Anthony\\Documents\\My Projects\\OpenQuarters\\WebQuarters\\source\\HtmlAgilityPack\\HtmlAgilityPack\\HtmlDocument.cs:820\n   OpenQuarters.WebQuarters.Core.JFormControl`1.GetNoScriptForm() in D:\\Users\\Anthony\\Documents\\My Projects\\OpenQuarters\\WebQuarters\\source\\OpenQuarters.WebQuarters.Core\\JForm.cs:372\n   OpenQuarters.WebQuarters.Core.JFormControl`1.OnInit(EventArgs e) in D:\\Users\\Anthony\\Documents\\My Projects\\OpenQuarters\\WebQuarters\\source\\OpenQuarters.WebQuarters.Core\\JForm.cs:551\n   System.Web.UI.Control.InitRecursive(Control namingContainer) +333\n   System.Web.UI.Control.AddedControl(Control control, Int32 index) +198\n   System.Web.UI.ControlCollection.Add(Control child) +80\n   Newmason.ViVO.Modules.Availability.AvailabilityModule.OnInit(EventArgs e) in D:\\Users\\Anthony\\Documents\\My Projects\\Floyd\\Newmason\\ViVO\\source\\Newmason.ViVO.Modules.Availability\\AvailabilityModule.cs:129\n   System.Web.UI.Control.InitRecursive(Control namingContainer) +333\n   System.Web.UI.Control.AddedControl(Control control, Int32 index) +198\n   System.Web.UI.ControlCollection.Add(Control child) +80\n   OpenQuarters.WebQuarters.Core.ModuleDefinition.InstantiateIn(Control parentCtl) in D:\\Users\\Anthony\\Documents\\My Projects\\OpenQuarters\\WebQuarters\\source\\OpenQuarters.WebQuarters.Core\\ModuleDefinition.cs:129\n   OpenQuarters.WebQuarters.Core.Web.Areas.Site.Views.Shared.TemplateBaseBase`1.OnInit(EventArgs e) in D:\\Users\\Anthony\\Documents\\My Projects\\OpenQuarters\\WebQuarters\\source\\OpenQuarters.WebQuarters.Core.Web\\Areas\\Site\\Views\\Shared\\TemplateBaseBase.cs:62\n   System.Web.UI.Control.InitRecursive(Control namingContainer) +333\n   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +378\n \n \nVersion Information: Microsoft .NET Framework Version:2.0.50727.4927; ASP.NET Version:2.0.50727.4927",
+    "LastUpdatedDate": "2013-02-21T18:47:16.65-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-05-18T03:51:55.09-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "The given key was not present in the dictionary.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 27094
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The current source code in SVN is not stable, I'm in the middle of overhauling for SL support. I had to switch all the Hashtables over to Dictionary<TKey,TValue> and they behave a bit differently. I was working tracking all these down (thus the reason for beginning to add unit tests). Please use the source code download from the Downloads page",
+      "PostedDate": "2010-05-18T05:31:33.243-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks DarthObiwan, I realise its not a stable release and am using 1.4, just thought I post incase you weren't aware",
+      "PostedDate": "2010-05-19T00:11:17.207-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:16.65-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

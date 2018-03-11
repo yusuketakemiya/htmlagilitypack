@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "50798",
+    "ThreadId": "15645",
+    "Html": "\r\nHi all,<br /><br />I am trying to divide a given web page into tiltle, text and urls. I am planning to use htmlagilitypack for this. But when I run this code in mono. I am ending up with a runtime error which i cannot figure out. <br /><br />this is the code I am using<br /><br />using System;<br />using HtmlAgilityPack;<br /><br />namespace parsehtml {<br />        public class parsehtml {<br />                public static void Main() {<br />                        HtmlWeb htmlWeb = new HtmlWeb();<br />                        HtmlDocument doc = htmlWeb.Load(\"http://www.google.com\");<br />                        System.Console.WriteLine(doc.DocumentNode.InnerText);<br />                        return;<br />                }<br />        }<br />}<br /><br />I compile it with mcs parsehtml.cs -r:HtmlAgilityPack.dll<br /><br />When I run the code I get this error<br /><br />Unhandled Exception: System.ObjectDisposedException: The object was used after being disposed.<br />  at System.Net.HttpWebResponse.CheckDisposed () <a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=0x00000\">0x00000</a><br />  at System.Net.HttpWebResponse.get_StatusCode () <a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=0x00000\">0x00000</a><br />  at (wrapper remoting-invoke-with-check) System.Net.HttpWebResponse:get_StatusCode ()<br />  at HtmlAgilityPack.HtmlWeb.Get (System.Uri uri, System.String method, System.String path, HtmlAgilityPack.HtmlDocument doc) <a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=0x00000\">0x00000</a><br />  at HtmlAgilityPack.HtmlWeb.LoadUrl (System.Uri uri, System.String method) <a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=0x00000\">0x00000</a><br />  at HtmlAgilityPack.HtmlWeb.Load (System.String url, System.String method) <a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=0x00000\">0x00000</a><br />  at HtmlAgilityPack.HtmlWeb.Load (System.String url) <a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=0x00000\">0x00000</a><br />  at parsehtml.parsehtml.Main () <a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=0x00000\">0x00000</a><br /><br /><br />I am new to both C# and html agility pack, so if I being really dense here please bear with me. <br /><br />Thanks for the help.<br />Tivun<br />",
+    "PostedDate": "2007-09-26T02:34:35.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58665",
+    "ThreadId": "15645",
+    "Html": "\r\nWell, for my concern, I am quite new to Mono :-)<br />That is strange. Have you tried to used the existing Binaries? That should work as is as far as understand Mono, and IL concepts.<br />It means HttpWebResponse is implemented differently on Mono vs the Windows CLR. Strange. Have you tried asking the Mono guys?<br />",
+    "PostedDate": "2007-11-17T10:06:02.69-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

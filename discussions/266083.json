@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "645671",
+    "ThreadId": "266083",
+    "Html": "\r\n<p>Hi Guys,</p>\r\n<p>I wonder if anybody here could help me out.</p>\r\n<p>I am building a forum crawler whereby I am trying to extract the thread content which include the user messages which</p>\r\n<p>I then plan to store in the dB for analysis.</p>\r\n<p>So has anybody done this in the past using the HTML agility pack if so then please point me in the direction where I can get some help.</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-07-21T10:15:17.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "645813",
+    "ThreadId": "266083",
+    "Html": "<p>Hey</p>\n<p>using HTML agility pack it should be pretty easy using XPath to select the container element that holds the thread content.</p>\n<p>So you might want to have registered in the database your different forums/websites, for each you might want to have registered the XPath rules that extract the forum content has you want and then use HTML Agility pack to SelectNodes according to all the  XPath rules.</p>\n<p>here are some examples to obtain elements from html with xpath using hap</p>\n<p>//table[contains(@id, '_tblProperty')] &nbsp;select all TABLE elements which contains&nbsp;'_tblProperty' in it's ID<br /> //div[@class='col3']/p[2]<span style=\"white-space: pre;\"> </span>select the second P, which parent it's a DIV with class='col3'<br /> //span[contains(@id, '_lblPrice')]/a[1] select the first A element child of a span that contains in ID&nbsp;&nbsp;'_lblPrice'</p>\n<p>the rest of the work it's by HTML Agility pack&nbsp;</p>\n<p>Hope it helps.&nbsp;</p>",
+    "PostedDate": "2011-07-21T14:52:32.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "645816",
+    "ThreadId": "266083",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>dherbe wrote:</strong><br />\n<p>Hey</p>\n<p>using HTML agility pack it should be pretty easy using XPath to select the container element that holds the thread content.</p>\n<p>So you might want to have registered in the database your different forums/websites, for each you might want to have registered the XPath rules that extract the forum content has you want and then use HTML Agility pack to SelectNodes according to all the  XPath rules.</p>\n<p>here are some examples to obtain elements from html with xpath using hap</p>\n<p>//table[contains(@id, '_tblProperty')] &nbsp;select all TABLE elements which contains&nbsp;'_tblProperty' in it's ID<br /> //div[@class='col3']/p[2]<span style=\"white-space: pre;\"> </span>select the second P, which parent it's a DIV with class='col3'<br /> //span[contains(@id, '_lblPrice')]/a[1] select the first A element child of a span that contains in ID&nbsp;&nbsp;'_lblPrice'</p>\n<p>the rest of the work it's by HTML Agility pack&nbsp;</p>\n<p>Hope it helps.&nbsp;</p>\n</blockquote>\n<p>'dherbe' thanks for your excellent reply. I really appreciate it.................</p>\n<p>The problem is the way my application is designed. Basically it is a GUI application whereby user browses to 'ANY' web forum. I have</p>\n<p>one textbox whereby it uploads the HTML contents and the other textbox which is using regex, cleans the HTML contents of textbox1 and inputs it into</p>\n<p>textbox2 ready for tranfer to the database along with the web URL.</p>\n<p>Regex only works upto a certain limit whereby it struggles to cope if the right regex arent mentioned in the code.</p>\n<p>Hence, why I have turned towards htmlagilitypack :D</p>\n<p>After reading the above, is there anything HAP can help me with where it can be again 'ANY' forum?</p>\n<p>Please advice.</p>\n<p>Thanks</p>",
+    "PostedDate": "2011-07-21T15:05:42.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

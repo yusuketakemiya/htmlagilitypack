@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "150179",
+    "ThreadId": "45051",
+    "Html": "Which can be handled like stream.<br>\r\n<br>\r\nThanks.\r\n",
+    "PostedDate": "2009-01-23T03:52:04.107-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "153163",
+    "ThreadId": "45051",
+    "Html": "If you want to read from a file simply use the <strong>HtmlDocument.Load(string path)</strong> if you want to pass in a stream you can also do it using <strong>HtmlDocument.Load(Stream stream)</strong><br>\r\n<br>\r\nO.O. <br>\r\n",
+    "PostedDate": "2009-02-01T19:37:31.15-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

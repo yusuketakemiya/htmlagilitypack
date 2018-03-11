@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "6060",
+    "ThreadId": "1950",
+    "Html": "\r\nHi<br />I've tried to load page which has ISO-8895-2 encoding with HtmlWeb, but it skipped special characters. I've tried to change AutoDetectEnoding to false, but nothing happened.<br /><br />In method:<br />private HttpStatusCode Get(Uri uri, string method, string path, HtmlDocument doc)<br />of HtmlWeb, there is a part of code:<br /><br />if ((resp.ContentEncoding != null) &amp;&amp; (resp.ContentEncoding.Length&gt;0))<br />   {<br />\trespenc = System.Text.Encoding.GetEncoding(resp.ContentEncoding);<br />   }<br /><br />but resp.ContentEncoding is always set to string.Empty<br /><br />I've added:<br />else if ((respenc == null &amp;&amp; resp.CharacterSet != null &amp;&amp; resp.CharacterSet.Length&gt;0))<br />  {<br />        respenc = System.Text.Encoding.GetEncoding(resp.CharacterSet);<br />  }<br /><br />and now it works fine.<br />Is there another way of making HtmlWeb working with such web pages properly?<br />Examples: www.onet.pl   www.wp.pl (special characters: n,s,z,z,ó,e)<br />",
+    "PostedDate": "2006-10-19T14:52:18.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "7206",
+    "ThreadId": "1950",
+    "Html": "\r\nHmmm... If I remember correctly, there may be some bugs in the HtmlWeb class with encoding.<br />HtmlWeb was just some kind of a helper class. It turns out many people use it :-)<br />",
+    "PostedDate": "2006-11-09T03:25:23.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61357",
+    "ThreadId": "1950",
+    "Html": "\r\nUse System.Net.WebClient and HTMLDocument instead of HTMLWeb, so I got the right results.<br />See my discussion on :<br /><br /><a href=\"http://www.codeplex.com/htmlagilitypack/Thread/View.aspx?ThreadId=18735\" class=\"externalLink\">http://www.codeplex.com/htmlagilitypack/Thread/View.aspx?ThreadId=18735<span class=\"externalLinkIcon\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"></span></a><br />",
+    "PostedDate": "2007-12-05T12:24:19.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

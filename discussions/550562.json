@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1262593",
+    "ThreadId": "550562",
+    "Html": "Hi, I've following html code:\r<br />\n<br />\n&lt;td headers=&quot;header1&quot;&gt;&lt;b&gt;&lt;a href=&quot;<a href=\"http://www.site.com&quot;&gt;TITLE&lt;/a&gt;&lt;/b&gt;&lt;/td&gt;&lt;td\" rel=\"nofollow\">www.site.com\">TITLE</a></b></td><td</a> headers=&quot;header2&quot;&gt;&lt;/td&gt;&lt;td headers=&quot;header3&quot; class=&quot;centrato&quot;&gt;23/04/2014&lt;/td&gt;&lt;/tr&gt;\r<br />\n<br />\nI need to store in a datatable:<br />\n<ul>\n<li>HREF VALUE in &quot;Link&quot; column;</li>\n<li>TITLE in &quot;Title&quot; column;</li>\n<li>\n23/04/2014 in &quot;Date&quot; column;<br />\n</li>\n</ul>\nI tried this:<br />\n<pre><code>int i = 0;\nforeach (HtmlNode node in tmlDoc.DocumentNode.SelectNodes(&quot;//td[@headers='header1']&quot;))\n            {\n                table.Rows.Add();\n                table.Rows[i][&quot;Post&quot;] = node.InnerText;\n                i++;\n            }</code></pre>\n\nThis code allow me to add all Title in the datatable but I'm not able to add DATE and HREF, can you help me please?<br />\n",
+    "PostedDate": "2014-07-03T15:11:23.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1264524",
+    "ThreadId": "550562",
+    "Html": "Any help please?<br />\n",
+    "PostedDate": "2014-07-10T10:48:38.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "286786",
+    "ThreadId": "83409",
+    "Html": "<p>I just found a bug in the XPath engine.</p>\r\n<p>I want to extract all input elements from a specific html form.</p>\r\n<p>doc.SelectNodes(&quot;//form[@name='name']//input&quot;);</p>\r\n<p>this returns null. If i load a well formated test page into a XmlDocument and uses the query above it works perfect, if I load the same well formated test page into a HtmlDocument it return null</p>\r\n<p>I can not use a XmlDocument because the page im going to load does not load into a XmlDocumnet.</p>\r\n<p>Is there a work around for this?</p>",
+    "PostedDate": "2010-02-07T06:58:19.15-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287088",
+    "ThreadId": "83409",
+    "Html": "<p>Interesting... can you post sample text please.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-08T03:34:02.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287113",
+    "ThreadId": "83409",
+    "Html": "<p>Hi.</p>\r\n<p>HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.LoadHtml(@&quot;&lt;body&gt;&lt;form id=&quot;&quot;name&quot;&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;span&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input id=&quot;&quot;test&quot;&quot;&gt;&lt;/input&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/span&gt;<br>&lt;/form&gt;<br>&lt;form id=&quot;&quot;test&quot;&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;input id=&quot;&quot;test2&quot;&quot;&gt;&lt;/input&gt;<br>&lt;/form&gt;&lt;/body&gt;&quot;);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNodeCollection n = doc.DocumentNode.SelectNodes(&quot;//form[@id='name']//input&quot;);</p>\r\n<p>I fixed it by removing this line in the HtmlNode Class</p>\r\n<p>ElementsFlags.Add(&quot;form&quot;, HtmlElementFlag.CanOverlap | HtmlElementFlag.Empty);</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-08T05:17:07.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287236",
+    "ThreadId": "83409",
+    "Html": "<p>Are those double quotes in there on purpose?</p>",
+    "PostedDate": "2010-02-08T10:18:57.33-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287442",
+    "ThreadId": "83409",
+    "Html": "<p>Yes, but they will be interpreted as single quotes by the C# compiler.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-08T23:55:11.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "289927",
+    "ThreadId": "83409",
+    "Html": "<p>The XPath engine is okay. &nbsp;Your expression is wrong. &nbsp;It should be &quot;//form//input&quot; to select any input element that is a descendant of the form element.</p>\r\n<p>In you HTML document, there is no form with the attribute name! &nbsp;Maybe you meant &quot;//form[@id='name']//input&quot;?</p>",
+    "PostedDate": "2010-02-11T17:43:00.267-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When append child is called on a node which is already in the document, I expect it to be moved to the new location. Instead, it appears to exist in the tree multiple times.\n \nMy workaround is to call Remove() before AppendChild(), but it looks like the tree is too easy to corrupt. It would be great if you could at least throw an exception if AppendChild is called with an element which already has a parent node.",
+    "LastUpdatedDate": "2013-02-21T18:47:11.59-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-12-06T09:03:49.943-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AppendChild does not move the node if it is already in the tree",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 29667
+  },
+  "FileAttachments": [
+    {
+      "FileId": 11200,
+      "FileName": "HtmlAgilityPackTests.cs",
+      "DownloadUrl": ".\\11200"
+    }
+  ],
+  "Comments": []
+}

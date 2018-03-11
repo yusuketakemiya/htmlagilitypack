@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "120308",
+    "ThreadId": "36256",
+    "Html": "I saw this post for removing unwanted tags: <br>\r\n<br>\r\n&quot;<br>\r\n<div><a id=\"ctl00_ctl00_Content_TabContentPanel_Content_PostRepeater_ctl02_UserNameLink\" href=\"../../site/users/view/simonm\">simonm</a></div>\r\n<div><span id=\"ctl00_ctl00_Content_TabContentPanel_Content_PostRepeater_ctl02_RoleLabel\"></span></div>\r\n<div><span>Nov 17 2007<wbr> at 12:55 PM</span></div>\r\n&lt;input name=&quot;ctl00$ctl00$Content$TabContentPanel$Content$PostRepeater$ctl02$PostId&quot; id=&quot;ctl00_ctl00_Content_TabContentPanel_Content_PostRepeater_ctl02_PostId&quot; value=&quot;58661&quot; type=&quot;hidden&quot;&gt;\r\nOf course. Just select the nodes you want to remove (using SelectNodes\r\nfor example), and remove them using node.ParentNode.RemoveChild(node);&quot;<br>\r\n<br>\r\nInstead of removing unwanted tags, I want to HTTPEncode it.&nbsp; How do I do that?<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2008-09-23T01:30:38.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

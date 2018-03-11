@@ -1,0 +1,70 @@
+		private void ShowHapBug() {
+			string Html = "<HTML><BODY><p ID=\"Hello\">Hello world</p></BODY></HTML>";
+			// Do some setup and see the original HTML
+			var doc = new HtmlAgilityPack.HtmlDocument();
+			doc.LoadHtml(Html);
+			var docNode = doc.DocumentNode;
+			var OriginalOuterHtml = docNode.OuterHtml;
+			var OriginalInnerHtml = docNode.InnerHtml;
+
+			// Replace the <p> element by an <a>
+			var pnode = docNode.SelectSingleNode("//p");
+			var NewNode = HtmlAgilityPack.HtmlNode.CreateNode("<a href=\"foo.html\">Goodbye Cruel World</a>");
+			var Parent = pnode.ParentNode;
+			Parent.ReplaceChild(NewNode, pnode);
+
+			// See the updated HTML. It's wrong (it's still the <p> element).
+			string UpdatedOuterHtml = docNode.OuterHtml;
+			string UpdatedInnerHtml = docNode.InnerHtml;
+
+			Console.WriteLine("Original Outer HTML = {0}", OriginalOuterHtml);
+			Console.WriteLine("Original Inner HTML = {0}", OriginalInnerHtml);
+			// The output from the next two lines is wrong, due to HAP caching and the
+			// fact that all relevant _innerchanged and _outerchanged fields in all
+			// relevant HtmlNodes haven't been set to <true>.
+			Console.WriteLine("Updated  Outer HTML = {0}", UpdatedOuterHtml);
+			Console.WriteLine("Updated  Inner HTML = {0}", UpdatedInnerHtml);
+
+			// Change the _innerchanged and _outerchanged flags to <true>, all the way
+			// up the tree.
+			SetAllChanged(Parent);
+
+			Console.WriteLine("--------------------");
+
+			Console.WriteLine("Original Outer HTML = {0}", OriginalOuterHtml);
+			Console.WriteLine("Original Inner HTML = {0}", OriginalInnerHtml);
+			// Once the SetAllChanged method has been called, these are now correct.
+			Console.WriteLine("Updated  Outer HTML = {0}", docNode.OuterHtml);
+			Console.WriteLine("Updated  Inner HTML = {0}", docNode.InnerHtml);
+		}
+
+//---------------------------------------------------------------------------------------
+
+		private void SetAllChanged(HtmlAgilityPack.HtmlNode Node) {
+			// Set the _innerchanged and _outerchanged flags to true from the current
+			// node all the way up the DOM tree. Note: If we set the flags only on the
+			// specified node, asking for the Inner/Outer-HTML from any higher-up node
+			// would fail to get the updated HTML. So we have to loop.
+			while (Node != null) {
+				SetInnerOuterChangedToTrue(Node);
+				Node = Node.ParentNode;
+			}
+		}
+
+//---------------------------------------------------------------------------------------
+
+		private void SetInnerOuterChangedToTrue(HtmlAgilityPack.HtmlNode Node) {
+			var type = Node.GetType();
+			SetFieldValue(type, Node, "_innerchanged", true);
+			SetFieldValue(type, Node, "_outerchanged", true);
+		}
+
+//---------------------------------------------------------------------------------------
+
+		private static void SetFieldValue(Type type, HtmlAgilityPack.HtmlNode Node, string FieldName, object val) {
+			// Sets a specified field to a specified value, using Reflection
+			// Note: Requires "using System.Reflection".
+			// Note: We have to use Reflection to modify the non-public fields.
+			var fi = type.GetFields(BindingFlags.NonPublic | BindingFlags.Instance).Where(t => t.Name == FieldName).First();
+			fi.SetValue(Node, val);
+		}

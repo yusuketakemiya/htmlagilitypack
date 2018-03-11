@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "565768",
+    "ThreadId": "245934",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I would like to scan an aspx site using HtmlAgilityPack and locate all .js scripts. I will then store each path in a variable. I have a Handler class where i would use it. Im new to&nbsp;HtmlAgilityPack so excuse my attempt to show what i would like to accomplish:</p>\r\n<pre><span>public</span>&nbsp;<span>string</span>&nbsp;GetJsFiles(<span>string</span>&nbsp;targetSiteAspx)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlAgilityPack.GetFilesInDocument(site&nbsp;to&nbsp;target:&nbsp;targetSiteAspx,&nbsp;type&nbsp;of&nbsp;file:&nbsp;<span>&quot;.js&quot;</span>);<br>}</pre>\r\n<pre><br></pre>\r\n<pre>I do realize this doesn&acute;t exist, but this is what i would like to accomplish. Is it posiable to achieve this in some way?</pre>\r\n<pre><br></pre>\r\n<pre>Thank you!</pre>\r\n<pre>Regards</pre>\r\n<pre>Ray  </pre>\r\n",
+    "PostedDate": "2011-02-14T02:55:45.13-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "567145",
+    "ThreadId": "245934",
+    "Html": "\r\n<div>Hi Ray</div>\r\n<div></div>\r\n<div>My pleasure to know you. I heard HtmlAgilityPack can read scripts into. but I am also new to HtmlAgilityPack and Java is not my field, so cannot help you anymore.<br>\r\n<br>\r\n</div>\r\n<div>2011/2/14 RayMith <span dir=\"ltr\">&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span><br>\r\n<blockquote style=\"padding-left:1ex; margin:0px 0px 0px 0.8ex; border-left:#ccc 1px solid\">\r\n<div>\r\n<p>From: RayMith</p>\r\n<div>\r\n<p>Hi,</p>\r\n<p>I would like to scan an aspx site using HtmlAgilityPack and locate all .js scripts. I will then store each path in a variable. I have a Handler class where i would use it. Im new to HtmlAgilityPack so excuse my attempt to show what i would like to accomplish:</p>\r\n<pre><span>public</span> <span>string</span> GetJsFiles(<span>string</span> targetSiteAspx)<br>{<br>         HtmlAgilityPack.GetFilesInDocument(site to target: targetSiteAspx, type of file: <span>&quot;.js&quot;</span>);<br>\r\n}</pre>\r\n<pre><br></pre>\r\n<pre>I do realize this doesn´t exist, but this is what i would like to accomplish. Is it posiable to achieve this in some way?</pre>\r\n<pre><br></pre>\r\n<pre>Thank you!</pre>\r\n<pre>Regards</pre>\r\n<pre>Ray  </pre>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://htmlagilitypack.codeplex.com/discussions/245934#post565768\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:htmlagilitypack@discussions.codeplex.com?subject=[htmlagilitypack:245934]\" target=\"_blank\">htmlagilitypack@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:htmlagilitypack@discussions.codeplex.com\" target=\"_blank\">\r\nhtmlagilitypack@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://htmlagilitypack.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com/\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n",
+    "PostedDate": "2011-02-16T06:44:58.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

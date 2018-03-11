@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The versions of some dlls in the Nuget package are not correct. \n\nThe Nuget package version is 1.4.9. \n\nNet20, Net40, Net40-client, Net45 have the dll of version 1.4.9 which is correct.\nNetCore45 has the dll of version 1.4.8.\nportable... have the dll of version 1.4.9.\nsl* has the dll of version 1.4.1\n\nIt causes problems when you have a portable library (with version 1.4.9) which is referenced e.g. from the universal app (which is on .NET Core and has the dll of version 1.4.8).",
+    "LastUpdatedDate": "2016-02-10T03:14:35.27-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-02-10T03:14:35.27-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Invalid assembly version in Nuget package 1.4.9",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43348
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

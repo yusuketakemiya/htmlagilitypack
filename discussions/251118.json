@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "586126",
+    "ThreadId": "251118",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm attempting to do something like:</p>\r\n<p>table.AppendChild(HtmlNode.Parse(&quot;&lt;tr id=\\&quot;purchase{0}\\&quot;&gt;&nbsp;&nbsp;&lt;td&gt;{1}&lt;/td&gt;&nbsp;&nbsp;&lt;td&gt;{2:C}&lt;/td&gt;&nbsp;&nbsp;&lt;td&gt;{3}&lt;/td&gt;&nbsp;&nbsp;&lt;td&gt;{4}&lt;/td&gt;&nbsp;&nbsp;&lt;td&gt;{5:C}&lt;/td&gt;&lt;/tr&gt;&quot;));</p>\r\n<p>How would I convert the string above into a node that I can append to a table?</p>\r\n",
+    "PostedDate": "2011-03-24T17:23:15.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "586142",
+    "ThreadId": "251118",
+    "Html": "<p>Googling around I ended up coming up with this:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>table.AppendChild(row = doc.CreateElement(<span style=\"color: #a31515;\">\"tr\"</span>));\r\nrow.InnerHtml = <span style=\"color: blue;\">string</span>.Format(purchaseRowHtml,\r\n                            purchase.Product.Name, \r\n                            purchase.CostEach, \r\n                            purchase.Quantity, \r\n                            purchase.Discount, \r\n                            purchase.LineCost()); \r\n\r\n</pre>\r\n</div>\r\nStill it might be handy for a Parse() method.</p>",
+    "PostedDate": "2011-03-24T18:03:14.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "589829",
+    "ThreadId": "251118",
+    "Html": "<p>I think the following is what you are looking for.</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>HtmlNode node = HtmlNode.CreateNode(<span style=\"color: #a31515;\">\"&lt;div&gt;some new node&lt;/div&gt;\"</span>);\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2011-03-31T14:43:48.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

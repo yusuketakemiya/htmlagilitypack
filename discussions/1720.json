@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "5467",
+    "ThreadId": "1720",
+    "Html": "\r\nHi.<br /><br />First of all: The HTML Agility Pack is great. Finally I'm able to parse information out of usual HTML Files... :)<br /><br />But there might be a bug in SelectSingleNode/SelectNodes:<br /><br />\"//@href\"<br />for instance should return alle HREF-Attributes in the document (if I'm not mistaken)<br /><br />But what you get are a lot of Element-Nodes CONTAINING HREF-Attributes (LINK and A) but not the Attribute-Nodes itself.<br /><br />Greetings,<br /><br />Daniel<br />",
+    "PostedDate": "2006-10-05T13:20:55.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "7207",
+    "ThreadId": "1720",
+    "Html": "\r\nThis is a design issue (some call it bug :-)<br /><br />The pack does not support attribute selection.<br /><br />If you take a look at the internal implementation, attributes and nodes are handled differently (they don't derive from a commmon node), and the HtmlNavigator class is not capable of returning a common object for node or attribute selection.<br /><br />This can be fixed, but requires some coding...<br />",
+    "PostedDate": "2006-11-09T03:27:31.593-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "23909",
+    "ThreadId": "1720",
+    "Html": "<br />I've encountered the same \"bug\"/feature. <br /><br />Being able to select attribute nodes would be very nice indeed.<br /><br /><br />-- <br />Christian<br />",
+    "PostedDate": "2007-02-19T07:30:07.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "23914",
+    "ThreadId": "1720",
+    "Html": "\r\nSince when is an Attribute a node?<br />A node HAS attributes.<br /> You create a node TEXT/TAG and you create an Attribute.  You \"associate\" and attribute with a node (attach/add).  As far as I can see an attribute is an object that is a name/value pair that can be added to a node. It can be copied from node to node or moved to a new node.<br /><br />Yes it might be useful to get a collection of attributes to work on in some way but the query seems to be designed to return a collection of mathing node objects which contain that attribute.  If you think of it in this way then it is completely manageble.<br />",
+    "PostedDate": "2007-02-19T08:06:37.313-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "24077",
+    "ThreadId": "1720",
+    "Html": "\r\nWell, the problem is that it's not XPATH compliant.<br /><br />If I want to query a HTML document using some XPATH expression, I don't want to have to parse the expression myself to see whether I should look into the attributes of the resulting nodes.<br /><br />If I have a piece of code that that takes an XPATH expression as an argument to extract some value from an HTML document, I have to examine that argument to see if it ultimately selects attribute values or not. <br />The input might be \"//foo/bar\", or it might be \"//foo/@bar\" or it might even be \"//foo<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40baz%3d42\">@baz=42</a>/bar/@foz\" or something even more complicated.<br />Problem is, I don't know at runtime what the query is and what type nodes I'm querying. In XPATH it's all good, but the lacking support of selecting values directly from attributes using XPATH expressions in HTMLAgilityPack forces me to make some ad hoc parsing of the XPATH query to determine which attributes to extract after retrieving nodes with a query. <br />So the issue is not really whether an attribute is a node or not. It's that queries doesn't do what you expect them to, when you select attributes using XPATH expressions.<br /><br />-- <br />Christian<br /><br />",
+    "PostedDate": "2007-02-20T00:54:48.41-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

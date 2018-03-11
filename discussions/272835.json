@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "672717",
+    "ThreadId": "272835",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>I am facing a problem while using the Node.OuterHtml property to get the html for a specific node.</p>\r\n<p>If the page i am parsing contains a node like</p>\r\n<p>&#65279;&#65279;&#65279;&#65279;&#65279;&#65279;&lt;asp:PlaceHolder ID=&quot;testID&quot; runat=&quot;server&quot; Visible='&lt;%#((OrderItemType)Eval(&quot;OrderItemType&quot;)==OrderItemType.Product)%&gt;'&gt;</p>\r\n<p>then the outerHtml property that i get for this node is as follows:</p>\r\n<p>&#65279;&#65279;&#65279;&lt;asp:placeholder id=&quot;testID&quot; runat=&quot;server&quot; visible=&quot;&lt;%#((OrderItemType)Eval(&quot;OrderItenType&quot;)==OrderItemType.Product)%&gt;&quot;&gt;</p>\r\n<p>The main problem is that&nbsp;the attribute value of 'visible' attribute is enclosed in single quotes in the original page but when i get the</p>\r\n<p>outerhtml for this node, the attributeValues are always enclosed in double quotes which results in an invalid value for the mentioned attribute.</p>\r\n<p>So&nbsp;i need a way to find what was used in the original document for enclosing attribute values.&nbsp; Is this possible? Please do let me know.</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&#65279;&#65279;&#65279;&#65279;</p>\r\n",
+    "PostedDate": "2011-09-16T06:54:32.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "563785",
+    "ThreadId": "245404",
+    "Html": "\r\n<p>i use html agility pack to parse html source of url&nbsp;<a href=\"http://product.dangdang.com/product.aspx?product_id=21005060&ref=book-01-E1\">http://product.dangdang.com/product.aspx?product_id=21005060&amp;ref=book-01-E1</a>&nbsp;:</p>\r\n<p>when i use firebug to locate &quot;当 当 价：<span>￥17.30&quot; , it gets &quot;&nbsp;/html/body/div[4]/div[2]/div[3]/p/span&nbsp;&quot; &nbsp;, htmldoc.DocumentNode.SelectNodes() &nbsp;returns &nbsp; null&nbsp;</span></p>\r\n<p><span>but when i use HAExplorer to locate that , it gets &quot;/html[1]/body[1]/div[3]/div[2]/div[3]/p[1]&quot; &nbsp;, and &nbsp;htmldoc.DocumentNode.SelectNodes() &nbsp;returns &nbsp;the result .</span></p>\r\n<p>can &nbsp;anybody tell me why ?</p>\r\n<p>thx //</p>\r\n",
+    "PostedDate": "2011-02-10T00:41:29.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

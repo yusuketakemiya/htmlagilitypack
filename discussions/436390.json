@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1014198",
+    "ThreadId": "436390",
+    "Html": "Is it possible to connect to an https page and specify the client side digital certificate to use for the connection?\r<br />\n<br />\nFor example, I would think it would be something like:<br />\n<pre><code>var webGet = new HtmlWeb();\nwebGet.CertificateLocation = &quot;C:\\cert.pfx&quot;;\nvar document = webGet.Load(url);</code></pre>\n\nOr perhaps it would select from the existing certificate store available from Internet Explorer, so it would be something like:<br />\n<pre><code>var webGet = new HtmlWeb();\nwebGet.Certificate = &quot;NameOfCertificate&quot;;\nvar document = webGet.Load(url);</code></pre>\n\nIs there support for that? Or is there any other way to use a specific client certificate for the connection?\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-03-12T14:58:55.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

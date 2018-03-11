@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "846034",
+    "ThreadId": "358718",
+    "Html": "\r\n<p>Hi all</p>\r\n<p>I want to get&nbsp;get all input, textarea, option of&nbsp;http://diendan.yeutretho.com/register.php form but it return null. This is my code</p>\r\n<p>HtmlAgilityPack.HtmlWeb web = new HtmlWeb();&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p>HtmlAgilityPack.HtmlDocument htmlDoc = web.Load(&quot;http://diendan.yeutretho.com/register.php&quot;);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p>var forms = htmlDoc.DocumentNode.Descendants(&quot;form&quot;);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p>foreach (var form in forms)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p>{&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p><span style=\"white-space:pre\"></span>if (form.Attributes[&quot;name&quot;] != null &amp;&amp; form.Attributes[&quot;name&quot;].Value == &quot;register&quot;)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\r\n<span style=\"white-space:pre\"></span>{&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p><span style=\"white-space:pre\"></span>Console.WriteLine( &nbsp;form.InnerHtml ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>\r\n<p><span style=\"white-space:pre\"></span>}</p>\r\n<p>&nbsp;}</p>\r\n<p>Pls help me to get all input, textarea,&nbsp;select of HTML Form</p>\r\n<p>Best Regards</p>\r\n<p>Nam</p>\r\n<p>truongthanhnam@gmail.com</p>\r\n<p>skype: nam.truongthanh</p>\r\n",
+    "PostedDate": "2012-06-07T07:00:26.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "848156",
+    "ThreadId": "358718",
+    "Html": "<p>You can use this open source project to resolve this issue.</p>\r\n<p><a href=\"http://sgmleskulapnet.codeplex.com/\">http://sgmleskulapnet.codeplex.com/</a></p>",
+    "PostedDate": "2012-06-12T13:34:20.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "848197",
+    "ThreadId": "358718",
+    "Html": "<p>To allow form to have child elements use the modify the HtmlNode.HtmlElements collection and remove the \"form\" item.</p>\r\n<p>ElementsFlags.Remove(\"form\")</p>",
+    "PostedDate": "2012-06-12T15:59:17.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

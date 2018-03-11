@@ -1,0 +1,162 @@
+[
+  {
+    "Id": "271132",
+    "ThreadId": "79182",
+    "Html": "<p>I have seen unanswered topic <a href=\"http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=21020\">http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=21020</a>&nbsp;two years ago</p>\r\n<p>However I am wondering if there is a chance or possibility to port it for compact framework 2.0 or 3.5 since compact framework lacks of xpath support (missing&nbsp;XPathNavigator, XsltArgumentList, XPathNodeType, IXPathNavigable, XPathNamespaceScope) and I really dont want to rewriting those classes for CF</p>\r\n<p>I just want to parse (on mobile device) some invalid (x)HTML document as XML but it looks like that there is no solution available</p>\r\n<p>I really hate using regexp to parse html, but I guess that I have tied hands.</p>",
+    "PostedDate": "2009-12-28T05:21:33.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271362",
+    "ThreadId": "79182",
+    "Html": "<p>Well, as you said, XPATH is not supported on CF, but you can remove this from the original Html Agility Pack project and recompile (hopefully using some #if to keep the version), as the parser is using regular .net c# code, and XPATH support is more a satellite feature.</p>\r\n<p>I don't think it's too much work :)</p>",
+    "PostedDate": "2009-12-29T01:07:48.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271413",
+    "ThreadId": "79182",
+    "Html": "<p>It is too much work! At least for someone who is not familiar with the project... using #if to uncomment some blocks of code is not enough, there are still plenty other methods / classes that are not implemented as well in (Xslt, IO.File, Environment) and I am not so familiar with this project so I can not tell which class is required and which is not to finish my task. Well I can't force anyone to rewrite the code for me, so it does not matter.&nbsp;</p>",
+    "PostedDate": "2009-12-29T05:20:13.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271420",
+    "ThreadId": "79182",
+    "Html": "<p>Hum... a version for the compact framework... sounds interesting. Which mobile device were you developing for my I ask?</p>\r\n<p>So anyways we'd have have to decompile and include any classes that are required for the project so that we could make a CF version. I think it sound like fun.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-29T06:08:06.47-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271426",
+    "ThreadId": "79182",
+    "Html": "<p>Yeah, you should definetly do it, it will be lot of fun :)</p>\r\n<p>I am developing for Windows Mobile 5.0 PocketPC. The subset of classes for PocketPC is much richer than for Smartphones</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-29T06:48:49.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271433",
+    "ThreadId": "79182",
+    "Html": "<p>I actually have quite a bit of experience in this area. I maintain a few libraries including a client access library for my work's proprietary connection protocol for legacy PICK systems (some dating back to the late 60's). The library supports .NET 1-3.5 and .NET CF 1-3.5. We have specific builds for .NET 1.1, .NET 2.0, .NET 3.5, .NET CF 1.0, .NET CF 2.0 and .NET CF 3.5. The library's source code is all shared utilizing linked source files and partial classes for the .NET 2.0 and above differences. For the .NET 1.0-1 builds the differences are handled with the precompiler #if directives.</p>\r\n<p>I've done many projects on .NET CF from 1.0 and up. We make warehouse management systems for Symbol Barcode readers that run pocketpc. I've also done a good amount of work for Microsoft Windows Mobile marketing team building installation systems for their cell phone partners.</p>\r\n<p>The version of Win Mo 5 you speak of supports all versions currently out of .NET CF (1.0-3.5). Which version are you targeting? The newer the easier it may be to implement. .NET CF has some rather large chunks missing. I would say we could include the parsing engine and remove the xpath system in favor of LINQ for .NET CF 3.5. That would probably be the easiest route</p>\r\n<p>@kurtnelle, decompiling .NET classes and including them would violate the license for .Net. We'd need to find open source alternatives or write our own if we want to keep the xpath system.</p>",
+    "PostedDate": "2009-12-29T07:27:38.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271440",
+    "ThreadId": "79182",
+    "Html": "<p>Well that sounds like a good news. My (hobby academic) project was originally targeted to .NET CF 2.0 but there is no problem to upgrade it to 3.5</p>",
+    "PostedDate": "2009-12-29T07:44:16.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271444",
+    "ThreadId": "79182",
+    "Html": "<p>have you by chance used Strongly Typed Datasets in your project? if so upgrading will be a bit more painful. I've found that the xsd's need to be reimported to have it work again.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-29T07:58:37.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271449",
+    "ThreadId": "79182",
+    "Html": "<p>I have recently sucessfully deployed the project with .NET CF 3.5 without errors and run it on my device while testing Visual Studio 2008. Maybe I am a just a lucky guy :)</p>",
+    "PostedDate": "2009-12-29T08:06:59.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271565",
+    "ThreadId": "79182",
+    "Html": "<p>Hi.</p>\r\n<p><br>I downloaded the source, removed any reference to the IXPath thigo and also removed String.Split references and now everything works like a charm :)</p>",
+    "PostedDate": "2009-12-29T15:58:00.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271678",
+    "ThreadId": "79182",
+    "Html": "<p>Right I forgot that little fact about the Framework licence; stupid. Well at any rate we could roll our own, albeit it's much harder. Good to know you've got CF experience; I think I'll go get up to speed on that this weekend.</p>\r\n<p>@techi, lucky uh? Sounds dubious :)</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-30T04:37:25.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272246",
+    "ThreadId": "79182",
+    "Html": "<p>perhaps the mono project has xpath classes that can be borrowed/ported?</p>",
+    "PostedDate": "2010-01-01T13:47:10.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450485",
+    "ThreadId": "79182",
+    "Html": "<p>hi everybody,</p>\r\n<p>im very confused about this problem, because im also want to develop an app for windows mobile, which needs to parse websites with xpath. i tried so many things like using classes from the monoprojekt, deleting references to xpath and so on... nothing brought to work :(</p>\r\n<p>Is there no chance to port this beautyful library to the compact framework? Please let me now.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-02T02:45:16.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450630",
+    "ThreadId": "79182",
+    "Html": "I just did some playing around and got it to compile for .NET CF 3.5 . The caveats are no XPATH support and HtmlWeb class was removed, as with Silverlight too many things are missing. I'll run some tests on it and if they all pass then I'll commit my changes to SVN. As an alternative to XPATH you'll need to use LINQ to Objects .  Unfortunately most of our XPATH stuff relies on XPathNavigator quite heavily and it will be rather difficult to updated to the .NET CF's rudimentary XPATH support.",
+    "PostedDate": "2010-06-02T07:49:16.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "462443",
+    "ThreadId": "79182",
+    "Html": "<p>so when will teh CF version available?</p>\r\n<p>&nbsp;</p>\r\n<p>--<br><a href=\"http://htmlxpathtestbed.codeplex.com/\">HTML Agility Pack Test Bed</a></p>",
+    "PostedDate": "2010-07-01T18:38:08.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "462446",
+    "ThreadId": "79182",
+    "Html": "<p>It's available in the svn repo right now. Not sure when I'm going to get around to making a public binary for it. I haven't had enough time to give it a good enough test</p>",
+    "PostedDate": "2010-07-01T18:43:17.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477222",
+    "ThreadId": "79182",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>darthobiwan wrote:</strong><br>\r\n<p>It's available in the svn repo right now. Not sure when I'm going to get around to making a public binary for it. I haven't had enough time to give it a good enough test</p>\r\n</blockquote>\r\n<p>&nbsp;</p>\r\n<p>Is it in trunk ? Couldn't find anywhere.</p>",
+    "PostedDate": "2010-08-05T21:39:21.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477847",
+    "ThreadId": "79182",
+    "Html": "<p>Yes it is in trunk in the folder HAPCompact. It is found in the 2008 solution since VS 2010 no longer supports .NET Compact Framework</p>",
+    "PostedDate": "2010-08-08T17:27:35.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1252230",
+    "ThreadId": "79182",
+    "Html": "I want to get mor useful and detailed information on the mentioned <a href=\"http://www.businessrefinery.com/products/barcode_reader_net/main.html\" rel=\"nofollow\">barcode reader</a>. I have donens of 2d barcodes need to be scanned by using a simpel to use barcode reading application.<br />\n",
+    "PostedDate": "2014-06-02T19:16:25.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1349464",
+    "ThreadId": "79182",
+    "Html": "I can't make HtmlAgilityPack cf2.0 reference working with System.Xml cf3.5 version. Does anyone knows how to do that? My WinCE device has 3.5 cf.<br />\n",
+    "PostedDate": "2015-02-05T12:12:28.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi\n\nI'm getting 2 different out of memory exceptions that are coming up from the LoadHtml method in the HtmlDocument class.\n\n__the 1st is__:\n System.OutOfMemoryException was caught\n  HResult=-2147024882\n  Message=Exception of type 'System.OutOfMemoryException' was thrown.\n  Source=mscorlib\n  StackTrace:\n       at System.String.InternalSubString(Int32 startIndex, Int32 length)\n       at System.String.Substring(Int32 startIndex, Int32 length)\n       at HtmlAgilityPack.HtmlDocument.Parse() in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:line 1467\n       at HtmlAgilityPack.HtmlDocument.Load(TextReader reader) in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:line 614\n       at HtmlAgilityPack.HtmlDocument.LoadHtml(String html) in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:line 660\n\n__And the 2nd is__:\nSystem.OutOfMemoryException was caught\n  HResult=-2147024882\n  Message=Exception of type 'System.OutOfMemoryException' was thrown.\n  Source=mscorlib\n  StackTrace:\n       at System.Collections.Generic.Dictionary`2.Resize(Int32 newSize, Boolean forceNewHashCodes)\n       at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)\n       at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)\n       at HtmlAgilityPack.HtmlNode..ctor(HtmlNodeType type, HtmlDocument ownerdocument, Int32 index) in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlNode.cs:line 156\n       at HtmlAgilityPack.HtmlDocument.CreateNode(HtmlNodeType type, Int32 index) in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:line 752\n       at HtmlAgilityPack.HtmlDocument.PushNodeStart(HtmlNodeType type, Int32 index) in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:line 1624\n       at HtmlAgilityPack.HtmlDocument.NewCheck() in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:line 1115\n       at HtmlAgilityPack.HtmlDocument.Parse() in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:line 1155\n       at HtmlAgilityPack.HtmlDocument.Load(TextReader reader) in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:line 614\n       at HtmlAgilityPack.HtmlDocument.LoadHtml(String html) in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:line 660\n\n__My code that loads the html is:__\n> HtmlDocument htmlDocument = new HtmlDocument();\nhtmlDocument.LoadHtml(html);\nHtmlNodeCollection htmlNodes = htmlDocument.DocumentNode.SelectNodes(\"//a[@href]\");\n\n __html__ is a string variable that contains the string for an html document that has been downloaded.\n\nI think it's important to mention that the document loading is being called from a multi threaded environment.\n\n           for (int i = 0; i < _threadCount; i++)\n           {\n                asyncPool.Add(Task.Run(async () =>\n                {\n                    while (!_cancellationToken.IsCancellationRequested)\n                    {\n                        List<Task<WebPageResult>> asyncDownloadTasks = DownloadNextPageGroup();\n                        await ProcessPagesOnCompletion(asyncDownloadTasks);\n                    }\n                }, _cancellationToken));\n            }\n\nThe html document loading happens inside the __DownloadNextPageGroup__ method.\n\n\nThis exception doesn't happen immediately, I have to let the application run for about 5 minutes before the exception occurs.\n\n__What I've tried:__\n* Loading the html string into a stream before loading it into an HtmlDocument class (with and without encoding specified)\n* setting the instance of htmlDocument to null after each use of the HtmlDocument.\n* Limiting the size of pages loaded to 10 Megabytes.\n\nMy Html Agility Pack version is 1.4.9.0\n\nAny solutions to this problem or temporary workaround would be appreciated.\n\nThanks",
+    "LastUpdatedDate": "2015-02-19T11:42:22.897-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-02-19T11:42:22.897-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Multithread OutOfMemoryException when calling LoadHtml",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35857
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

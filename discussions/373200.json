@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "873046",
+    "ThreadId": "373200",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I created a Blank XAML metro app using VS2012 RC. Have written some C&#43;&#43; code to do some tasks. I need to parse HTML content in my task. I tried with XmlDocument object. But it seems doesn't work for me. I came across Html Agility Pack and downloaded the\r\n packages. The downloaded package contains dll's.</p>\r\n<p>&nbsp;But how can I port this into my project and can use the functionalities. Could some one&nbsp;suggest me on this.</p>\r\n<p>Please help me.</p>\r\n<p>Regards,</p>\r\n<p>Krish</p>\r\n",
+    "PostedDate": "2012-07-18T04:02:33.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "873433",
+    "ThreadId": "373200",
+    "Html": "<p>Porting an existing C# dll to be a full WinRT Metro assembly is not trivial. I recently gave a presentation on how to do this.</p>\r\n<p>Here are the basic steps</p>\r\n<ol>\r\n<li>Take the existing experimental Win8 Metro C# project in the source control here on codeplex. Under the solutions folder you'll find the HtmlAgilityPack.Metro.sln file</li>\r\n<li>Next is to go through every public class and change it to sealed</li>\r\n<li>Then go through and make sure no fields are exposed publicly</li>\r\n<li>The ugly part is at hand, compile and start fixing any other compilation errors</li>\r\n</ol>\r\n<p>I currently have not attempted to do this with HAP for a few reasons. 1 I know it may be a long process to get it all working and 2 it will probably introduce breaking changes for the other versions of HAP.</p>",
+    "PostedDate": "2012-07-18T05:50:21.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "876131",
+    "ThreadId": "373200",
+    "Html": "<p>Hello <a class=\"UserProfileLink\" href=\"http://www.codeplex.com/site/users/view/darthobiwan\">darthobiwan</a>,</p>\r\n<p>Thanks for your replay and advise.</p>\r\n<p>This process may take time for me to complete.</p>\r\n<p>Regards,</p>\r\n<p>Krish</p>",
+    "PostedDate": "2012-07-19T02:13:04.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

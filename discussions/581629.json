@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1354919",
+    "ThreadId": "581629",
+    "Html": "Hi,\r<br />\n<br />\nI have noticed that there is no way to use HAP with multiple threads, since I need to have different HtmlNode.ElementFlags loaded for each thread, because every thread will be parsing a different kind of document.\r<br />\n<br />\nI have checked the code and all these methods and variables are static, making them not usable in a multi-threaded application.\r<br />\n<br />\nSo my guess is I will have to make a sightly change to the code to correct this issue. However, I tried finding the code latest HAP source code, but I was able to find only the version 1.4.0 in the CodePlex repository. I know that the latest version is 1.4.9 according to NuGet packages. Can you guys shed some light or advices on how should I fix this.\r<br />\n<br />\n<br />\nThanks in Advance.<br />\n",
+    "PostedDate": "2015-02-23T07:41:55.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

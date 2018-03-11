@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Dim doc As HtmlDocument = hw.Load(\"http://xxxxxxxxxx/GeneralContent/Active/PrintPage/PrintPage.aspx?PageId=3270\")\n        ' Get all columns in the document\n        Dim table As HtmlNodeCollection = doc.DocumentNode.SelectNodes(\"//table\")\n        ' Get the value of the column and print it\n        For Each col As HtmlNode In table\n \n            Dim rows As HtmlNodeCollection = col.SelectNodes(\"//tr\")\n \n            For Each row As HtmlNode In rows\n                Dim td As HtmlNodeCollection = row.SelectNodes(\"//td\")\n                For Each cell As HtmlNode In td\n                    Response.Write(cell.InnerText)\n \n                Next\n \n            Next\n \n        Next\n \nwhy unknow hw ?",
+    "LastUpdatedDate": "2013-02-21T18:47:18.19-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-03-23T21:44:16.997-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "why unknow hw ?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 26560
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

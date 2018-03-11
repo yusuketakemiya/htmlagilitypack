@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Suppose I have an HTML encoded in windows-1250. I set HAP to detect the encoding but then I save the resulting XHTML into a string (by providing a StringWriter). Instead of it being properly converted into Unicode, the XHTML is still in windows-1250 but all the windows-1250 chars are lost due to inappropriate conversion to Unicode.\n \nI'm not sure if this is an issue or a feature request (for me more like the former). It would be really easy to transcode such pages since the source code page is detected and the target (i.e., .NET string) is known to be Unicode. Here is how you do this: the file should always be read as extended ASCII (i.e., ISO-8859-1). In such string you look for charset or encoding directives. If found, you convert the ISO-8859-1 string into an array of bytes and from there into Unicode by using the detected encoding. The following code snippet should give you a better idea:\n \n        private static Regex mCharsetRegex\n            = new Regex(@\"((charset)|(encoding))\\s*=\\s*(([\"\"'](?<enc>[^\"\"']+)[\"\"'])|((?<enc>[^\\s>\"\"']+)))\", RegexOptions.Compiled | RegexOptions.IgnoreCase); \n \n        public static string GetWebPageDetectEncoding(string url, Encoding defaultEncoding, string refUrl, ref CookieContainer cookies, out bool success) \n        {\n            Utils.ThrowException(defaultEncoding == null ? new ArgumentNullException(\"defaultEncoding\") : null);\n            Encoding extAscii = Encoding.GetEncoding(\"ISO-8859-1\");\n            string html = GetWebPage(url, refUrl, ref cookies, extAscii); // throws ArgumentNullException, ArgumentValueException, UriFormatException, WebException\n            // try to get encoding info from HTML\n            success = false;\n            Match match = mCharsetRegex.Match(html);\n            if (match.Success)\n            {\n                string encStr = match.Result(\"${enc}\");                \n                try\n                {\n                    byte[] bytes = extAscii.GetBytes(html);\n                    Encoding enc = Encoding.GetEncoding(encStr);                    \n                    html = enc.GetString(bytes);\n                    //Console.WriteLine(encStr);\n                    success = true;\n                }\n                catch \n                {\n                    if (defaultEncoding != extAscii)\n                    {\n                        byte[] bytes = extAscii.GetBytes(html);\n                        html = defaultEncoding.GetString(bytes);\n                    }\n                }\n            }\n            else \n            {\n                if (defaultEncoding != extAscii)\n                {\n                    byte[] bytes = extAscii.GetBytes(html);\n                    html = defaultEncoding.GetString(bytes);\n                }\n            }\n            return html;\n        }\n \nI will try to do this directly in HAP. If I succeed (i.e., find the time to do it ;-)), I will let you know...",
+    "LastUpdatedDate": "2013-02-21T18:47:10.557-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-12-28T13:39:45.69-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "When saving to string, transcoding is not done properly",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 29863
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "710827",
+    "ThreadId": "282634",
+    "Html": "\r\n<p>HAP Testbed features:</p>\r\n<ul>\r\n<li>Built-in web request </li><li>Live preview on Xpath result </li><li>Copy / Paste Html Codes </li><li>Results can viewed as Html code or Rendered using WebBrowser control </li><li>Can spawn multiple window (Project) </li><li>Can Return Node result or Node Collection results </li><li>Can return HTML or Text results </li></ul>\r\n<p>get it here</p>\r\n<p><a href=\"http://haptestbed.codeplex.com/\">http://haptestbed.codeplex.com/</a></p>\r\n",
+    "PostedDate": "2011-12-12T03:04:18.413-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

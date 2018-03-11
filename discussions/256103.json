@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "606285",
+    "ThreadId": "256103",
+    "Html": "\r\n<p>hi all..sorry if my english so bad..</p>\r\n<p>i have a problem with my thesis..i want to know how to get all html tags and attributes using c#..in this case i want get all tags and attributes not values of attributes..<br>\r\n&nbsp;<br>\r\nex: in html page there is has a tags and attribute like &lt;html&gt;&lt;/html&gt; &lt;body&gt;&lt;/body&gt; &lt;table widht=&quot;xxx height=&quot;&quot;&gt;&lt;/table&gt;</p>\r\n<p>i want get (html,body,table,widht,height)<br>\r\n&nbsp;<br>\r\nthx before</p>\r\n",
+    "PostedDate": "2011-05-03T00:53:16.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

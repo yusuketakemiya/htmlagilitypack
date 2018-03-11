@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Does anyone know or is there an option to disable the additional p=\"\" which is being added to all my generated <option /> tags?",
+    "LastUpdatedDate": "2013-02-21T18:47:16.46-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-05-18T03:54:35.573-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Additional p attribute on options nodes",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 27095
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Sorry this should have been a discussion not an issue, please delete as raised as a discussion instead",
+      "PostedDate": "2010-05-18T03:55:23.47-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:16.46-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

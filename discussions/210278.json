@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "434517",
+    "ThreadId": "210278",
+    "Html": "<p>Hi, I just found this project and I think it is great, it is exactly what I was looking for, however I need your help.</p>\r\n<p>I am getting all the image references to a website however I don't know how to use HAP to filter certain images, for example I don't want gif and if there is a width or height I don't want them unless is bigger than 150px.</p>\r\n<p>Also what is the best way to check for example if the img has a full reference? or relative?</p>\r\n<p>links = doc.DocumentNode.SelectNodes(&quot;//img&quot;);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (links != null)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (HtmlNode link in links)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;string&gt; hrefTags = new List&lt;string&gt;();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlAttribute att = link.Attributes[&quot;src&quot;];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Write(att.Value);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for your help</p>",
+    "PostedDate": "2010-04-23T00:58:13.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434583",
+    "ThreadId": "210278",
+    "Html": "<p>A lot of that you'll have to do yourself.</p>\r\n<p>For finding the height and width you can check the other attributes on the img tag but for the real dimensions you'll have to do it in code by downloading the image yourself to a Bitmap class in your code.</p>\r\n<p>To tell if it's relative or full reference you'll have to just check the src value to see if it starts with http or not. If not tack on the position the web page is in. Luckily many webservers still honor the whole ../../somedirectory/somefile.jpg syntax even if you give it an http before it. ie http://somedomain.com/path/to/page/dir/../../../images/image.png . I've used this trick a few times when scraping sites, still your mileage may vary.</p>\r\n<p>One thing you could do for the image filtering by size is use a lambda expression instead.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> imageList = doc.DocumentNode.Descendants(<span style=\"color:#a31515\">&quot;img&quot;</span>).Select(x=&gt;MakeImgSrcAbsolute(x)).Where(x=&gt;IsImageCorrectWidth(x.Attributes[<span style=\"color:#a31515\">&quot;src&quot;</span>])).ToList();\r\n\r\n<span style=\"color:blue\">public</span> <span style=\"color:blue\">void</span> MakeImgSrcAbsolute(HtmlNode node)\r\n{\r\n    <span style=\"color:green\">//fix src attribute here</span>\r\n}\r\n\r\n<span style=\"color:blue\">public</span> <span style=\"color:blue\">bool</span> IsImageCorrectWidth(<span style=\"color:blue\">string</span> source, <span style=\"color:blue\">int</span> maxWidth)\r\n{\r\n   <span style=\"color:blue\">return</span> <span style=\"color:blue\">new</span> Bitmap(source).Width&lt;=maxWidth;\r\n}\r\n\r\n\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-23T05:25:32.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434684",
+    "ThreadId": "210278",
+    "Html": "<p>Thanks for your helpful reply, I am relatively new to C# and never heard about lambda expression before but I read about it and I think I got it.</p>\r\n<p>2 quick questions for you, we basically want to do something similar to the facebook on our intranet, when a sales rep adds a link, we want to be able to get the html and display a list of images so they can select a main image. We thought about downloading them to a temp folder to check the size but we are concerned about performance, we want the images to be displayed as fast as possible, even though we will resize the image we would like to remove from the list icons or small images.</p>\r\n<p>Facebook is very good at filtering icons, do you think they do what you suggested (bitmap) have you tried this before? is the bitmap loaded on memory and then released? there is no way to get that information from the html right?</p>\r\n<pre><span style=\"color:blue\">return</span> <span style=\"color:blue\">new</span> Bitmap(source).Width&lt;=maxWidth;<br><br></pre>\r\n<p>Question #2 is there an easy way to select only nodes where the extension is not gif using only one statement?</p>\r\n<p>links = doc.DocumentNode.SelectNodes(&quot;//img&quot;);</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a lot for your help!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-23T08:54:18.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

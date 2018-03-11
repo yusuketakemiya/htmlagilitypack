@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1246228",
+    "ThreadId": "545588",
+    "Html": "Im trying to load a webpage but i keep getting the following error:<br />\nAn unhandled exception of type 'System.ArgumentException' occurred in mscorlib.dll<br />\nAdditional information: 'gzip' is not a supported encoding name.<br />\n<br />\nThere is a thread about gzip here:<br />\n<a href=\"https://htmlagilitypack.codeplex.com/discussions/22790\" rel=\"nofollow\">https://htmlagilitypack.codeplex.com/discussions/22790</a><br />\n<br />\nBut i cant even find half the code that i am suppose to change in HtmlAgilityPack 1.4.6. Is that part of the source code changed? And is it possible to fix this?<br />\nIm using this to load the wepsite:<br />\n<pre><code>      HtmlWeb site = new HtmlWeb();\n      HtmlAgilityPack.HtmlDocument document = site.Load(URL);</code></pre>\n\n",
+    "PostedDate": "2014-05-16T10:01:15.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

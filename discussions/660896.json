@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1491561",
+    "ThreadId": "660896",
+    "Html": "Hi there,\r<br />\nDoes HAP close connections?\r<br />\n<br />\nI have to scrap like 1000 get request from one site, and I am doing the load like:\r<br />\n<br />\nvar doc = htmlWeb.Load(urlWithGetInIt);\r<br />\n<br />\nThen I scrap with xpath codes. \r<br />\n<br />\nMy question is if I do another .Load request, does it mantains the session? Do I have to close it after a Load?<br />\n",
+    "PostedDate": "2017-01-24T04:10:22.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

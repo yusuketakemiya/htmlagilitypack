@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "163275",
+    "ThreadId": "48908",
+    "Html": "If HtmlAttributeCollection and HtmlNodeCollection implemented IEnumerable&lt;HtmlAttribute&gt; and IEnumerable&lt;HtmlNode&gt; respectivly users of .Net 3.5 would get free Linq support.&nbsp; Would you be open to patches which compile under .Net 2.0 and enable this support?<br>\r\n",
+    "PostedDate": "2009-03-01T15:09:00.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166351",
+    "ThreadId": "48908",
+    "Html": "Making a LINQ Provider out of HTML Agility Pack would be neat, albeit a massive pain in the behind.<br>\r\nHow about converting it into XML for LINQ to XML to handle. see <a href=\"http://vijay.screamingpens.com/archive/2008/05/26/linq-amp-lambda-part-3-html-agility-pack-to-linq.aspx\">LINQ to HTML</a>.<br>\r\nI think this approach is a win win.<br>\r\n<br>\r\n<br>\r\nI'm working on making this faster - thanks to nice commenters - but my scenarios make HTTP requests which dwarf the reparsing time.&nbsp; Like, uber dwarf.<br>\r\n<br>\r\nGive me a bit more info about your html querying scenario.<br>\r\n<br>\r\n<br>\r\nRegards,<br>\r\nCV<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-09T21:53:08.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "168340",
+    "ThreadId": "48908",
+    "Html": "Nothing particularly complicated honestly I'm not even suggesting that there should be a Linq provider other than the automatic support 3.5 users get from the Enumerable class.&nbsp; Basically this boils down to HtmlAttributeCollection and HtmlNodeCollection should implement IEnumerable&lt;HtmlAttribute&gt; and IEnumerable&lt;HtmlNode&gt; rather than IEnumerable.&nbsp; Really I just like Where better than having to foreach over a set and filter stuff out myself. <br>\r\n",
+    "PostedDate": "2009-03-15T13:34:41.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "168433",
+    "ThreadId": "48908",
+    "Html": "Ah, okay! Is it hard to implement those generic ienumerables?<br>\r\nthat's an interesting idea, I'll definitely experiment with it sometime this week.<br>\r\n<br>\r\nIf you get to it before then, feel free to submit a patch, I'd like to see it too. Would then like to compare performance betweeen linq to objects and linq to XML.<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-16T00:02:37.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "168683",
+    "ThreadId": "48908",
+    "Html": "&gt;&gt; Is it hard to implement those generic ienumerables?<br>\r\n<br>\r\nNot at all.&nbsp; For the more part, it's just changing the Function signatures to be returning HtmlAttribute instead of Object.<br>\r\n",
+    "PostedDate": "2009-03-16T12:16:48.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "168842",
+    "ThreadId": "48908",
+    "Html": "Cool! I had a quick look. This is pretty easy.<div><br></div><div>I'd submit a patch but it seems these guys haven't accepted patches or done a release in a while.</div><div><br></div><div>If any project contributors read this? Can you accept patches for moving forward into CLR 2+?</div><div><br></div><div><br><div><br></div><div><br></div></div>",
+    "PostedDate": "2009-03-16T18:59:03.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

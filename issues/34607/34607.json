@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you pass a _NetworkCredential_ but not a _WebProxy_ to the _Load_ method, the credentials are ignored.\n\nTo reproduce:\n\n```\nvar web = new HtmlWeb();\nvar credentials = new NetworkCredential(...);\nweb.Load(url, method, null, credentials);\n```\n\nThe problem is in the private _private HttpStatusCode Get(Uri uri, string method, string path, HtmlDocument doc, IWebProxy proxy, ICredentials creds)_ method.\n\nSince the _Load_ method requires a _WebProxy_ instance instead of an _IWebProxy_ instance, there is no way to pass the default proxy without calling a method which has been obsolete since .NET 2.0!",
+    "LastUpdatedDate": "2013-10-29T07:23:43.1-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-10-29T07:23:43.1-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlWeb Ignores Credentials",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 34607
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

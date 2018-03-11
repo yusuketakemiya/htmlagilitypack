@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "822342",
+    "ThreadId": "351897",
+    "Html": "\r\n<p>I have a UTF8 HTML file that I process with HAP but I really want the resulting HTML to be in 7-bit format, i.e. with UTF8 chars encoded/esacaped (e.g. &oslash; -&gt; &amp;oslash;) but &lt;&gt; and so on should be preserved as they are. What is the best\r\n way to do this? The only solution I have found so far is to manually check each an every character of the HTML file and convert it with HTMLencode from HTMLutility if necessary. This seems slow and cumbersome but is it the only way?</p>\r\n",
+    "PostedDate": "2012-04-11T05:11:49.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "822377",
+    "ThreadId": "351897",
+    "Html": "<p>I found this solution using Intellisense :)</p>\r\n<p>string sevenbit = HtmlEntity.Entitize(utf8string, true, false);</p>\r\n<p>This seems to do the trick just nicely. But is it possible to have HAP do this automatically instead of me explicitly having to code it?</p>",
+    "PostedDate": "2012-04-11T06:29:44.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

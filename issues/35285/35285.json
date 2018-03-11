@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi all!\nI have an issue with HAP moving my WinForms application from local laptop to Windows Azure Virtual Machine. Azure VM is more powerful than laptop, each CPU-bound operation completes faster on VM.\n\nBut HtmlDocument.LoadHtml method completes much slowly on VM, CPUs not loaded much while this method runs. What can be the reason? Maybe encoding/language issue? Btw. I load cyrillic page. OS on my local machine is cyrillic, on the VM - english. I just cant get what is the reason. Will be glad of any help.",
+    "LastUpdatedDate": "2014-06-10T07:47:58.337-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-06-10T07:47:58.337-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": ".LoadHtml method too slow on Azure Virtual Machine",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35285
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

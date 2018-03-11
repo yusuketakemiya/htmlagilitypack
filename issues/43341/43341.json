@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In the metro version of HtmlWeb.LoadFromWebAsync an exception is thrown if the loaded page's status is not 200.\n\nIt would be really helpful if a custom exception was thrown in this case that included the Http Status code.",
+    "LastUpdatedDate": "2016-02-03T04:37:04.03-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-02-03T04:37:04.03-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Give more detail in Exception(\"Error downloading html\") for Metro version of HtmlWeb",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43341
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

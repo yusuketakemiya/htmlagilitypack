@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "584375",
+    "ThreadId": "250678",
+    "Html": "\r\n<p>So I was trying to use the HtmlAgilityPack to load as web resource and generate a DOM tree and found that a piece of functionality that I was wanting to use, the ability to call Load() with a web uri, was missing.&nbsp; I have added the functionality myself\r\n and wanted to contribute my solution back to the project.&nbsp;</p>\r\n<p>In HtmlDocument.cs</p>\r\n<p>Added dependancy:</p>\r\n<p>using System.Net;</p>\r\n<p>Added Functionality:</p>\r\n<pre style=\"font-family:consolas\">&nbsp;<span style=\"color:gray\">///</span><span style=\"color:green\">&nbsp;</span><span style=\"color:gray\">&lt;summary&gt;</span><br>&nbsp;<span style=\"color:gray\">///</span><span style=\"color:green\">&nbsp;Loads&nbsp;an&nbsp;HTML&nbsp;document&nbsp;from&nbsp;a uri passed as a string.</span><br>&nbsp;<span style=\"color:gray\">///</span><span style=\"color:green\">&nbsp;</span><span style=\"color:gray\">&lt;/summary&gt;</span><br>&nbsp;<span style=\"color:gray\">///</span><span style=\"color:green\">&nbsp;</span><span style=\"color:gray\">&lt;param&nbsp;name=</span><span style=\"color:gray\">&quot;uri&quot;</span><span style=\"color:gray\">&gt;</span><span style=\"color:green\">The complete url to the web resource to be loaded.</span><span style=\"color:gray\">&lt;/param&gt;</span><br> public void LoadUri(string uri)<br> {<br>     if (uri == null)<br>         throw new ArgumentNullException(&quot;uri&quot;);<br>    <br>     HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);<br>     request.Timeout = 30*60*1000;<br>     HttpWebResponse response = (HttpWebResponse)request.GetResponse();<br>     StreamReader sr = new StreamReader(response.GetResponseStream());<br>     Load(sr);<br>     sr.Close();<span style=\"color:gray\"><br><span style=\"color:#000000\">}</span><br><br><span style=\"color:#000000\">Please feel free to add/use this code as needed.  I have found it useful.<br><br>-HTH<br><br><br>John Bouma</span></span></pre>\r\n",
+    "PostedDate": "2011-03-22T06:39:11.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050759",
+    "ThreadId": "250678",
+    "Html": "Hi,<br />\n<br />\nThanks for the great add-on-method, exactly what I was looking for...<br />\n<br />\nI also needed to pass in credentials, so I'm posting the changes I did here as well...<br />\n<pre><code>        public void LoadUri(string uri)\n        {\n            LoadUri(uri, System.Net.CredentialCache.DefaultCredentials);\n        }\n        public void LoadUri(string uri, string userName, string password, string domain)\n        {\n            LoadUri(uri, new NetworkCredential(userName, password, domain));\n        }\n        public void LoadUri(string uri, ICredentials credentials)\n        {\n            if (uri == null)\n                throw new ArgumentNullException(&quot;uri&quot;);\n            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);\n            request.Credentials = credentials;\n            request.Timeout = 1 * 60 * 1000;\n            \n            using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())\n                using (StreamReader sr = new StreamReader(response.GetResponseStream()))\n                {\n                    Load(sr);\n                }\n        }</code></pre>\n\n",
+    "PostedDate": "2013-05-30T10:36:28.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

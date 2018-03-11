@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This has been added for the next release",
+    "ClosedDate": "2009-12-31T19:02:50.81-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The UserAgent string is required by some sites, attribute needs to be added to HtmlWeb class.",
+    "LastUpdatedDate": "2013-05-16T05:32:58.103-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-12-21T11:36:12.27-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "UserAgent required by some sites",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 25743
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "It could be more helpful if you kept the feature requests open until they are included in a release that is released and to provide the release they are included in.  Closing and stating this has been added to the next release without stating what that version is planned to be and when it will be out is not very helpful.  The statement for adding to next release is almost 2 months old now, and the last release is now almost for months old.",
+      "PostedDate": "2010-02-19T08:02:07.39-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:20.69-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:58.103-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

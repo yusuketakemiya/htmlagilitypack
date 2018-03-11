@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1309711",
+    "ThreadId": "568816",
+    "Html": "Basically I am to select certain elements, like //table[2], but I cannot specify any indexes as it returns a null element.<br />\n<br />\nI am wondering if having multiple &lt;html&gt; tags could be the issue. <br />\n<br />\nIn short this is how my html structure looks that I am pulling from.<br />\n<pre><code>&lt;html&gt; \n     &lt;table&gt; \n          //table 1 contents \n          &lt;table&gt; \n               //table 1 - A contents \n          &lt;/table&gt; \n     &lt;/table&gt; \n&lt;/html&gt; \n&lt;html&gt; \n     &lt;table&gt; \n               //table 2 contents \n          &lt;table&gt; \n               //table 2 - A contents \n          &lt;/table&gt; \n          &lt;table&gt; \n               //table 2 - B contents \n          &lt;/table&gt; \n          &lt;table&gt; \n               //table 2 - C contents \n          &lt;/table&gt; \n     &lt;/table&gt; \n&lt;/html&gt; \n&lt;html&gt; \n     &lt;table&gt; \n          //table 3 contents \n     &lt;/table&gt; \n&lt;/html&gt;</code></pre>\n\nSo if I want table 2 - B, I would say <br />\n<pre><code>&quot;//table[2]//table[2]&quot;</code></pre>\n\nWhich returns a null element.<br />\n<br />\nSo whenever I try to use a index [#], it does not work. Any guess as to why?<br />\n",
+    "PostedDate": "2014-10-01T12:58:12.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

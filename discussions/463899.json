@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1113065",
+    "ThreadId": "463899",
+    "Html": "I've got the following code snippet and would like to retrieve the value of an attribute by including it in the XPath expression:<br />\n<pre><code>foreach (HtmlNode node in doc.DocumentNode.SelectNodes(&quot;//a/@href&quot;))\n{\n    HtmlAttribute attr = node as HtmlAttribute;\n    if (attr != null)\n    {\n        return attr.Value;\n    }\n}\n</code></pre>\n\nBut the compiler complains it can never cast an HtmlNode to an HtmlAttribute. With XML, that should work just fine IIRC. How does it work with your Html* classes?<br />\n",
+    "PostedDate": "2013-10-28T06:45:03.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

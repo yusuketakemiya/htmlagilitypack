@@ -1,0 +1,91 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I successfully add NuGet HtmlAgilityPack v1.4.2 package to my solution.\nNow new version v1.4.3 become available as NuGet package and I tried to update it. My Solution contains: ASP.NET MVC 4 Project and regular class libraries projects (i.e. no silverlight or Windows Phone related projects)\n \nGet following error:\n'HtmlAgilityPack' could not be installed because it is not compatible with any project in the solution. The package targets the following frameworks: \nSilverlight, Version = v4.0\nSilverlight, Version= v3.0, Profile=WindowsPhone\nSilverlight, Version= v4.0, Profile=windowsphone71\n \nIf I try to \"Manage\" installed package (for example to remove it), I got little bit different message:\n'HtmlAgilityPack' could not be installed because it is not compatible with any project in the solution. The package targets the following frameworks: \nSilverlight, Version = v4.0\n \nSo can't uninstall or update package using VS 2010 \"Manage NuGet Packages\" dialog",
+    "LastUpdatedDate": "2013-02-21T18:47:02.76-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-11-23T02:18:51.557-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NuGet package update / manage Fails via VS Manage NuGet Packages dialog",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 31801
+  },
+  "FileAttachments": [
+    {
+      "FileId": 12312,
+      "FileName": "HAPNuget.png",
+      "DownloadUrl": ".\\12312"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I was able to fix issue using NuGet Console and executing following commands:\r\n\r\nPM> Uninstall-Package HtmlAgilityPack\r\nSuccessfully removed 'HtmlAgilityPack 1.4.2' from ...\r\n\r\nPM> Install-Package HtmlAgilityPack\r\nSuccessfully installed 'HtmlAgilityPack 1.4.3'.\r\nSuccessfully added 'HtmlAgilityPack 1.4.3' to ...",
+      "PostedDate": "2011-11-23T02:25:21.323-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This is a less than optimal solution. Why does the package depend on Silverlight? Is this a true requisite or is it an error?",
+      "PostedDate": "2011-12-14T10:03:30.933-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-12-14T11:19:09.4-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I think this might be a bug in Nuget. I was able to install HAP 1.4.2 using install-package HtmlAgilityPack -Version 1.4.2 and then run an update. It all worked just fine.\r\n\r\nHAP does not have a dependancy on Silverlight. The Nuget package does include the SL dlls in separate folders since that is one of the big features of Nuget. Package all the different types of your library and allow Nuget to pick the right one for the project.\r\n\r\nI have attached an image of the current nuget package and it's contents.\r\n\r\nI can hardcode that the base dll to be full framework, nuget is supposed to do that by default. ",
+      "PostedDate": "2011-12-14T11:19:10.93-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I'm wondering if this might be a x86/x64 issue?  I am on x64 and had the same issue, and doing the power shell command worked for me as well.",
+      "PostedDate": "2012-01-30T15:00:58.013-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-01-31T13:27:48.463-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-02-20T10:24:13.9-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-03-14T08:44:04.143-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:02.76-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

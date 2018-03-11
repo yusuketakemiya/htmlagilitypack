@@ -1,0 +1,40 @@
+Index: HtmlAgilityPack/HtmlWeb.cs
+===================================================================
+--- HtmlAgilityPack/HtmlWeb.cs	(revision 31537)
++++ HtmlAgilityPack/HtmlWeb.cs	(working copy)
+@@ -6,6 +6,7 @@
+ using System.Xml.Serialization;
+ using System.Xml.Xsl;
+ using Microsoft.Win32;
++using System.Text;
+ 
+ namespace HtmlAgilityPack
+ {
+@@ -472,7 +473,7 @@
+ 						}
+ 						else
+ 						{
+-							doc.Load(s, true);
++							doc.Load(s, DefaultEncoding, true);
+ 						}
+ 					}
+ 				}
+@@ -803,5 +804,18 @@
+ 				_usingCache = value;
+ 			}
+ 		}
++
++		private Encoding _defaultEncoding = new UTF8Encoding();
++		public Encoding DefaultEncoding
++		{
++			get
++			{
++				return _defaultEncoding;
++			}
++			set
++			{
++				_defaultEncoding = value;
++			}
++		}
+ 	}
+ }

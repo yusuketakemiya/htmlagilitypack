@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "some times, one result will be missing when we update two htmlnodes in two parallel threads.\n \n \n \nParallel.ForEach(HtmlDocument.DocumentNode.ChildNodes,node=> node.SetAttributeValue(\"value\",\"some text\"));",
+    "LastUpdatedDate": "2013-02-21T18:47:13.267-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-08-01T18:15:32.023-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "The nodes is not thread safe.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28360
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "sorry, Its my fault.  I made some mistake in my code. please give up it for now, thanks.",
+      "PostedDate": "2010-08-03T00:09:59.62-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:13.267-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

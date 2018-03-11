@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "There seems to be a problem with HtmlNode.OuterHtml writing to itself until a StackOverflow occurs. The repo is simple:\n \npublic class Test\n{\n\tpublic void Run(string html)\n\t{\n\t\tHtmlDocument document = new HtmlDocument();\n\t\tdocument.LoadHtml(html);\n \n\t\tRemoveAttributes(document.DocumentNode);\n\t\tdocument.Save(@\"out.html\");\n\t}\n \n\tprivate void RemoveAttributes(HtmlNode parentNode)\n\t{\n\t\tfor (int i = 0; i < parentNode.ChildNodes.Count; i++)\n\t\t{\n\t\t\tif (parentNode.ChildNodes[i].Name.ToLower() != \"span\")\n\t\t\t{\n\t\t\t\tparentNode.ChildNodes[i].Attributes.RemoveAll();\n\t\t\t}\n \n\t\t\tif (parentNode.ChildNodes[i].ChildNodes.Count > 0)\n\t\t\t\tRemoveAttributes(parentNode.ChildNodes[i]);\n\t\t}\n\t}\n}\n \nThe fix is a simple change to the OuterHtml property so _outerChanged is set to false first. I've uploaded a patch for the fix.",
+    "LastUpdatedDate": "2014-08-14T09:42:03.98-07:00",
+    "PlannedForRelease": "2.0",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-01-27T02:57:17.01-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Stackoverflow with HtmlNode.OuterHtml",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 30059
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "A work around is to avoid triggering the change of the outer html of a HtmlNode of NodeType text as mentioned in https://htmlagilitypack.codeplex.com/workitem/35461",
+      "PostedDate": "2014-08-14T09:42:03.98-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

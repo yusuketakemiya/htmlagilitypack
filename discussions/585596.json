@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1361663",
+    "ThreadId": "585596",
+    "Html": "I'm getting the following error message after installing the HTML Agility Pack using the NuGet package manager: Could not load file or assembly 'HTMLAgilityPack, Version 1.4.6.0, ... I installed the latest version, which is 1.4.9.0. I got the error when I tried to design a new report in Visual Studio 2013.\r<br />\n<br />\n<img src=\"http://i.imgur.com/UgXYYb6.jpg\" alt=\"Image\" />\r<br />\n<br />\nAs you can see, it is in the References, and the dll is in the bin folder.\r<br />\n<br />\n<img src=\"http://i.imgur.com/6xLAz9x.jpg\" alt=\"Image\" />\r<br />\n<br />\nThis is my first try at writing a report in Visual Studio, and it's mandatory that I use that. Is there something I have to do to get this to work?<br />\n",
+    "PostedDate": "2015-03-09T11:13:03.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

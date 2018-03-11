@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "92111",
+    "ThreadId": "27608",
+    "Html": "Hi there.<br>\r\nFirst of all: awesome tool!<br>\r\n<br>\r\nBut now I'm a bit stuck: I try to spider a website. I send some Params (faking a form-Search) and want to read the results. When I use the WinForm-WebBrowser everything works fine, but when reading the site via HtmlWeb.Load() the HTML only contains something like &quot;your Browser does not support our technology&quot;. <br>\r\n<br>\r\nSo: Can I fake an IE or something like that whit HtmlAgilityPack? <br>\r\n<br>\r\nThx in advance<br>\r\n",
+    "PostedDate": "2008-05-13T02:06:22.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134674",
+    "ThreadId": "27608",
+    "Html": "Add the following to your HtmlWeb.cs (patched to 1.3.0.0 codebase, line numbers in []'s):<div><br></div><div>[43] private string _userAgent;<br></div><div>[323]req.UserAgent = _userAgent;</div><div><div>[777]public string UserAgent{ get { return _userAgent; }  set { _userAgent = value; } }</div><div><br></div><div>Then use as follows:</div><div><br></div><div>HtmlWeb htweb = new HtmlWeb();</div><div>htweb.UserAgent = &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.3) Gecko/2008092417&quot;;<br></div><div>HtmlDocument htdoc = htweb.Load( &quot;http://www.codeplex.com&quot; );</div><div><br></div><div>~Terence</div><div><br></div></div>",
+    "PostedDate": "2008-11-23T22:24:14.413-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

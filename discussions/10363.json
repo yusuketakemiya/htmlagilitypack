@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "33594",
+    "ThreadId": "10363",
+    "Html": "\r\nI have been searching on google for the last day or so and I cannot find any examples of how to pull data from a html table on a remote webserver.<br /><br />I have a project where I need to parse data from a specific table on a webpage with multiple tables.<br /><br />The issue here is I am trying to use htmlweb.load to pull the remote page but I guess I need to turn that into a stream before I can parse it with htmldocument?  Would it be easier to just save the file to the local disk and parse it with htmldoc from there?  If so, are there any issues with overwriting an existing document? (this task needs to be done daily)<br /><br />This looks like an excellent tool to use but the lack of examples in the documentation makes it a little hard to get started.<br /><br />Any help would be appreciated.<br />",
+    "PostedDate": "2007-05-16T18:29:23.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "34903",
+    "ThreadId": "10363",
+    "Html": "\r\nHi Pikoro,<br /><br />same to me :-)<br /><br />Still have a Webpage where i try to get the Collection of a specific &lt;Table&gt;.<br /><br />// - - - bof<br /><br />string sUrlHtml = @\"http://www.myweb.com\";<br /><br />HtmlAgilityPack.HtmlWeb oHtmlWeb = new HtmlAgilityPack.HtmlWeb();<br /><br />HtmlDocument oHtmlDocument = oHtmlWeb.Load(sUrlHtml);<br /><br />HtmlNode oRootNode = oHtmlDocument.DocumentNode;<br /><br />// - - - eof<br /><br />gives me the Root. So i can step through &lt;oRootNode.ChildNotes&gt; like:<br /><br /><br />// - - - bof<br /><br />HtmlNodeCollection oNC1 = oRootNode.Childnotes<br />HtmlNode                     oHN1 = oNC1<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%3cn%3e\">&lt;n&gt;</a><br /><br />HtmlNodeCollection oNC2 = oHN1.Childnotes<br />HtmlNode                     oHN2 = oNC2<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%3cn%3e\">&lt;n&gt;</a><br /><br />// ...and so on<br /><br />// - - - eof<br /><br />But in case of more complex HTML/WebPages it is very complicate to do it in that way. Espacialy as i know what Table i amn looking for. I am still looking for an easier Way - for example stepping recursive through the Nodes and ther Collection looking for Node with known Attributes.<br /><br />Any Idea?<br /><br />Regards<br />Jan Waiz<br /><br />You can contact me also directly via Mail: hamburg@icomedv.de<br /><br /><br /><br />",
+    "PostedDate": "2007-05-29T06:26:10.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "35711",
+    "ThreadId": "10363",
+    "Html": "\r\nHi Jan,<br />I have just read your message<br /><br />I'm try to solve the same problem in these days...<br /><br />I'm trying to find a simple solution to write code to reach the same<br />result of the standalone programs that extract data from the web.<br /><br />I'm using \"watin\", that permit to find some tables in an easy way, but<br />I'm still searching something like:<br />in this page, there are some repeated tables with 10x5 fields; grab me<br />this this this and this field of each table...<br /><br />If somebody is interested to solve the same problem, please contact me...<br /><br />Regards<br />Stefano<br /><br />                                             stefano2212                @<br />                                             gmail.com<br /><br /><br />",
+    "PostedDate": "2007-06-04T22:53:56.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "36875",
+    "ThreadId": "10363",
+    "Html": "\r\nHi,<br /><br />This is how I solved the problem of extracting info from a html table<br /><br /><b>HTML</b><br />&lt;BODY&gt;<br />  &lt;TABLE&gt;<br />    &lt;TR&gt;<br />      &lt;TD&gt;Row 0, Col 0&lt;/TD&gt;<br />      &lt;TD&gt;Row 0, Col 1&lt;/TD&gt;<br />    &lt;/TR&gt;<br />    &lt;TR&gt;<br />      &lt;TD&gt;Row 1, Col 0&lt;/TD&gt;<br />      &lt;TD&gt;Row 1, Col 1&lt;TD&gt;<br />    &lt;/TR&gt;<br />  &lt;/TABLE&gt;<br />&lt;/BODY&gt; <br /><br /><b>Code</b><br />// Load the html document<br />HtmlWeb web = new HtmlWeb();<br />HtmlDocument doc = web.Load(\"http://myServer/myTable.htm\");<br /><br />// Get all tables in the document<br />HtmlNodeCollection tables = doc.DocumentNode.SelectNodes(\"//TABLE\");<br /><br />// Iterate all rows in the first table<br />HtmlNodeCollection rows = tables[0].SelectNodes(\".//TR\");<br />for (int i = 0; i &lt; rows.Count; ++i) {<br /><br />  // Iterate all columns in this row<br />  HtmlNodeCollections cols = rows[i].SelectNodes(\".//TD\");<br />  for (int j = 0; j &lt; cols.Count; ++j) {<br /><br />    // Get the value of the column and print it<br />    string value = cols[j].InnerText;<br />    Console.WriteLine(value);<br />  }<br />}<br /><br /><b>Result</b><br />Row 0, Col 0<br />Row 0, Col 1<br />Row 1, Col 0<br />Row 1, Col 1<br /><br />Hope this helps!<br /><br />Cheers!<br />Johan Olsson<br /><br />",
+    "PostedDate": "2007-06-14T01:55:28.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "43630",
+    "ThreadId": "10363",
+    "Html": "\r\n\"HtmlNodeCollection tables = doc.DocumentNode.SelectNodes(\"//TABLE\");\"<br /><br />It appears that the parameter to SelectNodes() is case-sensitive.  Is there a way to switch it to case-insensitive?<br />",
+    "PostedDate": "2007-08-03T10:32:05.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "44100",
+    "ThreadId": "10363",
+    "Html": "\r\nHello Jan,<br />To me it sounds like using an XPath query will work for you.  For example, the following will give you all the cell nodes in your html document where the attribute Class = details.<br /><br />public void xSearch(string url)<br />{<br />  //Load the Html Document<br />  HtmlWeb hw = new HtmlWeb(); <br />  HtmlDocument doc = hw.Load(url);<br /><br />  //Set the XPath query<br />  string path = \"//td\\[@class='details']\";<br /><br />  //Xpath query the document for all matching nodes<br />  HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes(path);   <br /><br />//Get all the nodes in the node collection<br />foreach (HtmlNode n in nodes)  <br />  {<br />    System.Console.WriteLine(n.InnerHtml);<br />  }<br />}<br />...<br />",
+    "PostedDate": "2007-08-07T13:41:26.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "44101",
+    "ThreadId": "10363",
+    "Html": "\r\nHi Johan,<br /><br />You could simplify your code a great deal.  XPath Rules allow you to use //td to select all elements that match, so no need to iterate tables and rows.  Also, if you have multiple tables and wanted to select all columns from only the first table, use xPath query //table[1]//td    Try it out.  (also, I think all elements should be in lowercase, no?)<br /><br /><b>Code</b><br />// Load the html document<br />HtmlWeb web = new HtmlWeb();<br />HtmlDocument doc = web.Load(\"http://myServer/myTable.htm\");<br /><br />// Get all columns in the document<br />HtmlNodeCollection cols = doc.DocumentNode.SelectNodes(\"//TD\");<br /><br />    // Get the value of the column and print it<br />    foreach (HtmlNode col in cols)<br />    {<br />         Console.WriteLine(col.InnerText);<br />    }<br /><br /><div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />JohanOlsson wrote:<br />Hi,<br /><br />This is how I solved the problem of extracting info from a html table<br /><br /><b>HTML</b><br />&lt;BODY&gt;<br />  &lt;TABLE&gt;<br />    &lt;TR&gt;<br />      &lt;TD&gt;Row 0, Col 0&lt;/TD&gt;<br />      &lt;TD&gt;Row 0, Col 1&lt;/TD&gt;<br />    &lt;/TR&gt;<br />    &lt;TR&gt;<br />      &lt;TD&gt;Row 1, Col 0&lt;/TD&gt;<br />      &lt;TD&gt;Row 1, Col 1&lt;TD&gt;<br />    &lt;/TR&gt;<br />  &lt;/TABLE&gt;<br />&lt;/BODY&gt; <br /><br /><b>Code</b><br />// Load the html document<br />HtmlWeb web = new HtmlWeb();<br />HtmlDocument doc = web.Load(\"http://myServer/myTable.htm\");<br /><br />// Get all tables in the document<br />HtmlNodeCollection tables = doc.DocumentNode.SelectNodes(\"//TABLE\");<br /><br />// Iterate all rows in the first table<br />HtmlNodeCollection rows = tables[0].SelectNodes(\".//TR\");<br />for (int i = 0; i &lt; rows.Count; ++i) {<br /><br />  // Iterate all columns in this row<br />  HtmlNodeCollections cols = rows[i].SelectNodes(\".//TD\");<br />  for (int j = 0; j &lt; cols.Count; ++j) {<br /><br />    // Get the value of the column and print it<br />    string value = cols[j].InnerText;<br />    Console.WriteLine(value);<br />  }<br />}<br /><br /><b>Result</b><br />Row 0, Col 0<br />Row 0, Col 1<br />Row 1, Col 0<br />Row 1, Col 1<br /><br />Hope this helps!<br /><br />Cheers!<br />Johan Olsson<br /><br /><br /><br /></div>",
+    "PostedDate": "2007-08-07T13:54:20.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "448827",
+    "ThreadId": "10363",
+    "Html": "<p>Hi Everyone,</p>\r\n<p>Thanks for posting, this was really helpful for me.&nbsp; There are a couple of corrections to Johan's code:</p>\r\n<p>1.&nbsp; TABLE, TR, and TD should all be lowercase.</p>\r\n<p>2.&nbsp; It's HtmlNodeCollection not HtmlNodeCollections for the &quot;Iterate Rows Line&quot;.</p>\r\n<p>With these corrections, and loading from a LOCAL file, my code looks like this:</p>\r\n<pre>                string FileName = &quot;C:\\mydirectory\\myfile.html&quot;;\r\n\r\n                //HtmlWeb web = new HtmlWeb();\r\n                HtmlDocument doc = new HtmlDocument();\r\n                doc.Load(FileName);\r\n\r\n                // Get all tables in the document\r\n                HtmlNodeCollection tables = doc.DocumentNode.SelectNodes(&quot;//table&quot;);\r\n\r\n                // Iterate all rows in the first table\r\n                HtmlNodeCollection rows = tables[0].SelectNodes(&quot;.//tr&quot;);\r\n                for (int i = 0; i &lt; rows.Count; ++i)\r\n                {\r\n\r\n                    // Iterate all columns in this row\r\n                    HtmlNodeCollection cols = rows[i].SelectNodes(&quot;.//td&quot;);\r\n                    for (int j = 0; j &lt; cols.Count; ++j)\r\n                    {\r\n\r\n                        // Get the value of the column and print it\r\n                        string value = cols[j].InnerText;\r\n                        Console.WriteLine(value);\r\n                    }\r\n                }\r\n</pre>\r\n<pre>I hope this helps other &quot;newbies.&quot;</pre>\r\n<pre>Thanks,</pre>\r\n<pre>Russell Schutte</pre>",
+    "PostedDate": "2010-05-28T12:12:33.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "531637",
+    "ThreadId": "10363",
+    "Html": "\r\n<p>how about if am having more than one table and tables within tables,&nbsp;&nbsp; and i need only Top level tables ie the first tables on the document</p>\r\n<p>eg</p>\r\n<p>&lt;table&gt;&lt;tr&gt;&lt;td&gt; Top table 1 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>\r\n<p>&lt;table&gt;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt; Top table 2 &lt;/td&gt;&lt;/tr&gt;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt; &lt;table&gt;&lt;tr&gt;&lt;td&gt;Inner table&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;/td&gt;&lt;/tr&gt;</p>\r\n<p>&lt;/table&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>when i use&nbsp; selectNodes(&quot;//table&quot;) all the tables will be selected even the inner table,&nbsp; if i need only the top level tables that is its count is only two how can i achieve this........</p>\r\n<p>&nbsp;</p>\r\n<p>any help will be greatly appreciated</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-06T02:28:51.837-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994026",
+    "ThreadId": "10363",
+    "Html": "\r\n<p>Hi eosjack,</p>\r\n<p>Did you find the solution for case sensitivity?</p>\r\n",
+    "PostedDate": "2013-01-30T01:13:16.5-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

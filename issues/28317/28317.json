@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "At some point I am loading a RSS page into HtmlDocument, using the LoadHtml method. I noticed that the closing tags </link> are lost when I inspect the DocumentElement.OuterHtml  property. The rest looks OK. This is reproducable on different RSS documents from different sites (all UTF-8 formatted) and it goes for all the link elements.\n \nInspecting the _text field on the HtmlDocument itself tells me that it loaded the correct contents: the </link> closing tags are there.\n \nIs this by design, is this indeed a bug or am I doing something wrong here?\n \nThanks!\n \nDavid",
+    "LastUpdatedDate": "2013-02-21T18:47:13.44-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-07-29T00:45:54.92-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "The .DocumentNode.OuterHtml misses </link> closing tags compared to ._text field",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 28317
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I am noticing a similar problem when using .SelectNodes(xpath) on a UTF8 encoded document it is omitting a closing </option> tag which is plainly in the html.  This is currently causing a bug in our application and am actively looking for a fix or workaround.",
+      "PostedDate": "2010-10-03T20:42:52.207-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-09-04T07:39:15.26-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:13.44-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

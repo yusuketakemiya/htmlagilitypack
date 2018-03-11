@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1178032",
+    "ThreadId": "508424",
+    "Html": "i dont see dll's for win phone 8 when i downloaded. could i be able to built for win phone myself? is source compatible for it?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2014-01-18T11:40:05.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1181307",
+    "ThreadId": "508424",
+    "Html": "Yeah, I second that. It would be really useful<br />\n",
+    "PostedDate": "2014-01-19T10:20:26.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1182773",
+    "ThreadId": "508424",
+    "Html": "Actually I realized that it is indeed available to use through nuget package.<br />\n",
+    "PostedDate": "2014-01-19T19:35:03.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

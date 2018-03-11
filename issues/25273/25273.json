@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "We've deployed our application to several users, and we just received this error coming from the HTML Agility Pack:\n \nMessage: 'utf8' is not a supported encoding name.\n \nParameter name: name\n \nStacktrace:\nat System.Globalization.EncodingTable.internalGetCodePageFromName(String name)\nat System.Globalization.EncodingTable.GetCodePageFromName(String name)\nat HtmlAgilityPack.HtmlDocument.ReadDocumentEncoding(HtmlNode node)\nat HtmlAgilityPack.HtmlDocument.PushNodeEnd(Int32 index, Boolean close)\nat HtmlAgilityPack.HtmlDocument.Parse()\nat HtmlAgilityPack.HtmlDocument.Load(TextReader reader)\nat HtmlAgilityPack.HtmlDocument.LoadHtml(String html)\n \nAccording to this MS Connect case (http://bit.ly/3tcHmN), the bug is due to the malformed \"utf8\" encoding, when it should be \"utf-8\" (notice the hyphen). Can HTML Agility Pack work around this issue by checking for this condition?",
+    "LastUpdatedDate": "2013-02-21T18:47:21.517-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-11-09T07:23:05.087-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "UTF8 is not a supported encoding",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 25273
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I've uploaded a patch for this bug: http://htmlagilitypack.codeplex.com/SourceControl/PatchList.aspx",
+      "PostedDate": "2009-11-09T08:13:32.653-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:21.517-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

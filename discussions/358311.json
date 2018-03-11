@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "844589",
+    "ThreadId": "358311",
+    "Html": "\r\n<p>I notice with the HAP, that it doesn't seem to correct quotations if you do something like say...</p>\r\n<p>&nbsp;</p>\r\n<p>&lt;table id=&quot;Table&quot; align=&quot;center&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;630px&quot;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class=&quot;default&quot; style=&quot;background: white&gt;</p>\r\n<p>You'll notice that the last quote is missing.</p>\r\n<p>Is there a setting to have it correct things like this?&nbsp;</p>\r\n<p>I myself think that it SHOULDN'T fix this stuff.&nbsp; It's the HTML writer's job to do make sure they give valid information.</p>\r\n<p>However, I'd like to fix the worst case scenarios if possible...</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>I thought &quot;maybe I can just have it check for &gt;, and close things out&quot;, but that would only work if its the last attribute.</p>\r\n<p>&nbsp;</p>\r\n<p>and, this also means you can't set text values to something with &gt; in it... which also seems incorrect.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Any ideas?</p>\r\n<p>&nbsp;</p>\r\n<p>I am OK with an answer such as &quot;no, you can't correct quotes, tell people to lrn2html&quot;.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-06-04T12:17:01.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "848200",
+    "ThreadId": "358311",
+    "Html": "<p>Actually, I agree it should handle/fix things like this. I'll add it to the list of parsing engine things to look into.</p>",
+    "PostedDate": "2012-06-12T16:05:46.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

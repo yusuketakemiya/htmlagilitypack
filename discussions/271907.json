@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "669062",
+    "ThreadId": "271907",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Is it possible with this pack to get the innerhtml of a certain element with a certain class from a html string?</p>\r\n<p>So, for example: the innerhtml of a div with class 'test'.</p>\r\n<p>&nbsp;</p>\r\n<p>If this is possible, could somebody post an example?</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you in advance,</p>\r\n<p>Jerodev</p>\r\n",
+    "PostedDate": "2011-09-08T05:17:13.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

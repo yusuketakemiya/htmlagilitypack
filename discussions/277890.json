@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "692138",
+    "ThreadId": "277890",
+    "Html": "<p>I have written a program using the HtmlAgilityPack v1.4.0.0 .dll, and it works great on my system. &nbsp;I created a setup project so I could distribute the program to co-workers, and that also works fine on my machine. &nbsp;The install appears to work on a co-worker's system  as well, but he is getting an error (\"Could not load file or assembly HtmlAgilityPack Version=1.4.0.0\") when he executes the program.</p>\n<p>I am using VS2010 under Windows 7. &nbsp;He is using Windows XP. &nbsp;Does anyone have any suggestions?</p>",
+    "PostedDate": "2011-11-01T07:24:08.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

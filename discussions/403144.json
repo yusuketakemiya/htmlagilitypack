@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "941479",
+    "ThreadId": "403144",
+    "Html": "\r\n<p>Hey guys,</p>\r\n<p>&nbsp;</p>\r\n<p>maybe I am a little bit confused right now, but how can I manage it to get a html document directly from the web?</p>\r\n<p>Seems the HtmlDocument.load method only loads local files? Or do I have to use the stream version?</p>\r\n<p>A hint would be so great! Thanks a lot in advance</p>\r\n<p>Dirk</p>\r\n",
+    "PostedDate": "2012-11-14T01:50:24.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "941945",
+    "ThreadId": "403144",
+    "Html": "\r\n<p>What I did was download the Html page using WebClient.DownloadString, then open it up using HtmlDocument.loadHtml, works fine.</p>\r\n",
+    "PostedDate": "2012-11-14T20:34:07.527-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

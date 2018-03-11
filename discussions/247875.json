@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "573263",
+    "ThreadId": "247875",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm looking for a way to strip for example the font tags in a correct chunk of html ? Can this be used ? Has this been done using this library ?</p>\r\n<p>Regards,</p>\r\n<p>Marc</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-02-28T06:44:04.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "640083",
+    "ThreadId": "247875",
+    "Html": "<p>I'm also looking for a way to strip certain tags out of a piece of HTML. I need to sanitise user generated HTML to get rid of any nasty stuff.</p>\r\n<p>Is Html Agility Pack a good solution for this problem.</p>",
+    "PostedDate": "2011-07-10T06:02:52.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

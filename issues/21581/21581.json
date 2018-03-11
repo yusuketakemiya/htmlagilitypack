@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "There seems to be a problem when using HtmlWeb with the UsingCache property set to true. It looks like the Get method of HmlWeb does not populate the HtmlDocument object doc if you have UsingCache set to true:\n \nif (UsingCache)\n\t\t\t\t{\n\t\t\t\t\t// NOTE: LastModified does not contain milliseconds, so we remove them to the file\n\t\t\t\t\tSaveStream(s, cachePath, RemoveMilliseconds(resp.LastModified), _streamBufferSize);\n \n\t\t\t\t\t// save headers\n\t\t\t\t\tSaveCacheHeaders(req.RequestUri, resp);\n \n\t\t\t\t\tif (path != null)\n\t\t\t\t\t{\n\t\t\t\t\t\t// copy and touch the file\n\t\t\t\t\t\tIOLibrary.CopyAlways(cachePath, path);\n\t\t\t\t\t\tFile.SetLastWriteTime(path, File.GetLastWriteTime(cachePath));\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t{\n\t\t\t\t\t// try to work in-memory\n\t\t\t\t\tif ((doc != null) && (html))\n\t\t\t\t\t{\n\t\t\t\t\t\tif (respenc != null)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tdoc.Load(s, respenc);\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tdoc.Load(s, true);\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}",
+    "LastUpdatedDate": "2015-09-03T06:23:18.817-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-03-11T14:15:15.21-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem with HtmlWeb and UsingCache = true",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 21581
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I've used the following workaround:\r\n\r\nModify the LoadUrl inside HtmlWeb.cs: replace the line\r\nif (_statusCode == HttpStatusCode.NotModified)\r\nby\r\nif (_statusCode == HttpStatusCode.NotModified || (UsingCache && _statusCode == HttpStatusCode.OK)\r\n                       ",
+      "PostedDate": "2010-03-07T13:39:43.33-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:24.203-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-09-03T06:23:18.817-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "848145",
+    "ThreadId": "359358",
+    "Html": "\r\n<p><span id=\"result_box\" lang=\"en\"><span>Hello</span><span>!</span><br>\r\n<br>\r\n<span>I'm trying to</span> <span>do several tests</span> <span>on</span> <span>the version for</span>\r\n<span>Metro</span> <span>applications</span><span>.</span><br>\r\n<span>Much of the code</span> <span>I</span> <span>used so far</span> <span>is valid</span>\r\n<span>and</span> <span>that I miss</span> <span>in class</span> <span>HtmlNode</span>\r\n<span>SelectNodes</span> <span>method</span><span>.</span><br>\r\n<br>\r\n<span>How can we</span> <span>select the contents of</span> <span>a node</span> <span>\r\nnow?</span><br>\r\n<span>Is it possible and</span> <span>has changed the way</span> <span>or</span> <span>\r\nnot possible?</span><br>\r\n<br>\r\n<span>Thank you.</span><br>\r\n<br>\r\n<span>A</span> <span>greeting.</span></span></p>\r\n",
+    "PostedDate": "2012-06-12T13:05:08.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "848195",
+    "ThreadId": "359358",
+    "Html": "<p>Use Descendants() functions. Will have to use LINQ methods to do querying.</p>\r\n<p>Unfortunately WinRT does not include any implementation of System.Xml.Xpath. Unlike Windows Phone the Silverlight 4 implementation cannot be used.</p>\r\n<p>Hopefully at some point I may be able to use the Mono version.</p>",
+    "PostedDate": "2012-06-12T15:57:10.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "848775",
+    "ThreadId": "359358",
+    "Html": "<p><span id=\"result_box\" lang=\"en\"><span class=\"hps\">Thank you.</span><br /><br /> <span class=\"hps\">I've been testing</span> <span class=\"hps\">using</span> <span class=\"hps\">LINQ</span> <span class=\"hps\">with good results.</span> <span class=\"hps\">However there are</span> <span class=\"hps\">methods</span> <span class=\"hps\">that I can not</span> <span class=\"hps\">get</span> <span class=\"hps\">without using</span> <span class=\"hps\">SelectNodes</span><span>.</span> <span class=\"hps\">Such as:</span><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=\"hps\">var</span> <span class=\"hps\">query =</span> <span class=\"hps\">from table</span> <span class=\"hps\">in</span> <span class=\"hps\">doc.DocumentNode.SelectNodes</span> <span class=\"hps\">(\"/</span> <span class=\"hps\">/ table</span><span>\").</span> <span class=\"hps\">Cast</span> <span class=\"hps\">&lt;HtmlNode&gt;</span> <span class=\"hps\">()</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=\"hps\">from</span> <span class=\"hps\">row in</span> <span class=\"hps\">table.SelectNodes</span> <span class=\"hps atn\">(\"</span><span>tr\"</span><span>).</span> <span class=\"hps\">Cast</span> <span class=\"hps\">&lt;HtmlNode&gt;</span> <span class=\"hps\">()</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=\"hps\">from</span> <span class=\"hps\">cell</span> <span class=\"hps\">in</span> <span class=\"hps\">row.SelectNodes</span> <span class=\"hps atn\">(</span><span class=\"hps\">\"th</span> <span class=\"hps\">|</span> <span class=\"hps\">td</span><span>\").</span> <span class=\"hps\">Cast</span> <span class=\"hps\">&lt;HtmlNode&gt;</span> <span class=\"hps\">()</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=\"hps\">select</span> <span class=\"hps atn\">new {</span><span>Table =</span> <span class=\"hps\">table.Id</span><span>,</span> <span class=\"hps\">CellText</span> <span class=\"hps\">=</span> <span class=\"hps\">cell.InnerText</span><span>};</span><br /><br /> <span class=\"hps\">Could anyone</span> <span class=\"hps\">help me</span> <span class=\"hps\">to adapt</span> <span class=\"hps\">it</span> <span class=\"hps\">using</span> <span class=\"hps\">Descendants</span> <span class=\"hps\">()</span> <span class=\"hps\">functions</span> <span class=\"hps\">and LINQ</span><span>?</span><br /><br /> <span class=\"hps\">A</span> <span class=\"hps\">greeting.</span></span></p>",
+    "PostedDate": "2012-06-13T23:14:50.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

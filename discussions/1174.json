@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "3767",
+    "ThreadId": "1174",
+    "Html": "\r\nHi, I was writing a program that compares the structure similarity of two HTML documents. The program needs to do a lot of tree operations (add/delete nodes, runs tree matching algorithm, and etc). <br />Is it better to construct a new DOM tree (by keep calling HtmlNode.ChildNodes() )? Or it's completely unnecessary?<br /><br />Another quick question...how can I access the root node of the DOM tree? Is the following call right?<br />HtmlNode root = htmlDoc.SelectSingleNode(path)<br />",
+    "PostedDate": "2006-08-31T17:09:53.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3768",
+    "ThreadId": "1174",
+    "Html": "\r\nsorry, I found it's clearly written in the help document. I should use htmlDoc.DocumentNode() to get the root node. <br /><br />Thanks~:)<br />",
+    "PostedDate": "2006-08-31T17:26:42.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "821744",
+    "ThreadId": "351720",
+    "Html": "\r\n<p>Sorry if this question has been asked and answered in the past.&nbsp; Was wondering if it was possible to disable the HAP from correcting any nodes within an HTML document.</p>\r\n<p>In my application, I don't care if the markup passed into an HtmlDocument is syntactically correct or not. I would like it left intact, as-is, when loaded.</p>\r\n<p>I simply want to be able to perform XPath searches on whatever the HAP finds as valid markup, keeping the original markup intact.&nbsp; Is this possible?</p>\r\n<p>Thanks in advance</p>\r\n",
+    "PostedDate": "2012-04-09T16:53:46.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "857096",
+    "ThreadId": "351720",
+    "Html": "<p>Wondering the same...</p>",
+    "PostedDate": "2012-07-03T16:22:06.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

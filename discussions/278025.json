@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "692669",
+    "ThreadId": "278025",
+    "Html": "<p>Hi there,</p>\n<p>I use html parser loading an HttpWebResponse's stream, this way:</p>\n<p>doc.Load(response.GetStream())</p>\n<p>problem is that in my program I have to make multiple http requests and, for each response, parse it and extract some fields of interest...I experienced that, if I put get page/parse/extraction code in a for loop some exception rise on! For example I got some  null tag elements, and so on!</p>\n<p>I check every link and page and I'm 100% sure it's not a code/xpath syntax problem, moreover these exceptions are absolutely random: same page can generate them or not!</p>\n<p>So I ask: do I have to wait for some time after doc.Load? Or do I have to close the document at the end?(I can't see any Close() method, though...)</p>",
+    "PostedDate": "2011-11-02T04:42:23.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

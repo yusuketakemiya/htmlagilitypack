@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "731015",
+    "ThreadId": "287476",
+    "Html": "\r\n<p>I am trying to load a wepage using the following code but the process hangs and times out at the web.load</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;HtmlAgilityPack.HtmlWeb web = new HtmlWeb();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlAgilityPack.HtmlDocument doc = web.Load(&quot;http://www.knowledge.scot.nhs.uk/clear/answers.aspx&quot;);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;string&gt; hrefTags = new List&lt;string&gt;();<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (HtmlNode link in doc.DocumentNode.SelectNodes(&quot;//div[@class=\\&quot;boxInner\\&quot;]&quot;))<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlAttribute att = link.Attributes[&quot;href&quot;];<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hrefTags.Add(att.Value);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n",
+    "PostedDate": "2012-01-26T03:24:04.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1090176",
+    "ThreadId": "456240",
+    "Html": "The example below does not work:<br />\n<pre><code>&lt;span class='ocrx_word' title='bbox 741 2162 915 2291'&gt;&lt;&gt;¢f,/‘;/.&lt;/span&gt;</code></pre>\n\nWhenever a html file is processed using the HTML Agility Pack (HAP) libraries that I am using the above free text found above between the span tags fails and throws an exception.<br />\n<br />\nThe below works:<br />\n<pre><code>&lt;span class='ocrx_word' title='bbox 741 2162 915 2291'&gt;¢f,/‘;/.&lt;/span&gt;</code></pre>\n\nFor some reason it doesn't like '&lt;' and '&gt;'. Any ideas how to get around this problem, HAP seems to be doing the job for me so far. I don't think I should have to code in a manual step to ensure that angle brackets are properly substituted (&amp; l t ;). Any ideas on how I might solve this problem? I would have thought HAP would have me covered here but it seems like it doesn't.<br />\n",
+    "PostedDate": "2013-09-09T06:11:46.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

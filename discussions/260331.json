@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "623480",
+    "ThreadId": "260331",
+    "Html": "\r\n<p>i have this code<br>\r\n<br>\r\n<strong>Dim htmldoc As HtmlDocument = New HtmlDocument()</strong><br>\r\n<strong>htmldoc.LoadHtml(strPageContent)</strong><br>\r\n<strong>Dim root As HtmlNode = htmldoc.DocumentNode</strong><br>\r\n<br>\r\n<strong>For Each link As HtmlNode In root.SelectNodes(&quot;//a&quot;)</strong><br>\r\n<strong>If link.HasAttributes(&quot;href&quot;) Then doSomething() 'this doesn't work because hasAttributes only checks whether an element has attributes or not</strong><br>\r\n<strong>Next</strong><br>\r\n<br>\r\nbut am getting an error &nbsp;<em>Object reference not set to an instance of an object.</em><br>\r\n<br>\r\nthe document contains at least one anchor-tag? how do i check if an attribute exits?<br>\r\n<br>\r\ni tried this <strong>`if link.HasAttributes(&quot;title&quot;) then</strong>` and get another error<br>\r\n<br>\r\n`<em>Public ReadOnly Property HasAttributes() As Boolean' has no parameters and its return type cannot be indexed.</em>`<br>\r\n<br>\r\nthanks</p>\r\n",
+    "PostedDate": "2011-06-06T06:29:21.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

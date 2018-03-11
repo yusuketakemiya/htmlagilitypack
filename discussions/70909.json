@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "241705",
+    "ThreadId": "70909",
+    "Html": "<p>Beta 2 is already out. I spent most of the past day going through, fixing bugs and adding a few new projects. The projects are Documentation and <strong>Html Agility Pack Explorer</strong>.</p>\r\n<p>The Explorer is a WPF application that you can copy and paste, open or download some HTML to parse and browse. It displays the HtmlDocument in a TreeView and includes a properties panel for each node. It also has a button where in the source code you can put in some test code. This is just the initial release of the explorer. Not everything is fully hooked up (keyboard shortcuts for the menu).</p>\r\n<p>I added the Explorer to test out some of the bugs reported in the Issue Tracker. I'm thinking of expanding it to be used to generate information to be used when reporting bugs.</p>\r\n<p>The documentation project/solution is available to build CHM and HxS help files. Overtime I'll try to expand the Xml comments to include better definitions and some code samples to be included in the help files. Building the Help documentation requires Sandcastle, DocProject and the VS 2008 SDK 1.1.</p>\r\n<p>This release may also be a release candidate unless someone comes up with some major bugs between now and then. Please leave feedback, issues, and reviews.</p>",
+    "PostedDate": "2009-10-03T12:36:08.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

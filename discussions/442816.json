@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1040392",
+    "ThreadId": "442816",
+    "Html": "someone suggested me to try HtmlAgility Pack for I want to do.\r<br />\nI have several html controls that their's ID run from 1 to 10, like &quot;txtName_1&quot;, &quot;txtName_2&quot; ,\r<br />\nand so on until &quot;txtName_3&quot;.\r<br />\nI do not want to make for every control code to take it value, I want to make some kind of for that run from 1 to 10 and add only the number for the control, something like:<br />\n<pre><code>for (int i = 1; i &lt;= 10; i++)\n{\nname = (txtName_ + ind).value;\n}</code></pre>\n\nI make something on JavaScript and it works good, the question is how I can make it on asp.net and C#.\r<br />\nNow I have line of code to every control and it is lot of code.<br />\n\r<br />\nCan I use the Html Agility Pack for this and how do it do it?<br />\n",
+    "PostedDate": "2013-05-07T07:18:24.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

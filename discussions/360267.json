@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "851391",
+    "ThreadId": "360267",
+    "Html": "\r\n<p>sorry for the FAQ. I was trying to build the Metro version and got an error about how it couldn't use the pfx file.&nbsp; I then went and deleted the pfx file (just to try)&nbsp; and it still didn't build - all I saw was that it tried to copy a bunch of\r\n files but they didn't exist.</p>\r\n<p>&nbsp;</p>\r\n<p>any tips?</p>\r\n",
+    "PostedDate": "2012-06-20T00:59:48.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

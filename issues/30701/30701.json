@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "How can I choose to ns at the beginning of the node it?\n \n<body>\n    <ns:name title=\"test\">\n        <a>..............</a>\n        <b>..............</b>\n    </ns:name>\n    <ns:age>\n        <a>.............</a>\n        <b>.............</b>\n    </ns:age>\n</body>\n</html>",
+    "LastUpdatedDate": "2013-02-21T18:47:07.053-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-05-16T07:42:14.697-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "can  I choose a namespace node with it?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 30701
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

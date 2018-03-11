@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "76179",
+    "ThreadId": "22790",
+    "Html": "\r\nUsing the HtmlAgilityPack I came across a html page that gave an exception at HtmlWeb.cs in function Get. When the line respenc = System.Text.Encoding.GetEncoding(resp.ContentEncoding); was executing and resp.ContentEncoding is \"gzip\" an exception is thrown say gzip is not a supported encoding name.<br /><br />This is how I solved the problem:<br /><br />               try<br />               {<br />                    respenc = System.Text.Encoding.GetEncoding(resp.ContentEncoding);<br />                }<br />                catch (Exception)<br />                {<br />                    respenc = null;<br />                }<br /><br />and when getting the responsestream:<br /><br />if (resp.ContentEncoding.ToLower().Contains(\"gzip\"))<br />                s = new GZipStream(s, CompressionMode.Decompress);<br /><br />Now the code also works with gzip compressed pages.<br /><br />Would it be possible to solve this in the offcial code?<br />",
+    "PostedDate": "2008-02-25T04:08:47.747-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "453226",
+    "ThreadId": "22790",
+    "Html": "<p>ok found it</p>\r\n<p>&nbsp;</p>\r\n<p>Just change the following lines in HtmlWeb.cs - line 433</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if ((resp.ContentEncoding != null) &amp;&amp; (resp.ContentEncoding.Length&gt;0))<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; respenc = System.Text.Encoding.GetEncoding(resp.ContentEncoding);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; respenc = null;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; respenc = null;<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</p>\r\n<p>&nbsp;</p>\r\n<p>I hope this will be usefull...</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-08T14:47:19.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "458464",
+    "ThreadId": "22790",
+    "Html": "abutun, just ignoring the content exception did not solve the problem for me using the 1.4 source.  Like topomania, I had to wrap the stream in a GZipStream for decompression.<br>\r\n<br>\r\nUnlike either of you, I created a method under IsHtmlContent to test explicitly for the gzip encoding<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private bool IsGZipEncoding(string contentEncoding)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return contentEncoding.ToLower().StartsWith(&quot;gzip&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n<br>\r\nI then modified the HtmlWeb.Get method from (original starting line 1466)<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Encoding respenc = !string.IsNullOrEmpty(resp.ContentEncoding)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;? Encoding.GetEncoding(resp.ContentEncoding)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: null;<br>\r\n<br>\r\nto<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Encoding respenc = null;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var isGZipEncoding = false;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!string.IsNullOrEmpty(resp.ContentEncoding))<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isGZipEncoding = IsGZipEncoding(resp.ContentEncoding);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!isGZipEncoding)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;respenc = Encoding.GetEncoding(resp.ContentEncoding);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n<br>\r\nSince the exception thrown is a general ArgumentException, I did not want to leave a catch that ate the exception in place.<br>\r\n<br>\r\nFinally, I further modified HtmlWeb.Get from (original line 1486)<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stream s = resp.GetResponseStream();<br>\r\n<br>\r\nto<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stream s;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (isGZipEncoding)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s = new GZipStream(resp.GetResponseStream(), CompressionMode.Decompress);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s = resp.GetResponseStream();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n",
+    "PostedDate": "2010-06-22T05:21:56.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "807349",
+    "ThreadId": "22790",
+    "Html": "<p>I can confirm that RunO2's solution works perfectly.&nbsp;</p>\r\n<p>The only small edit that I would make is that one needs to add <span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\">using <span style=\"font-family: Consolas; font-size: x-small;\"><span style=\"font-family: Consolas; font-size: x-small;\">System.IO.Compression; <span style=\"color: #000000;\">to the top of HtmlWeb.cs</span></span></span></span></span></span></span>\r\n<p><span style=\"font-family: Consolas; font-size: x-small;\">Dave A</span></p>\r\n</p>",
+    "PostedDate": "2012-03-08T02:22:51.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "861947",
+    "ThreadId": "22790",
+    "Html": "<p>Are there plans to incorporate a solution to this in the NuGet Package? I am not in a position to use and modify the source code. I am using the Html Agility Pack NuGet Package and more often than not get the same gzip encoding problem.:&nbsp;'gzip' is not a supported encoding name.</p>\r\n<p>My code is opening various urls. Lots of pages are handled fine and then randomly I get the error. Note the error may come up on a url that was already loaded successfully on a previous run or if I just rerun the code it loads fine but then errors on another url etc.</p>\r\n<p>I do not know why sometimes it works and sometimes not.&nbsp;</p>\r\n<p>So I am really just wondering if there will be a fix to this added to the package or if I need to somehow figure out how/what code to modify?</p>\r\n<p>Thanks for any help.</p>\r\n<p>Linda</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-07-12T12:03:00.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "862011",
+    "ThreadId": "22790",
+    "Html": "\r\n<p>Hi Linda,</p>\r\n<p>You don't have to figure it out, it is written in the posts above. My solution and Ron02's solution both will do the job.</p>\r\n<p>good luck</p>\r\n",
+    "PostedDate": "2012-07-12T12:28:31.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "862021",
+    "ThreadId": "22790",
+    "Html": "<p>Thanks but I definitely saw your posts above and tried to make it work before posting my reply. I am not a trained developer and can usually hack my way through based on review of solutions like yours but in this case I just have no idea where I am suppose to add/modify the code. &nbsp;I will make another attempt and see if I can hack my way through...</p>\r\n<p>In the meantime, do you know if these fixes will be incorporated into the NuGet package so I won't have to modify the code?</p>\r\n<p>Thanks again,</p>\r\n<p>Linda</p>",
+    "PostedDate": "2012-07-12T12:35:30.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "862042",
+    "ThreadId": "22790",
+    "Html": "<p>Update: I do believe I just got Ron02's solution to work - THANKS!!! :)</p>\r\n<p>But still the question:&nbsp;<span>do you know if these fixes will be incorporated into the NuGet package so I won't have to modify the code?</span></p>",
+    "PostedDate": "2012-07-12T12:44:33.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "862069",
+    "ThreadId": "22790",
+    "Html": "\r\n<p>The solutions are more or less the same, Ron02 did a little more work, my solution is simpler and as effective. I am still using this code daily and it works all the time.</p>\r\n<p>I really don't know about this beeing fixed in the source, I am not involved in the development of the HtmlAgilityPack and I even don't know what the NuGet package is ;)</p>\r\n<p>Sorry about that.</p>\r\n<p>good luck</p>\r\n",
+    "PostedDate": "2012-07-12T12:56:27.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "862517",
+    "ThreadId": "22790",
+    "Html": "<p>I'll look into adding this in for the next release. It won't work for all versions since GzipStream isn't supported across all .NET platforms. Most notably anything based on Silverlight (SL, Windows Phone, Windows Metro)</p>",
+    "PostedDate": "2012-07-12T15:55:25.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "862571",
+    "ThreadId": "22790",
+    "Html": "<p>Very cool - thanks so much.&nbsp;</p>",
+    "PostedDate": "2012-07-12T16:18:56.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1473377",
+    "ThreadId": "22790",
+    "Html": "Has this been incorporated into the NuGet package? Still seeing this happening today.<br />\n",
+    "PostedDate": "2016-05-13T07:13:40.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

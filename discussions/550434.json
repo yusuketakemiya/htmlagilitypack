@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1262242",
+    "ThreadId": "550434",
+    "Html": "I'm looking to load a .php web page, and search the contents of the page. Just to save me from manually doing a search on the page and scanning the results myself.<br />\n<pre><code>Dim getPage = New HtmlAgilityPack.HtmlWeb\nDim page = getPage.Load(&quot;http://www.webpage.com/list.php&quot;)\n   If page.ToString.Contains(keyword) Then\n      MsgBox(&quot;Found it!&quot;)\n   Else\n      MsgBox(&quot;Not found!&quot;)\n   End If</code></pre>\n\nMore or less of what I have so far. Doesn't work. When I have &quot;page&quot; do a ToString, it contains HtmlAgilityPack.HtmlDocument.<br />\n<br />\nI assume the agility pack can do this. Originally, I was going to do the search, download the page, search it, then delete it. But I came across this and saw it could read on-the-fly.<br />\n",
+    "PostedDate": "2014-07-02T22:28:43.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1494407",
+    "ThreadId": "662110",
+    "Html": "Hi all,<br />\nPlease tell me how to get XPath expression to link from this code:<br />\n&lt;meta itemprop=&quot;image&quot; content=&quot;<a href=\"https://abcdef.jpg\" rel=\"nofollow\">https://abcdef.jpg</a>&quot;&gt;<br />\nI need only link, not image.<br />\n",
+    "PostedDate": "2017-03-21T11:10:25.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1496112",
+    "ThreadId": "662110",
+    "Html": "Whats the web page so i can see the full source.<br />\n",
+    "PostedDate": "2017-05-04T12:35:25.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

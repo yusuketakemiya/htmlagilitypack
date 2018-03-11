@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1216216",
+    "ThreadId": "535922",
+    "Html": "I am using Ants memory profiler and seeing 100s of instances of the various HTML Agility classes in particular nodes and attributes where I have used iteration.\r<br />\n<br />\nHas  anyone else experienced this?<br />\n",
+    "PostedDate": "2014-02-28T09:15:26.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

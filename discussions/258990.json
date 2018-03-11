@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "618198",
+    "ThreadId": "258990",
+    "Html": "<p>I get all \"a href\" links on a web page using</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">var</span> linksOnPage = <span style=\"color: blue;\">from</span> lnks <span style=\"color: blue;\">in</span> doc.DocumentNode.Descendants()\n                              <span style=\"color: blue;\">where</span> lnks.Name == <span style=\"color: #a31515;\">\"a\"</span> &amp;&amp;\n                                   lnks.Attributes[<span style=\"color: #a31515;\">\"href\"</span>] != <span style=\"color: blue;\">null</span> &amp;&amp;\n                                   lnks.InnerText.Trim().Length &gt; 0\n                              <span style=\"color: blue;\">select</span> <span style=\"color: blue;\">new</span>\n                              {\n                                  \n                                  Url = lnks.Attributes[<span style=\"color: #a31515;\">\"href\"</span>].Value,\n                              };\n\n            <span style=\"color: blue;\">foreach</span> (<span style=\"color: blue;\">var</span> link <span style=\"color: blue;\">in</span> linksOnPage) .......\n</pre>\n<pre><br /></pre>\n<pre>It works very good, the only problem is the relative paths. For example, If I crawle (http://newyorktimes)</pre>\n<pre>and it's a http//newyorktimes/pdf/document.pdf) hardcoded it's all ok</pre>\n<pre>but if it is hardcoded /pdf/document.pdf it is a problem. </pre>\n<pre><br /></pre>\n<pre>How can I solve this?</pre>\n</div>",
+    "PostedDate": "2011-05-25T10:42:49.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "618979",
+    "ThreadId": "258990",
+    "Html": "<p>What's wrong with prepending the url you are crawling (http://newyorktimes) to the link url in the page if it is a relative url path?</p>\r\n<p>Somthing like:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>Url = lnks.Attributes[<span style=\"color: #a31515;\">\"href\"</span>].Value;\r\n<span style=\"color: blue;\">if</span>(!Url.StartsWith(<span style=\"color: #a31515;\">\"http\"</span>))\r\n{\r\n    Url = pageUrl + Url;\r\n}\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2011-05-26T15:11:40.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "620223",
+    "ThreadId": "258990",
+    "Html": "<p>System.Uri has built-in support for resolving relative Uri's.&nbsp; To use this, you should determine the base uri of the page.&nbsp; The base uri of the page is <em>either</em> the uri of the page itself, <em>or</em> <a href=\"http://www.w3.org/TR/html401/struct/links.html#h-12.4\"> the uri specified in the base tag</a> (in the document's head, XPath: /html/head/base/@href or simply //base/@href).</p>\n<p>Then the following pseudo-code will resolve a Uri:</p>\n<div style=\"color: black; background-color: white;\">\n<pre>Uri baseUri = <span style=\"color: blue;\">new</span> Uri(stringOfBaseHrefOrPage, UriKind.Absolute);\nUri resolvedUri = <span style=\"color: blue;\">new</span> Uri(baseUri, stringOfRelativeOrAbsoluteHref); <br /></pre>\n</div>\n<p>You should use this method, not string concatenation: it's more robust: e.g. supports other protocols, not just http, will deal with .. and uri's with a query segment or hash-tag etc. cleanly, and will throw an exception in the case of junk.&nbsp; In general, using string concatenation for this kind of operation represents a potential security risk; avoid where possible.</p>",
+    "PostedDate": "2011-05-30T03:14:11.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "842419",
+    "ThreadId": "258990",
+    "Html": "<p>Can someone write down the complete as to how the final code will look like.&nbsp;</p>",
+    "PostedDate": "2012-05-30T01:03:24.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "903351",
+    "ThreadId": "258990",
+    "Html": "<p>Works soft and smooth:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>    <span style=\"color: blue;\">public</span> List&lt;Uri&gt; getLinks() \r\n        {\r\n            <span style=\"color: blue;\">var</span> linksOnPage = <span style=\"color: blue;\">from</span> lnks <span style=\"color: blue;\">in</span> doc.DocumentNode.Descendants()\r\n                              <span style=\"color: blue;\">where</span> lnks.Name == <span style=\"color: #a31515;\">\"a\"</span> &amp;&amp;\r\n                                   lnks.Attributes[<span style=\"color: #a31515;\">\"href\"</span>] != <span style=\"color: blue;\">null</span> &amp;&amp;\r\n                                   lnks.InnerText.Trim().Length &gt; 0\r\n                              <span style=\"color: blue;\">select</span> <span style=\"color: blue;\">new</span>\r\n                              {\r\n\r\n                                  Url = lnks.Attributes[<span style=\"color: #a31515;\">\"href\"</span>].Value,\r\n                              };\r\n            List&lt;Uri&gt; Uris = <span style=\"color: blue;\">new</span> List&lt;Uri&gt;();\r\n\r\n            <span style=\"color: blue;\">foreach</span> (<span style=\"color: blue;\">var</span> link <span style=\"color: blue;\">in</span> linksOnPage)\r\n            {\r\n                Uri baseUri = <span style=\"color: blue;\">new</span> Uri(urlBase, UriKind.Absolute);\r\n                Uri page = <span style=\"color: blue;\">new</span> Uri(baseUri, link.Url.ToString());\r\n                Uris.Add(page);\r\n            }\r\n\r\n            <span style=\"color: blue;\">return</span> Uris;\r\n        }\r\n</pre>\r\n</div>\r\nSee you Guys next time!!!</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>       </pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2012-08-23T20:19:05.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033559",
+    "ThreadId": "258990",
+    "Html": "So how could I call the first record in the returned results from @foxmulder82 's answer above?<br />\n<br />\nIm also getting a 'does not exists in context' error on 'doc' in the second line. <br />\nAny idea what I need to do to solve this?<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-04-21T06:41:06.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1033305",
+    "ThreadId": "440989",
+    "Html": "<pre><code> &lt;div id=&quot;player_trailer&quot; class=&quot;c_trailer&quot; align=&quot;center&quot;&gt;\n&lt;embed id=&quot;template&quot; width=&quot;600&quot; height=&quot;340&quot; flashvars=&quot;ytlink=ZKw8qMS67bo&amp;friendly=oblivion-digital-&amp;videotitle=B%c3%ad+M%e1%ba%adt+Tr%c3%a1i+%c4%90%e1%ba%a5t+Di%e1%bb%87t+Vong+(Digital)&quot; allowscriptaccess=&quot;always&quot; wmode=&quot;transparent&quot; allowfullscreen=&quot;true&quot; quality=&quot;high&quot; bgcolor=&quot;#FFFFFF&quot; name=&quot;template&quot; style=&quot;&quot; src=&quot;/flash/bigtrailerplayer.swf&quot; type=&quot;application/x-shockwave-flash&quot;&gt;\n&lt;/div&gt;\n</code></pre>\n\nhow away to i get Atribute of &lt;embed&gt; tag?<br />\ni use Html Agility Pack 4.5.<br />\n<br />\nplease help me<br />\nthank<br />\n",
+    "PostedDate": "2013-04-20T01:29:38.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033530",
+    "ThreadId": "440989",
+    "Html": "What have you tried to do? Could you please provide some code samples?<br />\n",
+    "PostedDate": "2013-04-21T03:29:02.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033562",
+    "ThreadId": "440989",
+    "Html": "i tried :<br />\n<pre><code>private string LinkYouBeMegaStar()\n        {\n             var hw = new HtmlWeb();\n            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();\n            doc = hw.Load(&quot;http://www.megastar.vn/vn/saving-general-yang-digital-&quot;);         \n            HtmlNode embed_tag = doc.DocumentNode.SelectSingleNode(&quot;//div[@class='c_trailer']&quot;);\n                      \n           HtmlNode embed = embed_tag.SelectSingleNode(&quot;embed[@id='template']&quot;);     \n           \n             return  embed.InnerText;\n        }</code></pre>\n\nerror : &quot;Object reference not set to an instance of an object.&quot;<br />\n",
+    "PostedDate": "2013-04-21T07:16:51.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033783",
+    "ThreadId": "440989",
+    "Html": "Does  the statement:   HtmlNode embed_tag = doc.DocumentNode.SelectSingleNode(&quot;//div[@class='c_trailer']&quot;) returns a non null value for embed_tag?<br />\n",
+    "PostedDate": "2013-04-22T00:10:40.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033878",
+    "ThreadId": "440989",
+    "Html": "yes!\r<br />\ni tried get  embed_tag .Atributtes[&quot;id&quot;].value. (value=&quot;player_trailer&quot;);<br />\n",
+    "PostedDate": "2013-04-22T03:42:59.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033893",
+    "ThreadId": "440989",
+    "Html": "Did you try embed.InnerHtml instead of embed.InnerText?<br />\n",
+    "PostedDate": "2013-04-22T04:33:48.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

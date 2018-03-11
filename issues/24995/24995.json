@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Line 418 of HtmlWeb.cs has these incorrect lines\n \n\t\t\tif ((resp.ContentEncoding != null) && (resp.ContentEncoding.Length>0))\n\t\t\t{\n\t\t\t\trespenc = System.Text.Encoding.GetEncoding(resp.ContentEncoding);\n\t\t\t}\n \nContentEncoding is not the same as CharacterEncoding!\nThe correct code should be \n \nif ((resp.CharacterSet != null) && (resp.CharacterSet.Length > 0))\n\t\t\t{\n                respenc = System.Text.Encoding.GetEncoding(resp.CharacterSet);\n\t\t\t}",
+    "LastUpdatedDate": "2013-02-21T18:47:21.993-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-10-20T03:41:45.787-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Character Encoding fix",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 24995
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

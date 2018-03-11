@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "199056",
+    "ThreadId": "58775",
+    "Html": "<p>This post is more of a heads up. I'm working on a project which requires searching through the entire heirarchy of a page and changing it. Currently the agility pack doesn't support LINQ all that well. While the navigator is all well and good for doing xpath queries, it is are still too limited for what I must do (like find tags missing a certain attribute). So I'm working on updating the agility pack to use Generic Collections and am experimenting with having it actually inherit from LINQ to XML (and still keep the current functionality).</p>\r\n<p>Hopefully when I'm done it will be something useful by the project. Even if it's not, some of the changes I've worked on already will help quite a bit. The biggest being changing all the collections to inherit from IList&lt;T&gt; . The next part I'm working on if I can't get the LINQ to XML part working correctly I'll be fully implementing things like Descendants() and DescendantNodes(), Ancestors() which will help quite a bit with doing LINQ on a document.</p>\r\n<p>I already have the below working</p>\r\n<p><code>var aspLinks = body.Descendants().Where(x =&gt; x.Name.Equals(&quot;asp:hyperlink&quot;));</code></p>\r\n<p>This will get all the ASP.NET hyperlinks in the body of the document. I haven't tried yet but I think this also can be used with XAML</p>",
+    "PostedDate": "2009-06-08T07:41:45.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204124",
+    "ThreadId": "58775",
+    "Html": "<p>I have only just found out about HtmlAgilityPack a couple of days ago, how did I miss it?</p>\r\n<p>But you are right it is missing LINQ support, and in this world of invalid html LINQ support would be handy to have.</p>\r\n<p>I have yet to contribute much to open source, but Codeplex says it is open source, so can't you start your own branch?</p>\r\n<p>I would be most interested in using LINQ in order to use web pages that people didn't spend the time to write out properly in the first place.</p>\r\n<p>&nbsp;</p>\r\n<p>cheers</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-22T10:00:40.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204134",
+    "ThreadId": "58775",
+    "Html": "<p>I'm hoping to contribute to this project but I need to be given permission by the maintainer to do that. Seems like he only checks things in here every few months. Right now my only course is to fork and start a new project and I do not want to do that. If I get permission I'll probably start up a new branch for these changes.</p>\r\n<p>I do have LINQ working rather well and have made other changes for formatting. When parsing an aspx page and then saving it, all the capitilization was gone so I added a new output mode and modified the parsing routine to preserve original capitilization. It took a bit of work since the parser made everything lowercase in many places.</p>\r\n<p>I'm right now working on the parser itself so it can save formatting information of the original document. I'm one of those people that when I put a newline between two attributes, I want it to stay that way.</p>\r\n<p>The project I'm working on may end up being open source as well. Part of it is a library that will provide a better query interface over HTML/XAML/XML. This way you can do var results= <code>document.GetTag(&quot;asp:hyperlink&quot;).MissingAttribute(&quot;class&quot;);</code> And after that do a replace/modify routine <code>document.ReplaceWithResults(results).ReplaceInsertAttribute(&quot;class&quot;,&quot;nav_link&quot;)</code> . (note I haven't settled on a syntax yet, this was just to demonstrate a possibility)</p>",
+    "PostedDate": "2009-06-22T10:18:32.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

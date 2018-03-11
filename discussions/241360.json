@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "547615",
+    "ThreadId": "241360",
+    "Html": "\r\n<p>I have a Database with text and url pair. Now I want to parse the HTML by runtime and look for the text in the database. If I find one I want to replase the text with a hyperlink. (text url pair)<br>\r\nIs it posible wit Html Agility Pack and how?</p>\r\n",
+    "PostedDate": "2011-01-11T14:39:17.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578302",
+    "ThreadId": "241360",
+    "Html": "<p>yes !</p>",
+    "PostedDate": "2011-03-10T02:18:55.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

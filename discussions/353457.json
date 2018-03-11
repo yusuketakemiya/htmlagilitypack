@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "828153",
+    "ThreadId": "353457",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I have ran into a problem usig XmlReader on WP7. It is because it does not support BIG5 encoding when trying to read XML content.</p>\r\n<p>Here is what I was trying to do.</p>\r\n<pre><code><span>using</span><span> </span><span>(</span><span>XmlReader</span><span> reader </span><span>=</span><span> </span><span>XmlReader</span><span>.</span><span>Create</span><span>(</span><span><a href=\"http://feeds.feedburner.com/nownews/politic\">http://feeds.feedburner.com/nownews/politic</a></span><span>)</span><span><br></span><span>while</span><span> </span><span>(</span><span>reader</span><span>.</span><span>Read</span><span>())</span><span> &nbsp;</span><span>// iterate through the document</span><span><br>&nbsp; &nbsp; </span><span>switch</span><span> </span><span>(</span><span>reader</span><span>.</span><span>NodeType</span><span>)</span><span> &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span>case</span><span> </span><span>XmlNodeType</span><span>.</span><span>Text</span><span>:</span><span> &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span>string</span><span> s </span><span>=</span><span> reader</span><span>.</span><span>Value</span><span>;</span><span> //looking for content under all &lt;item&gt;</span></code></pre>\r\n<p>I wonder if someone can give quick code so that I can try if I can get character display correctly on device. Very appreciated!</p>\r\n<p>thsieh&nbsp;</p>\r\n",
+    "PostedDate": "2012-04-24T18:06:10.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "835187",
+    "ThreadId": "353457",
+    "Html": "<p>Does the xml look like this: &lt;text&gt;Text you're trying to read&lt;/text&gt;</p>\r\n<p>Assuming the above is true, you can create a list of text strings like this:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>HtmlWeb.LoadAsync(<span style=\"color: #a31515;\">\"http://feeds.feedburner.com/nownews/politic\"</span>, handleResults);\r\n\r\n<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">void</span> handleResults(<span style=\"color: blue;\">object</span> o, HtmlDocumentLoadCompleted args)\r\n{\r\n     IEnumerable&lt;<span style=\"color: blue;\">string</span>&gt; textList = args.Document.DocumentNode.Descendants(<span style=\"color: #a31515;\">\"text\"</span>).Select(x =&gt; x.InnerText);\r\n\r\n}\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2012-05-11T09:16:12.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

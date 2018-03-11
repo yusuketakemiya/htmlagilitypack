@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "HtmlWeb class throws an exception when it can not detect the document encoding.\nAfter some investigation I decided not to use this class at all and wrote my own charset\ndetector based on [Mozilla charset detector](https://code.google.com/p/ude/) and [ICU library detector](http://userguide.icu-project.org/conversion/detection).\nThe latter requires C++ CLI to make C# compatable assembly. For the most perfect accuracy I \ndelete any non-letter symbols, excluding spaces, \\n, \\t and \\r symbols, but including  English characters \n(they have common codepoints in most of encodings) if the text is not in English. Extracting of text only requires Regex, but you can not apply .Net Regex, because it doesn't support Byte array. You can choose either STL regex class or boost library. The latter is more convenient and supports perl regex syntax.\n\nThe detection is splitted in 4 steps:\n1. Download Byte Array representing html document, using System.Net.WebClient.DownloadData() method.\n2. Mozilla detector. Unfortunetly in some cases it can not detect encoding especially for non \nEnglish languges.\n3. ICU detector, if Mozilla detection is failed. \n4. <meta> charset declaired in html header, if the second step is failed. \n<meta> charset could in some cases content wrong encoding, therefore it is used at the end of\ndetection chain. \n\nNow you can load the document with HtmlDocument.Load(Stream, Encoding) method.\nI've tested it over 1000 html-pages almost in Russian and it worked fine for me.",
+    "LastUpdatedDate": "2013-11-08T06:17:59.13-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-11-06T10:17:44.573-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Detection encoding before loading of HTML",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 34628
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

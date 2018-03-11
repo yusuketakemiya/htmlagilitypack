@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "532471",
+    "ThreadId": "237499",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>I've this tag's</p>\r\n<p>&lt;div&gt;&lt;p&gt;&lt;strong&gt;XX:&lt;/strong&gt;1&lt;/p&gt;&lt;/div&gt;</p>\r\n<p>How can I get only the number &quot;1&quot; ??</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2010-12-07T12:31:28.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "532703",
+    "ThreadId": "237499",
+    "Html": "\r\n<p>&nbsp;</p>\r\n<p>doc.DocumentNode.SelectSingleNode(&quot;/div/p/strong/following-sibling::text()&quot;) or</p>\r\n<p>doc.DocumentNode.SelectSingleNode(&quot;/div/p/strong&quot;).NextSibling</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-07T23:52:45.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

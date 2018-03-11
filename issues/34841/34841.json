@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nI found an issue where I'm trying to parse an HTML document and load it to XElement.\nThis specific HTML had a comment at the header that was going like this:\n\n<!-- Comment comment comment -- -->\n\nAs you can see, there is a \"--\" that is not related to the ending comment clause. It makes the XML file unparsable. \nNow I'm not really sure what is the correct approach to resolve it but as far as I can imagine (as a developer) when I set the OptionOutputAsXml I get the feeling that I will be able to load it as XML (as documented).\n\nAs a workaround I resolved it by removing all of the comments.\n\nBTW: I love this project. Please keep doing the amazing work you are doing! :-)\n\nThanks,\nLidan Hackmon",
+    "LastUpdatedDate": "2014-01-04T14:48:01.29-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-01-04T14:44:15.36-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlDocument output cannot be parsed as XML because of \" -- \" in a comment",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 34841
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

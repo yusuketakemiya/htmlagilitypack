@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "696261",
+    "ThreadId": "278944",
+    "Html": "\r\n<p>Is it possible to remove nodes with let's say (//table, inputs) tag, but keep its children(text and inputs)?using HTML Agility pack.</p>\r\n<p>As a proposed &nbsp;solution for my unanswered question :&nbsp;<br>\r\n<a href=\"http://htmlagilitypack.codeplex.com/discussions/278867\">http://htmlagilitypack.codeplex.com/discussions/278867</a>&nbsp;</p>\r\n",
+    "PostedDate": "2011-11-09T23:13:09.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

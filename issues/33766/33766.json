@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nWe are using HTMLAgilityPack to convert HTML to XML (Release 1_4_0).\nbut we are facing issue with  tag.\nwe have HTML with li tag as below,\n\n \n   Trauma (sometimes causing cataracts years later)\n \n \n   Smoking\n \n \n   Alcohol use\n \n\n\nAfter converting the above HTML to XML using HTMLAgilityPack, following XML is generated,\n\n\n \n   Trauma (sometimes causing cataracts years later)\n \n   Smoking\n \n   Alcohol use\n   \n\nwhy it is happening like this?\nI need immediate solutions for this, can any one help me on this?\n\nSample HTML page: http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html\nfrom this link we have produced attached XML.\n\nThanks and Regards,\nGirish Vajrashetti",
+    "LastUpdatedDate": "2013-02-21T18:46:53.78-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-02-12T04:31:09.867-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issue with HTML to XML conversion",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33766
+  },
+  "FileAttachments": [
+    {
+      "FileId": 13135,
+      "FileName": "Output.XML",
+      "DownloadUrl": ".\\13135"
+    }
+  ],
+  "Comments": []
+}

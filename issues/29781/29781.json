@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, I found this package helpful for parsing html. But it is giving wrong xpath when the element is part of form. Any idea how to fix this?",
+    "LastUpdatedDate": "2013-02-21T18:47:11.093-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-12-16T08:51:41-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Wrong Xpath if ana element is part of form",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 29781
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have the same problem too.  \r\n\r\nGiven the source as the following. I expected I could retrieve the node using '/html/body/form/div[2]'.  Instead, I could get the node by using '/html/body/div[2]'.  Is it a bug?  Can somebody please helps? Thanks\r\n\r\n<html>\r\n\r\n<body>\r\n\t<form>\r\n\t\t<div></div>\r\n\t\t<div>Hello World</div>\r\n\t\r\n\t</form>\r\n\r\n</body>\r\n\r\n</html>\r\n\r\n",
+      "PostedDate": "2010-12-20T11:43:33.55-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hey CSharp DEV,\r\n\r\nI digged into the source code and found something.  I simply removed the line where it categorizes form tag as a tag not allowing other tags.  ",
+      "PostedDate": "2010-12-20T12:46:10.627-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-03-04T08:06:49.063-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-06-22T10:59:39.14-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:11.093-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

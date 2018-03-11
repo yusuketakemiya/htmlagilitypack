@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "856107",
+    "ThreadId": "361613",
+    "Html": "\r\n<p>Hello guys!</p>\r\n<p>I need to select an node by its value.</p>\r\n<p>This is my HTML source:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>  <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">tr</span><span style=\"color:blue\">&gt;</span>\n    <span style=\"color:green\">&lt;!-- blank TD from Windows rowspan --&gt;</span>\n    <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\n  <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">a</span> <span style=\"color:red\">onclick</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;onDownload(this)&quot;</span> <span style=\"color:red\">id</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;win-sdk&quot;</span> <span style=\"color:red\">href</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;http://dl.google.com/android/installer_r20-windows.exe&quot;</span><span style=\"color:blue\">&gt;</span>installer_r20-windows.exe<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">a</span><span style=\"color:blue\">&gt;</span> (Recommended)\n    <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\n    <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>70497095 bytes<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\n    <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>0f25321554e2f88b247320d6a3bc1a7a<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:blue\">&gt;</span>\n  <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">tr</span><span style=\"color:blue\">&gt;</span>\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>I took it from Android SDK download page. I need to parse the link of this node, but there are 2 other nodes named &quot;ID&quot;.</p>\r\n<p>The only code I have so far is:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>HtmlNodeCollection a = Links.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//a[@id]&quot;</span>)\n</pre>\r\n</div>\r\n<p>I was trying to figure out by my own, reading the documentation, but I didn't found anything that led me to accomplish this. Can somebody help me?</p>\r\n",
+    "PostedDate": "2012-07-01T16:19:37.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "858512",
+    "ThreadId": "361613",
+    "Html": "\r\n<p>I believe this should do the trick.</p>\r\n<pre>HtmlNodeCollection a = Links.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//a[@id or @href]&quot;</span>);</pre>\r\n",
+    "PostedDate": "2012-07-06T14:14:15.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

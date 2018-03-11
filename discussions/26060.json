@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "87192",
+    "ThreadId": "26060",
+    "Html": "\r\nCan someone tell me why the post response event never gets fired in this example?  PreRequest and PreHandleDocument both work:<br /><br />    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load<br /><br />        ' test html web events<br /><br />        Dim web As New HtmlWeb<br /><br />        web.PreRequest = New _<br />            HtmlWeb.PreRequestHandler(AddressOf OnPreRequest)<br /><br />        web.PreHandleDocument = New _<br />            HtmlWeb.PreHandleDocumentHandler(AddressOf OnPreHandleDocument)<br /><br />        web.PostResponse = New _<br />            HtmlWeb.PostResponseHandler(AddressOf OnPostResponse)<br /><br />        Dim doc As HtmlDocument<br />        doc = web.Load(\"http://www.google.com\")<br /><br />    End Sub<br /><br />    Public Function OnPreRequest(ByVal request As Net.HttpWebRequest) As Boolean<br />        MessageBox.Show(\"onprerequest\")<br />    End Function<br /><br />    Public Sub OnPostResponse(ByVal request As Net.HttpWebRequest, ByVal response As Net.HttpWebResponse)<br />         '' this never gets called.<br />        MessageBox.Show(\"postresponse\")<br />    End Sub<br /><br />    Public Sub OnPreHandleDocument(ByVal document As HtmlDocument)<br />        MessageBox.Show(\"handledocument\")<br />    End Sub<br />",
+    "PostedDate": "2008-04-16T11:51:23.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

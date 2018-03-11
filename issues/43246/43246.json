@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I tried this and got \"no errors\":\n\nNote the first <p> tag does not have an ending tag!\n\nstring htmlPuro = @\"<p>Dear Sir / Madam,\n<p>\n    <b>{NameSite}</b> \n    (<a href=\"\"{LinkSite}\"\">{LinkSite}</a>) reports: \n</p>\n<p>Your current balance is {AccountBalance} lower than expected of {AccountDownBalance} </p>\n<br />\n<p>Yours sincerely,</p>\n<br />\n{NameSite}\n<br />\n<a href=\"\"{LinkSite}\"\">{LinkSite}</a>\t\n<br />\n[#Selo#]\";\n\nHtmlDocument doc = new HtmlDocument();\ndoc.LoadHtml(htmlPuro);\n\ndoc.ParseErrors.Count() == 0",
+    "LastUpdatedDate": "2015-09-22T11:26:01.09-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-09-22T11:25:34.367-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "End tag does not mean a parse error?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43246
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

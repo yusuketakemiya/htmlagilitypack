@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "728303",
+    "ThreadId": "286856",
+    "Html": "<p>code is:</p>\n<p>HtmlNode n = html.DocumentNode.SelectSingleNode(\"/html/body/div[@id=content]/table/tr/th/div/a\");</p>\n<p>&nbsp;</p>\n<p>when in debug, i manualy can found this node using ChildNodes from root.</p>\n<p>but, why XPath cannot do it?(Windows XP, dotNET 4.0)</p>\n<p>this http://www.pwdatabase.com/ru/lvl/0-9 page.</p>",
+    "PostedDate": "2012-01-20T08:52:26.073-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "728742",
+    "ThreadId": "286856",
+    "Html": "<p>Hello,</p>\r\n<p>&nbsp;</p>\r\n<p>You have missed the&nbsp;quotes&nbsp;around content!</p>\r\n<p>&nbsp;</p>\r\n<p>If you use: \"/html/body/div[@id='content']/table/tr/th/div/a\"</p>\r\n<p>Then it should work!</p>\r\n<p>Just in case you haven't downloaded these two programs, you should. They make xpath a bit easier!</p>\r\n<p>HAP Explorer &nbsp;<a href=\"http://htmlagilitypack.codeplex.com/releases/view/44954\" target=\"_blank\">http://htmlagilitypack.codeplex.com/releases/view/44954</a></p>\r\n<p>HAP Testbed&nbsp;<a href=\"http://haptestbed.codeplex.com/\" target=\"_blank\">http://haptestbed.codeplex.com/</a></p>\r\n<p>// Anders</p>",
+    "PostedDate": "2012-01-21T11:41:40.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "728760",
+    "ThreadId": "286856",
+    "Html": "<p>the reason was there i even dont try to look...</p>\r\n<p>big thanks, but it means that not all expressions that System.Xml.XmlDocument support are supported.(it works without quotes )</p>",
+    "PostedDate": "2012-01-21T12:33:40.22-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

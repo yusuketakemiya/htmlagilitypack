@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1076097",
+    "ThreadId": "452254",
+    "Html": "Bonjour :)\r<br />\n<br />\nJe vais vous poser mon probléme . En fait je veux faire le parsing HTML de quelques données d'ne page web en utilisant HTMLagilityPack . De ce fait , je suis devant une page iframe qui contient pleins de tableaux qui n'ont mm pas un id w contiennent des lignes et des colonnes donc je veux par exmeple avoir la donnée située dans la 3 émé colonne de la 1 ére ligne . mais je me bloque la dedans puisque je suis débutante :/ j'ai vu quelques articles sur internet mais j'ai pas trouvé quelque chose d'intéressant . :( \r<br />\n<br />\nPriére de m'aider , c 'est trés urgent  et merci pour toute aide :)<br />\n",
+    "PostedDate": "2013-08-02T10:07:27.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

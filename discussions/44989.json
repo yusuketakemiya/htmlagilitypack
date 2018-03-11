@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "149933",
+    "ThreadId": "44989",
+    "Html": "Hi, I'm trying to do the following:<br>\r\nLook for a specific 'tag' in the HML page and insert a new tag after, I'm trying to do it like the following:<br>\r\n<br>\r\nHtmlWeb hw = new HtmlWeb();<br>\r\nstring url = @&quot;http://www.microsoft.com&quot;;<br>\r\nHtmlDocument doc = hw.Load(url);<br>\r\nHtmlNode bodyNode = doc.DocumentNode.SelectSingleNode(&quot;html/body&quot;);<br>\r\nHtmlNode newTag = HtmlNode.CreateNode(&quot;&lt;h1&gt;\\&quot;a\\&quot;&lt;/h1&quot;);<br>\r\ndoc.DocumentNode.InsertAfter(newTag, node);<br>\r\ndoc.Save(&quot;myNewPage.htm&quot;);<br>\r\n<br>\r\nWhen I run the code the application fails in the line doc.DocumentNode.InsertAfter, the following is the exception I receive:<br>\r\nIs possible what I'm trying to do, looks like is supported, What I'm doing wrong.<br>\r\nThanks in advanced<br>\r\n<br>\r\nUnhandled Exception: System.ArgumentOutOfRangeException: Node &quot;&lt;body class=&quot;ltr&quot;<br>\r\n&gt;&lt;/body&gt;&quot; was not found in the collection<br>\r\nParameter name: node<br>\r\n&nbsp;&nbsp; at HtmlAgilityPack.HtmlNodeCollection.get_Item(HtmlNode node) in C:\\Documents<br>\r\n&nbsp;and Settings\\xx\\Desktop\\HTMLParser\\HtmlAgilityPack20\\HtmlAgilityPack\\HtmlNodeCo<br>\r\nllection.cs:line 250<br>\r\n&nbsp;&nbsp; at HtmlAgilityPack.HtmlNode.InsertAfter(HtmlNode newChild, HtmlNode refChild)<br>\r\n&nbsp;in C:\\Documents and Settings\\xx\\Desktop\\HTMLParser\\HtmlAgilityPack20\\HtmlAgilit<br>\r\nyPack\\HtmlNode.cs:line 981<br>\r\n&nbsp;&nbsp; at HtmlAgilityPack.Samples.GetDocLinks.Main(String[] args) in C:\\Documents an<br>\r\nd Settings\\xx\\Desktop\\HTMLParser\\HtmlAgilityPack20\\GetDocLinks\\GetDocLinks.cs:li<br>\r\nne 16<br>\r\nPress any key to continue . . . \r\n",
+    "PostedDate": "2009-01-22T13:34:34.447-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

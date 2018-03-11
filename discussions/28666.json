@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "95607",
+    "ThreadId": "28666",
+    "Html": "Hi,<br>\r\n<br>\r\nI just learned how to automate the internet explorer browser through Microsoft.mshtml and SHDocVw. Now my next step is to parse the html document held by the browser with agility pack. Does anybody know where to start ? Thanks\r\n",
+    "PostedDate": "2008-05-29T13:33:54.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "188098",
+    "ThreadId": "28666",
+    "Html": "<p>using Microsoft.mshtml, you can convert html source to DOM, why need HtmlAgilityPack?</p>",
+    "PostedDate": "2009-05-08T06:04:34.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

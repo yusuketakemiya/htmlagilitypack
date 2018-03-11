@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1323014",
+    "ThreadId": "572326",
+    "Html": "Hi \r<br />\n<br />\nI have the html below and essentially want to build a Dictionary&lt;string, string&gt; object to use later on. Building the dictionary is no problem, it's the Linq to build a series of  id : value nodes that I am struggling with.\r<br />\n<br />\n&lt;html&gt;&lt;body&gt;&lt;table&gt; \r<br />\n&lt;tr&gt;&lt;td&gt;FirstName&lt;/td&gt;&lt;td&gt;Bob&lt;/td&gt;&lt;/tr&gt;\r<br />\n&lt;tr&gt;&lt;td&gt;LastName&lt;/td&gt;&lt;td&gt;Smith&lt;/td&gt;&lt;/tr&gt;\r<br />\n&lt;tr&gt;&lt;td&gt;Age&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;\r<br />\n&lt;tr&gt;&lt;td&gt;Employed&lt;/td&gt;&lt;td&gt;Y&lt;/td&gt;&lt;/tr&gt;\r<br />\n&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;\r<br />\n<br />\nDesired Results:<br />\n<pre><code>        var nodes = doc.DocumentNode.DescendantsAndSelf(&quot;tr&quot;);  //&lt;==Help here!\n\n        // looping through the nodes:\n        // the XPath interfaces can return null when no nodes are found\n        Dictionary&lt;string, string&gt; fields = new Dictionary&lt;string, string&gt;();\n        if (nodes != null)\n        {\n            foreach (var node in nodes)\n            {\n                var id = node.Id;\n                var value = node.Attributes[&quot;value&quot;].Value;\n                fields.Add(id, value);\n            }\n        }\n</code></pre>\n\nThanks in advance<br />\n",
+    "PostedDate": "2014-11-17T08:47:42.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1323046",
+    "ThreadId": "572326",
+    "Html": "Is the below weak - it sort of gets the first two cells - but if feels really gludgy!<br />\n<pre><code>        foreach (HtmlNode table in doc.DocumentNode.SelectNodes(&quot;//table&quot;))\n        {\n            foreach (HtmlNode row in table.SelectNodes(&quot;tr&quot;))\n            {\n                int i = 0;\n                string id = string.Empty;\n                string value = string.Empty;\n                foreach (HtmlNode cell in table.SelectNodes(&quot;td&quot;))\n                {\n                    if (i == 0)\n                    {\n                        id = cell.InnerText;\n                    }\n\n                    if (i == 1)\n                    {\n                        value = cell.InnerText;\n                    }\n                    i++;\n                }\n                formFields.Add(id, value);\n            } \n        }</code></pre>\n\n",
+    "PostedDate": "2014-11-17T10:11:30.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

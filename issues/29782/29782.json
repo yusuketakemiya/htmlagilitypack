@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, I found this package helpful for parsing html. But it is giving wrong xpath when the element is part of form. Any idea how to fix this?",
+    "LastUpdatedDate": "2014-02-11T13:43:11.747-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-12-16T08:51:44.623-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Wrong Xpath if an element is part of form",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 29782
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Can you post and example?",
+      "PostedDate": "2010-12-21T06:29:37.01-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-03-04T08:07:41.84-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-14T16:29:46.187-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have a similar problem that is probably related.  The interior html of a form are not shown as child nodes.  I have attached a C# program which uses the library to parse the attached HTML file and display the nesting level of the various tags.\r\n\r\nThis is the test HTML file:\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\r\n<head>\r\n<meta content=\"text/html; charset=windows-1252\" http-equiv=\"Content-Type\" />\r\n</head>\r\n\r\n<body>\r\n\r\n<form method=\"post\" action=\"\">\r\n<input name=\"Text1\" type=\"text\" />\r\n<input name=\"Submit1\" type=\"submit\" value=\"submit\" />\r\n</form>\r\n</body>\r\n\r\n</html>\r\n\r\nHere is the C# program:\r\n\r\nusing HtmlAgilityPack;\r\nusing System;\r\nusing System.IO;\r\n\r\nnamespace AgilityTest\r\n{\r\n    class Program\r\n    {\r\n        static void Main(string[] args)\r\n        {\r\n            new Program().Run();\r\n        }\r\n\r\n        void Run()\r\n        {\r\n            string docString = HtmlDocument();\r\n            HtmlDocument doc = new HtmlDocument();\r\n            doc.LoadHtml(docString);\r\n            // This document has an html tag which had a head and a body.  Display the tag hierarchy.\r\n            DisplayNode(doc.DocumentNode, 0);\r\n        }\r\n\r\n        void DisplayNode(HtmlNode node, int level)\r\n        {\r\n            for (int i = 0; i < level; i++)\r\n            {\r\n                Console.Write(\"  \");\r\n            }\r\n            Console.Write(\"<{0}> <{1}>\\n\", level, node.OriginalName);\r\n            foreach (HtmlNode child in node.ChildNodes)\r\n                DisplayNode(child, level + 1);\r\n        }\r\n\r\n        string HtmlDocument()\r\n        {   \r\n            StreamReader reader = new StreamReader(\"../../test_web_page.html\");\r\n            string text = reader.ReadToEnd();\r\n            reader.Close();\r\n            return text;\r\n        }\r\n    }\r\n}\r\n\r\nHere is the output.  Note that the input tags are shown as siblings of the form tag rather than as children.\r\n\r\n<0> <#document>\r\n  <1> <#comment>\r\n  <1> <#text>\r\n  <1> <html>\r\n    <2> <#text>\r\n    <2> <head>\r\n      <3> <#text>\r\n      <3> <meta>\r\n      <3> <#text>\r\n    <2> <#text>\r\n    <2> <body>\r\n      <3> <#text>\r\n      <3> <form>\r\n      <3> <#text>\r\n      <3> <input>\r\n      <3> <#text>\r\n      <3> <input>\r\n      <3> <#text>\r\n      <3> <#text>\r\n      <3> <#text>\r\n    <2> <#text>\r\n  <1> <#text>",
+      "PostedDate": "2011-05-14T16:34:35.653-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-06-22T10:59:58.76-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:10.923-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-02-11T13:43:11.747-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

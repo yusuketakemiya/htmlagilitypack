@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "653472",
+    "ThreadId": "267987",
+    "Html": "\r\n<p>am processing html forms with htmlagilitypack, but encounter some problems. take for example</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">form</span> <span style=\"color:red\">action</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;&quot; method=&quot;post&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">input</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;email&quot;</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;text&quot;</span> <span style=\"color:blue\">/&gt;</span>\r\n\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">input</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;fruit&quot;</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;hidden&quot;</span> <span style=\"color:red\">value</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;5&quot;</span> <span style=\"color:blue\">/&gt;</span>\r\n\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">img</span> <span style=\"color:red\">src</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;/image.php&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">form</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p><br>\r\n<br>\r\nfirst i need to replace the action value with the forms web url,<br>\r\nthen second, prepend the image source with the base path url of the form<br>\r\n<br>\r\nhow can i achieve this?</p>\r\n",
+    "PostedDate": "2011-08-05T16:19:48.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

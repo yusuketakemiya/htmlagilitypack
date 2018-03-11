@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "61372",
+    "ThreadId": "18736",
+    "Html": "\r\nHello,<br /><br />the function HtmlAgilityPack.HtmlWeb.GetContentTypeForExtension<br />returns the internal name inside the Registry instead of the ContentType.<br /><br />Fix this by changing the following code in HtmlAgilityPack.HtmlWeb.cs :<br /><br />contentType = (string)reg.GetValue(\"\", def);<br /><br />to<br /><br />contentType = (string)reg.GetValue(\"Content Type\", def);<br /><br />in line 631.<br />",
+    "PostedDate": "2007-12-05T14:05:43.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

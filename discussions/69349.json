@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "235945",
+    "ThreadId": "69349",
+    "Html": "<p>The HtmlAgilityPack.chm file that is a part of the downloadable zip isn't showing me any information. Is there an online copy of this help file? Any alternative to view it?</p>\r\n<p>I am stuck on creating a usable DLL from the solution. Am not too familiar with Visual Studio so could anyone describe how to 'build the project under release mode' and 'add a reference to the newly built DLL'?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-18T01:55:19.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "241580",
+    "ThreadId": "69349",
+    "Html": "<p>Starting with XP SP2, microsoft started blocking chms. Search for how to enable them. I know in Vista there's a different step to enable them than in xp.</p>\r\n<p>I'm hoping to start creating new help documentation with SandCastle+DocProject in the future. The new version does have an Intellisense XML file with it.</p>",
+    "PostedDate": "2009-10-02T21:20:58.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "858811",
+    "ThreadId": "69349",
+    "Html": "<p>Hi, have you tried to right click and select Properties and then you should see just below the Advance button the Unblock button.</p>",
+    "PostedDate": "2012-07-08T02:28:38.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "58507",
+    "ThreadId": "17922",
+    "Html": "\r\nHi guys,<br /><br />I'm running into a weird issue with form tags. This is my stripped down testcase:<br /><br /><a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=Test\">Test</a><br />\t\tpublic void ParseFormTest()<br />\t\t{<br />\t\t\tstring html =\"&lt;body&gt; &lt;form&gt;&lt;table&gt;&lt;/table&gt;&lt;/form&gt; &lt;table&gt;&lt;/table&gt; &lt;/body&gt;\";<br /><br />\t\t\tHtmlDocument htmlDocument = new HtmlDocument();<br />\t\t\thtmlDocument.Load(new StringReader(html));<br /><br />\t\t\t// Get all tables in the document<br />\t\t\tHtmlNode formNode = htmlDocument.DocumentNode.SelectSingleNode(\"//form\");<br />\t\t\tHtmlNodeCollection tablesInFormCollection = formNode.SelectNodes(\".//table\");                                                 // &lt;-- return null<br />  \t\t       HtmlNodeCollection tableInDocumentCollection = htmlDocument.DocumentNode.SelectNodes(\"//table\");<br /><br />\t\t\tAssert.AreEqual(2,tableInDocumentCollection.Count);<br />\t\t\tAssert.AreEqual(1,tablesInFormCollection.Count);<br />\t\t}<br /><br />If I modify the html to:<br /><br />string html =\"&lt;body&gt; &lt;div&gt;&lt;table&gt;&lt;/table&gt;&lt;/div&gt; &lt;table&gt;&lt;/table&gt; &lt;/body&gt;\"; <br /><br />and I use the div instead of form in my xpath query it works fine. <br /><br />Any suggestions about this?<br /><br />thanks!<br /><br />Ernst.<br />",
+    "PostedDate": "2007-11-16T01:47:54.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58598",
+    "ThreadId": "17922",
+    "Html": "\r\nHi Ernst,<br /><br />This is because by default, Forms are parsed as empty nodes - this is because forms are allowed to overlap other elements in the HTML spec.<br /><br />In other words, the following is technically legal HTML, even though it gives us developer hives:<br /><br />&lt;table&gt;<br />&lt;form&gt;<br />&lt;some input elements&gt;<br />&lt;/table&gt;<br />&lt;/form&gt;<br /><br />Here, the form overlaps the closing of the table and when properly rendered, will be contained inside the table.  Since HtmlDocument attempts to allow this as valid without automatically correcting the HTML, HtmlDocument by default makes no attempt to populate the child nodes of the form.<br /><br />Ok.  All that is merely an introduction.  You can get around this default behavior by adding the following line:<br /><br />HtmlNode.ElementsFlags.Remove(\"form\");<br /><br />before you make ANY use of HtmlDocument.  This will allow it to parse the nodes of the form, but it sacrifices the ability of the form to overlap other nodes.  It will force the form to be closed properly.<br /><br />If you have a reasonable assurance that your HTML will be well-formed, this is probably not a problem.  For commercial web sites, this is probably a good bet, as most of them use page builders nowadays instead of hand-coding the HTML.  I wouldn't have said that 2 or 3 years ago; but there's been alot of emphasis on standards recently since the browser wars are heating up again.<br />",
+    "PostedDate": "2007-11-16T14:57:59.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58659",
+    "ThreadId": "17922",
+    "Html": "\r\nWow, I could not have said it better. I see some people really start to understand the Html Agility Pack :-)<br />",
+    "PostedDate": "2007-11-17T09:37:35.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58757",
+    "ThreadId": "17922",
+    "Html": "<div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />simonm wrote:<br />Wow, I could not have said it better. I see some people really start to understand the Html Agility Pack :-)<br /><br /></div><br />Thanks Simon!  Finding this library was, for me, like seeing the light after centuries of darkness.  It's the only elegant, simple approach to HTML parsing I have ever seen - all the others attempt to do too much and be too smart.  Why create a litany of HTML node types when you know you're going to need to look for a \"td\", for example, anyway?  It just complicates things.<br /><br />Off topic: Given any thought to incorporating the FormProcessor into the core codebase?  I've also gone through all the comments.. on every blog/board you've used to post this project.. and incorporated every bug fix or feature addition I've found that I thought would be useful.  The project could certainly use a refresh :)<br />",
+    "PostedDate": "2007-11-18T11:10:24.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58808",
+    "ThreadId": "17922",
+    "Html": "\r\nhi guys,<br /><br />thanks for the fix and detailed explanation! <br />Very cool and handy libaray indeed :) <br /><br />cheers,<br />ernst.<br />",
+    "PostedDate": "2007-11-19T01:01:18.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "67070",
+    "ThreadId": "17922",
+    "Html": "\r\nThanks for the excellent explanation.<br /><br />I was snuggling with workarounds for the form issue, until I had finally decided to file a bug and found this.<br />",
+    "PostedDate": "2008-01-10T00:43:05.133-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206103",
+    "ThreadId": "17922",
+    "Html": "<p>I have a question on this.&nbsp; I'm wondering why the form nodes cannot contain the inputs as child nodes since the inputs are always going to be children, even if the form overlaps other html.</p>\r\n<p>I didn't understand by what was meant here:</p>\r\n<p>[QUOTE]  It will force the form to be closed properly.[/QUOTE] for parsing out the form element.</p>\r\n<p>My problem is that I want to process pages with more than one form and need to differentiate between inputs as to which form they belong to.&nbsp; What is my best course of action?</p>",
+    "PostedDate": "2009-06-26T15:52:19.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "291429",
+    "ThreadId": "17922",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>simonm wrote:</strong><br> Wow, I could not have said it better. I see some people really start to understand the Html Agility Pack :-)<br></blockquote>\r\n<p>&nbsp;No thanks to the documentation.</p>",
+    "PostedDate": "2010-02-16T14:13:22.207-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

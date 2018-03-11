@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "827271",
+    "ThreadId": "353202",
+    "Html": "\r\n<p>I try get single value from this node:</p>\r\n<p>http://gg.pl/dysk/5TppYI-rUkJB5DppYI-rauA/depozyty%20z%C5%82otowe%20-%20WIBOR%206M-121502.png</p>\r\n<p>from this site :</p>\r\n<p><a href=\"http://www.money.pl/pieniadze/depozyty/zlotowe/WIBOR6M,depozyty.html\">http://www.money.pl/pieniadze/depozyty/zlotowe/WIBOR6M,depozyty.html</a></p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>        <span style=\"color:blue\">Dim</span> text <span style=\"color:blue\">As</span> <span style=\"color:blue\">String</span>\r\n        <span style=\"color:blue\">Dim</span> strona <span style=\"color:blue\">As</span> <span style=\"color:blue\">New</span> HtmlAgilityPack.HtmlWeb()\r\n        <span style=\"color:blue\">Dim</span> doc <span style=\"color:blue\">As</span> <span style=\"color:blue\">New</span> HtmlAgilityPack.HtmlDocument()\r\n        doc = strona.Load(<span style=\"color:#a31515\">&quot;http://www.money.pl/pieniadze/depozyty/zlotowe/WIBOR6M,depozyty.html&quot;</span>)\r\n        text = doc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//html/body/div[4]/div[2]/div[2]/div[2]/div[2]/div/table/tbody/tr/td[2]&quot;</span>).InnerText\r\n</pre>\r\n</div>\r\n<p>I have error when try gett vale:</p>\r\n<p>System.NullReferenceException was unhandled&nbsp;</p>\r\n<p>So, where I have error ??</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-04-23T03:28:51.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

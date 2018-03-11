@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "26313",
+    "ThreadId": "8047",
+    "Html": "\r\nHi Simon,<br /><br />we're a team of French developer and we've been using your lib for nearly two years now.<br />Recently I had to use some more features which I found in the following add on:<br />http://apps.ultravioletconsulting.com/projects/uvcwebtransform/article/ (also well documented in you blog's comments, user \"uvc\")<br /><br />I guess you put HtmlAgilityPack on Codeplex so that it gets a life of its own, but I'm afraid you'll need to move on a little bit for that.<br />I think Josh did some nice work with his form processorn that you should propose him to join your team and integrate his add on into your core.<br /><br />What do you think?<br />",
+    "PostedDate": "2007-03-11T10:50:13.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

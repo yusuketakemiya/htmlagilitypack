@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When input html contains comment with long odd series of minuses '-', library produces not well-formed xml output.\nHTML fragment:\n<!--  Code for :bbc----->\nProduced output:\n<!--   Code for :bbc - -- -->\nTo fix it I changed HtmlNode.GetXmlComment() function body:\nstring s = comment.Comment.Substring(4, s.Length-7);\nwhile(s.Contains(\"--\"))\n    s = s.Replace(\"--\", \" - -\");\nreturn s;",
+    "LastUpdatedDate": "2013-02-21T18:47:26.51-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-05-14T07:57:02.66-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Odd series of '--' produce not well-formed xml output",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 16572
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Unfortunately, the W3C XML spec says that double-dashes in XML comments are not allowed. See http://social.msdn.microsoft.com/forums/en-US/xmlandnetfx/thread/4593258d-7445-4dcc-ad24-72cc5c3b530f/ for more info. \r\n\r\nSo there's not much that the HtmlAgilityPack can do to fix this- instead of changing the HTML library, you probably want to change the underlying source HTML instead. ",
+      "PostedDate": "2009-06-24T07:33:05.843-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:26.51-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

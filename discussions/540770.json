@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1228887",
+    "ThreadId": "540770",
+    "Html": "This is the function I used to get the string content from the website ..the problem is when executed first I cannot get the string content( &quot; App.Data2 =   userprofile.InnerText;&quot;) since it skips to the next line ( &quot;App.savecontent(App.Data2); &quot;) so tht  i get the empty string ...if I recall the function I can get the string .Is there any idea possible to solve this issue I need the string value  first time automatically ..please suggest me some ....:/ thanks :)\r<br />\n<br />\n public void DownLoad(object sender, HtmlDocumentLoadCompleted e)<br />\n<pre><code>{\n\n        if (e.Error == null)\n        {\n            HtmlDocument doc =  e.Document;\n\n            if (doc != null)\n            {\n\n                var userprofile = doc.DocumentNode.SelectSingleNode(&quot;//div[@class = 'ui-large-content']&quot;);\n                App.Data2 =   userprofile.InnerText;\n                App.savecontent(App.Data2); \n\n            }\n        } \n    }</code></pre>\n\n",
+    "PostedDate": "2014-03-31T23:00:32.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

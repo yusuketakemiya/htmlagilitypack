@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1028931",
+    "ThreadId": "439910",
+    "Html": "Hello,\r<br />\n<br />\nI am new to HAP. What I am trying to do is to enter information on a form and submit the form and parse the result page. I have tried this with webbrowser object in vb.net but the problem is I could not find a way to wait for scripts on the page to finish. Anyone has any ideas? \r<br />\n<br />\nThanks and regards.<br />\n",
+    "PostedDate": "2013-04-11T03:52:51.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

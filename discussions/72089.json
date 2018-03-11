@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "246009",
+    "ThreadId": "72089",
+    "Html": "<p>i am new to this library and i chose it for its LINQ support. thanks for making it open source!</p>\r\n<p>i did some initial tests and what puzzles me is that some nodes like &lt;TITLE&gt; and &lt;STYLE&gt; return the inner text as child nodes.</p>\r\n<p>my code:</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>\r\n</pre>\r\n</div>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>\t\t\t<span style=\"color:Blue\">using</span>( StreamWriter sw = File.CreateText(<span style=\"color:#A31515\">&quot;c:\\\\out.txt&quot;</span>) )\r\n\t\t\t{\r\n\t\t\t\tHtmlAgilityPack.HtmlDocument doc = <span style=\"color:Blue\">new</span> HtmlAgilityPack.HtmlDocument();\r\n\t\t\t\tdoc.Load( <span style=\"color:#A31515\">@&quot;C:\\Temp\\index.html&quot;</span> );\r\n\t\t\t\t<span style=\"color:Blue\">var</span> results = <span style=\"color:Blue\">from</span> node <span style=\"color:Blue\">in</span> doc.DocumentNode.Descendants()\r\n\t\t\t  <span style=\"color:Green\">// \t\twhere node.HasChildNodes == false</span>\r\n\t\t\t\t\t  <span style=\"color:Blue\">select</span> node;\r\n\r\n\t\t\t\t<span style=\"color:Blue\">foreach</span>( HtmlNode node <span style=\"color:Blue\">in</span> results )\r\n\t\t\t\t{\r\n<span style=\"color:Green\">//\t\t\t\t\tif( !node.HasChildNodes )</span>\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tsw.WriteLine( node.OuterHtml );\r\n\t\t\t\t\t\tsw.WriteLine( <span style=\"color:#A31515\">&quot;++++++++++++++++++++++++++++++&quot;</span> );\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>as you can see, i simply take all nodes and their descendants and  write them to a text file.</p>\r\n<p>however, a node like</p>\r\n<p>&lt;TITLE&gt;M$$&lt;/TITLE&gt;</p>\r\n<p>yields actually two nodes: the original line above and M$$ as child node</p>\r\n<p>if i uncomment &quot;if( !node.HasChildNodes )&quot; i only see M$$. the same goes for the &lt;STYLE&gt; node in the sample mshome.htm</p>\r\n<p>this seems wrong to me, or am i missing something?</p>",
+    "PostedDate": "2009-10-15T06:10:00.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "246047",
+    "ThreadId": "72089",
+    "Html": "<p>HAP creates nodes for any text that is not a tag. You'll see it has a node type of #text. It does this to do it's best to maintain formatting. Say you have a newline after M$$.&nbsp;</p>\r\n<p>I've been on the fence about this behavior myself. For nodes like title it really should just have the value in the InnerHtml/InnerText. But then that would bring an inconsistent way of accessing what is inside the node. I've been trying to think of some ways to make this a little more like LINQ to XML. But in the long run I would have to make a break with backwards compatibility so work on this would be slated for a major release.</p>",
+    "PostedDate": "2009-10-15T07:03:14.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

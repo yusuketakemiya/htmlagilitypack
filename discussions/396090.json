@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "914647",
+    "ThreadId": "396090",
+    "Html": "\r\n<p>Hi, I am using HtmlAgilityPack to process my HTML input. But I am getting unwanted closure tags when &quot;LoadHtml&quot; method is called.&nbsp;</p>\r\n<p>Suppose Text input is an explanation about &quot;c# nullable types&quot; and has a line like the one below;</p>\r\n<p>Nullable&lt;int&gt; c = null;</p>\r\n<p>When the above line is loaded to an HtmlDocument using LoadHtml, it becomes something like below;</p>\r\n<p>Nullable&lt;int&gt; c = null; &lt;/int&gt;</p>\r\n<p>How can I avoid this? I have tried OptionAutoCloseOnEnd=false, OptionFixNestedTags=false, OptionWriteEmptyNodes=false, OptionCheckSyntax=false none of them worked.</p>\r\n<p>Any help greatly appreciated...</p>\r\n",
+    "PostedDate": "2012-09-19T07:59:51.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "945541",
+    "ThreadId": "396090",
+    "Html": "\r\n<p>The HtmlAgilityPack is relatively new to myself but logically 'OptionsCheckSyntax=false' would work. The problem you seem to be running into is your use of '&lt;' and '&gt;' characters.</p>\r\n<p>These characters are used as mark-up for the document itself. Try replacing them with &quot;&amp; l t ;&quot; and &quot;&amp; g t ;&quot; (without the quotes and spaces)<br>\r\n<br>\r\ne.g. &lt;extract&gt; Nullable &amp; l t ;int &amp; g t ; c = null; &lt;/extract&gt;</p>\r\n<p>Haven't had the opportunity to try this myself but by all indications it should work. Added spaces as browsers automatically convert them to '&lt;' and '&gt;'.<br>\r\n<br>\r\nReference: http://www.w3.org/TR/REC-html40/charset.html#h-5.3.2<br>\r\n<br>\r\nRegards</p>\r\n",
+    "PostedDate": "2012-11-22T01:46:18.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

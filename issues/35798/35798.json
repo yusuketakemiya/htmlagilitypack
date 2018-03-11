@@ -1,0 +1,85 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "We are using the HtmlAgilityPack version 1.4.9 from nuget and we are facing an issue when calling Entity.DeEntitze on text containing '&' char.\n\nWe implemented a method thats clean all Html tags from an input string to return a pure text only, this method is using HtmlAgilityPack to obtain the text of every tag encountered on the input html string, for exemple on Text nodes we are getting the Node.Text string and then we are calling the HtmlEntity.DeEntitize to remove inner tags, this is working perfectly except for html string containing the '&' char.\n\nFor exemple, consider the below html input : \n\n<p class=\"full\">Red was the theme colour of the day; 31st August, 2012 as L'Oréal West Africa’s Human resources Department  launched one of the group’s great tools  L’Oréal & Me tool; My learning.</p>\n\nWhen calling to HtmlEntity.DeEntitize with the string \"Red was the theme colour of the day; 31st August, 2012 as L'Oréal West Africa’s Human resources Department  launched one of the group’s great tools  L’Oréal & Me tool; My learning.\" the below exception is thrown systematicaly :\n\n  at System.Collections.Generic.Dictionary`2[System.String,System.Int32].get_Item (System.String key) [0x000a2] in /Developer/MonoTouch/Source/mono/mcs/class/corlib/System.Collections.Generic/Dictionary.cs:148 \n  at HtmlAgilityPack.HtmlEntity.DeEntitize (System.String text) [0x00000] in <filename unknown>:0 \n  at LOreal.Mynews.Portable.Tools.HtmlHelper.ConvertTo (HtmlAgilityPack.HtmlNode node, System.IO.TextWriter outText) [0x00096] in /Users/Kamel/Documents/Mynews/Sources/Mobile/Portable/Tools/HtmlHelper.cs:196 \n\nBut if we replace the '&' char by an empty string (using string.Replace(\"&\", \"\") method) the HtmlEntity.DeEntitize work perfectly.\n\nWe are using HtmlAgilityPack on PCL supporting Xamarin, .Net4.5, W8, WP8, ...Etc. \n\nAny help please ?\n\nSamir.",
+    "LastUpdatedDate": "2017-02-02T09:42:37.613-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-01-16T08:23:50.38-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlEntity.DeEntitize throwing KeyNotFoundException",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 5,
+    "Id": 35798
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I believe this is not simply because of the '&' but because of its proximity to the ';' ..  & Me tool;\r\n\r\nWe have run in to similar issue. \"Peel & stick;\" ",
+      "PostedDate": "2015-02-19T15:10:13.19-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "As far as I can see, this is due to a wrong usage of the dictionaries inside HtmlEntity. Instead of using TryGetValue to check for an optional value, the code uses the indexer and checks for null. Dictionary<K,V> does not return null if the key does not exist, but throws the KeyNotFoundException. Instead, TryGetValue should be used to check for optional values. Probably, a non-generic dictionary has been used in former versions of HtmlEntity.\r\n\r\nHtmlEntity.cs, lines 645ff\n```\nint code;\nobject o = _entityValue[entity.ToString()];\nif (o == null)\n{\n    // nope\n    sb.Append(\"&\" + entity + \";\");\n}\nelse\n{\n    // we found one\n    code = (int) o;\n    sb.Append(Convert.ToChar(code));\n}\n```\nShould be:\r\n\r\n```\nint code;\nif(!_entityValue.TryGetValue(entity.ToString(), out code))\n{\n    // nope\n    sb.Append(\"&\" + entity + \";\");\n}\nelse\n{\n    // we found one\n    sb.Append(Convert.ToChar(code));\n}\r\n\r\n```\r\n\r\nHtmlEntity.cs, lines 774ff\r\n\r\n```\nstring entity = _entityName[code] as string;\nif ((entity == null) || (!useNames))\n{\n    sb.Append(\"&#\" + code + \";\");\n}\nelse\n{\n    sb.Append(\"&\" + entity + \";\");\n}\n```\r\n\r\nShould be:\r\n\r\n```\nstring entity;\nif(!useNames || !_entityName.TryGetValue(code, out entity))\n{\n    sb.Append(\"&#\" + code + \";\");\n}\nelse\n{\n    sb.Append(\"&\" + entity + \";\");\n}\n```\n",
+      "PostedDate": "2015-04-20T04:40:31.667-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-11-11T04:24:24.013-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "minimal replication: \r\n\r\nHtmlAgilityPack.HtmlEntity.DeEntitize(\"&apos;\")\r\n\r\nthrows KeyNotFoundException",
+      "PostedDate": "2015-11-11T04:29:37.747-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-03-16T04:47:51.08-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-09-01T02:12:00.897-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2017-02-02T09:37:07.24-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Is there any plans to fix this in a future release?  This issue causes exception when parsing some valid HTML entities such as &apos;  (was invalid in HTML 4 , but is now valid in HTML 5).\r\n\r\nThis is a significant issue since it causes failures on valid HTML.  At least it shouldn't throw an exception and should be an quick fix as others have noted.\r\n\r\nThank you",
+      "PostedDate": "2017-02-02T09:40:20.923-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "\nThe entity I tried to mention in previous post is \"apos\" ",
+      "PostedDate": "2017-02-02T09:42:37.613-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When I load a html fragment with a named entity, it get doubly-encoded in the output. The same is true for a numbered entity.\n \nExample:\ndoc.Load(\"<div>&egrave;</div>\");\n \nActual output:\n<div>&amp;egrave;</div>\n \nExpected output:\n<div>&egrave;</div>",
+    "LastUpdatedDate": "2014-01-07T01:58:34.363-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2007-08-21T07:43:42.12-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Entities are doubly-encoded",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 11,
+    "Id": 12359
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Funny, I was just about to enter the exact same bug.   The problem is that it replaces all \"&\" with \"&amp;\" except when it is part of a small number of special cases (&amp; &lt; &gt; and &quot;)\r\n\r\nThe fix, to get it to skip all real entities, while encoding stray ampersands, is to replace the line \r\n\r\nHtmlDocument.cs, Line 223\r\nRegex rx = new Regex(\"&(?!(amp;)|(lt;)|(gt;)|(quot;))\", RegexOptions.IgnoreCase);\r\n\r\nwith the line:\r\nRegex rx = new Regex(@\"&(?!([a-z]+)|(\\#[0-9]+)|(\\#(x|X)[0-9a-fA-F]+);)\");\r\n\r\nThat will leave entities such as &egrave; &mdash;  &#8212; and &#x2022; untouched, while converting text like AT&T to AT&amp;T\r\n\r\n(techinically, the RegexOptions.IgnoreCase isn't needed, as things like &NBSP; are properly entities, but YMMV, so add it back in if the file you are working on need it)\r\n\r\n\r\n",
+      "PostedDate": "2007-11-02T12:27:08.29-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-11-02T12:31:06.43-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-10-23T06:17:35.153-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-16T02:45:29.477-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "@James I have found this problem too although I am not sure this is the exact solution as for me &nbsp; for example should be changed to &#160; as nbsp is not supported within xml but this is. I think different people need different outputs. I may try myself to make the change as I need it for my current project.",
+      "PostedDate": "2010-03-05T08:36:32.557-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-22T09:40:25.617-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-22T09:44:50.36-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-22T09:59:03.987-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-08-16T03:40:03.397-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-06-30T03:42:02.94-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The above regex is _almost_ spot on, but there's a couple of mising semicolons, which doesn't let it escape the following: something=something&something=something.\r\n\r\nThe correct regex should be:\r\nRegex rx = new Regex(@\"&(?!([a-z]+);|(\\#[0-9]+);|(\\#(x|X)[0-9a-fA-F]+);)\");\r\n\r\nHere are the test cases:\r\n\r\nFull document:\r\n\t\t[TestCase( // http://htmlagilitypack.codeplex.com/workitem/12359\r\n\t\t\t\"<p>us & them &amp; are &mdash; great &#39;</p>\", \r\n\t\t\t\"<p>us &amp; them &amp; are &mdash; great &#39;</p>\")]\r\n\t\t[TestCase(\r\n\t\t\t\"<a href=\\\"http://test/?us&them\\\">meh</a>\",\r\n\t\t\t\"<a href=\\\"http://test/?us&amp;them\\\">meh</a>\")]\r\n\r\nJust the HtmlEncode:\r\n\t\t[TestCase(\"test&test\", \"test&amp;test\")]\r\n\t\t[TestCase(\"test&test;\", \"test&test;\")]\r\n\t\t[TestCase(\"test & test;\", \"test &amp; test;\")]\r\n\r\nAlthough I think this is a bit too \"smart\" for an HtmlEncode function... It shouldn't be done with a regex... Just like none of the rest of the HTML should ever be done with a regex...",
+      "PostedDate": "2011-07-11T06:32:13.69-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-12-26T15:52:41.027-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:28.367-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-01-07T01:57:42.693-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The same issue with converitng f.e. mvcgrid.codeplex.com (nbsp at the stars are double encoded)",
+      "PostedDate": "2014-01-07T01:58:34.363-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

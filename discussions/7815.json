@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "25541",
+    "ThreadId": "7815",
+    "Html": "\r\nHi Simon,<br /><br />I'm new to .net and C# but I have been able to use your library with very little effort and it gives me everything I need for my project. Thanks very much!<br /><br />Now I am checking the code to see if it will be robust in a heavy-traffic server environment. And I just have a couple of questions.<br /><br />My stress tests show that when parsing an HTML doc 100K times or more that no RAM is leaked, but average time to process the doc decreases for a while before levelling out. I am a bit puzzled as to why the avg. parsing time increases but I can live with that for now. (It seems to be related to XPath usage, but I haven't spent much time looking into exactly where its slowing down.)<br /><br />Anyway, I noticed in the source that the collections are not generics, and I understand that HAP was originally written before generics were available. However, now that we have them, I'm wondering is there any plan to convert the strongly-typed collections over to generics?<br /><br />I've also run FxCop program over the HAP and it raises a number of issues, some which may be important. Have you ever looked at conforming the code to the .net standards a la FxCop?<br /><br />Cheers,<br />sr<br />",
+    "PostedDate": "2007-03-04T18:09:24.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

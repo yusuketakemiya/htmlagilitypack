@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Please consult discussions and other posts. This is not an issue with the library itself.",
+    "ClosedDate": "2009-05-17T23:44:51.473-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Guys,\nI knw this is a lame question but as soon as I try opening the solution I am asked to log into the Team Foundation Server for ww.codeplex.com. I tried entering my codeplex username and password but it doesnt work. Am I doing something wrong??\n \nThanks.",
+    "LastUpdatedDate": "2013-05-16T05:33:00.587-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-01-09T20:33:00.223-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How do I open the solution file??",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 14691
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

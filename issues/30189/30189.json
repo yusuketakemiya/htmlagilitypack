@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have been trying tot use HAP on some FireFox bookmarks.html files.   They all have aspects of Definition Lists malformed in their HTML malformed in that <DT> tags have no closing tags.  This is causing problems with the element hierarchies after each <DT>.   The flag that a <DT> is complete seems to be just a new line.\n \nSo this root Definition List fragment from a typical exported Firefox Bookmarks set says it has 5 - not 7 - children in its ChildNodes property: P, #Text (the CR/LF), HR, #Text (CR/LF), and DT.   (There should be another #Text (CR/LF) and the main <DL>).   That main child <DL> actually owns thousands of bookmark elements.\n \nIs there any good way to configure HAP to properly deal with this or would I need to hack the code to customize it for this HTML quirk?   Is there a simple way to map CR/LF to imply the close for each <DT>?\n \n<!DOCTYPE NETSCAPE-Bookmark-file-1>\n<!-- This is an automatically generated file.\n     It will be read and overwritten.\n     DO NOT EDIT! -->\n<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=UTF-8\">\n<TITLE>Bookmarks</TITLE>\n<H1>Bookmarks Menu</H1>\n<DL><p>\n    <HR>\n    <DT><A HREF=\"https://en-us.add-ons.mozilla.com/en-US/firefox/bookmarks/\" ADD_DATE=\"1207341887\" LAST_MODIFIED=\"1207341887\">Get Bookmark Add-ons</A>\n    <HR>\n    <DT><H3 ADD_DATE=\"1240229359\" LAST_MODIFIED=\"1296851502\"></H3>\n    <DL><p>\n    ... (etc.)\n \nThank you for any help you can give.\n        <DT><A HREF=\"place:sort=14&type=6&maxResults=10&queryType=1\">Recent Tags</A>",
+    "LastUpdatedDate": "2013-02-21T18:47:08.95-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-02-17T11:06:29.18-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to deal with malformed DT, DL in Bookmarks.html",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 30189
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The Firefox bookmark HTML file isnt technically valid HTML, if you see the first line:\r\n\r\n<!DOCTYPE NETSCAPE-Bookmark-file-1>\r\n\r\nit does not refer to the HTML DTD, a google search resulted in: Netscape Bookmark File Format [http://msdn.microsoft.com/en-us/library/aa753582(v=vs.85).aspx]\r\n\r\nYou may have to hack HtmlNode.cs and some of the options in HtmlDocument.cs.\r\n\r\nYou can also try port this script to C#; Firefox Bookmark Parser PHP [http://www.polak.ro/firefox-bookmarks-parser.html]",
+      "PostedDate": "2011-02-24T03:16:57.72-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thank you.   That makes what is happening more clear.  I rarely have to parse HTML, and hadn't even noticed the Netscape-specific DTD.\r\n\r\nI ended up just writing some RegEx Replace()'s to insert the required end tags to make HAP work correctly.   They were only required for <DT> and <DD> elements.\r\n\r\nTo spare anyone else from having to work out the RegEx expressions, here is what is working for me to get HAP to parse the Bookmark Files:\r\n\r\n    // Most bookmark HTML files are malformed in that the DefinitionTerm <DT> elements\r\n    // are not terminated.  The end tag for both the DT and DD elements is implied by the end of the line.\r\n    // If this is the case with the target file, we need to add the end tag so the\r\n    // CodePlex HTMLAgilityPack HTML parser will work properly\r\n\r\n    string sEntireFileContents = File.ReadAllText(bookmarkFile.BookmarksFileName);\r\n    string sAdjustedContents = String.Empty;\r\n    if (sEntireFileContents.Contains(\"</DT>\")) {\r\n        sAdjustedContents = sEntireFileContents;\r\n    }\r\n    else {\r\n        Regex regexFindDt = new Regex(\"(\\x20*?<DT>.*)(\\r\\n)\", RegexOptions.IgnoreCase);\r\n        sAdjustedContents = regexFindDt.Replace(sEntireFileContents, \"$1</DT>$2\");\r\n\r\n        if (!sAdjustedContents.Contains(\"</DD>\")) {\r\n            Regex regexFindDD = new Regex(@\"(\\x20*?<DD>.*)(\\r\\n)\", RegexOptions.IgnoreCase);\r\n            sAdjustedContents = regexFindDD.Replace(sAdjustedContents, \"$1</DD>$2\");\r\n        }\r\n    }\r\n\r\nThank you again for responding.\r\n-Bob",
+      "PostedDate": "2011-02-25T12:41:43.88-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:08.95-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

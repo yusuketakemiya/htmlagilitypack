@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Happens as soon as I include the HtmlAgilityPack.dll reference and build the project.",
+    "LastUpdatedDate": "2013-02-21T18:47:00.637-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-04-23T05:25:23.36-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Cannot find type System.Xml.XPath.XPathNavigator in module System.Xml.dll",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32616
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This is an issue with building a Metro styel app using the new WinRT api. Hopefully a change will be implemented soon.\r\n\r\nIn the mean time, here is a fork of this project that has found a solution to the issue:\r\nhttps://bitbucket.org/antiufo/htmlagilitypack-for-metro",
+      "PostedDate": "2012-05-18T11:49:12.367-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "WinRT does not include any support for Xpath. Unfortunately the Silverlight version doesn't work like it does for windows phone. The alternative is to use the LINQ methods like Descendants() and Elements() ",
+      "PostedDate": "2012-06-12T15:30:45.397-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-09-21T10:05:23.697-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:00.637-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

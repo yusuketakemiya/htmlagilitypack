@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "469508",
+    "ThreadId": "220034",
+    "Html": "<p>Hi All,<br><br>Recently I'm using HTML Agility to convert html to text, I always works excellent, but when I converting a Chinese html, the text became to mess code.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Do any one have any suggestion? &nbsp;Thanks in advance!<br><br>Jess&nbsp;</p>",
+    "PostedDate": "2010-07-20T03:41:07.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "479598",
+    "ThreadId": "220034",
+    "Html": "<p>Set the right Encoding.</p>",
+    "PostedDate": "2010-08-12T02:29:05.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "481156",
+    "ThreadId": "220034",
+    "Html": "<p>The &quot;Encoding&quot; and &quot;DeclaredEncoding&quot; property of Document class has already got the web page right encoding, such as GB2312; you can get the encoding and decode the web text.</p>\r\n<p>But, personally,&nbsp;HAP should automatically decode the html text string.</p>",
+    "PostedDate": "2010-08-16T16:45:47.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "481160",
+    "ThreadId": "220034",
+    "Html": "This has been covered extensively before. The while I agree it should be more automatic, the problem with is that by the time it can be detected via the html header it is already reading the stream which would need to be restarted. While it is possible and has been looked into in the past I found GB2312 doesn't decode it correctly. I found even after using the encoding the characters would still be corrupted. Furthermore it was found switching to UTF-8 or UTF-16 would allow the document to be parsed correctly. \r\n\r\n Personally I think most of the HtmlWeb class needs to be refactored and possibly dropped. It recreates/hides a lot of functionality added in .NET after it was written. ",
+    "PostedDate": "2010-08-16T16:59:53.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

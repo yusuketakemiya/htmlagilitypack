@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "995213",
+    "ThreadId": "431683",
+    "Html": "Hi everyone, \r<br />\n<br />\nCan you tell me if it is possible to create ElementFlags starting from comments from a HTML source of a page like:<br />\n&lt;!-- START_COMMENTZONE --&gt;test zone<br />\n&lt;p&gt; paragraph to take only between comments&lt;/p&gt;\r\n&lt;!-- END_COMMENTZONE --&gt;\r\nHtmlNode.ElementFlags - Start - (&lt;!-- START_COMMENTZONE --&gt;) with \r<br />\nHtmlNode.ElementFlags - End- (&lt;!-- END_COMMENTZONE --&gt;) \r<br />\n<br />\nI have seen that you can add Elements, but I did not find how to specify the end of the Element wich is normally finalised in &lt;/p&gt; by instance.\r<br />\nIn my case I need &lt;!-- END_COMMENTZONE --&gt; to be the end of the Element.\r<br />\n<br />\nI am using VSTO with .vb net\r<br />\n<br />\nThank you <br />\n",
+    "PostedDate": "2013-02-01T06:58:37.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

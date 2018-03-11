@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1277413",
+    "ThreadId": "554037",
+    "Html": "I've come across several people reporting how the default setting for HtmlAgilityPack when getting a FORM tag is to not select its children (<a href=\"http://stackoverflow.com/a/2388007/864233\" rel=\"nofollow\">See this StackOverflow page</a>). \r<br />\n<br />\nHowever, all of the fixes for this are for C#. I'm am looking for a solution in PowerShell.\r<br />\n<br />\nWhat is the <strong>PowerShell</strong> equivalent to the C# code<br />\n<code>HtmlNode.ElementsFlags.Remove(&quot;form&quot;);</code><br />\n",
+    "PostedDate": "2014-07-24T11:03:48.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1277785",
+    "ThreadId": "554037",
+    "Html": "I figured it out.\r<br />\n<br />\n<code>[HtmlAgilityPack.HtmlNode]::ElementsFlags.Remove(&quot;form&quot;)</code> \r<br />\n<br />\nis the command I needed to run. <br />\n",
+    "PostedDate": "2014-07-25T09:58:26.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

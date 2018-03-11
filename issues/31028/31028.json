@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2011-07-20T09:02:09.24-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "See the attachment.\n \nThey shouldn't be packed inside I guess.\n \nBy the way, the WP7 version of HAP was missing in the NuGet package. It would be helpful if WP7 dll was included.",
+    "LastUpdatedDate": "2013-05-16T05:32:57.263-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-07-15T18:29:32.283-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "SVN folders are packed with nuget package",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 31028
+  },
+  "FileAttachments": [
+    {
+      "FileId": 11843,
+      "FileName": "nugetpackage.png",
+      "DownloadUrl": ".\\11843"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Just noticed this. It's causing an issue as, when you go to commit the file, it's already been committed (to htmlagilitypack.svn.codeplex.com). Therefore, any remote users will not pick up those changes unless they explicitly delete the .svn folders.\r\n\r\nI'd raise this to high as a result.",
+      "PostedDate": "2011-07-20T06:51:47.213-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "hmm.. I'll see what I can do to have them removed. Seems like the new nuget.exe is no longer ignoring files/folders marked as hidden",
+      "PostedDate": "2011-07-20T08:02:48.887-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have released a new nuget package that has the folders removed",
+      "PostedDate": "2011-07-20T09:01:59.683-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-07-20T09:02:09.24-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:05.803-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:57.263-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

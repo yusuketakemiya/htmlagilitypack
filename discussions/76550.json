@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "261739",
+    "ThreadId": "76550",
+    "Html": "<p>I use HAP to parse HTML output on the fly from an ASP.NET filter I developed called <a href=\"http://spf.codeplex.com\">Secure Parameter Filter</a>&nbsp;(SPF).&nbsp; An SPF user pointed out an odd&nbsp;scenario that I figured I would post here to get an&nbsp;official response.&nbsp;&nbsp;Essentially&nbsp;the&nbsp;text from an&nbsp;asp:linkbutton was being swallowed&nbsp;when it contained an un-encoded&nbsp;&lt; or &gt; character.&nbsp;</p>\r\n<p>For example, the following code:</p>\r\n<p>&lt;asp:LinkButton ID=&quot;Foo&quot; runat=&quot;server&quot; Text=&quot;&lt; BAR&quot; Font-Size=&quot;8&quot; Font-Bold=&quot;true&quot;&gt;&lt;/asp:LinkButton&gt;</p>\r\n<p>normally produces the following HTML:&nbsp;</p>\r\n<p>&lt;a id=&quot;Foo&quot; href=&quot;javascript:__doPostBack('Foo',')&quot; style=&quot;font-size:8pt;font-weight:bold;&quot;&gt;&lt;BAR&lt;/a&gt;</p>\r\n<p>However, if the page is loaded into HAP and then rendered back out, it produces the following:&nbsp;</p>\r\n<p>&lt;a id=&quot;Foo&quot; href=&quot;javascript:__doPostBack('Foo',')&quot; style=&quot;font-size:8pt;font-weight:bold;&quot;&gt;&lt;&gt;&lt;/a&gt;</p>\r\n<p>So HAP&nbsp;appears to be parsing the '&lt;' in the string &quot;&lt; BAR&quot; and then incorrectly &quot;fixing&quot; the HTML by replacing &quot;BAR&quot; with a '&gt;'</p>\r\n<p>The workaround I suggested&nbsp;was to HTML encode the '&lt;' so that the string renders as&nbsp;&quot;&amp;lt; BAR&quot; instead.&nbsp; This worked perfectly and is&nbsp;arguably the&nbsp;way that value should have been represented in the first place, however&nbsp;I&nbsp;am curious to hear whether this is a scenario that&nbsp;HAP should be able to handle.&nbsp; You can find the original thread <a href=\"http://spf.codeplex.com/Thread/View.aspx?ThreadId=70982\">here</a> for reference.&nbsp;</p>",
+    "PostedDate": "2009-11-29T23:52:15.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263441",
+    "ThreadId": "76550",
+    "Html": "<p>Thanks for bringing this up -- I've run into the same issue while scraping a site that uses unencoded GT/LT in a textarea.</p>\r\n<p>Very simply:</p>\r\n<p>&lt;textarea&gt; 1 &lt; 2 &lt;/textarea&gt;</p>\r\n<p>is parsed as:</p>\r\n<p>&lt;textarea&gt; 1 &lt; 2=\\&quot;\\&quot;&gt;&lt;/textarea&gt;</p>\r\n<p>Consequently, the inner text ends up as &quot;1&quot;. DarthObiwan recently mentioned <a href=\"http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=76632\">plans to make the parser more configurable</a>. An XML file to specify parsing options for specific node types (such as &quot;textarea - don't parse descendants&quot;) might be useful.</p>",
+    "PostedDate": "2009-12-03T18:42:31.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263550",
+    "ThreadId": "76550",
+    "Html": "<p>Ok so the way XML handles &lt; and &gt; in it's data is by using CDATA tags. Basically whenever there is text to be put in it should be enclosed in CDATA tags. Doing that might be cheaper than having configuration options; It's just an idea.</p>",
+    "PostedDate": "2009-12-04T02:13:38.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263567",
+    "ThreadId": "76550",
+    "Html": "<p>Thanks, kurtnelle, that was extremely helpful -- I should have figured there's already a built-in way to indicate parsing should be skipped.<br><br>Searching for &quot;CData&quot; in the project clarified DarthObiwan's comments on the &quot;default list of tags and their parsing options&quot;, as well as some of the <a href=\"http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=2945\">other questions</a> I skimmed over. In my case, all I needed to do was:<br><br>HtmlDocument htmlDocument = new HtmlDocument(); // initialization of the static HtmlNode.ElementsFlags occurs<br>HtmlNode.ElementsFlags.Add(&quot;textarea&quot;, HtmlElementFlag.CData);<br><br>and then load my document/stream. Worked perfectly.<br><br>So, bholyfield, presumably if you call:<br>HtmlNode.ElementsFlags.Add(&quot;a&quot;, HtmlElementFlag.CData);<br>before loading the HTML, &quot;BAR&quot; won't be replaced by &quot;&gt;&quot;.</p>",
+    "PostedDate": "2009-12-04T03:14:48.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270360",
+    "ThreadId": "76550",
+    "Html": "<p>Hi guys,</p>\r\n<p>Using unencoded &lt; and &gt; leads to ... unpredictible results! Although you *could* think it's predictible because you've tested it with all modern browsers :) If you want to use &lt; and &gt;, use HTML entities (&amp;lt; &amp;gt;). That's the canonical form.</p>",
+    "PostedDate": "2009-12-23T09:57:24.193-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

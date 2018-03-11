@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "144421",
+    "ThreadId": "43461",
+    "Html": "I am very new to .NET.&nbsp; I want perform a web scrape on one of our company web servers after performing a query.&nbsp; So, for lack of better terms, the webserver has a page that I can login to, put a value, emulate and click, then it posts back to me html. That is the html data that I need to parse, not the stored file on the server. All the examples that I have seen seem to point only to downloading the HTML file first.&nbsp; This is not available to me.&nbsp; It seems as if I need to use the system.IO.stream overload, but can't find any examples of how to do it.&nbsp; Any ideas/suggestions?<br>\r\n<br>\r\nThanks!<br>\r\n",
+    "PostedDate": "2009-01-05T08:49:11.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "146711",
+    "ThreadId": "43461",
+    "Html": "You should use <span>HttpWebResponse</span> class to post a request and get a response from a web server. The response is a stream. Is that what you were looking for?<br>\r\n",
+    "PostedDate": "2009-01-13T08:33:41.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

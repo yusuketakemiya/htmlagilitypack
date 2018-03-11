@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "152609",
+    "ThreadId": "45728",
+    "Html": "I am trying to parse an email that most of the content is in tables so I can get that data perfectly by using the table or td tags.&nbsp; But I've got a portion that is just separated by breaks.&nbsp; This data is always present on the same exact line numbers.&nbsp; So what I need to know is if I can grab the data say from lines 9, 13, and 25 how would I code that?&nbsp; <br>\r\n",
+    "PostedDate": "2009-01-30T10:05:29.853-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

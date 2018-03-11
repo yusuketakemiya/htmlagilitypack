@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1478681",
+    "ThreadId": "656293",
+    "Html": "Hi guys we have an &nbsp; in a span and trying a LoadHtml on a new Document and then outputting we're experiencing a double encoding issue where our &nbsp; 's are getting output as &amp;nbsp;\r<br />\n<br />\nAny advice appreciated.<br />\n",
+    "PostedDate": "2016-07-11T23:03:30.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

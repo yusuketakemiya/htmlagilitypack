@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "64421",
+    "ThreadId": "19490",
+    "Html": "\r\nI'm new to the Agility Pack, so I may just be overlooking something, but I'm having a problem determining the tag name of an HtmlNode.  In other words, given an HtmlNode, how do I find out if it's a &lt;p&gt; or &lt;img&gt; or &lt;table&gt;, etc.<br /><br />Anyone been able to do this?  Is this functionality built-in somewhere and I'm just missing it?<br />",
+    "PostedDate": "2007-12-20T14:32:00.563-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "66575",
+    "ThreadId": "19490",
+    "Html": "<div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />SaintJimmy wrote:<br />I'm new to the Agility Pack, so I may just be overlooking something, but I'm having a problem determining the tag name of an HtmlNode.  In other words, given an HtmlNode, how do I find out if it's a &lt;p&gt; or &lt;img&gt; or &lt;table&gt;, etc.<br /><br />Anyone been able to do this?  Is this functionality built-in somewhere and I'm just missing it?<br /><br /></div><br />Look at the HtmlNode.Name property - that contains the node type.  HtmlAgilityPack has no knowledge of node types, no enumeration of node types, or anything.  Specific node types are handled specially in a couple of places, and that is it (like forms).<br />",
+    "PostedDate": "2008-01-07T13:16:17.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "234438",
+    "ThreadId": "68898",
+    "Html": "<p>Is it possible to make the spacing of the new paragraph tag the same as the spacing of a new line?</p>\r\n<p>What I mean by that is when you press enter it will skip ahead 2 lines. I want it to skip only one line, same as if you press shift + enter (while still having the same functionality as just enter).</p>\r\n<p>I think in Word the default is 2 lines for a new paragraph as well. Is it possible to make it like Outlook so it's just one line for a new paragraph?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-09-14T12:21:55.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

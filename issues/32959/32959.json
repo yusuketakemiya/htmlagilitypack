@@ -1,0 +1,96 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2012-09-24T02:01:02.43-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I reported this bug as issue 31858 and again as 32952. In both cases, the issue was rated as having low impact, and essentially ignored.\n \nI strongly disagree that the impact of this is \"low\".\n \nPersonally, it caused me many hours trying to track down this bug in the code. And how many other people did it impact, though they didn't report it?\n \nIt's a bug, pure and simple. Don't you fix these things? Especially when I've provided a simple 9-line fix?\n \nWhy don't you include it in the code base, rather then just ignoring it?\n \nDo you need sample code to see that this is a bug, or what? If so, see the attached code snippet that clearly shows the bug, and the workaround I've already posted twice..",
+    "LastUpdatedDate": "2017-04-30T04:06:47.88-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-07-23T11:09:11.55-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HTML not generated properly after DOM node changed",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32959
+  },
+  "FileAttachments": [
+    {
+      "FileId": 12748,
+      "FileName": "ShowHapBug.cs",
+      "DownloadUrl": ".\\12748"
+    },
+    {
+      "FileId": 12829,
+      "FileName": "1_4_0_fix20120921013426.zip",
+      "DownloadUrl": ".\\12829"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "same problem with me",
+      "PostedDate": "2012-09-20T21:14:53.03-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-09-20T21:17:09.757-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-09-20T22:40:39.583-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi ,\r\nI Applied yor fix in the latest source code as attached, if anyone wants to use it directly.",
+      "PostedDate": "2012-09-20T22:42:41.603-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-09-24T01:49:55.37-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Resolved with changeset 99803.",
+      "PostedDate": "2012-09-24T02:01:02.43-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:58.26-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:56.35-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2017-04-30T04:06:47.88-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

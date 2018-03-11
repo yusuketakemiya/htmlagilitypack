@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Here is some of the code that causes the problem:\n<form method=\"post\" action=\"https://login.yahoo.com/config/login?\" autocomplete=\"\" name=\"login_form\" onsubmit=\"return hash2(this)\">\n \n\t\t\t\t<input type=\"hidden\" name=\".tries\" value=\"1\">\n\t\t\t\t<input type=\"hidden\" name=\".src\" value=\"ym\">\n\t\t\t\t<input type=\"hidden\" name=\".md5\" value=\"\">\n\t\t\t\t<input type=\"hidden\" name=\".hash\" value=\"\">\n\t\t\t\t<input type=\"hidden\" name=\".js\" value=\"\">\n\t\t\t\t<input type=\"hidden\" name=\".last\" value=\"\">\n \n\t\t\t\t<input type=\"hidden\" name=\"promo\" value=\"\">\n\t\t\t\t<input type=\"hidden\" name=\".intl\" value=\"us\">\n\t\t\t\t<input type=\"hidden\" name=\".bypass\" value=\"\">\n\t\t\t\t<input type=\"hidden\" name=\".partner\" value=\"\">\n\t\t\t\t<input type=\"hidden\" name=\".u\" value=\"5oqpgjp5nj7ps\">\n\t\t\t\t<input type=\"hidden\" name=\".v\" value=\"0\">\n\t\t\t\t<input type=\"hidden\" name=\".challenge\" value=\"TzYLwcSZA_pOoPj31F6P.oSXhJUR\">\n\t\t\t\t<input type=\"hidden\" name=\".yplus\" value=\"\">\n\t\t\t\t<input type=\"hidden\" name=\".emailCode\" value=\"\">\n \n \nThis is part of the yahoo mail signin page.\nFor some reason, the input tags do not show up as children of the form but as siblings.\nMaybe has something to do with the extra newlines after the form tag?",
+    "LastUpdatedDate": "2013-02-21T18:47:19.053-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-02-15T11:26:15.607-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "input nodes do not show up as children of form",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 26223
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Nevermind, just found out about the ElementFlags thing.",
+      "PostedDate": "2010-02-15T11:30:41.39-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-09T11:13:03.537-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-21T11:05:54.64-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-06-22T10:59:22.91-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please refer to the following page for solution,\r\nhttp://htmlagilitypack.codeplex.com/discussions/253940",
+      "PostedDate": "2011-06-22T11:09:00.253-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:19.053-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

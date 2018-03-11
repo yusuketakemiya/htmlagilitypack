@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1349816",
+    "ThreadId": "579676",
+    "Html": "Can anyone find a reason for this code not working?  That is, for the stream returning empty?<br />\n<pre><code>IList&lt;QuestionDefinitions&gt; questiondefs = new List&lt;QuestionDefinitions&gt;();\n\n                QuestionDefinitions questdef = new QuestionDefinitions();\n                questdef.OriginalTxt = Server.HtmlEncode(@&quot;&lt;dd&gt; [] text...text...text &lt;dd&gt; [] text...text&quot;);\n\n                HtmlDocument doc = new HtmlDocument();\n                //doc.OptionFixNestedTags = true;\n                //doc.OptionWriteEmptyNodes = true;\n                doc.OptionDefaultStreamEncoding = Encoding.UTF8;\n\n                doc.LoadHtml(@&quot;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;dd&gt;text...text...text &lt;dd&gt;text...text&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&quot;);\n\n                Stream htmlStream = new MemoryStream();\n\n                doc.Save(htmlStream);\n\n                StreamReader streamReader = new StreamReader(htmlStream);\n\n                questdef.NewTxt = streamReader.ReadToEnd().Trim();\n\n                questdef.IsSame = questdef.OriginalTxt == questdef.NewTxt ? true : false;\n\n                questiondefs.Add(questdef);\n\n                this.lblCount.Text = questiondefs.Count.ToString();\n                dgQuestionDefs.DataSource = questiondefs;\n                dgQuestionDefs.DataBind();</code></pre>\n\nI tried including moving the position of the stream to 0, but that had no effect.\r<br />\n<br />\nYour expedient assistance is greatly appreciated.\r<br />\n<br />\nThanks...Chris<br />\n",
+    "PostedDate": "2015-02-06T11:19:07.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1354113",
+    "ThreadId": "579676",
+    "Html": "you're initializing a new stream but not loading anything into it.\r<br />\n<br />\nStream htmlStream = new MemoryStream();\r<br />\n<br />\nso when you call questdef.NewTxt = streamReader.ReadToEnd().Trim(); the stream is empty<br />\n",
+    "PostedDate": "2015-02-19T11:56:58.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1354117",
+    "ThreadId": "579676",
+    "Html": "Doesn't the next line save the contents of the HTMLDocument into &quot;htmlStream&quot;?\r<br />\n<br />\nRight now, I am just looking for an answer for my own knowledge, as I have already resolved my bigger issue, using an alternative method.\r<br />\n<br />\nThanks...Chris<br />\n",
+    "PostedDate": "2015-02-19T12:14:33.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

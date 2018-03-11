@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1033046",
+    "ThreadId": "440915",
+    "Html": "I am doing a selectNodes like this...\r<br />\ncurrentNodeCollection = htmlDoc.DocumentNode.SelectNodes(&quot;/html/body//a&quot;)\r<br />\n<br />\nIt's returning all the nodes, but they are all text nodes with no attributes?  If I look at the innerHtml of the body, I see my anchors with their attributes, any suggestions?\r<br />\n<br />\nThanks!\r<br />\nEric<br />\n",
+    "PostedDate": "2013-04-19T07:09:46.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

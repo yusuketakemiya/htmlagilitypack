@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Consider this example html skeleton and code snippet:\n\n```\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n</head>\n<body> ...</body>\n</html>\n```\n\n```\nvar doc = new HtmlDocument();\ndoc.Load(\"file.html\");\ndoc.Save();\n```\n\nAfter saving the document, an xmlns attribute is added to the html tag:\n```\n<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">\n```\n\nExpected behavior:\nIf the html doctype is html5 (<!DOCTYPE html>), the xmlns is not added to the html element, since HTML5 is not XHTML.\n\nDisturbance:\nThe xmlns attribute causes Visual Studio to mark the meta tag in the example above as an error. This is because singleton tags like meta require a trailing slash in XHTML, but in HTML it is optional.\n\nWorkaround:\nWhen providing the doctype in lower case (<!doctype html>), the xmlns attribute is not added to the html tag.",
+    "LastUpdatedDate": "2014-11-10T06:03:24.19-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-11-10T06:03:24.19-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "html5 doctype causes xmlns attribute to be added",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35666
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

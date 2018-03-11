@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "551280",
+    "ThreadId": "242258",
+    "Html": "\r\n<p>When I try to use the .chm help file to view the documentation, I get the table of contents and can search, etc, but nothing ever show in the left pane.</p>\r\n<p>Is there documentation available that works?</p>\r\n",
+    "PostedDate": "2011-01-18T07:27:26.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "551285",
+    "ThreadId": "242258",
+    "Html": "\r\n<p>Search for Enabling CHM in windows. By default they are now blocked on windows vista&#43;. It works fine for me on Win7 64bit once I unblocked it. Right click on it, select properties and then hit the &quot;Unblock&quot; button near the bottom.</p>\r\n",
+    "PostedDate": "2011-01-18T07:41:00.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "551301",
+    "ThreadId": "242258",
+    "Html": "\r\n<p>Well that certainly helps!&nbsp; Thanks!</p>\r\n",
+    "PostedDate": "2011-01-18T08:06:27.97-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "456777",
+    "ThreadId": "216395",
+    "Html": "Hello,\r\n\r\nI am trying to use Html Agility Pack, but the page I am interested in is partly generated in JavaScript. Is there any chance I could retrieve the page after it has been modified by the .js, rather than before ?\r\n\r\nThanks.",
+    "PostedDate": "2010-06-17T08:46:34.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456794",
+    "ThreadId": "216395",
+    "Html": "<p>No, HTML Agility Pack is not a browser engine, only a parsing engine. It knows nothing of javascript and has no engine for running JS. You'll need to use a browser to get the html.</p>",
+    "PostedDate": "2010-06-17T09:02:58.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

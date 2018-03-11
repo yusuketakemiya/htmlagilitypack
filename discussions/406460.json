@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "954837",
+    "ThreadId": "406460",
+    "Html": "\r\n<p>Hello , I would like to ask you guys some question about this problem. I wasn't sure if this is issue or not . So, I posted this on discussion.</p>\r\n<p>&nbsp;</p>\r\n<p>I currently try to parse each HtmlNode and it's xpath by tag name. After I&nbsp;initially&nbsp;load document through &nbsp;htmlDocument.Load( string html ) and select nodes by tag, all of htmlNode in htmlDocument.DocumentNodes lose their reference to its\r\n parent.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Please let me know if you have any idea.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-12-11T16:34:16.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

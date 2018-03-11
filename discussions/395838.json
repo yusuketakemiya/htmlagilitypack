@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "913701",
+    "ThreadId": "395838",
+    "Html": "\r\n<p>Is there any plan to post a binary for WinRT/ARM?</p>\r\n<p>Alternately, are there instructions for including the project source in a solution to build properly for ARM? I think I have it working, but would like to be sure. I'm including HAPLight, HtmlAgilityPack.fx.4.5, and HtmlAgilityPack.Metro in my solution and\r\n it seems to build ok.</p>\r\n",
+    "PostedDate": "2012-09-17T11:04:19.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "913859",
+    "ThreadId": "395838",
+    "Html": "<p>WinRT Binaries are already posted. Check the\"winrt45\" folder in the downloads. Also you can just use the nuget package and it should auto reference. I haven't tested on ARM since I have no devices to test on.</p>",
+    "PostedDate": "2012-09-17T16:56:48.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914136",
+    "ThreadId": "395838",
+    "Html": "<p>Note if you're looking to use HAP in HTML/JS or C++ projects, that may never happen. If it does it may look quite different. The issue is to make a full WinRT compatible module (winmd) all classes exposed must be sealed and other restrictions. One day I'll have a go at it to see if I can figure out how to get it to work.</p>",
+    "PostedDate": "2012-09-18T08:06:41.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914196",
+    "ThreadId": "395838",
+    "Html": "<p>This is in a C#/XAML app. It wasn't clear whether the binary provided would work on ARM (it may have), but including the&nbsp;HtmlAgilityPack.Metro project in the app seemed to work ok.</p>\r\n<p>For HTML/JS, you've got a DOM anyway, so maybe there's less need for HAP. Could be handy in a C++ app, though!</p>\r\n<p>Thanks for your reply and for the excellent project.</p>",
+    "PostedDate": "2012-09-18T09:17:16.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914266",
+    "ThreadId": "395838",
+    "Html": "<p>Actually, now I can confirm that the DLL available for here does work on ARM.</p>",
+    "PostedDate": "2012-09-18T11:45:46.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

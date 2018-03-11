@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "415998",
+    "ThreadId": "204342",
+    "Html": "<p>Some time ago there was similar discussion:<br>http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=1720</p>\r\n<p>For example, I want to get all href links from page:<br>//@href</p>\r\n<p>It is xpath compatible, but doesn't compatible with agilitypack. (It returns results of xpath //[@href])</p>\r\n<p>Is there something new in this direction?</p>\r\n<p>Maybe there is possible create more generic method<br>HtmlElementCollection SelectElements(string xpath);<br>where HtmlElement is base class for HtmlNode, HtmlText, HtmlAttribute, HtmlComment.</p>",
+    "PostedDate": "2010-03-09T09:24:20.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "452212",
+    "ThreadId": "204342",
+    "Html": "<p>I've run into this problem too. It's kind of&nbsp;annoying.</p>\r\n<p>I don't even know what the xpath is going to be until runtime, so I&nbsp;essentially have to parse it myself and get the&nbsp;attribute&nbsp;instead of the node.</p>",
+    "PostedDate": "2010-06-06T12:36:16.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "452231",
+    "ThreadId": "204342",
+    "Html": "<p>This has been a long standing issue &quot;feature&quot;. I did some testing and found we do indeed break from the way System.Xml.Xpath does it and thus I'm looking into how we can copy that. I have some code that is working with the example of //@href but I'm not sure how it will work with more complex attribute selection queries. I will need to build a rather comprehensive set of Xpath tests until I feel confident that it is the way to go. For now I will probably move this test code into a branch so development of HAPLight, HAPCompact and HAPDynamic (HAP for .NET 4.0) can continue</p>\r\n<p>I would really appreciate examples and tests you may have.&nbsp;</p>",
+    "PostedDate": "2010-06-06T14:41:30.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "452273",
+    "ThreadId": "204342",
+    "Html": "<p>Well I have some good news. I just uploaded an experimental binary with support for returning just HtmlAttributes when they are selected. You can download it at <a href=\"http://htmlagilitypack.codeplex.com/releases/view/46681\">http://htmlagilitypack.codeplex.com/releases/view/46681</a></p>\r\n<p>The source code is under the branches folder labeled as 2.0.Experimental. Please give this version a try and let me know how it works for you. I'd like a lot of feedback on this feature, particularly from people that are using it currently.</p>",
+    "PostedDate": "2010-06-06T18:50:17.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "452817",
+    "ThreadId": "204342",
+    "Html": "<p>Works. Pretty nice. Of course there is much work to clean code. For example, HtmlAttribute will never have any children, any attributes and etc. I will try this version more.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank You for your job. HtmlAgilityPack is my favorite html parsing component.</p>",
+    "PostedDate": "2010-06-07T23:06:56.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "452819",
+    "ThreadId": "204342",
+    "Html": "<p>Which is why on any of those interface members that the attribute will not have I return the appropriate response. False on HasChildren and so forth. I'm sure there may be some edge cases I missed in my first attempt. If you have any examples I can put into the unit tests, I'd love to have them.</p>",
+    "PostedDate": "2010-06-07T23:09:44.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529473",
+    "ThreadId": "204342",
+    "Html": "\r\n<p>I haven't tested yet, pulling it down now, but will it support xpath 2.0 things like &#65279;&#65279;&#65279;matches() replace() or tokenize()? I think thats built in to the System.Xml.Xpath but I'm not sure...</p>\r\n<p>Will I be able to select a node or attribute based on regex?</p>\r\n<p>Edit:&nbsp;found this stackoverflow: <a href=\"http://stackoverflow.com/questions/1525299/xpath-and-xslt-2-0-for-net\">\r\nhttp://stackoverflow.com/questions/1525299/xpath-and-xslt-2-0-for-net</a>&nbsp;which says xpath 2.0 isn't supported, but the reference page here\r\n<a href=\"http://msdn.microsoft.com/en-us/library/system.xml.xpath.aspx\">http://msdn.microsoft.com/en-us/library/system.xml.xpath.aspx</a>&nbsp;says it supports XQuery 1.0 and XPath 2.0 Data Model, but i guess that excludes XPath 2.0 functions and operators.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-01T07:16:40.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "923337",
+    "ThreadId": "204342",
+    "Html": "<p>So what's up now with HtmlNodeType.Attribute? In last versions of HAP it's still not implemented, and when I select node's attribute the whole element node is selected((</p>",
+    "PostedDate": "2012-10-08T02:53:45.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "934863",
+    "ThreadId": "204342",
+    "Html": "<p>Hi,</p>\r\n<p>Same question than RaTT:&nbsp; is there plan to integrate that in the NuGet deliverable?</p>\r\n<p>I have some generic code that take an arbitrary (.config) xpath expression, find the node and remove it.&nbsp; I have to make some convoluted reg-ex and control flow in order to implement this right now...</p>\r\n<p>&nbsp;</p>\r\n<p>Otherwise, quite a good lib!</p>",
+    "PostedDate": "2012-10-31T10:00:36.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

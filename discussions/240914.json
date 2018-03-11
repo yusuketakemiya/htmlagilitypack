@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "545707",
+    "ThreadId": "240914",
+    "Html": "\r\n<p>Been looking at using HTML Agility Pack for the first time but I've struck an issue that I can;t seem to find an easy answer for. For some reason I'm getting the raw html encoding inside the innertext property after a xquery and I can;t figure out why. The\r\n encoding on the document is auto and the streamencoding is UTF. Is this the reason? Simple question I'm sure is how do I get the innertext without the html encoding. Example powershell simple script is below.</p>\r\n<p>&nbsp;</p>\r\n<p>add-type -Path .\\HtmlAgilityPack.dll<br>\r\n$htmldoc = New-Object HtmlAgilityPack.HtmlWeb<br>\r\n$result = New-Object HtmlAgilityPack.HtmlDocument<br>\r\n$url='http://www.imdb.com/title/tt0057733/episodes'<br>\r\n#$url='http://www.imdb.com/title/tt0092359/episodes'<br>\r\n$result=$htmldoc.Load($url)<br>\r\n$xpath='/html/body/div/div[2]/layer/div[2]/div/div[3]/div[2]/div[2]/div/table/tr/td/h3'<br>\r\n$result2=$result.DocumentNode.SelectNodes($xpath)|ForEach-Object {$_.InnerText}<br>\r\n$result2[3]</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>What have I missed?</p>\r\n",
+    "PostedDate": "2011-01-07T15:27:47.213-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "217169",
+    "ThreadId": "63863",
+    "Html": "<p>Hi</p>\r\n<p>Im very beginner to c#, now use with satisfaction Html agility pack , but in my program i use too:</p>\r\n<p>mshtml.HTMLDocument doc = (mshtml.HTMLDocument)webBrowser1.Document.DomDocument;</p>\r\n<p>to login in reserved area , when i&nbsp; use :</p>\r\n<p>HtmlAgilityPack.HtmlDocument ParseDoc = web.Load(&quot;http://www.sitename.com/admin/table&quot;);</p>\r\n<p>ParseDoc is on login page, but i have already login into, can i solve this issue? Need i to read cookie?</p>\r\n<p>thanks and excuse me for my short experience</p>\r\n<p>Massimo</p>",
+    "PostedDate": "2009-07-29T06:31:46.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218441",
+    "ThreadId": "63863",
+    "Html": "<p>I have no experience with MSHTML.</p>\r\n<p>Do you know if MSHTML read IE's cookies automatically, or does this have to be done manually?</p>\r\n<p>You can enable cookies with HtmlAgilityPack setting your HtmlWeb object's property UseCookies to true.</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Gray\">///</span> <span style=\"color:Gray\">&lt;summary&gt;</span>\r\n<span style=\"color:Gray\">///</span><span style=\"color:Green\"> Gets or Sets a value indicating if cookies will be stored.</span>\r\n<span style=\"color:Gray\">///</span> <span style=\"color:Gray\">&lt;/summary&gt;</span>\r\n<span style=\"color:Blue\">public</span> <span style=\"color:Blue\">bool</span> UseCookies\r\n{\r\n    <span style=\"color:Blue\">get;</span>\r\n    <span style=\"color:Blue\">set</span>;<br>}\r\n</pre>\r\n</div>\r\n<p>You need to check them yourself, or create a layer that talks between IE's cookies and HtmlAgilityPack. But I now assume you manually login with Internet Explorer, before starting your application?</p>",
+    "PostedDate": "2009-08-02T04:05:46.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

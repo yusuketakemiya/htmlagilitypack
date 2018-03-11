@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "933642",
+    "ThreadId": "401072",
+    "Html": "\r\n<p>Somebody can upgrade fizzler to support HtmlAgilityPack v1.4.6 ?</p>\r\n<p>I downloaded Fizzler from&nbsp;<a href=\"http://code.google.com/p/fizzler/\">http://code.google.com/p/fizzler/</a>&nbsp;, but I can't compile the solution with&nbsp;HtmlAgilityPack v1.4.6 now .&nbsp;</p>\r\n",
+    "PostedDate": "2012-10-28T23:36:01.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1003241",
+    "ThreadId": "401072",
+    "Html": "Did you overcome this problem? I need to use the Removemethod of HtmlAgilityPack  which is present in v1.4.6. But not able to use it as fizzler  is using the older version.<br />\n",
+    "PostedDate": "2013-02-18T23:45:00.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

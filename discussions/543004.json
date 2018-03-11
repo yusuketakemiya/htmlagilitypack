@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1236840",
+    "ThreadId": "543004",
+    "Html": "Hi, i have some problem. I cant parsing this count, because its to complicated for me. \r<br />\nI'm need parse 4 different counter. I'm handle it one becuse its easy, but i cant handle facebook and twitter count.\r<br />\n<br />\nlink:<a href=\"http://windowsmobile.indir.com/hdtv\" rel=\"nofollow\">http://windowsmobile.indir.com/hdtv</a>\r<br />\n<br />\nNeed:\r<br />\n<img src=\"http://i.hizliresim.com/krJjgv.gif\" alt=\"Image\" /><br />\n<pre><code> private void download(string urlAddress)\n        {\n            Uri url = new Uri(urlAddress);\n            WebClient client = new WebClient();            \n            client.DownloadStringAsync(url);\n            client.DownloadStringCompleted += (sender, e) =&gt;\n            {\n                if (e.Error == null)\n                {\n                    var data = e.Result;\n                    var doc = new HtmlAgilityPack.HtmlDocument();\n                    doc.LoadHtml(data);                   \n                    var node = doc.DocumentNode;\n                     var a1 = node.SelectNodes(&quot;//span[@id='fav']&quot;).ToList();\n                    \n                    string downtext = a1[0].InnerText;\n                    \n                    MessageBox.Show(downtext);\n                   \n\n\n                }\n            };  \n        }\n\n        private void Work_Click(object sender, EventArgs e)\n        {\n            download(&quot;http://windowsmobile.indir.com/hdtv&quot;);\n        }\n</code></pre>\n\ni handle it first counter(fav), but cant handle facebook and twitter like/tweet counter. Please help me.<br />\n",
+    "PostedDate": "2014-04-22T16:42:01.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

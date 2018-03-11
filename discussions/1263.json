@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "4087",
+    "ThreadId": "1263",
+    "Html": "\r\nHi Simon,<br />I was looking at the source of your library, HtmlNodeNavigator seems very interesting. <br />But I am little perplexed about its use!!! Can you provide us with a simple sample, if possible? <br /><br />Thanks a lot,<br />Indo.<br />",
+    "PostedDate": "2006-09-06T15:21:28.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "4163",
+    "ThreadId": "1263",
+    "Html": "\r\nHi,<br /><br />In general, you don't use it directly. It is leveraged backstage by XPATH queries or XSLT transformations.<br /><br />For example, when you do this;<br /><br />HtmlNodecollection links = doc.DocumentNode.SelectNodes(\".//a<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40href\">@href</a>\");<br /><br />the selectNodes uses HtmlNodeNavigator...<br />Hope this helps<br />Simon.<br />",
+    "PostedDate": "2006-09-07T13:20:51.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

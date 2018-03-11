@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I downloaded the documentation files, HtmlAgilityPack.Documentation.chm and HtmlAgilityPack.Documentation.chw files and when I cliked on the HtmlAgilityPack.Documentation.chm no documentation is displayed when I click on a selection. Is there some step I need to perform to view the doucmentation?\nI cna be reached at steve_44@inbox.com",
+    "LastUpdatedDate": "2013-02-21T18:47:12.757-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-10-05T11:00:23.793-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HTML AGILITY Documentation displays no documentation",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 29082
+  },
+  "FileAttachments": [
+    {
+      "FileId": 10994,
+      "FileName": "no documentation.png",
+      "DownloadUrl": ".\\10994"
+    }
+  ],
+  "Comments": []
+}

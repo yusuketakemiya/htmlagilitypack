@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "473933",
+    "ThreadId": "221762",
+    "Html": "I'm trying to do a search like this:\r\n\r\nSelectNodes(&quot;//table[@class='content'][1]&quot;)\r\n\r\nIn pure XPath, that would give me the FIRST table with a class of &quot;content&quot; (the &quot;[1]&quot; designates ordinal -- the first one, in this case).  However, the result of that line of code returns TWO nodes, which should be impossible, since I'm asking for a specific ordinal.\r\n\r\nThis makes me think that search for nodes by ordinal is not supported.  True?",
+    "PostedDate": "2010-07-28T16:24:40.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "479588",
+    "ThreadId": "221762",
+    "Html": "<p>try to add ()</p>\r\n<p>(//table[@class='content'])[1]</p>",
+    "PostedDate": "2010-08-12T02:17:17.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

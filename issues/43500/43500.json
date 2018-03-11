@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "![Image](https://i.imgur.com/YSj9AwI.png)\n![Image](https://i.imgur.com/kXSvdlE.png)",
+    "LastUpdatedDate": "2016-10-09T15:34:12.053-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-10-09T15:34:10.88-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "&nbps tag become a capital B attached to the end of a word",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43500
+  },
+  "FileAttachments": [
+    {
+      "FileId": 16437,
+      "FileName": "2016-10-10 11_31_45-Developer Tools - https___steelblue.com_au_en_boots-and-accessories_boot-catalog.png",
+      "DownloadUrl": ".\\16437"
+    }
+  ],
+  "Comments": []
+}

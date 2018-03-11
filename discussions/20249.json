@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "67200",
+    "ThreadId": "20249",
+    "Html": "\r\nDo I have to use two foreach statements here or would this be possible with one foreach statement, too? What I want to do is to extract the plain URLs:<br /><br />    HtmlDocument hd = csFN.Scrape.GetHtmlAsDoc(\"http://www.google.de/search?q=html&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t\");<br />        HtmlNodeCollection nct = hd.DocumentNode.SelectNodes(\"//h2<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40class%3d%5c%22r%5c%22\">@class=\\\"r\\\"</a>/a/@href\");<br /><br />        foreach (HtmlNode hn in nct)<br />        {<br />            foreach (HtmlAttribute atr in hn.Attributes)<br />            {<br />                if (atr.Name == \"href\")<br />                {<br />                    Response.Write(atr.Value + \"&lt;br /&gt;\");<br />                }<br />            }            <br />        }<br /><br />Thanks for any input!<br />",
+    "PostedDate": "2008-01-10T10:26:07.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "70048",
+    "ThreadId": "20249",
+    "Html": "\r\nbreak out of your nested loop when you find a match so it doesnt have to check the rest of the attribute list.<br />",
+    "PostedDate": "2008-01-25T16:06:45.983-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72337",
+    "ThreadId": "20249",
+    "Html": "\r\nYes.<br /><br />...<br /><br />foreach (HtmlNode hn in nct)<br />\t\t\t{<br />\t\t\t\tHtmlAttribute atr = hn.Attributes<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22href%22\">\"href\"</a>;<br />\t\t\t\tResponse.Write(atr.Value + \"&lt;br /&gt;\");<br />\t\t\t}<br />",
+    "PostedDate": "2008-02-07T03:48:49.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164205",
+    "ThreadId": "20249",
+    "Html": "Dear All,<br>\r\n<br>\r\nTried the same code<br>\r\nbut gives me an error.<br>\r\n<br>\r\n&quot;//h2<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=@class%3d\\&quot;r\\&quot;\">@class=\\&quot;r\\&quot;</a>/a/@href&quot; has invalid token.<br>\r\n<br>\r\nFULL CODE:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlDocument hd = new HtmlDocument();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hd.LoadHtml(Server.MapPath(&quot;something.htm&quot;));<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNodeCollection nct = hd.DocumentNode.SelectNodes(&quot;//h3@class=\\&quot;r\\&quot;/a/@href&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\nsomething.htm has<br>\r\n<br>\r\n&lt;html&gt;<br>\r\n&lt;body&gt;&lt;h2 class=&quot;r&quot;&gt;&lt;a href=&quot;something.com/somethingelse.htm&quot;&gt;&lt;/h2&gt;&lt;/body&gt;<br>\r\n&lt;/html&gt;<br>\r\n<br>\r\nCan someone help please?<br>\r\n<br>\r\nPrasad. <br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-04T00:51:44.157-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

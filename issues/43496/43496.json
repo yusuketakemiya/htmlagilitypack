@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This simple little code causes NullReferenceException:\n\n```\nHtmlDocument doc = new HtmlDocument();\ndoc.LoadHtml(\"<a>Hello World!</a>\");\nforeach(HtmlNode link in doc.DocumentNode.SelectNodes(\"//img\"))\n{\n}\n```\n\nI was expecting the iterator to simply skip the loop as no img tags are found.",
+    "LastUpdatedDate": "2017-01-25T04:45:54.903-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-09-22T02:04:36.177-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "1.4.9.5: SelectNodes causes NullReferenceException",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 43496
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I just found someone commenting on this particular issue and the gist is that SelectNodes isn't returning en empty list, but returns null. It is basically not Linq capable.\n",
+      "PostedDate": "2016-09-22T03:56:56.683-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-10-31T18:17:28.697-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I voted for this request. \r\n\r\nThe good old XmlNode.SelectNodes() and Regex.Matches() have the same behavior. They return an empty collection. It's just a best practice to return an empty list instead of null.\r\n\r\nFor SelectSingleNode() it's fine to return null when nothing was found.",
+      "PostedDate": "2016-10-31T18:30:35.08-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-12-27T22:42:26.377-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-12-27T22:45:14.5-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Here's a vote to change the behaviour of SelectNodes to return Enumerable.Empty<HtmlNode>() when it doesn't find any matching nodes.\r\n\r\nReturning null is not what you expect.",
+      "PostedDate": "2017-01-25T04:45:54.903-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

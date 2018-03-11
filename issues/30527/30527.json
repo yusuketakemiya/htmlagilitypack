@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I use to \"Html Agility Pack 1.4.0\" and \"Experimental Xpath Updates\" to parse data of a web page: \"http://data.vietstock.vn/TradingResult/Hose_StockIndicator.aspx?TransactionISN=2509\". My xPath is \"//body[1]/div[1]/table[1]/tr[3]/td[1]/table[1]\". The former can parse OK. The later return null result. It seem that it does not parse the html structure right. Please check.\nThank you",
+    "LastUpdatedDate": "2013-02-21T18:47:08.267-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-04-13T20:08:38.257-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Parsing html problem with \"Experimental Xpath Updates\"",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 30527
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

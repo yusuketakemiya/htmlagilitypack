@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1084306",
+    "ThreadId": "454388",
+    "Html": "First can it strip a word document and convert it to HTML and it still look like the word document?\r<br />\n<br />\nSecond can it find special tags like &lt;BLP| |ELP&gt; and give me the word between them?\r<br />\n<br />\n&lt;BLP|Some Text|ELP&gt;\r<br />\n<br />\nwould let me grab 'Some Text'\r<br />\n<br />\nIf it can't do both is there any open source items that can allow me to do so?<br />\n",
+    "PostedDate": "2013-08-23T12:30:34.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

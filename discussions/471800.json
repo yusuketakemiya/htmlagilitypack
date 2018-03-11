@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1131312",
+    "ThreadId": "471800",
+    "Html": "I've searched all over and can't find a solution to this.\r<br />\n<br />\nI have a website with a textbox and the ajax htmleditorextender attached to this textbox. The htmleditorextender uses the html agility pack to sanitize the textbox. It looks like HAP is removing the &lt;br&gt; tags that mozilla inputs when the user tries to create line breaks by pressing the enter keyboard key. Other browsers create div's upon enter key so all works well with other browsers.\r<br />\n<br />\nMy question is, is it possible to add the br tag that mozilla creates to the current HAP whitelist so that it is not removed? If not, are there other workarounds like replacing the br tags before the HAP begins sanitizing?\r<br />\n<br />\nIf you can help please be as detailed as possible, including actual usable code and directions as to where or in what file to put the code. I appreciate the help very much! Thanks!<br />\n",
+    "PostedDate": "2013-12-03T09:53:27.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

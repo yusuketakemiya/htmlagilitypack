@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "148862",
+    "ThreadId": "44711",
+    "Html": "In our version of HtmlWeb we added a couple Extra Properties:<br>\r\n<br>\r\n  private bool _useKeepAlive;<br>\r\n        private int _forcedTimeout;<br>\r\n  /// &lt;summary&gt;<br>\r\n  /// Gets or Sets a value indicating if KeepAlive should be used<br>\r\n  /// Turning off KeepAlive will be less efficient, and connections may have to be re-established,<br>\r\n  /// but it is more reliable, since an open connection is not assumed.<br>\r\n  /// &lt;/summary&gt;<br>\r\n  public bool UseKeepAlive<br>\r\n  {<br>\r\n   get<br>\r\n   {<br>\r\n    return _useKeepAlive;<br>\r\n   }<br>\r\n   set<br>\r\n   {<br>\r\n    _useKeepAlive = value;<br>\r\n   }<br>\r\n  }<br>\r\n  /// &lt;summary&gt;<br>\r\n  /// Gets the last request duration in milliseconds.<br>\r\n  /// &lt;/summary&gt;<br>\r\n  public int ForcedTimeout<br>\r\n  {<br>\r\n   get<br>\r\n   {<br>\r\n                return _forcedTimeout;<br>\r\n   }<br>\r\n            set<br>\r\n            {<br>\r\n                _forcedTimeout = value;<br>\r\n            }<br>\r\n  }<br>\r\n<br>\r\n<br>\r\nand changed the code in method HttpStatusCode Get(Uri uri, string method, string path, HtmlDocument doc)<br>\r\n<br>\r\n   req = WebRequest.Create(uri) as HttpWebRequest;<br>\r\n            req.Method = method;<br>\r\n<br>\r\nto<br>\r\n<p>   req = WebRequest.Create(uri) as HttpWebRequest;<br>\r\n            req.KeepAlive = UseKeepAlive;<br>\r\n            if (ForcedTimeout &gt; 0)<br>\r\n                req.Timeout =ForcedTimeout;<br>\r\n            req.Method = method;<br>\r\nIt also will be a good idea to add <span style=\"font-size:10px;font-family:courier new\"><span style=\"color:#4e4d45\">Request</span><span style=\"color:#4e4d45\">UserAgent</span></span> property -see my old post <a href=\"http://thespoke.net/blogs/mnf/archive/2005/05/27/95486.aspx\">http://thespoke.net/blogs/mnf/archive/2005/05/27/95486.aspx</a>.<br>\r\n<br>\r\nIf you find them useful, please include the changes to master version.</p>\r\n",
+    "PostedDate": "2009-01-20T12:10:16.447-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

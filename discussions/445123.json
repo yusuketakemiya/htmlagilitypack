@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1049271",
+    "ThreadId": "445123",
+    "Html": "I am using HtmlAgilityPack for Windows Phone 7.1 and next code is working great:<br />\n<pre><code>public MainPage()\n{\n    InitializeComponent();\n    HtmlWeb.LoadAsync(&quot;http://www.xkcd.com&quot;, DownLoadCompleted);\n}\n\nvoid DownLoadCompleted(object sender, HtmlDocumentLoadCompleted e)\n{\n    if(e.Error == null)\n    {\n         HtmlDocument doc = e.Document;\n         if (doc != null)\n         {\n              //Start scraping\n              var imagediv = (from imgnode in doc.DocumentNode.Descendants()\n              where imgnode.Name == &quot;div&quot; &amp;&amp; imgnode.Attributes[&quot;id&quot;].Value == &quot;comic&quot; select imgnode).FirstOrDefault();\n\n              if (imagediv != null)\n              {\n                 //On to the next step\n                 var imgurl = imagediv.Element(&quot;img&quot;).Attributes[&quot;src&quot;].Value;\n                 //MessageBox.Show(imgurl);\n                 jokeimg.Source = new BitmapImage(new Uri(imgurl));\n               }\n\n\n               //Alternative to get url : no faultdetection\n\n               string imgurlhard =\n                        doc.DocumentNode.Element(&quot;html&quot;).\n                            Element(&quot;body&quot;).\n                            Elements(&quot;div&quot;).ElementAt(1).\n                            Elements(&quot;div&quot;).ElementAt(1).\n                            Element(&quot;img&quot;).Attributes[&quot;src&quot;].Value;\n\n                    MessageBox.Show(imgurlhard);\n\n\n                }\n            }\n}</code></pre>\n\nBut when I want to display a picture from this page: <a href=\"http://ina.hr/\" rel=\"nofollow\">http://ina.hr/</a> (the biggest picture from that site), I am getting black screen with no results. I was trying to customize C# code for those HTML nodes but with no success. Can anyone explain me what sould I look in order to customize it right, so I can display that picture?<br />\n",
+    "PostedDate": "2013-05-27T12:34:23.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

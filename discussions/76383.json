@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "261079",
+    "ThreadId": "76383",
+    "Html": "<p>Has anyone taken a look at Fizzler before?</p>\r\n<p><a href=\"http://code.google.com/p/fizzler/\">http://code.google.com/p/fizzler/</a></p>\r\n<p>Even since I've used jQuery, i've become fond of using css selectors for querying page elements.</p>\r\n<p>Fizzler seems to take this idea and bind it with HtmlAgilityPack.</p>\r\n<p>It'd be cool to see Fizzler and HtmlAgilityPack in the same project, to add yet another way to query html documents.</p>\r\n<p>Also, the new changes to the agility pack are great. Thanks for picking up the project and running with it again.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>CV</p>",
+    "PostedDate": "2009-11-27T01:24:15.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261348",
+    "ThreadId": "76383",
+    "Html": "<p>Aren't CSS selectors for use in the browser when you just don't have a choice? I think the agility pack is more for parsing html than querying it, and once it's parsed you can use Xpath to query the DOM. I'm not knocking your suggestion but what would be the benefit? How would you see it integrating?</p>",
+    "PostedDate": "2009-11-28T10:29:54.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262032",
+    "ThreadId": "76383",
+    "Html": "<p>HAP is used in a variety of situations, some where fizzler would be very beneficial. It actually relates directly to the VS2010 extension I have been building. I'll look over the code and contact the maintainers to see what is possible.</p>\r\n<p>I think integrating it as part of a new Fluent API would be a start</p>",
+    "PostedDate": "2009-11-30T14:06:59.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265617",
+    "ThreadId": "76383",
+    "Html": "<p>@kurtnelle Using css selectors is similar to XPath, except CSS selectors are used exclusively for matching HTML elements, instead of any XML.</p>\r\n<p>I think it makes sense to have more ways to find elements in HAP. So, having XPath, LINQ, CSS selectors and traversal options would make a very agile library.</p>\r\n<p>It would be useful for my situation where I'd like designers (already familiar with CSS) to do simple parsing into object properties.</p>\r\n<p>@DarthObiwan - if you need any help - please let me know, I'd be happy to help out.</p>\r\n<p>What Fluent API did you have in mind? Something similar to jQuery?</p>\r\n<p>Like document.Query(&quot;#id&quot;).Is(&quot;:not([attr=value]&quot;)?</p>",
+    "PostedDate": "2009-12-10T01:31:26.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265899",
+    "ThreadId": "76383",
+    "Html": "<p>@cvertex Hum... yea I guess that makes sense :)</p>",
+    "PostedDate": "2009-12-10T12:56:00.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "498715",
+    "ThreadId": "76383",
+    "Html": "<p>Seems like others are requesting css-like selector query syntax as well</p>\r\n<p><a href=\"http://stackoverflow.com/questions/3664209/alternatives-to-htmlagilitypack/3782276#3782276\">http://stackoverflow.com/questions/3664209/alternatives-to-htmlagilitypack/3782276</a></p>\r\n<p>&nbsp;</p>\r\n<p>I wish I had time to merge fizzler/sharpquery with HTmlAgilityPack</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-26T19:58:51.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1125985",
+    "ThreadId": "76383",
+    "Html": "i'd like consider to do such merge.\r<br />\nhow can I contact you?\r<br />\nany one interested in please contact me at <a href=\"mailto:support@zsubmitter.com\" rel=\"nofollow\">support@zsubmitter.com</a><br />\n",
+    "PostedDate": "2013-11-18T05:14:18.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

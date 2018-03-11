@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1304430",
+    "ThreadId": "567358",
+    "Html": "I tried using HTMLagilitypack but the api seems to have get changed and many properties and functions under that api is not working.\r<br />\nfor eg. <em>string text = doc.DocumentNode.SelectSingleNode(&quot;/html[1]/body[1]/p[1]&quot;).InnerText;</em>\r<br />\n<br />\nThe <strong>SelectSingleNode</strong> is not working because of which I am unable to get data from document. \r<br />\nCan somebody please provide me with the alternative to this?<br />\n",
+    "PostedDate": "2014-09-13T13:23:13.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1347945",
+    "ThreadId": "579143",
+    "Html": "HtmlDocument htmlDoc = new HtmlAgilityPack.HtmlDocument();<br />\n<pre><code>            htmlDoc.OptionWriteEmptyNodes = true;\n            htmlDoc.OptionFixNestedTags = true;\n            htmlDoc.LoadHtml(e.Result);\n\n            HtmlNodeCollection cole = ______htmlDoc.DocumentNode.SelectNodes(&quot;//div[@id='song_html']&quot;);______</code></pre>\n\n",
+    "PostedDate": "2015-02-01T01:57:30.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

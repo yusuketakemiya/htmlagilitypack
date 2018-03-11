@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "623201",
+    "ThreadId": "260253",
+    "Html": "\r\n<p>Sorry for asking such a basic question, but I am absolutely new to Visual Studio and have run into a problem that I don't quite understand how to solve. When trying to reference the Agility Pack (HtmlAgilityPack.dll, Windows Phone version) in an existing\r\n Windows Phone project, I get the following error message:</p>\r\n<p><em>&quot;Reference can not be added, because it was not built using the Windows Phone Runtime. Windows Phone projects will only work with Windows Phone assemblies&quot;</em></p>\r\n<p>I guess I am missing something very obvious here (project properties or build configuration?), but after hours of trying to figure it out, I still can't seem to find any hints at what I'm doing wrong.</p>\r\n<p>Thank you very much for your help!</p>\r\n",
+    "PostedDate": "2011-06-05T12:18:51.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626095",
+    "ThreadId": "260253",
+    "Html": "<p>Still haven't been able to fix it. <br />If someone has any idea of what might be a possible solution, I'd appreciate your help.</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-06-10T10:03:57.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626329",
+    "ThreadId": "260253",
+    "Html": "<p>Do you by chance have the mango tools installed as well? I just noticed the project file is now referencing SL4 instead of the phone libraries. I'm going to try to recreate it to force it to point to the 7.0 libraries</p>",
+    "PostedDate": "2011-06-11T04:49:58.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "628051",
+    "ThreadId": "260253",
+    "Html": "<p>Thank you for your help!</p>\r\n<p>No, I don't have the mango tools installed yet. I hope I have understood you correctly and checked the properties: the target framework is set to .NET Framework 2.0.<br />I have also tried to add \"SILVERLIGHT;WINDOWS_PHONE\" as conditional compilation symbols as well, to no avail.</p>",
+    "PostedDate": "2011-06-15T03:52:44.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

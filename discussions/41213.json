@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "136685",
+    "ThreadId": "41213",
+    "Html": "Hi,<br>\r\n<br>\r\nthis must be the most noobish question you've ever seen, but it's quite crucial...<br>\r\n<br>\r\nI downloaded and unzipped the htmlagilitypack... Since there aren't any dll files, I thought: I'll publish it first and use that dll. However, I'm using Visual Studio C# Express to open HtmlAgilityPack.sln, but it needs to convert it first. When I accept it, It sais that &quot;solution folders are not accepted in this version of  the application. Solution folder 'samples' will be unavailable.&quot;<br>\r\nAfter this, I tried publishing this to use the dll, but it won't work...<br>\r\n<br>\r\nCan please someone explain to me what to do to get me started ? It would be greatly appreciated !!!<br>\r\n<br>\r\nThanks !<br>\r\n",
+    "PostedDate": "2008-12-01T10:42:11.467-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136929",
+    "ThreadId": "41213",
+    "Html": "You should be able to open the project in VS, pass through the message boxes you were prompted with, and then build the project to create the library.\r\n",
+    "PostedDate": "2008-12-02T06:17:44.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

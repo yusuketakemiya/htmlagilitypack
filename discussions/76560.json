@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "261818",
+    "ThreadId": "76560",
+    "Html": "<p>I'm parsing some pages that have a &lt;UL&gt; list of items and specifically a &lt;LI&gt; item, on some of the pages the &lt;LI&gt; has 3 &lt;SPAN&gt; tags and in others it has 2 &lt;SPAN&gt; tags and one &lt;A&gt; in the place of the third &lt;SPAN&gt; tag.</p>\r\n<p>&nbsp;</p>\r\n<p>So I figure I'd just use the HtmlNode.Descendants().ToList() without any string parameter and get the third item from the list. Problem is this returns 10 items! And the extra items are actually \\n and \\t that are in the raw html:</p>\r\n<p>&nbsp;</p>\r\n<p>&lt;li&gt;<br> &lt;span&gt;Release:&lt;/span&gt;<br> &lt;span&gt;<br> &lt;span&gt;Nov  3, 2009&lt;/span&gt;                    &lt;/span&gt;<br> &lt;/li&gt;</p>\r\n<p>Think of that but a little messed up to us humans. So my question is, is this by design or a bug? And how can I work around it.</p>",
+    "PostedDate": "2009-11-30T03:36:29.5-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262030",
+    "ThreadId": "76560",
+    "Html": "<p>This is by design. HtmlAgilityPack creates objects/nodes for all text inbetween tags so it can maintain formatting. You can filter out those nodes by doing a where HtmlNodeType .</p>\r\n<p>I'll see about changing the behavior of Descendants() to default to this and add a new one that includes all. The thing is that extra data may be something someone else is looking for</p>",
+    "PostedDate": "2009-11-30T13:57:39.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262060",
+    "ThreadId": "76560",
+    "Html": "<p>Thanks for the reply, never looked at NodeType property so my bad.</p>",
+    "PostedDate": "2009-11-30T15:25:25.347-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

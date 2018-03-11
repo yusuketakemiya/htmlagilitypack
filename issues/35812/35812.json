@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi , Thanks for your Great tools.\n\nI see a problem when select tags by XPath . \nI test my code on about 15000 pages and see this problem just on 3 pages !\n\nin these pages : \nhttp://codeforces.com/blog/entry/1700\nhttp://codeforces.com/blog/entry/2359\nhttp://codeforces.com/blog/entry/3542\n\nwhen i try this XPath -> \"//div[@class='topic']/div\"\nhtmlagilitypack must return 8 div tags , but return just first 3 div tags and ignore others !\n\nI thought maybe it is my mistake or because of different page style, but check source code of page and test the XPath in Firebug , too .\n\nI hope you fix it on next version , Thanks a lot.\n\n[ Sorry for my poor english ]",
+    "LastUpdatedDate": "2015-04-23T02:52:35.887-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-01-26T09:48:50.897-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Don't find all childrens",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 35812
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

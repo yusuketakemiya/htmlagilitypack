@@ -1,0 +1,1246 @@
+[
+  {
+    "Id": 4911,
+    "Title": "Whitespace in Content-Encoding HTTP header"
+  },
+  {
+    "Id": 6982,
+    "Title": "Output XML with UpperCase"
+  },
+  {
+    "Id": 8055,
+    "Title": "Patch for supporting Proxys"
+  },
+  {
+    "Id": 8541,
+    "Title": "Throw ArgumentException If Charset Is Invalid"
+  },
+  {
+    "Id": 9113,
+    "Title": "Ordering problem with RemoveChild"
+  },
+  {
+    "Id": 9613,
+    "Title": "Element length (HtmlNode._outerlength) sometimes negative"
+  },
+  {
+    "Id": 12095,
+    "Title": "HtmlNode.XPath Property"
+  },
+  {
+    "Id": 12359,
+    "Title": "Entities are doubly-encoded"
+  },
+  {
+    "Id": 12418,
+    "Title": "Unclosed paragraph lost"
+  },
+  {
+    "Id": 13102,
+    "Title": "SelectNodes from ChildNodes"
+  },
+  {
+    "Id": 14297,
+    "Title": "Memory Leak for HtmlNode"
+  },
+  {
+    "Id": 14691,
+    "Title": "How do I open the solution file??"
+  },
+  {
+    "Id": 15364,
+    "Title": "Using XPath to select a collection of <option> nodes under <select> node incrementally causes unexpected results"
+  },
+  {
+    "Id": 15535,
+    "Title": "Patch for manual encoding selection"
+  },
+  {
+    "Id": 15541,
+    "Title": "Library causes valid XHTML code to become invalid by removing closing / on single elements"
+  },
+  {
+    "Id": 16045,
+    "Title": "\"End tag </script> was not found\" when using short notation for tag closing"
+  },
+  {
+    "Id": 16078,
+    "Title": "Attribute parsing not recognizing spaces"
+  },
+  {
+    "Id": 16328,
+    "Title": "problem with ToLower() in turkish culture"
+  },
+  {
+    "Id": 16572,
+    "Title": "Odd series of '--' produce not well-formed xml output"
+  },
+  {
+    "Id": 16647,
+    "Title": "Initial folders Reorganisation before new project updates"
+  },
+  {
+    "Id": 16648,
+    "Title": "Provide VS2008 sln and projects"
+  },
+  {
+    "Id": 16651,
+    "Title": "Add Unit testing project"
+  },
+  {
+    "Id": 16652,
+    "Title": "Add class diagram"
+  },
+  {
+    "Id": 18161,
+    "Title": "Bug in HtmlNode: WriteAttribute"
+  },
+  {
+    "Id": 18199,
+    "Title": "Valid XHTML"
+  },
+  {
+    "Id": 18526,
+    "Title": "Incorrect number of nodes returned by SelectNodes"
+  },
+  {
+    "Id": 18821,
+    "Title": "Setting attributes on a text node causes StackOverflow"
+  },
+  {
+    "Id": 20564,
+    "Title": "Changing option properties in HtmlDocument object does not affect OuterHtml of meta tags"
+  },
+  {
+    "Id": 21200,
+    "Title": "Problem parsing the last attribute without value in a \"terminal\" element node (of the form <tag/>)"
+  },
+  {
+    "Id": 21221,
+    "Title": "Bug When Parsing Text w/ \"<\" & \">\""
+  },
+  {
+    "Id": 21249,
+    "Title": "Option End Tags Dropped"
+  },
+  {
+    "Id": 21529,
+    "Title": "HTML < 1024 bytes gets lost"
+  },
+  {
+    "Id": 21581,
+    "Title": "Problem with HtmlWeb and UsingCache = true"
+  },
+  {
+    "Id": 21586,
+    "Title": "Tag content appears outside the tag when saved to XML"
+  },
+  {
+    "Id": 21782,
+    "Title": "Parsing of <form> tag is not proper"
+  },
+  {
+    "Id": 21831,
+    "Title": "Can't use HtmlAgilityParser in partially trusted environment ?"
+  },
+  {
+    "Id": 21928,
+    "Title": "XPath selection issue"
+  },
+  {
+    "Id": 22399,
+    "Title": "HttpWebRequest User Agent"
+  },
+  {
+    "Id": 22432,
+    "Title": "Non-printable chars in HTML element content"
+  },
+  {
+    "Id": 23074,
+    "Title": "Parsing problem"
+  },
+  {
+    "Id": 24134,
+    "Title": "Implement Generic Lists"
+  },
+  {
+    "Id": 24387,
+    "Title": "HtmlTextNode.Text and HtmlAttribute.Value returns unresolved entities"
+  },
+  {
+    "Id": 24443,
+    "Title": "OutOfMemoryException when loading large file"
+  },
+  {
+    "Id": 24812,
+    "Title": "&#x????; (HEX html entities) not being decoded properly"
+  },
+  {
+    "Id": 24925,
+    "Title": "can't load diacritics"
+  },
+  {
+    "Id": 24995,
+    "Title": "Character Encoding fix"
+  },
+  {
+    "Id": 25104,
+    "Title": "Bug in HtmlDocument.Save(TextWriter writer)"
+  },
+  {
+    "Id": 25231,
+    "Title": "Document.WriteTo() striping tags"
+  },
+  {
+    "Id": 25273,
+    "Title": "UTF8 is not a supported encoding"
+  },
+  {
+    "Id": 25278,
+    "Title": "OptionOutputOriginalCase is ignored for attributes when not outputting XML"
+  },
+  {
+    "Id": 25290,
+    "Title": "end tag </script> tag in javascript string code is missed read"
+  },
+  {
+    "Id": 25436,
+    "Title": "<link> elements not being parsed/written correctly"
+  },
+  {
+    "Id": 25486,
+    "Title": "<select> not parsing correctly"
+  },
+  {
+    "Id": 25743,
+    "Title": "UserAgent required by some sites"
+  },
+  {
+    "Id": 25843,
+    "Title": "Attributes with namespace not being parsed correctly"
+  },
+  {
+    "Id": 25854,
+    "Title": "get absolute link of anchor tag from html document"
+  },
+  {
+    "Id": 25956,
+    "Title": "Implicit access to Attribute Value"
+  },
+  {
+    "Id": 25968,
+    "Title": "we want to use HtmlAgilityPack"
+  },
+  {
+    "Id": 25973,
+    "Title": "HtmlDocument.DocumentNode.SelectNodes(\"//a[@href]\") returns null"
+  },
+  {
+    "Id": 26030,
+    "Title": "OptionAutoCloseOnEnd is not being honored (1.4.0beta2)"
+  },
+  {
+    "Id": 26100,
+    "Title": "HtmlDocument.Save(XmlWriter) incorrectly Escapes Entities"
+  },
+  {
+    "Id": 26144,
+    "Title": "InnerXml value not correct"
+  },
+  {
+    "Id": 26217,
+    "Title": "GetElementbyId() is case-insensitive"
+  },
+  {
+    "Id": 26223,
+    "Title": "input nodes do not show up as children of form"
+  },
+  {
+    "Id": 26247,
+    "Title": "HtmlNode.CopyFrom deep parameter works the opposite"
+  },
+  {
+    "Id": 26509,
+    "Title": "HtmlNodeNavigator.Name doesn't report the attribute name"
+  },
+  {
+    "Id": 26558,
+    "Title": "we import or not after add web reference ?"
+  },
+  {
+    "Id": 26559,
+    "Title": "I want to read whole form data from other website."
+  },
+  {
+    "Id": 26560,
+    "Title": "why unknow hw ?"
+  },
+  {
+    "Id": 26633,
+    "Title": "bugs in GetXmlComment with patchs"
+  },
+  {
+    "Id": 26634,
+    "Title": "GetXmlName is too permissive, with a Patch"
+  },
+  {
+    "Id": 26635,
+    "Title": "XPath Navigation Broken"
+  },
+  {
+    "Id": 26663,
+    "Title": "HtmlDocument.Load methods should be static"
+  },
+  {
+    "Id": 26666,
+    "Title": "Provide an HtmlNode.ToString() method."
+  },
+  {
+    "Id": 26713,
+    "Title": "Add events for node actions"
+  },
+  {
+    "Id": 26787,
+    "Title": "Parser removes </p> part from <p></p> sequence."
+  },
+  {
+    "Id": 27034,
+    "Title": "latest revision fails to compile"
+  },
+  {
+    "Id": 27057,
+    "Title": "Stack OverFlows"
+  },
+  {
+    "Id": 27094,
+    "Title": "The given key was not present in the dictionary."
+  },
+  {
+    "Id": 27095,
+    "Title": "Additional p attribute on options nodes"
+  },
+  {
+    "Id": 27123,
+    "Title": "Empty attributes are not create properly"
+  },
+  {
+    "Id": 27129,
+    "Title": "compilation errors in rev.66216"
+  },
+  {
+    "Id": 27466,
+    "Title": "HtmlDocument.GetXmlName method bugs"
+  },
+  {
+    "Id": 27536,
+    "Title": "Copyright 20010!"
+  },
+  {
+    "Id": 27576,
+    "Title": "In correct parsing of HTML based CFM file"
+  },
+  {
+    "Id": 27607,
+    "Title": "Documentation broken"
+  },
+  {
+    "Id": 27645,
+    "Title": "HtmlAgilityPack.HtmlNodeType class need add a Attribute"
+  },
+  {
+    "Id": 27912,
+    "Title": "Assembly should be CLSCompliant"
+  },
+  {
+    "Id": 27973,
+    "Title": "parser fails to tolerate HTML comments in tags"
+  },
+  {
+    "Id": 28146,
+    "Title": "Problem with \"SelectSingleNode\" on a node"
+  },
+  {
+    "Id": 28204,
+    "Title": "Invalid formatting for dl, dt, dd source"
+  },
+  {
+    "Id": 28232,
+    "Title": "Incorrect removal of </option> end tags on Innerhtml retrieval"
+  },
+  {
+    "Id": 28238,
+    "Title": "HtmlAgilityPack reference error"
+  },
+  {
+    "Id": 28243,
+    "Title": "InnerText gives different result"
+  },
+  {
+    "Id": 28316,
+    "Title": "Assembly culture should be left neutral (Experimental XPath release)"
+  },
+  {
+    "Id": 28317,
+    "Title": "The .DocumentNode.OuterHtml misses </link> closing tags compared to ._text field"
+  },
+  {
+    "Id": 28360,
+    "Title": "The nodes is not thread safe."
+  },
+  {
+    "Id": 28756,
+    "Title": "RemoveChild(node, true) reverses the order of the grandchildren it keeps"
+  },
+  {
+    "Id": 28970,
+    "Title": "Add CSS Selector Query Engine onto HTMLAgilityPack"
+  },
+  {
+    "Id": 29082,
+    "Title": "HTML AGILITY Documentation displays no documentation"
+  },
+  {
+    "Id": 29083,
+    "Title": "HTML AGILITY Documentation displays no documentation"
+  },
+  {
+    "Id": 29175,
+    "Title": "Why DocumentNode.SelectNodes returns null"
+  },
+  {
+    "Id": 29218,
+    "Title": "Incorrect parsing of HTML4 optional end tags"
+  },
+  {
+    "Id": 29233,
+    "Title": "HtmlDocument.Save(Stream)"
+  },
+  {
+    "Id": 29603,
+    "Title": "Rename NuGet Package ID"
+  },
+  {
+    "Id": 29667,
+    "Title": "AppendChild does not move the node if it is already in the tree"
+  },
+  {
+    "Id": 29766,
+    "Title": "XPATH and node text"
+  },
+  {
+    "Id": 29781,
+    "Title": "Wrong Xpath if ana element is part of form"
+  },
+  {
+    "Id": 29782,
+    "Title": "Wrong Xpath if an element is part of form"
+  },
+  {
+    "Id": 29862,
+    "Title": "Faulty HtmlDocument.HtmlEncode"
+  },
+  {
+    "Id": 29863,
+    "Title": "When saving to string, transcoding is not done properly"
+  },
+  {
+    "Id": 29866,
+    "Title": "Faulty CDATA encoding"
+  },
+  {
+    "Id": 29887,
+    "Title": "Unable to use Checksum when loading document using HtmlWeb.Load"
+  },
+  {
+    "Id": 29905,
+    "Title": "Swedish Characters not encoded correctly"
+  },
+  {
+    "Id": 29952,
+    "Title": "NuGet package does not reference dll"
+  },
+  {
+    "Id": 30053,
+    "Title": "Modifying DOM does not clear cached InnerHtml and OuterHtml properties"
+  },
+  {
+    "Id": 30059,
+    "Title": "Stackoverflow with HtmlNode.OuterHtml"
+  },
+  {
+    "Id": 30078,
+    "Title": "HAPExplorer crashes if an invalid xpath is searched for"
+  },
+  {
+    "Id": 30171,
+    "Title": "Question marks in html"
+  },
+  {
+    "Id": 30176,
+    "Title": "DocumentElement Missing from HtmlDocument Class"
+  },
+  {
+    "Id": 30189,
+    "Title": "How to deal with malformed DT, DL in Bookmarks.html"
+  },
+  {
+    "Id": 30268,
+    "Title": "StackOverflowException loading large document."
+  },
+  {
+    "Id": 30487,
+    "Title": "Body element not found if mismatched tags are used in Head"
+  },
+  {
+    "Id": 30527,
+    "Title": "Parsing html problem with \"Experimental Xpath Updates\""
+  },
+  {
+    "Id": 30543,
+    "Title": "HtmlAttribute.Name"
+  },
+  {
+    "Id": 30608,
+    "Title": "HtmlNode.Ancestors() method does not include ParentNode"
+  },
+  {
+    "Id": 30628,
+    "Title": "doc.DocumentNode.Descendants() stack overflow"
+  },
+  {
+    "Id": 30645,
+    "Title": "Use IWebProxy (vs. WebProxy) within HtmlWeb"
+  },
+  {
+    "Id": 30646,
+    "Title": "NullReference exception when html has wrong encoding."
+  },
+  {
+    "Id": 30700,
+    "Title": "can  I choose a namespace node with it?"
+  },
+  {
+    "Id": 30701,
+    "Title": "can  I choose a namespace node with it?"
+  },
+  {
+    "Id": 30702,
+    "Title": "can  I choose a namespace node with it?"
+  },
+  {
+    "Id": 30772,
+    "Title": "Issues with Remove -- lack of refreshing, asymmetry"
+  },
+  {
+    "Id": 30837,
+    "Title": "StackOverflowException"
+  },
+  {
+    "Id": 30979,
+    "Title": "HtmlNode.XPath returns invalid XPaths"
+  },
+  {
+    "Id": 30984,
+    "Title": "For HtmlNode LI item innertext is not coming properly"
+  },
+  {
+    "Id": 31028,
+    "Title": "SVN folders are packed with nuget package"
+  },
+  {
+    "Id": 31059,
+    "Title": "Documentation inconsistencies of some properties"
+  },
+  {
+    "Id": 31064,
+    "Title": "HtmlDocument Load(Stream) doesn't load correctly"
+  },
+  {
+    "Id": 31170,
+    "Title": "Parsing incorrectly when text contains '<' or '>'"
+  },
+  {
+    "Id": 31173,
+    "Title": "StackOverflowException in MixedCodeDocumentFragment"
+  },
+  {
+    "Id": 31198,
+    "Title": "Bug with XPath HtmlNodeNavigator"
+  },
+  {
+    "Id": 31251,
+    "Title": "I need some help"
+  },
+  {
+    "Id": 31286,
+    "Title": "Invalid Tag Closing"
+  },
+  {
+    "Id": 31292,
+    "Title": "Why dont fix unclosed <p>?"
+  },
+  {
+    "Id": 31309,
+    "Title": "List parsing problem."
+  },
+  {
+    "Id": 31411,
+    "Title": "HAP Explorer search bug"
+  },
+  {
+    "Id": 31424,
+    "Title": "ArgumentOutOfRangeException exporting HTML with broken comment to XML"
+  },
+  {
+    "Id": 31468,
+    "Title": "Error Charset when download web page"
+  },
+  {
+    "Id": 31489,
+    "Title": "Doesn't work without doctype"
+  },
+  {
+    "Id": 31622,
+    "Title": "Malformed tag resolution priority"
+  },
+  {
+    "Id": 31640,
+    "Title": "Setting to HtmlNode.InnerHtml doesn't preserve white-spaces"
+  },
+  {
+    "Id": 31659,
+    "Title": "doesnt get image src tag in inner html"
+  },
+  {
+    "Id": 31701,
+    "Title": "incorrect parse <form ..."
+  },
+  {
+    "Id": 31714,
+    "Title": "cannot be added because of it was not build using windowsphone runtiem"
+  },
+  {
+    "Id": 31801,
+    "Title": "NuGet package update / manage Fails via VS Manage NuGet Packages dialog"
+  },
+  {
+    "Id": 31858,
+    "Title": "InnerHtml property not calculated properly"
+  },
+  {
+    "Id": 31915,
+    "Title": "HtmlEntity.Entitize > v1.4.0 failing on Chinese characters"
+  },
+  {
+    "Id": 32107,
+    "Title": "HtmlAgilityPack v1.4.3 parses tables wrong"
+  },
+  {
+    "Id": 32329,
+    "Title": "tables parse incorrectly if OptionFixNestedTags is set true"
+  },
+  {
+    "Id": 32333,
+    "Title": "Why not close element tags?"
+  },
+  {
+    "Id": 32357,
+    "Title": "<script> tag with src attribute: stop parsing"
+  },
+  {
+    "Id": 32358,
+    "Title": "<script> tag with complex \"preset\" page elements will try to parse"
+  },
+  {
+    "Id": 32472,
+    "Title": "Can't select inner xml of //select[@name='test']/option"
+  },
+  {
+    "Id": 32505,
+    "Title": "Incorrect handling of form tag"
+  },
+  {
+    "Id": 32539,
+    "Title": "SelectSingleNode searches from root when called from child"
+  },
+  {
+    "Id": 32616,
+    "Title": "Cannot find type System.Xml.XPath.XPathNavigator in module System.Xml.dll"
+  },
+  {
+    "Id": 32621,
+    "Title": "Html Agility Pack does not replace character references"
+  },
+  {
+    "Id": 32678,
+    "Title": "Problem with nuget package and Windows Phone"
+  },
+  {
+    "Id": 32779,
+    "Title": "Please add style properties options"
+  },
+  {
+    "Id": 32793,
+    "Title": "Crash on startup using HtmlAgilityPack from Nuget in WP7 project"
+  },
+  {
+    "Id": 32800,
+    "Title": "help me,serious bug"
+  },
+  {
+    "Id": 32854,
+    "Title": "Improve Html2Txt text formatting"
+  },
+  {
+    "Id": 32859,
+    "Title": "Stack overflow on HtmlDocument load"
+  },
+  {
+    "Id": 32872,
+    "Title": "HAPPhone.7.1 solution doesn't compile due to XPath"
+  },
+  {
+    "Id": 32882,
+    "Title": "Source file 'HtmlBaseNode.cs' could not be found"
+  },
+  {
+    "Id": 32943,
+    "Title": "Nuget package 1.4.5 \"Net20\" library is targeting wrong CLR"
+  },
+  {
+    "Id": 32952,
+    "Title": "HTML not generated properly after DOM node changed"
+  },
+  {
+    "Id": 32959,
+    "Title": "HTML not generated properly after DOM node changed"
+  },
+  {
+    "Id": 32961,
+    "Title": "InnerText for Comment node returns comment text"
+  },
+  {
+    "Id": 32972,
+    "Title": "Self-closing slash dissappears for img nodes"
+  },
+  {
+    "Id": 32985,
+    "Title": "This assembly is built by a runtime newer than the currently loaded runtime and cannot be loaded."
+  },
+  {
+    "Id": 33007,
+    "Title": "HAP 1.4.5 Net20-Binaries build for .NET 4.0"
+  },
+  {
+    "Id": 33065,
+    "Title": "Select/Option Problem"
+  },
+  {
+    "Id": 33086,
+    "Title": "Not auto closing dd tags"
+  },
+  {
+    "Id": 33098,
+    "Title": "HTML parsing - InnerText - Bug?"
+  },
+  {
+    "Id": 33169,
+    "Title": "Invalid output when using OptionOutputOptimizeAttributeValues"
+  },
+  {
+    "Id": 33172,
+    "Title": "doc.DocumentNode.OuterHtml not giving well formed html : HAP on Win8 :"
+  },
+  {
+    "Id": 33176,
+    "Title": "Why are Input elements not part of a Form element"
+  },
+  {
+    "Id": 33246,
+    "Title": "XHTML - Conformity"
+  },
+  {
+    "Id": 33318,
+    "Title": "Incorrect parse result from HAP 1.4.6 and 1.9.0.1"
+  },
+  {
+    "Id": 33319,
+    "Title": "Incorrect parse result from HAP 1.4.6 and 1.9.0.1"
+  },
+  {
+    "Id": 33504,
+    "Title": "HtmlDocument InnerText (Metro/1.4.6-winrt45)"
+  },
+  {
+    "Id": 33519,
+    "Title": "Not working with Background Agents?"
+  },
+  {
+    "Id": 33586,
+    "Title": "Bug in HtmlEntity.DeEntitize in v1.4.6"
+  },
+  {
+    "Id": 33594,
+    "Title": "About Encoding GBK"
+  },
+  {
+    "Id": 33644,
+    "Title": "Xpath not correct..."
+  },
+  {
+    "Id": 33647,
+    "Title": "OwnerDocument property is inconsistent"
+  },
+  {
+    "Id": 33661,
+    "Title": "Text Encoding"
+  },
+  {
+    "Id": 33700,
+    "Title": "HTML5 Tags in XPath not working"
+  },
+  {
+    "Id": 33705,
+    "Title": "HtmlEntity.DeEntitize method doesn't process unterminated numeric entities"
+  },
+  {
+    "Id": 33738,
+    "Title": "InnerText returns HTML entities rather than their raw character"
+  },
+  {
+    "Id": 33744,
+    "Title": "Handle Special Characters"
+  },
+  {
+    "Id": 33748,
+    "Title": "OptionWriteEmptyNodes leads to wrong form tags"
+  },
+  {
+    "Id": 33766,
+    "Title": "Issue with HTML to XML conversion"
+  },
+  {
+    "Id": 33781,
+    "Title": "NullReferenceException during reading iFrame elements"
+  },
+  {
+    "Id": 33832,
+    "Title": "HtmlNode.InnerText needs space chars or other kind of seperator after innertext of each element if needed"
+  },
+  {
+    "Id": 33869,
+    "Title": "HtmlAttribute.Value throws NullReferenceException when OwnerDocument.Text is null"
+  },
+  {
+    "Id": 33871,
+    "Title": "HtmlNodeNavigator.IsSamePosition ignores attribute position"
+  },
+  {
+    "Id": 33881,
+    "Title": "return null"
+  },
+  {
+    "Id": 34033,
+    "Title": "HtmlDocument.DetectEncoding(Stream)"
+  },
+  {
+    "Id": 34066,
+    "Title": "htmlDoc.DocumentNode.SelectNodes(\"//ul/div[@class='p-normal']\")只能得到得一个"
+  },
+  {
+    "Id": 34122,
+    "Title": "HtmlEntity.DeEntitize throws KeyNotFoundException if there is an & in the text"
+  },
+  {
+    "Id": 34166,
+    "Title": "convert a string with HTML tags with a properly formatted string"
+  },
+  {
+    "Id": 34185,
+    "Title": "Attributes.Remove on Image Only Removes One, When There Are Two"
+  },
+  {
+    "Id": 34222,
+    "Title": "HttpWeb.Get(string, string) method issue"
+  },
+  {
+    "Id": 34256,
+    "Title": "HtmlTextNode.Text returns HTML code, not text"
+  },
+  {
+    "Id": 34280,
+    "Title": "Not disposing unmanaged objects"
+  },
+  {
+    "Id": 34281,
+    "Title": "Run FxCop for next release"
+  },
+  {
+    "Id": 34304,
+    "Title": "HtmlWeb::Load strips ending . (full stops or %2E)"
+  },
+  {
+    "Id": 34366,
+    "Title": "DocumentNode.OuterHtml cache not refreshing"
+  },
+  {
+    "Id": 34381,
+    "Title": "Shift-JIS content not decoding properly"
+  },
+  {
+    "Id": 34382,
+    "Title": "LoadHtml(...) causes StackOverflowException"
+  },
+  {
+    "Id": 34411,
+    "Title": "OuterXml bug?"
+  },
+  {
+    "Id": 34607,
+    "Title": "HtmlWeb Ignores Credentials"
+  },
+  {
+    "Id": 34628,
+    "Title": "Detection encoding before loading of HTML"
+  },
+  {
+    "Id": 34669,
+    "Title": "Incorrect Parsing of Malformed Html"
+  },
+  {
+    "Id": 34711,
+    "Title": "body node not parsed when head not closed"
+  },
+  {
+    "Id": 34841,
+    "Title": "HtmlDocument output cannot be parsed as XML because of \" -- \" in a comment"
+  },
+  {
+    "Id": 34908,
+    "Title": "DocumentNode.OuterHtml and Comment nodes"
+  },
+  {
+    "Id": 34922,
+    "Title": "HtmlAgilityPack.HtmlDocument is not working some times."
+  },
+  {
+    "Id": 34973,
+    "Title": "Incorrect xpath parse"
+  },
+  {
+    "Id": 35060,
+    "Title": "Recursive algorithms can result in stack overflows"
+  },
+  {
+    "Id": 35087,
+    "Title": "Problem with encoding"
+  },
+  {
+    "Id": 35128,
+    "Title": "After installing packet it doesn't work"
+  },
+  {
+    "Id": 35147,
+    "Title": "Fortify reports XML injection possibility"
+  },
+  {
+    "Id": 35153,
+    "Title": "<a> tag is being ignored by HtmlAgilityPack"
+  },
+  {
+    "Id": 35195,
+    "Title": "Bug report"
+  },
+  {
+    "Id": 35264,
+    "Title": "XPath Select Nodes Issue"
+  },
+  {
+    "Id": 35273,
+    "Title": "XPathNodeIterator returning invalid Name value for attributes"
+  },
+  {
+    "Id": 35285,
+    "Title": ".LoadHtml method too slow on Azure Virtual Machine"
+  },
+  {
+    "Id": 35321,
+    "Title": "HtmlNode glitch ?"
+  },
+  {
+    "Id": 35461,
+    "Title": "StackOverflow when accessing the OuterHtml property."
+  },
+  {
+    "Id": 35551,
+    "Title": "TFS Build Error \"File Contains Corrupted Data\" on Nuget Package Restore"
+  },
+  {
+    "Id": 35593,
+    "Title": "The <= and => parse error"
+  },
+  {
+    "Id": 35594,
+    "Title": "HtmlAgilityPack not working for new programs in VS2013"
+  },
+  {
+    "Id": 35628,
+    "Title": "System.NullReferenceException when not referencing null values?"
+  },
+  {
+    "Id": 35648,
+    "Title": "Render nested of XML to HTML table"
+  },
+  {
+    "Id": 35666,
+    "Title": "html5 doctype causes xmlns attribute to be added"
+  },
+  {
+    "Id": 35690,
+    "Title": "HtmlNode.CreateNode(str) doesn't create node from whole text, only to first <br>"
+  },
+  {
+    "Id": 35750,
+    "Title": "ReplaceChild not working in WinRT version"
+  },
+  {
+    "Id": 35757,
+    "Title": "[Issue]End-Tag Always Omitted"
+  },
+  {
+    "Id": 35770,
+    "Title": "[patch] HtmlEntity.DeEntitize fails on numeric entities > 0xFFFF"
+  },
+  {
+    "Id": 35771,
+    "Title": "[patch] HtmlEntity.DeEntitize fails on numeric entities > 0xFFFF"
+  },
+  {
+    "Id": 35774,
+    "Title": "1.4.9 NuGet package is a broken zip file"
+  },
+  {
+    "Id": 35798,
+    "Title": "HtmlEntity.DeEntitize throwing KeyNotFoundException"
+  },
+  {
+    "Id": 35812,
+    "Title": "Don't find all childrens"
+  },
+  {
+    "Id": 35849,
+    "Title": "Elements are not checked if they are complete"
+  },
+  {
+    "Id": 35851,
+    "Title": "HtmlNode.SelectNodes is missing in PCL"
+  },
+  {
+    "Id": 35854,
+    "Title": "Portable assemblies should be signed"
+  },
+  {
+    "Id": 35857,
+    "Title": "Multithread OutOfMemoryException when calling LoadHtml"
+  },
+  {
+    "Id": 35864,
+    "Title": "How do I change authentication method?"
+  },
+  {
+    "Id": 35889,
+    "Title": "Html Agility Pack load become chaotic!!!"
+  },
+  {
+    "Id": 35920,
+    "Title": "Differing results returned using name and local-name()"
+  },
+  {
+    "Id": 35929,
+    "Title": "ASP.Net 5"
+  },
+  {
+    "Id": 43111,
+    "Title": "SetID does not update attribue set"
+  },
+  {
+    "Id": 43155,
+    "Title": "Not compiling with .NET 2.0"
+  },
+  {
+    "Id": 43161,
+    "Title": "NuGet package corrupted"
+  },
+  {
+    "Id": 43167,
+    "Title": "Incorrect processing <p> node"
+  },
+  {
+    "Id": 43184,
+    "Title": "GetAttributeValue returns \"Login\""
+  },
+  {
+    "Id": 43202,
+    "Title": "slash from end-of-tag is misparsed"
+  },
+  {
+    "Id": 43218,
+    "Title": "VS 2015 Unable to find package 'HtmlAgilityPack'"
+  },
+  {
+    "Id": 43229,
+    "Title": "OutOfMemoryException when Parsing malformed HTML"
+  },
+  {
+    "Id": 43235,
+    "Title": "HtmlEntity.Entitize(\"ﬁ\"); throws exception"
+  },
+  {
+    "Id": 43246,
+    "Title": "End tag does not mean a parse error?"
+  },
+  {
+    "Id": 43250,
+    "Title": "How to remove the extra characters"
+  },
+  {
+    "Id": 43259,
+    "Title": "problems to find multiple results"
+  },
+  {
+    "Id": 43265,
+    "Title": "Can only get .OuterHtml once"
+  },
+  {
+    "Id": 43298,
+    "Title": "SelectNodes() returns null"
+  },
+  {
+    "Id": 43326,
+    "Title": "HtmlNode.XPath Property CASE"
+  },
+  {
+    "Id": 43329,
+    "Title": "Not case correct, how to pull case correct"
+  },
+  {
+    "Id": 43330,
+    "Title": "LoadHtml adds non existing tbody element"
+  },
+  {
+    "Id": 43339,
+    "Title": "Mistake in charset detection with patch"
+  },
+  {
+    "Id": 43341,
+    "Title": "Give more detail in Exception(\"Error downloading html\") for Metro version of HtmlWeb"
+  },
+  {
+    "Id": 43348,
+    "Title": "Invalid assembly version in Nuget package 1.4.9"
+  },
+  {
+    "Id": 43352,
+    "Title": "Tag mixing *generates* invalid html"
+  },
+  {
+    "Id": 43392,
+    "Title": "HtmlDocument: Constructor with parameter of html string"
+  },
+  {
+    "Id": 43432,
+    "Title": "HtmlAttributeCollection changes attributes names to lowercase"
+  },
+  {
+    "Id": 43433,
+    "Title": "HTML Agility Pack"
+  },
+  {
+    "Id": 43450,
+    "Title": "*high* Can not pass \"Windows App Certification Kit\""
+  },
+  {
+    "Id": 43455,
+    "Title": "Suport for .NET Core / .NET Standard"
+  },
+  {
+    "Id": 43463,
+    "Title": "Trouble parsing html"
+  },
+  {
+    "Id": 43472,
+    "Title": "HtmlNode.SelectNodes behaves strangely with \"//...\" selector"
+  },
+  {
+    "Id": 43474,
+    "Title": "Wrong XPATH for <form><ul>"
+  },
+  {
+    "Id": 43483,
+    "Title": "Slash not properly parsed in attribute names"
+  },
+  {
+    "Id": 43488,
+    "Title": "-"
+  },
+  {
+    "Id": 43491,
+    "Title": "Unicode Load vs LoadHTML"
+  },
+  {
+    "Id": 43496,
+    "Title": "1.4.9.5: SelectNodes causes NullReferenceException"
+  },
+  {
+    "Id": 43500,
+    "Title": "&nbps tag become a capital B attached to the end of a word"
+  },
+  {
+    "Id": 43510,
+    "Title": "Upgrade to Windows 10 mobile"
+  },
+  {
+    "Id": 43511,
+    "Title": "Breaking Change In 1.4.9.1, Makes Fizzler Cause Exception"
+  },
+  {
+    "Id": 43529,
+    "Title": "LoadHtml throws StackOverflowException for HTML with big level of tag embedding"
+  },
+  {
+    "Id": 43530,
+    "Title": "support.net core"
+  },
+  {
+    "Id": 43534,
+    "Title": "Don't fine SelectNodes in HTMLnode [C#]"
+  },
+  {
+    "Id": 43552,
+    "Title": "RemoveChild (keepGrandChildren) with em inside returns strange results"
+  },
+  {
+    "Id": 43561,
+    "Title": "Cannot parse all li's out of list"
+  },
+  {
+    "Id": 43564,
+    "Title": "Problem to read full HTML content in few URL"
+  },
+  {
+    "Id": 43571,
+    "Title": "StackOverflowException"
+  },
+  {
+    "Id": 43572,
+    "Title": "Question about the HtmlNodeCollection.FindFirst method"
+  },
+  {
+    "Id": 43580,
+    "Title": "Security issues raised by audtor for MixedCodeDocument > StreamWriter"
+  },
+  {
+    "Id": 43594,
+    "Title": "htmldocument.GetElementById returns wrong node"
+  }
+]

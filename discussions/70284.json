@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "239367",
+    "ThreadId": "70284",
+    "Html": "<p>Hi,</p>\r\n<p>I need ot parse through CSS to pick up certain attributes (e.g. URLs).&nbsp; I've been happy with HAP for HTML.</p>\r\n<p>QUESTION: can I use HAP for parsing CSS?&nbsp; if not any advice re a HAP like library for CSS parsing?</p>\r\n<p>thanks</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-27T19:58:26.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

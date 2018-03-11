@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "40566",
+    "ThreadId": "12447",
+    "Html": "\r\nHi,<br /><br />I'm using visual studio 2005 and have what is likey to be considered a stupid question. <br /><br />I've downloaded the agility pack. When I open the solution file I get an error saying<br /><br />&gt;&gt;\" The source control provider associated with this solution could not be found. The projects will be treated as not under source control. Do you want to permanently remove the source control bindings from the projects?\" &lt;&lt;<br /><br />Then if I try to run any of the files(samples) in visual studio I get this error<br /><br />&gt;&gt;\"A project with an output type of class library cannot be started directly. In order to debug this project, add an executable project to this solution which references the library project. set the executablle project as the startup project\"&lt;&lt;<br /><br />I'm guessing theres more to get the samples running than just opening the files? From what I can see theres no information on how to set up in the documentation.<br /><br />Im new to visual studio and am having trouble finding out how to resolve the error messages above.<br /><br />Please help if you can,<br /><br />thanks,<br />dub<br />",
+    "PostedDate": "2007-07-11T02:25:01.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "40958",
+    "ThreadId": "12447",
+    "Html": "\r\ndubeat:<br />The two errors you're seeing are unrelated - but the important one (ie the one that's stopping you run any of the samples) is the second - less an error and more a badly written info message: you need to set a sample project as your start up project (otherwise VS will try and build and run a dll - hence the class library cannot be started directly error ) - right click the sample you want to run, and in the context menu that appears, click on 'Set as Startup Project'. Then when you F5 (build n run) the project you set as the start up will launch. If you want to use the HtmlAgilityPack functionality in another project - then build the project HtmlAgilityPack under release mode. This will create a dll you can reference in new projects - youll need to add a reference to the newly built dll and add a 'using HtmlAgilityPack;' line to your using references. Hope this vaguely helps. <br />",
+    "PostedDate": "2007-07-13T06:18:19.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72603",
+    "ThreadId": "12447",
+    "Html": "\r\nThis issue is caused by source control bindings embedded within the project's source files.  You can safely ignore this message.  Once you do that, you will be prompted (in Visual Studio 2005 anyway) to permanently remove these bindings.  Answering yes removes the bingins and ensures that you dont see the message again.<br /><br /><br />Here is a nice post on different options for handling this issue: http://blogs.msdn.com/korbyp/archive/2003/12/17/44209.aspx<br />",
+    "PostedDate": "2008-02-08T07:29:21.3-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

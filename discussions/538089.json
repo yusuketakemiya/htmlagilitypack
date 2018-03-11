@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1219712",
+    "ThreadId": "538089",
+    "Html": "Does Httpagility pack support indexes in xpath expression. I have an xpath like following to get to a specific node.<br />\n<br />\nstring nodexpath = &quot;/html/body/table/tr[0]/td[0]&quot;;<br />\n<br />\nIt is erroring out with System.NullReferenceException<br />\n",
+    "PostedDate": "2014-03-05T17:40:52.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

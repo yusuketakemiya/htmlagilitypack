@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\nI'am new on C# and I try to do extract data from a HTML file\n \nI found Html Agility Pack library and it seems to be the solution to do this ;)\n \nI have only one problem to extract text when the node have many texts\n \nthe Html Agility Pack tester give xpath = /html[1]/body[1]/#text[4] to have the 4th text of the first body, but it doesn't work (exception)\n \ncould you tell me the right synthax to have text node ?\n \nThank you\nEric",
+    "LastUpdatedDate": "2013-02-21T18:47:11.32-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-12-15T10:16:41.003-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XPATH and node text",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 29766
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello, I was trying to read all the iFrames from the site habrahabr.ru and code failed with NullReference exception. Here is my code:\n\npublic static IEnumerable DownloadHabrahabr()\n        {\n            using (WebClient webClient = new WebClient())\n            {\n                string html = webClient.DownloadString(new Uri(\"http://www.habrahabr.ru/\"));\n                HtmlDocument document = new HtmlDocument();\n                document.LoadHtml(html);\n                foreach (HtmlNode node in document.DocumentNode.SelectNodes(\"//iframe[@src]\"))\n                {\n                    yield return node.Name;\n                }\n            }\n        }\n\nException details:\nSystem.NullReferenceException was unhandled\n  HResult=-2147467261\n  Message=Object reference not set to an instance of an object.\n  Source=App1.Core\n  StackTrace:\n       at App1.Core.Test.d__0.MoveNext() in c:\\Users\\Eugene\\Documents\\Visual Studio 2012\\Projects\\App1\\App1.Core\\Test.cs:line 21\n       at MS.Internal.Data.EnumerableCollectionView.LoadSnapshotCore(IEnumerable source)\n       at MS.Internal.Data.EnumerableCollectionView..ctor(IEnumerable source)\n       at MS.Internal.Data.ViewManager.GetViewRecord(Object collection, CollectionViewSource cvs, Type collectionViewType, Boolean createView, Func`2 GetSourceItem)\n       at MS.Internal.Data.DataBindEngine.GetViewRecord(Object collection, CollectionViewSource key, Type collectionViewType, Boolean createView, Func`2 GetSourceItem)\n       at System.Windows.Data.CollectionViewSource.GetDefaultCollectionView(Object source, Boolean createView, Func`2 GetSourceItem)\n       at System.Windows.Data.CollectionViewSource.GetDefaultCollectionView(Object source, DependencyObject d, Func`2 GetSourceItem)\n       at System.Windows.Controls.ItemCollection.SetItemsSource(IEnumerable value, Func`2 GetSourceItem)\n       at System.Windows.Controls.ItemsControl.OnItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)\n       at System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)\n       at System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)\n       at System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)\n       at System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)\n       at System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)\n       at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)\n       at System.Windows.Controls.ItemsControl.set_ItemsSource(IEnumerable value)\n       at App1.WinUI.MainWindow.MainWindow_OnLoaded(Object sender, RoutedEventArgs e) in c:\\Users\\Eugene\\Documents\\Visual Studio 2012\\Projects\\App1\\App1.WinUI\\MainWindow.xaml.cs:line 31\n       at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)\n       at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)\n       at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)\n       at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)\n       at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)\n       at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)\n       at MS.Internal.LoadedOrUnloadedOperation.DoWork()\n       at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()\n       at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()\n       at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)\n       at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)\n       at System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)\n       at System.Windows.Interop.HwndTarget.OnResize()\n       at System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)\n       at System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n       at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n       at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)\n       at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)\n       at MS.Internal.Threading.ExceptionFilterHelper.TryCatchWhen(Object source, Delegate method, Object args, Int32 numArgs, Delegate catchHandler)\n       at System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)\n       at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)\n  InnerException:",
+    "LastUpdatedDate": "2014-09-19T07:37:02.473-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-02-17T06:00:27.99-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NullReferenceException during reading iFrame elements",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33781
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This is because of a very frustrating design decision that I feel needs to be corrected. If SelectNodes doesn't match any nodes for your XPath expression, it returns null instead of an empty HtmlNodeCollection. This means you can't safely do a foreach over the result of SelectNodes, and instead have to write messy code like this:\r\n\r\n```\n    IEnumerable<HtmlNode> nodes = (IEnumerable<HtmlNode>)doc.DocumentNode.SelectNodes(_myXPath) ?? new HtmlNode[0];\n    \n    foreach (HtmlNode node in nodes)\n    { ... }\n```\r\n\r\nI would greatly prefer if SelectNodes returned an empty HtmlNodeCollection.",
+      "PostedDate": "2014-09-19T07:37:02.473-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "602947",
+    "ThreadId": "255301",
+    "Html": "\r\n<p>Hello there,</p>\r\n<p>how come or how do I prevent HAP to &quot;double&quot; encodes html entities from html input .. basically what I am seeing is this:</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> htmlDocument = <span style=\"color:blue\">new</span> HtmlDocument { OptionOutputAsXml = <span style=\"color:blue\">true</span> };\r\n                htmlDocument.LoadHtml(Text);\r\n\r\n<span style=\"color:blue\">return</span> htmlDocument.DocumentNode.InnerHtml;\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>Using this with 'Text' being:</p>\r\n<pre>&lt;HTML&gt;&lt;HEAD&gt;&lt;/HEAD&gt;&lt;body&gt;&amp;nbsp;&lt;/BODY&gt;&lt;/HTML&gt;\r\n</pre>\r\n<p><span style=\"font-family:'Times New Roman'; font-size:medium\"></span></p>\r\n<p style=\"display:inline!important\">I get this from htmlDocument.DocumentNode.InnerHtml back:</p>\r\n<p>&nbsp;</p>\r\n<pre>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&amp;amp;nbsp;&lt;/body&gt;&lt;/html&gt;</pre>\r\n<pre><br></pre>\r\n<p>Same goes for all other entites. So basically whenever I pass in actually valid html, I get modifed, wrong html back. Is there any way to prevent this?</p>\r\n<p>&nbsp;</p>\r\n<p>-J</p>\r\n",
+    "PostedDate": "2011-04-26T07:20:57.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "606144",
+    "ThreadId": "255301",
+    "Html": "<p>I haven't looked too deeply into this, but it looks like something to do with the 'OptionOutputAsXml' you are setting - '&amp;nbsp;' is not valid in XML. A possible workaround is to do this:</p>\r\n<p style=\"padding-left: 30px;\">htmlDocument.LoadHtml(System.Web.HttpUtility.HtmlDecode(Text));</p>\r\n<p>Passing in already decoded html results in the following output:</p>\r\n<pre>&lt;HTML&gt;&lt;HEAD&gt;&lt;/HEAD&gt;&lt;body&gt; &lt;/BODY&gt;&lt;/HTML&gt;</pre>",
+    "PostedDate": "2011-05-02T15:17:25.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "611160",
+    "ThreadId": "255301",
+    "Html": "<p>This is by design, XML doesn't allow '&amp;' cahracter, and \"escapes\" it as &amp;amp; destroying your HTML. You should not use output as XML.</p>",
+    "PostedDate": "2011-05-11T12:17:00.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1340569",
+    "ThreadId": "255301",
+    "Html": "<pre><code>string noNbsp= Regex.Replace(inputHTML, @&quot;&amp;nbsp;&quot;, &quot;&quot;).Trim();</code></pre>\n\n",
+    "PostedDate": "2015-01-09T17:30:00.98-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

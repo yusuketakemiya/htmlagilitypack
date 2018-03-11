@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "883170",
+    "ThreadId": "382276",
+    "Html": "\r\n<p>hi,</p>\r\n<p>I downloaded the build 1.4.5 and put the .dll file in my bin\\debug folder, added a reference the HtmlAgilityPack.dll to my project. Meanwhile, the following code produces the message:\r\n<strong><em>&quot;Unreachable code detected&quot;</em></strong>. However, it does compile.</p>\r\n<div style=\"background-color:white; color:black\">\r\n<pre>HtmlAgilityPack.HtmlDocument doc = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlDocument();\r\n\r\ndoc.LoadHtml(<span style=\"color:#a31515\">&quot;Request.html&quot;</span>);\r\n</pre>\r\n<p>Any idea what is going on? thanks! Acheo.</p>\r\n</div>\r\n",
+    "PostedDate": "2012-07-21T07:54:30.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "883199",
+    "ThreadId": "382276",
+    "Html": "<p>Just tried build 1.4.0. Same results...</p>",
+    "PostedDate": "2012-07-21T08:08:47.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

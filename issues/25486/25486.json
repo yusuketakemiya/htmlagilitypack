@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "if I parse the following html :\n<select>\n<option value=\"179!2920\">2920</option>\n</select>\n \nThe select node ends up with 4 children:\n[0] Text \"\\r\\n\"\n[1] Element Name=\"option\" Value=\"179!2920\" InnerText = \"\"\n[2] Text \"2920\"\n[3] Text \"\\r\\n\"\n \nWhats wrong here? the \"2920\" should be a child of the option.... not of the select!",
+    "LastUpdatedDate": "2013-02-21T18:47:20.833-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-12-01T18:26:16.233-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "<select> not parsing correctly",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 25486
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "By default, the <select> element is marked as an empty element.\r\nIf you remove the select element from having special options, like this:\r\n\r\nHtmlNode.ElementsFlags.Remove(\"select\");\r\n\r\nit should work like you expect.",
+      "PostedDate": "2010-03-24T07:14:05.713-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Errata: I meant the option element:\r\n\r\nHtmlNode.ElementsFlags.Remove(\"option\");",
+      "PostedDate": "2010-03-24T07:14:49.93-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:20.833-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

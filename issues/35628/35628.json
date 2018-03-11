@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Error: \nAn unhandled exception of type 'System.NullReferenceException' occurred in test.exe\nAdditional information: Object reference not set to an instance of an object.\n\nCode:\n```\npublic static string FixImgSrc(string sourceString)\n        {\n            //string n = Regex.Replace(sourceString, @\"(.*?)\\/([^\\/]*?)\\/([^\\/]*?)$\", @\"/$2-$3\");\n            HtmlDocument doc = new HtmlDocument();\n            doc.LoadHtml(sourceString);\n            var imgs = doc.DocumentNode.SelectNodes(\"//img\");\n            string output = sourceString;\n            if (sourceString.Contains(\"src=\"))\n            {\n                foreach (var img in imgs)\n                {\n                    string orig = img.Attributes[\"src\"].Value;\n                    //do replacements on orig to a new string, newsrc\n                    int slashIndex = orig.LastIndexOf(\"/\");\n                    StringBuilder srcBuilder = new StringBuilder(orig);\n                    srcBuilder[slashIndex] = '-';\n                    string newSrc = srcBuilder.ToString();\n                    slashIndex = newSrc.LastIndexOf(\"/\");\n                    newSrc = newSrc.Substring(slashIndex);\n\n\n                    Console.WriteLine(newSrc);\n\n                    //set new source\n                    img.SetAttributeValue(\"src\", newSrc);\n                }\n                output = doc.ToString();\n            }\n            return output;\n        }\n```\n\nMy locals: \n![Image](http://example.com/logo.jpg)\n(http://i.imgur.com/8wGaNT5.png)\n\nThe error seems to indicate that the following line references something that's null? \n```\nstring orig = img.Attributes[\"src\"].Value;\n```\nHowever, as you can see from my locals, that doesn't... seem to be the case. \n\nIs this a bug? \nHave I missed something? \nam I just a big giant dork-face? \n(Note: I am totally new, please be gentle). \n\nI've honestly been working on this for about 6 hours, and aside from figuring out that I can't replace HTMLAP with regular expressions (and not just because I'm RX illiterate), I've made zero progress. \n\nPlease; please, please. Please help. Please?\n\n---\n\nEDIT: Solved it. Need to remove \".Value\" when checking if SRC is a valid attribute of IMG.",
+    "LastUpdatedDate": "2014-10-17T09:26:37.503-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-10-17T00:37:42.663-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "System.NullReferenceException when not referencing null values?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35628
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If a <script> tag has some variables like\n \nvar tableitem = \"<tr><td style=\\\"color: 000000;\\\">ABCDE</td></tr>\n \nthe library is not able to recognize /\" and parses the content of the variable.",
+    "LastUpdatedDate": "2013-02-21T18:47:01.377-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-03-06T07:18:43.24-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "<script> tag with complex \"preset\" page elements will try to parse",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32358
+  },
+  "FileAttachments": [
+    {
+      "FileId": 12520,
+      "FileName": "Workitem_32358.7z",
+      "DownloadUrl": ".\\12520"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Tested with the latest source and was not able to replicate. Please see attached unit test and sample input file (based on mshome.htm).",
+      "PostedDate": "2012-03-14T14:07:02.09-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:01.377-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "109602",
+    "ThreadId": "33076",
+    "Html": "I am calling DocumentNode.SelectNodes with an xpath query that returns a number of rows. A simple example might be //div.<br>\r\n<br>\r\nIf I qualify the xpath expression to be //div[1] I would expect only the first node to be returned. In reality the [1] is ignored and I still get all the nodes. //div[2] on the other hand returns no nodes.<br>\r\n<br>\r\nIn a similar vain, //div[(last()] has no effect and all nodes are returned.<br>\r\n<br>\r\nI am using the release version of the software. Has anyone fixed this problem or can advise me of a work around?\r\n",
+    "PostedDate": "2008-08-07T03:02:01.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "109899",
+    "ThreadId": "33076",
+    "Html": "<p>I though I would verify what the Microsoft System.Xml namespace would do regarding predicates. I discoved the following:</p>\r\n<p>Given a document:</p>\r\n<p>&lt;xml&gt;</p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p dir=ltr style=\"margin-right:0px\">&lt;div&gt;1<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1a&lt;/div&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1b&lt;/div&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1c&lt;/div&gt;<br>\r\n&lt;/div&gt;<br>\r\n&lt;div&gt;2&lt;/div&gt;<br>\r\n&lt;div&gt;3&lt;/div&gt;</p>\r\n</blockquote>\r\n<p>&lt;/xml&gt;<br>\r\n<br>\r\n//div&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; returns 1, 1a, 1b, 1c,2,3<br>\r\n//div[1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns 1,1a<br>\r\n//div[position()=1]&nbsp;&nbsp;&nbsp; returns 1,1a<br>\r\n//div[last()]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; returns 1c,3<br>\r\n<br>\r\nNow to the best of my knowledge this is incorrect, as it is applying the predicate to each level in the structure, rather than applying it to the whole resultset.<br>\r\n<br>\r\nGiven the &quot;bug&quot; exists in the default Microsoft namespaces I am guessing it is unreasonable to expect HtmlAgilityPack to behave differently.<br>\r\n<br>\r\nAny views greatfully received.</p>\r\n",
+    "PostedDate": "2008-08-08T02:36:56.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

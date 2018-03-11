@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The HTMLAgilityPack incorrect processing following <p> node in the attached HTML document (please find html file attached to this report). The closing tag gets removed from the document after processing.\n\n\n_<p style=\"margin-top:20px; margin-bottom:0em; border-top:1px solid #AAAAAA;\" title=\"Ähnlich geschriebene oder gleich klingende Wörter\"></p>_\n\n\nI'm using HTMLAgilityPack v. 1.4.9.0 in VS 2013 (v.12.0.31101.00).\nThe HTMLAgilityPack works well with thousand of other HTML files, but failed on this one. \nI'm loading the document from the string this way:\n\nHtmlDocument d = new HtmlDocument();\nd.LoadHtml(HTML);\n\nAfter loading d.ParseErrors is 0 (no errors).\nThe initial document seems valid for me.\nAfter loading, d.DocumentNode.OuterHtml reveal that HTMLAgilityPack removed closing tag from the <p> node in line 94. I found this node in DOM and outer HTML is following:\n\n\n_<p style=\"margin-top:20px; margin-bottom:0em; border-top:1px solid #AAAAAA;\" title=\"Ähnlich geschriebene oder gleich klingende Wörter\">_\n\n\nYou may see that closing tag </p> goes missing. The same result, if you get the OuterHTML of the entire document. \n\nThis way entire HTML document appears to be invalid.\n\nI assume there's something specific in this document which cause incorrect behaviour of the Agility pack (once again, it works well with thousands of similar documents), but I haven't time to investigate deeper. I workaround this error by removing all empty <p> tags before further processing. I report this bug in a hope that my discovery may help make the product better.\n\nThank you for great job of developing and improving this exciting project!\nThank you,\nMike.",
+    "LastUpdatedDate": "2015-07-03T10:33:57.867-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-07-03T10:31:02.48-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect processing <p> node",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43167
+  },
+  "FileAttachments": [
+    {
+      "FileId": 14198,
+      "FileName": "HTMLAgilityPackChallange.html",
+      "DownloadUrl": ".\\14198"
+    }
+  ],
+  "Comments": []
+}

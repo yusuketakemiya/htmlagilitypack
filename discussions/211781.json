@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "439843",
+    "ThreadId": "211781",
+    "Html": "<p>I am using Html Library Pack to modify existing ASP code adding custom attributes.</p>\r\n<p>My concern is that I am not able to keep the original case while going through my transformation process.</p>\r\n<p>Let's take a small example:</p>\r\n<p>string sampleAspCode = &quot;&lt;asp:Image ID=&quot;Image3&quot; runat=&quot;server&quot; /&gt;&quot;;</p>\r\n<p>HtmlDocument htmlDoc = new HtmlDocument();<br><span style=\"color:#ff0000\">htmlDoc.OptionOutputOriginalCase = true;</span><br>htmlDoc.OptionWriteEmptyNodes = true;<br>htmlDoc.LoadHtml(fileContent);</p>\r\n<p>HtmlNode node;</p>\r\n<p>(...)</p>\r\n<p>If I set a breakpoint to have node equals to my &quot;asp:Image&quot;, I can see the following in local pane:</p>\r\n<p>node.Name = &quot;asp:image&quot;;<br>node.OriginalName = &quot;asp:Image&quot;<br><span style=\"color:#ff0000\">node.OuterHtml = &quot;&lt;asp:image id=\\&quot;Image3\\&quot; runat=\\&quot;server\\&quot;&gt;&lt;/asp:image&gt;&quot;</span></p>\r\n<p>Having htmlDoc.OptionOutputOriginalCase true, I was expecting to keep the original case in nodeOuterHtml. This is not the case.</p>\r\n<p>Am I doing something wrong ?</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-06T06:24:12.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

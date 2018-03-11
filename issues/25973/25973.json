@@ -1,0 +1,111 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It seems doc.DocumentNode.SelectNodes(\"//a[@href]\") where doc is an HtmlDocument returns null when there's no matching nodes. I believe the most appropriate return is an empty list so that one could still iterate over it. Iterating over null returns an exception.",
+    "LastUpdatedDate": "2013-12-08T05:37:45.247-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-01-17T07:43:17.763-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlDocument.DocumentNode.SelectNodes(\"//a[@href]\") returns null",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 25973
+  },
+  "FileAttachments": [
+    {
+      "FileId": 9707,
+      "FileName": "HtmlNode.cs",
+      "DownloadUrl": ".\\9707"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I've always had mixed feelings on this.\r\n\r\nI agree with you in the sense that it would be easier for a programmer if an empty list is returned.  On the other hand, the null behavior is consistent with the XPath stuff in the rest of the framework, which I also disagree with. ;-)\r\n\r\nMy bigger concern would be how to deal with legacy code that checks for null.",
+      "PostedDate": "2010-02-01T09:22:59.097-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I also had this issue and found it annoying. However, there is a simple workaround: write an extension method that returns an empty collection if the result of the query is null.\r\n\r\nI described it here: http://www.pvle.be/2009/11/why-i-love-extension-methods/",
+      "PostedDate": "2010-02-02T01:44:46.273-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "If I compare with the System.Xml Namespace, and XmlNode so the method should return an empty list instead an null!\r\n\r\nThe change is simple, only set comments or remove the following code in the SelectNodes method:\r\n\r\n if (list.Count == 0)\r\n  {\r\n    return null;\r\n  }\r\n",
+      "PostedDate": "2010-02-02T10:31:49.47-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Here the changed file",
+      "PostedDate": "2010-02-02T10:37:42.467-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-02-02T10:37:43.483-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-05-21T06:02:21.013-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-05-26T15:32:24.633-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-06-05T20:43:16.033-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-12-06T10:37:02.843-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-03-07T11:47:04.42-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-12-26T15:55:37.943-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:19.83-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-12-08T05:37:45.247-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

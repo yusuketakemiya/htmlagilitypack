@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm loading a website but it just returns this text \n\n'You are not authorized to view this page. You do not have permission to view this directory or page using the credentials that you supplied because your Web browser is sending a WWW-Authenticate header field that the Web server is not configured to accept.'\n\nI've read you need to change the authentication method to basic instead of Integrated authentication. Does anyone know how to do this?",
+    "LastUpdatedDate": "2015-02-28T10:00:32.91-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-02-26T04:50:07.25-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How do I change authentication method?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35864
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I this the right place to be posting? http request problems don't sound like an agility pack issue\r\n\r\nfor c#: http://stackoverflow.com/questions/14627399/setting-authorization-header-of-httpclient",
+      "PostedDate": "2015-02-28T10:00:32.91-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

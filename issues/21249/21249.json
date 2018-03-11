@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Yes, this is not an issue, but a feature. Back in the HTML 3.2 days, OPTION was valid with an terminating  or not. That's the exact reason why ElementFlags exits.",
+    "ClosedDate": "2009-05-17T23:31:08.913-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "To replicate, create an HtmlDocument and LoadHtml with the following string:\n \n<select id=\"foo_Bar\" name=\"foo.Bar\"><option selected=\"selected\" value=\"1\">One</option><option value=\"2\">Two</option></select>\n \nThis does some unexpected things. First, it gives two parser errors, EndTagNotRequired. Second, the SELECT node has 4 children - two for the OPTION tags and two more for the text.  That is, the text is not seen as the InnerText of the OPTION. Last, the OuterHtml is like this:\n \n<select id=\"foo_Bar\" name=\"foo.Bar\"><option selected=\"selected\" value=\"1\">One<option value=\"2\">Two</select>\n \nI'm pretty confident that having and end tag for an OPTION element is considered well formed.  It should not result in errors.  Also, the text should be InnterText of the OPTION.  I have tried setting these as follows, to no avail:\n \ndoc.OptionAutoCloseOnEnd = false;\ndoc.OptionCheckSyntax = false;\ndoc.OptionFixNestedTags = false;\n \nI have found this can be corrected by removing line 92 of HtmlNode.cs:\n \nElementsFlags.Add(\"option\", HtmlElementFlag.Empty);",
+    "LastUpdatedDate": "2013-05-16T05:32:59.757-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-02-18T11:45:10.243-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Option End Tags Dropped",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 21249
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Yes, this is not an issue, but a feature. Back in the HTML 3.2 days, OPTION was valid with an terminating </OPTION> or not. That's the exact reason why ElementFlags exits.",
+      "PostedDate": "2009-05-17T23:30:56.243-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-17T23:31:08.913-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "But there's a problem when you have an empty option:\r\n\r\n<option value=\"\"></option>",
+      "PostedDate": "2009-10-06T05:27:38.563-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:24.513-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:59.757-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

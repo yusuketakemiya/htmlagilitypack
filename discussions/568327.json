@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1307996",
+    "ThreadId": "568327",
+    "Html": "Hi ,\r<br />\n<br />\nI want to know if chinese character are supported in HAP.\r<br />\n<br />\nI am using it from RTF to HTML conversion. It is working properly for English language.\r<br />\nnow when I am entering some chinese character like (假装的假读四声), it fails at :\r<br />\nHtmlEntity.Entitize(value, true, true);\r<br />\n<br />\nand I get the exception as &quot;The given key was not present in the dictionary.&quot;}&quot;\r<br />\n<br />\nis there anything I need to do to enable  Chinese characters.<br />\n",
+    "PostedDate": "2014-09-25T02:47:10.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

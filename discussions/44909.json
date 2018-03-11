@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "149643",
+    "ThreadId": "44909",
+    "Html": "The current implementation ot the HtmlNode.SelectNodes(<span style=\"color:#0000ff\">string</span> xpath) returns <span style=\"color:#008000\"> null if no node matched .<br>\r\n</span>In our version the method was change to return empty HtmlNodeCollection. <br>\r\n<br>\r\n<p><span style=\"font-size:13px;color:#008000\">/*</span><span style=\"font-size:13px;color:#008000\">MG: Return an empty list if no nodes found.<br>\r\nif (list.Count == 0)<br>\r\n{<br>\r\nreturn null;<br>\r\n}*/<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">return</span><span style=\"font-size:13px\"> list;<br>\r\n<br>\r\nIt is safer for coding (e.g call foreach(node in nodes) without warry if nodes are null) and consistent with <a href=\"http://msdn.microsoft.com/en-us/library/system.xml.xmlnode.selectnodes.aspx\" id=\"s:ia\" title=\"XmlNode..::.SelectNodes\">XmlNode..::.SelectNodes</a> .<br>\r\n I recommend to apply the change to master version.<br>\r\n<br>\r\nHowever I understand that it could be considered as &quot;breaking&quot; change.</span></p>\r\n",
+    "PostedDate": "2009-01-22T02:22:10.457-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "246570",
+    "ThreadId": "44909",
+    "Html": "<p>I second this...</p>",
+    "PostedDate": "2009-10-16T08:02:50.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "836252",
+    "ThreadId": "44909",
+    "Html": "<p>I thought SelectNodes would be used in a LINQ fashion .... I was shocked when it returned null while I was trying to enumerate few elements ...</p>\r\n<p>come on guys its 2012 and this is LINQ world now ... it should return <strong>an empty collection</strong>&nbsp;rather than <strong>null</strong>&nbsp;</p>",
+    "PostedDate": "2012-05-14T13:12:49.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "836262",
+    "ThreadId": "44909",
+    "Html": "<p>Then use the LINQ interfaces of Descendants and Elements.</p>\r\n<p>SelectNodes matches the .NET System.Xml API for which it was built upon.</p>\r\n<p>I agree this should be overhauled to return an empty list but the fact is there are thousands of applications out there that could break if this is changed in a minor point release. There were new LINQ like functions added of Descendants, Elements and DescendantNodes to more closely match the LINQ to XML interface.</p>\r\n<p>This is one of the things I wanted to address in 2.0 if I can ever get the time to work on it. The actual current implementation with HtmlNodeCollection needs to be tossed out and replaced with a yield return and an IEnumerable&lt;HtmlNode&gt; return type;</p>\r\n<p>For the people that want this, an extension method can solve it</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">public</span> <span style=\"color: blue;\">static</span> IList&lt;HtmlNode&gt; SelectNodesAsList(<span style=\"color: blue;\">this</span> HtmlNode node, <span style=\"color: blue;\">string</span> xpath)\r\n{\r\n\t<span style=\"color: blue;\">var</span> list = node.SelectNodes(xpath);\r\n\t<span style=\"color: blue;\">if</span> (list == <span style=\"color: blue;\">null</span>)\r\n\t\t<span style=\"color: blue;\">return</span> <span style=\"color: blue;\">new</span> List&lt;HtmlNode&gt;();\r\n\r\n\t<span style=\"color: blue;\">return</span> list;\r\n\r\n}\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2012-05-14T13:30:42.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1293578",
+    "ThreadId": "44909",
+    "Html": "Returning null is the most non-intuitive thing that could be done. Under what circumstances is an empty collection fundamentally different than null?<br />\n",
+    "PostedDate": "2014-08-26T09:03:11.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If the last attribute of an element node has no explicit value, and if the tag closing symbols \"/>\" follows immediately, then the parsed attribute's name is incorrect.\n \nFor example, the HTML form <tag attr/> is parsed into \"<tag attr/=\"\"></tag> instead of \"<tag attr=\"\"></tag>.\n \n<tag attr/> YEILDS <tag attr/=\"\"></tag>.  WRONG!\n<tag attr /> YEILDS <tag attr=\"\"></tag>.  GOOD!\n<tag attr> YEILDS <tag attr=\"\"></tag>.  GOOD!\n<tag attr=\"\"> YEILDS <tag attr=\"\"></tag>.  GOOD!\n \nThis problem has been brought to my attention when trying to parse this real life HTML:\n \n<input type=\"checkbox\" name=\"mycheckbox\" checked/>\n \nMost HTML programmers would not write the last \"/\", which is optional (I wouldn't either), but not all of them... and I have no control on them! Beside most of web browsers are perfectly OK with the above syntax.",
+    "LastUpdatedDate": "2013-02-21T18:47:24.84-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-02-16T12:13:53.68-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem parsing the last attribute without value in a \"terminal\" element node (of the form <tag/>)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 21200
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I also got the corollary problem: <tag attr=/> which yields <tag attr=\"/\"></tag>  WRONG!\r\n\r\nwhile <tag attr=> yields  the proper <tag attr=\"\"></tag> GOOD!\r\n",
+      "PostedDate": "2009-02-16T14:26:26.293-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "****************************************************************************************\r\n The fix -- I only added 3 lines and managed to not change the existing logic\r\n  This fix must be applied:\r\n   - in the file/class \"HtmlDocument.cs\", \r\n   - in the \"Parse()\" method,\r\n    - in the big \"switch(_state)\" statement,\r\n   - in \"case ParseState.AttributeName:\" switch (around line#  1197)\r\n  I added \"/* N E W */ \" comment at the end of the 3 added lines; everything else remains unchanged:\r\n\r\n\t\t\t\t\tcase ParseState.AttributeName:\r\n\t\t\t\t\t\tif (NewCheck())\r\n\t\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t\tif (IsWhiteSpace(_c))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tPushAttributeNameEnd(_index-1);\r\n\t\t\t\t\t\t\t_state = ParseState.AttributeBeforeEquals;\r\n\t\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tif (_c == '=')\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tPushAttributeNameEnd(_index-1);\r\n\t\t\t\t\t\t\t_state = ParseState.AttributeAfterEquals;\r\n\t\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tif (_c == '>')\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t    #if true\r\n\t\t\t\t\t\t        if ('/' == _text[_index-2])                        /* N E W */\r\n\t\t\t\t\t\t\t        PushAttributeNameEnd(_index-2);         /* N E W */\r\n\t\t\t\t\t\t\t    else                      /* N E W */\r\n\t\t\t\t\t\t    #endif\r\n\t\t\t\t\t\t\tPushAttributeNameEnd(_index-1);\r\n\t\t\t\t\t\t\tif (!PushNodeEnd(_index, false))\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t// stop parsing\r\n\t\t\t\t\t\t\t\t_index = _text.Length;\r\n\t\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tif (_state != ParseState.AttributeName)\r\n\t\t\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t\t\t_state = ParseState.Text;\r\n\t\t\t\t\t\t\tPushNodeStart(HtmlNodeType.Text, _index);\r\n\t\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tbreak;\r\n\r\n",
+      "PostedDate": "2009-02-16T16:01:48.5-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-26T01:53:45.547-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:24.84-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

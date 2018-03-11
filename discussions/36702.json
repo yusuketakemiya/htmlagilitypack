@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "121743",
+    "ThreadId": "36702",
+    "Html": "I'm in a situation where I want to store data associated with the HtmlNode which can be accessed during an XPath query.  In this case I would like to store some markup information related to css and layout.  (Note that webkit or gecko might do full layout, but we don't want full layout, they aren't in c#, and they do way too much work.)  Currently I'm leaning toward adding a virtual class to the agility pack which can be case to the desired data type, along the lines of:<div><br></div><div>namespace HtmlAgilityPack</div><div>{</div><div>    public class HtmlNodeMarkup</div><div>    {</div><div>    }</div><div>}</div><div><br></div><div>and then adding that as a member of HtmlNode with an accessor and have it default to null.</div><div><br></div><div>    public class HtmlNode</div><div>    {</div><div>    ...</div><div>        internal HtmlNodeMarkup _markup;</div><div>    ...</div><div><div>        public HtmlNodeMarkup markup</div><div>        {</div><div>            get</div><div>            {</div><div>                return _markup;</div><div>            }</div><div>            set</div><div>            {</div><div>                _markup = value;</div><div>            }<br></div><div>        }</div><div>    ...</div><div>    }</div><div><br></div></div><div><br></div><div>Does anyone have any thoughts on this idea?</div><div><br></div><div>Chris...</div><div><br></div>",
+    "PostedDate": "2008-09-29T17:23:25.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

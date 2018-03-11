@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "893504",
+    "ThreadId": "389682",
+    "Html": "\r\n<p>For the benefit of others.&nbsp; This should be included in the docs somehow.</p>\r\n<p>I used NuGet to install Html Agility Pack into my Windows Phone project and it added HtmlAgilityPack.dll as a reference. However compiling gave the following error:</p>\r\n<p style=\"padding-left:30px\">error CS0012: The type 'System.Xml.XPath.IXPathNavigable' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Xml.XPath, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.&nbsp;</p>\r\n<p><em>There is no such assembly provided for Windows Phone. However one can add a Silverlight version of that assembly, e.g. from</em></p>\r\n<p style=\"padding-left:30px\"><strong>c:\\Program Files (x86)\\Microsoft SDKs\\Silverlight\\v4.0\\Libraries\\Client\\System.Xml.XPath.dll</strong></p>\r\n<p>Adding the reference gives a warning, see below.&nbsp; There is no error at runtime however&nbsp;and the code works are expected.&nbsp; (Presumably an app using it passes certification but I haven't published using this.)</p>\r\n<p><img src=\"http://www.alanjmcf.me.uk/images/Warn%20WP%20add%20XPath%20ref.png\" alt=\"\" height=\"214\"></p>\r\n<p>We can see that it is referenced this way in the HapPhone.7.1.csproj project:</p>\r\n<p style=\"padding-left:30px\"><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">Reference</span>\r\n<span style=\"color:red\">Include</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">System.Xml.XPath</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span><br>\r\n&nbsp;&nbsp;&nbsp;<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">HintPath</span><span style=\"color:blue\">&gt;</span>..\\..\\..\\..\\Program Files (x86)\\Microsoft SDKs\\Silverlight\\v4.0\\Libraries\\Client\\System.Xml.XPath.dll<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">HintPath</span><span style=\"color:blue\">&gt;</span><br>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">Reference</span><span style=\"color:blue\">&gt;</span></p>\r\n",
+    "PostedDate": "2012-07-31T02:41:31.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1105473",
+    "ThreadId": "389682",
+    "Html": "The problem is due to HtmlAgiliyPack version. This issue can be solve by downloading suitable HtmlAgiliyPack varsion for the project from Nuget<br />\n",
+    "PostedDate": "2013-10-09T06:59:15.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

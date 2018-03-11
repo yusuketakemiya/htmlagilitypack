@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1409201",
+    "ThreadId": "626027",
+    "Html": "Hi, <br />\n<br />\nHave been using htmlagility pack for a while now, spotted a problem with badly formatted html, for example:<br />\n<br />\n&lt;td&gt;Test for people aged &gt; 18 and &lt; 65&lt;/td&gt;<br />\n<br />\nHtmlAgaility pack fixes this to:<br />\n<br />\n&lt;td&gt;Test for people aged &gt; 18 and &lt;65&gt;&lt;/65&gt;&lt;/td&gt;<br />\n<br />\nHow do I control this to leave the &gt; and &lt;, or converts them to &amp;gt; and &amp;lt; entities<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2015-04-13T04:45:32.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

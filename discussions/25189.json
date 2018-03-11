@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "84464",
+    "ThreadId": "25189",
+    "Html": "\r\nHi,<br /><br />I have been using this great framework in my HttpModule to parse / change HTML on the fly.<br />I find one issue when attribute value contains double quote for example onclick='javascript:alert(\"Hello World\");'. The method HtmlNode.WriteAttribute should use single quote insted of double quote in that case.<br />I fix it in 3 places:<br />line 1364<br />        if (att.XmlValue.IndexOf(\"\\\"\") == -1)<br />          outText.Write(\" \" + name + \"=\\\"\" + HtmlDocument.HtmlEncode(att.XmlValue) + \"\\\"\");<br />        else<br />          outText.Write(\" \" + name + \"='\" + HtmlDocument.HtmlEncode(att.XmlValue) + \"'\");<br />line 1397<br />            if (att.Value.IndexOf(\"\\\"\") == -1)<br />              outText.Write(\" \" + name + \"=\\\"\" + att.Value + \"\\\"\");<br />            else<br />              outText.Write(\" \" + name + \"='\" + att.Value + \"'\");<br />and line 1407<br />          if (att.Value.IndexOf(\"\\\"\") == -1)<br />            outText.Write(\" \" + name + \"=\\\"\" + att.Value + \"\\\"\");<br />          else<br />            outText.Write(\" \" + name + \"='\" + att.Value + \"'\");<br />I am not sure if it is the best fix, but it works fine for me. Is there better way to fix this issue?<br />Thanks,<br />    Richard.<br />",
+    "PostedDate": "2008-04-02T05:46:12.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "104224",
+    "ThreadId": "25189",
+    "Html": "Richard,<br>\r\nThank you! This works great.&nbsp; I was having some oddities with writing out Word HTML, (yes, I know Word HTML is horrible, but you need to support your clients) and this fixed the issues. <br>\r\n<br>\r\nThanks,<br>\r\n-Damien\r\n",
+    "PostedDate": "2008-07-11T11:57:37.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

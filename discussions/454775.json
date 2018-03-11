@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1085815",
+    "ThreadId": "454775",
+    "Html": "Hi, i am new to c#. Sorry for my poor english. I am using a Html Agility Pack to parse a web page with windows-1251 encoding and must convert some node contents from it to utf-8 and then save contents to mysql database. I tryed many solutions but nothing work. Anybody help?<br />\n",
+    "PostedDate": "2013-08-28T08:34:36.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

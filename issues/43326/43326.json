@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Even when OptionOutputOriginalCase = True, the XPath property is still returned as ALL LOWER CASE.\n\nSince XPath expressions are Case Sensitive, this is incorrect.\n\nThe XPath property should ONLY be converted to lower case IF OptionOutputOriginalCase = False!",
+    "LastUpdatedDate": "2016-01-15T10:42:39.15-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-01-14T09:19:12.787-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlNode.XPath Property CASE",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43326
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I believe the solution to this, is the (_ownerdocument.OptionOutputOriginalCase ? _name : _name.ToLower();) below:\r\n\r\n\t\tpublic string Name\n\t\t{\n\t\t\tget\n\t\t\t{\n\t\t\t\tif (_optimizedName == null)\n\t\t\t\t{\n\t\t\t\t\tif (_name == null)\n\t\t\t\t\t\tName = _ownerdocument.Text.Substring(_namestartindex, _namelength);\r\n\r\n\t\t\t\t\tif (_name == null)\n\t\t\t\t\t\t_optimizedName = string.Empty;\n\t\t\t\t\telse\n                        _optimizedName = _ownerdocument.OptionOutputOriginalCase ? _name : _name.ToLower();\n\t\t\t\t}\n\t\t\t\treturn _optimizedName;\n\t\t\t}\n\t\t\tset { _name = value; _optimizedName = null; }\n\t\t}\r\n\r\nRegards,\nMark Ward\nCarson, CA",
+      "PostedDate": "2016-01-15T10:42:39.15-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

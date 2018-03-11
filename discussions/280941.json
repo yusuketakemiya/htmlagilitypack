@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "703754",
+    "ThreadId": "280941",
+    "Html": "\r\n<p>hi,</p>\r\n<p>i'm scraping a site and am trying to grab only the text inside the h4 tag (Wed., November 30, 9:00pm), but not the stuff in the nested a tag (VenueName).&nbsp; I'm searching for specific PeopleNames and when there's a match I want to grab the date separately\r\n from the venue name.</p>\r\n<p>&lt;tr&gt;<br>\r\n&nbsp;&lt;td colspan=&quot;2&quot; class=&quot;upper&quot;&gt;<br>\r\n&nbsp;&nbsp;&lt;h3&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&lt;a href=http://test.com/site/&quot;&gt;PeopleName&nbsp;&lt;/a&gt;<br>\r\n&nbsp;&nbsp;&lt;/h3&gt;<br>\r\n&nbsp;&nbsp;&lt;h4&gt;<br>\r\n&lt;a href=http://test.com/site/&quot;&gt;VenueName&nbsp;&lt;/a&gt;:<br>\r\n&nbsp;&nbsp;Wed., November 30, 9:00pm<br>\r\n&nbsp;&nbsp;&lt;/h4&gt;<br>\r\n&nbsp;&lt;/td&gt;<br>\r\n&lt;/tr&gt;<br>\r\n&lt;tr&gt;</p>\r\n<p>i'm not even sure i'm doing this right.&nbsp; the plan was to take the xpath property of the a tag whose innerText matches PeopleName, and append it with the relative path to the h4 tag.</p>\r\n<p>ive tried:&nbsp;&nbsp;//../../h4[not(self::a)] but it returns the venue name like below.&nbsp; am i traversing properly?&nbsp; once i'm sure i'm doing that right and can get to the h4 tag, do i have to regex my way to the date?</p>\r\n<p>VenueName&nbsp;&nbsp;&nbsp; :<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Wed., November 30, 9:00pm</p>\r\n",
+    "PostedDate": "2011-11-26T21:55:37.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

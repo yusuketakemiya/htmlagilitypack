@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "903016",
+    "ThreadId": "392806",
+    "Html": "\r\n<pre style=\"background:lightgray\">   \r\n    &lt;ul&gt;\r\n       &lt;removeThis&gt;    \r\n            &lt;li&gt;\r\n                &lt;a type=&quot;link&quot;&gt;\r\n                    &lt;img alt=&quot;&quot; /&gt;\r\n                &lt;/a&gt;\r\n            &lt;/li&gt;\r\n        &lt;/removeThis&gt; \r\n    &lt;/ul&gt;\r\n</pre>\r\n<p>if i wanted to remove that element how would i do it?</p>\r\n",
+    "PostedDate": "2012-08-23T06:11:50.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914230",
+    "ThreadId": "392806",
+    "Html": "<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre style=\"color: black;\">Good luck</pre>\r\n<pre style=\"color: black;\"><br /> <span style=\"color: blue;\">var</span> Content = doc.DocumentNode.SelectSingleNode(<span style=\"color: #a31515;\">@\"//ul</span><span style=\"color: #a31515;\">\"</span>) ;  </pre>\r\n<pre><span style=\"color: blue;\"> </span><span style=\"color: blue;\">var</span> remcontent = doc.DocumentNode.SelectSingleNode(<span style=\"color: #a31515;\">@\"//removeThis</span><span style=\"color: #a31515;\">\"</span>); \r\n    &nbsp;</pre>\r\n<pre>         remcontent<span style=\"background-color: white;\">.Remove();</span></pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2012-09-18T10:16:29.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

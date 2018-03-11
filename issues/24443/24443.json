@@ -1,0 +1,106 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am trying to load a large file (51mb) using the Agility pack:-\n \n            HtmlDocument doc = new HtmlDocument();\n            doc.Load(path);\n \nThis simple test maxes out memory usage on my machine (see attached performance log trace) and causes an OutOfMemoryException\n \nI have already applied the 'fix' suggested by nadersoliman (http://htmlagilitypack.codeplex.com/WorkItem/View.aspx?WorkItemId=14297)\n \nAny Ideas?  I Know 51MB is a very big file but as you can see, the load is using nearly 2GB of memory.  There is clearly a memory leak here somewhere.",
+    "LastUpdatedDate": "2013-02-21T18:47:22.467-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-08-25T21:17:13.96-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OutOfMemoryException when loading large file",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 24443
+  },
+  "FileAttachments": [
+    {
+      "FileId": 8981,
+      "FileName": "HTMLAgilityCrashLoadBigFile.gif",
+      "DownloadUrl": ".\\8981"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.\r\n   at System.String.Concat(String str0, String str1)\r\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1596\r\n   at HtmlAgilityPack.HtmlNode.WriteContentTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1731\r\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1650\r\n   at HtmlAgilityPack.HtmlNode.WriteContentTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1731\r\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1650\r\n   at HtmlAgilityPack.HtmlNode.WriteContentTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1731\r\n   at HtmlAgilityPack.HtmlNode.WriteContentTo() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1754",
+      "PostedDate": "2009-12-27T14:32:21.583-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.\r\n   at HtmlAgilityPack.HtmlNodeNavigator..ctor(HtmlNodeNavigator nav) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNodeNavigator.cs:line 17\r\n   at HtmlAgilityPack.HtmlNodeNavigator.Clone() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNodeNavigator.cs:line 621\r\n   at MS.Internal.Xml.XPath.AttributeQuery.Advance()\r\n   at MS.Internal.Xml.XPath.StringFunctions.toString(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.StringFunctions.Evaluate(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.StringFunctions.Contains(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.StringFunctions.Evaluate(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.FilterQuery.EvaluatePredicate()\r\n   at MS.Internal.Xml.XPath.FilterQuery.Advance()\r\n   at MS.Internal.Xml.XPath.XPathSelectionIterator.MoveNext()\r\n   at System.Xml.XPath.XPathNodeIterator.Enumerator.MoveNext()",
+      "PostedDate": "2009-12-27T14:32:55.95-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.\r\n   at HtmlAgilityPack.HtmlDocument.CreateNode(HtmlNodeType type, Int32 index) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 913\r\n   at HtmlAgilityPack.HtmlDocument..ctor() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 120\r\n   at HtmlAgilityPack.HtmlNodeNavigator..ctor(HtmlNodeNavigator nav) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNodeNavigator.cs:line 17\r\n   at HtmlAgilityPack.HtmlNodeNavigator.Clone() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNodeNavigator.cs:line 621\r\n   at System.Xml.XPath.XPathNavigator.Evaluate(XPathExpression expr, XPathNodeIterator context)\r\n   at System.Xml.XPath.XPathNavigator.Evaluate(XPathExpression expr)\r\n   at System.Xml.XPath.XPathNavigator.Select(XPathExpression expr)",
+      "PostedDate": "2009-12-27T14:33:24.573-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.\r\n   at HtmlAgilityPack.HtmlDocument.CreateNode(HtmlNodeType type, Int32 index) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 913\r\n   at HtmlAgilityPack.HtmlDocument..ctor() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 120\r\n   at HtmlAgilityPack.HtmlNodeNavigator..ctor(HtmlNodeNavigator nav) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNodeNavigator.cs:line 17\r\n   at HtmlAgilityPack.HtmlNodeNavigator.Clone() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNodeNavigator.cs:line 621\r\n   at MS.Internal.Xml.XPath.AttributeQuery.Advance()\r\n   at MS.Internal.Xml.XPath.StringFunctions.toString(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.StringFunctions.Evaluate(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.StringFunctions.Contains(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.StringFunctions.Evaluate(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.FilterQuery.EvaluatePredicate()\r\n   at MS.Internal.Xml.XPath.FilterQuery.Advance()\r\n   at MS.Internal.Xml.XPath.DescendantQuery.Advance()\r\n   at MS.Internal.Xml.XPath.DocumentOrderQuery.Evaluate(XPathNodeIterator context)\r\n   at System.Xml.XPath.XPathNavigator.Evaluate(XPathExpression expr, XPathNodeIterator context)\r\n   at System.Xml.XPath.XPathNavigator.Evaluate(XPathExpression expr)\r\n   at System.Xml.XPath.XPathNavigator.Select(XPathExpression expr)",
+      "PostedDate": "2009-12-27T14:33:49.907-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.\r\n   at System.String.Concat(String str0, String str1)\r\n   at HtmlAgilityPack.HtmlDocument.Parse() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 1052\r\n   at HtmlAgilityPack.HtmlDocument.Load(TextReader reader) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 585\r\n   at HtmlAgilityPack.HtmlDocument.LoadHtml(String html) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 487",
+      "PostedDate": "2009-12-27T14:35:04.467-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.\r\n   at System.Globalization.TextInfo.nativeChangeCaseString(Int32 win32LangID, Void* pNativeTextInfo, String str, Boolean isToUpper)\r\n   at System.Globalization.TextInfo.ToLower(String str)\r\n   at System.String.ToLower(CultureInfo culture)\r\n   at HtmlAgilityPack.HtmlAttributeCollection.get_Item(String name) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlAttributeCollection.cs:line 203\r\n   at HtmlAgilityPack.HtmlNode.GetId() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 383\r\n   at HtmlAgilityPack.HtmlNode.AppendChild(HtmlNode newChild) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1122\r\n   at HtmlAgilityPack.HtmlDocument.PushNodeEnd(Int32 index, Boolean close) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 1607\r\n   at HtmlAgilityPack.HtmlDocument.Parse() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 1216\r\n   at HtmlAgilityPack.HtmlDocument.Load(TextReader reader) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 585\r\n   at HtmlAgilityPack.HtmlDocument.LoadHtml(String html) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 487",
+      "PostedDate": "2009-12-27T14:35:18.583-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.\r\n   at HtmlAgilityPack.HtmlAttributeCollection..ctor(HtmlNode ownernode) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlAttributeCollection.cs:line 13\r\n   at HtmlAgilityPack.HtmlNode.get_Attributes() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1327\r\n   at HtmlAgilityPack.HtmlNodeNavigator.get_HasAttributes() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNodeNavigator.cs:line 437\r\n   at HtmlAgilityPack.HtmlNodeNavigator.MoveToFirstAttribute() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNodeNavigator.cs:line 669\r\n   at MS.Internal.Xml.XPath.AttributeQuery.Advance()\r\n   at MS.Internal.Xml.XPath.LogicalExpr.cmpQueryStringE(Op op, Object val1, Object val2)\r\n   at MS.Internal.Xml.XPath.LogicalExpr.Evaluate(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.FilterQuery.EvaluatePredicate()\r\n   at MS.Internal.Xml.XPath.FilterQuery.Advance()\r\n   at MS.Internal.Xml.XPath.CacheChildrenQuery.GetNextInput()\r\n   at MS.Internal.Xml.XPath.CacheChildrenQuery.Advance()\r\n   at MS.Internal.Xml.XPath.AttributeQuery.Advance()\r\n   at MS.Internal.Xml.XPath.XPathSelectionIterator.MoveNext()\r\n   at System.Xml.XPath.XPathNodeIterator.Enumerator.MoveNext()",
+      "PostedDate": "2009-12-27T14:35:56.633-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.\r\n   at System.Xml.NameTable..ctor()\r\n   at HtmlAgilityPack.HtmlNameTable..ctor() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNameTable.cs:line 9\r\n   at HtmlAgilityPack.HtmlNodeNavigator..ctor(HtmlNodeNavigator nav) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNodeNavigator.cs:line 20\r\n   at HtmlAgilityPack.HtmlNodeNavigator.Clone() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNodeNavigator.cs:line 621\r\n   at MS.Internal.Xml.XPath.AttributeQuery.Advance()\r\n   at MS.Internal.Xml.XPath.StringFunctions.toString(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.StringFunctions.Evaluate(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.StringFunctions.Contains(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.StringFunctions.Evaluate(XPathNodeIterator nodeIterator)\r\n   at MS.Internal.Xml.XPath.FilterQuery.EvaluatePredicate()\r\n   at MS.Internal.Xml.XPath.FilterQuery.Advance()\r\n   at MS.Internal.Xml.XPath.DescendantQuery.Advance()\r\n   at MS.Internal.Xml.XPath.DocumentOrderQuery.Evaluate(XPathNodeIterator context)\r\n   at System.Xml.XPath.XPathNavigator.Evaluate(XPathExpression expr, XPathNodeIterator context)\r\n   at System.Xml.XPath.XPathNavigator.Evaluate(XPathExpression expr)\r\n   at System.Xml.XPath.XPathNavigator.Select(XPathExpression expr)",
+      "PostedDate": "2009-12-27T14:36:20.883-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.\r\n   at System.String.Concat(String str0, String str1)\r\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1653\r\n   at HtmlAgilityPack.HtmlNode.WriteContentTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1731\r\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1650\r\n   at HtmlAgilityPack.HtmlNode.WriteContentTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1731\r\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1650\r\n   at HtmlAgilityPack.HtmlNode.WriteContentTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1731\r\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1650\r\n   at HtmlAgilityPack.HtmlNode.WriteContentTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1731\r\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1650\r\n   at HtmlAgilityPack.HtmlNode.WriteContentTo(TextWriter outText) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1731\r\n   at HtmlAgilityPack.HtmlNode.WriteContentTo() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 1754\r\n   at HtmlAgilityPack.HtmlNode.get_InnerHtml() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlNode.cs:line 589",
+      "PostedDate": "2009-12-27T14:37:33.45-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.\r\n   at HtmlAgilityPack.HtmlDocument.CreateNode(HtmlNodeType type, Int32 index) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 910\r\n   at HtmlAgilityPack.HtmlDocument.Parse() in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 1138\r\n   at HtmlAgilityPack.HtmlDocument.Load(TextReader reader) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 585\r\n   at HtmlAgilityPack.HtmlDocument.LoadHtml(String html) in C:\\Users\\Administrator\\Desktop\\New Folder\\HtmlAgilityPack\\HtmlDocument.cs:line 487",
+      "PostedDate": "2009-12-27T14:37:49.357-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-05T19:35:28.25-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:22.467-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

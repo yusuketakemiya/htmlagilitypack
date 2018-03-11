@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "617031",
+    "ThreadId": "258707",
+    "Html": "<p>Hi i have all i have got this code that is working for the most part but i dose not find all href links on the page.</p>\n<p>What i am trying to do is get every single link the page has and i mean every single one lol.</p>\n<div style=\"color: black; background-color: white;\">\n<pre>HtmlDocument htmlDoc = <span style=\"color: blue;\">new</span> HtmlDocument();\nhtmlDoc.LoadHtml(HTML_Dump);\n\nList&lt;<span style=\"color: blue;\">string</span>&gt; hrefTags = <span style=\"color: blue;\">new</span> List&lt;<span style=\"color: blue;\">string</span>&gt;();\nhtmlDoc.DocumentNode.SelectNodes(<span style=\"color: #a31515;\">\"//a[@href]\"</span>))\n<span style=\"color: blue;\">foreach</span> (HtmlNode node <span style=\"color: blue;\">in</span> htmlDoc.DocumentNode.SelectNodes(<span style=\"color: #a31515;\">\"//a\"</span>))\n{\n    hrefTags.Add(node.GetAttributeValue(<span style=\"color: #a31515;\">\"href\"</span>, <span style=\"color: blue;\">null</span>));\n}\n</pre>\n</div>\n<p>How would i go about this thanks.</p>",
+    "PostedDate": "2011-05-23T17:05:42.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "618200",
+    "ThreadId": "258707",
+    "Html": "<p>What I put here will work.</p>\r\n<p><a href=\"http://htmlagilitypack.codeplex.com/discussions/258990\">http://htmlagilitypack.codeplex.com/discussions/258990</a></p>",
+    "PostedDate": "2011-05-25T10:43:58.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

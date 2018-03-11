@@ -1,0 +1,125 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've been using Html Agility Pack to automatically modify some HTML forms and insert ASP.NET tags into them. I ran into a problem whereby I could specify attributes with names such as \"AssociatedControlID\", but they would always be output as \"associatedcontrolid\", even when OptionOutputOriginalCase was set to true. I had a look in the source for the library and the problem appears to be in HtmlNode.WriteAttribute. The check for OptionOutputOriginalCase = true is only carried out if OptionOutputAsXml is also true. I think this option should be checked in either case, and if it is true, the original attribute name used. Unfortunately, I can't switch on XML output, as this causes problems with ASP.NET tag names like \"asp:TextBox\", so I'm using a modified version of the library to get around the problem for now.",
+    "LastUpdatedDate": "2014-03-10T10:46:27.387-07:00",
+    "PlannedForRelease": "1.4.7",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-11-09T11:41:46.973-08:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OptionOutputOriginalCase is ignored for attributes when not outputting XML",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 25278
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I will submit a patch for this myself, if I get time.",
+      "PostedDate": "2009-11-09T11:45:58.073-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-09T08:09:13.84-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi, \r\n\r\ni've been having the same problem you described.\r\n\r\nCan you post your solution here? \r\n\r\nThanks.",
+      "PostedDate": "2012-01-24T05:12:36.937-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-01-25T01:33:30.223-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi, i solved my problem this way:\r\n\r\nFind file \"HtmlNode.cs\".\r\n\r\nChange the method \"WriteAttribute\" to:\r\n\r\ninternal void WriteAttribute(TextWriter outText, HtmlAttribute att)\r\n        {\r\n            string name;\r\n            string quote = att.QuoteType == AttributeValueQuote.DoubleQuote ? \"\\\"\" : \"'\";\r\n            if (_ownerdocument.OptionOutputAsXml)\r\n            {\r\n                if (_ownerdocument.OptionOutputUpperCase)\r\n                {\r\n                    name = att.XmlName.ToUpper();\r\n                }\r\n                else\r\n                {\r\n                    name = att.XmlName;\r\n                }\r\n                if (_ownerdocument.OptionOutputOriginalCase)\r\n                    name = att.OriginalName;\r\n\r\n                outText.Write(\" \" + name + \"=\" + quote + HtmlDocument.HtmlEncode(att.XmlValue) + quote);\r\n            }\r\n            else\r\n            {\r\n                if (_ownerdocument.OptionOutputUpperCase)\r\n                {\r\n                    name = att.Name.ToUpper();\r\n                }\r\n                else\r\n                {\r\n                    if (_ownerdocument.OptionOutputOriginalCase)\r\n                    {\r\n                        name = att.OriginalName;\r\n                    }\r\n                    else\r\n                    {\r\n                        name = att.Name;\r\n                    }\r\n                }\r\n\r\n                if (att.Name.Length >= 4)\r\n                {\r\n                    if ((att.Name[0] == '<') && (att.Name[1] == '%') &&\r\n                        (att.Name[att.Name.Length - 1] == '>') && (att.Name[att.Name.Length - 2] == '%'))\r\n                    {\r\n                        outText.Write(\" \" + name);\r\n                        return;\r\n                    }\r\n                }\r\n                if (_ownerdocument.OptionOutputOptimizeAttributeValues)\r\n                {\r\n                    if (att.Value.IndexOfAny(new Char[] {(char) 10, (char) 13, (char) 9, ' '}) < 0)\r\n                    {\r\n                        outText.Write(\" \" + name + \"=\" + att.Value);\r\n                    }\r\n                    else\r\n                    {\r\n                        outText.Write(\" \" + name + \"=\" + quote + att.Value + quote);\r\n                    }\r\n                }\r\n                else\r\n                {\r\n                    outText.Write(\" \" + name + \"=\" + quote + att.Value + quote);\r\n                }\r\n            }\r\n        }\r\n\r\n",
+      "PostedDate": "2012-01-26T05:26:00.933-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Any fix ?",
+      "PostedDate": "2012-06-22T05:44:44.533-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-08-21T13:20:46.117-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I submitted a patch for this issue, 12834, but screwed up the description a little.",
+      "PostedDate": "2012-10-02T14:27:45.753-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-10-09T16:50:55.12-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This has been fixed in source control and will be in the next release\nhttp://htmlagilitypack.codeplex.com/SourceControl/changeset/99962",
+      "PostedDate": "2012-10-09T17:12:15.223-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Can any help me how to avoid case sensitivity while selecting nodes?",
+      "PostedDate": "2013-01-28T21:10:24.27-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:21.363-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:58.257-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:58.37-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:35:57.68-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Arsh: it's not related to this issue at all. Sounds like you should open a discussion about this.\nThe short answer is that selecting nodes uses XSLT. If you can search XSLT in a case insensitive way, you can use that solution, perhaps this?\nhttp://support.microsoft.com/kb/315719\n",
+      "PostedDate": "2013-06-14T10:35:10.077-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "When would this (v1.4.7) be release? ",
+      "PostedDate": "2014-03-10T10:46:27.387-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

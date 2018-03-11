@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "659259",
+    "ThreadId": "269362",
+    "Html": "\r\n<p>I use &quot;copy XPath&quot; on firebug to get xpath from website. I have used&nbsp;TidyManaged to check and fix as :</p>\r\n<p>&nbsp;</p>\r\n<p></p>\r\n<pre>using (Document document = Document.FromString(Response))           \r\n{               \r\n\r\n\tdocument.ShowWarnings = true;  \r\n        document.CleanAndRepair();                                \r\n        Response = document.Save();           \r\n }            \r\n\r\nHtmlNode.ElementsFlags[&quot;html&quot;] = HtmlElementFlag.Empty |HtmlElementFlag.Closed|HtmlElementFlag.CanOverlap;            \r\n\r\nHtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();            \r\n\r\ndoc.LoadHtml(Response);\r\n\r\nHtmlNode node = doc.DocumentNode.SelectSingleNode(&quot;/html/body/div[@id='wrapper']/form/table[@class='rSet']//tr[2]/td/div[@class='pCenter']&quot;);</pre>\r\n<pre><br></pre>\r\n<pre>I have remove &quot;tbody&quot; tags from xpath string. But node still return null. Any ideas to my problems ? I need to copy firebug's xpath. Thank in advance for helping. :(</pre>\r\n<pre>\r\n</pre>\r\n<p></p>\r\n",
+    "PostedDate": "2011-08-17T00:00:26.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

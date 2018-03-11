@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "630058",
+    "ThreadId": "262010",
+    "Html": "\r\n<pre>Hi all,</pre>\r\n<pre>Can someone help me extract an image on my page which has mainImage. This is the code I have - I know everything is working up and till I perform the foreachloop which give me a CS0021: Cannot apply indexing with [] to an expression of type 'HtmlAgilityPack.HtmlNode'<br>error, basically highlighting this line of code: HtmlAttribute srcPath = link[&quot;src&quot;];<br>Thanks</pre>\r\n<pre>paps</pre>\r\n<pre><br></pre>\r\n<pre>        HtmlDocument doc = new HtmlDocument();\r\n\r\n        doc.LoadHtml(contentItem.Html);\r\n\r\n        foreach(HtmlNode link in doc.DocumentNode.SelectNodes(&quot;//img[@class]='mainImage'&quot;))\r\n        {\r\n            HtmlAttribute srcPath = link[&quot;src&quot;];\r\n\r\n            //Response.Write(srcPath.Value);\r\n\r\n            HtmlAttribute att = link[&quot;href&quot;];\r\n            att.Value = FixLink(att);\r\n\r\n        }</pre>\r\n",
+    "PostedDate": "2011-06-20T06:35:29.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "630232",
+    "ThreadId": "262010",
+    "Html": "<p>Hi Ive managed to get rid of that error. How do I put the results into ListView so I can use this in the front end of an aspx page.</p>",
+    "PostedDate": "2011-06-20T14:14:24.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "630632",
+    "ThreadId": "262010",
+    "Html": "<p>Managed to sort it out</p>",
+    "PostedDate": "2011-06-21T08:35:42.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

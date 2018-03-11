@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "993039",
+    "ThreadId": "431098",
+    "Html": "\r\n<p>Hi ,</p>\r\n<p>I have an application where i want to check if any node is present apart from the specified nodes(<strong>&quot;list&quot;,&quot;link&quot;,&quot;a&quot;,&quot;img&quot;,&quot;div&quot;,&quot;p&quot;,&quot;span&quot;,&quot;textflow&quot;,&quot;br&quot;</strong>),\r\n Can you please suggest how to write this as a<span style=\"color:#0000ff\"> single xpath condition.</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"color:#000000\"><strong>some think like&nbsp;</strong><br>\r\nNewXmlDoc.DocumentNode.SelectNodes(&quot;//[not(p | div | span )]&quot;)&nbsp;</span></p>\r\n",
+    "PostedDate": "2013-01-28T05:56:32.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993048",
+    "ThreadId": "431098",
+    "Html": "\r\n<p>Hi ,</p>\r\n<p>I got the solution by trial and error, thought of sharing it in the forum.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NewXmlDoc.DocumentNode.SelectNodes(&quot;//*[not(self::p | self::div | self::span | self::a | self::link | self::list | self::li | self::textflow | self::br | self::img )]&quot;);</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Eg:&nbsp;&nbsp; </strong>NewXmlDoc.DocumentNode.SelectNodes(&quot;//*[not(self::p&nbsp;&nbsp;| self::img )]&quot;);</p>\r\n<p>&nbsp;will give all the nodes other than p and img.</p>\r\n",
+    "PostedDate": "2013-01-28T06:15:06.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

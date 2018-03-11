@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "695309",
+    "ThreadId": "278728",
+    "Html": "\r\n<p>Hi Guys,</p>\r\n<p>I've installed v1.4.3 through Nuget, I think the tool is great, but am encountering what appear to be old reported bugs.</p>\r\n<p>Namely http://htmlagilitypack.codeplex.com/workitem/28756 and http://htmlagilitypack.codeplex.com/workitem/29233 have these fixes not been applied to the version on nuget yet?</p>\r\n<p>Also the latest source here is v1.4.0, does that include these fixes? Otherwise how would one go about applying the patches? 28756 includes a diff file, how would one apply that to the source downloaded?</p>\r\n<p>Many thanks,</p>\r\n<p>P.</p>\r\n",
+    "PostedDate": "2011-11-08T06:26:05.297-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

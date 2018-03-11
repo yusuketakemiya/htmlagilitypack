@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "440080",
+    "ThreadId": "211847",
+    "Html": "<p>I've just installed HtmlAgilityPack.1.4.0.beta2It's the first time I've installed the beta version of anything.I opened HtmlAgilityPack.sln in C# 2010 and most of the files failed to convert from 2008. Is HtmlAgilityPack unusable in vs 2010?HtmlAgilityPack.sln converted ok. Is it enough by itself?<br>THE CONVERSION ATTEMPT:</p>\r\n<p>Solution: HtmlAgilityPack</p>\r\n<p>1 file (HtmlAgilityPack.sln) converted OK</p>\r\n<p>------------------------------------------------------</p>\r\n<p>Project: GetDocLinks VS2008&nbsp;</p>\r\n<p>3 files. 2 failed to convert. Only 1 converted (GetDocLinks\\GetDocLinks VS2008.csproj)</p>\r\n<p>------------------------------------------------------</p>\r\n<p>Project: HAPExplorer</p>\r\n<p>17 files. 16 failed to convert. Only 1 converted (HAPExplorer\\HAPExplorer.csproj)</p>\r\n<p>-----------------------------------------------------------</p>\r\n<p>Project: Html2Rss VS2008</p>\r\n<p>4 files. 3 failed to convert. Only 1 converted (Html2Rss\\Html2Rss VS2008.csproj)</p>\r\n<p>------------------------------------------------------------</p>\r\n<p>Project: Html2Txt VS2008</p>\r\n<p>5 files. 4 failed to convert. Only 1 converted (Html2Txt\\Html2Txt VS2008.csproj)</p>\r\n<p>-----------------------------------------------------------</p>\r\n<p>Project: Html2Xml VS2008</p>\r\n<p>4 files. 3 failed to convert. Only 1 converted (Html2Xml\\Html2Xml VS2008.csproj)</p>\r\n<p>----------------------------------------------------------- &nbsp;</p>\r\n<p>Project: HtmlAgilityPack VS2008&nbsp;</p>\r\n<p>32 files. 31 failed to convert. Only 1 converted (HtmlAgilityPack\\HtmlAgilityPack VS2008.csproj)</p>",
+    "PostedDate": "2010-05-06T14:44:46.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "440340",
+    "ThreadId": "211847",
+    "Html": "<p>Well considering I do all my development in VS2010, I'd say it works. Check the latest source code out of svn, there's a vs2010 solution in there.</p>\r\n<p>Since I finally have a day off (I've had only a handful of weekends free since August..) I'll finally get 1.4.0 stable out today.</p>",
+    "PostedDate": "2010-05-07T07:09:09.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

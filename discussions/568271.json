@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1307798",
+    "ThreadId": "568271",
+    "Html": "I want to get Port Code,Port Name\t,Country from this page:<br />\n<a href=\"http://www.infodriveindia.com/traderesources/port.aspx?&amp;GridInfo=Ports010\" rel=\"nofollow\">http://www.infodriveindia.com/traderesources/port.aspx?&GridInfo=Ports010</a><br />\nThis's my code:<br />\n<pre><code>    WebRequest objWebRequest = WebRequest.Create(_link);\n    objWebRequest.Credentials = CredentialCache.DefaultCredentials;\n    WebResponse objWebResponse = objWebRequest.GetResponse();\n    Stream receiveStream = objWebResponse.GetResponseStream();\n    HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();\n    document.Load(receiveStream);\n</code></pre>\n\n<pre><code>But in this document, Port Name string is not exactly ('Sarand&amp;#235;'). This name on website is ('Sarandë'). Where I was wrong? Pls help.</code></pre>\n\n",
+    "PostedDate": "2014-09-24T08:53:40.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

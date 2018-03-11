@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1003509",
+    "ThreadId": "433692",
+    "Html": "I am scraping a few prices from m.homedepot.com and the site prompts to allow it to determine my location.  While I don't care, this seems to be a sticking point for getting search results back. \r<br />\n<br />\nOn my Win 7 PC/MVC 4 application it works fine on and retrieves and parses the page.  When I publish to my web server, it fails to find a result using the same URI.\r<br />\n<br />\nExample: <a href=\"http://m.homedepot.com/s/181889/\" rel=\"nofollow\">http://m.homedepot.com/s/181889/</a>\r<br />\n<br />\n<br />\nOther things:  on the server, if I browse directly to the page above with cookies disabled, I get no result, however if I enable cookies and location detection, search works fine.\r<br />\n<br />\nProblem: how do I get this URI to find results on a server that must not allow an application to create cookies.  Yes I have tried creating a cookie container, but maybe I am doing it wrong.  (Obviously)\r<br />\n<br />\nThanks for any help.<br />\n",
+    "PostedDate": "2013-02-19T08:41:52.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

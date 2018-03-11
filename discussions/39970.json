@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "132674",
+    "ThreadId": "39970",
+    "Html": "Hi,<br>\r\n<br>\r\nI am using the DormsProcessor add on to scrape some pages on an HTTPS site. I understand that this addon uses the same cookieContainer in this situation but how can one modify cookie content. I used to do that using (HttpWebRequest).?!!!<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-14T10:15:28.293-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

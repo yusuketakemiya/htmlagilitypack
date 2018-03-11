@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "996646",
+    "ThreadId": "432034",
+    "Html": "Hi, i'm a bit of a newbie to HTML Agility Pack and I'm developing on a windows 8 machine using Visual Studio 2012 express.\r<br />\n<br />\nI have a URL and I need to convert this HTML source code into a useable C# object. This object must be created at run time as the URL can change, is this an easy thing to do using this library? How can I go about it?\r<br />\n<br />\nI've had a search round the internet to no prevail - it seems that the WebClient class does not exist within the new express addition. Is this right?<br />\n",
+    "PostedDate": "2013-02-05T05:38:51.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1008299",
+    "ThreadId": "432034",
+    "Html": "Are you trying to just grab the entire HTML source of that URL and put into a string file?<br />\n<br />\nIf so,<br />\n{<br />\nHtmlWeb webfile = new HtmlWeb();<br />\n<br />\n// load your the html source from the desired website into HtmlDocument file<br />\n<br />\nHtmlDocument doc = webfile.Load(&quot;<a href=\"http://www.YOURWEBSITE.com&quot;);\" rel=\"nofollow\">http://www.YOURWEBSITE.com\");</a><br />\n<br />\n// since you want the entire HTML source as usable c# object, i.e. a string file <br />\nstring websiteHTML = doc.DocumentNode.WriteTo();<br />\n<br />\n}<br />\n<br />\nYou can print to console or to a text file to validate you got the source in its entirety (though I don't see why it wouldn't)<br />\n<br />\nHope that helps <br />\n",
+    "PostedDate": "2013-02-28T08:48:00.277-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

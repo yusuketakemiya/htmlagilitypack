@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1359074",
+    "ThreadId": "584181",
+    "Html": "I've just finished the first version of a Visual Studio Debugger Visualizer for the Html Agility Pack. It allows to browse the DOM / Nodes while debugging. XPath expressions can be evaluated during the debug session.\r<br />\n<br />\nHere is the project:\r<br />\n<a href=\"http://www.crawler-lib.net/visual-studio-debugger-visualizers\" rel=\"nofollow\">http://www.crawler-lib.net/visual-studio-debugger-visualizers</a><br />\n",
+    "PostedDate": "2015-03-02T15:30:58.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1363379",
+    "ThreadId": "584181",
+    "Html": "Hello,\r<br />\n<br />\nI've just been using this and found it very helpful for resolving an issue I was having where the HAP tree didn't mirror what I was expecting... many thanks for posting this visualizer!\r<br />\n<br />\n(And a thousand curses upon whichever designer of HTML thought overlapping FORM elements was a good idea)\r<br />\n<br />\nRegards;\r<br />\nRichard Moss<br />\n",
+    "PostedDate": "2015-03-14T05:39:53.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

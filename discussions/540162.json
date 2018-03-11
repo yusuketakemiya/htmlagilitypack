@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1226772",
+    "ThreadId": "540162",
+    "Html": "HtmlNode HtmlNode.RemoveChild(HtmlNode oldChild, bool keepGrandChildren)\r<br />\n{\r<br />\n...<br />\n<pre><code>            HtmlNode prev = oldChild.PreviousSibling;\n    foreach (HtmlNode grandchild in (IEnumerable&lt;HtmlNode&gt;)oldChild._childnodes)\n    {\n        this.InsertAfter(grandchild, prev);\n    }</code></pre>\n\n...\r<br />\n}\r<br />\nthis.InsertAfter(grandchild, prev) have error, insert order is reverse <br />\n",
+    "PostedDate": "2014-03-25T20:24:22.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

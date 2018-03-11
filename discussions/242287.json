@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "551396",
+    "ThreadId": "242287",
+    "Html": "\r\n<p>I am trying to parse up some HTML and am struggling with the documentation.</p>\r\n<p>I'm trying to look at all of the &lt;td&gt; tags and have created an HtmlNodeCollection which contians all of the &lt;td&gt; elements, but I'm not sure the best way to navigate through the collection.</p>\r\n<p>It doesn't have any built in methods for this so I thought I'd use an HtmlNodeNavigator, but there is no constructor that takes an HtmlNodeCollection.</p>\r\n<p>I'm looking for a good way to be able to step through the HtmlNodeCollection, possibly even in a bi-directional fashion.</p>\r\n",
+    "PostedDate": "2011-01-18T10:49:54.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "551825",
+    "ThreadId": "242287",
+    "Html": "\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\"><br>foreach</span> (HtmlNode node <span style=\"color:blue\">in</span> nodes)\r\n{\r\n\r\n}\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>or</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">for</span> (<span style=\"color:blue\">int</span> i=0;i&lt;nodes.Count;i&#43;&#43;)\r\n{\r\n<span style=\"color:blue\">   var</span> node = nodes[i];\r\n}\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2011-01-19T03:27:35.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "551917",
+    "ThreadId": "242287",
+    "Html": "\r\n<p>The HtmlNodeNavigator is used internally to help implement XPATH.</p>\r\n<p>It might be easier to just use LINQ</p>\r\n<p>if you are trying to get all the &lt;td&gt; tags on the page</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> nodes = doc.DocumentNode.Descendents(<span style=\"color:#a31515\">&quot;td&quot;</span>);\r\n\r\n<span style=\"color:green\">// now you can foreach or for through them</span>\r\n\r\n<span style=\"color:blue\">foreach</span>(<span style=\"color:blue\">var</span> td <span style=\"color:blue\">in</span> nodes)\r\n{\r\n <span style=\"color:green\">// do something with the td var</span>\r\n}\r\n\r\n<span style=\"color:green\">//you can also use LINQ to further weed out things like</span>\r\n\r\n<span style=\"color:blue\">var</span> txtNodes = nodes.Where(td=&gt;td.InnerText.Contains(<span style=\"color:#a31515\">&quot;$&quot;</span>));\r\n<span style=\"color:green\">//this will give you all the TD nodes that have text inside of them containing a dollar sign</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2011-01-19T06:27:35.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

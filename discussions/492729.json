@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1160762",
+    "ThreadId": "492729",
+    "Html": "Hi<br />\n<br />\nI am willing to extract email id form following html I tried lot but no luck, can any one pls help<br />\n<pre><code>&lt;div class=&quot;email&quot;&gt;\n&lt;script type=&quot;text/javascript&quot;&gt;eval(unescape('%64'))&lt;/script&gt;&lt;a target=&quot;_blank&quot; href=&quot;/business/do_link/38494178?url=mailto:ebridalwed25@yahoo.com&quot; rel=&quot;nofollow&quot; class=&quot;searchlink email&quot; title=&quot;EBridal&quot;&gt;ebridalwed25@yahoo.com&lt;/a&gt;&lt;br&gt;&lt;/div&gt;</code></pre>\n\nI am willing to expect email id form this link<br />\n<pre><code>  For Each link As HtmlNode In doc.DocumentNode.SelectNodes(&quot;//div[@class='email']&quot;)\n\n            ans = link.Attributes(&quot;href&quot;).Value</code></pre>\n\n",
+    "PostedDate": "2014-01-13T03:40:21.3-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1161426",
+    "ThreadId": "492729",
+    "Html": "This code will work:<br />\n<pre><code>doc.DocumentNode.SelectSingleNode(&quot;//div[@class='email']/a&quot;)</code></pre>\n\nTake a look: <a href=\"http://www.w3schools.com/xpath/xpath_syntax.asp\" rel=\"nofollow\">http://www.w3schools.com/xpath/xpath_syntax.asp</a><br />\n",
+    "PostedDate": "2014-01-13T07:39:58.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

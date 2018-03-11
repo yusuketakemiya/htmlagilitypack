@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "202473",
+    "ThreadId": "59803",
+    "Html": "<p>I have a unique requirement to create a web service out of the resulting scraped data where the consumer can make multiple requests per second using varying parameters. Essentially, I am limited to 1 user ID/pw (I can probably ask for 10 more) to the targeted web application. How do I manage my connections, effectively connection pool, using a 1 or a few user ID/pw, similar to database connection pool? Also, is HAP multi-threaded? If I can't pool the existing connections, I can have the web service consumer submitting individual user ID/pw instead.</p>\r\n<p>Thanks for your insight</p>\r\n<p>Al</p>",
+    "PostedDate": "2009-06-17T06:16:10.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204561",
+    "ThreadId": "59803",
+    "Html": "<p>HAP is not multi-threaded. It's meant to work with only one file/stream at a time. Pooling your connections and handling threading is up to you. It'd probably be best to use ThreadPool to kick off worker items.</p>",
+    "PostedDate": "2009-06-23T09:20:52.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

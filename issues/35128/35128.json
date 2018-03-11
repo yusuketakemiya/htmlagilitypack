@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It seems like it works after installation but I cannot really do anything with it.. I also tried the regular agility pack with same results.\n\nusing HtmlAgilityPack;\nHtmlDocument dokki = new HtmlDocument();\ndokki.Load(\"something..\");\n\n^Error\t1\tInvalid token '(' in class, struct, or interface member declaration..",
+    "LastUpdatedDate": "2014-04-13T14:43:21.59-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-04-13T14:43:21.59-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "After installing packet it doesn't work",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35128
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

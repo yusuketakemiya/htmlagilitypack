@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1040550",
+    "ThreadId": "442857",
+    "Html": "Hi,\r<br />\n<br />\nI have a website to scrape which has paging on it. When I use HTML Agility to download the HTML data it always loads first page. But when I paste the same url on browser it just works fine.\r<br />\nUrl look like this &quot;<a href=\"http://sampleurl.url/?q=something&amp;page=5\" rel=\"nofollow\">http://sampleurl.url/?q=something&page=5</a>&quot;<br />\n",
+    "PostedDate": "2013-05-07T12:23:24.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

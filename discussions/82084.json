@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "281988",
+    "ThreadId": "82084",
+    "Html": "<p>Hi ,</p>\r\n<p>&nbsp;i am using htmlAgility pack and found it useful for parsing web pages. My prblem is that i am building an winform app in c#, which is loading a login page , finding two textboxes &quot;txtName&quot; and txtPassword and a button btnLogin. When i have object all the three i will set user name and login that will be passed from my form text box to web-page in behind the scene. And then to occur the click event.</p>\r\n<p>I am able to load document and find the control but dont know how to set values and to text boxes and to invoke the button event too.</p>\r\n<p>Also i want to know is it possible to move into the pages that requires session.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-26T12:28:37.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283289",
+    "ThreadId": "82084",
+    "Html": "<p>So, HAP isn't a web browser; it's a html parser. There is no click event, nor would setting the values to the boxes have any use. You will have to implement the code that posts to the web server and saves the cookie that the server sends back.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-29T04:09:09.527-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

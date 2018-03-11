@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The NuGet package Id should be \"HtmlAgilityPack\" rather than \"HTML Agility Pack\". It is more standard to not use spaces. This will allow us to install it like:\nInstall-Package HtmlAgilityPack\nrather than:\nInstall-Package \"HTML Agility Pack\"\n \nnot a huge deal, but i had to look up the name to install it since it was not standard.",
+    "LastUpdatedDate": "2013-02-21T18:47:11.803-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-11-30T16:20:59.04-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Rename NuGet Package ID",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 29603
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

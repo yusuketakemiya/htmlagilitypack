@@ -1,0 +1,27 @@
+Index: HtmlDocument.cs
+===================================================================
+--- HtmlDocument.cs	(revision 63973)
++++ HtmlDocument.cs	(working copy)
+@@ -801,11 +801,11 @@
+ 
+ 			if (node == null)
+ 			{
+-				_nodesid.Remove(id.ToLower());
++				_nodesid.Remove(id);
+ 			}
+ 			else
+ 			{
+-				_nodesid[id.ToLower()] = node;
++				_nodesid[id] = node;
+ 			}
+ 		}
+ 
+@@ -825,7 +825,7 @@
+ 				throw new Exception(HtmlExceptionUseIdAttributeFalse);
+ 			}
+ 
+-			return _nodesid[id.ToLower()] as HtmlNode;
++			return _nodesid[id] as HtmlNode;
+ 		}
+ 
+ 		/// <summary>

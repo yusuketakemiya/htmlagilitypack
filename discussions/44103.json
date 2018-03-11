@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "146716",
+    "ThreadId": "44103",
+    "Html": "Hi, I'm trying to use XPATH queries coming out the Firebug Firefox plugin to identify and get content of html elements. You'll get a XPATH using the &quot;inspect&quot; tool in Firebug and selecting &quot;Copy Xpath&quot; from the context menu on the element in the HTML pane.<br>\r\n<br>\r\nThe XPath resulting is something like:<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /html/body/form/table/tbody/tr/td/div/div/div[2]/table/tbody/tr/td/div/div/div/div/table/tbody/tr/td/a/div <br>\r\n<br>\r\nIt's something like a simple &quot;position&quot; in the DOM tree, but it doesn't return anything, at least on the pages I tested.<br>\r\n<br>\r\nIs there a limitation for thsi kind of queries. Did anyone use something like this with success?<br>\r\n<br>\r\nThank you,<br>\r\n<br>\r\nGiorgio<br>\r\n",
+    "PostedDate": "2009-01-13T08:43:07.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194611",
+    "ThreadId": "44103",
+    "Html": "<p>I tired the same thing</p>\r\n<p>HtmlAgilitypack seems can't recognize &quot;form&quot; or &quot;tbody&quot;, so remove them from your xpath, it might work</p>",
+    "PostedDate": "2009-05-26T20:25:32.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "194614",
+    "ThreadId": "44103",
+    "Html": "<p>@<a id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_UserNameLink\" href=\"http://www.codeplex.com/site/users/view/webgio\">webgio</a>: i think Firefox auto gen &quot;tbody&quot; tags.</p>",
+    "PostedDate": "2009-05-26T20:32:51.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

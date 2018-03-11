@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Shift-JIS content is not being decoded (properly or at all, not sure). Just try to download http://www.2chan.net/index2.html and you'll see. The encoding is properly detected as Shift-JIS, but it's not decoded into the original characters that you should see in a browser.\n\nUsing HAP 1.4.0.0 and VS2008.",
+    "LastUpdatedDate": "2013-08-16T13:05:42.42-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-08-16T13:05:42.42-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Shift-JIS content not decoding properly",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 34381
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,42 @@
+﻿using HtmlAgilityPack;
+using NUnit.Framework;
+
+namespace HtmlAgilityTest
+{
+    [TestFixture]
+    public class InnerTextFixture
+    {
+        private HtmlDocument doc;
+
+        [SetUp]
+        public void Setup()
+        {
+            doc = new HtmlDocument();
+        }
+
+        [Test]
+        public void TextNode()
+        {
+            HtmlNode node = doc.CreateTextNode("<files>&");
+            Assert.AreEqual("<files>&", node.InnerText); // works
+            Assert.AreEqual("&lt;files&gt;&amp;", node.InnerHtml); //fails
+        }
+
+        [Test]
+        public void ElementNode()
+        {
+            var node = doc.CreateElement("div");
+            node.InnerHtml = "&lt;files&gt;&amp;";
+            
+            Assert.AreEqual("&lt;files&gt;&amp;", node.InnerHtml); // works
+            Assert.AreEqual("<files>&", node.InnerText); //fails
+        }
+
+        [Test]
+        public void DocumentNode()
+        {
+            doc.LoadHtml("<div>&lt;files&gt;&amp;</div>");
+            Assert.AreEqual("<files>&", doc.DocumentNode.InnerText); //fails
+        }
+    }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "728020",
+    "ThreadId": "286781",
+    "Html": "\r\n<p>Hi guess I've created a simple demo app using the Agility Pack at:</p>\r\n<p>http://www.codeproject.com/KB/cs/ProgressViewModel.aspx</p>\r\n<p>http://www.codeproject.com/KB/WPF/MultiProgressViewModel.aspx</p>\r\n<p>Just thought this might be interesting to be included on your Documentation page and in your own documentation.</p>\r\n<p>I also have a question about performance. I have used the Agility Pack to parse out the TITLE of mutliple HTML files</p>\r\n<p>via XPath. Is this implementation the best way of doing this with the HTML Agility Pack or is there yet another faster</p>\r\n<p>way of doing this?</p>\r\n",
+    "PostedDate": "2012-01-20T01:06:02.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

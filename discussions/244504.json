@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "560147",
+    "ThreadId": "244504",
+    "Html": "\r\n<p>I'm working on a HTML editor and using HAP to parse the HTML. Bearing in mind that I'm parsing while a user is typing, I have come across the following issue(s):</p>\r\n<ul>\r\n<li>When parsing tags, if the tag contains spaces, the spaces are <strong>stripped</strong>, e.g. &quot;&lt;div &gt;&quot; is stripped to &quot;&lt;div&gt;&quot;\r\n</li><li>When parsing self-closing tags, e.g. &lt;br/&gt; a space is <strong>added</strong>&nbsp;before the slash like so: &lt;br /&gt;\r\n</li></ul>\r\n<p>This is causing me no end of issues because I need the <strong>exact</strong>&nbsp;Length of the InnerHtml of a HtmlNode\r\n<strong>as the user has typed it</strong>, not as HAP has parsed it.</p>\r\n<p>So ultimately, my question is how on Earth do I stop HAP from mutating my HTML during parsing? I'm not using HAP for output.</p>\r\n<p>Thanks in advance,</p>\r\n<p>A.</p>\r\n",
+    "PostedDate": "2011-02-03T07:04:17.17-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "561955",
+    "ThreadId": "244504",
+    "Html": "\r\n<p>This is also the reason I started using HAP. I was writing a VS2010 extension and this &quot;issue&quot; stopped me from completing it. The thing is it's not the parsing at all. When calling InnerHtml the first time it is dynamically creating the HTML based on the\r\n object model and not the original text document. Thus it's writing proper HTML.</p>\r\n<p>There are some Internal fields (_innerstartindex and&nbsp;_innerlength) that do track the start/end positions of a node and HtmlDocument has a Text internal property that has the original document string. You can access these with reflection or modify the\r\n source code to give you access to them.&nbsp;</p>\r\n<p>In a future release I will probably make these public readonly properties so it is easier to get to this information.</p>\r\n",
+    "PostedDate": "2011-02-07T07:18:31.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "568294",
+    "ThreadId": "244504",
+    "Html": "<p>Thanks for the response. Any ETA on the next release?</p>",
+    "PostedDate": "2011-02-17T17:51:39.103-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "568497",
+    "ThreadId": "244504",
+    "Html": "<p>not at the moment, all the time I set aside for getting to work on 2.0 has been eaten up by large projects (I've working on a site millions of people use).</p>\r\n<p>I'm hoping sometime this year I can get 2.0 up and rolling.&nbsp;</p>",
+    "PostedDate": "2011-02-18T05:37:51.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

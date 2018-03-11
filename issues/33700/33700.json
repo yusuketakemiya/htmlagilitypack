@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am trying to parse a document which is having  tag.\n\nhttp://html5doctor.com/the-time-element/\nhttp://www.w3.org/TR/html-markup/time.html\n\nI am trying to select a node by method, doc.DocumentNode.SelectSingleNode(@\"//time\")  , I'm getting only null result.",
+    "LastUpdatedDate": "2013-05-07T09:50:27.577-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-01-24T21:53:29.917-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HTML5 Tags in XPath not working",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 33700
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The two links, i mentioned are reference for <time /> tag. ",
+      "PostedDate": "2013-01-24T21:55:14.713-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:54.717-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-07T09:50:27.577-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

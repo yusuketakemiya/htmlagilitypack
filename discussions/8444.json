@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "27545",
+    "ThreadId": "8444",
+    "Html": "\r\nHi-<br /><br />I have a structure like this<br /><br />&lt;levelone&gt;<br />   &lt;leveltwo&gt;<br />      &lt;h1&gt;&lt;levelthree&gt;&lt;/levelthree&gt;&lt;/h1&gt;<br />      &lt;p&gt;&lt;levelthree&gt;&lt;/levelthree&gt;&lt;/p&gt;<br />   &lt;/leveltwo&gt;<br />&lt;/levelone&gt;<br /><br />And I'm parsing it like this:<br /><br />HtmlNodeCollection nodes = _htmlDocument.DocumentNode.SelectNodes(\"//*\");<br /><br />foreach (HtmlNode node in nodes)<br />{<br /> HtmlNode parentnode = node.ParentNode;<br /> HtmlTextNode textnode1 = node.OwnerDocument.CreateTextNode(\"START\");<br /> parentnode.InsertBefore(textnode1, node);<br /><br /> HtmlTextNode textnode2 = node.OwnerDocument.CreateTextNode(\"END\");<br /> parentnode.InsertAfter(textnode2, node);<br /><br /> parentnode.RemoveChild(node, true);<br /><br />}<br /><br />The problem is that if I call RemoveChild, it reorders the two lines in the leveltwo innerhtml.  If I don't call removechild, it keeps them in the correct order.<br /><br />Could this be a bug?  If so, is there a workaround for it?<br /><br />Thanks,<br /><br />-Mike<br />",
+    "PostedDate": "2007-03-21T16:19:44.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "27717",
+    "ThreadId": "8444",
+    "Html": "\r\nHi-<br /><br />I think I found the problem and a fix for this---I'll post this to the \"issues\" secton under item 9113.<br /><br />-Mike<br />",
+    "PostedDate": "2007-03-23T10:48:59.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

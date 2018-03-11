@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "710186",
+    "ThreadId": "282469",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm trying to compile the source for WP7.5. Is there a guide or a reference to follow for compiling the source for WP7.5? I'm trying to extract the text from a given URL and I would want my WP7 app to do that.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-12-09T22:25:51.447-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "710235",
+    "ThreadId": "282469",
+    "Html": "<p>There is w WP 7.5 binary available in the Nuget package http://nuget.org/packages/HtmlAgilityPack</p>",
+    "PostedDate": "2011-12-10T04:41:59.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "710244",
+    "ThreadId": "282469",
+    "Html": "<p>Thanks a lot. Will look into it and give an update.</p>",
+    "PostedDate": "2011-12-10T05:10:46.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "710251",
+    "ThreadId": "282469",
+    "Html": "<p>I successfully added HtmlAgilityPack to my project. However, I tried the following code to extract the body text:</p>\r\n<pre class=\"lang-cs prettyprint\"><code><span class=\"pln\"> </span><span class=\"typ\">HtmlAgilityPack</span><span class=\"pun\">.</span><span class=\"typ\">HtmlDocument</span><span class=\"pln\"> htmlDoc </span><span class=\"pun\">=</span><span class=\"pln\"> </span><span class=\"kwd\">new</span><span class=\"pln\"> </span><span class=\"typ\">HtmlAgilityPack</span><span class=\"pun\">.</span><span class=\"typ\">HtmlDocument</span><span class=\"pun\">();</span><span class=\"pln\"><br /><br />&nbsp; &nbsp; </span><span class=\"com\">// There are various options, set as needed</span><span class=\"pln\"><br />&nbsp; &nbsp; htmlDoc</span><span class=\"pun\">.</span><span class=\"typ\">OptionFixNestedTags</span><span class=\"pun\">=</span><span class=\"kwd\">true</span><span class=\"pun\">;</span><span class=\"pln\"><br /><br />&nbsp; &nbsp; </span><span class=\"com\">// filePath is a path to a file containing the html</span><span class=\"pln\"><br />&nbsp; &nbsp; htmlDoc</span><span class=\"pun\">.</span><span class=\"typ\">Load</span><span class=\"pun\">(</span><span class=\"pln\">filePath</span><span class=\"pun\">);</span><span class=\"pln\"><br /><br />&nbsp; &nbsp; </span><span class=\"com\">// Use: &nbsp;htmlDoc.LoadXML(xmlString); &nbsp;to load from a string</span><span class=\"pln\"><br /><br />&nbsp; &nbsp;</span><span class=\"com\">// ParseErrors is an ArrayList containing any errors from the Load statement</span><span class=\"pln\"><br />&nbsp; &nbsp;</span><span class=\"kwd\">if</span><span class=\"pln\"> </span><span class=\"pun\">(</span><span class=\"pln\">htmlDoc</span><span class=\"pun\">.</span><span class=\"typ\">ParseErrors</span><span class=\"pun\">!=</span><span class=\"kwd\">null</span><span class=\"pln\"> </span><span class=\"pun\">&amp;&amp;</span><span class=\"pln\"> htmlDoc</span><span class=\"pun\">.</span><span class=\"typ\">ParseErrors</span><span class=\"pun\">.</span><span class=\"typ\">Count</span><span class=\"pun\">&gt;</span><span class=\"lit\">0</span><span class=\"pun\">)</span><span class=\"pln\"><br />&nbsp; &nbsp;</span><span class=\"pun\">{</span><span class=\"pln\"><br />&nbsp; &nbsp; &nbsp; &nbsp;</span><span class=\"com\">// Handle any parse errors as required</span><span class=\"pln\"><br /><br />&nbsp; &nbsp;</span><span class=\"pun\">}</span><span class=\"pln\"><br />&nbsp; &nbsp;</span><span class=\"kwd\">else</span><span class=\"pln\"><br />&nbsp; &nbsp;</span><span class=\"pun\">{</span><span class=\"pln\"><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class=\"kwd\">if</span><span class=\"pln\"> </span><span class=\"pun\">(</span><span class=\"pln\">htmlDoc</span><span class=\"pun\">.</span><span class=\"typ\">DocumentNode</span><span class=\"pln\"> </span><span class=\"pun\">!=</span><span class=\"pln\"> </span><span class=\"kwd\">null</span><span class=\"pun\">)</span><span class=\"pln\"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class=\"pun\">{</span><span class=\"pln\"><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=\"typ\">HtmlNode</span><span class=\"pln\"> bodyNode </span><span class=\"pun\">=</span><span class=\"pln\"> htmlDoc</span><span class=\"pun\">.</span><span class=\"typ\">DocumentNode</span><span class=\"pun\">.</span><span class=\"typ\">SelectSingleNode</span><span class=\"pun\">(</span><span class=\"str\">\"//body\"</span><span class=\"pun\">);</span><span class=\"pln\"><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=\"kwd\">if</span><span class=\"pln\"> </span><span class=\"pun\">(</span><span class=\"pln\">bodyNode </span><span class=\"pun\">!=</span><span class=\"pln\"> </span><span class=\"kwd\">null</span><span class=\"pun\">)</span><span class=\"pln\"><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=\"pun\">{</span><span class=\"pln\"><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=\"com\">// Do something with bodyNode</span><span class=\"pln\"><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class=\"pun\">}</span><span class=\"pln\"><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class=\"pun\">}</span><span class=\"pln\"><br />&nbsp; &nbsp; </span><span class=\"pun\">}</span></code></pre>\r\n<p>and I receive the following error when building the project.&nbsp;</p>\r\n<p>Error<span> </span>1<span> </span>The type 'System.Xml.XPath.IXPathNavigable' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Xml.XPath, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.<span> </span>D:\\test\\test\\MainPage.xaml.cs<span> </span>58</p>\r\n<p>&nbsp;</p>\r\n<p>Can you please let me know what the issue is? Thanks for the help.</p>",
+    "PostedDate": "2011-12-10T05:55:37.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "710264",
+    "ThreadId": "282469",
+    "Html": "<p>Reference the System.Xml assembly in the project that is using the agility pack would be my first guess. I was going to say perhaps the internal library isn't but it is according to the latest source. Are you using this in an internal say Core project? Usually the Silverlight app projects reference System.Xml for you but not the Library projects if I recall correctly.</p>",
+    "PostedDate": "2011-12-10T07:21:24.79-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "710267",
+    "ThreadId": "282469",
+    "Html": "<p>I followed the nuget method of installing HtmlAgility Pack and in fact added the System.Xml reference again after I received this error. However, I still get the same error although I've referenced the library from my project. Can you elaborate on what you meant when you said abt a core project? I am developing a WP7 app using the Silverlight framework for Win Phones. This is just a part of the code I'm trying to work with. Can you let me know where to find the library projects? Yes, I did find System.Xml being referenced already and I added it again just out of curiosity although it went in vain. Thanks.</p>",
+    "PostedDate": "2011-12-10T07:27:36.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "710284",
+    "ThreadId": "282469",
+    "Html": "<p>I got same error&nbsp;The type 'System.Xml.XPath.IXPathNavigable' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Xml.XPath, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.</p>",
+    "PostedDate": "2011-12-10T08:25:12.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "710298",
+    "ThreadId": "282469",
+    "Html": "<p>Found working version here -&nbsp;<a href=\"https://github.com/Windcape/HtmlAgilityPackWP/downloads\">https://github.com/Windcape/HtmlAgilityPackWP/downloads</a></p>",
+    "PostedDate": "2011-12-10T09:19:26.043-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "710310",
+    "ThreadId": "282469",
+    "Html": "<p>add a reference to System.Xml.XPath that comes with the Silverlight 4 SDK. WP7 Mango is compatible with SL4 libraries . The dll can be found at C:\\Program Files (x86)\\Microsoft SDKs\\Silverlight\\v4.0\\Libraries\\Client on X64 systems</p>",
+    "PostedDate": "2011-12-10T10:43:51.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "710396",
+    "ThreadId": "282469",
+    "Html": "<p>Thanks @darthobiwan. I rectified issue with referencing and I'm able to build and run my project without errors.</p>",
+    "PostedDate": "2011-12-10T18:05:37.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "716870",
+    "ThreadId": "282469",
+    "Html": "<p>Thank you very much @ep_wp7.</p>",
+    "PostedDate": "2011-12-24T02:28:22.497-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048650",
+    "ThreadId": "282469",
+    "Html": "Thanks.  That sorted it for me darthobiwan!<br />\n",
+    "PostedDate": "2013-05-25T08:28:40.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "99204",
+    "ThreadId": "29762",
+    "Html": "How can I specify proxy settings for HtmlWeb or does it use the same default IE proxy settings?<br>\r\n",
+    "PostedDate": "2008-06-16T22:45:14.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "105339",
+    "ThreadId": "29762",
+    "Html": "<p>Hello,</p>\r\n<p>try the sampleproject &quot;googler&quot; and look into googler.cs</p>\r\n<span style=\"font-size:13px;color:#008000\">\r\n<p>// We use a Webclient to query and impose as &quot;Internet Explorer 7&quot;</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#008080\">WebClient</span><span style=\"font-size:13px\"> client = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#008080\">WebClient</span><span style=\"font-size:13px\">();\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#008080\">// ADD the following lines and you will have a proxy with authentification <br>\r\nNetworkCredential</span><span style=\"font-size:13px\"> nc = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#008080\">NetworkCredential</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#800000\">&quot;yourname&quot;</span><span style=\"font-size:13px\">, &quot;yourpw</span><span style=\"font-size:13px;color:#800000\">&quot;</span><span style=\"font-size:13px\">);\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#008080\">WebProxy</span><span style=\"font-size:13px\"> wp = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#008080\">WebProxy</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#800000\">&quot;yourproxyIPorHostname:8080&quot;</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#0000ff\">true</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#0000ff\">null</span><span style=\"font-size:13px\">, nc);\r\n<p>&nbsp;</p>\r\n<p>client.Proxy = wp;</p>\r\n<p>client.Headers.Add(</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#800000\">&quot;User-Agent&quot;</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#800000\">&quot;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.0.04506.30; .NET CLR 3.0.04506.648)&quot;</span><span style=\"font-size:13px\">);<br>\r\n<br>\r\nwith best regards<br>\r\n<br>\r\nmarco\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2008-07-17T04:40:57.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

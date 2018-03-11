@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "44829",
+    "ThreadId": "13744",
+    "Html": "\r\nI'm trying to fix some links, but when I change an attribute the parent nodes' InnerHtml is not updated to reflect this change.<br /><br />HtmlNodeCollection links = MyNode.SelectNodes(\"//a\");<br /><br />foreach (HtmlNode link in links)<br />{<br />\tHtmlAttribute href = link.Attributes<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22href%22\">\"href\"</a>;<br />\tif (href != null)<br />\t{<br />\t\thref.Value = \"http://www.mysite.com/\" + href.Value;<br />\t}<br />}<br /><br />The code executes, but at the end of the loop MyNode.InnerHtml hasn't changed. What could be going on?<br />",
+    "PostedDate": "2007-08-13T14:19:48.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "44831",
+    "ThreadId": "13744",
+    "Html": "\r\nEven if I refetch \"MyNode\" from the document, its content still hasn't changed:<br /><br />MyNode2 = MyNode.OwnerDocument.DocumentNode.SelectSingleNode(...)<br /><br />MyNode2's InnerHtml is the same as MyNode's, so this isn't just an issue of updates not being \"live\" between class instances.<br />",
+    "PostedDate": "2007-08-13T14:23:21.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

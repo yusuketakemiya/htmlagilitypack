@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "862269",
+    "ThreadId": "364171",
+    "Html": "\r\n<p>For unfortunate reasons, I cannot run a project in anything higher than .Net 2.0. With versions 1.4.4 and 1.4.3, the solution won't compile because it has dependencies requiring a higher .net version. It only builds with version 1.4.2.</p>\r\n",
+    "PostedDate": "2012-07-12T14:12:32.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "862490",
+    "ThreadId": "364171",
+    "Html": "<p>What kind of errors are you getting? Have you used the latest 1.4.5 source code? It builds for 2.0 target in VS2010 using the Solutions\\HtmlAgilityPack.sln</p>",
+    "PostedDate": "2012-07-12T15:43:58.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "863089",
+    "ThreadId": "364171",
+    "Html": "<p>Hi, no, not using the source code, but including the binaries through NuGet. Here's the recipe:</p>\r\n<ol>\r\n<li>In Vs2010, create a new console application.</li>\r\n<li>Go to project properties, and set the target framework to .net 2.0</li>\r\n<li>Remove all references from the project (and using statements in program.cs).</li>\r\n<li>Right-click the project, manage nuget packages, search for HtmlAgilityPack and install (version 1.4.5)</li>\r\n<li>Now build and you get the following output.</li>\r\n</ol>\r\n<p><span>\r\n<p>------ Build started: Project: ConsoleApplication1, Configuration: Debug x86 ------</p>\r\n<p>C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.Common.targets(1561,5): warning MSB3258: The primary reference \"HtmlAgilityPack\" could not be resolved because it has an indirect dependency on the .NET Framework assembly \"mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\" which has a higher version \"4.0.0.0\" than the version \"2.0.0.0\" in the current target framework.</p>\r\n<p>C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.Common.targets(1561,5): warning MSB3258: The primary reference \"HtmlAgilityPack\" could not be resolved because it has an indirect dependency on the .NET Framework assembly \"System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\" which has a higher version \"4.0.0.0\" than the version \"2.0.0.0\" in the current target framework.</p>\r\n<p>C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.Common.targets(1561,5): warning MSB3258: The primary reference \"HtmlAgilityPack\" could not be resolved because it has an indirect dependency on the .NET Framework assembly \"System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\" which has a higher version \"4.0.0.0\" than the version \"2.0.0.0\" in the current target framework.</p>\r\n<p>C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.Common.targets(1561,5): warning MSB3258: The primary reference \"HtmlAgilityPack\" could not be resolved because it has an indirect dependency on the .NET Framework assembly \"System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a\" which has a higher version \"4.0.0.0\" than the version \"2.0.0.0\" in the current target framework.</p>\r\n<p>C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.Common.targets(1561,5): warning MSB3258: The primary reference \"HtmlAgilityPack\" could not be resolved because it has an indirect dependency on the .NET Framework assembly \"System.Data.SqlXml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\" which has a higher version \"4.0.0.0\" than the version \"2.0.0.0\" in the current target framework.</p>\r\n<p>C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.Common.targets(1561,5): warning MSB3258: The primary reference \"HtmlAgilityPack\" could not be resolved because it has an indirect dependency on the .NET Framework assembly \"System.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a\" which has a higher version \"4.0.0.0\" than the version \"2.0.0.0\" in the current target framework.</p>\r\n<p>ConsoleApplication1 -&gt; C:\\Projects\\ConsoleApplication1\\ConsoleApplication1\\bin\\Debug\\ConsoleApplication1.exe</p>\r\n<p>========== Build: 1 succeeded or up-to-date, 0 failed, 0 skipped ==========</p>\r\n</span></p>\r\n<p>So it seems that when the binary was built, it had .net 4.0 versions of mscorlib, system, system.xml, system.configuration, system.data.sqlxml and system.security as references to the project.</p>",
+    "PostedDate": "2012-07-12T20:18:37.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "894516",
+    "ThreadId": "364171",
+    "Html": "<p>Hi,</p>\r\n<p>I have the same problem here integrating the current 1.45 binaries in an .NET 3.5 Application.</p>\r\n<p>dotPeek also shows the assembly as 4.0.</p>\r\n<p>Maybe your .targets broke?</p>",
+    "PostedDate": "2012-08-02T01:41:06.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "894589",
+    "ThreadId": "364171",
+    "Html": "<p>I've the same problem.</p>\r\n<p>Currently working on a .net 2.0 Projekt.<br />I'm in an urgent need to it. Does older versions work with .NET 2.0?</p>",
+    "PostedDate": "2012-08-02T04:12:05.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

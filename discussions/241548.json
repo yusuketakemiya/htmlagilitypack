@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "548420",
+    "ThreadId": "241548",
+    "Html": "\r\n<p>I'm trying to get the following information from Div class &quot;dtc&quot;:</p>\r\n<p>Href (attribute: <a href=\"http://www.someurl.com/etc\">http://www.someurl.com/etc</a> etc etc)<br>\r\nImg src (attribute: <a href=\"http://address.forimages.com.etc\">http://address.forimages.com.etc</a> etc etc)<br>\r\nTitle (from img src: header=[Title] body =[Author] )</p>\r\n<p>Sample HTML&nbsp;looks like this:<br>\r\n<br>\r\n&lt;div class=&quot;dtc&quot; style=&quot;width:4%;border-top:2px solid black;padding-top:5px;&quot;&gt;<br>\r\n&lt;em style=&quot;font-size:19px;font-weight:bold;&quot;&gt;1&lt;/em&gt;<br>\r\n&lt;/div&gt;</p>\r\n<p>&lt;div class=&quot;dtc&quot; style=&quot;width:12%;border-top:2px solid black;padding-top:5px;&quot;&gt;<br>\r\n&lt;a href=&quot;<a href=\"http://www.someurl.com/information/book/123456/\">http://www.someurl.com/information/book/123456/</a>&quot;&gt;<br>\r\n&nbsp;&lt;img src=&quot;<a href=\"http://address.forimages.com/m/87/4387/9781565124387.jpg\">http://address.forimages.com/m/87/4387/9781565124387.jpg</a>&quot; class=&quot;book_image&quot; title=&quot;header=[Title] body=[Author]&quot;&gt;&lt;/a&gt;<br>\r\n&lt;/div&gt;</p>\r\n<p>I've looked at <a href=\"http://blogs.msdn.com/b/saveenr/archive/2010/10/08/scraping-the-nhl-2010-2011-schedule-with-c-linq-and-the-html-agility-pack.aspx\">\r\nhttp://blogs.msdn.com/b/saveenr/archive/2010/10/08/scraping-the-nhl-2010-2011-schedule-with-c-linq-and-the-html-agility-pack.aspx</a>&nbsp;which is similar but not quite the same as to what I'm trying to do.</p>\r\n<p>Any suggestions?&nbsp; I've also tried the example from <a href=\"http://www.4guysfromrolla.com/articles/011211-1.aspx\">\r\nhttp://www.4guysfromrolla.com/articles/011211-1.aspx</a>&nbsp; - it gets hrefs but not the ones within the div class (I'm sure it's because I'm not gettinginto the div class =&quot;dtc&quot; node)</p>\r\n<p>Thank you!</p>\r\n<p>Thor</p>\r\n",
+    "PostedDate": "2011-01-12T19:59:17.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549040",
+    "ThreadId": "241548",
+    "Html": "\r\n<p>What you want to use is HtmlNodeCollection, filter out &quot;div&quot; tags, not the class tag, once you have that collection flip through it to get the contained nodes for any div whose class is &quot;dtc&quot;.</p>\r\n<p>hth, tom</p>\r\n",
+    "PostedDate": "2011-01-13T16:02:26.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549090",
+    "ThreadId": "241548",
+    "Html": "\r\n<p>Tom,</p>\r\n<p>Thanks for the suggestion - I can run with this!</p>\r\n<p>EDIT:</p>\r\n<p>Well, I can almost run with it.&nbsp; I'm working with HAPLight and when using the HtmlNodeCollection, there is no&nbsp;\r\n<span style=\"text-decoration:underline\">SelectNodes</span>&nbsp; method as in this example:</p>\r\n<p><span style=\"font-family:Consolas; color:#2b91af; font-size:x-small\"><span style=\"font-family:Consolas; color:#2b91af; font-size:x-small\"><span style=\"font-family:Consolas; color:#2b91af; font-size:x-small\">HtmlNodeCollection</span></span></span><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\">\r\n nc = doc.DocumentNode.SelectNodes(</span></span><span style=\"font-family:Consolas; color:#a31515; font-size:x-small\"><span style=\"font-family:Consolas; color:#a31515; font-size:x-small\"><span style=\"font-family:Consolas; color:#a31515; font-size:x-small\">&quot;//div&quot;</span></span></span><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\">);</span></span></p>\r\n<p>EDIT 2:</p>\r\n<p>I added HtmlNode.Xpath.cs to the HAPLight directory and built it - this&nbsp;seems to work.</p>\r\n<p>Of course, with one step forward, I'm still two steps back...&nbsp; Not sure if I'm on the right track with the following as I get a null reference :</p>\r\n<p>&nbsp;pbbooklists.LoadHtml(e.Result);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNodeCollection nc = pbbooklists.DocumentNode.SelectNodes(&quot;//div&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (nc != null)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (HtmlNode node in nc)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (node.Attributes[&quot;class&quot;].Value == &quot;dtc&quot;)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(&quot;Working...&quot;);</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n",
+    "PostedDate": "2011-01-13T18:16:53.13-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549708",
+    "ThreadId": "241548",
+    "Html": "\r\n<p>Ok,</p>\r\n<p>Making some progress now with the following code:</p>\r\n<p>var pbbooklists = new HtmlAgilityPack.HtmlDocument();<br>\r\npbbooklists.LoadHtml(e.Result);<br>\r\nHtmlNodeCollection nc = pbbooklists.DocumentNode.SelectNodes(&quot;//div[@class='dtc']&quot;);</p>\r\n<p>if (nc != null)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (HtmlNode node in nc)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(node.Element(&quot;a&quot;).Attributes[&quot;href&quot;].Value.ToString());&nbsp; //Gets href&nbsp;attribute<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch (System.NullReferenceException)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>Not having any success though in trying to get the img src attribute.&nbsp; I thought I would use node.Element(&quot;img&quot;).Attributes[&quot;src&quot;].Value.ToString()) but that's coming back as null.</p>\r\n<p>Any suggestions?&nbsp; (Is the above code looking at the information as tags instead of nodes?)</p>\r\n<p>Thor</p>\r\n",
+    "PostedDate": "2011-01-14T18:57:26.073-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549822",
+    "ThreadId": "241548",
+    "Html": "\r\n<p>This works to get the img layer:</p>\r\n<p>&nbsp;MessageBox.Show(node.Element(&quot;a&quot;).Element(&quot;img&quot;).GetAttributeValue(&quot;src&quot;, null).ToString());</p>\r\n",
+    "PostedDate": "2011-01-15T04:46:07.467-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

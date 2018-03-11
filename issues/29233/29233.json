@@ -1,0 +1,100 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm attempting to use the HtmlDocument.Save(Stream) method to store the Html document out into a stream once a conversion to Xml is done on the Html data passed in.\n \npublic Stream ConvertHtmlToXmlStream(Stream htmlStream)\n{\n\t// Load the stream into the Html Agility pack\n\tHtmlDocument doc = new HtmlDocument();\n \n\t// Attempt to read the document encoding from the file\n\tdoc.OptionReadEncoding = true;\n \n\tdoc.Load(htmlStream, true);\n \n\tdoc.OptionOutputAsXml = true;\n\tdoc.OptionFixNestedTags = true;\n\tdoc.OptionAutoCloseOnEnd = true;\n \n\tMemoryStream stream = new MemoryStream();\n\tdoc.Save(stream);\n \n\tstream.Position = 0;\n\t\n\treturn stream;\n}\n \nThe stream returned is missing some of the data from the end of the input stream.  Is a flush implemented into this method?\n \nNote: The same issue does not occur when using an XmlWriter to write to the stream.",
+    "LastUpdatedDate": "2013-02-21T18:47:12.043-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-10-21T06:51:12.197-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlDocument.Save(Stream)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 29233
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Can be fixed by adding writer.Flush(); to HtmlDocument.cs after line 899 as below:\r\n\r\n        /// <summary>\r\n        /// Saves the HTML document to the specified TextWriter.\r\n        /// </summary>\r\n        /// <param name=\"writer\">The TextWriter to which you want to save. May not be null.</param>\r\n        public void Save(TextWriter writer)\r\n        {\r\n            if (writer == null)\r\n            {\r\n                throw new ArgumentNullException(\"writer\");\r\n            }\r\n            DocumentNode.WriteTo(writer);\r\n            writer.Flush();\r\n        }",
+      "PostedDate": "2010-10-21T09:26:13.157-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-02-02T02:44:32.873-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-04-20T01:22:15.103-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I encountered the same problem.\r\n\r\nActually I don't understand why #29233 is marked Low because the OptionOutputXMl is useless in the current state  as it does not write well-formed XML. I encountered this when I wanted to use HtmlAgilityPack to fix invalid XHTML that I want to process as XML.\r\n\r\nI uploaded a fix today (2011-04-20)",
+      "PostedDate": "2011-04-20T01:30:41.677-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-07-11T13:57:39.843-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The HtmlDocument.Save(Stream) should close the stream as HtmlDocument.Save(string) does. Closing should made by using-blocks.\r\n\r\n        public void Save(Stream outStream)\r\n        {\r\n            using (StreamWriter sw = new StreamWriter(outStream, GetOutEncoding()))\r\n            {\r\n                Save(sw);\r\n            }\r\n        }\r\n\r\n        public void Save(string filename)\r\n        {\r\n            using (StreamWriter sw = new StreamWriter(filename, false, GetOutEncoding()))\r\n            {\r\n                Save(sw);\r\n            }            \r\n        }\r\n",
+      "PostedDate": "2011-07-11T14:17:48.183-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-11-06T08:27:52.333-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-02-02T07:39:21.317-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-03-27T09:34:51.193-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "JAPoole solution works for me.  They should really add this into the next release, especially since the bug has already been solved.",
+      "PostedDate": "2012-03-27T09:35:59.79-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-03-28T01:32:53.437-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:12.043-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

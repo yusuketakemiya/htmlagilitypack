@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "153166",
+    "ThreadId": "45886",
+    "Html": "Hi,\r\n<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>I am new to Parsing HTML and also to HTML Agility Pack. I would like to know if it is possible to get a table from the HTML document assuming I know the name of the Table. </p>\r\n<p>Thanks,</p>\r\n<p>O.O. </p>\r\n",
+    "PostedDate": "2009-02-01T19:41:58.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157878",
+    "ThreadId": "45886",
+    "Html": "Looks like this project is dead.\r\n<p>To others who consider using HTML Agility Pack – beware that you will not get any help, if this does not work for you. </p>\r\n<p>&nbsp;</p>\r\n<p>As far as my original question regarding getting the Tables, consider something like: </p>\r\n<p>&nbsp;</p>\r\n<p>HtmlNodeCollection atts = doc.DocumentNode.SelectNodes(&quot;//table&quot;);</p>\r\n<p>&nbsp;</p>\r\n<p>Remember if you have a Table nested within a Table, it will show up twice. </p>\r\n",
+    "PostedDate": "2009-02-15T15:03:33.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "158092",
+    "ThreadId": "45886",
+    "Html": "Hi.<div><br></div><div><span style=\"font-family:'segoe ui';font-size:13px;color:rgb(48, 51, 45)\">&quot;Remember if you have a Table nested within a Table, it will show up twice.&quot;<br></span></div><div><br></div><div>That's the beauty of using SelectNodes(), you can use SelectSingleNode() if you want to get the first occurance of TABLE element and try researching for XPATH tutorial .. </div><div>if you have something like &lt;table id=&quot;etc&quot;&gt; ... &lt;/table&gt;</div><div>you can just simply use this: HtmlNode n = HtmlDocument.DocumentNode.SelectSingleNode(&quot;table[@id='etc']&quot;)</div><div><br></div><div>Please do take note that this project doesn't cover XPATH tutorial as they made this very wonderfull open source solution for DEALING with XPATHs only.</div><div>If you have questions, bug reports, suggestions on HtmlAgilityPack; the developers would greatly appreciate that and probably answer.<br><br>You can use my Xpath Testbed: <a href=\"http://www.codeplex.com/HtmlXpathTestbed\">http://www.codeplex.com/HtmlXpathTestbed</a></div><div><br></div><div>be productive ;)</div>",
+    "PostedDate": "2009-02-16T07:48:54.64-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

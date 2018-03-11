@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Consider the following sample application:\n\n```\nusing System;\nusing System.Xml;\nusing System.Xml.XPath;\nusing HtmlAgilityPack;\n\nclass Program\n{\n    static void Main(string[] args)\n    {\n        string\n            input = @\"<div id='a1'>\"+\n                      \"<div id='a2'>Test1</div>\"+\n                      \"Test2\"+\n                      \"<div id='a3'>Test3</div>\" +\n                      \"</div>\";\n\n        Console.WriteLine(\"Correct output:\\r\\n\");\n        XmlDocumentOuterXml(input);\n\n        Console.WriteLine(\"\\r\\nIncorrect output:\\r\\n\");\n        HtmlAgilityPackOuterXml(input);\n    }\n\n    private static void XmlDocumentOuterXml(string input)\n    {\n        var doc = new XmlDocument();\n        doc.LoadXml(input);\n        Parse(doc);\n    }\n\n    private static void HtmlAgilityPackOuterXml(string input)\n    {\n        var doc = new HtmlDocument();\n        doc.LoadHtml(input);\n        Parse(doc);\n    }\n\n    private static void Parse(IXPathNavigable doc)\n    {\n        var iterator = doc\n            .CreateNavigator()\n            .SelectDescendants(System.Xml.XPath.XPathNodeType.Element, true);\n        while (iterator.MoveNext())\n        {\n            Console.WriteLine(iterator.Current.OuterXml);\n        }\n    }\n}\n```\n\nThe output is:\n\n```\nCorrect output:\n\n<div id=\"a1\">\n  <div id=\"a2\">Test1</div>Test2<div id=\"a3\">Test3</div></div>\n<div id=\"a2\">Test1</div>\n<div id=\"a3\">Test3</div>\n\nIncorrect output:\n\n<div id=\"a1\" />\n<div id=\"a2\">Test2</div>\n<div id=\"a3\">Test2</div>\n```\n\nWhy the incorrect output?",
+    "LastUpdatedDate": "2013-08-27T07:35:23.437-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-08-27T07:35:23.437-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OuterXml bug?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 34411
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

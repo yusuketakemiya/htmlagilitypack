@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "1009794",
+    "ThreadId": "435260",
+    "Html": "Hi all ,\r<br />\n<br />\n&quot;How can we select all the nodes which does not have the specified list of attributes'<br />\n<pre><code>                                     OR in other words i can say </code></pre>\n\n&quot;How can i remove the unwanted attributes\r<br />\n<br />\nEg: i have tags say &lt;div&gt;&lt;p&gt; and &lt;img&gt; \r<br />\n&lt;div&gt; and &lt;p&gt; tag can have the following attributes<br />\n<pre><code>        1)id\n        2)styleName\n        3)typeName\n</code></pre>\n\nand &lt;img&gt; can have the follwoing <br />\n<pre><code>                     1)source\n                     2)alt\n                     3)id\n                     4)typeName\n                     5)styleName\n</code></pre>\n\nHow can i remove if there are any other attributes?\r<br />\n<br />\n<br />\nI tried htmldoc.DocumentNode.SelectNodes(&quot;//*[not(@id | @styleName | @typeName |@source | @alt)]&quot;);\r<br />\n<br />\nbut it is not working as per my need?\r<br />\n<br />\nAny help will be appriciated!<br />\n",
+    "PostedDate": "2013-03-04T01:58:57.22-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1009826",
+    "ThreadId": "435260",
+    "Html": "I have tried a simple version and it seems to work. can we get a code sample to see whats happening.<br />\n<pre><code>            hp.LoadHtml(&quot;&lt;tr id=\\&quot;test\\&quot;&gt;sdf&lt;td&gt;5&lt;/td&gt;    &lt;td name=\\&quot;tess\\&quot; &gt;&lt;span id=\\&quot;me\\&quot;&gt;Fifth street&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&quot;);\n\n            var tr = hp.DocumentNode.SelectNodes(&quot;//*[not(@id | @name)]&quot;);</code></pre>\n\nthis will return only 1 item in the collection that is a td with the innerText = 5 as expected.\r<br />\n<br />\nThink something else might be the issue.\r<br />\n<br />\nRegards,\r<br />\n<br />\nLee<br />\n",
+    "PostedDate": "2013-03-04T02:43:08.983-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1009830",
+    "ThreadId": "435260",
+    "Html": "Hi Lee,\r<br />\n<br />\nAs it is the &quot;OR&quot; condition it should return all the 3 nodes \r<br />\n1st td has &quot;id&quot;\r<br />\n2nd td has name and \r<br />\nspan has id \r<br />\n<br />\nI'm i correct ?<br />\n",
+    "PostedDate": "2013-03-04T02:48:46.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1009848",
+    "ThreadId": "435260",
+    "Html": "Hi arsh,<br />\n<br />\nIt should return none as it is only to return a node that hasn't got the attribute ID and not got the attribute name.<br />\n<br />\nIn XPath the | symbol means and <br />\n<br />\nhere is a quick link to show the syntax<br />\n<br />\n<a href=\"http://www.w3schools.com/xpath/xpath_syntax.asp\" rel=\"nofollow\">http://www.w3schools.com/xpath/xpath_syntax.asp</a><br />\n<br />\nthey use this sample <br />\n//book/title | //book/price<br />\n<br />\nwhich means return all elements with a title and all elements with a price.<br />\n<br />\nDoes think make sense?<br />\n",
+    "PostedDate": "2013-03-04T03:26:01.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1009853",
+    "ThreadId": "435260",
+    "Html": "Updated above..<br />\n",
+    "PostedDate": "2013-03-04T03:33:04.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1009861",
+    "ThreadId": "435260",
+    "Html": "Oh yes!!  I checked the link  (<a href=\"http://www.w3schools.com/xpath/xpath_syntax.asp\" rel=\"nofollow\">http://www.w3schools.com/xpath/xpath_syntax.asp</a>)\r<br />\n<br />\n<br />\nBut what should we use for &quot;OR&quot; condition ?\r<br />\n<br />\nAnyways Thanks for your quick Response.<br />\n",
+    "PostedDate": "2013-03-04T03:45:06.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1009864",
+    "ThreadId": "435260",
+    "Html": "Is there any other way to select it? If you give me a sample i might be able to help find one.\r<br />\n<br />\nif you dont want to post here you can send to me at lee.jeary  @gmail,com<br />\n",
+    "PostedDate": "2013-03-04T03:53:54.41-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1009876",
+    "ThreadId": "435260",
+    "Html": "My thinking is that with such a wide search criteria you will get a lot of tags that you don't require.\r<br />\n<br />\nfor example a good search would use a class attribute or maybe all td's inside a table with the name of 'test_table' \r<br />\nin the above example could you not just look for all img's / p's / div's\r<br />\nIt might also cause you issues if the developer adds custom attributes to the tag as this would also exclude them from the search.\r<br />\n<br />\nLee<br />\n",
+    "PostedDate": "2013-03-04T04:21:10.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010989",
+    "ThreadId": "435260",
+    "Html": "Lee, \r<br />\n \r<br />\nBut it will be a long looping process., doe's any one knows any option in HAP to achieve this?<br />\n",
+    "PostedDate": "2013-03-05T22:58:05.8-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011574",
+    "ThreadId": "435260",
+    "Html": "Hi Lee, \r<br />\n<br />\nCan linq will become an option to get the result ?<br />\n",
+    "PostedDate": "2013-03-06T22:46:25.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

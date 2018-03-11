@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "9829",
+    "ThreadId": "3123",
+    "Html": "\r\nHi,<br /><br />When translating html to xml, HtmlAgilityPack translates the html entity &nbsp;",
+    "PostedDate": "2006-12-26T13:40:13.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "9832",
+    "ThreadId": "3123",
+    "Html": "\r\nMy text was mangled, or at least my post is not displaying correctly in the browser, so I'm going to try this again:<br /><br />Hi,<br /><br />When translating html to xml, HtmlAgilityPack translates the html entity &amp;nbsp; to &amp;amp;nbsp;.  I believe the accurate translation of a non-breaking space character to xml should be &amp;#160;.<br /><br />The code that demonstrates this problem is simple, something like the following:<br /><br />  HtmlDocument doc = new HtmlDocument();<br />  doc.OptionOutputAsXml = true;<br />  // Load an html file that has an &nbsp;",
+    "PostedDate": "2006-12-26T13:47:00.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "9936",
+    "ThreadId": "3123",
+    "Html": "\r\nHere's some more information on my previous post.  I am trying to use HtmlAgilityPack to read html that I then want to process with xslt.  I load an HtmlDocument with the html, call CreateNavigator() and use the returned XPathNavigator to select the html element (which is under a span element that HtmlAgilityPack adds as the root node for reasons that are unclear to me).  I then pass the html element to the xslt processor.  The flow from HtmlDocument.CreateNavigator() to xslt processor is using the standard .NET xml api's.<br /><br />The problem that I am running into is that character entities like &amp;nbsp; in the original html are getting translated to &amp;amp;nbsp; in the html that the xslt processor produces.  This problem is true for character entities is general - &amp;lt; is translated to &amp;amp;lt; and so on.  You can also see this problem in the string that is returned by HtmlDocument.CreateNavigator().OuterXml.<br /><br />I tracked the problem down to HtmlNodeNavigator.Value.  HtmlNodeNavigator overrides the base class implementation from XPathNavigator.  Evidently there's something in the MS xml/xpath classes that will replace every &amp; in the string that Value returns with &amp;amp;.<br /><br />If I change HtmlNodeNavigator.Value to replace the character entities with the actual character they represent, then the html that the xslt processor produces is fine.<br /><br />The change I tried as an experiment was this:<br /><br />  case HtmlNodeType.Text:<br />    InternalTrace(\"&gt;\" + ((HtmlTextNode)_currentnode).Text);<br />    return ((HtmlTextNode)_currentnode).Text.Replace(\"&amp;nbsp;\", \"\\u00A0\").Replace(\"&amp;lt;\", \"&lt;\");<br /><br /><br />The effect was that the html produced by the xslt transformation contained &amp;nbsp; rather than &amp;amp;nbsp; and &amp;lt; rather than &amp;amp;lt;.  Incidently, the change has no effect on the output from HtmlDocument.Save, which was what I was originally reporting on, so that method goes through some other pathway.<br />",
+    "PostedDate": "2006-12-27T18:06:49.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "10172",
+    "ThreadId": "3123",
+    "Html": "\r\nHi,<br /><br />All these entities issues are a real nightmare :-) mostly because everybody really wants a different output at the end of the days.<br /><br />I know the current html to xml implementation satisfies many people, but the source is there to be modified :-)<br /><br />Concerning the span root element added, the reason is simple: every Xml document needs a root element (unlike HTML), so the library adds one when there is not a default one (usually the HTML element).<br />",
+    "PostedDate": "2007-01-01T05:37:19.02-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "10352",
+    "ThreadId": "3123",
+    "Html": "\r\nYes, it is a pain.<br /><br />One thing I forgot to mention that might convince you how this should be handled:<br /><br />I used the .NET class XmlDocument to load an xml file with character entities and then created a XPathNavigator from that.  When I called XPathNavigator.Value, I could see that entities like &amp;#160; in the original xml were translated to the corresponding unicode character.  Based on that example of how the base class XPathNavigator is handling character entities in xml, it seems like the subclass HtmlNodeNavigator should do the same for html character entities.<br /><br />I'll send you the changes if I end up making any.<br /><br />As for the span element that is being added to the root - since I am loading a single html file, why isn't the html element from that being used as the root?  What I am seeing is that there is a span element at the root, with a single html element underneath that.  It seems to me that the html element could be used as the root.<br />",
+    "PostedDate": "2007-01-03T11:55:59.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "413962",
+    "ThreadId": "203735",
+    "Html": "<p>Hi,</p>\r\n<p>I am new to XML and MHTML Parsing,</p>\r\n<p>I have a requirement to Extract data from an .mhtml file,which is of&nbsp;40 MB,&nbsp;I don't know how to do it. I am using VB.net (Visual Studio- 2005)</p>\r\n<p>My File Structure will be Something like this:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">html</span><span style=\"color:Blue\">&gt;</span>\r\n\r\n</pre>\r\n<pre>-----</pre>\r\n<pre>-----\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">h1</span><span style=\"color:Blue\">&gt;</span> 1.1 My Header1 [Key1] <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">h1</span><span style=\"color:Blue\">&gt;</span>\r\n\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">h2</span><span style=\"color:Blue\">&gt;</span> 1.1.2 My Sub Header1 [Key2] <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">h2</span><span style=\"color:Blue\">&gt;</span>\r\n\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">h3</span><span style=\"color:Blue\">&gt;</span> 1.1.2.1 My Child Header1 [Key3] <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">h3</span><span style=\"color:Blue\">&gt;</span>\r\n\r\n----\r\n\r\n----\r\n\r\n\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">html</span><span style=\"color:Blue\">&gt;</span></pre>\r\n<pre>I need to Extract all the Keys [Key1, Key2, Key3] Separately and it's corresponding Header tag, I need to Store them in a tree like pattern, kindly let me know how to do this using the HtmlAgilityPack.</pre>\r\n<pre> \r\nThanks in Advance</pre>\r\n</div>",
+    "PostedDate": "2010-03-03T21:30:20.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

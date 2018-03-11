@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "60242",
+    "ThreadId": "18427",
+    "Html": "\r\nHi.. I'm a newbie to VB.NET and want to use HTMLAgility in VB.NET 2005 Project . Any hints please..<br /><br />Thanks and Regards,<br />Rajeev.<br /><br />",
+    "PostedDate": "2007-11-28T07:42:06.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61358",
+    "ThreadId": "18427",
+    "Html": "\r\nYou need C# for HTMLAgility for any things like compile or error/bugfixing. In VB.NET the you can add a reference to the compiled binary (DLL/Assembly) of HTMLAgility to use it.<br />",
+    "PostedDate": "2007-12-05T12:26:51.57-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

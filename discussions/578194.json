@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1343693",
+    "ThreadId": "578194",
+    "Html": "<pre><code>url = await getstring.GetAsync(&quot;http://dictionary.cambridge.org/dictionary/british/&quot;+msg);\nhtmldocument.LoadHtml(url);\nvar doc = htmldocument.DocumentNode.SelectNodes(&quot;//div[starts-with(@class, 'sense-block')]&quot;);\n            foreach (var div in doc)\n            {\n                Assets.Dictionary Dic = new Assets.Dictionary();\n                string vob = div.SelectSingleNode(&quot;.//span[@class='hw']&quot;).ToString();\n                string word = div.SelectSingleNode(&quot;.//span[@class='pos']&quot;).InnerText.Trim();\n                string pra = div.SelectSingleNode(&quot;.//span[@class='guideword']&quot;).InnerText.Trim();\n                if(vob==null &amp;&amp; worb==null &amp;&amp; pra==null)\n                {\n                    Dic.Example = div.SelectSingleNode(&quot;.//span[@class='def-block']&quot;).InnerText.Trim();\n                    Dic.Explaining = div.SelectSingleNode(&quot;.//span[@class='def']&quot;).InnerText.Trim();\n\n                    Lst.Add(Dic);\n               \n                }\n}</code></pre>\n\nIf retrieved data are Ok but url,vob,word,doc,pra is null then application were broken(break right at url or vob...), I can't check it as if tag.<br />\n<br />\nThat meaning is I can't to catch event as below code.<br />\n<pre><code> if(vob==null &amp;&amp; worb==null &amp;&amp; pra==null)\n                {\n                    Dic.Example = div.SelectSingleNode(&quot;.//span[@class='def-block']&quot;).InnerText.Trim();\n                    Dic.Explaining = div.SelectSingleNode(&quot;.//span[@class='def']&quot;).InnerText.Trim();\n\n                    Lst.Add(Dic);\n               \n                }</code></pre>\n\n",
+    "PostedDate": "2015-01-20T21:25:18.57-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

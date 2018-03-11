@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "165203",
+    "ThreadId": "49376",
+    "Html": "Hi,<div><br></div><div>HtmlAgilityPack can't extract texts on OPTION element.</div>",
+    "PostedDate": "2009-03-05T22:09:32.79-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166354",
+    "ThreadId": "49376",
+    "Html": "post sample code buddy<br>\r\n",
+    "PostedDate": "2009-03-09T22:01:43.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166359",
+    "ThreadId": "49376",
+    "Html": "<div>Heh. It's just a simple expression anyway <span style=\"font-weight:bold\">&quot;//select/option&quot;<br></span></div><div><span style=\"font-weight:bold\"><br></span></div><div>HtmlDocument htmldoc = new HtmlDocument()</div><div>HtmlNodeCollection nodeColl;</div><div><br></div><div>htmldoc.LoadHtml(&quot;&lt;html codes here&gt;&quot;);</div><div>nodeColl = htmldoc.DocumentElement.SelectNodes(&quot;//select/option&quot;);</div><div><br></div><div>if(nodeColl!=null) {</div><div><span style=\"white-space:pre\">\t</span>foreach(HtmlNode thisNode in nodeColl) {<br></div><div><span style=\"white-space:pre\">\t\t</span>Console.WriteLine(thisNode.InnerText);<br></div><div><span style=\"white-space:pre\">\t</span>}</div><div>}</div><div><br></div><div><span style=\"font-style:italic\">I wonder why other's can't replicate/simulate this simple error</span><br></div>",
+    "PostedDate": "2009-03-09T22:23:25.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229898",
+    "ThreadId": "49376",
+    "Html": "<p>The text of Option nodes can be found in NextSibling.Innertext</p>\r\n<p>(Not sure if this is a standard way to model the structure though)</p>",
+    "PostedDate": "2009-09-01T14:23:57.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

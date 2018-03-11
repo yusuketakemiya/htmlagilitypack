@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1262702",
+    "ThreadId": "550594",
+    "Html": "How does this bug can repair?\r<br />\n&lt;root&gt;\r<br />\n  &lt;record&gt;<br />\n<pre><code>&lt;ti&gt;ajfjafe fi J k&lt;6.02 afjef&lt;/ti&gt;</code></pre>\n\n&lt;/record&gt;\r<br />\n&lt;/root&gt;\r<br />\nDocument.DocumentNode.SelectSingleNode (&quot;//root&quot;) is the result of the:\r<br />\n&lt;root&gt;\r<br />\n  &lt;record&gt;<br />\n<pre><code>&lt;ti&gt;ajfjafe fi J k&lt;6.02&gt;&lt;/6.02&gt;&lt;/ti&gt;</code></pre>\n\n&lt;/record&gt;\r<br />\n&lt;/root&gt;\r<br />\nWhy the &lt;6.02 will become the &lt;6.02&gt;&lt;/6.02&gt;?<br />\n",
+    "PostedDate": "2014-07-04T02:18:13.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "695905",
+    "ThreadId": "278867",
+    "Html": "\r\n<p>m trying to list all nodes in the HTML form &nbsp;dynamically using HTML agility pack, meaning that I don't know the names of the Attributes and the input names. The problem is when I want to get the label corresponding to each input.</p>\r\n<pre><code><span>&lt;</span><span>form name</span><span>=</span><span class=\"str\">&quot;input&quot;</span><span> action</span><span>=</span><span class=\"str\">&quot;html_form_action.asp&quot;</span><span> method</span><span>=</span><span class=\"str\">&quot;get&quot;</span><span>&gt;</span><span><br></span><span>Username</span><span>:</span><span> </span><span>&lt;</span><span>input type</span><span>=</span><span class=\"str\">&quot;text&quot;</span><span> name</span><span>=</span><span class=\"str\">&quot;user&quot;</span><span> </span><span>/&gt;</span><span><br></span><span>&lt;</span><span>input type</span><span>=</span><span class=\"str\">&quot;submit&quot;</span><span> value</span><span>=</span><span class=\"str\">&quot;Submit&quot;</span><span> </span><span>/&gt;</span><span><br></span><span>&lt;/</span><span>form</span><span>&gt;</span><span><br></span></code></pre>\r\n<pre><code><span><br></span></code></pre>\r\n<pre><code><span>Username  Input&quot;user&quot;</span></code></pre>\r\n<p>So here I want to write Username then the input, it seems really obvious in this example but sometimes they're not direct siblings, there would be many hidden inputs, or other tags.</p>\r\n<p>Another example:</p>\r\n<pre><code><span>&nbsp; &nbsp;</span><span>&lt;</span><span>input type</span><span>=</span><span>hidden name</span><span>=</span><span class=\"str\">&quot;startDate&quot;</span><span>&gt;</span><span><br><br>&nbsp; &nbsp; &nbsp; </span><span>&lt;</span><span>TR</span><span>&gt;</span><span> &nbsp;</span><span>&lt;</span><span>TD bgColor</span><span>=</span><span>#008088 colSpan=2 class=&quot;headfont&quot;&gt;</span><span><br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span>&lt;</span><span>FONT color</span><span>=</span><span>#FFFFFF&gt; &nbsp;&lt;B&gt;* Enter ur username and password&lt;/B&gt; &lt;/FONT&gt;</span><span><br><br>&nbsp; &nbsp; &nbsp; </span><span>&lt;/</span><span>TD</span><span>&gt;&lt;/</span><span>TR</span><span>&gt;</span><span><br><br>&nbsp; &nbsp; &nbsp; </span><span>&lt;</span><span>TR</span><span>&gt;</span><span><br><br>&nbsp; &nbsp; &nbsp; &nbsp;</span><span>&lt;</span><span>TD bgColor</span><span>=</span><span>#9ccdcd class=&quot;datafont&quot;&gt;&lt;FONT color=black&gt;Username&lt;/FONT&gt;&lt;/TD&gt;</span><span><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span>&lt;</span><span>TD bgColor</span><span>=</span><span>#9ccdcd class=&quot;datafont&quot;&gt;</span><span><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span>&lt;</span><span>INPUT tabIndex</span><span>=</span><span>1</span><span> name</span><span>=</span><span>stuNum <br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; autocomplete</span><span>=</span><span class=\"str\">&quot;off&quot;</span><span> size</span><span>=</span><span class=\"str\">&quot;20&quot;</span><span>&gt;&lt;/</span><span>TD</span><span>&gt;&lt;/</span><span>TR</span><span>&gt;</span><span><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span>&lt;</span><span>TR</span><span>&gt;</span><span><br></span></code></pre>\r\n<p>Am using C# winforms in my project .</p>\r\n<p>I have few ideas but they will take lots of time,so I thought since am new to HTML agility pack there would be a way or some shortcut to get it,,,Any suggestions?</p>\r\n<pre style=\"padding-left:30px\"><span style=\"font-family:'Segoe UI','Microsoft Sans Serif',Arial,Geneva,sans-serif\"><span style=\"white-space:normal\"><br></span></span></pre>\r\n",
+    "PostedDate": "2011-11-09T07:44:08.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "696814",
+    "ThreadId": "278867",
+    "Html": "<p>I'm trying to extract content as well from an HTML file and I'm having difficulty doing so as well... Were you successful doing what you wanted?</p>",
+    "PostedDate": "2011-11-10T22:18:09.797-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "696815",
+    "ThreadId": "278867",
+    "Html": "<p>What content exactly do u want to extract? am still writing the code to get the label corresponding to the input field! :(</p>",
+    "PostedDate": "2011-11-10T22:20:29.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "697284",
+    "ThreadId": "278867",
+    "Html": "<p>Hey dkilani,</p>\r\n<p>I want to extract all the links to all files available in the page.... Like jpgs and others and store all of those links in a collection.</p>\r\n<p>Thanks,</p>",
+    "PostedDate": "2011-11-11T22:49:07.867-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "697316",
+    "ThreadId": "278867",
+    "Html": "<p>1) use HTML Agility pack to transform input HTML into XHTML</p>\r\n<p>2) use XHTML with a XDocument or XElement and LINQ to XML to query for A href</p>\r\n<p>Agility pack linq is not as deep as LINQ to XML,, so avoid it.</p>",
+    "PostedDate": "2011-11-12T02:48:56.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "697317",
+    "ThreadId": "278867",
+    "Html": "<p>XElement x = ...;</p>\r\n<p>var hrefs =from element in x.Descendants(\"a\") let href=(string)element.Attribute(\"href\") where !String.IsNullOrWhitespace(href) select href;</p>\r\n<p>You can select the element if you prefer.</p>",
+    "PostedDate": "2011-11-12T02:51:23.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "697320",
+    "ThreadId": "278867",
+    "Html": "<p>Interesting!! what do you mean by not as deep?<br />I have few questions&nbsp;regarding&nbsp; c# and HTML agility pack and the c# web browser! if you don't mind!<br />I logged in to a page , but now When I &nbsp;want to take the link from an iframe to load its data ,am having what seems to be some sessions crisis! it won't direct me since am just basically copying and pasting the link as a normal URL! Any suggestions ? or a function I can use?</p>",
+    "PostedDate": "2011-11-12T02:58:44.977-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "698122",
+    "ThreadId": "278867",
+    "Html": "<p>Does the solution provided by softlion apply to my question too? If so, do you guys mind explaining to me how to extract the links from the provided methods given that I passed the webpage source string to it?</p>\n<p>Thanks,</p>",
+    "PostedDate": "2011-11-14T15:16:10.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

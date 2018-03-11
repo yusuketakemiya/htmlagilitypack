@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "this should not be the default behavior, why change the value of the attribute. \nI know the html standard is that attribute names are case insensitive, but today there is modern frameworks like Angular 2 who has crucial case sensitive attributes, otherwise it will throw a run time exception, the web is evolving, this is how it will be in the future, why shouldn't attributes contain higher case letters.",
+    "LastUpdatedDate": "2016-06-02T21:37:36.4-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-06-02T21:37:36.4-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlAttributeCollection changes attributes names to lowercase",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43432
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

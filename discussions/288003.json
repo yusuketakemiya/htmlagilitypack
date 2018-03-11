@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "733124",
+    "ThreadId": "288003",
+    "Html": "<p>Hello guys,</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I have written an application to parse the html code in order to pick up the text from the html.I have use the HAP in my application and it works well at the first,And then I have meet a problem.I have met the code like this:</p>\n<div>&lt;div&gt;</div>\n<div>some other code</div>\n<div>&lt;div&gt;</div>\n<div>Text0</div>\n<div>&lt;/div&gt;</div>\n<div><span><span>Text1</span></span><span>&nbsp;</span></div>\n<div><span>&lt;<span>br</span><span>&gt;</span></span></div>\n<div><span><span>Text2</span></span></div>\n<div><span>&lt;/<span>div</span>&gt;</span></div>\n<div><span><br /> </span></div>\n<div>&nbsp;&nbsp; I just mean that I can pick the Text0 up from the html code normally,but when I want to pick up the Text1 and Text 2,It does'nt work.So I just want to know how to solve the problem.Without the node I can't pick the Text1 and Text2 up.Please help!Thank  you!</div>\n<div>'</div>\n<div><span>&nbsp;&nbsp; <br /> </span></div>",
+    "PostedDate": "2012-01-31T03:00:41.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

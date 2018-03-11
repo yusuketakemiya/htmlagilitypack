@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "235708",
+    "ThreadId": "69283",
+    "Html": "<p>hi all,</p>\r\n<p>I have a problem getting this pack fully.</p>\r\n<p>After I get a div by GetElementbyId into HtmlNode I want to get the first table in it and parse it (or something like that) into System.Web.UI.HtmlControls.HtmlTable.<br>But I cant get how to retrive the first table that apper on the div and how to parse it to HtmlTable.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-09-17T11:13:18.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235732",
+    "ThreadId": "69283",
+    "Html": "<p>And another thing how can I get a div only by class name(its unique if it make any differents)?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-17T12:29:46.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "511270",
+    "ThreadId": "232005",
+    "Html": "\r\n<p>Ok guys, Ive got a problem...<br>\r\n<br>\r\nHeres my code:<br>\r\n[code]<br>\r\nstring html = wc.DownloadString(&quot;http://www.bungie.net/Stats/Reach/Commendations.aspx?player=&quot; &#43; PlayerName &#43; &quot;#Campaign&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.LoadHtml(html);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (HtmlNode cpNode in doc.DocumentNode.SelectNodes(&quot;//img[@id[contains(@id,'cpCommendations')]]&quot;))<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cp.Add(cpNode.Attributes[&quot;src&quot;].Value);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpName.Add(cpNode.Attributes[&quot;title&quot;].Value);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n[/code]<br>\r\n<br>\r\nThis goes to the bungie.net website, finds all of the Commendations with an ID that contains cpCommendations, and then adds them into a list. THe list is passed to a new form later and it populates with the list contents (image url's)<br>\r\n<br>\r\nHowever, sometimes this code does not work! On occasion (actually quote often) it seems that cpNode is null. I cannot for the life of me figure this one out!<br>\r\n<br>\r\nAnyone here give me a hand?</p>\r\n",
+    "PostedDate": "2010-10-22T12:33:20.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "512628",
+    "ThreadId": "232005",
+    "Html": "\r\n<p>I would modify your code to:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">string</span> html = wc.DownloadString(<span style=\"color:#a31515\">&quot;http://www.bungie.net/Stats/Reach/Commendations.aspx?player=&quot;</span> &#43; PlayerName &#43; <span style=\"color:#a31515\">&quot;#Campaign&quot;</span>);\r\nHtmlAgilityPack.HtmlDocument doc = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlDocument();\r\ndoc.LoadHtml(html);\r\n<span style=\"color:blue\">var</span> nodes = doc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//img[@id[contains(@id,'cpCommendations')]]&quot;</span>);\r\n<span style=\"color:blue\">if</span> (nodes == <span style=\"color:blue\">null</span>)\r\n{\r\n<span style=\"color:green\">  //do something</span>\r\n<span style=\"color:blue\">  throw</span> <span style=\"color:blue\">new</span> ArgumentException();\r\n}\r\n\r\n<span style=\"color:blue\">foreach</span> (HtmlNode cpNode <span style=\"color:blue\">in</span> nodes)\r\n{\r\n  cp.Add(cpNode.Attributes[<span style=\"color:#a31515\">&quot;src&quot;</span>].Value);\r\n  cpName.Add(cpNode.Attributes[<span style=\"color:#a31515\">&quot;title&quot;</span>].Value);\r\n}\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>Back to problem. I think problem is in xpath expression. Maybe in some situation, web page adds white space to id, or changes some letter to upper/lowerletter or without id at all. I would suggest you set break point near throw new exception and analyse\r\n doc source, play with xpath in Watch window of debugger and I'am sure that you will find problem pretty quick. Good luck.</p>\r\n",
+    "PostedDate": "2010-10-26T04:16:59.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "515181",
+    "ThreadId": "232005",
+    "Html": "\r\n<p>Thanks for the reply, sorry it took so long.</p>\r\n<p>I manged to get it working by redownloading the webpage in a while loop and checking for the text I was going to get before I tried parsing with HAP.</p>\r\n",
+    "PostedDate": "2010-10-31T11:49:27.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

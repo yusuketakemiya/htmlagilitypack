@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "482666",
+    "ThreadId": "224221",
+    "Html": "<p>I have just started using HAP and find it very useful. I am having trouble getting the html for a multi-frame page returned by google translate service. The html returned is from the first frame containing the frameset tag. I cant get HAP to get the html for the frame containing the translation itself. Using the link from the frame's src attribute again load a multi-frame page and the html returned is again the first frame. Any ideas?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-08-20T03:15:22.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "539685",
+    "ThreadId": "224221",
+    "Html": "\r\n<p>you have to use this URL that bypass the &quot;Instant search&quot; request. <br>\r\n<a href=\"http://www.google.com/search?num=39&q=query\">http://www.google.com/search?num=39&amp;q=query</a></p>\r\n<p>let me know if that work out for you.</p>\r\n<p>-V</p>\r\n",
+    "PostedDate": "2010-12-22T18:34:31.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540180",
+    "ThreadId": "224221",
+    "Html": "\r\n<p>Thanks for the reply. I changed my code sometime ago to use the Google Translate API to work directly with the foreign language page which was single frame page.</p>\r\n",
+    "PostedDate": "2010-12-23T23:41:55.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

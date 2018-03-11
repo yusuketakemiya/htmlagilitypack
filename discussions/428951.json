@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "984292",
+    "ThreadId": "428951",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>&nbsp; I am using HTML Agility Pack 1.4.6 in my program. It is a Small Program. I am getting a HTML Tag Value from Web Page.So I am using HTML Agility Pack. It is very useful to me. It is a Lightweight Tool for reading HTML Tag. Could you please tell me\r\n How can i get mail Id from web Page using&nbsp; HTML Agility Pack? Sometimes it doesn't read Title Tag also.</p>\r\n<p>For Eg:</p>\r\n<p>&lt;Title&gt;</p>\r\n<p>Lakshmi Narayanan -Software Engineer</p>\r\n<p>&lt;/Title&gt;</p>\r\n<p>So How can i read those values?</p>\r\n<p>Thanks and Regards,</p>\r\n<p>Lakshmi Narayanan.S</p>\r\n",
+    "PostedDate": "2013-01-08T20:14:38.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

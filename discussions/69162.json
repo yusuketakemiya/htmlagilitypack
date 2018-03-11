@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "235323",
+    "ThreadId": "69162",
+    "Html": "<div>\r\n<p>Hi,</p>\r\n<p>I've been struggling to find an exmample of some C# code (I'm using C# Visual Studio 2008 express) that can programmatically save an entire web page (given a URL) including the images and formatting (e.g. CSS). The intension is that in a subsequent I'd ship this off (not sure how yet) so it could be view later via a browser.&nbsp; I've been put onto this library by someone.</p>\r\n<p>Any have some sample code they could post or refer me to that implements a method that saves an entire web page (given a URL) to file, including images/css/etc to a subdirectory, in a way that the links in the actual initial HTML file know to reference the images in the subdirectory.&nbsp; Effectively just emulating the fire &quot;save entire page&quot; function but programmatically in C#?</p>\r\n<p>thanks</p>\r\n<p>&nbsp;</p>\r\n</div>",
+    "PostedDate": "2009-09-16T13:56:49.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235334",
+    "ThreadId": "69162",
+    "Html": "<p>I'm not sure HAP would be the ideal solution for this. It would take quite a bit of code to go through, get all tags that can have urls, download the items, change the urls.&nbsp;</p>\r\n<p>I would highly recommend http://www.httrack.com/ for doing this. There's a FireFox extension SpiderZilla and a Windows Front end for it. It is meant for downloading entire pages/sites for offline use. You could just write some C# code to kick off an httrack process to do the heavy lifting.</p>\r\n<p>If you really need to do it in C#, I'd suggest using the new 1.4.0 branch, you can use LINQ against HAP with that one.</p>\r\n<p>Here's just some psuedo C# code, you can accomplish the same thing with the current trunk version using the navigator and XPATH.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">var</span> images = doc.DocumentNode.Decendents(<span style=\"color:#A31515\">&quot;img&quot;</span>);\r\n\r\n<span style=\"color:Blue\">foreach</span>(HtmlNode image <span style=\"color:Blue\">in</span> images)\r\n{\r\n   <span style=\"color:Blue\">string</span> image = image.Attributes[<span style=\"color:#A31515\">&quot;src&quot;</span>].Value;\r\n   <span style=\"color:Green\">//do cleanup on the image url (relative, external)</span>\r\n  <span style=\"color:Green\">//Do an HttpWebRequest to download the image</span>\r\n  <span style=\"color:Green\">//Place it in a directory based on the original path</span>\r\n  image.Attributes[<span style=\"color:#A31515\">&quot;src&quot;</span>].Value = newPath;</pre>\r\n</div>\r\n<div style=\"color:Black;background-color:White\">}<br><br>Basically you'd want to set up a list of tags that have things to download and run through them.</div>\r\n<div style=\"color:Black;background-color:White\">\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">var</span> sources = <span style=\"color:Blue\">new</span> List&lt;Source&gt;{\r\n                               <span style=\"color:Blue\">new</span> Source {tag=<span style=\"color:#A31515\">&quot;a&quot;</span>, attribute=<span style=\"color:#A31515\">&quot;href&quot;</span>},\r\n                               <span style=\"color:Blue\">new</span> Source {tag=<span style=\"color:#A31515\">&quot;img&quot;</span>, attribute=<span style=\"color:#A31515\">&quot;src&quot;</span>}<span style=\"color:Green\">//and so on</span>\r\n};\r\n\r\n</pre>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-16T14:32:37.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235386",
+    "ThreadId": "69162",
+    "Html": "<p>thanks Darth,</p>\r\n<p>As I'm new to C#/.NET I might go for the option &quot;current trunk version using the navigator and XPATH&quot; - might be a bit easier than having to get across LINQ for me...</p>\r\n<p>If it's easy do you have an sample code for using this approach to tackle the problem, or pointers to an example?&nbsp;</p>\r\n<p>thanks again</p>",
+    "PostedDate": "2009-09-16T17:51:25.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235394",
+    "ThreadId": "69162",
+    "Html": "<p><a href=\"http://www.w3schools.com/XPath/xpath_syntax.asp\">http://www.w3schools.com/XPath/xpath_syntax.asp</a> for examples of how to do xpath. For using it with HAP you can see Simon's original post about it.<a href=\"http://smourier.blogspot.com/2005/05/net-html-agility-pack-how-to-use.html\"> http://smourier.blogspot.com/2005/05/net-html-agility-pack-how-to-use.html</a></p>\r\n<p>LINQ works more like SQL</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">var</span> results = <span style=\"color:Blue\">from</span> node <span style=\"color:Blue\">in</span> doc.DocumentElement.Descendants()\r\n                  <span style=\"color:Blue\">where</span> node.Name==<span style=\"color:#A31515\">&quot;a&quot;</span> || node.Name == <span style=\"color:#A31515\">&quot;img&quot;</span>\r\n                  <span style=\"color:Blue\">select</span> node;\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>that will get you list of all the a and img nodes on the page.</p>",
+    "PostedDate": "2009-09-16T18:26:22.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "3430",
+    "ThreadId": "1048",
+    "Html": "\r\nHi Simon,<br />I am using HtmlAgilityPack to the hilt. Thx to you. <br />I am very successful in scraping HTML using your toolkit and XPATH.<br />However how can i scrape javascript without resorting to regexp?<br />As you might have noticed, recently, lot of sites are using \"dynamic scripting\" technique to pass data from the server instead of traditional HTML!!!<br /><br /><br />Example:<br />&lt;script text=\"text/javascript\" language=\"javascript\"&gt;<br />var myArr = new Array();<br />var myRt=false;<br />myArr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=0\">0</a>={Wh:'1715',Nm:'Tommy'} ;<br />myArr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=1\">1</a>={Wh:'1715',Nm:'Tommy'} ;<br />myArr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=2\">2</a>={Wh:'1715',Nm:'Tommy'} ;<br />myArr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=3\">3</a>={Wh:'1715',Nm:'Tommy'} ;<br />myArr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=4\">4</a>={Wh:'1715',Nm:'Tommy'} ;<br />var myDArr= new Array();<br />var myDRt=false;<br />myDArr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=0\">0</a>={Wh:'1615',Nm:'Greg'} ;<br />myDArr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=1\">1</a>={Wh:'1615',Nm:'Greg'} ;<br />myDArr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=2\">2</a>={Wh:'1615',Nm:'Greg'} ;<br />myDArr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=3\">3</a>={Wh:'1615',Nm:'Greg'} ;<br />&lt;/script&gt;<br /><br />Any help would be appreciated.<br /><br />Thanks<br />Indo.<br /><br />",
+    "PostedDate": "2006-08-26T09:59:10.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3431",
+    "ThreadId": "1048",
+    "Html": "\r\nHi Simon,<br />My above question will come in handy while scraping AJAX/ATLAS based websites where lotta javascripts are used. Please note I am talking about Javascript and not JSON, for which many deserializers are available.<br /><br />Any hints would be greatly appreciated.<br /><br />Thanks<br />Indo.<br />",
+    "PostedDate": "2006-08-26T10:42:19.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3747",
+    "ThreadId": "1048",
+    "Html": "\r\nHi, Simon.<br />Love the tool - I have the same question, and am wondering if your tool supports fn:substring-before(fn:substring-after...?<br /><br />Thanks!<br />",
+    "PostedDate": "2006-08-31T11:34:16.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3826",
+    "ThreadId": "1048",
+    "Html": "\r\nHi guys,<br /><br />Unfortunately, SCRIPT and STYLE tags are completely opaque to the Html Agility Pack. It just considers it as a blob of text (CData actually). If you think about it, the Internet Explorer internal parser (same with other browsers) does quite the same, it parses the content of the SCRIPT tag, and hands it off directly to the script engine in question (JSCript.dll, VBScript.dll, ...), together with a living object model (the HTML DOM). So the whole thing works, but not statically, not without a script engine. It works, because some piece of code actually runs (including hacker code!)<br /><br />So there is no out-of-the-box solutions to your problems... Sorry :P<br />",
+    "PostedDate": "2006-09-01T13:12:09.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

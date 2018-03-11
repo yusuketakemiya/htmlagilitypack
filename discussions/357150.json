@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "840983",
+    "ThreadId": "357150",
+    "Html": "\r\n<p>My project notices me that I need reference the System.Xml 2.0.0. However. I have referenced System.Xml 2.0.5.</p>\r\n<p>It seem like that they are not compatible</p>\r\n",
+    "PostedDate": "2012-05-25T08:38:18.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

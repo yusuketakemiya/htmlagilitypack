@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello, \ni got the DLL Version 1.4.0.0, is in a higher DLL version already XHTML-Conformity fixed/inerhited?\nCause i render a control through the HTML-AgilityPack with , and HTML-AgilityPack makes:  (.InnerHTML in NodeElement)\n\nHope you can help me.\nBest regards\nHasenzhan",
+    "LastUpdatedDate": "2013-02-21T18:46:56.543-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-10-17T03:31:21.45-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XHTML - Conformity",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33246
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

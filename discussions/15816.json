@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "51346",
+    "ThreadId": "15816",
+    "Html": "\r\nI have parsed some html, in which are table with 3 rows. But the DOM is:<br /><br />body(1)\t<br />---table(6)\t<br />------#text(0)<br />------tr(3)\t<br />------#text(0)<br />------tr(5)<br />------#text(0)<br />------tr(3)<br /><br /><br />where #text(0) - HTMLNode with \" \" InnerText and \" \" InnerHtml. <br /><br />How can I do this: do not parse such \"void\" nodes?<br />",
+    "PostedDate": "2007-09-30T14:19:45.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58662",
+    "ThreadId": "15816",
+    "Html": "\r\nThis is not directly possible. You can however skip the empty nodes using XPATH, as SelectNodes(\"//*<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=text%28%29%20%21%3d%20%27%27\">text() != ''</a>);<br />",
+    "PostedDate": "2007-11-17T09:57:47.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

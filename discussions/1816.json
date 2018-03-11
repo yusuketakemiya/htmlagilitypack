@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "5704",
+    "ThreadId": "1816",
+    "Html": "\r\nHi!<br /><br />I'm interested in using the Html Agility pack, but need some doc.  I've searched, but can't find any anywhere.  Is there any documentation to help get me started?<br /><br />Thanks.<br /><br />- Dave<br />",
+    "PostedDate": "2006-10-12T11:11:50.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "6041",
+    "ThreadId": "1816",
+    "Html": "\r\nAnyone?  Simon?  In the post below by erxuan, he refers to a \"help document\", so it must exist...  Where can I find this?<br /><br />Thanks.<br /><br />- Dave<br />",
+    "PostedDate": "2006-10-19T09:58:48.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "7209",
+    "ThreadId": "1816",
+    "Html": "\r\nHi,<br /><br />There is no other documentation than the NDoc generated (.CHM format) one. There is no WhitePaper-like doc available :-)<br /><br />Are you looking for something specific? <br />",
+    "PostedDate": "2006-11-09T03:29:28.167-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

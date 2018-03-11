@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The example describes a way to view all the links in a HTML document and uses a DocumentElement member of class HtmlDocument to parse the document but it is missing from the latest stable version.",
+    "LastUpdatedDate": "2013-08-30T10:36:41.953-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-02-16T04:19:55.903-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DocumentElement Missing from HtmlDocument Class",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 30176
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The quotes are misplaced in the XPath expression, too: (\"//a[@href\"])",
+      "PostedDate": "2013-08-30T10:36:41.953-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

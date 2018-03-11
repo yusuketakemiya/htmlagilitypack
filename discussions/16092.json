@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "52162",
+    "ThreadId": "16092",
+    "Html": "\r\nIs it possible to remove only specific tags using the html agility pack with the convert to text functions?<br /><br />Thanks<br />Darrell<br />",
+    "PostedDate": "2007-10-06T15:47:49.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58661",
+    "ThreadId": "16092",
+    "Html": "\r\nOf course. Just select the nodes you want to remove (using SelectNodes for example), and remove them using node.ParentNode.RemoveChild(node);<br />",
+    "PostedDate": "2007-11-17T09:55:03.57-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

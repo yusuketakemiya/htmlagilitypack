@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "136138",
+    "ThreadId": "41043",
+    "Html": "I have a Web page that gets a calendar from another site and parses the Dates into a more printer friendly format.<br>\r\n<br>\r\nThe Code works fine on my test computer but when I upload it to my Windows 2000 Server it makes it to the htmlWeb.Load(url) line and just hangs.<br>\r\nI've done a test. It doesn't matter if the site is a remote URL or a local URL it won't load.<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlAgilityPack.HtmlWeb htmlWeb = new HtmlAgilityPack.HtmlWeb();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String url = &quot;http://google.ca&quot;;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlAgilityPack.HtmlDocument uploadedForm = htmlWeb.Load(url); // &lt;--- Never makes it past here. <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Flush();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Write(uploadedForm.DocumentNode.InnerHtml);<br>\r\n<br>\r\nThe page doesn't time out. It just sits there loading. Like its in an infinite loop. I know it's something to do with the server but no clue what it could be. I tried adding the site to the trusted locations. <br>\r\n<br>\r\nAny thoughts?<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nTyler<br>\r\n",
+    "PostedDate": "2008-11-28T10:51:33.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136576",
+    "ThreadId": "41043",
+    "Html": "I hate to ask, but have you verified the version(s) of .NET installed on the Windows 2k server?<br>\r\n",
+    "PostedDate": "2008-12-01T05:40:03.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136640",
+    "ThreadId": "41043",
+    "Html": "That's alright. <br>\r\nThe server is: 2.0.50727<br>\r\nAnd I've set my project Build to Targeted Framework: 2.0<br>\r\nI originally had its default of 3.0 but when I first uploaded the site the Server died as it couldn't find assemblies. But I changed that long before I created the page in question.<br>\r\n<br>\r\nI feel as though I'm missing a security setting somewhere? <br>\r\n<br>\r\nI'm fairly Certain It dies on this Line:<br>\r\nreq = WebRequest.Create(uri) as HttpWebRequest;<br>\r\n<br>\r\nunder <br>\r\nprivate HttpStatusCode Get(Uri uri, string method, string path, HtmlDocument doc)<br>\r\n<br>\r\nThis is my Web.config file:<br>\r\n<br>\r\n&lt;?xml version=&quot;1.0&quot;?&gt;<br>\r\n&lt;configuration&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&lt;appSettings/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&lt;connectionStrings/&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&lt;system.web&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;sessionState timeout=&quot;60&quot; /&gt;<br>\r\n&nbsp; &lt;customErrors mode=&quot;Off&quot; /&gt;<br>\r\n&nbsp; &lt;compilation debug=&quot;true&quot; defaultLanguage=&quot;c#&quot;&gt;<br>\r\n&nbsp;&nbsp; &lt;assemblies&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;add assembly=&quot;System.DirectoryServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A&quot; /&gt;<br>\r\n&nbsp;&nbsp; &lt;/assemblies&gt;<br>\r\n&nbsp; &lt;/compilation&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;authentication mode=&quot;Windows&quot;/&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/system.web&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&lt;system.codedom&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&lt;/system.codedom&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; &lt;system.webServer&gt;<br>\r\n&nbsp;&nbsp; &nbsp;&lt;/system.webServer&gt;<br>\r\n&lt;/configuration&gt;<br>\r\n<br>\r\nThanks Again,<br>\r\n<br>\r\nTyler<br>\r\n",
+    "PostedDate": "2008-12-01T08:28:44.303-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

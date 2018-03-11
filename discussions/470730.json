@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1127542",
+    "ThreadId": "470730",
+    "Html": "Hi ,<br />\nI am parsing HTML page and in the fields I do not want to get the &nbsp; if my tag is empty.Is there any way to stop this .Output is displayed in Console<br />\n",
+    "PostedDate": "2013-11-21T06:21:52.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

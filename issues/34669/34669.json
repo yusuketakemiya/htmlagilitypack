@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The following Html causes it not to parse the body.\n\n__Input Html:__\n<html>\n<head><script type=\"text/javascript\" src=\"xss.js\" /></head><body><script>alert('XSS')</script></body></html>\n\n__DocumentNode.DecendantsAndSelf():__\n\n+\t\t[0]\tName: \"#document\"}\tHtmlAgilityPack.HtmlNode\n+\t\t[1]\tName: \"html\"}\tHtmlAgilityPack.HtmlNode\n+\t\t[2]\tName: \"#text\"}\tHtmlAgilityPack.HtmlNode {HtmlAgilityPack.HtmlTextNode}\n+\t\t[3]\tName: \"head\"}\tHtmlAgilityPack.HtmlNode\n+\t\t[4]\tName: \"script\"}\tHtmlAgilityPack.HtmlNode\n+\t\t[5]\tName: \"#text\"}\tHtmlAgilityPack.HtmlNode {HtmlAgilityPack.HtmlTextNode}\n\nAs you can see the body is missing from the descendants as the script isn't closed.  But a lot of sites do use <script /> as a closed script tag.",
+    "LastUpdatedDate": "2013-12-09T10:23:56.117-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-11-21T02:31:51.68-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect Parsing of Malformed Html",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 34669
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

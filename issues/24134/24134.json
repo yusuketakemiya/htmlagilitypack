@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "in 1.4.0 branch",
+    "ClosedDate": "2009-09-16T11:42:11.41-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Right now all the collections are not generic and use ArrayList behind the scenes. This is rather inefficient and limits the usefulness of them in .NET 3.5. If the collections inherited from IList<T> many LINQ extension methods would be available to the user.",
+    "LastUpdatedDate": "2013-05-16T05:32:58.503-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-07-28T12:03:57.55-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Implement Generic Lists",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 24134
+  },
+  "FileAttachments": [
+    {
+      "FileId": 8865,
+      "FileName": "HtmlAgilityPackLinqUpdates.zip",
+      "DownloadUrl": ".\\8865"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I have uploaded a patch that implements the proposed structure. http://htmlagilitypack.codeplex.com/SourceControl/PatchList.aspx",
+      "PostedDate": "2009-07-28T12:06:09.703-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Attaching patch file and copies of udpated .cs files",
+      "PostedDate": "2009-07-28T12:06:42.25-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-28T12:06:45.33-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Code is now added into the 1.4.0 branch for future release",
+      "PostedDate": "2009-09-16T11:41:53.183-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-16T11:42:11.41-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:22.79-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:58.503-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "545471",
+    "ThreadId": "240862",
+    "Html": "\r\n<p>I've used HAP successfully before, downloading xhtml pages from web. However, now I'm trying to load and parse xml documents. HAP will only load xml documents that are located on my file system, &quot;C:\\xml\\MyXml.xml&quot; for instance. It will not load it from web\r\n (http://www.web.com/doc.xml). Using Fiddler, I can see that HAP is actually requesting the xml documents over the web, and the server also respond with the xml document. However, it stops there, nothing get parsed. The HtmlDocument is empty, no ChildNodes\r\n or anything. When loading from file system, it get parsed successfully to a HtmlDocument.</p>\r\n<p>&nbsp;</p>\r\n<p>Any clues?</p>\r\n",
+    "PostedDate": "2011-01-07T08:49:23.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "547587",
+    "ThreadId": "240862",
+    "Html": "\r\n<p>What are you using? HtmlWeb or HtmlDocument?</p>\r\n<p>HtmlDocument.Load(string path) uses StreamReader to read a file from the file system.</p>\r\n<p>so</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> doc = <span style=\"color:blue\">new</span> HtmlDocument();\r\ndoc.Load(<span style=\"color:#a31515\">@&quot;C:\\xml\\MyXml.xml&quot;</span>);\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2011-01-11T13:43:53.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "768031",
+    "ThreadId": "240862",
+    "Html": "<p>Probably much too late to help you, but I ran into this problem as well. &nbsp;I will post what I found in the hopes of helping others than come across this.</p>\r\n<p>In HtmlWeb.cs I added the bold part:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">private</span> <span style=\"color: blue;\">bool</span> IsHtmlContent(<span style=\"color: blue;\">string</span> contentType)</pre>\r\n<pre>{\r\n\r\n<span style=\"color: blue;\">return</span> contentType.ToLower().StartsWith(<span style=\"color: #a31515;\">\"text/html\"</span>) <strong>|| contentType.ToLower().StartsWith(<span style=\"color: #a31515;\">\"text/xml\"</span>)</strong>;</pre>\r\n<pre>}\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>The place where this is crucial is in HtmlWeb.cs. &nbsp;Notice that the doc is never loaded if<span style=\"background-color: white;\">&nbsp;\"html\"&nbsp;</span>is false, and html will be false because the ContentType of an online xml will be \"text/xml\". &nbsp;That is why I made the change above.</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: green;\">// try to work in-memory</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p><span style=\"color: blue;\">if</span><span style=\"background-color: white;\"> ((doc != </span><span style=\"color: blue;\">null</span><span style=\"background-color: white;\">) &amp;&amp; (html))</span></p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>{\r\n\t<span style=\"color: blue;\">if</span> (respenc != <span style=\"color: blue;\">null</span>)\r\n\t{\r\n\t\tdoc.Load(s, respenc);\r\n\t}\r\n\t<span style=\"color: blue;\">else</span>\r\n\t{\r\n\t\tdoc.Load(s, <span style=\"color: blue;\">true</span>);\r\n\t}\r\n}\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-02-15T10:57:14.107-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

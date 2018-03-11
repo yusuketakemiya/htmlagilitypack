@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "559461",
+    "ThreadId": "244336",
+    "Html": "\r\n<p>I am parsing a large database of emails.&nbsp; I have already filtered out all the empty strings and text/plain mails before calling the following code.&nbsp; However I occassioaly get an email that has no body tag.&nbsp;&nbsp;This could be occuring because\r\n I am messing up on the content-type filtering, but is there any way for me to check the node to see if it exists without getting an unhandle exception?</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>HtmlDocument doc = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlDocument();           \r\n            doc.LoadHtml(html);      \r\n           \r\n            <span style=\"color:blue\">string</span> text = doc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//body&quot;</span>).InnerText;\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2011-02-02T08:23:49.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "559912",
+    "ThreadId": "244336",
+    "Html": "\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>HtmlDocument doc = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlDocument();           \r\ndoc.LoadHtml(html);           \r\n<span style=\"color:blue\">var</span> node = doc.DocumentNode.SelectSingleNode(<span style=\"color:#a31515\">&quot;//body&quot;</span>);\r\n<span style=\"color:blue\">if</span> (node !=<span style=\"color:blue\"> null</span>)\r\n{\r\n<span style=\"color:green\">     //do something with node</span>\r\n     <span style=\"color:blue\">string</span> text = node.InnerText;\r\n}\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2011-02-03T00:05:10.557-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

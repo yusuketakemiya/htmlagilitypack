@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "824493",
+    "ThreadId": "352463",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I'm new to the Html Agility Pack and was wondering if someone could help me out.&nbsp; I have a WPF C# project with an HTML string as shown below:</p>\r\n<pre><code><span>htmlString </span><span>=</span><span> </span><span class=\"str\">&quot;&lt;HTML&gt;&lt;HEAD&gt;&lt;/HEAD&gt;&lt;BODY&gt;Here are some images.&lt;/br&gt;1) &lt;IMG style='MARGIN-BOTTOM: 20px; MARGIN-LEFT: 20px' align=right src='images/sample001.jpg'&gt;2) &lt;IMG style='MARGIN-BOTTOM: 25px; MARGIN-LEFT: 25px' align=right src='images/sample002.png'&gt;&lt;/br&gt; And some docs as well.&lt;/br&gt;1) href='javascript:parent.POPUP({url:'testDoc001.htm',type:'shared',width:600,height:645})'&gt;&lt;/br&gt;2) href='javascript:parent.POPUP({url:'testDoc002.html',type:'shared',width:700,height:712})'&gt;&lt;/br&gt;&lt;/BODY&gt;&lt;/HTML&gt;&quot;</span><span>;<br><br>I would like to be able to parse this string and get out an array of all of the images and .html documents that are references.<br><br>In this particular example this array would be:</span><br><br></code>[0] = &quot;images/sample001.jpg&quot;\r\n[1] = &quot;images/sample002.png&quot;\r\n[2] = &quot;testDoc001.htm&quot;\r\n[3] = &quot;testDoc002.html&quot;<br><br>Can someone send me a snippet of code or show me how to go about doing this?<br><br>Thanks<br></pre>\r\n",
+    "PostedDate": "2012-04-16T10:35:52.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "253425",
+    "ThreadId": "74083",
+    "Html": "<p>i want to select nodes from a subtree:</p>\r\n<p>&nbsp;</p>\r\n<pre>HtmlNodeCollection nodes, nodes2;\r\n\r\nnodes = rootNode.SelectNodes(&quot;//html&quot;);\r\nnodes2 = nodes[0].SelectNodes(&quot;//div[1]&quot;);</pre>\r\n<p>&nbsp;</p>\r\n<p>why does the second call doesnt give me a node? (the document does contain divs!).</p>",
+    "PostedDate": "2009-11-04T11:28:37.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

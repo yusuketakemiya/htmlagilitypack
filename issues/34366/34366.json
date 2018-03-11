@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If I read DocumentNode.OuterHtml, then make changes to the document, those changes aren't reflected in DocumentNode.OuterHtml. I would presume this is a caching issue, much like - http://htmlagilitypack.codeplex.com/workitem/31858\n\nSample app looks like this:\n\n```\n    class Program\n    {\n        const string TEST_HTML = \"<html><body></body></html>\";\n\n        static void Main(string[] args)\n        {\n            var doc = new HtmlAgilityPack.HtmlDocument();\n\n            Console.WriteLine(\"*** Cache OuterHtml first ***\");\n            doc.LoadHtml(TEST_HTML);\n            Console.WriteLine(doc.DocumentNode.OuterHtml);\n            doc.DocumentNode.SelectSingleNode(\"//body\").InnerHtml = \"<p>Hello World</p>\";\n            Console.WriteLine(doc.DocumentNode.OuterHtml);\n            Console.WriteLine();\n\n            Console.WriteLine(\"*** Don't cache OuterHtml first ***\");\n            doc.LoadHtml(TEST_HTML);\n            doc.DocumentNode.SelectSingleNode(\"//body\").InnerHtml = \"<p>Hello World</p>\";\n            Console.WriteLine(doc.DocumentNode.OuterHtml);\n            Console.WriteLine();\n\n            Console.WriteLine(\"Press any key\");\n            Console.ReadKey(true);\n        }\n    }\n```\n\nOutput looks like this:\n*** Cache OuterHtml first ***\n<html><body></body></html>\n<html><body></body></html>\n\n*** Don't cache OuterHtml first ***\n<html><body><p>Hello World</p></body></html>\n\nI'm targeting .NET 4.0 (Full, not client profile), using HAP v1.4.6.0",
+    "LastUpdatedDate": "2013-11-15T06:19:52.047-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-08-13T20:18:47.56-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DocumentNode.OuterHtml cache not refreshing",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 34366
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

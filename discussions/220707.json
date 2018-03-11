@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "470944",
+    "ThreadId": "220707",
+    "Html": "I m new with html agility pack. I have a problem as follows:\r\n\r\nI have a console app. I need to have the page with a url \r\ni do that : \r\n   HtmlWeb hw = new HtmlWeb();\r\n                //string url = @&quot;http://www.asdfa.com&quot;;\r\n   HtmlDocument doc = hw.Load(url);\r\n\r\nthen in that page  must click a radiobutton (directing a new page) \r\n   The problem is that i cant make the program click a radiobutton in that page,\r\n   and take the directed page by the radiobutton.\r\n\r\nat last i need to save the page in my hdd smwhere.\r\n\r\nCan anybody help?",
+    "PostedDate": "2010-07-22T04:52:29.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "470987",
+    "ThreadId": "220707",
+    "Html": "HTML Agility Pack is not a browser engine, it knows nothing of javascript, nor CSS. It simply parses the html into a data form. It cannot and will never do any sort of interactivity like that. To do what you need to do you will probably need to create a windows program that hosts the Web Browser control which brings the IE engine into your program where you can inject some JS to do the click.",
+    "PostedDate": "2010-07-22T05:34:17.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "471532",
+    "ThreadId": "220707",
+    "Html": "<p>ok well, I have HtmlDocument doc = hw.Load(url), &nbsp;how do i add <span>&lt;<span>script</span> <span>type</span>=<span>&quot;text/javascript&quot;</span> <span>src</span>=<span>&quot;jscript.js&quot;</span>&gt;</span><span>&lt;/<span>script</span>&gt; in &lt;head&gt; tags? could this solve my problem? Thank you very much</span></p>",
+    "PostedDate": "2010-07-23T03:43:06.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "479597",
+    "ThreadId": "220707",
+    "Html": "<p>You need parse &lt;form&gt; tag and compose new url. You can read for example: <a href=\"http://www.w3schools.com/html/html_forms.asp\">http://www.w3schools.com/html/html_forms.asp</a></p>\r\n<p>If you composing GET request, you will get something like this url: http://www.google.lt/#hl=lt&amp;source=hp&amp;q=html+for+dummies&amp;aq=f&amp;aqi=g2&amp;aql=&amp;oq=&amp;gs_rfai=&amp;fp=b27f0e9f0b50bb44</p>\r\n<p>But if you must POST on the page, then you can do like that: <a href=\"http://www.netomatix.com/httppostdata.aspx\">http://www.netomatix.com/httppostdata.aspx</a></p>",
+    "PostedDate": "2010-08-12T02:28:08.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

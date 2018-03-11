@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "419132",
+    "ThreadId": "205225",
+    "Html": "<p>Hi, I've converted the project to the&nbsp;<a href=\"http://www.monotouch.net\">Monotouch</a>&nbsp;/ Monodevelop&nbsp;&nbsp;csproj format (it's very slightly different from VS2008/2010), and also made some minor changes to the source where it was incompatible with the Monotouch .NET implementation. Would you be able to put the source and binaries as 2 new downloads, or should I host it elsewhere?</p>",
+    "PostedDate": "2010-03-17T03:43:34.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419236",
+    "ThreadId": "205225",
+    "Html": "<p>I'd be interesting in looking over the changes and providing them as part of the next release cycle. It would be nice to keep it all as one code base if possible.</p>",
+    "PostedDate": "2010-03-17T07:47:24.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419270",
+    "ThreadId": "205225",
+    "Html": "<p>The main change is System.Diagnostics.Trace and System.Diagnostics.TraceListener doesn't exist in Monotouch so I wrote 2 'fake' versions of the classes. The other change was to the compile has to use the already definied _WINCE_ so the web stuff isn't used.</p>\r\n<p>Apart from that, it's just the inclusion of a Monodevelop format project. I'm not sure if you build a Monotouch binary on Windows it will work on the Mac, as the PE header might get in the way.&nbsp;</p>\r\n<p>I'll upload a patch with the 2 changes + csproj file later, and also try compiling on Windows and referencing on the Mac.</p>",
+    "PostedDate": "2010-03-17T09:02:55.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419273",
+    "ThreadId": "205225",
+    "Html": "<p>I have seen demonstrations on how to open up MonoTouch projects in Visual Studio 2010. So we can provide the solution but the anyone building will need those binaries. It will be nice to at least have it supported via code. I can look into getting a mac to be used as a build server. I've been pushing our iPhone developers at my company to look into MonoTouch as a platform to use instead of Objective-C.</p>\r\n<p>I am happy to hear it didn't take much to get up and running.</p>",
+    "PostedDate": "2010-03-17T09:08:13.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419282",
+    "ThreadId": "205225",
+    "Html": "<p>I've written this tool to convert between the two formats:</p>\r\n<p><a href=\"http://shrinkrays.net/code-snippets/csharp/monotouch-tips-and-snippets.aspx\">http://shrinkrays.net/code-snippets/csharp/monotouch-tips-and-snippets.aspx</a></p>\r\n<p>For some reason the MonoDevelop team decided to use a different XML documentation format, and use a tag that breaks the csproj file for Visual Studio. You <em>will</em> need the Monotouch assemblies to compile - and they are changing it almost monthly right now, so in my view&nbsp;it's probably not worth including the MT version in the binaries .</p>",
+    "PostedDate": "2010-03-17T09:16:51.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419398",
+    "ThreadId": "205225",
+    "Html": "<p>I've uploaded the 3 files as a patch to <a href=\"http://htmlagilitypack.codeplex.com/SourceControl/PatchList.aspx\">http://htmlagilitypack.codeplex.com/SourceControl/PatchList.aspx</a>&nbsp;hopefully I didn't forget anything from the project. I got a bit confused with the details above, confusing the project for SmartThreadPool which I've also converted - there's no WindowsCE symbols in HAP so ignore that guff!</p>",
+    "PostedDate": "2010-03-17T13:16:56.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

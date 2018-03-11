@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "463040",
+    "ThreadId": "218237",
+    "Html": "<p>I have a field in my database that holds input from an html input. So I have &lt;tags&gt; in my db column data. What I need is to be able to extract this and display a short version of it as an intro. Maybe even the first paragraph if possible.&nbsp;</p>",
+    "PostedDate": "2010-07-03T05:24:39.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

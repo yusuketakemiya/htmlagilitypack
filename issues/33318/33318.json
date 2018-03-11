@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When I tried to parse the attached document (encoded in Big5), HAP gave the wrong result. The \"table\" element inside the \"form\" element was incorrectly parsed as outside of the \"form\" element. Therefore, executing SelectSingleNode method from the document node could fail.\nvar doc = new HtmlDocument();\ndoc.Load (\"test.htm\");\nvar d = doc.DocumentNode.SelectSingleNode (\"html/body/form/table\");\nWhen the above code was run, d was null, which was incorrect. The sample document was attached.",
+    "LastUpdatedDate": "2014-01-24T05:09:20.247-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-11-04T03:26:46.13-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect parse result from HAP 1.4.6 and 1.9.0.1",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33318
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Code:\n```\nvar html = new HtmlAgilityPack.HtmlDocument();\nhtml.LoadHtml(@\"<form><button><span>XXX</span></button></form>\");\nvar nodeForm = html.DocumentNode.SelectSingleNode(\"./form\");\r\n\r\nSystem.Diagnostics.Debug.WriteLine(\"Form has childs: \" + nodeForm.HasChildNodes.ToString());\nSystem.Diagnostics.Debug.WriteLine(\"OuterHtml: \" + nodeForm.OuterHtml);\nforeach (var n in html.DocumentNode.ChildNodes) System.Diagnostics.Debug.WriteLine(\"Child: \" + n.OuterHtml);\r\n\r\n```\nreturn:\n```\nForm has childs: False\nOuterHtml: <form>\nChild: <form>\nChild: <button><span>XXX</span></button>\nChild: </form>\r\n\r\n```",
+      "PostedDate": "2014-01-24T02:35:16.827-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "form elemet CAN contain other tags\r\n\r\n__HtmlNode.cs__\nElementsFlags.Add(\"form\", HtmlElementFlag.CanOverlap | __HtmlElementFlag.Empty__);\n",
+      "PostedDate": "2014-01-24T05:09:20.247-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

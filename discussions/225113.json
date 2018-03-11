@@ -1,0 +1,178 @@
+[
+  {
+    "Id": "485792",
+    "ThreadId": "225113",
+    "Html": "<p>Is there a way to make the htmlagilitypack&nbsp;to work for Windows Phone 7 development using VS2010 WP7 edition? I was unable to create a reference in the IDE due to the lack of WP7 runtime support. Are there any better ideas, or other alternatives available to WP7?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-27T12:06:48.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "485811",
+    "ThreadId": "225113",
+    "Html": "<p>Have you tried using the HAPLight project that is in the SVN repository right now. It is a Silverlight version of Html Agility Pack and should work on WP7 with little modification (it targets Silverlight 4 so you may need to remove a few things)</p>",
+    "PostedDate": "2010-08-27T12:53:09.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488324",
+    "ThreadId": "225113",
+    "Html": "<p>Windows Phone 7 doesn't Support System.Xml.Xpath, so HtmlAgilityPack wont work on WP7</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-02T08:53:43.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488328",
+    "ThreadId": "225113",
+    "Html": "<p>Yes it will if you modify the source and comment out the xpath files. This has already been done for .NET CF . The LINQ interfaces can be used instead</p>",
+    "PostedDate": "2010-09-02T08:55:33.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488800",
+    "ThreadId": "225113",
+    "Html": "<p><span style=\"font-size:10pt;color:black\">Not to sound ridiculous, but is there download available for the binaries&nbsp;of the .NET CF version?&nbsp; I'm like the originator of this thread and would like to use this utility on the Win 7 phone.</span></p>",
+    "PostedDate": "2010-09-03T05:04:01.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488811",
+    "ThreadId": "225113",
+    "Html": "<p>the .NET CF binaries wont work on Win Phone 7 even if they were available. Right now they are only in the SVN repo. The .NET CF and Silverlight versions were made after the last release. I just did a quick lookover of the solution. For the HAPLight project if you remove the HtmlNodeNavigator.cs file from the project, remove the System.Xml.Xpath reference and change the project over to a SL 3 library it should work. I don't have the Win Phone 7 tools installed right now on this computer so I can't be 100% sure.</p>",
+    "PostedDate": "2010-09-03T05:17:07.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "489325",
+    "ThreadId": "225113",
+    "Html": "<p>I made the code correction for work with WP7</p>\r\n<p>I started with the .NET CF from SVN Solution and with miminums changes, it works on WP7</p>\r\n<p>And yes, there is no XPath on WP7, but Linq to Object works great :)</p>\r\n<p>Thanks for all</p>",
+    "PostedDate": "2010-09-04T16:30:36.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "495201",
+    "ThreadId": "225113",
+    "Html": "<p>Yes -- thanks I finally got around to following your instructions and I had no problems compiling but now comes the next question?</p>\r\n<p>I can load a document:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre> HtmlAgilityPack.HtmlDocument htmDoc = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlDocument();\r\n htmDoc.LoadHtml(responseData);</pre>\r\n</div>\r\n<p>What do I substitute for searching the document?&nbsp; I was using calls like :</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre> HtmlAgilityPack.HtmlNodeCollection NoMatchingName = htmDoc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//span[@id='ctl00_ctl68_lblPersonNoResults']&quot;</span>);\r\n</pre>\r\n</div>\r\n<p>I understand that the Xpath that I was using is not supported but could you provide an example of how I would use Linq in place of these calls?</p>\r\n<p>Thanks,</p>\r\n<p>Sid</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-17T13:34:24.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "495222",
+    "ThreadId": "225113",
+    "Html": "<p>basically</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> nodeList = htmDoc.DocumentNode.Descendants(<span style=\"color:#a31515\">&quot;span&quot;</span>).Where(x=&gt;x.Id == <span style=\"color:#a31515\">&quot;ctl00_ctl68_lblPersonNoResults&quot;</span>);\r\n\r\n<span style=\"color:green\">//or just for one node</span>\r\n<span style=\"color:blue\">var</span> node = htmDoc.DocumentNode.Descendants(<span style=\"color:#a31515\">&quot;span&quot;</span>).FirstOrDefault(x=&gt;x.Id == <span style=\"color:#a31515\">&quot;ctl00_ctl68_lblPersonNoResults&quot;</span>);\r\n\r\n<span style=\"color:green\">//node will be null if it's not found</span>\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2010-09-17T14:43:34.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496622",
+    "ThreadId": "225113",
+    "Html": "<p>Thanks for that and could you point me in the direction on how to do this with LINQ:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>HtmlAgilityPack.HtmlNodeCollection personPages = htmDoc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//table[@id='ctl00_ctl68_dgPersonSearchResults']/tr[last()]/td/a&quot;</span>);\r\n</pre>\r\n</div>\r\n<p>This was providing me with all the &lt;a&gt;&nbsp;tags contained within the named table on the last row.</p>\r\n<p>Is there anything you know of which has sample usage of HAP and LINQ?</p>\r\n<p>thanks, Sid</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-family:Consolas;color:#a31515;font-size:x-small\"><span style=\"font-family:Consolas;color:#a31515;font-size:x-small\"><span style=\"font-family:Consolas;color:#a31515;font-size:x-small\">&nbsp;</span></span></span></p>",
+    "PostedDate": "2010-09-21T10:44:01.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "498486",
+    "ThreadId": "225113",
+    "Html": "<p>I've checked into SVN a HAPPhone project and solution for what will be the official Html Agility Pack for WP7.</p>\r\n<p>as for your question on the LINQ statement.</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> links = htmDoc.DocumentNode.Descendants(<span style=\"color:#a31515\">&quot;table&quot;</span>).First(n =&gt; n.Id == <span style=\"color:#a31515\">&quot;ctl00_ct168_dgPersonSearchResults&quot;</span>).Elements(<span style=\"color:#a31515\">&quot;tr&quot;</span>).Last().Descendants(<span style=\"color:#a31515\">&quot;a&quot;</span>);\r\n\r\n</pre>\r\n</div>\r\nOne thing to watch out for is First and Last, they will throw an exception if nothing can be returned. FirstOrDefault would be good as an middle assignment to handle the possibility there are no table nodes found</p>",
+    "PostedDate": "2010-09-25T20:06:32.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "508852",
+    "ThreadId": "225113",
+    "Html": "<p>Thanks for porting HAP to Windows Phone. I have a question regarding parsing the InnerText.</p>\r\n<p>How do I get the correct special characters? I changed the HAPPhoneTest Project like this to demonstrate my problem:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> FetchSite(<span style=\"color:blue\">object</span> sender, RoutedEventArgs e)\r\n        {\r\n            HtmlWeb.LoadAsync(<span style=\"color:#a31515\">&quot;http://oeffentlicher-dienst.info&quot;</span>, (s, args) =&gt;\r\n            {\r\n                Results.Text = String.Join(Environment.NewLine,\r\n                                           args.Document.DocumentNode.Descendants(<span style=\"color:#a31515\">&quot;a&quot;</span>).\r\n                                            Select(\r\n                                                x =&gt;\r\n                                                x.InnerText).ToArray());\r\n            });\r\n        }\r\n</pre>\r\n</div>\r\nYou should see 3 characters replaced by an &lt;?&gt;. The problem is not specific to this site, but seems to affect every site that uses specials characters.&nbsp; I tried quite a few ways, but can't seem to find the right answer for this.</p>\r\n<p>Thank You in advance.</p>",
+    "PostedDate": "2010-10-18T08:50:12.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513050",
+    "ThreadId": "225113",
+    "Html": "\r\n<p>Dear <a id=\"x_ctl00_ctl00_MasterContent_Content_PostRepeater_ctl16_UserNameLink\" href=\"http://www.codeplex.com/site/users/view/darthobiwan\">\r\ndarthobiwan</a> !</p>\r\n<p>Please help me convert it to Linq :</p>\r\n<p>XPath(&quot;//div[@class='iconadd']/a&quot;)</p>\r\n<p>XPath(&quot;//div[@class='leftInfo']/h1/a&quot;)</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks !</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-10-26T16:24:25.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514659",
+    "ThreadId": "225113",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>tom_codon wrote:</strong><br>\r\n<p>Dear <a id=\"x_x_x_ctl00_ctl00_MasterContent_Content_PostRepeater_ctl16_UserNameLink\" href=\"http://www.codeplex.com/site/users/view/darthobiwan\">\r\ndarthobiwan</a> !</p>\r\n<p>Please help me convert it to Linq :</p>\r\n<p>XPath(&quot;//div[@class='iconadd']/a&quot;)</p>\r\n<p>XPath(&quot;//div[@class='leftInfo']/h1/a&quot;)</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks !</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</blockquote>\r\n<p>Any help ?</p>\r\n",
+    "PostedDate": "2010-10-29T10:36:37.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514663",
+    "ThreadId": "225113",
+    "Html": "\r\n<p>I'm not going to be much help for a while. The president of my company and 3 of his sons disappeared Monday. His plane fell of radar in Wyoming. It's been a very stressful week and I'm not much help to anyone, I've been at Sierra Bravo since we were a small\r\n 10 man shop.. we just reached 160, 6 years later.</p>\r\n<p><a href=\"http://lukeandginger.com/blog/2\">http://lukeandginger.com/blog/2</a></p>\r\n<p>Here's a great public radio article about what's going on <a href=\"http://minnesota.publicradio.org/collections/special/columns/news_cut/archive/2010/10/an_emotional_investment_in_a_n.shtml\">\r\nhttp://minnesota.publicradio.org/collections/special/columns/news_cut/archive/2010/10/an_emotional_investment_in_a_n.shtml</a></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-10-29T10:41:57.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514862",
+    "ThreadId": "225113",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>darthobiwan wrote:</strong><br>\r\n<p>I'm not going to be much help for a while. The president of my company and 3 of his sons disappeared Monday. His plane fell of radar in Wyoming. It's been a very stressful week and I'm not much help to anyone, I've been at Sierra Bravo since we were a small\r\n 10 man shop.. we just reached 160, 6 years later.</p>\r\n<p><a href=\"http://lukeandginger.com/blog/2\">http://lukeandginger.com/blog/2</a></p>\r\n<p>Here's a great public radio article about what's going on <a href=\"http://minnesota.publicradio.org/collections/special/columns/news_cut/archive/2010/10/an_emotional_investment_in_a_n.shtml\">\r\nhttp://minnesota.publicradio.org/collections/special/columns/news_cut/archive/2010/10/an_emotional_investment_in_a_n.shtml</a></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</blockquote>\r\n<p>I'm very sorry about that , hope everything will good for you darthobiwan !</p>\r\n<p>Best Regards</p>\r\n<p>Tom</p>\r\n",
+    "PostedDate": "2010-10-30T01:38:46.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "807866",
+    "ThreadId": "225113",
+    "Html": "<p>If you cannot find System.Xml.XPath reference in HAPPhone.7.1.csproj when compiling Trunk\\HAPPhone.7.1.sln, please add reference from %ProgramFiles%\\Microsoft SDKs\\Silverlight\\v4.0\\Libraries\\Client\\System.Xml.XPath.dll.</p>",
+    "PostedDate": "2012-03-08T18:50:41.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "807886",
+    "ThreadId": "225113",
+    "Html": "<p>Hey!&nbsp; U&nbsp; also can use Xpath to get the data you want .</p>\r\n<p>U could get the data like that</p>\r\n<p>//&nbsp; ----------&nbsp; if&nbsp; you want get single node</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var node2 = doc.DocumentNode.Descendants(\"span\")<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .FirstOrDefault(x =&gt; x.XPath == \"/html[1]/body[1]/div[2]/div[2]/div[1]/div[1]/div[2]/p[1]/span[1]\");</p>\r\n<p>//&nbsp; then&nbsp; you can do something&nbsp;&nbsp; like that</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Message.Show(node2.InnerText + node2.GetAttributeValue(\"class\",\"\")&nbsp;);</p>\r\n<p>&nbsp;&nbsp;e-mail&nbsp;&nbsp; <a href=\"mailto:hzdgjb@126.com\">hzdgjb@126.com</a></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+    "PostedDate": "2012-03-08T19:42:51.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "807916",
+    "ThreadId": "225113",
+    "Html": "<p>actually&nbsp; HtmlAglityPack support the xpath&nbsp; .</p>\r\n<p>you can&nbsp; get the node&nbsp; by this way.</p>\r\n<p>﻿﻿﻿﻿﻿</p>\r\n<p>﻿﻿﻿var node1 =doc.DocumentNode.Descendants(\"a\").FirstOrDefault(x=x.Xpath==\"/html[1]/body[1]/div[2]/div[2]\");</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-03-08T22:22:12.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "815908",
+    "ThreadId": "225113",
+    "Html": "<p><span style=\"text-decoration: underline;\"><span style=\"color: blue; font-size: 11pt;\"><a href=\"http://www.doitmangostyle.com/\">Nashville Web Design</a></span></span><span style=\"color: blue; font-size: 11pt;\">&nbsp;we&rsquo;re friendly and make the process of building your Nashville website and designing your SEO and Internet Marketing campaign a pleasant experience. We specialize in providing clients with a cohesive online branding and growth strategy. From <strong>designing</strong> their <strong>Nashville website</strong> to launching their <strong>Nashville SEO</strong> campaign, we ensure our client&rsquo;s reach everyone of their Internet Marketing goals.</span></p>",
+    "PostedDate": "2012-03-26T23:33:42.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048648",
+    "ThreadId": "225113",
+    "Html": "As I found on another thread, just add a reference to the Silverlight assembly it's complaining about.\r<br />\nIt's usually located here:\r<br />\nC:\\Program Files (x86)\\Microsoft SDKs\\Silverlight\\v4.0\\Libraries\\Client <br />\n",
+    "PostedDate": "2013-05-25T08:27:49.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1233785",
+    "ThreadId": "225113",
+    "Html": "Like <em>weiser</em> said, just adding the System.Xml.XPath reference typically works!\r<br />\n<br />\nAs he said, it's typically located here: __C:\\Program Files (x86)\\Microsoft SDKs\\Silverlight\\v4.0\\Libraries\\Client __\r<br />\n<br />\nHowever, it <strong>can cause problems</strong>. The only problem I ever found was the inability to navigate to a page inside a class library, using the <em>/Namespace;component/Page.xaml</em> format. This problem exists if...<br />\n<ul>\n<li>You have the System.Xml.XPath in the given class library</li>\n<li>\nYou try to navigate to a page inside that class library.<br />\n</li>\n</ul>\nNevertheless, the fix is easy. <strong>Simply create a separate class library containing the page files, without any reference to the System.Xml.XPath.</strong> If your page requires XPath, then I suppose you'll be screwed. But in my case, my page was simply just a fullscreen photo viewer that was unrelated to my HTML parser/viewer.<br />\n",
+    "PostedDate": "2014-04-14T00:42:15.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

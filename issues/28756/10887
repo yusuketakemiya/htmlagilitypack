@@ -1,0 +1,21 @@
+Index: Trunk/HtmlAgilityPack/HtmlNode.cs
+===================================================================
+--- Trunk/HtmlAgilityPack/HtmlNode.cs	(revision 76755)
++++ Trunk/HtmlAgilityPack/HtmlNode.cs	(working copy)
+@@ -1330,13 +1330,13 @@
+ 
+             if ((oldChild._childnodes != null) && keepGrandChildren)
+             {
+-                // get prev sibling
+-                HtmlNode prev = oldChild.PreviousSibling;
++                HtmlNode reference = oldChild;
+ 
+                 // reroute grand children to ourselves
+                 foreach (HtmlNode grandchild in oldChild._childnodes)
+                 {
+-                    InsertAfter(grandchild, prev);
++                    InsertAfter(grandchild, reference);
++                    reference = grandchild;
+                 }
+             }
+             RemoveChild(oldChild);

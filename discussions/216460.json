@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "457024",
+    "ThreadId": "216460",
+    "Html": "<p>I've found that while Word 2007 does a decent job with Save As-&gt;Web Page, Filtered, it isn't yet ready for inclusion in a web application, where the content is going to be included in another page. The reason is that a lot of styles are stored in the header, not inline, thus making it hard to load only the body. Also, there are numerous references to fonts and the like which won't work with most browsers. What I am looking for is a library/code that will take Word Filtered HTML, and turn it into something ready to be put into a CMS system. Is anyone aware of such a library/code using the HtmlAgilityPack?</p>\r\n<p>Thanks,<br>Erick</p>",
+    "PostedDate": "2010-06-17T18:36:11.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457040",
+    "ThreadId": "216460",
+    "Html": "<p>I know SiteCore CMS uses Html Agility Pack to do something like this. I'm not aware of any open code to do it.</p>\r\n<p>I usually use Dreamweaver to do it, It has a great word cleaner built in</p>",
+    "PostedDate": "2010-06-17T19:45:09.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457042",
+    "ThreadId": "216460",
+    "Html": "<p>Thanks, I am looking for a (hopefully) open solution, or at least a library. This is for a web application backend, so integrating with anothe CMS doesn't really make sense, but it's worth taking a look at.</p>\r\n<p>Thanks,<br>Erick</p>",
+    "PostedDate": "2010-06-17T19:49:10.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457043",
+    "ThreadId": "216460",
+    "Html": "<p>This is a little old but it might help.</p>\r\n<p>http://www.codeproject.com/KB/cs/html2xhtmlcleaner.aspx?msg=2918362</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-17T19:52:15.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457438",
+    "ThreadId": "216460",
+    "Html": "<p>I&nbsp; know Tinymce ( http://tinymce.moxiecode.com/) text editor can get rid of the junk styling from MS word. I know when a user pastes it in it does it. I am not sure about if it comes from the server. You might have to look and try it out. You might have to do some call or something after it is loaded into tiny.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-18T15:12:53.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457450",
+    "ThreadId": "216460",
+    "Html": "<p>I'll check out that CodeProject code more closely, but on a first look, it appears to only strip tags, not do any refactoring.</p>\r\n<p>I've been using another editor, CKEditor, which does a decent job cleaning a Paste from Word. However, it doesn't support all features (e.g., multi-level lists), but it does get 80% of the way there. I tried TineMCE and found it does about the same. Because they work from a Paste, I assume that they grab the plain text (fairly easy to do), and add HTML based patterns. At least, that is how it appears.</p>\r\n<p>Thanks for the great suggestions - I'm going to keep digging and see if there isn't someone out there with a better solution. I'll add to this thread if I find anything.</p>\r\n<p>Erick</p>",
+    "PostedDate": "2010-06-18T15:54:37.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "500050",
+    "ThreadId": "229040",
+    "Html": "<p>Hi,</p>\r\n<p>I am parsing some html files that I need to extract data from to populate a SQL database and I am having a problem using an xpath statement against nodes that I am iterating through via a loop.&nbsp;</p>\r\n<p>The code below shows how I am walking through the nodes in the document I am parsing.&nbsp; As I get each node I test it for a text string, in this case &quot;Lines of Business&quot;, if I find that string, I then get the next sibling of which I want to then parse through the nodes within that node that have the class attribute named 'stdtext'.</p>\r\n<p>It all looks fine, but when I run it, the xpath statement <strong><span style=\"text-decoration:underline\">should</span></strong> retrieve all the nodes within the current node with the class attribute named 'stdtext', but instead it is getting <span style=\"text-decoration:underline\"><strong>ALL</strong></span> the 'stdtext' nodes from the entire document and not the current node.</p>\r\n<p>Can anybody help?</p>\r\n<p>// Iterate all rows in the first table<br>foreach (HtmlNode link in doc.DocumentNode.SelectNodes(&quot;//td[@class='td_title']&quot;))<br>{<br>&nbsp;switch (link.InnerHtml)<br>&nbsp;{<br>&nbsp;&nbsp;case &quot;Lines of Business&quot;:<br>&nbsp;&nbsp;&nbsp;oNodeContent = link.NextSibling;<br>&nbsp;&nbsp;&nbsp;foreach (HtmlNode slobs in nodNodeContent.SelectNodes(&quot;//td[@class='stdtext']&quot;))<br>&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;this.htMultiSelect[&quot;Slobs&quot;] += slobs.InnerHtml.Trim().Replace(&quot;, &quot;, &quot;|&quot;) + &quot;|&quot;;<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;}<br>}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>",
+    "PostedDate": "2010-09-29T08:27:47.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "503519",
+    "ThreadId": "229040",
+    "Html": "<p>Hi,</p>\r\n<p>I got the same problem, have a look to this more &quot;readable&quot;&nbsp;example (no offense Steve :)).</p>\r\n<p>I want to retrieve all the input elements of a given html form name :</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre> <span style=\"color:blue\">public</span> <span style=\"color:blue\">partial</span> <span style=\"color:blue\">class</span> Form1 : Form\r\n    {\r\n        <span style=\"color:blue\">public</span> Form1()\r\n        {\r\n            InitializeComponent();\r\n            GetInputTextByFormName(<span style=\"color:#a31515\">&quot;form_account&quot;</span>);\r\n        }\r\n\r\n        <span style=\"color:blue\">public</span> <span style=\"color:blue\">void</span> GetInputTextByFormName(<span style=\"color:blue\">string</span> formName)\r\n        {\r\n            HtmlAgilityPack.HtmlWeb web = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlWeb();\r\n            HtmlAgilityPack.HtmlDocument doc = web.Load(<span style=\"color:#a31515\">@&quot;http://www.blogspirit.com/en/create_account.php&quot;</span>);\r\n            HtmlAgilityPack.HtmlNode formNode = doc.DocumentNode.SelectSingleNode(String.Format(<span style=\"color:#a31515\">@&quot;//form[@name='{0}']&quot;</span>, formName));\r\n            HtmlAgilityPack.HtmlNodeCollection inputNodes = <span style=\"color:#000000\">formNode</span>.SelectNodes(<span style=\"color:#a31515\">&quot;//input&quot;</span>);\r\n\r\n            <span style=\"color:blue\">foreach</span> (HtmlAgilityPack.HtmlNode node <span style=\"color:blue\">in</span> inputNodes)\r\n            {\r\n                <span style=\"color:blue\">if</span> (node.Attributes[<span style=\"color:#a31515\">&quot;name&quot;</span>].Value == <span style=\"color:#a31515\">&quot;user_username&quot;</span> || node.Attributes[<span style=\"color:#a31515\">&quot;name&quot;</span>].Value == <span style=\"color:#a31515\">&quot;user_userpassword&quot;</span>)\r\n                {\r\n                    MessageBox.Show(<span style=\"color:#a31515\">&quot;Error or bug ?! Node is in the form 'connexion'</span>);\r\n                    <span style=\"color:blue\">return</span>;\r\n                }\r\n            }\r\n           \r\n\r\n        }\r\n    }\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>Instead of getting only the inputs from &quot;form_account&quot;, i got ALL the inputs from the entire document. Do I miss something &nbsp;?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-10-07T02:56:58.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "505190",
+    "ThreadId": "229040",
+    "Html": "<p>In Html specification form tag can overlap, so Htmlagilitypack handle this node a little different.&nbsp; So what you can do:</p>\r\n<pre><code>HtmlNode.ElementsFlags.Remove(&quot;form&quot;);<br><br></code></pre>",
+    "PostedDate": "2010-10-10T22:18:46.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "817093",
+    "ThreadId": "229040",
+    "Html": "<p>What?!</p>\r\n<p>I am having the same issue and that answer doesn't have enough information</p>",
+    "PostedDate": "2012-03-29T04:50:25.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "820796",
+    "ThreadId": "229040",
+    "Html": "<p>I believe I have a similar problem, as demonstrated thus:</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">HTML</span><span style=\"color: blue;\">&gt;</span>\n <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">HEAD</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">TITLE</span><span style=\"color: blue;\">&gt;</span> HTML Agility Bug Demo<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">TITLE</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">HEAD</span><span style=\"color: blue;\">&gt;</span>\n <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">BODY</span><span style=\"color: blue;\">&gt;</span>\n\t<span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">table</span><span style=\"color: blue;\">&gt;</span>\n\t\t<span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">tr</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span>first row<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">tr</span><span style=\"color: blue;\">&gt;</span>\n\t\t<span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">tr</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span>second row<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">tr</span><span style=\"color: blue;\">&gt;</span>\n\t\t<span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">tr</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span>third row<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">tr</span><span style=\"color: blue;\">&gt;</span>\n\t<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">table</span><span style=\"color: blue;\">&gt;</span>\n <span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">BODY</span><span style=\"color: blue;\">&gt;</span>\n<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">HTML</span><span style=\"color: blue;\">&gt;</span>\n</pre>\n</div>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"font-family: 'Segoe UI', 'Microsoft Sans Serif', Arial, Geneva, sans-serif;\"><span style=\"white-space: normal;\"><br /></span></span></pre>\n<pre>HtmlAgilityPack.HtmlDocument doc = <span style=\"color: blue;\">new</span> HtmlDocument();\ndoc.Load(<span style=\"color: #a31515;\">\"HtmlAgilityBugDemo.html\"</span>);\nHtmlNodeCollection rowNodes = doc.DocumentNode.SelectNodes(<span style=\"color: #a31515;\">\"//table/tr\"</span>);\n<span style=\"color: blue;\">foreach</span>(HtmlNode row <span style=\"color: blue;\">in</span> rowNodes)\n{\n\t<span style=\"color: blue;\">string</span> test1 = row.InnerText;\n\t<span style=\"color: blue;\">string</span> test2 = row.SelectSingleNode(<span style=\"color: #a31515;\">\"//td\"</span>).InnerText; <span style=\"color: green;\">// This ALWAYS returns \"first row\" !!!</span>\n}\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>test1 works, it is first \"first row\" then \"second row\" then \"third row\".</p>\n<p>test2 is always \"first row\". The scope of the row object SelectSingleNode() should be isolated to its current location and below only, but it seems that it selects from the root above.</p>",
+    "PostedDate": "2012-04-06T05:21:17.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "823342",
+    "ThreadId": "229040",
+    "Html": "<p>In the last persons example, just change the line to read:</p>\r\n<p><span style=\"color: blue;\">string</span> test2 = row.SelectSingleNode(<span style=\"color: #a31515;\">\".//td\"</span>).InnerText;</p>\r\n<p>The . means to do the search from the current node, // on its own means from the start of the document</p>",
+    "PostedDate": "2012-04-13T02:21:03.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

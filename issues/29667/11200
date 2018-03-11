@@ -1,0 +1,36 @@
+﻿using System.Linq;
+using HtmlAgilityPack;
+using MbUnit.Framework;
+
+namespace BluewireTechnologies.Epro.Tests.ServerSideWord
+{
+    [TestFixture]
+    public class HtmlAgilityPackTests
+    {
+        [Test]
+        [MultipleAsserts]
+        public void TheSameNodeCanExistInTwoPlacesAtOnce___this_test_verifies_unexpected_behaviour()
+        {
+            var document = new HtmlDocument();
+
+            document.LoadHtml("<html><body><div>A</div><div>B</div></body></html>");
+
+            var body = document.DocumentNode.SelectNodes("//body").Single();
+            var a = body.FirstChild;
+            var b = a.NextSibling;
+
+            Assert.AreEqual(1, body.SelectNodes("//div[text()='B']").Count);
+
+            a.AppendChild(b);
+            Assert.AreSame(b.ParentNode, a);
+            Assert.AreSame(b, a.NextSibling);
+            Assert.AreSame(b, a.LastChild);
+
+            Assert.AreEqual("<html><body><div>A<div>B</div></div><div>B</div></body></html>", body.OwnerDocument.DocumentNode.OuterHtml);
+            Assert.AreEqual(1, body.SelectNodes(".//div[text()='B']").Distinct().Count());
+            Assert.AreEqual(2, body.SelectNodes(".//div[text()='B']").Count);
+            Assert.AreEqual(4, body.SelectNodes("//div[text()='B']").Count); //!!!
+            Assert.IsTrue(body.SelectNodes("//div[text()='B']").All(element => element.OuterHtml == "<div>B</div>"));
+        }
+    }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1219342",
+    "ThreadId": "538001",
+    "Html": "I want to migrate C# 2012 project to Linux with Mono. But I am getting errors when Checking compatibility with MoMA.\r<br />\n<br />\nHow do I set HtmlAgilityPack (V 1.4.6.0) to work with Mono?<br />\n<pre><code>HtmlAgilityPack.dll     1.4.6.0     0   0   2   0\nCalling Method                                                    Method with [MonoTodo]                                                    Reason\nHttpStatusCode Get (Uri, string, string, HtmlDocument, IWebProxy, ICredentials)     ICredentials CredentialCache.get_DefaultCredentials ()  Need EnvironmentPermission implementation first\nHttpStatusCode Get (Uri, string, string, HtmlDocument, IWebProxy, ICredentials)     ICredentials CredentialCache.get_DefaultCredentials ()  Need EnvironmentPermission implementation first</code></pre>\n\n",
+    "PostedDate": "2014-03-05T01:14:51.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

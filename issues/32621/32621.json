@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This document:\n \n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<html><body>1&amp;2&#39;3&#x24;4</body></html>\n \nshows in Internet Explorer as \"1&2'3$4\" (without the quotes)\n \nHowever, loading it into Html Agility Pack's HtmlDocument, calling CreateNavigator on the document, and Evaluate(\"/html/body\") on the navigator returns \"1&amp;2&#39;3&#x24;4\" (again, without the quotes)\n \nThis is incorrect, and inconsistent with the XML implementation of XPath that comes with .NET 4.0, which does replace \"&amp;\" with \"&\".",
+    "LastUpdatedDate": "2013-02-21T18:47:00.46-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-04-25T14:56:55.737-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Html Agility Pack does not replace character references",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 32621
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "http://sgmleskulapnet.codeplex.com/",
+      "PostedDate": "2012-06-11T14:12:37.813-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Maybe, the HTML Eskulap can help you...",
+      "PostedDate": "2012-06-11T14:12:56.363-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:00.46-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

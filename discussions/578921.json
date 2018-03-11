@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1347141",
+    "ThreadId": "578921",
+    "Html": "Hello<br />\nHere is my HTML<br />\n<pre><code>&lt;div class=&quot;main&quot;&gt;\n&lt;div class=&quot;front&gt;\n&lt;div class=&quot;end&quot;&gt;\n&lt;ul class=&quot;1&quot;&gt;\n&lt;li&gt;\n&lt;a href=&quot;www.example.com/1asp&quot; title=&quot;abc&quot;&gt;\n&lt;/li&gt;\n&lt;li class=&quot;2&quot;&gt;\n&lt;a href=&quot;www.example.com/2asp&quot; title=&quot;def&quot;&gt;\n&lt;/li&gt;\n&lt;li class=&quot;3&quot;&gt;\n&lt;a href=&quot;www.example.com/3asp&quot; title=&quot;ghj&quot;&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;</code></pre>\n\nHo can I reach urls which in hrefs and titles with HAP?<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2015-01-29T07:38:34.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1358632",
+    "ThreadId": "578921",
+    "Html": "I'd like to know this as well ! :)<br />\n",
+    "PostedDate": "2015-03-02T01:05:22.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1358675",
+    "ThreadId": "578921",
+    "Html": "<pre><code>    var lnks = document.DocumentNode.SelectNodes(&quot;//ul[@class='linkNewsList']//li//a&quot;);\n                               //.Where(node =&gt; !nodesToExclude1.Contains(node) &amp;&amp; node.Attributes[&quot;target&quot;].Value.Contains(&quot;_blank&quot;))\n\n        if (lnks != null)\n        {\n            foreach (HtmlNode node in lnks)\n            {\n                DataRow dtRow = HurriyetDataTable.NewRow();\n                dtRow[&quot;Url&quot;] = node.Attributes[&quot;href&quot;].Value;\n                var Title = node.Attributes[&quot;title&quot;].Value;\n                dtRow[&quot;Title&quot;] = node.Attributes[&quot;title&quot;].Value;\n                dtRow[&quot;SourceID&quot;] = &quot;0&quot;;\n                SqlDataSourceHitCount.SelectParameters[&quot;Url&quot;].DefaultValue = node.Attributes[&quot;href&quot;].Value;\n                DataView dvHit = (DataView)SqlDataSourceHitCount.Select(DataSourceSelectArguments.Empty);\n\n                SqlDataSourceHitCount.SelectParameters[&quot;Url&quot;].DefaultValue = node.Attributes[&quot;href&quot;].Value;\n                DataView dvHitOneHoureBefore = (DataView)SqlDataSourceHitCount.Select(DataSourceSelectArguments.Empty);\n\n                if (dvHit.Table.Rows[0][0] != System.DBNull.Value)\n                {\n                    int HitCount = (int)dvHit.Table.Rows[0][0];\n                    dtRow[&quot;HitCount&quot;] = HitCount;\n                }\n                if (Title.Length &gt; 40)\n                {\n                    Title = Title.Substring(0, 40) + &quot;...&quot;;\n                    dtRow[&quot;Text&quot;] = Title;\n                }\n                else\n                {\n                    dtRow[&quot;Text&quot;] = Title;\n                }\n                HurriyetDataTable.Rows.Add(dtRow);\n            }\n        }\n        ListViewHurriyet.DataSource = HurriyetDataTable;\n        ListViewHurriyet.DataBind();\n    }</code></pre>\n\n//also you can copy xpath and use it.<br />\n",
+    "PostedDate": "2015-03-02T02:10:05.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

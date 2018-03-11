@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "409531",
+    "ThreadId": "200750",
+    "Html": "<p>I am looking for a way to parse an HTML document and report the physical position of each node. My goal is to determine where the document would reach the end of an 8.5x11 page, so I can insert a &ldquo;page-break-after&rdquo; into the HTML.</p>\r\n<p>Can I do this with the Agility pack? There is a streamPosition property, but the documentation is not clear as to what this value represents.</p>",
+    "PostedDate": "2010-02-26T09:59:57.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "414776",
+    "ThreadId": "200750",
+    "Html": "<p>I doubt very much you could do this with the agility pack. You are talking about when the html is rendered (like in firefox) knowing the x and y pixel coordinates of where the elements get rendered?</p>\r\n<p>The agility pack just parses through the raw html and does nothing with rendering.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-05T14:13:22.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

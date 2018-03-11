@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "3320",
+    "ThreadId": "1020",
+    "Html": "\r\nSimon,<br /><br />I hope that my sending you this question is not too much of an imposition, however I’m stumped and I don’t know where else to turn for help.<br /><br /><br />Unfortunately, all that I know about coding in C# and your HtmlAgilityPack is what I have been able to teach myself.  As part of my business, I am attempting to automate the process of obtaining property values for specific properties of interest from the website “Zillow.Com”.   To effectively complete this task, I am attempting to obtain a hidden field variable “&lt;TR class=      id=37254303&gt;” from the entry screen on Zillow.  This id pointer directs the browswer to the specific property on the subsequent screen, providing access to values/data.  Unfortunately when I attempt to access the web site with the HtmlAgilityPack code below, the returning document does not include the appropriate “id” information.<br /><br /><br /><br />May I impose upon you to steer me in the right direction?  Thank you very much.<br /><br /><br /><br />class ParseZillo<br /><br />    {<br /><br /><a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=STAThread\">STAThread</a><br /><br />        static void Main(string[] args)<br /><br />        {<br /><br />            HtmlWeb hw = new HtmlWeb();<br /><br />            string url = @\"http://www.zillow.com/search/Search.htm?addrstrthood=5<u>fox</u>trail+court&amp;citystatezip=20878&amp;mode=search\";<br /><br />            HtmlDocument doc = hw.Load(url);<br /><br />            doc.Save(\"homevalue.htm\");<br /><br /><br /><br />            HtmlDocument doc2 = new HtmlDocument();<br /><br />            Doc2.Load(@\"homevalue.htm\");<br /><br />            HtmlNodeCollection nodes = doc2.DocumentNode.SelectNodes(\"//text()\");<br /><br /><br /><br />        }<br /><br />    }<br /><br />}<br /><br /><br /><br /><br /><br />Sincerely, <br /><br />Bill Hunter<br /><br />Whunter31@comcast.net<br /><br /><br />",
+    "PostedDate": "2006-08-24T16:13:27.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3334",
+    "ThreadId": "1020",
+    "Html": "\r\nHi Bill,<br /><br />I am not sure of what you are trying to achieve here :-)<br /><br />In general, if the result you get from the Html Agility Pack is different than what you get from a web browser, it can mean 3 things:<br /><br />1) the server relies on the Referrer http header (sent by a browser, and not by the Html Agility Pack by default)<br /><br />3) the server relies on some context sent by a browser, and not by the Html Agility Pack by default (like cookie, security stuff, ...)<br /><br />3) the html was really badly formed<br /><br />Anyway, I don't see a difference between what your code gets and what a browser/view source gets. So you may have to analyze exactly what's going on between the client and the server. Sometimes, web scraping is hard.<br /><br />Hope this helps<br />Simon.<br />",
+    "PostedDate": "2006-08-24T23:58:03.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3345",
+    "ThreadId": "1020",
+    "Html": "\r\nSimon,<br /><br />Thank you for your responding so quickly.  <br /><br />Their is a hidden value \"zpid\" ('&lt;input type = \"hidden\"') on Zillow necessay to identify the specific property for obtaining property information on the subsequent screen.  I was hoping that there was a method through the HtlmAgility Pack to see that \"hidden value\", as I would then be able to automate obtaining values for specific properties.  This value is of course not visible through \"view source\", nor saving the web browser page and viewing the source; however it is visible with numerous tools (DOM Explorer, XMLSpy, etc.)<br /><br />Is there a way to view this value through HtmlAgilityPack?<br /><br />Thanks again,<br />Bill<br />",
+    "PostedDate": "2006-08-25T03:53:56.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3415",
+    "ThreadId": "1020",
+    "Html": "\r\nYou could use XPATH for this. Well, you have to learn a bit of XPATH, but once you get used to it, it's easy.<br /><br />For exemple, to get the value out of this:<br />&lt;input name=\"whatever\" value=\"blabla\"/&gt;<br /><br />, you would do something like:<br /><br />HtmlNode node = htmlDocument.SelectNode(\".//input<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40name%20%3d%20%27whatever%27\">@name = 'whatever'</a>\");<br />Console.WriteLine(node.GetAttributeValue(\"value\"))<br />",
+    "PostedDate": "2006-08-26T04:12:59.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "3417",
+    "ThreadId": "1020",
+    "Html": "\r\nSimon,<br /><br />Thank you.  I appreciate your help very much.<br /><br />Bill<br />",
+    "PostedDate": "2006-08-26T05:29:48.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

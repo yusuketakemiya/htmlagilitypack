@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "444236",
+    "ThreadId": "213001",
+    "Html": "<p>Does anyone know or is there an option to disable the additional p=&quot;&quot; which is being added to all my generated  tags?</p>\r\n<p>For example:</p>\r\n<pre id=line108><span id=\"__firefox-tidy-id\" style=\"background-color:#ddddff\">&lt;<span>option</span><span> value</span>=<span>&quot;2&quot; </span><span>p</span>=<span>&quot;&quot;</span>&gt;2&lt;/<span>option</span>&gt;</span><br><span id=\"__firefox-tidy-id\" style=\"background-color:#ddddff\">&lt;<span>option</span><span> value</span>=<span>&quot;3&quot; </span><span>p</span>=<span>&quot;&quot;</span>&gt;3&lt;/<span>option</span>&gt;</span><br><br></pre>",
+    "PostedDate": "2010-05-18T03:56:16.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "217924",
+    "ThreadId": "64094",
+    "Html": "<p>Hello.</p>\r\n<p>I am writing a piece of code in VB to capture some data from some websites. I have started with relatively easy websites but now things got a bit more complicated and I got stuck.</p>\r\n<p><br>I need to be able to access a node by the value of a variable.Consider this for example.</p>\r\n<p>x = /...../tr[1]</p>\r\n<p>y = /..../span[1]</p>\r\n<p>z = /..../text()[2]</p>\r\n<p>X,Y,Z represent the strings which I need for a single entry of my program.</p>\r\n<p>The problem is that I need to iterate over this 20+ times.</p>\r\n<p>So the general pattern would be</p>\r\n<p>for i = 0 to 20 do</p>\r\n<p>x = /.../tr[i]</p>\r\n<p>y = /.../span[i]</p>\r\n<p>z = /.../text()[2*i]</p>\r\n<p>&nbsp;</p>\r\n<p>But I don't know how to access a node by variable reference</p>\r\n<p>I've tried</p>\r\n<p>/.../tr[position()=i]</p>\r\n<p>/.../tr[position()= $i]</p>\r\n<p>/../tr[$i]</p>\r\n<p>None seem to be working.</p>\r\n<p><br>Some help would be greatly appreciated.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you,</p>\r\n<p>Robert</p>",
+    "PostedDate": "2009-07-31T02:52:59.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "448898",
+    "ThreadId": "64094",
+    "Html": "<p>Hi Robert,</p>\r\n<p>Your message pretty dated... So I hope someone bothers to look at this.&nbsp; :-)</p>\r\n<p>I'm working in C# and have the same problem.&nbsp; I'm trying to get the first row from a table (the column names/headers).&nbsp; It works fine if I know ahead of time how many columns there are, but if I don't I'm totally out of luck.&nbsp; The following works if I have four columns:</p>\r\n<pre>// Create a new HtmlDocument object:\r\nHtmlDocument doc = new HtmlDocument();\r\n// Load the HtmlDocument object with the contents of an HTML file:\r\ndoc.Load(FileName);\r\n\r\n// Get all tables in the document\r\nHtmlNodeCollection tables = doc.DocumentNode.SelectNodes(&quot;//table&quot;);\r\n\r\nConsole.WriteLine(&quot;There were {0} tables found in this file.&quot;, tables.Count);\r\n\r\nfor (int i = 1; i &lt;= tables.Count; i++)\r\n{\r\n    Console.WriteLine(&quot;Reading Table {0}&quot;, i);\r\n\r\n    Console.WriteLine(&quot;Xpath: /table[1]/tr[1]/td[1]&quot;);\r\n    HtmlNode MyTest = doc.DocumentNode.SelectSingleNode(@&quot;/table[1]/tr[1]/td[1]&quot;);\r\n    Console.WriteLine(&quot;{0}&quot;, MyTest.InnerText);\r\n    MyTest = doc.DocumentNode.SelectSingleNode(@&quot;/table[1]/tr[1]/td[2]&quot;);\r\n    Console.WriteLine(&quot;{0}&quot;, MyTest.InnerText);\r\n    MyTest = doc.DocumentNode.SelectSingleNode(@&quot;/table[1]/tr[1]/td[3]&quot;);\r\n    Console.WriteLine(&quot;{0}&quot;, MyTest.InnerText);\r\n    MyTest = doc.DocumentNode.SelectSingleNode(@&quot;/table[1]/tr[1]/td[4]&quot;);\r\n    Console.WriteLine(&quot;{0}&quot;, MyTest.InnerText);\r\n\r\n}\r\n</pre>\r\n<pre>How can I:</pre>\r\n<pre>1.  Identify the number of columns?</pre>\r\n<pre>2.  Specify the column number I desire so I can access them dynamically at runtime?   (something like doc.DocumentNode.SelectSingleNode(@&quot;/table/[1]/tr[1]/td[VARIABLENAME]&quot;)</pre>\r\n<pre>Thanks,</pre>\r\n<pre>Russell Schutte</pre>",
+    "PostedDate": "2010-05-28T16:15:30.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "448900",
+    "ThreadId": "64094",
+    "Html": "<p>Hi Everyone,</p>\r\n<p>Dang it, I try not to ask for help until I'm really stuck...&nbsp; And as sure as I posted, I found half of my solution:</p>\r\n<p>2.&nbsp; The answer is easier than would be expected:&nbsp;</p>\r\n<pre>MyTest = doc.DocumentNode.SelectSingleNode(@&quot;/table[1]/tr[1]/td[&quot; + j + &quot;]&quot;);\r\nConsole.WriteLine(&quot;{0}&quot;, MyTest.InnerText);</pre>\r\n<p>My other question remains, hopefully someone can help:</p>\r\n<p>1.&nbsp;&nbsp;How can I&nbsp;identify the number of columns in an HTML table?</p>\r\n<p>Thanks,</p>\r\n<p>Russell Schutte</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"width:1px;height:1px;overflow:hidden;top:0px;left:-10000px\">﻿</div>",
+    "PostedDate": "2010-05-28T16:35:11.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "448910",
+    "ThreadId": "64094",
+    "Html": "<p>Have you tried using some of the new LINQ compatible methods? Select the tr node and do a node.Descendants(&quot;td&quot;).Count()?</p>\r\n<pre> doc.DocumentNode.SelectSingleNode(@&quot;/table[1]/tr[1]).Descendants(&quot;td&quot;).Count() ?<br><br>1.4.0 added a bunch of new methods that you can use LINQ against. <br><br><div style=\"color:black;background-color:white\"><pre><span style=\"color:blue\">var</span> firstTableRows = doc.DocumentNode.DescendantNodes(<span style=\"color:#a31515\">&quot;table&quot;</span>)\r\n                                        .Select(table =&gt; table.Descendants(<span style=\"color:#a31515\">&quot;tr&quot;</span>).FirstOrDefault())\r\n                                        .Where(tr=&gt;tr!=<span style=\"color:blue\">null</span>)\r\n                                        .Select(tr=&gt;tr.Descendants(<span style=\"color:#a31515\">&quot;td&quot;</span>).Select(td =&gt; td.InnerText));\r\nfirstTableRows.ToList()\r\n              .ForEach((tr) =&gt; tr.ToList()\r\n                                 .ForEach(td =&gt;{\r\n                                                 Console.WriteLine(<span style=\"color:#a31515\">&quot;Count {0}:&quot;</span>, td.Count());\r\n                                                 Console.WriteLine(td);\r\n                                                }));\r\n</pre>\r\n</div>\r\n<br><br></pre>",
+    "PostedDate": "2010-05-28T17:21:16.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "448943",
+    "ThreadId": "64094",
+    "Html": "<p>Hi DarthObiwan,</p>\r\n<p>I'm brand new to C# (a couple of weeks new), and while I'm comfortable with SQL, I have no experience with LINQ.&nbsp; I guess I'll get there someday.&nbsp; :-)</p>\r\n<p>I don't know if this is the best method, but I was able to determine the number of columns (this may not work with complex HTML tables, like those that include COLSPAN, for example - it's untested):</p>\r\n<pre>                // Create a new HtmlDocument object:\r\n                HtmlDocument doc = new HtmlDocument();\r\n                // Load the HtmlDocument object with the contents of an HTML file:\r\n                doc.Load(FileName);\r\n\r\n                // Get all tables in the document\r\n                HtmlNodeCollection tables = doc.DocumentNode.SelectNodes(&quot;//table&quot;);\r\n\r\n                Console.WriteLine(&quot;There were {0} tables found in this file.&quot;, tables.Count);\r\n\r\n                for (int i = 1; i &lt;= tables.Count; i++)\r\n                {\r\n                    Console.WriteLine(&quot;Reading Table {0}&quot;, i);\r\n\r\n                    HtmlNodeCollection columns = doc.DocumentNode.SelectNodes(&quot;//td&quot;);\r\n                    HtmlNodeCollection rows = doc.DocumentNode.SelectNodes(&quot;//tr&quot;);\r\n\r\n                    Console.WriteLine(&quot;Rows: {0}&quot;, rows.Count);\r\n                    Console.WriteLine(&quot;Columns: {0}&quot;, (columns.Count/rows.Count));\r\n                    int NumberofColumns = (columns.Count / rows.Count);\r\n\r\n                    HtmlNode MyTest = null;\r\n\r\n                    for (int j = 1; j &lt;= NumberofColumns; j++)\r\n                    {\r\n                        MyTest = doc.DocumentNode.SelectSingleNode(@&quot;/table[1]/tr[1]/td[&quot; + j + &quot;]&quot;);\r\n                        Console.WriteLine(&quot;{0}&quot;, MyTest.InnerText);\r\n                    }\r\n                }</pre>\r\n<pre>If there's a better way, please let me know.  (Linq looks like total greek to me, but it looks like you've done kinda the same thing to get the count.)</pre>\r\n<pre>Thanks,</pre>\r\n<pre>Russell Schutte</pre>",
+    "PostedDate": "2010-05-28T21:12:40.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450112",
+    "ThreadId": "64094",
+    "Html": "<p>Hi Everyone,</p>\r\n<p>I worked a bit on this over the weekend and I'm still a bit stuck.</p>\r\n<p>First, I haven't figured out how to read each table - or nested tables.</p>\r\n<p>Secondly,&nbsp;sometimes I get the error:</p>\r\n<p>&quot;Object reference not set to an instance of an object.&quot;</p>\r\n<p>referring to the line</p>\r\n<pre>Console.WriteLine(&quot;{0}&quot;, MyTest.InnerText);</pre>\r\n<p>I&nbsp;suspect it has something to do with the tables I'm reading - if they don't have a TR or TD?&nbsp; How can I handle this correctly?&nbsp; Testing for MyTest.InnerText == null gives me the error as well.</p>\r\n<p>Thanks for any help you can provide.&nbsp; (In the meantime, I'm looking into LINQ - as it seems this might be my best answer?)</p>\r\n<p>Russell Schutte</p>",
+    "PostedDate": "2010-06-01T08:43:10.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450127",
+    "ThreadId": "64094",
+    "Html": "That is due to the XPATH functions can return null if nothing is found. It works this way because that is how System.Xml works and Html Agility Pack was written to mimic that API. So SelectSingleNode may return a null",
+    "PostedDate": "2010-06-01T09:01:21.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450131",
+    "ThreadId": "64094",
+    "Html": "<p>Hi Darth,</p>\r\n<p>Thank you for such a cool tool.&nbsp; I hope I can figure out how to make it work for me, eventually.&nbsp; :-)</p>\r\n<p>I have to read table data from a variety of websites - I'm trying to read the headers (top row) for each column and then I can parse the data from the HTML tables, knowing what each column contains.&nbsp; Often these tables will be nested for formatting purposes.</p>\r\n<p>Seems to me that this should be a lot easier than I'm making it.</p>\r\n<p>What's the best way to do this?&nbsp; (I will work to figure it out - just give me some pointers).</p>\r\n<p>Thanks,</p>\r\n<p>Russell Schutte</p>",
+    "PostedDate": "2010-06-01T09:09:29.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

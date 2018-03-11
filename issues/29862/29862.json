@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Input HTML fragment:\n<whatever>&#116;&#104;&#105;&#115;&#032;&#105;&#115;&#032;&#115;&#111;&#109;&#101;&#032;&#101;&#110;&#099;&#111;&#100;&#101;&#100;&#032;&#116;&#101;&#120;&#116;&#046;</whatever>\n \nSaved into XML (the same fragment):\n<whatever>&amp;#116;&amp;#104;&amp;#105;&amp;#115;&amp;#032;&amp;#105;&amp;#115;&amp;#032;\n&amp;#115;&amp;#111;&amp;#109;&amp;#101;&amp;#032;&amp;#101;&amp;#110;&amp;#099;\n&amp;#111;&amp;#100;&amp;#101;&amp;#100;&amp;#032;&amp;#116;&amp;#101;&amp;#120;\n&amp;#116;&amp;#046;</whatever>\n \nThis is clearly incorrect. Should be, for example:\n<whatever>this is some encoded text.</whatever>\n \nI propose the following change to HtmlEncode:\n        public static string HtmlEncode(string html)\n        {\n            if (html == null)\n            {\n                throw new ArgumentNullException(\"html\");\n            }\n            html = HttpUtility.HtmlDecode(html);\n            return html.Replace(\"&\", \"&amp;\").Replace(\"<\", \"&lt;\").Replace(\">\", \"&gt;\").Replace(\"\\\"\", \"\"\");\n        }\n \n...not sure if this breaks anything else. Please let me know.",
+    "LastUpdatedDate": "2013-02-21T18:47:10.71-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-12-28T13:19:52.157-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Faulty HtmlDocument.HtmlEncode",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 29862
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

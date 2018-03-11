@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, There is problem with your dll.\n\nPlease check the following code and link . Note that script is uppercase and it doesn't parse the html..\n\nhttp://habera.com/haber/Bagis-a-boyle-tepki-gosterdiler/213421\n\n<SCRIPT language=javascript><!--\nfunction changeFontSize(s) {\n   var p = document.getElementsByTagName('p');\n   for(i=0;i<p.length;i++) {\n      p[i].style.fontSize = s+\"px\"\n   }\n}\n\nfunction textCounter(field, countfield, maxlimit) {\nif (field.value.length > maxlimit)\nfield.value = field.value.substring(0, maxlimit);\nelse \ncountfield.value = maxlimit - field.value.length;\n}\n\n//-->\n</script>",
+    "LastUpdatedDate": "2014-05-06T07:01:26.72-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-05-06T07:01:26.72-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug report",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35195
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm trying to parse the html page \"http://projectfreetv.us/internet/big-brother-canada/season-1.html\" with the CssSelect of \".episode a\"\n\nIt only gives me the episode classes in the first table.\n\n```\nWebRequest request = WebRequest.Create(\"http://projectfreetv.us/internet/big-brother-canada/season-1.html\");\n\nHttpWebResponse resp = (HttpWebResponse)request.GetResponse();\n\nStreamReader reader = new StreamReader(resp.GetResponseStream());\n\nHtmlAgilityPack.HtmlDocument doc = new HtmlDocument();\n\ndoc.LoadHtml(reader.ReadToEnd());\n\nforeach(HtmlNode node in doc.DocumentNode.CssSelect(\".episode a\"))\n{\n          Console.WriteLine(node.InnerText);\n }\n```",
+    "LastUpdatedDate": "2016-07-30T15:22:25.677-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-07-30T15:22:25.677-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Trouble parsing html",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43463
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

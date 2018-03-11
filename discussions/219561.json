@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "467711",
+    "ThreadId": "219561",
+    "Html": "Let's assume I have this\r\n\r\n<div>\r\n    <p>Bla bla bla specialword bla bla bla</p>\r\n    <p>Bla bla bla bla bla specialword</p>\r\n</div>\r\nI want to replace the word specialword from my html with a node, for example to make it bold (put b tag around it) <b>specialword</b>. This is easy using string replacement, but I want to use the Html Agility Pack features.\r\n\r\nThanks.",
+    "PostedDate": "2010-07-15T04:28:13.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

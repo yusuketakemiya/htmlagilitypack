@@ -1,0 +1,61 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The LoadHtml() throws StackOverflowException when using an HTML with big level of embedding.\n\nWith the HAP sources I can see that exception is being thrown because of recursion in HtmlNode.SetChanged() method.\n\nIs it a known issue? \n\nIs there any workaround on this? \n\nI know about the MaxDepthLevel option in HtmlDocument, but it doesn't seem to be checked during call to LoadHtml(). It is checked only on call to Descendants()...",
+    "LastUpdatedDate": "2016-12-05T22:06:37.83-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-11-10T03:17:42.29-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "LoadHtml throws StackOverflowException for HTML with big level of tag embedding",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 8,
+    "Id": 43529
+  },
+  "FileAttachments": [
+    {
+      "FileId": 16450,
+      "FileName": "Hundred thousandfold embedding HTML.html",
+      "DownloadUrl": ".\\16450"
+    },
+    {
+      "FileId": 16452,
+      "FileName": "9635def91e87bd8f8d4c3605630bcca6.eml",
+      "DownloadUrl": ".\\16452"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Also hitting the same issue where we get StackOverFlow exceptions despite having MaxDepthLevel set.  \r\n\r\nThis is a huge pain.  ",
+      "PostedDate": "2016-11-18T12:20:26.093-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-12-05T22:06:37.83-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

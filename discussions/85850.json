@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "292344",
+    "ThreadId": "85850",
+    "Html": "<p>Here is the code that is created by MS Word 2007 when I save as a filtered HTML document:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>&lt;td width=47 style='width:35.55pt;border-top:none;border-left:none;\r\n  border-bottom:solid #BFBFBF 1.5pt;border-right:solid #BFBFBF 1.5pt;\r\n  background:#F2F2F2;padding:0in 3.5pt 0in 3.5pt;height:13.0pt'&gt;\r\n  &lt;p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;\r\n  text-align:center;line-height:120%;text-autospace:none;vertical-align:middle'&gt;<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">span</span>\r\n  <span style=\"color:Red\">lang</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">DE</span> <span style=\"color:Red\">style</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">'font-size:9.0pt;line-height:120%;font-weight:normal'</span><span style=\"color:Blue\">&gt;</span><span style=\"color:#800000\">0,75</span><span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">span</span><span style=\"color:Blue\">&gt;</span><span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">p</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">td</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n<pre>What I need to do is strip out the attributes in the opening &lt;td tag, remove the </pre>\r\n<pre>&lt;p&gt; element entirely, and end up with this:  &lt;td&gt;0,75&lt;/td&gt; when I'm done.  I was</pre>\r\n<pre>advised on ASP.NET forums to use this tool, but it is becoming increasingly obvious</pre>\r\n<pre>to me that there is a lot that I need to learn to do before I can use it effectively.</pre>\r\n<pre>So, not only am I asking how to resolve my tag problem, I also need to know what I need</pre>\r\n<pre>to study and learn to actually use this tool everyone is raving about.</pre>\r\n</div>",
+    "PostedDate": "2010-02-18T12:59:47.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

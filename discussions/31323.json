@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "104107",
+    "ThreadId": "31323",
+    "Html": "Hi there,<br>\r\n<br>\r\nFirst of all, congratulations for the great tool you made, it saved me a lot of time.<br>\r\n<br>\r\nI'm currently facing a little problem, here is what I'm doing:<br>\r\n<br>\r\n<blockquote>\r\n<strong>HtmlNodeCollection myCollection = myHtml.DocumentNode.SelectNodes(myXPath);<br>\r\n<br>\r\nforeach(HtmlNode myNode in myCollection)<br>\r\n{<br>\r\n&nbsp;&nbsp; doSomeStuff();<br>\r\n}</strong><br>\r\n</blockquote><br>\r\nThe fact is when you select a single node, it automatically updates the context, and sets _currentNode to the appropriate value. But in order to proceed some relative XPath queries, I need the context to be updated during each iteration, which, I understand why, is not done automatically. But is there a way, other than using a XPath query, to set the _currentNode to some specific node (like myNode) ?<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nLucas Hosseini<br>\r\n",
+    "PostedDate": "2008-07-11T02:19:56.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169336",
+    "ThreadId": "31323",
+    "Html": "I have the same problem...did you find anything on this?<br>\r\n",
+    "PostedDate": "2009-03-18T03:01:16.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

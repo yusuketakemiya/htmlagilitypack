@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "82707",
+    "ThreadId": "24672",
+    "Html": "\r\nI just wanted some clarification on this:<br />CacheOnly = pull from cache or don't pull at all<br />CachePath=where to put the cache files<br />FromCache=Was this pulled from cache<br />UsingCache=turn on or off caching<br /><br />So if I wanted to force a cache timeout of say 60 minutes, I could just create a timer to delete files from the cache directory with a last access of more than 60 minutes?<br />",
+    "PostedDate": "2008-03-25T08:48:41.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

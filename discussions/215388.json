@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "453220",
+    "ThreadId": "215388",
+    "Html": "<p>When i try to use a website url compressed with gzip HtmlAgilityPack gives the following error.</p>\r\n<p>&nbsp;</p>\r\n<p>Please try this in your GetDocLinks.cs code and see yourself!</p>\r\n<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; HtmlWeb hw = new HtmlWeb();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string url = @&quot;http://www.turk.internet.com/portal/yazigoster.php?yaziid=27557&quot;;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;HtmlDocument doc = hw.Load(url);</p>\r\n<p>&nbsp;</p>\r\n<p>How can i solve this problem, any ideas please?</p>\r\n<p>&nbsp;</p>\r\n<p>And here you can find the exact problem i have in here (and no solutions at all!)</p>\r\n<p>http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=22790</p>\r\n<p>&nbsp;</p>\r\n<p>thanks</p>",
+    "PostedDate": "2010-06-08T14:34:23.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "453227",
+    "ThreadId": "215388",
+    "Html": "<p>Just change the following lines in HtmlWeb.cs - line 433</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if ((resp.ContentEncoding != null) &amp;&amp; (resp.ContentEncoding.Length&gt;0))<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; respenc = System.Text.Encoding.GetEncoding(resp.ContentEncoding);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; respenc = null;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; respenc = null;<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</p>\r\n<p>&nbsp;</p>\r\n<p>I hope this will be usefull...</p>",
+    "PostedDate": "2010-06-08T14:47:55.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

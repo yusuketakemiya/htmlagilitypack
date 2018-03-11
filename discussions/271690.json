@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "668355",
+    "ThreadId": "271690",
+    "Html": "\r\n<p>I have pages that use images as links, and I am trying to get the link as well as the images url.</p>\r\n<p>So if it was: &lt;a href=&quot;LINK&quot;&gt;&lt;img src=&quot;IMAGEURL&quot;&gt;&lt;/a&gt;</p>\r\n<p>I need to collect both the link and the image url.</p>\r\n<p>This is what I have, but I don't know how to go about collecting the image url from inside the existing foreach</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>HtmlWeb hw = <span style=\"color:blue\">new</span> HtmlWeb();\r\nHtmlAgilityPack.HtmlDocument doc = hw.Load(url);<br><span style=\"color:blue\">foreach</span> (HtmlNode link <span style=\"color:blue\">in</span> doc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//a[@href]&quot;</span>))<br>{\r\nHtmlAttribute att = link.Attributes[<span style=\"color:#a31515\">&quot;href&quot;</span>];\r\n}\r\n</pre>\r\n</div>\r\nIs there a way of dong this?\r\n<p></p>\r\n",
+    "PostedDate": "2011-09-06T18:06:30.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "668371",
+    "ThreadId": "271690",
+    "Html": "<p>The image tag is contained within the &lt;a&gt; node, you would have to look for the attribute you want inside the child nodes of the &lt;a&gt; node.</p>",
+    "PostedDate": "2011-09-06T19:22:02.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "668636",
+    "ThreadId": "271690",
+    "Html": "<p>This is what I did, but it is only returning the src value of the first image and then repeating it for all others.</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>HtmlWeb hw = <span style=\"color: blue;\">new</span> HtmlWeb();\r\nHtmlAgilityPack.HtmlDocument doc = hw.Load(url);\r\nHtmlNodeCollection linkNodes = doc.DocumentNode.SelectNodes(<span style=\"color: #a31515;\">\"//a[@href]\"</span>);\r\n<span style=\"color: blue;\">foreach</span> (HtmlNode linkNode <span style=\"color: blue;\">in</span> linkNodes)\r\n{\r\nHtmlAttribute link = linkNode.Attributes[<span style=\"color: #a31515;\">\"href\"</span>];\r\nHtmlNode imageNode = linkNode.SelectSingleNode(<span style=\"color: #a31515;\">\"//img\"</span>);\r\nHtmlAttribute src = imageNode.Attributes[<span style=\"color: #a31515;\">\"src\"</span>];\r\n\r\n<span style=\"color: blue;\">string</span> imageLink = link.Value;\r\n<span style=\"color: blue;\">string</span> imageUrl = src.Value;\r\n}\r\n<br />Whats wrong here?</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2011-09-07T07:59:20.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

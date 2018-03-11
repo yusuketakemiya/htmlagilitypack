@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "There are few possible bugs in HtmlDocument.GetXmlName method.\n \n1. Colon symbol is not allowed, but this symbol is separator between xml namespace and node name.\nOptions: OptionOutputAsXml = true\nHtml: <uc:control></uc:control>\nExpected xml: <uc:control></uc:control>\nActual result:  <_uc3a_control></_uc3a_control>\n \n2. If OptionOutputOriginalCase and OptionOutputAsXml is turned on, node names are broken in case of using letters in different cases.\nOptions: OptionOutputAsXml = true, OptionOutputOriginalCase = true\nHtml: <uc:Control></uc:Control>\nExpected xml: <uc:Control></uc:Control>\nActual result: <_uc3a_43_ontrol></_uc3a_43_ontrol>\n \nThere are fixes in attachment.",
+    "LastUpdatedDate": "2013-02-21T18:47:15.67-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-06-10T05:19:18.777-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlDocument.GetXmlName method bugs",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 27466
+  },
+  "FileAttachments": [
+    {
+      "FileId": 10370,
+      "FileName": "HtmlDocument.zip",
+      "DownloadUrl": ".\\10370"
+    }
+  ],
+  "Comments": []
+}

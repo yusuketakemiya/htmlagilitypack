@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The HtmlNode.Ancestors() method does not include the parent node in the list of ancestors returned. The first ancestor returned is the grandparent node, then the great grandparent node etc. In other words the parent node is skipped.\n \n        /// <summary>\n        /// Returns a collection of all ancestor nodes of this element.\n        /// </summary>\n        /// <returns></returns>\n        public IEnumerable<HtmlNode> Ancestors()\n        {\n            HtmlNode node = ParentNode;\n            while (node.ParentNode != null)\n            {\n                yield return node.ParentNode;\n                node = node.ParentNode;\n            }\n        }\n \nThis is inconsistent with the HtmlNode.Ancestors(string name) method, which does return the parent (assuming the name matches the name parameter).\n \nBoth overloads of HtmlNode.AncestorsAndSelf also return the parent node.\n \nA simple fix is to initialise the node variable with this rather than ParentNode.",
+    "LastUpdatedDate": "2013-06-14T00:35:57.04-07:00",
+    "PlannedForRelease": "1.4.7",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-04-28T03:56:52.843-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlNode.Ancestors() method does not include ParentNode",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 30608
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I just stumbled on this bug... I'm surprised it is still there, more that one year after being reported. And it seems quite easy to fix ;)",
+      "PostedDate": "2012-08-12T13:23:57.673-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This has been fixed in source control at revision: 99300\r\n\r\nThis will be included in the next release\r\n\r\nI had missed this too. Thanks for bumping it back up ",
+      "PostedDate": "2012-08-23T07:27:49.593-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-08-23T07:29:39.62-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:07.93-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:57.4-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:57.52-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-14T00:35:57.04-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

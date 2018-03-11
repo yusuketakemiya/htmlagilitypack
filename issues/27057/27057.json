@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hey , \n \nI ve got an exception caused by overflow of stack on the function HtmlDocument.save(),\n \nWhat i was doing,  I was trying to parse an html file, loaded that html in my HtmlDocument and chnaged some elements ids and added some attributes, \nafter that when i tried to save all my work done , i got stack overflow , \n \nhere  is the code\n \n{\n        HtmlAgilityPack.HtmlDocument HtmlDoc = new HtmlDocument();\n        HtmlDoc.LoadHtml(MyHtmlString);\n        IEnumerable<HtmlNode> tempCollection1 = HtmlDoc.DocumentNode.Descendants(\"body\");\n        IEnumerable<HtmlNode> tempCollection = tempCollection1.First().DescendantNodes();      \n \n        foreach ( HtmlNode tagElement in tempCollection )\n        {\n            ///\n            /// I Made Some Changes\n            /// Like change id value / bind some events\n            /// \n        }       \n \n//Following line throws exception \n        HtmlDoc.Save(@\"C:\\index2.html\");\n \n}\n \n \nI want to know if that is any bug or am I doing something wrong",
+    "LastUpdatedDate": "2013-02-21T18:47:16.833-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-05-14T04:19:12.72-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Stack OverFlows",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 27057
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

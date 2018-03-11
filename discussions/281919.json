@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "707883",
+    "ThreadId": "281919",
+    "Html": "\r\n<p>I basically want to extract the contents of the webpage, crawl into all the links and get all the information and save it. Is this possible with htmlAgilityPack?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-12-05T19:33:03.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

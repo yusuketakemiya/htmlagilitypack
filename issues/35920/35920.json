@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am experiencing differing results using Html Agility Pack when trying to match an attribute starting with a given value. Using the sample HTML below:\n\n```\n<!DOCTYPE html>\n<html>\n<head>\n<title>Title</title>\n</head>\n<body>\n<p>Loren ipsum</p>\n<a href=\"http://www.myurl.com\" onclick=\"myFunction()\"></a>\n</body>\n</html>\n```\n\nUsing DocumentNode.SelectNodes() with the following query returns no results:\n\n```\n//*/@*[starts-with(name(), 'on')]\n```\n\nBut using DocumentNode.SelectNodes() with the following query does return results:\n\n```\n//*/@*[starts-with(local-name(), 'on')]\n```\n\nI believe these should return the same results.",
+    "LastUpdatedDate": "2015-04-02T02:03:23.177-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-04-02T02:03:23.177-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Differing results returned using name and local-name()",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35920
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

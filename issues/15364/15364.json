@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Option is treated specifically. Please check other posts about the ElementFlags settings.",
+    "ClosedDate": "2009-05-17T23:45:33.363-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When using the HtmlNode.SelectNodes(string xpath) function to select all of the option nodes under a select node, I get back either a null HtmlNodeCollection if I select using the next node xpath construct, or an HtmlNodeCollection containing all of the <option> nodes on the page if I use the other xpath variant.  By next node xpath construct, I mean this:\n \n/option\n \nby \"the other xpath variant\", I mean this:\n \n//option\n \nSo when I do this:\n \nHtmlNodeCollection selectNodes = document.SelectNodes(\"//select[@id=\\\"someId\\\"]\");\nHtmlNodeCollection optionNodes = selectNodes[0].SelectNodes(\"/option\");\n \nI get a null HtmlNodeCollection.  However when I do this:\n \nHtmlNodeCollection selectNodes = document.SelectNodes(\"//select[@id=\\\"someId\\\"]\");\nHtmlNodeCollection optionNodes = selectNodes[0].SelectNodes(\"//option\");\n \nI get all of the <option> nodes on the entire web page.  For some reason this isn't working the way I expected it to.  Also, these two variants DO produce the results i expect:\n \n(This one shouldn't produce the correct results)\nHtmlNodeCollection selectNodes = document.SelectNodes(\"//select[@id=\\\"someId\\\"]\");\nHtmlNodeCollection optionNodes = selectNodes[0].SelectNodes(\"//select[@id=\\\"someId\\\"]/option\");\n \nand\n \nHtmlNodeCollection optionNodes = document.SelectNodes(\"//select[@id=\\\"someId\\\"]/option\");\n \nSo there you have it.\n \nNathan\nnathamberlane at gmail dot com",
+    "LastUpdatedDate": "2013-05-16T05:33:00.44-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-02-27T10:11:00.59-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Using XPath to select a collection of <option> nodes under <select> node incrementally causes unexpected results",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15364
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The fact is an XPath starting with \"//\" means \"anywhere in the tree\". In your case, in order to select every option tag for each select tag, you should do this:\r\nHtmlNodeCollection selectNodes = document.SelectNodes(\"//select[@id=\\\"someId\\\"]\"); /* Selects every <select> */\r\nHtmlNodeCollection optionNodes = selectNodes[0].SelectNodes(\"./option\"); /* Selects every<option> for the first occurence of <select> */\r\n\r\nLucas\r\nlucas.hosseini at gmail dot com",
+      "PostedDate": "2008-07-15T02:56:27.117-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-17T23:45:33.363-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:27.55-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:33:00.44-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

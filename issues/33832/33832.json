@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When trying to get innertext of below html snippet it results in: \"Artikel 1Artikel 2Artikel 3\" (mind the missing spaces)\n\n```\n      <li><a href=\"../artikelen/1826.htm#Artikel1\">Artikel 1</a></li>\n      <li><a href=\"../artikelen/1826.htm#Artikel2\">Artikel 2</a></li>\n      <li><a href=\"../artikelen/1826.htm#Artikel3\">Artikel 3</a></li>\n\n```\n\nIt needs to be:\n\n\"Artikel 1 Artikel 2 Artikel 3\"",
+    "LastUpdatedDate": "2013-03-01T03:03:11.717-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-03-01T03:00:26.103-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlNode.InnerText needs space chars or other kind of seperator after innertext of each element if needed",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33832
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

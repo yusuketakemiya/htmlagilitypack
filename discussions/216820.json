@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "458329",
+    "ThreadId": "216820",
+    "Html": "I could really use some way to cast from a System.Windows.Forms.HtmlElement to a HtmlNode, or something similar. Basically what I wan't to do is combine a .NET WebBrowser.Document with the HtmlAgilityPack to do stuff like getting the XPath to an element that the user clicks. ",
+    "PostedDate": "2010-06-21T21:10:07.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "846314",
+    "ThreadId": "216820",
+    "Html": "<p>I apologize for reviving an old topic, but did anybody manage to achieve this?</p>",
+    "PostedDate": "2012-06-07T18:29:47.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "846377",
+    "ThreadId": "216820",
+    "Html": "<p>The only thing I can think of is generating a GUID for each element and assigning it to a custom attribute such as \"data-my-custom-attribute\", which is kinda what jQuery does to keep track of elements. Then you could traverse the DOM on each side and create a dictionary that relates both sides.</p>",
+    "PostedDate": "2012-06-07T22:57:24.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "846513",
+    "ThreadId": "216820",
+    "Html": "<p>&nbsp;Like in any other programming thing ... you need the idea, everything else is simple. THANKS FOR THE IDEA!</p>\r\n<p>Actually things are a lot simpler right now.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;Let's say you have HTMLElement &lt;div class=\"the class\"&gt;hello man&lt;/div&gt;</p>\r\n<p>&nbsp;You want to get the HTMLNode corresponding to this element.</p>\r\n<p>&nbsp;Well we add the random attribute (like you said) and our HTMLElement becomes &lt;div class=\"the class\" my_attr=\"123124\"&gt; hello man&lt;/div&gt;</p>\r\n<p>&nbsp;Now we load the htmldocument doc with the new html (that has our element edited) and get the node by using a simple //div[@my_attr='123124']</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;Thank you!</p>",
+    "PostedDate": "2012-06-08T04:10:01.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

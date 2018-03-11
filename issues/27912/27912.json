@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The assembly should be marked with the CLSCompliant(true) attribute. Otherwise, the users get warnings when their programs are CLSCompliant.",
+    "LastUpdatedDate": "2014-10-23T01:36:18.873-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-06-29T00:14:20.17-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Assembly should be CLSCompliant",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 27912
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Yes, shouldn't be hard, and not like the pack uses anything not CLS compliant.",
+      "PostedDate": "2011-04-12T17:43:24.843-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-04-12T17:43:39.057-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-09T15:11:36.537-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:14.74-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-09-06T14:51:15.893-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-10-23T01:35:36.58-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Reported in 2010 and still not fixed?!",
+      "PostedDate": "2014-10-23T01:36:18.873-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

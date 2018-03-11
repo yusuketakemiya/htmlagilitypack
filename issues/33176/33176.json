@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Why does this test fail?\n \n        [TestMethod]\n        public void HAP_FormWithInput_InputIsChildOfForm()\n        {\n            // Arrange\n            var html = @\"\n<html>\n<head>\n<title>Form Test</title>\n</head>\n<body>\n<form method=\"\"post\"\" name=\"\"test\"\" action=\"\"action\"\" />\n<input type=\"\"hidden\"\" name=\"\"input1\"\" value=\"\"value1\"\" />\n</form>\n</body>\n</html>\";\n            var doc = new HtmlDocument();\n            doc.LoadHtml(html);\n            var form = doc.DocumentNode.Descendants(\"form\").Single();\n \n            // Act\n            var actual = form.ChildNodes.Count();\n \n            // Assert\n            Assert.AreEqual(1, actual);\n        }",
+    "LastUpdatedDate": "2013-02-21T18:46:56.713-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-09-28T05:05:04.65-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Why are Input elements not part of a Form element",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 3,
+    "Id": 33176
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "HAP does not duplicate how the DOM works. It exposes the true node nesting of HTML. Form exposing the child input elements is part of the DOM specification used by browsers and is not actually part of the HTML specification. \r\n\r\nThat being said in the future HAP may expose this. \nFor now you can do a query for any input nodes under form.\ndoc.DocumentNode.Descendants(\"form\").Descendants(\"input\")",
+      "PostedDate": "2012-10-09T16:55:56.33-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-01-01T03:09:43.21-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:56.713-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

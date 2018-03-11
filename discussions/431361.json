@@ -1,0 +1,210 @@
+[
+  {
+    "Id": "993997",
+    "ThreadId": "431361",
+    "Html": "\r\n<p>Will this project work if I have a string with regular text as well as html mixed together? I.e I have plain text and paragraphs mixed in one string.</p>\r\n",
+    "PostedDate": "2013-01-29T23:57:04.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994005",
+    "ThreadId": "431361",
+    "Html": "\r\n<p>Yes it will still work but you will be unable to get the text before and after the first tags</p>\r\n<p>e.g.</p>\r\n<p>abcd</p>\r\n<div>hij</div>\r\ndsfg\r\n<p></p>\r\n<p>hp.DocumentNode.SelectNodes(&quot;//div&quot;).InnerText == &quot;hij&quot;</p>\r\n",
+    "PostedDate": "2013-01-30T00:11:26.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994008",
+    "ThreadId": "431361",
+    "Html": "\r\n<p>Thank you for the answer I suppose I will keep trying to get my Regex to match. I do see the advantage in a html-parser, but I don't think it'll work in this instance where the plain-text is also important.</p>\r\n",
+    "PostedDate": "2013-01-30T00:17:20.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994011",
+    "ThreadId": "431361",
+    "Html": "\r\n<p>If you need help with regex give us a shout have done some complicated regex in the past.\r\n</p>\r\n<p>Lee</p>\r\n<div>On Jan 30, 2013 7:17 PM, &quot;Lobsterfun&quot; &lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt; wrote:<br type=\"attribution\">\r\n<blockquote style=\"margin:0 0 0 .8ex; border-left:1px #ccc solid; padding-left:1ex\">\r\n<div>\r\n<p>From: Lobsterfun</p>\r\n<div>\r\n<p>Thank you for the answer I suppose I will keep trying to get my Regex to match. I do see the advantage in a html-parser, but I don't think it'll work in this instance where the plain-text is also important.</p>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://htmlagilitypack.codeplex.com/discussions/431361#post994008\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:htmlagilitypack@discussions.codeplex.com?subject=[htmlagilitypack:431361]\" target=\"_blank\">htmlagilitypack@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:htmlagilitypack@discussions.codeplex.com\" target=\"_blank\">\r\nhtmlagilitypack@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://htmlagilitypack.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n",
+    "PostedDate": "2013-01-30T00:21:06.39-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994014",
+    "ThreadId": "431361",
+    "Html": "\r\n<p>I actually have a pretty big issue.</p>\r\n<p>I am printing to a pdf in C# and my boss wanted me to implement tinymce which went fine. Unfortunately we are using an old pdf printer-class that only supports b, i and u tags in html. but I need to be able to create indents as well.&nbsp;</p>\r\n<p>this is how indentation looks in tinymce&nbsp;</p>\r\n<p style=\"padding-left:30px\">[p style=&quot;padding-left: 30px;&quot;&gt;ijkk&lt;/p] (tags look like &lt;p&gt;)</p>\r\n<p>&nbsp;</p>\r\n<p>Unfortunately I only have a string that contains mixed plaintext and html(from tinymce) so I wanted to write a regex that get's all p tags with attributes(I have done this) and then based on the amount of pixels in &quot;padding-left:&quot;, replace it with &quot; &nbsp;\r\n &nbsp;whitespace30px&quot;&#43;text(if that makes sense?)</p>\r\n<p>&nbsp;</p>\r\n<p>here's what I have come up with so far:</p>\r\n<p>text = Regex.Replace(text, @&quot;&lt;p.*?&gt;(.*)&lt;/p&gt;&quot;, &quot; &nbsp; &nbsp;&quot; &#43; &quot;$1&quot;);</p>\r\n<p>but the whitespace is hard coded</p>\r\n",
+    "PostedDate": "2013-01-30T00:30:13.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994330",
+    "ThreadId": "431361",
+    "Html": "\r\n<p>Here is my solution would have to use a string loop through the regex to do the replace as couldn't think of a way to do multiple spaces based on the match.</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">string</span> html = &quot;erwerw&lt;p style=\\&quot;padding-left: 30px;\\&quot;&gt;ijkk&lt;/p&gt;rwwr&lt;p style=\\&quot;padding-left: 40px;\\&quot;&gt;ijkk&lt;/p&gt;&quot;;\nmc = Regex.Matches(html, &quot;(?&lt;complete&gt;&lt;p[^&gt;]*style=[^&gt;]*\\&quot;[^&gt;]*padding-left:\\\\s?(?&lt;number&gt;[0-9]*)px[^&gt;]*&gt;(?&lt;text&gt;[^&lt;]*)&lt;/p&gt;)&quot;);\n<span style=\"color:blue\">foreach</span> (Match match <span style=\"color:blue\">in</span> mc)\n{\n<span style=\"color:blue\">   </span><span style=\"color:blue\">if</span> (match.Groups.Count &gt; 0)\n   {\n      html = html.Replace(match.Groups[<span style=\"color:#a31515\">&quot;complete&quot;</span>].Value, <span style=\"color:blue\">string</span>.Format(<span style=\"color:#a31515\">&quot;{0}{1}&quot;</span>, <span style=\"color:blue\">new</span> <span style=\"color:blue\">string</span>(<span style=\"color:#a31515\">' '</span>,Convert.ToInt32(match.Groups[<span style=\"color:#a31515\">&quot;number&quot;</span>].Value)), match.Groups[<span style=\"color:#a31515\">&quot;text&quot;</span>].Value));\n   }\n}\n</pre>\r\nHope this helps</div>\r\n",
+    "PostedDate": "2013-01-30T12:41:58.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994539",
+    "ThreadId": "431361",
+    "Html": "Wow this is perfect :-D\r<br />\nThank you very much! I didn't know if it was even possible. I had made a different solution, but it is not even close to being as dynamic as this regex!<br />\n",
+    "PostedDate": "2013-01-30T23:17:35.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245060",
+    "ThreadId": "431361",
+    "Html": "I couldn’t help but notice you saying &quot;If you need help with regex give us a shout have done some complicated regex in the past&quot;.  I have been stuck on this issue for a while now and I am looking for any advice or support I can get. If you would be so kind to check out my question I would be more than appreciative. <a href=\"https://htmlagilitypack.codeplex.com/discussions/545246\" rel=\"nofollow\">https://htmlagilitypack.codeplex.com/discussions/545246</a>\r<br />\n I just want to remove html tags from my string but I also want to keep the formatting of bold and italics....thank you in advance.<br />\n",
+    "PostedDate": "2014-05-13T16:31:08.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245061",
+    "ThreadId": "431361",
+    "Html": "\r\n<div dir=\"ltr\">Hi Adandrea,\r\n<div><br>\r\n</div>\r\n<div>just taking a quick look it looks as if you just want to remove the html tags and the best way I would use is to do something similar to what you did with Regex because using HTMLAgaility pack is mainly for pulling apart a page and pulling specific information.\r\n for example a table always appears on a page named id=&quot;lookingforme&quot; and you can pull the details out of that table and use them I can give you a sample for this. But if you give me a sample of the html you want to strip out the tags from but leave the italic\r\n and bold tags I could see what I can do.</div>\r\n<div><br>\r\n</div>\r\n<div>Regards,</div>\r\n<div><br>\r\n</div>\r\n<div>Lee</div>\r\n</div>\r\n<div><br>\r\n<br>\r\n<div></div>\r\n</div>\r\n",
+    "PostedDate": "2014-05-13T16:42:46.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245066",
+    "ThreadId": "431361",
+    "Html": "thank you so much Lee. \r<br />\n<br />\none problem is that this description field is pulling in the description of different incidents which can change depending on which one the user selects to view. however here is one example: \r<br />\n<br />\nthis is what i should be seeing ( with the work API italics and the name Incident API in bold) : \r<br />\nFor testing of API calls in Incident API.\r<br />\n<br />\n however this is what i see: \r<br />\n&lt;p style=&quot;margin: 0px 0px 12px 0px;text-align: left;text-indent: 0pt;padding: 0px 0px 0px 0px;&quot;&gt;&lt;span style=&quot;font-family: 'Verdana';\r<br />\n<br />\nim not sure if some of the tags may be running off the page but from this point this is all I can see. \r<br />\n<br />\nthank you so much, i am semi new to coding and i really appreciate the help. the regex i am using now will display the text but will not show any bold or italics. \r<br />\n<br />\ncant thank you enough!<br />\n",
+    "PostedDate": "2014-05-13T16:53:09.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245069",
+    "ThreadId": "431361",
+    "Html": "\r\n<div dir=\"ltr\">I can't see any italics in\r\n<div><span style=\"font-family:arial,sans-serif; font-size:13px\"><br>\r\n</span></div>\r\n<div><span style=\"font-family:arial,sans-serif; font-size:13px\">\r\n<p style=\"margin:0px 0px 12px 0px; text-align:left; text-indent:0pt; padding:0px 0px 0px 0px\">\r\n<span style=\"\"><br>\r\n</span></p>\r\n</div>\r\n<div><span style=\"font-family:arial,sans-serif; font-size:13px\">was looking for either\r\n<i>test italics</i> or <b>test bold</b> to be in the html or maybe\r\n<p style=\"font-style:italic; font-weight:bold\">test styling</p>\r\n</span></div>\r\n<div><span style=\"font-family:arial,sans-serif; font-size:13px\"><br>\r\n</span></div>\r\n<div><span style=\"font-family:arial,sans-serif; font-size:13px\">if you could include a sample with that is it would be great.\r\n</span></div>\r\n<div><span style=\"font-family:arial,sans-serif; font-size:13px\"><br>\r\n</span></div>\r\n</div>\r\n<div><br>\r\n<br>\r\n<div></div>\r\n</div>\r\n</span>",
+    "PostedDate": "2014-05-13T17:00:24.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245072",
+    "ThreadId": "431361",
+    "Html": "here you go this is what I am getting:<br />\n&lt;p style=&quot;margin: 0px 0px 12px 0px;text-align: left;text-indent: 0pt;padding: 0px 0px 0px\r\n0px;&quot;&gt;&lt;span style=&quot;font-family: 'Verdana';font-style: Normal;font-weight: normal;font-size:\r\n16px;color: #000000;&quot;&gt;For testing of &lt;/span&gt;&lt;span style=&quot;font-family: Verdana; font-weight:\r\nnormal; font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;&lt;i&gt;API &lt;/i&gt;&lt;/span&gt;&lt;span style=&quot;font-family:\r\n'Verdana';font-style: Normal;font-weight: normal;font-size: 16px;color: #000000;&quot;&gt;calls in\r\n&lt;/span&gt;&lt;span style=&quot;font-family: 'Verdana';font-style: Normal;font-weight: bold;font-size:\r\n16px;color: #000000;&quot;&gt;Incident API&lt;/span&gt;&lt;span style=&quot;font-family: 'Verdana';font-style:\r\nNormal;font-weight: normal;font-size: 16px;color: #000000;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;\r\nsorry about that, there was a ton of code running off the page i couldnt see.  hope that will be more helpful. <br />\n",
+    "PostedDate": "2014-05-13T17:09:02.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245081",
+    "ThreadId": "431361",
+    "Html": "How about this. will require 2 passes..<br />\n<br />\nresult:<br />\n&lt;b&gt;For testing of &lt;/b&gt;&lt;i&gt;API &lt;/i&gt;calls in &lt;b&gt;Incident API&lt;/b&gt;.<br />\n<pre><code>string v = &quot;&lt;p style=\\&quot;margin: 0px 0px 12px 0px;text-align: left;text-indent: 0pt;padding: 0px 0px 0px 0px;\\&quot;&gt;&lt;span style=\\&quot;font-family: 'Verdana';font-style: Normal;font-weight: bold;font-size: 16px;color: #000000;\\&quot;&gt;For testing of &lt;/span&gt;&lt;span style=\\&quot;font-family: Verdana; font-weight: normal; font-size: 16px; color: rgb(0, 0, 0);\\&quot;&gt;&lt;i&gt;API &lt;/i&gt;&lt;/span&gt;&lt;span style=\\&quot;font-family: 'Verdana';font-style: Normal;font-eight: normal;font-size: 16px;color: #000000;\\&quot;&gt;calls in &lt;/span&gt;&lt;span style=\\&quot;font-family: 'Verdana';font-style: Normal;font-weight: bold;font-size: 16px;color: #000000;\\&quot;&gt;Incident API&lt;/span&gt;&lt;span style=\\&quot;font-amily: 'Verdana';font-style: Normal;font-weight: normal;font-size: 16px;color: #000000;\\&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&quot;;\n\nRegex r = new Regex(@&quot;&lt;span [^&gt;]*(?:font-weight:\\s?bold)[^&gt;]*&gt;(?&lt;boldtext&gt;[^&lt;]*)&lt;/span&gt;&quot;);\nstring t = r.Replace(v,&quot;&lt;b&gt;$1&lt;/b&gt;&quot;);\n\n\nRegex p = new Regex(&quot;&lt;((?!b)(?!i))[^/&gt;]*&gt;|&lt;/((?!b)(?!i))[^&gt;]*&gt;&quot;);\nstring q = p.Replace(t, &quot;&quot;);</code></pre>\n\n",
+    "PostedDate": "2014-05-13T18:04:34.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245082",
+    "ThreadId": "431361",
+    "Html": "\r\n<div dir=\"ltr\">p.s I changed the html you sent and added an extra bold in there for testing.\r\n</div>\r\n<div><br>\r\n<br>\r\n<div></div>\r\n</div>\r\n",
+    "PostedDate": "2014-05-13T18:05:24.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245086",
+    "ThreadId": "431361",
+    "Html": "thanks so much, im going to try this now. should i just be able to add this into my code of do i need to reference the description field at all? <br />\n",
+    "PostedDate": "2014-05-13T18:12:23.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245088",
+    "ThreadId": "431361",
+    "Html": "replace \r<br />\nreport.Description = Regex.Replace(report.Description, &quot;&lt;.*?&gt;| &quot;, string.Empty); \r<br />\n<br />\nwith the following<br />\n<pre><code>Regex r = new Regex(@&quot;&lt;span [^&gt;]*(?:font-weight:\\s?bold)[^&gt;]*&gt;(?&lt;boldtext&gt;[^&lt;]*)&lt;/span&gt;&quot;);\n        report.Description = r.Replace(report.Description, &quot;&lt;b&gt;$1&lt;/b&gt;&quot;);\n\n\n        Regex p = new Regex(&quot;&lt;((?!b)(?!i))[^/&gt;]*&gt;|&lt;/((?!b)(?!i))[^&gt;]*&gt;&quot;);\n        report.Description = p.Replace(report.Description, &quot;&quot;);</code></pre>\n\n",
+    "PostedDate": "2014-05-13T18:22:57.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245090",
+    "ThreadId": "431361",
+    "Html": "thanks for the clarification but unfortunetly it doesnt look like its taking the formatting....this is what I got this time:     For testing of &lt;i&gt;API &lt;/i&gt;calls in &lt;b&gt;Incident API&lt;/b&gt;.<br />\n",
+    "PostedDate": "2014-05-13T18:29:44.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245091",
+    "ThreadId": "431361",
+    "Html": "\r\n<div dir=\"ltr\">That is correct tho isn't it? you wanted the bold and italic formatting to stay and only the text and italic and bold to remain?</div>\r\n<div><br>\r\n<br>\r\n<div></div>\r\n</div>\r\n",
+    "PostedDate": "2014-05-13T18:32:34.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245395",
+    "ThreadId": "431361",
+    "Html": "yes that is correct but i was hoping that i would actualy see the text bold and italics instead of seeing the tags...does that make sense and is that possible? <br />\n",
+    "PostedDate": "2014-05-14T10:38:15.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245547",
+    "ThreadId": "431361",
+    "Html": "ok you have to actuall create a font for each part of the text and draw that.. bit annoying for you but here is a sample of how I'd do it.\r<br />\n<br />\nyou could also try this companies html to pdf software I use it at work and is very handy.\r<br />\n<a href=\"http://www.winnovative-software.com/\" rel=\"nofollow\">http://www.winnovative-software.com/</a><br />\n<pre><code>static void Main(string[] args)\n        {\n            \n            string v = &quot;&lt;p style=\\&quot;margin: 0px 0px 12px 0px;text-align: left;text-indent: 0pt;padding: 0px 0px 0px 0px;\\&quot;&gt;&lt;span style=\\&quot;font-family: 'Verdana';font-style: Normal;font-weight: bold;font-size: 16px;color: #000000;\\&quot;&gt;For testing of &lt;/span&gt;&lt;span style=\\&quot;font-family: Verdana; font-weight: normal; font-size: 16px; color: rgb(0, 0, 0);\\&quot;&gt;&lt;i&gt;API &lt;/i&gt;&lt;/span&gt;&lt;span style=\\&quot;font-family: 'Verdana';font-style: Normal;font-eight: normal;font-size: 16px;color: #000000;\\&quot;&gt;calls in &lt;/span&gt;&lt;span style=\\&quot;font-family: 'Verdana';font-style: Normal;font-weight: bold;font-size: 16px;color: #000000;\\&quot;&gt;Incident API&lt;/span&gt;&lt;span style=\\&quot;font-amily: 'Verdana';font-style: Normal;font-weight: normal;font-size: 16px;color: #000000;\\&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&quot;;\n            HtmlDocument doc = new HtmlDocument();\n            doc.LoadHtml(v);\n\n            foreach (HtmlNode link in doc.DocumentNode.SelectNodes(&quot;//span&quot;))\n            {\n                bool hasBold = false;\n                bool hasItalic = false;\n                string text = link.InnerText;\n                if (link.Attributes[&quot;style&quot;].Value.Contains(&quot;bold&quot;)){\n                    hasBold = true;\n                }\n                if (link.InnerHtml.Contains(&quot;&lt;i&gt;&quot;)){\n                    hasItalic = true;\n                }\n\n                font2 = GetFont(hasBold, hasItalic);\n\n                graphics.DrawString(&quot;&quot; + text, font2, XBrushes.Black, new XRect(margin + 90, page.Height - (lineHeight * 35), page.Width, page.Height), XStringFormats.TopLeft);\n\n            }\n        }\n\n\n        private void GetFont(bool hasBold, bool hasItalic)\n        {\n            XFont font;\n            if (hasBold &amp;&amp; hasItalic)\n                font = new XFont(&quot;Verdana&quot;, 20, XFontStyle.BoldItalic);\n            else if (hasBold)\n                font = new XFont(&quot;Verdana&quot;, 20, XFontStyle.Bold);\n            else if (hasItalic)\n                font = new XFont(&quot;Verdana&quot;, 20, XFontStyle.Italic);\n            else \n                font = new XFont(&quot;Verdana&quot;, 20, XFontStyle.Normal);\n            return font;\n        }</code></pre>\n\n",
+    "PostedDate": "2014-05-14T15:45:00.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245549",
+    "ThreadId": "431361",
+    "Html": "thank you so much for all your help and support, you have no idea how much I appreciate it. For the example above because i am pulling in different incidents with different description fields will this mean I need to change the static void main area for each instance or is there a way to set it so no matter what incident gets choosen that correct formatting will appear? not sure if that makes sense but just curious how that will work. <br />\n",
+    "PostedDate": "2014-05-14T15:55:17.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245553",
+    "ThreadId": "431361",
+    "Html": "It's no problem.. What you should do is create a function that will loop through all incidents and and set v as report description <br />\n<pre><code>foreach (var incident in incidents){\n \n DrawDescription(incident.Description);\n\n}\n</code></pre>\n\nthen create a method out of main that takes description as a param and load into the document\r<br />\n<br />\ndoc.LoadHtml(description)\r<br />\n<br />\nit should work assuming all descriptions are similar\r<br />\n<br />\ni.e have spans containing all the text with italics as tags and bold in the style. If there are some differences you will have to code them in by creating new link if statements \r<br />\n<br />\nif (link.Attributes[&quot;style&quot;].Value.Contains(&quot;italic&quot;))<br />\n<pre><code>        public static void CreateDocument()\n        {\n            foreach (var incident in incidents)\n            {\n                DrawDescription(incident.Description);\n            }\n        }\n\n        public static void DrawDescription(string description)\n        {\n            \n            HtmlDocument doc = new HtmlDocument();\n            doc.LoadHtml(description);\n\n            foreach (HtmlNode link in doc.DocumentNode.SelectNodes(&quot;//span&quot;))\n            {\n                bool hasBold = false;\n                bool hasItalic = false;\n                string text = link.InnerText;\n                if (link.Attributes[&quot;style&quot;].Value.Contains(&quot;bold&quot;))\n                {\n                    hasBold = true;\n                }\n                if (link.InnerHtml.Contains(&quot;&lt;i&gt;&quot;))\n                {\n                    hasItalic = true;\n                }\n\n                font2 = GetFont(hasBold, hasItalic);\n\n                graphics.DrawString(&quot;&quot; + text, font2, XBrushes.Black, new XRect(margin + 90, page.Height - (lineHeight * 35), page.Width, page.Height), XStringFormats.TopLeft);\n\n            }\n        }\n\n        private static void GetFont(bool hasBold, bool hasItalic)\n        {\n            XFont font;\n            if (hasBold &amp;&amp; hasItalic)\n                font = new XFont(&quot;Verdana&quot;, 20, XFontStyle.BoldItalic);\n            else if (hasBold)\n                font = new XFont(&quot;Verdana&quot;, 20, XFontStyle.Bold);\n            else if (hasItalic)\n                font = new XFont(&quot;Verdana&quot;, 20, XFontStyle.Italic);\n            else\n                font = new XFont(&quot;Verdana&quot;, 20, XFontStyle.Normal);\n            return font;\n        }</code></pre>\n\n",
+    "PostedDate": "2014-05-14T16:14:25.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245555",
+    "ThreadId": "431361",
+    "Html": "wow i cant thank you enough. i will try this later today and let you no how it goes. thank you again !<br />\n",
+    "PostedDate": "2014-05-14T16:25:39.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245556",
+    "ThreadId": "431361",
+    "Html": "\r\n<div dir=\"ltr\">Do.. Hope it works..\r\n<div><br>\r\n</div>\r\n<div>Best of luck.</div>\r\n<div><br>\r\n</div>\r\n<div>Lee</div>\r\n</div>\r\n<div><br>\r\n<br>\r\n<div></div>\r\n</div>\r\n",
+    "PostedDate": "2014-05-14T16:26:56.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1248119",
+    "ThreadId": "431361",
+    "Html": "Hi Lee, \r<br />\n<br />\nSorry it took so long to get back to you...i tested out the code and the good news it that it looks like it is displaying the bold text however the way it is being displayed on the page is somewhat overlapping. all the text of that description field is overlapping so you cant fully read what it says. I do see the bold tho which is a great sign and i dont see any tags! im going to try to look into this issue a little more and if you have any advice that would be great too. cant thank you enough. <br />\n",
+    "PostedDate": "2014-05-21T12:38:02.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1250591",
+    "ThreadId": "431361",
+    "Html": "*<br />\n",
+    "PostedDate": "2014-05-28T12:02:53.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

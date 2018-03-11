@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have tried to access the documentation on two different Machines with Windows 7 64bit.\nI can open the file, the Contents/Index side looks correct, but I always see \"Navigation to the webpage was canceled\" in the main tab.\nCould you please check this or let me know if you need further information.",
+    "LastUpdatedDate": "2013-02-21T18:47:15.043-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-06-16T01:53:13.227-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Documentation broken",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 27607
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Try enabling CHM viewing http://blog.crowe.co.nz/archive/2007/04/13/719.aspx \r\nStarting with Windows Vista CHM files were blocked by default. ",
+      "PostedDate": "2010-06-16T05:01:15.717-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Ok - thanks for the quick answer!",
+      "PostedDate": "2010-06-16T07:03:45.5-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:15.043-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

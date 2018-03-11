@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "foreach (HtmlNode item in htmlDoc.DocumentNode.SelectNodes(\"//ul/div[@class='p-normal']\"))\n                    {\n                        for (int j = 1; j < 31; j++)\n                        {\n                            if (item.SelectNodes(\"ul/li[\" + j.ToString() + \"]\") != null)\n                            {\n                                foreach (HtmlNode ac in item.SelectNodes(\"ul/li[\" + j.ToString() + \"]\"))\n                                {\n\n\n\n                                }\n                            }\n                        }\n                  \n                           \n                    }\n\n\n\n//\n   public class loveganli\n        {\n            public string userid;\n            public string img;\n            public string trace_link;\n            public string trace;\n            public string age;\n            public string height;\n            public string magic;\n            public string place;\n\n        }",
+    "LastUpdatedDate": "2013-05-17T08:30:17.54-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-05-17T08:27:16.453-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "htmlDoc.DocumentNode.SelectNodes(\"//ul/div[@class='p-normal']\")只能得到得一个",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 34066
+  },
+  "FileAttachments": [
+    {
+      "FileId": 13327,
+      "FileName": "ganji1.log",
+      "DownloadUrl": ".\\13327"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "  //           //list.Add(new loveganli\n                        //           // {\n                        //           //     trace = ac.SelectSingleNode(\"//div[@class='p-lconl']/p[@class='p-name']/a\").Attributes[\"href\"].Value,\n                        //           //     trace_link = ac.SelectSingleNode(\"//div[@class='p-lconl']/p[@class='p-name']/a\").InnerText,\n                        //           //     userid = ac.Id,\n                        //           //     age = ac.SelectSingleNode(\"//div[@class='p-lconl']/p[@class='p-detail']/span[1]\").InnerText,\n                        //           //     height = ac.SelectSingleNode(\"//div[@class='p-lconl']/p[@class='p-detail']/span[2]\").InnerText,\n                        //           //     place = ac.SelectSingleNode(\"//div[@class='p-lconl']/p[@class='p-detail']/span[4]\").InnerText,\n                        //           //     magic = ac.SelectSingleNode(\"//div[@class='p-lconl']/p[@class='p-detail']/span[3]\").InnerText,\n                        //           //     img = ac.SelectSingleNode(\"//div[@class='p-lconr']/a/img\").Attributes[\"src\"].Value\r\n\r\n\n                        //           // });\r\n\r\n\n这里面永远是第一个li 子类（ ac.SelectSingleNode(\"//div[@class='p-lconl']/p[@class='p-detail']/span[3]\").）",
+      "PostedDate": "2013-05-17T08:30:17.54-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

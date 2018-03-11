@@ -1,0 +1,71 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If I execute these two assertions with 1.4.0, they both pass:\n \n            Assert.That(HtmlAgilityPack.HtmlEntity.DeEntitize(\"&#29305;&#21035;\"), Is.EqualTo(\"特别\"));\n \n            Assert.That(HtmlAgilityPack.HtmlEntity.Entitize(\"特别\"), Is.EqualTo(\"&#29305;&#21035;\"));\n \nIf I switch to 1.4.2 or 1.4.3, the first assertion passes, but the second fails on this exception:\n \nSystem.Collections.Generic.KeyNotFoundException : The given key was not present in the dictionary.\nat System.Collections.Generic.Dictionary`2.get_Item(TKey key)\nat HtmlAgilityPack.HtmlEntity.Entitize(String text, Boolean useNames, Boolean entitizeQuotAmpAndLtGt) in HtmlEntity.cs: line 774\nat HtmlAgilityPack.HtmlEntity.Entitize(String text) in HtmlEntity.cs: line 730",
+    "LastUpdatedDate": "2015-04-22T05:35:10.08-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-12-09T16:22:22.28-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlEntity.Entitize > v1.4.0 failing on Chinese characters",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 31915
+  },
+  "FileAttachments": [
+    {
+      "FileId": 12521,
+      "FileName": "Workitem_31915.7z",
+      "DownloadUrl": ".\\12521"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Modified line 774 to check for key in dictionary:\r\n\r\n                    string entity = _entityName.ContainsKey(code) \r\n\t\t\t\t\t\t? _entityName[code] as string\r\n\t\t\t\t\t\t: null;\r\n\r\nAttached updated HtmlEntity.cs and unit test.",
+      "PostedDate": "2012-03-15T13:39:00.577-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:02.317-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The issue is larger than just Chinese characters.  An exception is thrown for any invalid HTML entity, such as\n* &invalid;\n* &a1;\r\n\r\nThe exception detail:\r\n\r\nSystem.Collections.Generic.KeyNotFoundException was unhandled by user code\n  HResult=-2146232969\n  Message=The given key was not present in the dictionary.\n  Source=mscorlib\n  StackTrace:\n  at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\n  at HtmlAgilityPack.HtmlEntity.DeEntitize(String text) in d:\\SVN_CHECKOUT\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlEntity.cs:line 646\n  at Sandbox.Mvc4.UnitTests.WhenDeEntitizingHtml.EnsureInvalidEntitiesAreIgnored(String input, String expected) in c:\\dev\\Sandbox.Mvc4\\Sandbox.Mvc4.UnitTests\\WhenDeEntitizingHtml.cs:line 20 \n",
+      "PostedDate": "2014-10-27T13:37:30.357-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-03-30T14:06:18.43-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-22T05:35:10.08-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

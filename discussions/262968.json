@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "633650",
+    "ThreadId": "262968",
+    "Html": "\r\n<p>I'm just starting with HTML Agility Pack with visual studio express, vb.net. When I tried to use the GetElementById method, I got a runtime error &quot;You need to set UseIdAttribute property to true to enable this feature&quot;.&nbsp; I've searched, but I can't find\r\n what useidattribute is a property of. Help? TIA!<br>\r\n&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp; <br>\r\n</p>\r\n",
+    "PostedDate": "2011-06-27T11:02:07.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "633710",
+    "ThreadId": "262968",
+    "Html": "<p>The \"OptionUseIdAttribute\" field on the HtmlDocument class needs to be set to true. It is set to true by default though. Do you have an example?</p>",
+    "PostedDate": "2011-06-27T12:24:52.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "633743",
+    "ThreadId": "262968",
+    "Html": "<p>I did see the \"OptionUsedIdAttribute\", and it was set to True already. Here is some code - \"MainContentArea = myDoc.GetElementbyId(<span style=\"color: #a31515;\">\"main\"</span>)\"is throwing the error. Thanks for taking a look.</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">Imports</span> HtmlAgilityPack\n\n<span style=\"color: blue;\">Public</span> <span style=\"color: blue;\">Class</span> Form1\n\n\n    <span style=\"color: blue;\">Private</span> <span style=\"color: blue;\">Sub</span> Form1_Load(<span style=\"color: blue;\">ByVal</span> sender <span style=\"color: blue;\">As</span> System.Object, <span style=\"color: blue;\">ByVal</span> e <span style=\"color: blue;\">As</span> System.EventArgs) <span style=\"color: blue;\">Handles</span> <span style=\"color: blue;\">MyBase</span>.Load\n\n    <span style=\"color: blue;\">End</span> <span style=\"color: blue;\">Sub</span>\n\n\n    <span style=\"color: blue;\">Private</span> <span style=\"color: blue;\">Sub</span> Button1_Click(<span style=\"color: blue;\">ByVal</span> sender <span style=\"color: blue;\">As</span> System.Object, <span style=\"color: blue;\">ByVal</span> e <span style=\"color: blue;\">As</span> System.EventArgs) <span style=\"color: blue;\">Handles</span> Button1.Click\n        <span style=\"color: blue;\">Dim</span> myWeb <span style=\"color: blue;\">As</span> HtmlWeb = <span style=\"color: blue;\">New</span> HtmlWeb\n        <span style=\"color: blue;\">Dim</span> myDoc <span style=\"color: blue;\">As</span> HtmlDocument = <span style=\"color: blue;\">New</span> HtmlDocument\n        <span style=\"color: blue;\">Dim</span> myRoot <span style=\"color: blue;\">As</span> HtmlNode = myDoc.DocumentNode\n        <span style=\"color: blue;\">Dim</span> myElements <span style=\"color: blue;\">As</span> List(Of HtmlElement) = <span style=\"color: blue;\">New</span> List(Of HtmlElement)\n        <span style=\"color: blue;\">Dim</span> MainContentArea <span style=\"color: blue;\">As</span> HtmlNode\n\n        myWeb.Load(<span style=\"color: #a31515;\">\"http://www.friendspeaceteams.org\"</span>)\n        MainContentArea = myDoc.GetElementbyId(<span style=\"color: #a31515;\">\"main\"</span>)\n\n        TextBox1.Text = MainContentArea.InnerHtml\n        \n    <span style=\"color: blue;\">End</span> <span style=\"color: blue;\">Sub</span>\n\n\n<span style=\"color: blue;\">End</span> <span style=\"color: blue;\">Class</span>\n</pre>\n</div>",
+    "PostedDate": "2011-06-27T13:31:41.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "633746",
+    "ThreadId": "262968",
+    "Html": "<p>ahh.. I see the problem. The myDoc is an empty HtmlDocument. The myWeb.Load returns the HtmlDocument object you want. So you'll want to do&nbsp;</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">Dim</span> myDoc = myWeb.Load(<span style=\"color: #a31515;\">\"http://www.friendspeaceteams.org\"</span>)\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2011-06-27T13:35:22.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "633761",
+    "ThreadId": "262968",
+    "Html": "<p>Thanks That fixed it.</p>",
+    "PostedDate": "2011-06-27T14:03:26.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "634809",
+    "ThreadId": "262968",
+    "Html": "<p>[SOLVED]: I noticed the problem immediately after posting this. Notice my catch just silently eats the error. I have error handling on the other side but it's for null objects (I use other methods other than the HTML agility pack).</p>\n<p>&nbsp;</p>\n<p>I'm having a similar problem with C#.</p>\n<p>The following method is used to get the htmlDocument.</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">public</span> HtmlDocument DownloadHtmlDocument(<span style=\"color: blue;\">string</span> address)\n\t\t\t{\n\t\t\t\t<span style=\"color: blue;\">var</span> htmlDocument = <span style=\"color: blue;\">new</span> HtmlDocument {OptionUseIdAttribute = <span style=\"color: blue;\">true</span>};\n\t\t\t\t<span style=\"color: blue;\">try</span>\n\t\t\t\t{\n\t\t\t\t\t<span style=\"color: blue;\">using</span> (<span style=\"color: blue;\">var</span> stream = OpenRead(address))\n\t\t\t\t\t{\n\t\t\t\t\t\thtmlDocument.Load(stream);\n\t\t\t\t\t\t<span style=\"color: blue;\">if</span> (stream != <span style=\"color: blue;\">null</span>) stream.Close();\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\t<span style=\"color: blue;\">catch</span> (Exception e)\n\t\t\t\t{\n\t\t\t\t\t<span style=\"color: blue;\">new</span> Logger().Log(<span style=\"color: #a31515;\">\"address value: \"</span> + address + <span style=\"color: #a31515;\">\"\\n\"</span> + e.Message, e);\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t<span style=\"color: blue;\">return</span> htmlDocument;\n\t\t\t}\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>This code uses the htmlDocument,GetElementById().</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">var</span> htmlDocument = _webClient.DownloadHtmlDocument(source.URL);<br />&nbsp;<span style=\"color: blue;\">foreach</span> (<span style=\"color: blue;\">var</span> htmlElementPatch <span style=\"color: blue;\">in</span> htmlDocument.GetElementbyId(<span style=\"color: #a31515;\">\"table\"</span>).SelectNodes(<span style=\"color: #a31515;\">\"tbody/tr\"</span>))\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>The funny thing is the same method above is used in the same way for two different websites in two different assemblies and it works for one and not the other. Any suggestions?</p>\n<p>Does the HTMLDocument.Load(string url) method as mentioned by darthobiwan do essentially the same thing?</p>",
+    "PostedDate": "2011-06-29T07:51:04.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

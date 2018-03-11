@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When trying to load http://www.podcastdirectory.com/podcasts/76 using:\n \nDim doc as HtmlDocument\ndim ipodder as new HtmlWeb\n \ndoc = ipodder.Load(\"http://www.podcastdirectory.com/podcasts/76\")\n \nI get a stack overflow.  Even with a try wrapped around the call, I don't get any more information than that.\n \nAny help would be appreciated.\n \nDan",
+    "LastUpdatedDate": "2013-02-21T18:46:59.153-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-06-15T12:38:06.727-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Stack overflow on HtmlDocument load",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 32859
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Downloaded the sources and built them and I get a little more information.  The stack overflow appears to be in user32.dll at 752f62fa.\r\n\r\nI'm running Win7 64 bit, and the app is done in VB with Visual Studio 2010.\r\n\r\nDan",
+      "PostedDate": "2012-06-15T13:03:12.887-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "OK, managed to get things built where I could step into things, and decided that it was the same bug as either 30268 or 31173, so I applied the fixes from the forum and that seemed to fix it.\r\n\r\nCan I assume that these will be in the next release of the binaries so that I can use those if they come out, or should I make sure to reapply these?\r\n\r\nThanks,\r\n\r\nDan",
+      "PostedDate": "2012-06-15T13:36:13.68-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "As a final note, I backed out the fix for 31173 and it still works, so I guess it's the problem 30268.\r\n\r\nDan",
+      "PostedDate": "2012-06-15T13:45:32.857-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-07-19T23:11:04.927-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-07-20T06:30:34.163-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:59.153-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

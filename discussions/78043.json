@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "266919",
+    "ThreadId": "78043",
+    "Html": "<p>Hello guys.</p>\r\n<p>I have this html structure:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">body</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">p</span> <span style=\"color:Red\">class</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;paragraph&quot;</span><span style=\"color:Blue\">&gt;</span>text<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">p</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">p</span> <span style=\"color:Red\">class</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;paragraph&quot;</span><span style=\"color:Blue\">&gt;</span>text<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">p</span><span style=\"color:Blue\">&gt;</span>\r\n\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">p</span> <span style=\"color:Red\">class</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;specific&quot;</span><span style=\"color:Blue\">&gt;</span>text<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">p</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">p</span> <span style=\"color:Red\">class</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;paragraph&quot;</span><span style=\"color:Blue\">&gt;</span>text<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">p</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">p</span> <span style=\"color:Red\">class</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;paragraph&quot;</span><span style=\"color:Blue\">&gt;</span>text<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">p</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">body</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>And I need to get all the &lt;p&gt; with class &quot;paragraph&quot; that exist after the &lt;p&gt; with class &quot;specific&quot;.</p>\r\n<p>Is there a way to do that?&nbsp;</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>\r\n<p>Update : I posted the issue on stackoverflow and I got a solution <a href=\"http://stackoverflow.com/questions/1899789/html-agility-pack-select-nodes-after-specific-node\">http://stackoverflow.com/questions/1899789/html-agility-pack-select-nodes-after-specific-node</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-14T00:47:37.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "267392",
+    "ThreadId": "78043",
+    "Html": "<p>&quot;//p[@class='specific']/following::p[@class='paragraph']&quot;</p>",
+    "PostedDate": "2009-12-14T19:32:09.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "267759",
+    "ThreadId": "78043",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>booolean wrote:</strong><br>\r\n<p>&quot;//p[@class='specific']/following::p[@class='paragraph']&quot;</p>\r\n</blockquote>\r\n<p>That's the best solution right there. Good stuff booolean.</p>",
+    "PostedDate": "2009-12-15T14:34:03.747-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

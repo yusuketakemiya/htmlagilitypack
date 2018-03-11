@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "770716",
+    "ThreadId": "319000",
+    "Html": "\r\n<p>I am trying to test this pack but at this line</p>\r\n<p></p>\r\n<pre>   foreach (HtmlNode link in doc.DocumentNode.SelectNodes(@&quot;//a[@href]&quot;))\r\n</pre>\r\n<p></p>\r\n<p>I receive this error &quot;Object reference not set to an instance of an object.&quot;</p>\r\n<p>Here is the code how I try to call it from my form.</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>  <span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> button1_Click(<span style=\"color:blue\">object</span> sender, EventArgs e)\r\n        {\r\n           \r\n        \r\n           Uri someSite = <span style=\"color:blue\">new</span> Uri(<span style=\"color:#a31515\">&quot;http://www.nationalgeographic.com/&quot;</span>);\r\n          <span style=\"color:green\">// MessageBox.Show(&quot;Am deschis pagina&quot;);</span>\r\n            IEnumerable&lt;WebPage&gt; theSitePages = WebPage.GetAllPagesUnder(someSite);\r\n           <span style=\"color:green\">// MessageBox.Show(&quot;Acuma afisez rezultatele&quot;);</span>\r\n            listBox1.Items.AddRange(theSitePages.ToArray());\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2012-02-16T12:26:26.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "797159",
+    "ThreadId": "319000",
+    "Html": "<p>It seems like you might not checking null before executing the above line</p>\r\n<p>if (doc.DocumentNode.SelectNodes(@\"//a[@href]\" != null){</p>\r\n<p>&nbsp;&nbsp;&nbsp; foreach (HtmlNode link in doc.DocumentNode.SelectNodes(@\"//a[@href]\")){</p>\r\n<pre>   //your code goes here<br />}</pre>\r\n<p>}</p>\r\n<p>please share some more code too if above does not work.</p>\r\n<p>Please let me know in case of any concerns.</p>",
+    "PostedDate": "2012-02-23T01:12:06.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "797339",
+    "ThreadId": "319000",
+    "Html": "<p>I tried to use it like this</p>\r\n<p>\r\n<pre>  if (doc.DocumentNode.SelectNodes(@\"//a[@href]\" != null)) //I've put the code you've written here\r\n                    {\r\n                    // And and now queue up all the links on this page\r\n                    foreach (HtmlNode link in doc.DocumentNode.SelectNodes(@\"//a[@href]\"))\r\n                    {\r\n                        HtmlAttribute att = link.Attributes[\"href\"];\r\n                        if (att == null) continue;\r\n                        string href = att.Value;\r\n                        if (href.StartsWith(\"javascript\", StringComparison.InvariantCultureIgnoreCase)) continue;      // ignore javascript on buttons using a tags\r\n\r\n                        Uri urlNext = new Uri(href, UriKind.RelativeOrAbsolute);\r\n\r\n                        // Make it absolute if it's relative\r\n                        if (!urlNext.IsAbsoluteUri)\r\n                        {\r\n                            urlNext = new Uri(urlRoot, urlNext);\r\n                        }\r\n\r\n                        if (!allSiteUrls.Contains(urlNext))\r\n                        {\r\n                            allSiteUrls.Add(urlNext);               // keep track of every page we've handed off\r\n\r\n                            if (urlRoot.IsBaseOf(urlNext))\r\n                            {\r\n                                queue.Enqueue(urlNext);\r\n                            }\r\n                            else\r\n                            {\r\n                                yield return new WebPage.External() { Url = urlNext };\r\n                            }</pre>\r\n</p>\r\n<p>but is not working</p>\r\n<p>I have these errors</p>\r\n<p>Error<span> </span>1<span> </span>The best overloaded method match for 'HtmlAgilityPack.HtmlNode.SelectNodes(string)' has some invalid arguments<span> </span>D:\\situri\\baze de date\\htmlAgility\\htmlAgility\\test.cs<span> </span>66<span> </span>25<span> </span>htmlAgility</p>\r\n<p>Error<span> </span>2<span> </span>Argument 1: cannot convert from 'bool' to 'string'<span> </span>D:\\situri\\baze de date\\htmlAgility\\htmlAgility\\test.cs<span> </span>66<span> </span>54<span> </span>htmlAgility</p>",
+    "PostedDate": "2012-02-23T03:42:12.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

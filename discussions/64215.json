@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "218445",
+    "ThreadId": "64215",
+    "Html": "<p>I am abit puzzled. I modified all the source code&nbsp;(<strong>sigh!</strong>)&nbsp;from using ArrayList, Hashmap and Stack, into List&lt;T&gt;, Dictionary&lt;K,V&gt; and Stack&lt;T&gt;. But using several profilers, there seem to be very little benefit of doing so. Anyone have suggestions how to benchmark this properly?</p>",
+    "PostedDate": "2009-08-02T04:24:46.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218452",
+    "ThreadId": "64215",
+    "Html": "<p>Most of the benefits will not be in performance but in type safety and the LINQ extension methods.</p>\r\n<p>The biggest issue with the old collections vs the generics is having to re-cast objects as you're taking them out. Probably the best way to benchmark it is just do a large iteration stopwatch test while reading data out. Also do some small routines and look at the IL generated.</p>\r\n<p>While explicit casting isn't necessarily slow it does take an extra few steps to do so. That's why it's recommended to use the as-is pattern if you do have to cast with performance in mind. It tells the CLR to skip some checks that are done in an explicit cast (null reference, value type, inheritance). It has one drawback, it only works with reference types. Still over thousands of iterations it will show performance gains. It also eliminates the need to have to catch null reference exceptions.</p>\r\n<p>While I didn't tackle the Stack and HashTable usage I did post my patches for all the LINQ helper methods. I updated to implement IList&lt;T&gt; and use a Dictionary&lt;K,V&gt; where needed.&nbsp; I did add in tons of helper methods that makes using LINQ much easier. <a href=\"http://htmlagilitypack.codeplex.com/SourceControl/PatchList.aspx\">http://htmlagilitypack.codeplex.com/SourceControl/PatchList.aspx</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-02T05:31:03.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218463",
+    "ThreadId": "64215",
+    "Html": "<p>Ah, thanks for clearing that up. Makes sense now, don't get how I didn't see it before. Strange.</p>\r\n<p>I've taken notice that you've published your patch, but I haven't had the time to review and test it, but when I do I will give responses in the appropriate Issue/Discussion to keep the history clear.</p>\r\n<p>From what I've noticed, HAP is pretty much optimized as is. However I don't have much experience in the performance increasing field.</p>",
+    "PostedDate": "2009-08-02T07:18:50.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

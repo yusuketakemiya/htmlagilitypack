@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "908996",
+    "ThreadId": "394584",
+    "Html": "\r\n<p>I am able to find Html Node using following code in HtmlAgility Document.</p>\r\n<p>But after getting the HtmlNode, I&nbsp;want to retun&nbsp;the corresponding&nbsp;System.Windows.Forms.Htmlelement(Webbrowser).</p>\r\n<p>Please help me if any one has done this before.</p>\r\n<p>&nbsp;<br>\r\nHtmlAgilityPack.HtmlDocument htmlAgility = <span style=\"color:blue\">new</span> HtmlAgilityPack.HtmlDocument();<br>\r\nhtmlAgility.LoadHtml(WebBrowser.DocumentText);<br>\r\n<span style=\"color:blue\">string</span> xPath= <span style=\"color:#a31515\">&quot;/html[1]/body[1]/table[1]/tr[1]/td[1]/table[1]/tr[1]/td[1]/div[1]/table[1]/tr[3]/td[3]/input[1]&quot;</span>;<br>\r\nHtmlAgilityPack.HtmlNode retrunElement;<br>\r\n<br>\r\n<br>\r\nIEnumerable&lt;HtmlAgilityPack.HtmlNode&gt; HAPnodes = Enumerable.Empty&lt;HtmlAgilityPack.HtmlNode&gt;();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlAgilityPack.HtmlNode node = htmlAgility.DocumentNode;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HAPnodes = node.SelectNodes(xPath);<br>\r\n<br>\r\n<span style=\"color:blue\">if</span> (HAPnodes.Count() == 1)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; retrunElement = HAPnodes.ElementAt(0);<br>\r\n}<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n</p>\r\n",
+    "PostedDate": "2012-09-05T23:39:18.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

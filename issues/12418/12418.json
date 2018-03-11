@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-05-17T23:46:25.83-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When inputting this html:\n \n<p>Paragraph1<p>Paragraph2</p>\n \nThe InnerHtml property of DocumentNode will contain:\n \n<p />Paragraph 1<p>Paragraph 2</p>\n \nThis essentially means the first paragraph is lost. I don't know if this is a rule or just a suggestion of W3C, but iirc they state that a <p> with no closing tag should be implicitly closed by the next block-level tag. In other words, the second <p> should close the first in this example, which means I'd the InnerHtml to be something like this:\n \n<p>Paragraph1</p><p>Paragraph2</p>",
+    "LastUpdatedDate": "2013-05-16T05:33:01.04-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2007-08-24T04:13:40.26-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Unclosed paragraph lost",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 12418
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This was a deliberate choice because:\r\n\r\n1) it's easier to implement :-)\r\n2) its renderered properly in IE and FF (AFAIK, but someone can correct me if I am wrong)\r\n3) it's correct for an XML or XHTML parser\r\n\r\nNote the HTML agility pack was never designed to be compliant with W3C specs, on purpose, but to minimise the changes in the original HTML, with a final rendering as close as possible to the original HTML in known browsers.",
+      "PostedDate": "2008-06-01T23:12:10.48-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-17T23:46:25.83-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:28.213-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:33:01.04-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

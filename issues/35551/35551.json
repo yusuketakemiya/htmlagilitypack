@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When adding the HTMLAgilityPack 1.4.9 everything builds and works locally just fine. Once I check in and build on my TFS server I receive the following errors:\n\n\"nuget.targets: File Contains corrupted data.\"\n\nnuget.targets: The command nuget.exe install packages.config - source -RequireConsent -o packages exited with code 1 (I've trimmed out the project name from the messages)\n\nI see someone has the same issue here: https://ajaxcontroltoolkit.codeplex.com/workitem/27733\n\nI have tried uninstalling nuget and reinstalling with no success. The build works just fine on the TFS server until I add HTMLAgilityPack then it fails with this error on multiple developers machines. Any help would be greatly appreciated.",
+    "LastUpdatedDate": "2014-11-21T04:23:12.49-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-09-17T04:58:39.043-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "TFS Build Error \"File Contains Corrupted Data\" on Nuget Package Restore",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 35551
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "There seems to be an issue with 1.4.9, i was able to add 1.4.6 through package manager and everything works fine.",
+      "PostedDate": "2014-09-17T05:12:47.957-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-11-06T08:48:24.3-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Have run into same problem, upgrading to 1.4.9 broke my builds both on AppVeyor and my projects TeamCity instance\r\n\r\nDowngrading to 1.4.6 resolved the problems\r\n\r\nThe package file looks to be corrupt because I cannot open it locally in NuGet package explorer and get the same error as on the build servers when attempting to do that",
+      "PostedDate": "2014-11-06T08:56:50.31-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have the same issue. Any update available? Any workaround? It's getting critical for me.\r\n\r\nThank you.\r\n\r\nOvi",
+      "PostedDate": "2014-11-17T05:44:06.717-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-11-17T05:45:47.097-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I tweeted about this and was told (https://twitter.com/htmlagilitypack/status/530420842963140608) that usually this can be down to an outdated NuGet client\r\n\r\nIf you have a .nuget folder in your solution and are using the now-deprecated MSBuild integrated NuGet package restore then this may be a possible cause of the issues.\r\n\r\nI've switched to the newer automated package restore functionality but haven't yet tried upgrading HAP again so don't know if that is the root cause of the issue.",
+      "PostedDate": "2014-11-18T02:17:31.683-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Now had chance to re-upgrade to 1.4.9 and it is now working on multiple different build machines\r\n\r\nSo to summarise:\r\n\r\n* This is caused by an outdated NuGet client\n* If you use the MSBuild integrated package restore then your project is likely using an old NuGet client even if you have an up to date client installed on the actual build machine\n* See [Migrating to Automatic Package Restore](http://docs.nuget.org/docs/workflows/migrating-to-automatic-package-restore) for how to switch your project to rely on the system nuget\r\n\r\nNote that after switching to automatic package restore you may need to configure your builds to invoke the nuget restore feature as a pre-build step like so otherwise you may fail to compile with missing dependency errors:\r\n\r\n```\nnuget restore YourSolution.sln\n```",
+      "PostedDate": "2014-11-21T04:23:12.49-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

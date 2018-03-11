@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "// Sorry, after all these years of coding, I only speak in tests.\n        [TestMethod]\n        public void DoesParserTolerateComments()\n        {\n            string htmlWithoutComment = @\"<foo assetid = \"\"13\"\">\";\n            HtmlDocument doc1 = new HtmlDocument();\n            doc1.LoadHtml(htmlWithoutComment);\n            IEnumerable<HtmlNode> elements1 = doc1.DocumentNode.SelectNodes(\"//*[@assetid]\");\n            Assert.IsNotNull(elements1);\n            Assert.AreEqual(1, elements1.Count());\n            string htmlWithComment = @\"<foo <!-- this is an HTML comment --> assetid = \"\"13\"\">\";\n            HtmlDocument doc2 = new HtmlDocument();\n            doc2.LoadHtml(htmlWithComment);\n            IEnumerable<HtmlNode> elements2 = doc2.DocumentNode.SelectNodes(\"//*[@assetid]\");\n            Assert.IsNotNull(elements2);\n            Assert.AreEqual(1, elements2.Count());\n        }",
+    "LastUpdatedDate": "2013-02-21T18:47:14.58-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-07-05T13:59:54.35-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "parser fails to tolerate HTML comments in tags",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 27973
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

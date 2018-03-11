@@ -1,0 +1,4152 @@
+[
+  {
+    "Id": "917",
+    "Title": "Output to images",
+    "LatestDate": "2006-08-26T04:09:32.363-07:00"
+  },
+  {
+    "Id": "1020",
+    "Title": "Html Field Value Retrieval",
+    "LatestDate": "2006-08-26T05:29:48.257-07:00"
+  },
+  {
+    "Id": "1021",
+    "Title": "VIEWSTATE",
+    "LatestDate": "2006-08-26T08:48:47.797-07:00"
+  },
+  {
+    "Id": "1048",
+    "Title": "Scraping Javascript",
+    "LatestDate": "2006-09-01T13:12:09.583-07:00"
+  },
+  {
+    "Id": "1061",
+    "Title": "Trouble adding to value attribute of input controls",
+    "LatestDate": "2006-09-01T13:58:44.09-07:00"
+  },
+  {
+    "Id": "1174",
+    "Title": "Do I need to construct my own DOM tree?",
+    "LatestDate": "2006-08-31T17:26:42.9-07:00"
+  },
+  {
+    "Id": "1201",
+    "Title": "Data In Malformed Tags",
+    "LatestDate": "2006-09-04T01:25:00.627-07:00"
+  },
+  {
+    "Id": "1241",
+    "Title": "Reading from MSWord-generated HTML",
+    "LatestDate": "2006-09-12T11:13:23.76-07:00"
+  },
+  {
+    "Id": "1260",
+    "Title": "Bug in HtmlDocument.Save(outStream as System.IO.Stream)?",
+    "LatestDate": "2010-08-26T12:42:35.233-07:00"
+  },
+  {
+    "Id": "1263",
+    "Title": "HtmlNodeNavigator",
+    "LatestDate": "2006-09-07T13:20:51.427-07:00"
+  },
+  {
+    "Id": "1720",
+    "Title": "Retrieving Attribute Nodes",
+    "LatestDate": "2007-02-20T00:54:48.41-08:00"
+  },
+  {
+    "Id": "1726",
+    "Title": "Parse for a known Table",
+    "LatestDate": "2006-11-03T07:23:23.797-08:00"
+  },
+  {
+    "Id": "1816",
+    "Title": "Documentation",
+    "LatestDate": "2006-11-09T03:29:28.167-08:00"
+  },
+  {
+    "Id": "1820",
+    "Title": "Getting error loading html as xml",
+    "LatestDate": "2006-10-18T06:13:23.363-07:00"
+  },
+  {
+    "Id": "1950",
+    "Title": "ISO-8895-2",
+    "LatestDate": "2007-12-05T12:24:19.71-08:00"
+  },
+  {
+    "Id": "2185",
+    "Title": "Case insensitive?",
+    "LatestDate": "2013-01-28T06:20:56.77-08:00"
+  },
+  {
+    "Id": "2731",
+    "Title": "Output Formatting",
+    "LatestDate": "2006-12-12T00:22:54.293-08:00"
+  },
+  {
+    "Id": "2945",
+    "Title": "<option> have no child, why?",
+    "LatestDate": "2007-01-11T10:34:12.143-08:00"
+  },
+  {
+    "Id": "3123",
+    "Title": "&nbsp; translation to xml",
+    "LatestDate": "2007-01-03T11:55:59.197-08:00"
+  },
+  {
+    "Id": "3127",
+    "Title": "exception when attempting xslt transformation",
+    "LatestDate": "2007-01-01T05:31:55.677-08:00"
+  },
+  {
+    "Id": "3196",
+    "Title": "encoding pass problem: AutoDetectEncoding = false not help me",
+    "LatestDate": "2007-01-11T10:13:19.68-08:00"
+  },
+  {
+    "Id": "3283",
+    "Title": "Login",
+    "LatestDate": "2007-01-03T17:55:37.407-08:00"
+  },
+  {
+    "Id": "3335",
+    "Title": "Save output to XML and load to XML document",
+    "LatestDate": "2008-01-15T06:31:02.687-08:00"
+  },
+  {
+    "Id": "3355",
+    "Title": "NET v1.1 version",
+    "LatestDate": "2007-01-07T04:38:53.727-08:00"
+  },
+  {
+    "Id": "3485",
+    "Title": "some XPath problem or feature :) ",
+    "LatestDate": "2007-01-11T10:54:25.657-08:00"
+  },
+  {
+    "Id": "3501",
+    "Title": "Xml tree is not right",
+    "LatestDate": "2007-01-12T00:00:41.517-08:00"
+  },
+  {
+    "Id": "3691",
+    "Title": "Symbol '<' in script cause xml output error",
+    "LatestDate": "2007-01-18T18:07:43.587-08:00"
+  },
+  {
+    "Id": "4023",
+    "Title": "Ignoring Invalid HTML tags ",
+    "LatestDate": "2007-01-28T15:40:46.73-08:00"
+  },
+  {
+    "Id": "4026",
+    "Title": "HtmlWeb additional properties",
+    "LatestDate": "2007-01-28T19:37:47.073-08:00"
+  },
+  {
+    "Id": "7121",
+    "Title": "Wrong closing tags... (with Form Tag)",
+    "LatestDate": "2007-03-14T06:39:02.637-07:00"
+  },
+  {
+    "Id": "7310",
+    "Title": "Extract text",
+    "LatestDate": "2007-02-15T03:00:43.813-08:00"
+  },
+  {
+    "Id": "7760",
+    "Title": ".NET 1.1 Version",
+    "LatestDate": "2007-03-01T15:28:16.2-08:00"
+  },
+  {
+    "Id": "7815",
+    "Title": "Production ready?",
+    "LatestDate": "2007-03-04T18:09:24.087-08:00"
+  },
+  {
+    "Id": "8047",
+    "Title": "What's next?",
+    "LatestDate": "2007-03-11T10:50:13.367-07:00"
+  },
+  {
+    "Id": "8444",
+    "Title": "Problem with ordering when RemoveChild called",
+    "LatestDate": "2007-03-23T10:48:59.02-07:00"
+  },
+  {
+    "Id": "8554",
+    "Title": "precompile xpath queries",
+    "LatestDate": "2007-07-29T23:08:36.767-07:00"
+  },
+  {
+    "Id": "8556",
+    "Title": "modify output on the fly",
+    "LatestDate": "2013-01-14T14:00:39.943-08:00"
+  },
+  {
+    "Id": "9200",
+    "Title": "Click a button!",
+    "LatestDate": "2007-04-16T04:26:10.79-07:00"
+  },
+  {
+    "Id": "9917",
+    "Title": "",
+    "LatestDate": "2007-05-05T05:43:37.703-07:00"
+  },
+  {
+    "Id": "9919",
+    "Title": "Additional Login methods",
+    "LatestDate": "2007-07-30T06:35:02.663-07:00"
+  },
+  {
+    "Id": "10363",
+    "Title": "Parsing HTML Table Data",
+    "LatestDate": "2013-01-30T01:13:16.5-08:00"
+  },
+  {
+    "Id": "11605",
+    "Title": "htmlDocument.Save(\"a.html\") save &nbsp; as a interrogation mark(?)",
+    "LatestDate": "2007-06-20T09:59:20.25-07:00"
+  },
+  {
+    "Id": "11945",
+    "Title": "HtmlNodeNavigator / SelectNodes not respecting context (solved)",
+    "LatestDate": "2007-07-18T01:13:16.053-07:00"
+  },
+  {
+    "Id": "12447",
+    "Title": "Agility pack step 1",
+    "LatestDate": "2008-02-08T07:29:21.3-08:00"
+  },
+  {
+    "Id": "13146",
+    "Title": "Programmatically login in another site in ASP.Net",
+    "LatestDate": "2007-07-29T23:39:53.173-07:00"
+  },
+  {
+    "Id": "13171",
+    "Title": "Find Node based on InnerText",
+    "LatestDate": "2007-08-07T14:23:59.677-07:00"
+  },
+  {
+    "Id": "13456",
+    "Title": "HtmlAgilityPack [runtime login on website using servlet & also using query string]",
+    "LatestDate": "2007-08-06T05:23:20.227-07:00"
+  },
+  {
+    "Id": "13462",
+    "Title": "HTMLDocument.FixedNestedTag not handling broken cell tag",
+    "LatestDate": "2007-08-06T09:48:22.057-07:00"
+  },
+  {
+    "Id": "13466",
+    "Title": "Nested <form> tag and InnerText property",
+    "LatestDate": "2007-08-06T11:31:02.787-07:00"
+  },
+  {
+    "Id": "13527",
+    "Title": "HtmlNode.XPath Property",
+    "LatestDate": "2007-11-10T12:31:49.863-08:00"
+  },
+  {
+    "Id": "13744",
+    "Title": "Changing Attributes Not Reflected in InnerHtml",
+    "LatestDate": "2007-08-13T14:23:21.56-07:00"
+  },
+  {
+    "Id": "13878",
+    "Title": "Initial setup and a test run for HtmlAgility",
+    "LatestDate": "2007-11-08T11:05:26.62-08:00"
+  },
+  {
+    "Id": "14255",
+    "Title": "Post Data to site",
+    "LatestDate": "2011-07-20T02:18:47.42-07:00"
+  },
+  {
+    "Id": "14979",
+    "Title": "InnerText not set?",
+    "LatestDate": "2007-12-05T13:04:57.523-08:00"
+  },
+  {
+    "Id": "14982",
+    "Title": "How to access <SELECT><OPTION>.InnerText",
+    "LatestDate": "2013-07-05T04:27:49.623-07:00"
+  },
+  {
+    "Id": "15386",
+    "Title": "How to prevent reading from cache",
+    "LatestDate": "2007-11-17T10:12:45.62-08:00"
+  },
+  {
+    "Id": "15645",
+    "Title": "Problem using Html Agility Pack in Mono",
+    "LatestDate": "2007-11-17T10:06:02.69-08:00"
+  },
+  {
+    "Id": "15787",
+    "Title": "Getting schedule from NHL.com",
+    "LatestDate": "2007-09-29T15:14:00.18-07:00"
+  },
+  {
+    "Id": "15804",
+    "Title": "Question regarding unclosed tag",
+    "LatestDate": "2007-11-17T10:02:58.96-08:00"
+  },
+  {
+    "Id": "15816",
+    "Title": "How to don't parse void tags?",
+    "LatestDate": "2007-11-17T09:57:47.727-08:00"
+  },
+  {
+    "Id": "16092",
+    "Title": "Remove Specific Tags",
+    "LatestDate": "2007-11-17T09:55:03.57-08:00"
+  },
+  {
+    "Id": "17475",
+    "Title": "Pattern Matching?",
+    "LatestDate": "2007-12-27T16:14:14.733-08:00"
+  },
+  {
+    "Id": "17695",
+    "Title": "FormProcessor addon: handling redirects",
+    "LatestDate": "2007-11-11T11:32:22.67-08:00"
+  },
+  {
+    "Id": "17922",
+    "Title": "parsing form tags",
+    "LatestDate": "2010-02-16T14:13:22.207-08:00"
+  },
+  {
+    "Id": "17969",
+    "Title": "Problems with the CHM file?",
+    "LatestDate": "2007-11-19T21:01:54.46-08:00"
+  },
+  {
+    "Id": "18427",
+    "Title": "VB.NET 2005 compatibility",
+    "LatestDate": "2007-12-05T12:26:51.57-08:00"
+  },
+  {
+    "Id": "18735",
+    "Title": "Encoding false, so XPath-Query fails",
+    "LatestDate": "2007-12-19T02:38:03.357-08:00"
+  },
+  {
+    "Id": "18736",
+    "Title": "HtmlAgilityPack.HtmlWeb.GetContentTypeForExtension returns internal name",
+    "LatestDate": "2007-12-05T14:05:43.99-08:00"
+  },
+  {
+    "Id": "19490",
+    "Title": "determining type of tag",
+    "LatestDate": "2008-01-07T13:16:17.627-08:00"
+  },
+  {
+    "Id": "19750",
+    "Title": "Blog article on Web scraping with HtmlAgilityPack",
+    "LatestDate": "2007-12-30T10:59:04.09-08:00"
+  },
+  {
+    "Id": "20209",
+    "Title": "How do I open the solution file",
+    "LatestDate": "2008-01-25T15:54:11.06-08:00"
+  },
+  {
+    "Id": "20249",
+    "Title": "Scraping Link - can this be done better?",
+    "LatestDate": "2009-03-04T00:51:44.157-08:00"
+  },
+  {
+    "Id": "20661",
+    "Title": "Simpler implementation for HtmlNameTable?",
+    "LatestDate": "2008-01-17T18:01:11.463-08:00"
+  },
+  {
+    "Id": "21015",
+    "Title": "Basic Question: Where is the XmlDocument Class?",
+    "LatestDate": "2008-01-25T15:57:42.673-08:00"
+  },
+  {
+    "Id": "21020",
+    "Title": "Is there a chance to port this perfect library to Compact Framework?",
+    "LatestDate": "2008-01-25T04:50:43.033-08:00"
+  },
+  {
+    "Id": "21453",
+    "Title": "Select/remove attributes",
+    "LatestDate": "2008-02-19T08:27:26.993-08:00"
+  },
+  {
+    "Id": "21743",
+    "Title": "ID attribute value is case insensitive",
+    "LatestDate": "2008-02-08T08:44:51.667-08:00"
+  },
+  {
+    "Id": "21794",
+    "Title": "Step 1: project location is not trusted ",
+    "LatestDate": "2008-02-28T03:22:14.383-08:00"
+  },
+  {
+    "Id": "22790",
+    "Title": "gzip encoding",
+    "LatestDate": "2016-05-13T07:13:40.29-07:00"
+  },
+  {
+    "Id": "23031",
+    "Title": "Whitespaces handling",
+    "LatestDate": "2008-02-28T04:12:13.707-08:00"
+  },
+  {
+    "Id": "23948",
+    "Title": "Remove",
+    "LatestDate": "2008-03-13T03:05:50.837-07:00"
+  },
+  {
+    "Id": "24346",
+    "Title": "Stripping harmful HTML from user input, but allowing other HTML?",
+    "LatestDate": "2013-11-08T02:04:03.063-08:00"
+  },
+  {
+    "Id": "24672",
+    "Title": "HtmlWeb caching",
+    "LatestDate": "2008-03-25T08:48:41.453-07:00"
+  },
+  {
+    "Id": "25189",
+    "Title": "Attribute, single quote, double quote",
+    "LatestDate": "2008-07-11T11:57:37.647-07:00"
+  },
+  {
+    "Id": "26060",
+    "Title": "HtmlWeb.PostResponse never happens?",
+    "LatestDate": "2008-04-16T11:51:23.973-07:00"
+  },
+  {
+    "Id": "27170",
+    "Title": "HTML input to XHTML output?",
+    "LatestDate": "2008-05-06T13:50:25.693-07:00"
+  },
+  {
+    "Id": "27608",
+    "Title": "Sending Browser String?",
+    "LatestDate": "2008-11-23T22:24:14.413-08:00"
+  },
+  {
+    "Id": "27908",
+    "Title": "Html Agility Pack to LINQ to XML Converter",
+    "LatestDate": "2008-05-28T16:56:37.157-07:00"
+  },
+  {
+    "Id": "27981",
+    "Title": "nested lists and OptionFixNestedTags",
+    "LatestDate": "2008-05-19T05:46:30.74-07:00"
+  },
+  {
+    "Id": "28666",
+    "Title": "html agility pack with IE automation",
+    "LatestDate": "2009-05-08T06:04:34.813-07:00"
+  },
+  {
+    "Id": "28855",
+    "Title": "Get Text and Anchor Text?",
+    "LatestDate": "2008-07-11T02:27:16.863-07:00"
+  },
+  {
+    "Id": "29376",
+    "Title": "How do I use htmlweb.load with proxy ?",
+    "LatestDate": "2008-09-16T08:13:03.097-07:00"
+  },
+  {
+    "Id": "29761",
+    "Title": "HTTP Authentication",
+    "LatestDate": "2008-09-16T06:20:08.973-07:00"
+  },
+  {
+    "Id": "29762",
+    "Title": "Proxy settings",
+    "LatestDate": "2008-07-17T04:40:57.44-07:00"
+  },
+  {
+    "Id": "30184",
+    "Title": "XPath expression to find heading tags <h1>",
+    "LatestDate": "2008-07-11T02:24:27.327-07:00"
+  },
+  {
+    "Id": "30276",
+    "Title": "DHTML Content",
+    "LatestDate": "2008-06-25T10:26:10.627-07:00"
+  },
+  {
+    "Id": "30312",
+    "Title": "User Name and Password for tfs01.codeplex.com",
+    "LatestDate": "2008-06-26T01:33:05.65-07:00"
+  },
+  {
+    "Id": "30912",
+    "Title": "Project license vs LGPL",
+    "LatestDate": "2009-05-18T06:54:49.27-07:00"
+  },
+  {
+    "Id": "31323",
+    "Title": "Update context foreach SelectNodes",
+    "LatestDate": "2009-03-18T03:01:16.737-07:00"
+  },
+  {
+    "Id": "32497",
+    "Title": "Capacity of HtmlNodeCollection",
+    "LatestDate": "2008-07-29T12:55:29.677-07:00"
+  },
+  {
+    "Id": "33076",
+    "Title": "Some predicates do not work (i.e [1])",
+    "LatestDate": "2008-08-08T02:36:56.533-07:00"
+  },
+  {
+    "Id": "33236",
+    "Title": "trying but failing to parse html table",
+    "LatestDate": "2008-10-01T17:46:23.393-07:00"
+  },
+  {
+    "Id": "34899",
+    "Title": "License clarification",
+    "LatestDate": "2008-09-11T09:32:24.357-07:00"
+  },
+  {
+    "Id": "36256",
+    "Title": "HTML Encoding Unwanted Tags",
+    "LatestDate": "2008-09-23T01:30:38.83-07:00"
+  },
+  {
+    "Id": "36702",
+    "Title": "Adding Notes to HtmlNode",
+    "LatestDate": "2008-09-29T17:23:25.767-07:00"
+  },
+  {
+    "Id": "37243",
+    "Title": "MSWord Tag Stripper?",
+    "LatestDate": "2008-10-07T14:25:55.643-07:00"
+  },
+  {
+    "Id": "37512",
+    "Title": "which HTML Version does it use?",
+    "LatestDate": "2008-10-11T05:35:52.767-07:00"
+  },
+  {
+    "Id": "38447",
+    "Title": "Credentials Modification",
+    "LatestDate": "2008-10-24T11:09:12.14-07:00"
+  },
+  {
+    "Id": "38953",
+    "Title": "Get HTMLNode value null",
+    "LatestDate": "2008-10-31T12:49:48.79-07:00"
+  },
+  {
+    "Id": "39484",
+    "Title": "Is Html Agility Pack thread safe?",
+    "LatestDate": "2008-11-08T03:38:19.607-08:00"
+  },
+  {
+    "Id": "39814",
+    "Title": "Parsing by Class Name?",
+    "LatestDate": "2008-11-12T16:16:07.357-08:00"
+  },
+  {
+    "Id": "39966",
+    "Title": "Parsing HTTPS Sites",
+    "LatestDate": "2008-11-21T09:35:29.383-08:00"
+  },
+  {
+    "Id": "39970",
+    "Title": "Accessing Cookies",
+    "LatestDate": "2008-11-14T10:15:28.293-08:00"
+  },
+  {
+    "Id": "39977",
+    "Title": "SSL Certificates",
+    "LatestDate": "2008-11-14T12:17:37.663-08:00"
+  },
+  {
+    "Id": "41043",
+    "Title": "htmlWeb.Load(url) hangs",
+    "LatestDate": "2008-12-01T08:28:44.303-08:00"
+  },
+  {
+    "Id": "41213",
+    "Title": "Installing and Usings HtmlAgilityPack",
+    "LatestDate": "2008-12-02T06:17:44.613-08:00"
+  },
+  {
+    "Id": "41289",
+    "Title": "HtmlAgilityPack has the wrong license",
+    "LatestDate": "2008-12-02T09:33:23.977-08:00"
+  },
+  {
+    "Id": "41671",
+    "Title": "500 server error",
+    "LatestDate": "2008-12-06T17:20:56.503-08:00"
+  },
+  {
+    "Id": "42985",
+    "Title": "Can I use Html Agility Pack in commercial software?",
+    "LatestDate": "2009-05-17T23:53:17.31-07:00"
+  },
+  {
+    "Id": "43461",
+    "Title": "Web Scrape",
+    "LatestDate": "2009-01-13T08:33:41.55-08:00"
+  },
+  {
+    "Id": "44103",
+    "Title": "\"Positional\" XPATH query",
+    "LatestDate": "2009-05-26T20:32:51.57-07:00"
+  },
+  {
+    "Id": "44711",
+    "Title": "Extra Properties to HtmlWeb",
+    "LatestDate": "2009-01-20T12:10:16.447-08:00"
+  },
+  {
+    "Id": "44909",
+    "Title": "SelectNodes to return empty HtmlNodeCollection if no matching node is found ",
+    "LatestDate": "2014-08-26T09:03:11.77-07:00"
+  },
+  {
+    "Id": "44915",
+    "Title": "empty \"form\" elements in SelectNodes",
+    "LatestDate": "2010-03-17T14:47:26.597-07:00"
+  },
+  {
+    "Id": "44989",
+    "Title": "Exception when Using 'DocumentNode.InsertAfter'",
+    "LatestDate": "2009-01-22T13:34:34.447-08:00"
+  },
+  {
+    "Id": "45051",
+    "Title": "Is here a HtmlReader?",
+    "LatestDate": "2009-02-01T19:37:31.15-08:00"
+  },
+  {
+    "Id": "45728",
+    "Title": "Can I pull a specific HTML line number?",
+    "LatestDate": "2009-01-30T10:05:29.853-08:00"
+  },
+  {
+    "Id": "45886",
+    "Title": "How to get a Table",
+    "LatestDate": "2009-02-16T07:48:54.64-08:00"
+  },
+  {
+    "Id": "46350",
+    "Title": "Html consistency",
+    "LatestDate": "2009-03-09T22:08:31.57-07:00"
+  },
+  {
+    "Id": "47042",
+    "Title": "Running Javascript",
+    "LatestDate": "2009-03-09T22:01:00.703-07:00"
+  },
+  {
+    "Id": "47048",
+    "Title": "HtmlAgilityPack Testbed",
+    "LatestDate": "2010-12-20T02:45:17.593-08:00"
+  },
+  {
+    "Id": "48067",
+    "Title": "Compilation",
+    "LatestDate": "2009-02-20T21:46:14.943-08:00"
+  },
+  {
+    "Id": "48908",
+    "Title": "Linq Support?",
+    "LatestDate": "2009-03-16T18:59:03.867-07:00"
+  },
+  {
+    "Id": "49376",
+    "Title": "Probably a BUG",
+    "LatestDate": "2009-09-01T14:23:57.48-07:00"
+  },
+  {
+    "Id": "50121",
+    "Title": "loop over HtmlNodeCollection",
+    "LatestDate": "2009-03-13T08:06:37.223-07:00"
+  },
+  {
+    "Id": "50277",
+    "Title": "Conversion from &#160; to &amp;#160; - incorrect?",
+    "LatestDate": "2009-03-15T16:18:30.093-07:00"
+  },
+  {
+    "Id": "50528",
+    "Title": "Html node's ID is always null",
+    "LatestDate": "2009-03-18T06:20:06.053-07:00"
+  },
+  {
+    "Id": "51584",
+    "Title": "Is this project still alive?",
+    "LatestDate": "2009-05-17T23:53:55.477-07:00"
+  },
+  {
+    "Id": "52477",
+    "Title": "Is this right?",
+    "LatestDate": "2009-05-18T00:00:25.67-07:00"
+  },
+  {
+    "Id": "53782",
+    "Title": "Image tag not closing",
+    "LatestDate": "2010-05-12T12:46:05.867-07:00"
+  },
+  {
+    "Id": "54663",
+    "Title": "ASPX Page Parser",
+    "LatestDate": "2009-05-17T23:56:05.12-07:00"
+  },
+  {
+    "Id": "55700",
+    "Title": "Is XPath query case sensitive?",
+    "LatestDate": "2009-05-17T23:52:09.753-07:00"
+  },
+  {
+    "Id": "55995",
+    "Title": "Get price and product description",
+    "LatestDate": "2009-05-11T20:22:43.537-07:00"
+  },
+  {
+    "Id": "57016",
+    "Title": "Change ArrayList into Generic in HtmlNodeCollection",
+    "LatestDate": "2009-05-21T02:14:10.223-07:00"
+  },
+  {
+    "Id": "57017",
+    "Title": "Use Generic in DocumentWithLinks",
+    "LatestDate": "2009-05-21T02:20:50.197-07:00"
+  },
+  {
+    "Id": "57481",
+    "Title": "I've downloaded the HTML agility Pack. What now?",
+    "LatestDate": "2009-06-23T09:30:22.24-07:00"
+  },
+  {
+    "Id": "57563",
+    "Title": "Agility Pack changes \"&\" to \"&amp;\" ??",
+    "LatestDate": "2009-06-11T08:04:34.123-07:00"
+  },
+  {
+    "Id": "58775",
+    "Title": "LINQ Support",
+    "LatestDate": "2009-06-22T10:18:32.637-07:00"
+  },
+  {
+    "Id": "59803",
+    "Title": "Connection pooling with HAP",
+    "LatestDate": "2009-06-23T09:20:52.243-07:00"
+  },
+  {
+    "Id": "60174",
+    "Title": "Encoding",
+    "LatestDate": "2012-08-16T05:18:17.887-07:00"
+  },
+  {
+    "Id": "60830",
+    "Title": "Selecting Input elements",
+    "LatestDate": "2009-06-26T18:42:54.267-07:00"
+  },
+  {
+    "Id": "60963",
+    "Title": "Selecting a specific bolded text",
+    "LatestDate": "2009-06-29T13:42:45.653-07:00"
+  },
+  {
+    "Id": "60967",
+    "Title": "Where is FormsProcessor / AddOns ",
+    "LatestDate": "2009-07-20T10:12:10.05-07:00"
+  },
+  {
+    "Id": "60980",
+    "Title": "removing string formatting ",
+    "LatestDate": "2009-08-03T03:46:19.527-07:00"
+  },
+  {
+    "Id": "61007",
+    "Title": "InnerText problems",
+    "LatestDate": "2009-06-29T18:06:16.18-07:00"
+  },
+  {
+    "Id": "61927",
+    "Title": "Fabulous project, but is project still alive?",
+    "LatestDate": "2009-07-12T02:45:35.007-07:00"
+  },
+  {
+    "Id": "62780",
+    "Title": "read product on website",
+    "LatestDate": "2009-08-02T04:15:05.943-07:00"
+  },
+  {
+    "Id": "63483",
+    "Title": "NodeCollection Returns Null",
+    "LatestDate": "2010-02-05T01:51:51.25-08:00"
+  },
+  {
+    "Id": "63863",
+    "Title": "I've already login into....",
+    "LatestDate": "2009-08-02T04:05:46.503-07:00"
+  },
+  {
+    "Id": "64094",
+    "Title": "Accessing node by variable reference",
+    "LatestDate": "2010-06-01T09:09:29.783-07:00"
+  },
+  {
+    "Id": "64130",
+    "Title": "Attribute Values Containing Quotes",
+    "LatestDate": "2009-07-31T09:49:11.573-07:00"
+  },
+  {
+    "Id": "64161",
+    "Title": "How to use SelectSingleNode",
+    "LatestDate": "2009-08-03T09:30:14.717-07:00"
+  },
+  {
+    "Id": "64215",
+    "Title": "ArrayList, Hashmap, Stack vs. List<T>, Dictionary<K,V>, Stack<T>",
+    "LatestDate": "2009-08-02T07:18:50.853-07:00"
+  },
+  {
+    "Id": "64256",
+    "Title": "another patch for manual encoding and Entities are doubly-encoded ",
+    "LatestDate": "2009-08-02T20:24:33.927-07:00"
+  },
+  {
+    "Id": "64268",
+    "Title": "extracting information from unsteady html source",
+    "LatestDate": "2009-08-03T04:08:51.787-07:00"
+  },
+  {
+    "Id": "64791",
+    "Title": "Please help in formatting HTML.. ",
+    "LatestDate": "2009-08-07T01:35:58.89-07:00"
+  },
+  {
+    "Id": "65703",
+    "Title": "Has anyone applied all/most of the posted patches?",
+    "LatestDate": "2009-09-17T08:44:55.363-07:00"
+  },
+  {
+    "Id": "65888",
+    "Title": "How to: several xpaths for 1 variable",
+    "LatestDate": "2009-08-18T06:37:55.083-07:00"
+  },
+  {
+    "Id": "67126",
+    "Title": "How to get xpath from browser",
+    "LatestDate": "2010-10-04T08:39:47.617-07:00"
+  },
+  {
+    "Id": "67224",
+    "Title": "extract table from HTML and loop through its rows and cells",
+    "LatestDate": "2012-04-02T10:42:16.277-07:00"
+  },
+  {
+    "Id": "67805",
+    "Title": "Parse a webbot tag",
+    "LatestDate": "2009-09-02T17:00:21.273-07:00"
+  },
+  {
+    "Id": "68124",
+    "Title": "HtmlAgilityPack for Windows Mobile",
+    "LatestDate": "2009-09-06T20:23:57.807-07:00"
+  },
+  {
+    "Id": "68339",
+    "Title": "html pages requiring authentication",
+    "LatestDate": "2009-09-08T14:32:39.667-07:00"
+  },
+  {
+    "Id": "68490",
+    "Title": "extracting attributes...oh so stuck!",
+    "LatestDate": "2009-09-09T23:57:19.967-07:00"
+  },
+  {
+    "Id": "68898",
+    "Title": "Spacing of new paragraph",
+    "LatestDate": "2009-09-14T12:21:55.53-07:00"
+  },
+  {
+    "Id": "68997",
+    "Title": "Good News! HAP Updates are coming",
+    "LatestDate": "2009-09-15T12:35:46.057-07:00"
+  },
+  {
+    "Id": "69162",
+    "Title": "code example for saving an entire web page including images/css etc???",
+    "LatestDate": "2009-09-16T18:26:22.31-07:00"
+  },
+  {
+    "Id": "69194",
+    "Title": "1.4.0 Branch",
+    "LatestDate": "2009-10-01T13:43:13.46-07:00"
+  },
+  {
+    "Id": "69283",
+    "Title": "Getting table from HtmlNode",
+    "LatestDate": "2009-09-17T12:29:46.62-07:00"
+  },
+  {
+    "Id": "69349",
+    "Title": "Problem with help document ",
+    "LatestDate": "2012-07-08T02:28:38.88-07:00"
+  },
+  {
+    "Id": "69507",
+    "Title": "problem parsing form",
+    "LatestDate": "2009-11-06T01:37:00.423-08:00"
+  },
+  {
+    "Id": "70161",
+    "Title": "HtmlNode.SelectNodes issue",
+    "LatestDate": "2009-10-02T20:18:59.56-07:00"
+  },
+  {
+    "Id": "70284",
+    "Title": "can I use HAP for parsing CSS?  if not any advice?",
+    "LatestDate": "2009-09-27T19:58:26.97-07:00"
+  },
+  {
+    "Id": "70421",
+    "Title": "Loading HTML page that displays XML",
+    "LatestDate": "2009-10-02T20:33:31.76-07:00"
+  },
+  {
+    "Id": "70693",
+    "Title": "Node Selecting | hidden input with no value",
+    "LatestDate": "2009-10-02T20:31:06.133-07:00"
+  },
+  {
+    "Id": "70909",
+    "Title": "1.4.0 Beta 2",
+    "LatestDate": "2009-10-03T12:36:08.823-07:00"
+  },
+  {
+    "Id": "71157",
+    "Title": "HAP with Asp.net",
+    "LatestDate": "2009-11-11T02:23:13.27-08:00"
+  },
+  {
+    "Id": "71700",
+    "Title": "Latest version",
+    "LatestDate": "2009-10-26T20:37:49.733-07:00"
+  },
+  {
+    "Id": "72089",
+    "Title": "nodes and child nodes",
+    "LatestDate": "2009-10-15T07:03:14.043-07:00"
+  },
+  {
+    "Id": "72151",
+    "Title": "can't display accented letters",
+    "LatestDate": "2009-10-15T14:52:19.347-07:00"
+  },
+  {
+    "Id": "72745",
+    "Title": "Xpath to select attributes ending with .flv",
+    "LatestDate": "2009-10-22T06:02:56.44-07:00"
+  },
+  {
+    "Id": "73219",
+    "Title": "RemoveChild?",
+    "LatestDate": "2009-10-27T06:28:42.157-07:00"
+  },
+  {
+    "Id": "73248",
+    "Title": "XPath starts-with",
+    "LatestDate": "2009-11-14T10:29:59.963-08:00"
+  },
+  {
+    "Id": "73424",
+    "Title": "Possible bug(s) or me just being stupid, you decide",
+    "LatestDate": "2009-10-28T16:47:56.32-07:00"
+  },
+  {
+    "Id": "73903",
+    "Title": "Getting Style Attributes",
+    "LatestDate": "2012-07-23T16:39:03.54-07:00"
+  },
+  {
+    "Id": "74083",
+    "Title": "Selecting nodes from subtrees",
+    "LatestDate": "2009-11-04T11:28:37.937-08:00"
+  },
+  {
+    "Id": "74801",
+    "Title": "Error with URI",
+    "LatestDate": "2009-11-29T04:47:13.547-08:00"
+  },
+  {
+    "Id": "75261",
+    "Title": "Removing specific html tags but not the inner text.",
+    "LatestDate": "2009-11-29T04:53:20.567-08:00"
+  },
+  {
+    "Id": "75334",
+    "Title": "Ifram How Can I Capture",
+    "LatestDate": "2009-11-29T05:21:17.91-08:00"
+  },
+  {
+    "Id": "75660",
+    "Title": "<link> elements not being parsed/written correctly",
+    "LatestDate": "2009-11-20T00:49:01.92-08:00"
+  },
+  {
+    "Id": "76383",
+    "Title": "Merging fizzler with HtmlAgilitypack",
+    "LatestDate": "2013-11-18T05:14:18.603-08:00"
+  },
+  {
+    "Id": "76550",
+    "Title": "HAP Swallows HTML Attributes with Un-Encoded GT/LT Chars",
+    "LatestDate": "2009-12-23T09:57:24.193-08:00"
+  },
+  {
+    "Id": "76560",
+    "Title": "Problem with HtmlNode.Descendants()",
+    "LatestDate": "2009-11-30T15:25:25.347-08:00"
+  },
+  {
+    "Id": "76632",
+    "Title": "Development Update",
+    "LatestDate": "2009-11-30T14:07:34.793-08:00"
+  },
+  {
+    "Id": "76745",
+    "Title": "The type or namespace name 'HtmlAgilityPack' could not be found",
+    "LatestDate": "2012-08-05T13:28:58.78-07:00"
+  },
+  {
+    "Id": "76757",
+    "Title": "C# - Replacing back slash character",
+    "LatestDate": "2009-12-02T06:39:03.047-08:00"
+  },
+  {
+    "Id": "77033",
+    "Title": "Illegal characters in path",
+    "LatestDate": "2009-12-03T13:13:53-08:00"
+  },
+  {
+    "Id": "77258",
+    "Title": "Errorhandling ?",
+    "LatestDate": "2009-12-06T01:29:10.19-08:00"
+  },
+  {
+    "Id": "77326",
+    "Title": "How to Use this Agility Pack with c#",
+    "LatestDate": "2009-12-09T10:30:24.017-08:00"
+  },
+  {
+    "Id": "77605",
+    "Title": "keep getting method not found errors with formprocessor addon",
+    "LatestDate": "2010-09-19T12:30:39.867-07:00"
+  },
+  {
+    "Id": "77640",
+    "Title": "Installing / Referencing HTMLAgilityPack",
+    "LatestDate": "2009-12-23T09:53:38.713-08:00"
+  },
+  {
+    "Id": "78043",
+    "Title": "Select nodes after specific node",
+    "LatestDate": "2009-12-15T14:34:03.747-08:00"
+  },
+  {
+    "Id": "78650",
+    "Title": "HtmlNode.InnerText Broken?",
+    "LatestDate": "2009-12-23T09:49:25.08-08:00"
+  },
+  {
+    "Id": "78683",
+    "Title": "strange behaviour when encoutering non html not closed tags",
+    "LatestDate": "2009-12-23T09:51:02.873-08:00"
+  },
+  {
+    "Id": "79064",
+    "Title": "WebBrowser - HtmlDocument",
+    "LatestDate": "2009-12-27T03:26:42.32-08:00"
+  },
+  {
+    "Id": "79091",
+    "Title": "Is there a wildcard to filter",
+    "LatestDate": "2013-01-30T05:08:55.943-08:00"
+  },
+  {
+    "Id": "79182",
+    "Title": "Version for compact framework?",
+    "LatestDate": "2015-02-05T12:12:28.76-08:00"
+  },
+  {
+    "Id": "79288",
+    "Title": "HtmlAgility XPATH and XSL",
+    "LatestDate": "2009-12-29T08:24:44.99-08:00"
+  },
+  {
+    "Id": "79517",
+    "Title": "charset/unicode conversion",
+    "LatestDate": "2010-03-24T06:58:36.023-07:00"
+  },
+  {
+    "Id": "79549",
+    "Title": "(HtmlAgilitypack)Error in SelectNode",
+    "LatestDate": "2010-01-02T02:57:25.153-08:00"
+  },
+  {
+    "Id": "79587",
+    "Title": "Remove Child Nodes reverses order of Xpath",
+    "LatestDate": "2011-01-16T17:33:42.813-08:00"
+  },
+  {
+    "Id": "79604",
+    "Title": "unable to load HTML from URL",
+    "LatestDate": "2010-01-03T07:56:48.443-08:00"
+  },
+  {
+    "Id": "79737",
+    "Title": "Update  HtmlAgilityPack with .patch",
+    "LatestDate": "2010-01-04T19:33:05.137-08:00"
+  },
+  {
+    "Id": "79822",
+    "Title": "Using HtmlAgilityPack from unmanaged C++?",
+    "LatestDate": "2011-02-19T23:33:49.553-08:00"
+  },
+  {
+    "Id": "79901",
+    "Title": "Login into https",
+    "LatestDate": "2010-01-06T10:10:31.043-08:00"
+  },
+  {
+    "Id": "80349",
+    "Title": "Encoding and html entities.",
+    "LatestDate": "2010-01-10T12:15:06.337-08:00"
+  },
+  {
+    "Id": "80397",
+    "Title": "can I ran javascript function?",
+    "LatestDate": "2010-01-11T14:27:33.993-08:00"
+  },
+  {
+    "Id": "80557",
+    "Title": "Do not load HTML comments",
+    "LatestDate": "2010-01-12T14:17:07.4-08:00"
+  },
+  {
+    "Id": "80867",
+    "Title": "Example please with ",
+    "LatestDate": "2010-01-14T11:46:34.617-08:00"
+  },
+  {
+    "Id": "81037",
+    "Title": "We want to include some parts of the 'HtmlAgilityPack' into our software",
+    "LatestDate": "2010-01-16T08:44:00.66-08:00"
+  },
+  {
+    "Id": "81107",
+    "Title": "There are at least 2 a bug in the library(example inside)",
+    "LatestDate": "2010-01-29T04:27:00.083-08:00"
+  },
+  {
+    "Id": "81147",
+    "Title": "Hope to be able to add Title attribute HtmlDocument",
+    "LatestDate": "2010-01-29T04:13:13.657-08:00"
+  },
+  {
+    "Id": "81850",
+    "Title": "Remove descendants ?",
+    "LatestDate": "2010-01-24T15:58:11.437-08:00"
+  },
+  {
+    "Id": "82084",
+    "Title": "Setting textbox values from Winform",
+    "LatestDate": "2010-01-29T04:09:09.527-08:00"
+  },
+  {
+    "Id": "82127",
+    "Title": "is there any bug in handling <form> node?",
+    "LatestDate": "2010-01-28T18:07:02.24-08:00"
+  },
+  {
+    "Id": "83328",
+    "Title": "Swap place of 2 elements",
+    "LatestDate": "2010-02-05T23:11:08.09-08:00"
+  },
+  {
+    "Id": "83409",
+    "Title": "Bug in XPath engine",
+    "LatestDate": "2010-02-11T17:43:00.267-08:00"
+  },
+  {
+    "Id": "83932",
+    "Title": "Help with HAP Documentation",
+    "LatestDate": "2010-02-10T11:37:19.053-08:00"
+  },
+  {
+    "Id": "85222",
+    "Title": "CRs being added in anchor text",
+    "LatestDate": "2010-02-12T14:20:01.993-08:00"
+  },
+  {
+    "Id": "85327",
+    "Title": "How to evaluate Javacript within C#? (need to get all links for a web page, including java-script generated ones)",
+    "LatestDate": "2010-02-14T22:49:41.487-08:00"
+  },
+  {
+    "Id": "85535",
+    "Title": "How to retrieve CSS styles?",
+    "LatestDate": "2010-02-16T09:02:02.723-08:00"
+  },
+  {
+    "Id": "85705",
+    "Title": "Cache problem",
+    "LatestDate": "2013-10-16T05:32:40.767-07:00"
+  },
+  {
+    "Id": "85850",
+    "Title": "Cleaning <td> tags",
+    "LatestDate": "2010-02-18T12:59:47.43-08:00"
+  },
+  {
+    "Id": "85969",
+    "Title": "FormProcessor Login Problem ASP.NET",
+    "LatestDate": "2010-02-19T21:27:00.89-08:00"
+  },
+  {
+    "Id": "155349",
+    "Title": "Parsing <p> tags",
+    "LatestDate": "2010-02-22T07:49:56.043-08:00"
+  },
+  {
+    "Id": "155618",
+    "Title": "Why wouldn't HtmlNode descend from XmlNode",
+    "LatestDate": "2010-02-24T03:20:45.587-08:00"
+  },
+  {
+    "Id": "200750",
+    "Title": "streamPosition?",
+    "LatestDate": "2010-03-05T14:13:22.723-08:00"
+  },
+  {
+    "Id": "203735",
+    "Title": "Processing .MHTML file",
+    "LatestDate": "2010-03-03T21:30:20.32-08:00"
+  },
+  {
+    "Id": "203995",
+    "Title": "New user struggling",
+    "LatestDate": "2010-03-09T09:00:39.56-08:00"
+  },
+  {
+    "Id": "204342",
+    "Title": "XPath to select attribute",
+    "LatestDate": "2012-10-31T10:00:36.053-07:00"
+  },
+  {
+    "Id": "205225",
+    "Title": "Monotouch binaries",
+    "LatestDate": "2010-03-17T13:16:56.873-07:00"
+  },
+  {
+    "Id": "205475",
+    "Title": "HtmlConsoleListener and HtmlWeb cause linker problems on MonoTouch",
+    "LatestDate": "2010-03-19T06:16:19.403-07:00"
+  },
+  {
+    "Id": "206836",
+    "Title": "Html Tidy option in Html Agility Pack",
+    "LatestDate": "2010-03-24T04:27:14.09-07:00"
+  },
+  {
+    "Id": "207103",
+    "Title": "extracting contents of <title>,<head> of a web page",
+    "LatestDate": "2010-04-07T22:59:40.95-07:00"
+  },
+  {
+    "Id": "207254",
+    "Title": "Internet service where proxy and authentication required",
+    "LatestDate": "2010-08-12T01:27:17.53-07:00"
+  },
+  {
+    "Id": "207780",
+    "Title": "Update InnerHtml",
+    "LatestDate": "2010-03-30T06:16:29.363-07:00"
+  },
+  {
+    "Id": "207957",
+    "Title": "Problem with ReplaceChild",
+    "LatestDate": "2010-03-31T11:45:42.533-07:00"
+  },
+  {
+    "Id": "208032",
+    "Title": "Word finding from a different website",
+    "LatestDate": "2010-04-01T02:20:59.263-07:00"
+  },
+  {
+    "Id": "208216",
+    "Title": "Get the Doctype is possible ?",
+    "LatestDate": "2010-04-02T22:02:03.26-07:00"
+  },
+  {
+    "Id": "208544",
+    "Title": "HAP Testbed",
+    "LatestDate": "2010-04-07T03:26:58.793-07:00"
+  },
+  {
+    "Id": "208546",
+    "Title": "ReplaceNode doesn’t change the InnerHTML of the Body",
+    "LatestDate": "2010-04-07T04:22:50.963-07:00"
+  },
+  {
+    "Id": "209187",
+    "Title": "Garbled Output?",
+    "LatestDate": "2010-04-13T15:41:26.677-07:00"
+  },
+  {
+    "Id": "209302",
+    "Title": "I cannot get value from some website with Html Agility",
+    "LatestDate": "2010-05-04T05:29:29.723-07:00"
+  },
+  {
+    "Id": "209929",
+    "Title": "How to iterate over all elements in HTML document and remove few elements?",
+    "LatestDate": "2010-04-20T08:54:56.647-07:00"
+  },
+  {
+    "Id": "210278",
+    "Title": "removing certain type of images based on extension, width, height",
+    "LatestDate": "2010-04-23T08:54:18.233-07:00"
+  },
+  {
+    "Id": "210455",
+    "Title": "How to get SHORTCUT ICON",
+    "LatestDate": "2010-04-24T18:38:34.16-07:00"
+  },
+  {
+    "Id": "210669",
+    "Title": "Html agility Pack mis-parsed unclosed <li> and <p> elements",
+    "LatestDate": "2010-04-27T02:21:03.537-07:00"
+  },
+  {
+    "Id": "210784",
+    "Title": "Using HtmlAgilityPack with F#",
+    "LatestDate": "2010-05-03T05:18:30.607-07:00"
+  },
+  {
+    "Id": "211321",
+    "Title": "Error When Running \"SelectNodes\"",
+    "LatestDate": "2010-07-08T00:37:40.95-07:00"
+  },
+  {
+    "Id": "211389",
+    "Title": "Sloppy Html doesn't parse",
+    "LatestDate": "2010-05-10T05:56:12.203-07:00"
+  },
+  {
+    "Id": "211781",
+    "Title": "HtmlNode.OuterHtml does not keep Name Case",
+    "LatestDate": "2010-05-06T06:24:12.297-07:00"
+  },
+  {
+    "Id": "211847",
+    "Title": "vs 2010 conversion failure?",
+    "LatestDate": "2010-05-07T07:09:09.383-07:00"
+  },
+  {
+    "Id": "212642",
+    "Title": "Stack Overflow exception",
+    "LatestDate": "2010-10-05T16:33:46.77-07:00"
+  },
+  {
+    "Id": "212737",
+    "Title": "Can I add attributes in htmlNode?",
+    "LatestDate": "2010-05-15T05:25:00.207-07:00"
+  },
+  {
+    "Id": "212971",
+    "Title": "Readability using HtmlAgilityPack",
+    "LatestDate": "2010-05-17T22:48:33.267-07:00"
+  },
+  {
+    "Id": "212997",
+    "Title": "XPath expression fails",
+    "LatestDate": "2010-05-18T05:32:17.393-07:00"
+  },
+  {
+    "Id": "213001",
+    "Title": "Additional p attribute on option nodes",
+    "LatestDate": "2010-05-18T03:56:16.927-07:00"
+  },
+  {
+    "Id": "213034",
+    "Title": "No innertext on retrieved node",
+    "LatestDate": "2010-05-18T07:19:57.543-07:00"
+  },
+  {
+    "Id": "213247",
+    "Title": "Find most contentl'y block",
+    "LatestDate": "2010-05-19T20:12:02.343-07:00"
+  },
+  {
+    "Id": "213333",
+    "Title": "Trunk is unstable for now, use download or Releases",
+    "LatestDate": "2010-06-05T13:51:39.43-07:00"
+  },
+  {
+    "Id": "213565",
+    "Title": "Option to ignore \"empty\" Nodes",
+    "LatestDate": "2010-05-29T15:16:34.413-07:00"
+  },
+  {
+    "Id": "214043",
+    "Title": "Error with Insert before of after",
+    "LatestDate": "2010-05-27T03:07:00.18-07:00"
+  },
+  {
+    "Id": "214167",
+    "Title": "Unit tests for Html Agility Pack",
+    "LatestDate": "2010-05-30T23:16:39.947-07:00"
+  },
+  {
+    "Id": "214343",
+    "Title": "EncodingFoundException",
+    "LatestDate": "2010-05-31T00:23:54.717-07:00"
+  },
+  {
+    "Id": "214712",
+    "Title": "Stackoverflowbug in Node.Attributes.RemoveAll()",
+    "LatestDate": "2010-06-02T05:52:35.607-07:00"
+  },
+  {
+    "Id": "215074",
+    "Title": "New Features/Versions: HAPLight, HAPCompact, .NET 4.0 and Unit Tests",
+    "LatestDate": "2013-11-18T05:55:08.75-08:00"
+  },
+  {
+    "Id": "215388",
+    "Title": "'gzip,deflate' is not a supported encoding name",
+    "LatestDate": "2010-06-08T14:47:55.033-07:00"
+  },
+  {
+    "Id": "215431",
+    "Title": "In correct parsing of HTML based CFM file",
+    "LatestDate": "2011-02-10T09:32:40.83-08:00"
+  },
+  {
+    "Id": "215492",
+    "Title": "Possible bug: stream doesn't flushed...",
+    "LatestDate": "2010-06-09T10:30:41.03-07:00"
+  },
+  {
+    "Id": "215522",
+    "Title": "HtmlNode .equals",
+    "LatestDate": "2010-06-09T14:42:49.577-07:00"
+  },
+  {
+    "Id": "215674",
+    "Title": "How to make a whitelist with html agility pack?",
+    "LatestDate": "2010-06-28T05:19:04.78-07:00"
+  },
+  {
+    "Id": "215721",
+    "Title": "Link Extraction ",
+    "LatestDate": "2010-06-15T06:26:11.153-07:00"
+  },
+  {
+    "Id": "215795",
+    "Title": "No DocumentNode",
+    "LatestDate": "2010-06-15T08:38:42.757-07:00"
+  },
+  {
+    "Id": "216395",
+    "Title": "Html Agility Pack and JavaScript",
+    "LatestDate": "2010-06-17T09:02:58.657-07:00"
+  },
+  {
+    "Id": "216429",
+    "Title": "Html Agility Pack",
+    "LatestDate": "2010-06-18T00:49:59.037-07:00"
+  },
+  {
+    "Id": "216460",
+    "Title": "Clean Word HTML",
+    "LatestDate": "2010-06-18T15:54:37.447-07:00"
+  },
+  {
+    "Id": "216624",
+    "Title": "Using the New Linq Syntax",
+    "LatestDate": "2010-06-19T14:22:39.01-07:00"
+  },
+  {
+    "Id": "216638",
+    "Title": "How to Parse HTML Table",
+    "LatestDate": "2010-06-19T14:56:55.913-07:00"
+  },
+  {
+    "Id": "216820",
+    "Title": "Any way to associate HtmlAgilityPack classes with .NET Html classes?",
+    "LatestDate": "2012-06-08T04:10:01.39-07:00"
+  },
+  {
+    "Id": "216956",
+    "Title": "Problem parsing children",
+    "LatestDate": "2010-06-22T19:18:13.763-07:00"
+  },
+  {
+    "Id": "217401",
+    "Title": "A Parse Bug ?",
+    "LatestDate": "2010-07-03T01:25:20.133-07:00"
+  },
+  {
+    "Id": "217471",
+    "Title": "Meta Refresh",
+    "LatestDate": "2010-06-28T12:11:35.603-07:00"
+  },
+  {
+    "Id": "217595",
+    "Title": "Get the result of a XPath count expression",
+    "LatestDate": "2010-07-03T03:49:02.987-07:00"
+  },
+  {
+    "Id": "217916",
+    "Title": "Html Agility Pack & classic asp",
+    "LatestDate": "2010-06-30T14:33:04.63-07:00"
+  },
+  {
+    "Id": "217998",
+    "Title": "The remote server returned an error: (403) Forbidden",
+    "LatestDate": "2010-07-01T04:38:06.34-07:00"
+  },
+  {
+    "Id": "218237",
+    "Title": "Display first 2000 words from a long string (Stripping HTML)",
+    "LatestDate": "2010-07-03T05:24:39.423-07:00"
+  },
+  {
+    "Id": "218397",
+    "Title": "Fix List <li> tag order",
+    "LatestDate": "2010-07-06T09:07:57.09-07:00"
+  },
+  {
+    "Id": "218773",
+    "Title": "Get img src into a div",
+    "LatestDate": "2010-07-08T07:05:08.293-07:00"
+  },
+  {
+    "Id": "218775",
+    "Title": "Problem with swedish letters",
+    "LatestDate": "2010-07-08T07:11:02.023-07:00"
+  },
+  {
+    "Id": "219397",
+    "Title": "Strip and/or replace HTML special characters like &nbsp;",
+    "LatestDate": "2010-07-14T02:12:30.927-07:00"
+  },
+  {
+    "Id": "219440",
+    "Title": "Problems with large amount files",
+    "LatestDate": "2013-11-18T05:38:20.607-08:00"
+  },
+  {
+    "Id": "219561",
+    "Title": "Create node from text",
+    "LatestDate": "2010-07-15T04:28:13.42-07:00"
+  },
+  {
+    "Id": "220034",
+    "Title": "Chinese become to mess codes after using HTML Agility",
+    "LatestDate": "2010-08-16T16:59:53.147-07:00"
+  },
+  {
+    "Id": "220707",
+    "Title": "loading html, clicking radiobutton and saving the new page to the hdd",
+    "LatestDate": "2010-08-12T02:28:08.907-07:00"
+  },
+  {
+    "Id": "220730",
+    "Title": "StackOverflowException",
+    "LatestDate": "2013-11-18T05:56:26.11-08:00"
+  },
+  {
+    "Id": "220987",
+    "Title": "Probably a bug. InnerText",
+    "LatestDate": "2010-07-23T07:18:57.953-07:00"
+  },
+  {
+    "Id": "221511",
+    "Title": "How to load an .aspx file",
+    "LatestDate": "2010-07-27T00:42:57.46-07:00"
+  },
+  {
+    "Id": "221762",
+    "Title": "Can I search by ordinal position?",
+    "LatestDate": "2010-08-12T02:17:17.68-07:00"
+  },
+  {
+    "Id": "222036",
+    "Title": "Corrupted file download?  ~  HtmlAgilityPack.Documentation.chm",
+    "LatestDate": "2010-07-30T12:44:33.813-07:00"
+  },
+  {
+    "Id": "222097",
+    "Title": "The htmlnode is not thread safe.",
+    "LatestDate": "2010-07-31T20:55:08.963-07:00"
+  },
+  {
+    "Id": "222252",
+    "Title": "XPath function support",
+    "LatestDate": "2010-08-12T01:19:48.983-07:00"
+  },
+  {
+    "Id": "222453",
+    "Title": "Parse/screen scrape web page",
+    "LatestDate": "2010-08-05T06:59:57.88-07:00"
+  },
+  {
+    "Id": "224221",
+    "Title": "Getting frame's html from a google translate page",
+    "LatestDate": "2010-12-23T23:41:55.627-08:00"
+  },
+  {
+    "Id": "224785",
+    "Title": "Can I automate my testing using html agility",
+    "LatestDate": "2010-08-25T08:48:15.38-07:00"
+  },
+  {
+    "Id": "224875",
+    "Title": "how to load text as html using HAP",
+    "LatestDate": "2010-08-25T21:35:41.133-07:00"
+  },
+  {
+    "Id": "224892",
+    "Title": "XPath Expression Not Working...",
+    "LatestDate": "2010-08-30T10:58:38.43-07:00"
+  },
+  {
+    "Id": "225036",
+    "Title": "Invalid HTML Comments workaround.",
+    "LatestDate": "2010-08-27T02:34:01.76-07:00"
+  },
+  {
+    "Id": "225039",
+    "Title": "ToUpperInvariant instead of ToUpper",
+    "LatestDate": "2010-08-27T02:38:00.127-07:00"
+  },
+  {
+    "Id": "225113",
+    "Title": "How to use htmlagilitypack in Windows Phone 7",
+    "LatestDate": "2014-04-14T00:42:15.463-07:00"
+  },
+  {
+    "Id": "225240",
+    "Title": "how to use HAPLight?",
+    "LatestDate": "2010-08-29T16:54:33.9-07:00"
+  },
+  {
+    "Id": "225987",
+    "Title": "\"Unable to connect to the remote server\" on localhost",
+    "LatestDate": "2010-09-03T10:23:10.82-07:00"
+  },
+  {
+    "Id": "226216",
+    "Title": "DOM element/image locations",
+    "LatestDate": "2010-09-06T10:06:31.12-07:00"
+  },
+  {
+    "Id": "226240",
+    "Title": "GetAttributeValue<T>",
+    "LatestDate": "2010-09-06T10:42:50.517-07:00"
+  },
+  {
+    "Id": "226691",
+    "Title": "Remove line break before retrieving text?",
+    "LatestDate": "2010-09-09T19:49:48.45-07:00"
+  },
+  {
+    "Id": "226893",
+    "Title": "Help with HtmlAgilityPack, match 2 different nodes with each other.",
+    "LatestDate": "2010-09-15T05:23:03.967-07:00"
+  },
+  {
+    "Id": "227693",
+    "Title": "InnerText fail",
+    "LatestDate": "2010-09-17T18:56:17.713-07:00"
+  },
+  {
+    "Id": "228057",
+    "Title": "XPath problem",
+    "LatestDate": "2010-09-21T12:46:34.75-07:00"
+  },
+  {
+    "Id": "228589",
+    "Title": "Version for Windows Phone 7",
+    "LatestDate": "2010-09-25T19:54:16.44-07:00"
+  },
+  {
+    "Id": "228696",
+    "Title": "x-user-defined is not a supported encoding name.",
+    "LatestDate": "2011-05-21T07:09:38.357-07:00"
+  },
+  {
+    "Id": "229040",
+    "Title": "Problem selecting within a node",
+    "LatestDate": "2012-04-13T02:21:03.443-07:00"
+  },
+  {
+    "Id": "229766",
+    "Title": "Extract href by anchor text?",
+    "LatestDate": "2014-06-08T20:57:07.857-07:00"
+  },
+  {
+    "Id": "230207",
+    "Title": "SelectSingleNode relative to a node",
+    "LatestDate": "2010-10-09T17:24:34.397-07:00"
+  },
+  {
+    "Id": "230397",
+    "Title": "Problem while parsing the li tags.",
+    "LatestDate": "2010-10-11T03:52:47.76-07:00"
+  },
+  {
+    "Id": "231164",
+    "Title": "extact text only from html content using Html Agility Pack",
+    "LatestDate": "2010-10-16T10:22:02.463-07:00"
+  },
+  {
+    "Id": "232005",
+    "Title": "Help parse this page...",
+    "LatestDate": "2010-10-31T11:49:27.487-07:00"
+  },
+  {
+    "Id": "232386",
+    "Title": "Entities problem with InnerText",
+    "LatestDate": "2010-10-26T09:51:31.313-07:00"
+  },
+  {
+    "Id": "232394",
+    "Title": "Help with a parser",
+    "LatestDate": "2010-10-26T11:16:56.39-07:00"
+  },
+  {
+    "Id": "232596",
+    "Title": "Case Insensitive Queries",
+    "LatestDate": "2010-10-27T21:09:40.49-07:00"
+  },
+  {
+    "Id": "232830",
+    "Title": "Mobile Device Page Or Regular Webpage",
+    "LatestDate": "2010-10-29T12:44:21.51-07:00"
+  },
+  {
+    "Id": "233227",
+    "Title": "Installation issue",
+    "LatestDate": "2011-01-14T07:17:56.353-08:00"
+  },
+  {
+    "Id": "233472",
+    "Title": "Mediawiki login",
+    "LatestDate": "2010-11-04T06:27:49.797-07:00"
+  },
+  {
+    "Id": "234391",
+    "Title": "Why it convert xhtml to html",
+    "LatestDate": "2011-01-21T02:37:40.987-08:00"
+  },
+  {
+    "Id": "234602",
+    "Title": "interesting news article/blog post scraping requirement",
+    "LatestDate": "2010-11-13T13:05:33.947-08:00"
+  },
+  {
+    "Id": "234668",
+    "Title": "SelectNodes / GetElementbyId",
+    "LatestDate": "2010-11-23T23:59:15.347-08:00"
+  },
+  {
+    "Id": "235707",
+    "Title": "HtmlWeb.Load throws System.IO.IOException",
+    "LatestDate": "2010-11-23T04:22:46.747-08:00"
+  },
+  {
+    "Id": "236107",
+    "Title": "Some code modification needed in HtmlToText.ConvertTo",
+    "LatestDate": "2010-11-26T00:04:04.793-08:00"
+  },
+  {
+    "Id": "236919",
+    "Title": "Not modifying loaded HTML",
+    "LatestDate": "2010-12-02T12:30:12.917-08:00"
+  },
+  {
+    "Id": "237207",
+    "Title": "Failing at parsing html, help.",
+    "LatestDate": "2010-12-05T10:55:18.4-08:00"
+  },
+  {
+    "Id": "237441",
+    "Title": "Parsing only shows one cell of data from table",
+    "LatestDate": "2010-12-10T09:59:35.397-08:00"
+  },
+  {
+    "Id": "237499",
+    "Title": "Parse question",
+    "LatestDate": "2010-12-07T23:52:45.057-08:00"
+  },
+  {
+    "Id": "237638",
+    "Title": "Replace Tag with data from a datatable of dataset",
+    "LatestDate": "2010-12-14T01:23:00.177-08:00"
+  },
+  {
+    "Id": "237664",
+    "Title": "DocumentNode.Selected Nodes Causes Context Switch Deadlock",
+    "LatestDate": "2010-12-08T15:23:51.393-08:00"
+  },
+  {
+    "Id": "238223",
+    "Title": "error parsing files with included php tags",
+    "LatestDate": "2010-12-13T12:26:02.97-08:00"
+  },
+  {
+    "Id": "238797",
+    "Title": "Noobie Question",
+    "LatestDate": "2010-12-20T03:01:33.553-08:00"
+  },
+  {
+    "Id": "239695",
+    "Title": "Can HAP access or preserve the original source HTML?",
+    "LatestDate": "2011-01-11T13:49:01.977-08:00"
+  },
+  {
+    "Id": "240862",
+    "Title": "Can only load xml document from file system, not from web",
+    "LatestDate": "2012-02-15T10:57:14.107-08:00"
+  },
+  {
+    "Id": "240914",
+    "Title": "Noobie Help - &#x27; in innertext after xquery",
+    "LatestDate": "2011-01-07T15:27:47.213-08:00"
+  },
+  {
+    "Id": "241130",
+    "Title": "Remove malformed html tags",
+    "LatestDate": "2011-01-10T04:26:18.963-08:00"
+  },
+  {
+    "Id": "241244",
+    "Title": "SelectSingleNode(\"//form\") does not work correctly",
+    "LatestDate": "2011-03-10T02:21:04.187-08:00"
+  },
+  {
+    "Id": "241360",
+    "Title": "Replace ASP.net WebForm Page Text with a Hyperlink",
+    "LatestDate": "2011-03-10T02:18:55.197-08:00"
+  },
+  {
+    "Id": "241458",
+    "Title": "Html Agility Pack Twitter account",
+    "LatestDate": "2011-01-12T08:09:22.217-08:00"
+  },
+  {
+    "Id": "241548",
+    "Title": "Suggestions for LINQ expression?",
+    "LatestDate": "2011-01-15T04:46:07.467-08:00"
+  },
+  {
+    "Id": "241662",
+    "Title": "Help searching through nodes. Very basic.",
+    "LatestDate": "2011-01-13T16:46:20.067-08:00"
+  },
+  {
+    "Id": "241821",
+    "Title": "take a text from a site",
+    "LatestDate": "2011-01-16T00:24:44.24-08:00"
+  },
+  {
+    "Id": "241939",
+    "Title": "Html Agility Pack on NuGet",
+    "LatestDate": "2011-01-16T15:37:21.293-08:00"
+  },
+  {
+    "Id": "242145",
+    "Title": "Example link on home page broken",
+    "LatestDate": "2011-01-18T07:43:16.41-08:00"
+  },
+  {
+    "Id": "242258",
+    "Title": "Documentation Problem",
+    "LatestDate": "2011-01-18T08:06:27.97-08:00"
+  },
+  {
+    "Id": "242287",
+    "Title": "Navigating a Node Collection",
+    "LatestDate": "2011-01-19T06:27:35.99-08:00"
+  },
+  {
+    "Id": "242961",
+    "Title": "get live html data",
+    "LatestDate": "2011-01-23T13:24:11.607-08:00"
+  },
+  {
+    "Id": "243497",
+    "Title": "Please delete.",
+    "LatestDate": "2011-01-27T03:48:16.827-08:00"
+  },
+  {
+    "Id": "244336",
+    "Title": "DocumentNode.SelectSingleNode Null Reference Exception",
+    "LatestDate": "2011-02-03T00:05:10.557-08:00"
+  },
+  {
+    "Id": "244504",
+    "Title": "Inconsistent parsing of whitespace within tags",
+    "LatestDate": "2011-02-18T05:37:51.19-08:00"
+  },
+  {
+    "Id": "244941",
+    "Title": "How to Download non-html content with HtmlAgilityPack?",
+    "LatestDate": "2011-02-07T03:40:19.89-08:00"
+  },
+  {
+    "Id": "245404",
+    "Title": "htmlAgilityPack xpath issue ? which is right ?",
+    "LatestDate": "2011-02-10T00:41:29.757-08:00"
+  },
+  {
+    "Id": "245413",
+    "Title": "How to wildcard or replace 4 characters",
+    "LatestDate": "2011-02-10T01:59:45.053-08:00"
+  },
+  {
+    "Id": "245505",
+    "Title": "Deprecated HTML",
+    "LatestDate": "2011-02-10T12:34:50.05-08:00"
+  },
+  {
+    "Id": "245823",
+    "Title": "vb.net to catch HTML data Problem",
+    "LatestDate": "2011-02-13T01:12:06.877-08:00"
+  },
+  {
+    "Id": "245934",
+    "Title": "locate .js files",
+    "LatestDate": "2011-02-16T06:44:58.003-08:00"
+  },
+  {
+    "Id": "246426",
+    "Title": "Selecting specific childs of childs of childs...?",
+    "LatestDate": "2012-01-12T01:02:34.61-08:00"
+  },
+  {
+    "Id": "247206",
+    "Title": "No child nodes for FORM objects",
+    "LatestDate": "2013-07-14T18:10:50.343-07:00"
+  },
+  {
+    "Id": "247432",
+    "Title": "Compile Error - 'HtmlAgilityPack.HtmlNodeType' does not contain a definition for 'Attribute'",
+    "LatestDate": "2011-03-10T01:24:27.457-08:00"
+  },
+  {
+    "Id": "247731",
+    "Title": "supported xpath functions?",
+    "LatestDate": "2011-02-27T00:38:52.467-08:00"
+  },
+  {
+    "Id": "247744",
+    "Title": "No-Line-Breaker Bug in 1.4.0?",
+    "LatestDate": "2011-03-10T00:23:28.4-08:00"
+  },
+  {
+    "Id": "247875",
+    "Title": "Use this to strip certain tags",
+    "LatestDate": "2011-07-10T06:02:52.413-07:00"
+  },
+  {
+    "Id": "248549",
+    "Title": "xpath not working",
+    "LatestDate": "2011-03-05T07:33:50.907-08:00"
+  },
+  {
+    "Id": "248692",
+    "Title": "Removing element by class",
+    "LatestDate": "2012-05-20T21:49:50.44-07:00"
+  },
+  {
+    "Id": "249087",
+    "Title": "can't HtmlDocument.Load() on windows phone",
+    "LatestDate": "2011-03-09T12:30:56.987-08:00"
+  },
+  {
+    "Id": "249129",
+    "Title": "htmlnode.SelectSingleNode wired ",
+    "LatestDate": "2011-07-17T19:52:59.907-07:00"
+  },
+  {
+    "Id": "250137",
+    "Title": "Problem to scrape several tags at once VB .NET",
+    "LatestDate": "2011-03-20T01:52:08.597-07:00"
+  },
+  {
+    "Id": "250435",
+    "Title": "HTMLDocument.DocumentElement not in object browser",
+    "LatestDate": "2011-03-21T19:21:19.643-07:00"
+  },
+  {
+    "Id": "250678",
+    "Title": "Added Functionality - LoadUri",
+    "LatestDate": "2013-05-30T10:36:28.04-07:00"
+  },
+  {
+    "Id": "251067",
+    "Title": "Embolden keywords without messing up HTML tags",
+    "LatestDate": "2011-10-03T08:58:48.027-07:00"
+  },
+  {
+    "Id": "251118",
+    "Title": "is there something like a HtmlNode.Parse(string) method?",
+    "LatestDate": "2011-03-31T14:43:48.83-07:00"
+  },
+  {
+    "Id": "251481",
+    "Title": "Microsoft Office / VBA interoperability?",
+    "LatestDate": "2011-03-28T06:52:03.21-07:00"
+  },
+  {
+    "Id": "251811",
+    "Title": "How to parse these tags?",
+    "LatestDate": "2011-03-31T16:25:56.663-07:00"
+  },
+  {
+    "Id": "252658",
+    "Title": "Passing XPath to SelectNodes failing",
+    "LatestDate": "2011-04-05T13:07:24.407-07:00"
+  },
+  {
+    "Id": "253636",
+    "Title": "How to display HTML file content?",
+    "LatestDate": "2011-04-12T15:11:37.163-07:00"
+  },
+  {
+    "Id": "253940",
+    "Title": "Why don't input elements have InnerText?",
+    "LatestDate": "2011-04-17T12:58:46.137-07:00"
+  },
+  {
+    "Id": "254144",
+    "Title": "to read HtmlNode always take a long time",
+    "LatestDate": "2011-04-15T22:23:39.65-07:00"
+  },
+  {
+    "Id": "254616",
+    "Title": "How do I add script Body's on Load with Html Agility Pack",
+    "LatestDate": "2011-04-21T14:53:42.91-07:00"
+  },
+  {
+    "Id": "255301",
+    "Title": "Html Entities get html encoded?",
+    "LatestDate": "2015-01-09T17:30:00.98-08:00"
+  },
+  {
+    "Id": "255321",
+    "Title": "Success with MixedCodeDocument (aspx or ascx)?",
+    "LatestDate": "2012-09-04T17:34:19.19-07:00"
+  },
+  {
+    "Id": "255383",
+    "Title": "Is there an easy way to get all html tags like <p> <block> .... ",
+    "LatestDate": "2011-05-02T12:25:55.583-07:00"
+  },
+  {
+    "Id": "256103",
+    "Title": "how to get characters inside html tags",
+    "LatestDate": "2011-05-03T00:53:16.233-07:00"
+  },
+  {
+    "Id": "256384",
+    "Title": "pharsing HTML modified by java",
+    "LatestDate": "2011-05-04T12:30:56.417-07:00"
+  },
+  {
+    "Id": "257682",
+    "Title": "force double quotes to attributes",
+    "LatestDate": "2011-05-15T06:51:26.573-07:00"
+  },
+  {
+    "Id": "257867",
+    "Title": "HTML tags only",
+    "LatestDate": "2011-05-16T23:29:06.87-07:00"
+  },
+  {
+    "Id": "258052",
+    "Title": "Patch for Optional end tag issue",
+    "LatestDate": "2011-05-18T03:13:32.207-07:00"
+  },
+  {
+    "Id": "258248",
+    "Title": "issue with xmltextwriter",
+    "LatestDate": "2011-07-15T01:57:20.767-07:00"
+  },
+  {
+    "Id": "258512",
+    "Title": "C# - XML - Removing the nodes without using recursion",
+    "LatestDate": "2011-06-10T04:20:16.767-07:00"
+  },
+  {
+    "Id": "258562",
+    "Title": "how to remove tag attibutes",
+    "LatestDate": "2011-05-22T16:36:40.463-07:00"
+  },
+  {
+    "Id": "258707",
+    "Title": "Find all href links on page",
+    "LatestDate": "2011-05-25T10:43:58.657-07:00"
+  },
+  {
+    "Id": "258990",
+    "Title": "Getting absolute links instead relative ones",
+    "LatestDate": "2013-04-21T06:41:06.16-07:00"
+  },
+  {
+    "Id": "259650",
+    "Title": "ReferenceNullException",
+    "LatestDate": "2011-05-31T06:54:55.12-07:00"
+  },
+  {
+    "Id": "259733",
+    "Title": "Add a /n character to go to a new line",
+    "LatestDate": "2011-06-01T00:21:58.273-07:00"
+  },
+  {
+    "Id": "260253",
+    "Title": "Error when referencing HAPPhone (newb question)",
+    "LatestDate": "2011-06-15T03:52:44.59-07:00"
+  },
+  {
+    "Id": "260331",
+    "Title": "Parsing tags with attributes",
+    "LatestDate": "2011-06-06T06:29:21.73-07:00"
+  },
+  {
+    "Id": "261101",
+    "Title": "List Elements which have a Keyword in innerHTML?",
+    "LatestDate": "2011-06-12T06:09:08.027-07:00"
+  },
+  {
+    "Id": "262010",
+    "Title": "Trying to find an images with a class",
+    "LatestDate": "2011-06-21T08:35:42.38-07:00"
+  },
+  {
+    "Id": "262072",
+    "Title": "Replace images with alternate text",
+    "LatestDate": "2011-06-20T15:03:25.977-07:00"
+  },
+  {
+    "Id": "262968",
+    "Title": "You need to set UseIdAttribute property to true to enable this feature ",
+    "LatestDate": "2011-06-29T07:51:04.057-07:00"
+  },
+  {
+    "Id": "263260",
+    "Title": "Want to select one occurance not all",
+    "LatestDate": "2011-06-29T07:22:36.57-07:00"
+  },
+  {
+    "Id": "263378",
+    "Title": "Extract N-th tag using xpath",
+    "LatestDate": "2011-06-30T02:02:39.773-07:00"
+  },
+  {
+    "Id": "264079",
+    "Title": "Silverlight",
+    "LatestDate": "2011-07-06T05:36:53.877-07:00"
+  },
+  {
+    "Id": "264349",
+    "Title": "Need an 'Html Agility Pack' developer...",
+    "LatestDate": "2011-07-13T06:20:50.623-07:00"
+  },
+  {
+    "Id": "264930",
+    "Title": "How to parse special characters",
+    "LatestDate": "2014-08-26T03:17:51.723-07:00"
+  },
+  {
+    "Id": "265097",
+    "Title": "Li element innertext is not comming properly",
+    "LatestDate": "2011-07-14T07:49:11.867-07:00"
+  },
+  {
+    "Id": "265495",
+    "Title": "HTML Data Extract In vb.net",
+    "LatestDate": "2011-07-17T22:55:32.563-07:00"
+  },
+  {
+    "Id": "265683",
+    "Title": "Error occur in method System.Globalization.EncodingTable.internalGetCodePageFromName",
+    "LatestDate": "2011-07-19T01:26:53.54-07:00"
+  },
+  {
+    "Id": "265688",
+    "Title": "parsing html",
+    "LatestDate": "2011-07-19T01:49:54.343-07:00"
+  },
+  {
+    "Id": "265821",
+    "Title": "i can not load entire site document",
+    "LatestDate": "2011-07-19T21:03:59.233-07:00"
+  },
+  {
+    "Id": "265864",
+    "Title": "why not using StringBuilder in HtmlNode.InnerText?",
+    "LatestDate": "2011-07-20T04:23:40.5-07:00"
+  },
+  {
+    "Id": "265877",
+    "Title": "Is there a way to convert an HTML page to XHTML",
+    "LatestDate": "2011-07-20T06:35:53.437-07:00"
+  },
+  {
+    "Id": "266083",
+    "Title": "Extract Forum Thread Content",
+    "LatestDate": "2011-07-21T15:05:42.457-07:00"
+  },
+  {
+    "Id": "266114",
+    "Title": "nunit",
+    "LatestDate": "2011-07-22T08:51:41.393-07:00"
+  },
+  {
+    "Id": "266216",
+    "Title": "Wrap all nodes in a parent p",
+    "LatestDate": "2011-07-22T07:15:40.72-07:00"
+  },
+  {
+    "Id": "266291",
+    "Title": "null reference exception ",
+    "LatestDate": "2011-07-23T03:18:08.957-07:00"
+  },
+  {
+    "Id": "266792",
+    "Title": "Test",
+    "LatestDate": "2011-07-27T13:34:33.403-07:00"
+  },
+  {
+    "Id": "267185",
+    "Title": "License question",
+    "LatestDate": "2011-07-30T17:56:39.667-07:00"
+  },
+  {
+    "Id": "267987",
+    "Title": "modify form element with htmlagilitypack",
+    "LatestDate": "2011-08-05T16:19:48.433-07:00"
+  },
+  {
+    "Id": "268220",
+    "Title": "Documentation CHM does not work",
+    "LatestDate": "2011-09-30T07:34:07.877-07:00"
+  },
+  {
+    "Id": "268816",
+    "Title": "I need Some Help",
+    "LatestDate": "2011-08-12T02:12:06.07-07:00"
+  },
+  {
+    "Id": "268908",
+    "Title": "Info from javascript text?",
+    "LatestDate": "2011-08-12T13:28:58.027-07:00"
+  },
+  {
+    "Id": "268920",
+    "Title": "Find Node Ending Line",
+    "LatestDate": "2011-08-13T18:30:47.553-07:00"
+  },
+  {
+    "Id": "269113",
+    "Title": "More examples",
+    "LatestDate": "2011-08-15T06:38:08.2-07:00"
+  },
+  {
+    "Id": "269362",
+    "Title": "Xpath in htmlagilitypack",
+    "LatestDate": "2011-08-17T00:00:26.513-07:00"
+  },
+  {
+    "Id": "269527",
+    "Title": "HtmlAgilityPack close form tag automatically problem",
+    "LatestDate": "2011-09-06T14:36:48.273-07:00"
+  },
+  {
+    "Id": "269756",
+    "Title": "HtmlBaseNode.cs",
+    "LatestDate": "2011-08-19T16:50:11.89-07:00"
+  },
+  {
+    "Id": "270088",
+    "Title": "HAPExplorer revamped",
+    "LatestDate": "2011-08-24T11:53:24.433-07:00"
+  },
+  {
+    "Id": "270915",
+    "Title": "Load HTML page to string",
+    "LatestDate": "2011-08-30T11:04:20.32-07:00"
+  },
+  {
+    "Id": "271367",
+    "Title": "Future of Html Agility Pack?",
+    "LatestDate": "2011-09-05T09:47:52.403-07:00"
+  },
+  {
+    "Id": "271470",
+    "Title": "error utf8 encoding with htmlagilitypack",
+    "LatestDate": "2011-09-04T21:42:43.713-07:00"
+  },
+  {
+    "Id": "271557",
+    "Title": "Using HtmlAgilityPack with VB6/COM",
+    "LatestDate": "2011-09-05T15:16:55.17-07:00"
+  },
+  {
+    "Id": "271690",
+    "Title": "Getting Img Src and Href",
+    "LatestDate": "2011-09-07T07:59:20.68-07:00"
+  },
+  {
+    "Id": "271907",
+    "Title": "Get innerhtml of certain element with class.",
+    "LatestDate": "2011-09-08T05:17:13.853-07:00"
+  },
+  {
+    "Id": "272075",
+    "Title": "Doctypes and tags",
+    "LatestDate": "2011-09-09T08:39:22.323-07:00"
+  },
+  {
+    "Id": "272431",
+    "Title": "find next occurance of class",
+    "LatestDate": "2011-09-13T06:32:52.677-07:00"
+  },
+  {
+    "Id": "272835",
+    "Title": "Invalid Node.OuterHtml property",
+    "LatestDate": "2011-09-16T06:54:32.027-07:00"
+  },
+  {
+    "Id": "273281",
+    "Title": "Evalute string",
+    "LatestDate": "2011-09-20T23:54:22.97-07:00"
+  },
+  {
+    "Id": "274714",
+    "Title": "atributtes",
+    "LatestDate": "2011-10-04T06:59:16.593-07:00"
+  },
+  {
+    "Id": "275700",
+    "Title": "Extract special Tags",
+    "LatestDate": "2011-10-13T01:43:09.59-07:00"
+  },
+  {
+    "Id": "275899",
+    "Title": "Incorrectly recognized by <form> tag",
+    "LatestDate": "2011-11-08T06:30:00.473-08:00"
+  },
+  {
+    "Id": "276908",
+    "Title": "How to scrape text?",
+    "LatestDate": "2011-10-23T13:27:33.547-07:00"
+  },
+  {
+    "Id": "277620",
+    "Title": "not getting correct value from img src tag",
+    "LatestDate": "2011-10-29T04:40:08.353-07:00"
+  },
+  {
+    "Id": "277744",
+    "Title": "how to show this?",
+    "LatestDate": "2011-10-31T04:16:03.117-07:00"
+  },
+  {
+    "Id": "277890",
+    "Title": "Distribution question",
+    "LatestDate": "2011-11-01T07:24:08.127-07:00"
+  },
+  {
+    "Id": "278025",
+    "Title": "Do html parser need some time to parse?",
+    "LatestDate": "2011-11-02T04:42:23.433-07:00"
+  },
+  {
+    "Id": "278424",
+    "Title": "Does HAP for WP7 contain the func 'SelectNodes' ?",
+    "LatestDate": "2011-12-14T13:10:45.977-08:00"
+  },
+  {
+    "Id": "278498",
+    "Title": "NullReferenceException on HAP for WP7",
+    "LatestDate": "2011-11-06T05:35:33.387-08:00"
+  },
+  {
+    "Id": "278578",
+    "Title": "WP7 and HAP",
+    "LatestDate": "2011-11-07T04:44:40.717-08:00"
+  },
+  {
+    "Id": "278728",
+    "Title": "Nuget version has old bugs?",
+    "LatestDate": "2011-11-08T06:26:05.297-08:00"
+  },
+  {
+    "Id": "278867",
+    "Title": "Extract data from an HTML form using HTML Agility pack",
+    "LatestDate": "2011-11-14T15:16:10.567-08:00"
+  },
+  {
+    "Id": "278944",
+    "Title": "Removing unwanted nodes using HTML Agility pack",
+    "LatestDate": "2011-11-09T23:13:09.187-08:00"
+  },
+  {
+    "Id": "279072",
+    "Title": "How do I read HTML Document using HtmlAgilityPack?",
+    "LatestDate": "2011-11-10T22:30:54.743-08:00"
+  },
+  {
+    "Id": "279367",
+    "Title": "Congratulations on a great library",
+    "LatestDate": "2011-11-14T06:40:00.283-08:00"
+  },
+  {
+    "Id": "279898",
+    "Title": "webbrowser.goback()",
+    "LatestDate": "2011-11-17T13:34:50.24-08:00"
+  },
+  {
+    "Id": "280371",
+    "Title": "'gzip' is not a supported encoding name.",
+    "LatestDate": "2011-11-22T02:25:16.757-08:00"
+  },
+  {
+    "Id": "280941",
+    "Title": "exclude child node but include current node",
+    "LatestDate": "2011-11-26T21:55:37.223-08:00"
+  },
+  {
+    "Id": "281919",
+    "Title": "How to extract the contents of webpage and links from a website and save the extracted data",
+    "LatestDate": "2011-12-05T19:33:03.61-08:00"
+  },
+  {
+    "Id": "282469",
+    "Title": "Using HTML Agility Pack with WP7.5",
+    "LatestDate": "2013-05-25T08:28:40.64-07:00"
+  },
+  {
+    "Id": "282634",
+    "Title": "New HTML Agility Pack Testbed",
+    "LatestDate": "2011-12-12T03:04:18.413-08:00"
+  },
+  {
+    "Id": "282871",
+    "Title": "Any chance to see some patches merged?",
+    "LatestDate": "2011-12-13T16:14:54.123-08:00"
+  },
+  {
+    "Id": "282897",
+    "Title": "ArgumentOutOfRangeException in HtmlNode",
+    "LatestDate": "2012-03-11T14:37:19.283-07:00"
+  },
+  {
+    "Id": "283703",
+    "Title": "WCF Serialization issue",
+    "LatestDate": "2011-12-20T23:44:56.427-08:00"
+  },
+  {
+    "Id": "283912",
+    "Title": "target images within a particular div issue",
+    "LatestDate": "2012-01-06T07:33:33.517-08:00"
+  },
+  {
+    "Id": "284563",
+    "Title": "HtmlNode.Line does not refresh after document manipulation",
+    "LatestDate": "2011-12-30T03:39:08.94-08:00"
+  },
+  {
+    "Id": "285232",
+    "Title": "retive img src link",
+    "LatestDate": "2012-01-06T07:32:10.107-08:00"
+  },
+  {
+    "Id": "285234",
+    "Title": "show page",
+    "LatestDate": "2012-01-06T07:33:50.567-08:00"
+  },
+  {
+    "Id": "285714",
+    "Title": "Help pls",
+    "LatestDate": "2012-01-10T22:01:39.353-08:00"
+  },
+  {
+    "Id": "286781",
+    "Title": "Parsing out the TITLE tag of HTML pages",
+    "LatestDate": "2012-01-20T01:06:02.253-08:00"
+  },
+  {
+    "Id": "286856",
+    "Title": "SelectSingleNode return null...",
+    "LatestDate": "2012-01-21T12:33:40.22-08:00"
+  },
+  {
+    "Id": "286885",
+    "Title": "Line Incorrect?",
+    "LatestDate": "2012-01-20T13:46:14.037-08:00"
+  },
+  {
+    "Id": "286934",
+    "Title": "SelectSingelNode returns null",
+    "LatestDate": "2012-02-01T21:39:40.68-08:00"
+  },
+  {
+    "Id": "287476",
+    "Title": "Webpage won't load in web.load method",
+    "LatestDate": "2012-01-26T03:24:04.873-08:00"
+  },
+  {
+    "Id": "287824",
+    "Title": "Get data html tables with C#",
+    "LatestDate": "2012-01-29T12:49:18.157-08:00"
+  },
+  {
+    "Id": "288003",
+    "Title": "How to match the Text without the node?",
+    "LatestDate": "2012-01-31T03:00:41.713-08:00"
+  },
+  {
+    "Id": "292550",
+    "Title": "What is the default timeout for htmlagilitypack",
+    "LatestDate": "2012-02-04T05:09:09.543-08:00"
+  },
+  {
+    "Id": "304217",
+    "Title": "Gettin error with the Load Functionality",
+    "LatestDate": "2013-01-29T06:11:53.08-08:00"
+  },
+  {
+    "Id": "308989",
+    "Title": "Warning: Argument type 'HtmlAgilityPack.HtmlNode' is not CLS-compliant",
+    "LatestDate": "2012-02-12T06:47:12.037-08:00"
+  },
+  {
+    "Id": "309041",
+    "Title": "Changing Phrases to Links",
+    "LatestDate": "2012-02-12T07:35:59.827-08:00"
+  },
+  {
+    "Id": "312970",
+    "Title": "Problem with Page.DownloadImage",
+    "LatestDate": "2012-02-14T08:28:54.383-08:00"
+  },
+  {
+    "Id": "315893",
+    "Title": "how can i get all sibling ul",
+    "LatestDate": "2012-02-14T21:46:20.817-08:00"
+  },
+  {
+    "Id": "316952",
+    "Title": "Code suggestion: Override ToString() in HtmlDocument",
+    "LatestDate": "2012-02-15T13:20:00.973-08:00"
+  },
+  {
+    "Id": "319000",
+    "Title": "having an error",
+    "LatestDate": "2012-02-23T03:42:12.783-08:00"
+  },
+  {
+    "Id": "333463",
+    "Title": "Parse table in HTML Agility Pack for WP7",
+    "LatestDate": "2012-02-23T00:58:52.857-08:00"
+  },
+  {
+    "Id": "344799",
+    "Title": "convert htmlagilitypack node to htmlelement .net",
+    "LatestDate": "2012-02-25T03:04:23.433-08:00"
+  },
+  {
+    "Id": "346492",
+    "Title": "\"//div[@id='resultStats']\" Error",
+    "LatestDate": "2012-02-27T17:13:31.13-08:00"
+  },
+  {
+    "Id": "346884",
+    "Title": "problem : using htmlagilitypack with c#",
+    "LatestDate": "2012-03-10T11:04:03.527-08:00"
+  },
+  {
+    "Id": "348370",
+    "Title": "Next release date",
+    "LatestDate": "2012-03-13T03:15:46.637-07:00"
+  },
+  {
+    "Id": "348451",
+    "Title": "SelectNodes return",
+    "LatestDate": "2012-03-13T10:17:54.27-07:00"
+  },
+  {
+    "Id": "348841",
+    "Title": "winrt version",
+    "LatestDate": "2012-03-17T06:23:23.723-07:00"
+  },
+  {
+    "Id": "349069",
+    "Title": "HAP cannot download DOM?",
+    "LatestDate": "2012-03-18T04:12:30.8-07:00"
+  },
+  {
+    "Id": "349276",
+    "Title": "how to programmatically interact with the web page?",
+    "LatestDate": "2012-03-19T22:37:59.497-07:00"
+  },
+  {
+    "Id": "349722",
+    "Title": "OptionWriteEmptyNodes break XML declaration",
+    "LatestDate": "2012-04-10T19:52:40.717-07:00"
+  },
+  {
+    "Id": "350318",
+    "Title": "Accessing style properties of HTML table",
+    "LatestDate": "2012-03-28T06:53:30.957-07:00"
+  },
+  {
+    "Id": "350745",
+    "Title": "Create HTML from scratch: how to add a doctype",
+    "LatestDate": "2012-03-31T09:27:33.35-07:00"
+  },
+  {
+    "Id": "350819",
+    "Title": "Unable to load html",
+    "LatestDate": "2012-04-01T16:05:20.513-07:00"
+  },
+  {
+    "Id": "350918",
+    "Title": " Line and Lineposition property in HAP",
+    "LatestDate": "2012-04-02T11:15:40.437-07:00"
+  },
+  {
+    "Id": "351054",
+    "Title": "extraction of the link name from html page",
+    "LatestDate": "2012-04-03T10:58:21.193-07:00"
+  },
+  {
+    "Id": "351198",
+    "Title": "Collection was modified error when removing nodes in v1.4",
+    "LatestDate": "2012-04-04T19:00:29.42-07:00"
+  },
+  {
+    "Id": "351527",
+    "Title": "Selecting <div> and <p> without duplication",
+    "LatestDate": "2012-04-07T08:48:19.493-07:00"
+  },
+  {
+    "Id": "351720",
+    "Title": "Possible to disable HAP correcting any nodes (HTML)?",
+    "LatestDate": "2012-07-03T16:22:06.86-07:00"
+  },
+  {
+    "Id": "351897",
+    "Title": "Convert UTF8 to ASCII. How?",
+    "LatestDate": "2012-04-11T06:29:44.15-07:00"
+  },
+  {
+    "Id": "351905",
+    "Title": "stackoverflow exception - cannot trace cause",
+    "LatestDate": "2012-07-18T05:24:11.777-07:00"
+  },
+  {
+    "Id": "352463",
+    "Title": "Extracting Images And HTML From .html File",
+    "LatestDate": "2012-04-16T10:35:52.297-07:00"
+  },
+  {
+    "Id": "352498",
+    "Title": "Inner Text but the hard way ",
+    "LatestDate": "2012-04-16T17:01:48.903-07:00"
+  },
+  {
+    "Id": "352515",
+    "Title": "How to check HtmlWeb.LoadAsync finished",
+    "LatestDate": "2012-05-11T09:23:17.047-07:00"
+  },
+  {
+    "Id": "352787",
+    "Title": "A bug when save to a stream",
+    "LatestDate": "2012-04-18T23:31:55.06-07:00"
+  },
+  {
+    "Id": "353202",
+    "Title": "Gett value from single node",
+    "LatestDate": "2012-04-23T03:28:51.77-07:00"
+  },
+  {
+    "Id": "353247",
+    "Title": "Html encoding only text nodes",
+    "LatestDate": "2012-04-23T09:40:52.863-07:00"
+  },
+  {
+    "Id": "353332",
+    "Title": "Disable Proxy",
+    "LatestDate": "2012-04-24T01:05:31.487-07:00"
+  },
+  {
+    "Id": "353457",
+    "Title": "How to use HAPPhone APIs to achieve this function",
+    "LatestDate": "2012-05-11T09:16:12.487-07:00"
+  },
+  {
+    "Id": "353491",
+    "Title": "Validate/fix a html content",
+    "LatestDate": "2012-04-25T02:43:07.95-07:00"
+  },
+  {
+    "Id": "353524",
+    "Title": ".net 4.5 version and WinRT version",
+    "LatestDate": "2012-04-25T06:08:38.637-07:00"
+  },
+  {
+    "Id": "353685",
+    "Title": "how to get table from another website with method=post",
+    "LatestDate": "2012-04-26T05:25:13.977-07:00"
+  },
+  {
+    "Id": "354761",
+    "Title": "how to get attribute value plz",
+    "LatestDate": "2012-05-11T09:03:56.093-07:00"
+  },
+  {
+    "Id": "354764",
+    "Title": "Possibility to be added as developer for creating test cases",
+    "LatestDate": "2012-05-07T06:10:44.977-07:00"
+  },
+  {
+    "Id": "356651",
+    "Title": "Remove the HTML tags from a string using Html Agility Pack",
+    "LatestDate": "2012-06-17T15:50:45.923-07:00"
+  },
+  {
+    "Id": "357150",
+    "Title": "Can this be used in windows phone 7",
+    "LatestDate": "2012-05-25T08:38:18.55-07:00"
+  },
+  {
+    "Id": "357754",
+    "Title": "I have recompiled entire project to .NET 4.0...",
+    "LatestDate": "2012-06-12T16:03:34.403-07:00"
+  },
+  {
+    "Id": "358311",
+    "Title": "Attribute Value quotation correction",
+    "LatestDate": "2012-06-12T16:05:46.307-07:00"
+  },
+  {
+    "Id": "358718",
+    "Title": "Cannot get all input, textarea, option of form",
+    "LatestDate": "2012-06-12T15:59:17.353-07:00"
+  },
+  {
+    "Id": "359358",
+    "Title": "Metro version and SelectNodes",
+    "LatestDate": "2012-06-13T23:14:50.22-07:00"
+  },
+  {
+    "Id": "359485",
+    "Title": "How can I step through all nodes?",
+    "LatestDate": "2012-06-13T18:05:38.767-07:00"
+  },
+  {
+    "Id": "360267",
+    "Title": "how to build for metro?",
+    "LatestDate": "2012-06-20T00:59:48.32-07:00"
+  },
+  {
+    "Id": "360486",
+    "Title": "Getting the responsing url",
+    "LatestDate": "2012-06-21T08:14:27.723-07:00"
+  },
+  {
+    "Id": "360723",
+    "Title": "System.ArgumentOutOfRangeException was unhandled",
+    "LatestDate": "2012-06-24T13:05:55.997-07:00"
+  },
+  {
+    "Id": "360758",
+    "Title": "Suitability for XSS prevention",
+    "LatestDate": "2012-06-24T19:35:37.303-07:00"
+  },
+  {
+    "Id": "360967",
+    "Title": "Latest version",
+    "LatestDate": "2012-06-26T05:38:07.493-07:00"
+  },
+  {
+    "Id": "361016",
+    "Title": "Documentation",
+    "LatestDate": "2016-10-01T01:09:18.467-07:00"
+  },
+  {
+    "Id": "361448",
+    "Title": "Extract/Parse basic html table without headers",
+    "LatestDate": "2012-07-04T09:41:29.13-07:00"
+  },
+  {
+    "Id": "361613",
+    "Title": "Select an node by its value",
+    "LatestDate": "2012-07-06T14:14:15.177-07:00"
+  },
+  {
+    "Id": "362640",
+    "Title": "Extracting a table from a page",
+    "LatestDate": "2012-07-11T09:13:13.873-07:00"
+  },
+  {
+    "Id": "363132",
+    "Title": "Expanding HtmlConvert.cs to handle List Items",
+    "LatestDate": "2016-04-28T12:53:28.713-07:00"
+  },
+  {
+    "Id": "364171",
+    "Title": "Not compatible with .Net 2.0",
+    "LatestDate": "2012-08-02T04:12:05.08-07:00"
+  },
+  {
+    "Id": "364750",
+    "Title": "Looking for HtmlAgilityPack.Metro .dll compiled in Release mode (not Debug mode)",
+    "LatestDate": "2012-07-12T19:07:14.17-07:00"
+  },
+  {
+    "Id": "365066",
+    "Title": "Is Html Agility Pack thread safe if using in ReadOnly mode...",
+    "LatestDate": "2012-07-12T21:48:08.1-07:00"
+  },
+  {
+    "Id": "373200",
+    "Title": "Port HtmlAgility Pack to Metro App",
+    "LatestDate": "2012-07-19T02:13:04.927-07:00"
+  },
+  {
+    "Id": "373524",
+    "Title": "stack overflow in loadhtml",
+    "LatestDate": "2012-09-18T10:22:58.897-07:00"
+  },
+  {
+    "Id": "382276",
+    "Title": "Problem with pack 1.4.5",
+    "LatestDate": "2012-07-21T08:08:47.36-07:00"
+  },
+  {
+    "Id": "389682",
+    "Title": "On Windows Phone",
+    "LatestDate": "2013-10-09T06:59:15.353-07:00"
+  },
+  {
+    "Id": "391015",
+    "Title": "Manipulating isolated HTML nodes outside of document",
+    "LatestDate": "2012-08-10T09:00:17.677-07:00"
+  },
+  {
+    "Id": "392806",
+    "Title": "Remove element, but not innerHtml",
+    "LatestDate": "2012-09-18T10:16:29.533-07:00"
+  },
+  {
+    "Id": "394082",
+    "Title": "Select encoding/charset on Windows Phone",
+    "LatestDate": "2012-10-05T23:15:03.71-07:00"
+  },
+  {
+    "Id": "394378",
+    "Title": "Couple questions about Html Agility Pack - Sanitize Html",
+    "LatestDate": "2012-09-04T14:00:18.55-07:00"
+  },
+  {
+    "Id": "394584",
+    "Title": "Gettig Htmlelement based on HtmlAgilityPack.HtmlNode",
+    "LatestDate": "2012-09-05T23:39:18.9-07:00"
+  },
+  {
+    "Id": "395278",
+    "Title": "Malformed HTML parsing problem - unclosed li element within a form",
+    "LatestDate": "2016-01-25T01:16:24.163-08:00"
+  },
+  {
+    "Id": "395459",
+    "Title": "Help Locating This Table Please",
+    "LatestDate": "2012-09-17T09:31:21.763-07:00"
+  },
+  {
+    "Id": "395838",
+    "Title": "ARM Binaries?",
+    "LatestDate": "2012-09-18T11:45:46.043-07:00"
+  },
+  {
+    "Id": "395973",
+    "Title": "How can select a div with classname contain \"post\"",
+    "LatestDate": "2012-09-18T14:58:25.247-07:00"
+  },
+  {
+    "Id": "396018",
+    "Title": "Select value in tr tags..",
+    "LatestDate": "2012-09-18T19:41:37.717-07:00"
+  },
+  {
+    "Id": "396090",
+    "Title": "Unwanted <tag> completion",
+    "LatestDate": "2012-11-22T01:46:18.847-08:00"
+  },
+  {
+    "Id": "396299",
+    "Title": "pseudo proxy",
+    "LatestDate": "2012-09-20T11:49:54.903-07:00"
+  },
+  {
+    "Id": "396583",
+    "Title": "How to get values from node like this",
+    "LatestDate": "2012-09-23T10:25:28.017-07:00"
+  },
+  {
+    "Id": "396812",
+    "Title": "How to get node specific value from HTML source",
+    "LatestDate": "2012-09-25T05:08:39.733-07:00"
+  },
+  {
+    "Id": "396940",
+    "Title": "XPath & Net45",
+    "LatestDate": "2013-06-23T13:55:35.22-07:00"
+  },
+  {
+    "Id": "397045",
+    "Title": "HTML5 support",
+    "LatestDate": "2015-04-14T07:52:26.57-07:00"
+  },
+  {
+    "Id": "397245",
+    "Title": "Load XML inside the HTML source code",
+    "LatestDate": "2012-09-27T16:57:04.867-07:00"
+  },
+  {
+    "Id": "399036",
+    "Title": "Possible to get position and length of Node content in original input?",
+    "LatestDate": "2012-10-11T14:19:11.12-07:00"
+  },
+  {
+    "Id": "399637",
+    "Title": "Parse html based on classname with HtmlAgilityPack ",
+    "LatestDate": "2012-10-16T11:58:49.443-07:00"
+  },
+  {
+    "Id": "400535",
+    "Title": "How to dispose HtmlDocument?",
+    "LatestDate": "2013-01-17T11:30:01.24-08:00"
+  },
+  {
+    "Id": "400872",
+    "Title": "How to auto close DD tags",
+    "LatestDate": "2012-10-25T19:40:45.83-07:00"
+  },
+  {
+    "Id": "401072",
+    "Title": "Somebody can upgrade fizzler to support HtmlAgilityPack v1.4.6 ?",
+    "LatestDate": "2013-02-18T23:45:00.84-08:00"
+  },
+  {
+    "Id": "401989",
+    "Title": "Portable Class Library Project (Attempting) - Suggestions Request",
+    "LatestDate": "2012-11-05T11:15:08.953-08:00"
+  },
+  {
+    "Id": "402742",
+    "Title": "Flatten the document?",
+    "LatestDate": "2012-11-10T21:32:14.29-08:00"
+  },
+  {
+    "Id": "403144",
+    "Title": "How to load a file directly from the web?",
+    "LatestDate": "2012-11-14T20:34:07.527-08:00"
+  },
+  {
+    "Id": "403458",
+    "Title": "HtmlWeb not loading a particular website",
+    "LatestDate": "2012-11-16T01:34:25.417-08:00"
+  },
+  {
+    "Id": "403853",
+    "Title": "MHT Read & Write",
+    "LatestDate": "2013-10-22T21:57:33.87-07:00"
+  },
+  {
+    "Id": "405268",
+    "Title": "Agility Pack Usage for Getting Content Between html tags",
+    "LatestDate": "2012-12-01T12:58:49.437-08:00"
+  },
+  {
+    "Id": "405307",
+    "Title": "System.Xml.Xpath error on window xp for Visual Studio 2008",
+    "LatestDate": "2012-12-02T17:05:43.827-08:00"
+  },
+  {
+    "Id": "405577",
+    "Title": "Why can't I reliably extract links from nodes?",
+    "LatestDate": "2013-01-05T17:07:36.46-08:00"
+  },
+  {
+    "Id": "405873",
+    "Title": "Kansas City Locksmith",
+    "LatestDate": "2012-12-06T11:47:49.733-08:00"
+  },
+  {
+    "Id": "406279",
+    "Title": "not closing <option> element properly",
+    "LatestDate": "2013-01-12T08:57:16.337-08:00"
+  },
+  {
+    "Id": "406460",
+    "Title": "After initial SelectNodes(string) , html document in memory changed.",
+    "LatestDate": "2012-12-11T16:34:16.89-08:00"
+  },
+  {
+    "Id": "406830",
+    "Title": "HAP not working for Background Agents?",
+    "LatestDate": "2012-12-14T14:05:52.183-08:00"
+  },
+  {
+    "Id": "418233",
+    "Title": "WP 7.1 version wants requires System.Xml.Xpath, this is not avabile",
+    "LatestDate": "2012-12-25T13:51:58.65-08:00"
+  },
+  {
+    "Id": "428259",
+    "Title": "Discussion page is now offline",
+    "LatestDate": "2013-01-02T07:32:55.297-08:00"
+  },
+  {
+    "Id": "428576",
+    "Title": "How  to  use   Html Agility Pack  to  find  all nodes in the html document and remove the attributes in each node?",
+    "LatestDate": "2013-01-04T22:27:43.28-08:00"
+  },
+  {
+    "Id": "428589",
+    "Title": "why  some html pages   does not  turn to  XML   with    Html Agility ??",
+    "LatestDate": "2013-01-05T05:10:51.84-08:00"
+  },
+  {
+    "Id": "428951",
+    "Title": "Read OnMouseOver Value",
+    "LatestDate": "2013-01-08T20:14:38.337-08:00"
+  },
+  {
+    "Id": "429170",
+    "Title": "Parsing certain parts from a .HTML file",
+    "LatestDate": "2013-01-10T07:24:23.017-08:00"
+  },
+  {
+    "Id": "429745",
+    "Title": "Beginner Help",
+    "LatestDate": "2013-01-30T16:30:30.827-08:00"
+  },
+  {
+    "Id": "429806",
+    "Title": "Multiple forms with no name or id",
+    "LatestDate": "2013-01-26T08:47:17.287-08:00"
+  },
+  {
+    "Id": "429844",
+    "Title": "get string from html code",
+    "LatestDate": "2013-01-24T22:48:09.98-08:00"
+  },
+  {
+    "Id": "430886",
+    "Title": "Search for specific row",
+    "LatestDate": "2013-01-25T13:44:17.487-08:00"
+  },
+  {
+    "Id": "431098",
+    "Title": "Multiple negation condition with SelectNodes",
+    "LatestDate": "2013-01-28T06:15:06.29-08:00"
+  },
+  {
+    "Id": "431148",
+    "Title": "Locksmith San Antonio",
+    "LatestDate": "2013-01-28T11:32:41.24-08:00"
+  },
+  {
+    "Id": "431250",
+    "Title": "how to get all the spans that has class = \"xyz\"",
+    "LatestDate": "2013-01-29T06:34:17.057-08:00"
+  },
+  {
+    "Id": "431360",
+    "Title": "HtmlAgilitypack on strings C#",
+    "LatestDate": "2013-01-29T23:57:04.54-08:00"
+  },
+  {
+    "Id": "431361",
+    "Title": "HtmlAgilitypack on strings C#",
+    "LatestDate": "2014-05-28T12:02:53.93-07:00"
+  },
+  {
+    "Id": "431475",
+    "Title": "Children nodes",
+    "LatestDate": "2013-01-31T04:55:18.813-08:00"
+  },
+  {
+    "Id": "431683",
+    "Title": "Creating ElementFlags from comments (non stadard HTML)",
+    "LatestDate": "2013-02-01T06:58:37.99-08:00"
+  },
+  {
+    "Id": "432034",
+    "Title": "Create HTML Document Object from HTML Source code",
+    "LatestDate": "2013-02-28T08:48:00.277-08:00"
+  },
+  {
+    "Id": "432824",
+    "Title": "Silverlight 5 assemblies target Silverlight 4",
+    "LatestDate": "2013-02-12T04:10:05.77-08:00"
+  },
+  {
+    "Id": "433494",
+    "Title": "DLL distribution problem",
+    "LatestDate": "2013-02-17T22:56:46.633-08:00"
+  },
+  {
+    "Id": "433692",
+    "Title": "Wants to use your location",
+    "LatestDate": "2013-02-19T08:41:52.047-08:00"
+  },
+  {
+    "Id": "434623",
+    "Title": "Beginner needs help",
+    "LatestDate": "2013-02-27T17:37:25.287-08:00"
+  },
+  {
+    "Id": "435018",
+    "Title": "Find Source: HtmlDocument.cs",
+    "LatestDate": "2013-03-01T04:49:02.757-08:00"
+  },
+  {
+    "Id": "435181",
+    "Title": "Can I parse VML with this pack ?",
+    "LatestDate": "2013-03-03T08:17:18.253-08:00"
+  },
+  {
+    "Id": "435260",
+    "Title": "Selecting node based on attribute / removing unknown attributes",
+    "LatestDate": "2013-03-06T22:46:25.643-08:00"
+  },
+  {
+    "Id": "435368",
+    "Title": "SelectNodes non-standard behaviour",
+    "LatestDate": "2013-03-04T19:58:33.457-08:00"
+  },
+  {
+    "Id": "435442",
+    "Title": "How do I contribute to Html Agility Pack project? ",
+    "LatestDate": "2013-03-05T07:00:00.14-08:00"
+  },
+  {
+    "Id": "435536",
+    "Title": "To remove the unknown attributes",
+    "LatestDate": "2013-03-05T23:33:02.44-08:00"
+  },
+  {
+    "Id": "435541",
+    "Title": "\"OR\" condition while selecting attributes",
+    "LatestDate": "2013-03-05T23:37:37.047-08:00"
+  },
+  {
+    "Id": "435708",
+    "Title": "Make HtmlNode.WriteTo virtual",
+    "LatestDate": "2013-11-18T15:43:18.333-08:00"
+  },
+  {
+    "Id": "436390",
+    "Title": "Specify Client Certificate for SSL connection",
+    "LatestDate": "2013-03-12T14:58:55.063-07:00"
+  },
+  {
+    "Id": "436603",
+    "Title": "Xpath ",
+    "LatestDate": "2013-03-18T11:00:45.253-07:00"
+  },
+  {
+    "Id": "436653",
+    "Title": "CreateNode does not support all tags?",
+    "LatestDate": "2013-04-21T13:59:18.983-07:00"
+  },
+  {
+    "Id": "437205",
+    "Title": "Selecting all nodes containing text()",
+    "LatestDate": "2013-03-19T08:23:31.41-07:00"
+  },
+  {
+    "Id": "437725",
+    "Title": "How to extract Name , address from a telephone directory webpage",
+    "LatestDate": "2013-03-23T03:32:01.39-07:00"
+  },
+  {
+    "Id": "437834",
+    "Title": "why doesn't work my code on windows 8 app ?",
+    "LatestDate": "2013-03-24T16:39:12.753-07:00"
+  },
+  {
+    "Id": "438134",
+    "Title": "xml error parsing",
+    "LatestDate": "2013-03-27T02:58:16.763-07:00"
+  },
+  {
+    "Id": "438284",
+    "Title": "using htmlagilitypack with ajax div load c#",
+    "LatestDate": "2017-01-09T06:33:32.297-08:00"
+  },
+  {
+    "Id": "438648",
+    "Title": "Regex to get the class data from the .css file",
+    "LatestDate": "2013-04-01T02:49:19.507-07:00"
+  },
+  {
+    "Id": "438651",
+    "Title": "Project status",
+    "LatestDate": "2013-04-04T19:35:50.97-07:00"
+  },
+  {
+    "Id": "439106",
+    "Title": "How to look for a specific word in a page ",
+    "LatestDate": "2013-04-04T07:46:46.28-07:00"
+  },
+  {
+    "Id": "439381",
+    "Title": "Modify HTML before sending to client",
+    "LatestDate": "2013-04-06T18:17:16.41-07:00"
+  },
+  {
+    "Id": "439910",
+    "Title": "Form Operations",
+    "LatestDate": "2013-04-11T03:52:51.737-07:00"
+  },
+  {
+    "Id": "440915",
+    "Title": "selectNodes not returning any node attributes",
+    "LatestDate": "2013-04-19T07:09:46.193-07:00"
+  },
+  {
+    "Id": "440989",
+    "Title": "I can not get <embed > tag",
+    "LatestDate": "2013-04-22T04:33:48.393-07:00"
+  },
+  {
+    "Id": "441154",
+    "Title": "How do i use HtmlAgilityPackSanitizerProvider ",
+    "LatestDate": "2013-04-22T07:02:30.23-07:00"
+  },
+  {
+    "Id": "441830",
+    "Title": "Working with WebBrowser",
+    "LatestDate": "2013-04-28T02:17:28.327-07:00"
+  },
+  {
+    "Id": "442289",
+    "Title": "web services",
+    "LatestDate": "2013-05-01T18:06:31.747-07:00"
+  },
+  {
+    "Id": "442816",
+    "Title": "passing with for on html controls",
+    "LatestDate": "2013-05-07T07:18:24.27-07:00"
+  },
+  {
+    "Id": "442843",
+    "Title": "SelectNodes returns null",
+    "LatestDate": "2013-05-07T10:38:09.89-07:00"
+  },
+  {
+    "Id": "442857",
+    "Title": "Paging problem",
+    "LatestDate": "2013-05-07T12:23:24.227-07:00"
+  },
+  {
+    "Id": "442927",
+    "Title": "[resolved] How to import ?",
+    "LatestDate": "2013-05-08T03:35:18.62-07:00"
+  },
+  {
+    "Id": "444152",
+    "Title": "not found HtmlWeb.cs",
+    "LatestDate": "2013-05-18T12:28:08.023-07:00"
+  },
+  {
+    "Id": "444206",
+    "Title": "how find input of form in html with htmlagilitypack?",
+    "LatestDate": "2013-05-19T11:28:07.477-07:00"
+  },
+  {
+    "Id": "444915",
+    "Title": "KeyNotFoundException when searching for \"apos\"",
+    "LatestDate": "2013-05-24T10:29:37.807-07:00"
+  },
+  {
+    "Id": "445064",
+    "Title": "How can I get the variable in  javascript section of HTML",
+    "LatestDate": "2013-05-27T01:38:41.047-07:00"
+  },
+  {
+    "Id": "445123",
+    "Title": "Writing scraper for Windows Phone 7",
+    "LatestDate": "2013-05-27T12:34:23.867-07:00"
+  },
+  {
+    "Id": "445303",
+    "Title": "How can I replace html tags with custom tags",
+    "LatestDate": "2013-05-29T02:48:32.553-07:00"
+  },
+  {
+    "Id": "446869",
+    "Title": "DocumentNode.Descendants comes back with null values",
+    "LatestDate": "2013-06-12T16:01:59.077-07:00"
+  },
+  {
+    "Id": "446894",
+    "Title": "convert a string with HTML tags with a properly formatted string",
+    "LatestDate": "2013-06-12T22:16:43.517-07:00"
+  },
+  {
+    "Id": "448882",
+    "Title": "I want to get the link url when i click on the link..",
+    "LatestDate": "2013-07-02T13:28:19.143-07:00"
+  },
+  {
+    "Id": "448949",
+    "Title": "Text Highlight color",
+    "LatestDate": "2013-07-03T04:56:29.4-07:00"
+  },
+  {
+    "Id": "448950",
+    "Title": "Ajax",
+    "LatestDate": "2013-07-03T04:56:26.703-07:00"
+  },
+  {
+    "Id": "449032",
+    "Title": "why ignore four specified string",
+    "LatestDate": "2013-07-03T23:28:56.64-07:00"
+  },
+  {
+    "Id": "449235",
+    "Title": "Option not to fix malformed HTML",
+    "LatestDate": "2013-07-07T04:09:08.803-07:00"
+  },
+  {
+    "Id": "449784",
+    "Title": "Scrape website without document extensions",
+    "LatestDate": "2013-07-12T02:25:41.55-07:00"
+  },
+  {
+    "Id": "450573",
+    "Title": "Added couple of nodes to the existing Node, Now im not able to find the added node in the 'Doc'",
+    "LatestDate": "2013-07-19T04:13:48.92-07:00"
+  },
+  {
+    "Id": "450844",
+    "Title": "iterate through like items",
+    "LatestDate": "2013-07-23T10:07:14.497-07:00"
+  },
+  {
+    "Id": "451479",
+    "Title": "XPath and SelectNodes",
+    "LatestDate": "2013-08-19T08:58:43.317-07:00"
+  },
+  {
+    "Id": "451590",
+    "Title": "DirectoryNotFoundException?",
+    "LatestDate": "2013-08-08T16:52:28.047-07:00"
+  },
+  {
+    "Id": "452254",
+    "Title": "HTML parsing awec windows 8 app store",
+    "LatestDate": "2013-08-02T10:07:27.723-07:00"
+  },
+  {
+    "Id": "452788",
+    "Title": "hi i need code for my blog- Popular post of \"day\" ? is there any can help ?",
+    "LatestDate": "2013-08-08T03:01:22.993-07:00"
+  },
+  {
+    "Id": "452857",
+    "Title": "Get first n characters but preserve tags",
+    "LatestDate": "2013-08-08T12:13:17.453-07:00"
+  },
+  {
+    "Id": "453102",
+    "Title": "How to use this pack to fetch the search result from a webpage?",
+    "LatestDate": "2013-08-11T14:54:13.633-07:00"
+  },
+  {
+    "Id": "453779",
+    "Title": "problems with accents when extract the te text with InnerText",
+    "LatestDate": "2013-08-18T23:23:53.71-07:00"
+  },
+  {
+    "Id": "454169",
+    "Title": "Link extraction problem",
+    "LatestDate": "2013-09-16T04:56:15.963-07:00"
+  },
+  {
+    "Id": "454273",
+    "Title": "trying to validate HTML not working for me",
+    "LatestDate": "2013-08-22T14:19:36.057-07:00"
+  },
+  {
+    "Id": "454388",
+    "Title": "Can HTML Agility pack do the following?",
+    "LatestDate": "2013-08-23T12:30:34.11-07:00"
+  },
+  {
+    "Id": "454775",
+    "Title": "Problem with encoding....",
+    "LatestDate": "2013-08-28T08:34:36.113-07:00"
+  },
+  {
+    "Id": "454915",
+    "Title": "Getting information on specific fields of length N in a html file using xpath And placing them in some textbox vb.net",
+    "LatestDate": "2013-08-29T14:15:17.953-07:00"
+  },
+  {
+    "Id": "455008",
+    "Title": "Add-Type htmlagilitypack.dll fails - help?",
+    "LatestDate": "2014-07-12T05:08:45.787-07:00"
+  },
+  {
+    "Id": "456240",
+    "Title": "How to handle free text containg characters such as '<' or '>'?",
+    "LatestDate": "2013-09-09T06:11:46.02-07:00"
+  },
+  {
+    "Id": "456911",
+    "Title": "Html Agility Pack  cannot find",
+    "LatestDate": "2013-09-14T14:20:25.213-07:00"
+  },
+  {
+    "Id": "457376",
+    "Title": "Problems with HTML Character References (e.g. '&#65297;') with proposed fix.",
+    "LatestDate": "2014-01-17T11:09:07.527-08:00"
+  },
+  {
+    "Id": "459290",
+    "Title": "sgml?",
+    "LatestDate": "2013-09-25T15:38:59.063-07:00"
+  },
+  {
+    "Id": "459384",
+    "Title": "PARSE TELEPHONE NUMBER IN HTML EMAIL",
+    "LatestDate": "2013-09-26T12:41:21.747-07:00"
+  },
+  {
+    "Id": "459783",
+    "Title": "Link nodes containing CDATA",
+    "LatestDate": "2013-10-01T00:34:22.603-07:00"
+  },
+  {
+    "Id": "461428",
+    "Title": "Portable Class Library",
+    "LatestDate": "2014-04-23T00:51:10.423-07:00"
+  },
+  {
+    "Id": "461860",
+    "Title": "StackOverflowException workaround ",
+    "LatestDate": "2013-10-11T02:52:09.037-07:00"
+  },
+  {
+    "Id": "462184",
+    "Title": "Substitution under the node",
+    "LatestDate": "2013-10-15T02:09:09.713-07:00"
+  },
+  {
+    "Id": "462551",
+    "Title": " HtmlAgilityPack Unable to connect to the remote server",
+    "LatestDate": "2013-10-17T00:56:29.26-07:00"
+  },
+  {
+    "Id": "462680",
+    "Title": "  HtmlWeb and login",
+    "LatestDate": "2013-10-18T00:28:33.777-07:00"
+  },
+  {
+    "Id": "463899",
+    "Title": "Retrieve an attribute with XPath",
+    "LatestDate": "2013-10-28T06:45:03.777-07:00"
+  },
+  {
+    "Id": "467283",
+    "Title": "docHouse.Load() : problem with relative path",
+    "LatestDate": "2013-11-09T07:06:44.233-08:00"
+  },
+  {
+    "Id": "468229",
+    "Title": "Problem with HtmlWeb.cs",
+    "LatestDate": "2015-01-15T16:30:22.62-08:00"
+  },
+  {
+    "Id": "469052",
+    "Title": "Update your browser | Facebook message ",
+    "LatestDate": "2013-11-16T08:17:24.54-08:00"
+  },
+  {
+    "Id": "470730",
+    "Title": "Do not wantto get &nbsp; if no innerHTML exist for tag that is being parsed",
+    "LatestDate": "2013-11-21T06:21:52.137-08:00"
+  },
+  {
+    "Id": "471048",
+    "Title": "Does Html Agility Pack supports XPath 2.0?",
+    "LatestDate": "2016-09-15T09:40:49.3-07:00"
+  },
+  {
+    "Id": "471167",
+    "Title": "Version 2.0 build is broken - errors inside this message.",
+    "LatestDate": "2013-11-26T01:35:26.147-08:00"
+  },
+  {
+    "Id": "471252",
+    "Title": "Parse HTML with whitelist",
+    "LatestDate": "2013-11-26T16:59:09.933-08:00"
+  },
+  {
+    "Id": "471800",
+    "Title": "How to whitelist br tag in asp.net, C#, website using HAP to sanitize",
+    "LatestDate": "2013-12-03T09:53:27.89-08:00"
+  },
+  {
+    "Id": "479147",
+    "Title": "Transfer My Credential from winform to Yahoo Login page inside the Mozilla Firefox Browser",
+    "LatestDate": "2013-12-30T23:56:35.957-08:00"
+  },
+  {
+    "Id": "484246",
+    "Title": "How to validate nodes in HtmlDocument are actual html nodes/elements",
+    "LatestDate": "2014-01-09T16:26:23.27-08:00"
+  },
+  {
+    "Id": "492729",
+    "Title": "how to extract nested href",
+    "LatestDate": "2014-01-13T07:39:58.14-08:00"
+  },
+  {
+    "Id": "501487",
+    "Title": "I dont see any examples.",
+    "LatestDate": "2014-01-16T09:32:20.473-08:00"
+  },
+  {
+    "Id": "508424",
+    "Title": "Is this available for windows phone 8.0?",
+    "LatestDate": "2014-01-19T19:35:03.387-08:00"
+  },
+  {
+    "Id": "511608",
+    "Title": "Can we use HTML Agility pack for store apps",
+    "LatestDate": "2014-01-19T10:21:56.923-08:00"
+  },
+  {
+    "Id": "522433",
+    "Title": "Help: Visual Basic HTML Agility Pack How to Grab Images from Table Cells",
+    "LatestDate": "2014-01-23T04:50:02.223-08:00"
+  },
+  {
+    "Id": "527412",
+    "Title": "NestedOptionsTests",
+    "LatestDate": "2014-01-27T11:47:37.737-08:00"
+  },
+  {
+    "Id": "528578",
+    "Title": "Commercial License",
+    "LatestDate": "2014-03-05T14:27:07.573-08:00"
+  },
+  {
+    "Id": "533200",
+    "Title": "Strange node search.  ",
+    "LatestDate": "2014-03-06T13:30:48.96-08:00"
+  },
+  {
+    "Id": "535841",
+    "Title": "error website ",
+    "LatestDate": "2014-02-27T18:53:45.28-08:00"
+  },
+  {
+    "Id": "535922",
+    "Title": "Dispose()?",
+    "LatestDate": "2014-02-28T09:15:26.487-08:00"
+  },
+  {
+    "Id": "537396",
+    "Title": "How do I tell HAP to not make modifications to my code?",
+    "LatestDate": "2014-03-17T10:00:31.473-07:00"
+  },
+  {
+    "Id": "538001",
+    "Title": "Setting HtmlAgilityPack assembly to work with .Net and Mono",
+    "LatestDate": "2014-03-05T01:14:51.217-08:00"
+  },
+  {
+    "Id": "538089",
+    "Title": "Issue with xpath",
+    "LatestDate": "2014-03-05T17:40:52.903-08:00"
+  },
+  {
+    "Id": "538350",
+    "Title": "Parsing Nginx Auto Index",
+    "LatestDate": "2014-03-07T21:45:52.713-08:00"
+  },
+  {
+    "Id": "539634",
+    "Title": "Get Visible Text on website without HTML",
+    "LatestDate": "2014-03-20T10:21:54.507-07:00"
+  },
+  {
+    "Id": "539760",
+    "Title": "Fumbling with parsing HTML table",
+    "LatestDate": "2014-03-21T12:27:39.627-07:00"
+  },
+  {
+    "Id": "540162",
+    "Title": "insert order is reverse on removechild and keepGrandChildren is true",
+    "LatestDate": "2014-03-25T20:24:22.707-07:00"
+  },
+  {
+    "Id": "540770",
+    "Title": "WP8 problem with Htmlagilitypack",
+    "LatestDate": "2014-03-31T23:00:32.71-07:00"
+  },
+  {
+    "Id": "541098",
+    "Title": "Xpath in HtmlAgilityPack",
+    "LatestDate": "2014-04-03T12:20:25.96-07:00"
+  },
+  {
+    "Id": "542283",
+    "Title": "universal app",
+    "LatestDate": "2015-03-02T22:05:06.407-08:00"
+  },
+  {
+    "Id": "543004",
+    "Title": "Help for parsing please",
+    "LatestDate": "2014-04-22T16:42:01.15-07:00"
+  },
+  {
+    "Id": "543229",
+    "Title": "Updates",
+    "LatestDate": "2014-04-24T11:45:05.303-07:00"
+  },
+  {
+    "Id": "543406",
+    "Title": "HTML table contents are parsed wrongly",
+    "LatestDate": "2014-04-26T05:10:15.807-07:00"
+  },
+  {
+    "Id": "544597",
+    "Title": "Huge Memory Consumption",
+    "LatestDate": "2014-05-07T06:50:23.707-07:00"
+  },
+  {
+    "Id": "545246",
+    "Title": "remove html tags but keep formatting like bold and italics ",
+    "LatestDate": "2014-05-13T12:19:55.053-07:00"
+  },
+  {
+    "Id": "545588",
+    "Title": "HtmlAgilityPack 1.4.6 gzip is not a supported encoding name",
+    "LatestDate": "2014-05-16T10:01:15.527-07:00"
+  },
+  {
+    "Id": "546435",
+    "Title": "Examples how to use this library for Windows Phone and/or Windows 9",
+    "LatestDate": "2014-05-23T17:52:55.367-07:00"
+  },
+  {
+    "Id": "547429",
+    "Title": "How to scrape some data from a website using HTMLAgilityPack",
+    "LatestDate": "2014-06-03T08:43:19.81-07:00"
+  },
+  {
+    "Id": "549017",
+    "Title": "Parsing xPath of tag <form>",
+    "LatestDate": "2014-06-18T05:58:45.887-07:00"
+  },
+  {
+    "Id": "549404",
+    "Title": "htmlAgilityPack reteveing data from table",
+    "LatestDate": "2014-06-23T05:44:06.35-07:00"
+  },
+  {
+    "Id": "550094",
+    "Title": "Any news / plans for V2 ?",
+    "LatestDate": "2014-06-30T05:15:39.023-07:00"
+  },
+  {
+    "Id": "550434",
+    "Title": "Searching contents of a php page?",
+    "LatestDate": "2014-07-02T22:28:43.51-07:00"
+  },
+  {
+    "Id": "550464",
+    "Title": "HtmlAgilityPack.HtmlWeb and Cookie",
+    "LatestDate": "2014-07-03T04:08:53.543-07:00"
+  },
+  {
+    "Id": "550562",
+    "Title": "HTML Agility Pack: HREF",
+    "LatestDate": "2014-07-10T10:48:38.75-07:00"
+  },
+  {
+    "Id": "550594",
+    "Title": "Bug",
+    "LatestDate": "2014-07-04T02:18:13.823-07:00"
+  },
+  {
+    "Id": "552397",
+    "Title": "Login & Javascript",
+    "LatestDate": "2015-01-25T20:29:32.637-08:00"
+  },
+  {
+    "Id": "554037",
+    "Title": "Get Children of FORM tags - Powershell",
+    "LatestDate": "2014-07-25T09:58:26.867-07:00"
+  },
+  {
+    "Id": "554657",
+    "Title": "Need help with SelectBodes",
+    "LatestDate": "2014-11-13T08:16:36.94-08:00"
+  },
+  {
+    "Id": "561348",
+    "Title": "The '\"' character, hexadecimal value 0x22, cannot be included in a name.",
+    "LatestDate": "2014-08-15T17:04:08.277-07:00"
+  },
+  {
+    "Id": "561632",
+    "Title": "How to set encoding when using HtmlAgilityPack.HtmlDocument.LoadHtml",
+    "LatestDate": "2014-08-19T18:54:38.57-07:00"
+  },
+  {
+    "Id": "561688",
+    "Title": "Count size of loaded content, or preferably transferred size",
+    "LatestDate": "2014-08-20T08:12:36.99-07:00"
+  },
+  {
+    "Id": "564991",
+    "Title": "Getting  No Source available Error - There no source code available for the current location  when using HtmlAgilityPack ",
+    "LatestDate": "2014-09-03T10:17:01.967-07:00"
+  },
+  {
+    "Id": "565113",
+    "Title": "Parse inner HTML tables to a DataTable issue from a web page",
+    "LatestDate": "2014-09-03T14:12:26.963-07:00"
+  },
+  {
+    "Id": "567358",
+    "Title": "issues while using HTMLagility pack",
+    "LatestDate": "2014-09-13T13:23:13.763-07:00"
+  },
+  {
+    "Id": "568019",
+    "Title": "Unknown error caused by HtmlAgility pack",
+    "LatestDate": "2014-09-21T15:54:08.06-07:00"
+  },
+  {
+    "Id": "568271",
+    "Title": "Get exact unicode tring from website",
+    "LatestDate": "2014-09-24T08:53:40.883-07:00"
+  },
+  {
+    "Id": "568327",
+    "Title": "Chinese language/Character support in HAP",
+    "LatestDate": "2014-09-25T02:47:10.303-07:00"
+  },
+  {
+    "Id": "568442",
+    "Title": "Html parse for Windows Phone 8.1",
+    "LatestDate": "2014-09-26T06:30:59.363-07:00"
+  },
+  {
+    "Id": "568816",
+    "Title": "Will Multiple <html> tags through the parser off?",
+    "LatestDate": "2014-10-01T12:58:12.14-07:00"
+  },
+  {
+    "Id": "569393",
+    "Title": "Is contains() function supported ?",
+    "LatestDate": "2014-10-09T04:21:32.8-07:00"
+  },
+  {
+    "Id": "569623",
+    "Title": "parse text from class of complex html file",
+    "LatestDate": "2014-10-12T23:02:23.96-07:00"
+  },
+  {
+    "Id": "569757",
+    "Title": "Project outdated?",
+    "LatestDate": "2014-10-14T07:17:51.843-07:00"
+  },
+  {
+    "Id": "571104",
+    "Title": "selectnodes problem",
+    "LatestDate": "2014-11-02T07:39:57.393-08:00"
+  },
+  {
+    "Id": "572326",
+    "Title": "Newbie Select Question",
+    "LatestDate": "2014-11-17T10:11:30.36-08:00"
+  },
+  {
+    "Id": "572520",
+    "Title": "Accessing a column of an Html Table",
+    "LatestDate": "2014-11-19T08:36:24.197-08:00"
+  },
+  {
+    "Id": "572686",
+    "Title": "Get Ordinal Index of paragraph element",
+    "LatestDate": "2014-11-20T11:46:08.043-08:00"
+  },
+  {
+    "Id": "572724",
+    "Title": "Portable version?",
+    "LatestDate": "2014-11-21T01:53:36.06-08:00"
+  },
+  {
+    "Id": "572952",
+    "Title": "How to select the racecard information",
+    "LatestDate": "2014-11-23T21:21:13.95-08:00"
+  },
+  {
+    "Id": "573930",
+    "Title": "Source Code for 1.4.9",
+    "LatestDate": "2014-12-03T11:52:46.743-08:00"
+  },
+  {
+    "Id": "574770",
+    "Title": "Check whether an element is displayed inline or block",
+    "LatestDate": "2014-12-12T05:55:32.973-08:00"
+  },
+  {
+    "Id": "575786",
+    "Title": "DIV background-image to image",
+    "LatestDate": "2014-12-18T13:03:37.563-08:00"
+  },
+  {
+    "Id": "576340",
+    "Title": "How to get content using httpAgilityPack website?",
+    "LatestDate": "2015-01-08T21:14:24.413-08:00"
+  },
+  {
+    "Id": "577094",
+    "Title": "InnerHtml works wrong!!!",
+    "LatestDate": "2015-01-07T09:39:39.86-08:00"
+  },
+  {
+    "Id": "577815",
+    "Title": "Support for .NET Core",
+    "LatestDate": "2015-01-15T14:47:46.47-08:00"
+  },
+  {
+    "Id": "578194",
+    "Title": "Why don't I catch be null errors on \"div.SelectSingleNode(\".//span[@class='pos']\").InnerText.Trim(); \".Help me to sovle it.",
+    "LatestDate": "2015-01-20T21:25:18.57-08:00"
+  },
+  {
+    "Id": "578197",
+    "Title": "How to get url of the video or the mp3 by Http Agility Pack????",
+    "LatestDate": "2015-01-20T21:34:55.193-08:00"
+  },
+  {
+    "Id": "578654",
+    "Title": "Being crashed application when using http agility pack on universal",
+    "LatestDate": "2015-01-26T23:37:04.377-08:00"
+  },
+  {
+    "Id": "578670",
+    "Title": "How to get a link mp3 online from website???",
+    "LatestDate": "2015-01-27T03:37:32.06-08:00"
+  },
+  {
+    "Id": "578734",
+    "Title": "get attribute",
+    "LatestDate": "2015-01-27T15:08:30.223-08:00"
+  },
+  {
+    "Id": "578921",
+    "Title": "Retrieve <ul> and <li> tags which in div in div. ",
+    "LatestDate": "2015-03-02T02:10:05.36-08:00"
+  },
+  {
+    "Id": "579085",
+    "Title": "How much information is loaded by HtmlWeb.load([url])",
+    "LatestDate": "2015-01-31T09:46:30.483-08:00"
+  },
+  {
+    "Id": "579139",
+    "Title": "Convert xpath to linq",
+    "LatestDate": "2015-01-31T23:56:44.18-08:00"
+  },
+  {
+    "Id": "579143",
+    "Title": "SelectNodes And  SelectSingleNode not working in widows phone 8.1 app",
+    "LatestDate": "2015-02-01T01:57:30.237-08:00"
+  },
+  {
+    "Id": "579676",
+    "Title": "HTML and MemoryStream",
+    "LatestDate": "2015-02-19T12:14:33.85-08:00"
+  },
+  {
+    "Id": "579875",
+    "Title": "In loops Althought It be have data and no data(10 loops, 3 loops has data, the rest of loops has no data) but still return is null, Why?",
+    "LatestDate": "2015-02-09T23:44:49.993-08:00"
+  },
+  {
+    "Id": "581629",
+    "Title": "Using HAP with multiple threads.",
+    "LatestDate": "2015-02-23T07:41:55.373-08:00"
+  },
+  {
+    "Id": "581648",
+    "Title": "extracting all forms from an html page with all their inputs using HtmlAgilityPack and VB.NET",
+    "LatestDate": "2015-02-23T14:36:48.803-08:00"
+  },
+  {
+    "Id": "583973",
+    "Title": "Cant install via NuGet - Corrupt data",
+    "LatestDate": "2015-03-03T03:22:14.42-08:00"
+  },
+  {
+    "Id": "584181",
+    "Title": "Visual Studio Debugger Visualizer for HAP",
+    "LatestDate": "2015-03-14T05:39:53.5-07:00"
+  },
+  {
+    "Id": "584241",
+    "Title": "Retreive ul, li tag which have not class of name.",
+    "LatestDate": "2015-03-02T22:03:25.71-08:00"
+  },
+  {
+    "Id": "584778",
+    "Title": "Html Agility Pack - Help Skipping Table",
+    "LatestDate": "2015-03-06T12:51:54.13-08:00"
+  },
+  {
+    "Id": "585596",
+    "Title": "Could not load file or assembly 'HTMLAgilityPack",
+    "LatestDate": "2015-03-09T11:13:03.577-07:00"
+  },
+  {
+    "Id": "586040",
+    "Title": "Is there an easy way to convert from HtmlNode to XDocument or XmlDocument in C#?",
+    "LatestDate": "2015-03-11T08:32:55.72-07:00"
+  },
+  {
+    "Id": "616928",
+    "Title": "How to get name into class of div by htmlagilitypack?",
+    "LatestDate": "2015-04-02T18:54:30.723-07:00"
+  },
+  {
+    "Id": "626027",
+    "Title": "Controlling parsing of < in element text",
+    "LatestDate": "2015-04-13T04:45:32.87-07:00"
+  },
+  {
+    "Id": "631839",
+    "Title": "How do that to get content as photos by html agility pack?",
+    "LatestDate": "2015-04-20T18:45:45.18-07:00"
+  },
+  {
+    "Id": "637752",
+    "Title": "Return contents between two TR tags using HTMLAGILITYPACK",
+    "LatestDate": "2015-05-11T09:24:12.637-07:00"
+  },
+  {
+    "Id": "639745",
+    "Title": "Can i modify innerText of HtmlNode <p>?",
+    "LatestDate": "2015-06-09T21:28:27.083-07:00"
+  },
+  {
+    "Id": "640476",
+    "Title": "Error in parsing HTML tags",
+    "LatestDate": "2015-06-26T00:52:01.143-07:00"
+  },
+  {
+    "Id": "641047",
+    "Title": "XPath finder current issues",
+    "LatestDate": "2015-07-07T18:46:43.473-07:00"
+  },
+  {
+    "Id": "643977",
+    "Title": "Difficulty with XPath to get a single result",
+    "LatestDate": "2015-08-20T10:40:34.493-07:00"
+  },
+  {
+    "Id": "644266",
+    "Title": "Strong Name for PCL Binary",
+    "LatestDate": "2015-08-26T13:55:08.073-07:00"
+  },
+  {
+    "Id": "645101",
+    "Title": "problems with DocumentNode.SelectNodes() parameters",
+    "LatestDate": "2015-10-26T10:02:44.083-07:00"
+  },
+  {
+    "Id": "645897",
+    "Title": "Ajax Request",
+    "LatestDate": "2015-10-27T03:53:37.913-07:00"
+  },
+  {
+    "Id": "648346",
+    "Title": "StackOverflowException in HtmlNodeCollection.GetEnumerator()",
+    "LatestDate": "2015-12-04T00:58:30.187-08:00"
+  },
+  {
+    "Id": "649324",
+    "Title": "error on get Attributes[].Value",
+    "LatestDate": "2015-12-26T06:36:23.52-08:00"
+  },
+  {
+    "Id": "651621",
+    "Title": "HtmlAgilityPack parsing html using templates",
+    "LatestDate": "2016-04-07T13:18:41.967-07:00"
+  },
+  {
+    "Id": "652637",
+    "Title": "Nuget Install is prompting for C# files.",
+    "LatestDate": "2016-03-17T10:51:37.2-07:00"
+  },
+  {
+    "Id": "652956",
+    "Title": "HTMLAgility in UWP App => List all url of an website",
+    "LatestDate": "2016-03-27T02:28:26.087-07:00"
+  },
+  {
+    "Id": "653763",
+    "Title": "how to load an encoded string into htmlDocument object",
+    "LatestDate": "2016-04-19T20:17:43.403-07:00"
+  },
+  {
+    "Id": "653831",
+    "Title": "Method not found: 'Int32 HtmlAgility Pack.HtmlDocument.TextIndexOf(Char, Int32)'",
+    "LatestDate": "2016-04-20T15:23:53.737-07:00"
+  },
+  {
+    "Id": "654188",
+    "Title": "Can't seem to remove nodes",
+    "LatestDate": "2016-04-29T16:49:16.067-07:00"
+  },
+  {
+    "Id": "654215",
+    "Title": "HAP xpath finder",
+    "LatestDate": "2016-05-01T11:33:08.69-07:00"
+  },
+  {
+    "Id": "654824",
+    "Title": "GitHub Fork with nuget package",
+    "LatestDate": "2016-05-20T01:28:49.013-07:00"
+  },
+  {
+    "Id": "654923",
+    "Title": "Replace all images in HTML by a base64 version",
+    "LatestDate": "2016-05-25T02:52:30.023-07:00"
+  },
+  {
+    "Id": "656293",
+    "Title": "HtmlAgilityPack document is double encoding &nbsp; to &amp;nbsp;",
+    "LatestDate": "2016-07-11T23:03:30.51-07:00"
+  },
+  {
+    "Id": "657174",
+    "Title": "Unclosed attribute values",
+    "LatestDate": "2016-08-16T03:34:51.51-07:00"
+  },
+  {
+    "Id": "657552",
+    "Title": "Why do we have separate HtmlDocument.Load() methods instead of constructors?",
+    "LatestDate": "2016-08-30T16:13:27.413-07:00"
+  },
+  {
+    "Id": "657629",
+    "Title": "Is there any way to update the OuterHtml?",
+    "LatestDate": "2016-09-02T00:25:01.663-07:00"
+  },
+  {
+    "Id": "658309",
+    "Title": "Can Somebody please Provide a working source code in C# to Scrap Images Sources from a given Url ? Many Thanks",
+    "LatestDate": "2016-09-28T00:45:12.517-07:00"
+  },
+  {
+    "Id": "658399",
+    "Title": "Please Help extract data",
+    "LatestDate": "2016-09-30T12:52:14.89-07:00"
+  },
+  {
+    "Id": "659104",
+    "Title": "Compile for .NET 2.0 CF",
+    "LatestDate": "2016-11-01T09:29:10.35-07:00"
+  },
+  {
+    "Id": "659930",
+    "Title": "How to correct hrml body tag",
+    "LatestDate": "2016-12-05T04:18:59.14-08:00"
+  },
+  {
+    "Id": "660362",
+    "Title": "Extraction of Text from HTML",
+    "LatestDate": "2016-12-27T22:50:18.417-08:00"
+  },
+  {
+    "Id": "660896",
+    "Title": "Does HAP automatically close TCP Connection?",
+    "LatestDate": "2017-01-24T04:10:22.733-08:00"
+  },
+  {
+    "Id": "660969",
+    "Title": "Sanitizing string issue",
+    "LatestDate": "2017-01-26T15:59:13.877-08:00"
+  },
+  {
+    "Id": "660989",
+    "Title": "Latest Source tree for 1.4.9.5?",
+    "LatestDate": "2017-03-15T17:17:37.96-07:00"
+  },
+  {
+    "Id": "662110",
+    "Title": "htmlagilitypack how to get link XPath",
+    "LatestDate": "2017-05-04T12:35:25.717-07:00"
+  },
+  {
+    "Id": "662159",
+    "Title": "Change website code",
+    "LatestDate": "2017-03-23T02:32:03.23-07:00"
+  },
+  {
+    "Id": "662692",
+    "Title": "How to do integration between websites?",
+    "LatestDate": "2017-04-25T10:33:32.46-07:00"
+  },
+  {
+    "Id": "662807",
+    "Title": "Re HtmlAgility dll issue",
+    "LatestDate": "2017-05-04T00:13:34.93-07:00"
+  },
+  {
+    "Id": "662830",
+    "Title": "Fetching attributes from HTML comment",
+    "LatestDate": "2017-05-05T02:03:55.13-07:00"
+  }
+]

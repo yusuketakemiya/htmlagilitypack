@@ -1,0 +1,1372 @@
+﻿<?xml version="1.0" encoding="utf-8"?><html class=" ie ie7 win js" sizcache="10" sizset="3"><head><title>Cataract: Merck Manual Professional</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="en" http-equiv="content-language" />
+<meta name="language" content="en" />
+<meta name="ICD-9" content="366,366.0,366.1,366.2,366.3,366.4,366.5,366.8" />
+<meta name="mmpageheads" content="Etiology:v956548::Symptoms and Signs:v956575::Diagnosis:v956582::Treatment:v956589::Prevention:v956622::Key Points:v6580394::" />
+<script type="text/javascript" src="http://www.google-analytics.com/ga.js" async="true">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js" async="true">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript" src="/professional/javascript.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+
+					var arrowURL = &quot;/images/mmpe/nav_popover_arrow.gif&quot;;
+					var globalColor = &quot;#284a7c&quot;;
+				
+//]]>//
+</script>
+<link rel="canonical" href="/professional/eye_disorders/cataract/cataract.html" /><link rel="stylesheet" type="text/css" href="/styles/mmpe/master.css" /><link rel="stylesheet" type="text/css" href="/styles/mmpe/print.css" media="print" /><link rel="stylesheet" type="text/css" href="/styles/mmhe2/master_ie.css" /><link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script language="JavaScript" src="/scripts/sniffer.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script language="JavaScript1.2" src="/scripts/dhtml_menus.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script language="JavaScript1.2" src="/scripts/dhtml_utilities.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script language="JavaScript" src="/scripts/mmhe2/utils.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script language="JavaScript" src="/scripts/dhtml_menus.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script language="JavaScript" src="/scripts/dhtml_utilities.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript" src="/fancybox/jquery.easing-1.3.pack.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript" src="/scripts/pagination/jquery.paginate.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript" charset="utf-8" src="/scripts/float_menu.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+				  (function() {
+				    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				    po.src = 'https://apis.google.com/js/plusone.js';
+				    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+				  })();
+				
+//]]>//
+</script>
+
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+
+
+          getBookURL();
+        	if (location.href.indexOf('lexicomp') != -1) {
+            	var dr = document.referrer;
+                var srArr = new Array('http://www.yahoo.com', 'http://www.google.com');
+                for (var i=0; i &lt; srArr.length; i++) {
+                	if(dr.indexOf(srArr[i]) != -1) location.href = '../';
+                }
+        	}
+			$(document).ready(function() {
+
+				if ($.browser.webkit) {
+    				i_width = 665;
+				i_width2 = 460;
+				i_height = 800;
+				i_height2 = 530;
+				} else if ($.browser.msie) {
+				i_width = 665;
+				i_width2 = 460;
+				i_height = 2000;
+				i_height2 = 530;
+				} else if ($.browser.mozilla) {
+				i_width = 665;
+				i_width2 = 460;
+				i_height = 800;
+				i_height2 = 530;
+				} else {
+				i_width = 665;
+				i_width2 = 460;
+				i_height = 800;
+    				i_height2 = 530;
+ 				}
+
+				/* Using custom settings for media viewer */
+				$(&quot;a.iframe&quot;).fancybox({
+					'width' : i_width,
+					'height' : i_height,
+					'padding' : 0,
+					'autoScale' : false,
+					'type' : 'iframe'
+				});
+
+				if ($.browser.msie) {
+					$(&quot;a.iframe&quot;).click(function() {
+						// raise popup window height
+						$('#fancybox-wrap').css('top','0px');
+					});
+				}
+					
+				$(&quot;a.iframe2&quot;).fancybox({
+					'width' : i_width2,
+					'height' : i_height2,
+					'padding' : 0,
+					'autoScale' : false,
+					'type' : 'iframe'
+				});
+
+			$(&quot;.tabContainer&quot;).each(function(){$(this).show(); });
+
+				$(&quot;.navTabTd table tr td a&quot;).click(function(e){
+
+					var fa=&quot;/&quot;+(window.location.pathname).split(&quot;/&quot;)[1]+&quot;/full-firstaid.html&quot;;
+					var sec=&quot;/&quot;+(window.location.pathname).split(&quot;/&quot;)[1]+&quot;/full-sections.html&quot;;
+					var sym=&quot;/&quot;+(window.location.pathname).split(&quot;/&quot;)[1]+&quot;/full-symptoms.html&quot;;
+
+					current_a = $(this);
+					this_one = $(this).index();					
+
+					if ($(this).attr(&quot;id&quot;) == &quot;pro&quot;) 
+					{
+						$('.myclass').attr('href',sym); //Added ON AUG 29 by AG
+						thisClass = &quot;navTabOnPro&quot;;						
+					} 
+					else if ($(this).attr(&quot;id&quot;) == &quot;hom&quot;) 
+					{
+						$('.myclass').attr('href',fa); //Added ON AUG 29 by AG
+						thisClass = &quot;navTabOn&quot;;
+					} 
+					else
+					{	
+						$('.myclass').attr('href',sec);	//Added ON AUG 29 by AG
+						thisClass = &quot;navTabOn&quot;;
+					}
+
+
+					$(&quot;.navTabTd table tr td a&quot;).each(function(){
+						$(this).parent().removeClass(&quot;navTabOn&quot;);
+						$(this).parent().removeClass(&quot;navTabOnPro&quot;);
+						$(this).parent().addClass(&quot;navTabOff&quot;);
+					}) ;
+
+					$(&quot;.tabContainer&quot;).each(function(n)	{
+						if (i == this_one) $(this).show();
+						else $(this).hide();
+					});
+
+					$(this).parent().attr(&quot;class&quot;, thisClass) ;
+
+					$(&quot;#&quot; + $(this).attr(&quot;rel&quot;)).show();
+					e.preventDefault();
+				});
+
+				var opt = { height:'200', id:'menu_1', page_items_count:10 }
+				$(&quot;#FirstMenu&quot;).MenuPaginate(opt);
+
+				var opt2 = { height:'200', id:'menu_2', page_items_count:10 }
+				$(&quot;#SecondMenu&quot;).MenuPaginate(opt2);
+
+
+				$(&quot;.tabContainer&quot;).each(function(){$(this).hide(); });
+				$(&quot;.tabContainer:eq(0)&quot;).show();
+
+			});
+
+
+
+
+
+
+                
+//]]>//
+</script>
+
+<meta content="dcskjzmez000000wcf1sga6nx_8f4n" />
+<meta content="sdc-web.merck.com" />
+<meta content="www.merckmanuals.com" />
+<meta content="Merck Manual of Diagnosis and Therapy" />
+<meta content="Healthcare Professionals" />
+<meta content="Merck Manual of Diagnosis and Therapy" />
+<meta content="5" />
+<meta content="12" /></head>
+<body sizcache="10" sizset="3">
+<div id="scrollable" jquery1360672177504="278" sizcache="10" sizset="3">
+<div id="wrapper" class="print-center" sizcache="10" sizset="3">
+<table id="top" border="0" cellspacing="0" cellpadding="0" width="100%" sizcache="10" sizset="3">
+<tbody sizcache="10" sizset="3">
+<tr>
+<td colspan="2"><img style="DISPLAY: block" border="0" alt="" src="/site_images/mm/header_pro.jpg" width="1024" height="105" usemap="#headermap" /><map style="BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; DISPLAY: none; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none" name="headermap">
+<script language="JavaScript" charset="UTF-8">
+//<![CDATA[
+
+        document.write('&lt;area shape=&quot;rect&quot; coords=&quot;865,50,995,89&quot; href=&quot;http://www.merck.com&quot; alt=&quot;Merck&quot; target=&quot;&quot;&gt;');
+     
+//]]>//
+</script>
+ <area href="http://www.merck.com" shape="rect" alt="Merck" target="" coords="865,50,995,89" />
+<script language="JavaScript" charset="UTF-8">
+//<![CDATA[
+
+        document.write('&lt;area shape=&quot;rect&quot; coords=&quot;218,20,530,46&quot; href=&quot;/professional/index.html&quot; alt=&quot;Merck Manual Professional&quot; target=&quot;&quot;&gt;');
+     
+//]]>//
+</script>
+<area href="/professional/index.html" shape="rect" alt="Merck Manual Professional" target="" coords="218,20,530,46" />
+<script language="JavaScript" charset="UTF-8">
+//<![CDATA[
+
+        document.write('&lt;area shape=&quot;rect&quot; coords=&quot;50,6,167,97&quot; href=&quot;/professional/index.html&quot; alt=&quot;Merck Manual Professional&quot; target=&quot;&quot;&gt;');
+     
+//]]>//
+</script>
+<area href="/professional/index.html" shape="rect" alt="Merck Manual Professional" target="" coords="50,6,167,97" />
+<script language="JavaScript" charset="UTF-8">
+//<![CDATA[
+
+        document.write('&lt;area shape=&quot;rect&quot; coords=&quot;327,62,504,96&quot; href=&quot;/home/index.html' + bookPageLink + '&quot; alt=&quot;Merck Manual Home&quot; target=&quot;&quot;&gt;');
+     
+//]]>//
+</script>
+<area href="/home/index.html?searchTerms=&amp;icd9=366,366.0,366.1,366.2,366.3,366.4,366.5,366.8&amp;topic=Cataract: Merck Manual Professional" shape="rect" alt="Merck Manual Home" target="" coords="327,62,504,96" /></map>
+<div class="search_bg"></div>
+<div class="searchGlassContainer" onclick="submitForm('MMHE2searchForm', 'qt');"><img alt="Search" src="/site_images/mm/s.gif" width="18" height="18" /></div>
+<div class="searchFormContainer">
+<form id="searchform" onsubmit="return validateForm('MMHE2searchForm', event, 'qt');" method="get" name="MMHE2searchForm" action="/professional/search.html" />
+<fieldset class="searchField"><input id="qt" name="qt" /><input value="1" type="hidden" name="start" /><input value="/professional" type="hidden" name="context" /> </fieldset> <!--Search  -->&lt;/form&gt;</div></td></tr>
+<tr class="no-print">
+<td colspan="2">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<td class="navTabTd" sizcache="10" sizset="0">
+<table style="MARGIN: 0px 5px" border="0" cellspacing="0" cellpadding="0" sizcache="9" sizset="0">
+<tbody sizcache="9" sizset="0">
+<tr sizcache="8" sizset="0">
+<td id="tabNav1" class="navTabOn" height="23" width="62" sizcache="7" sizset="0"><a href="javascript:changeTabNav(1);" rel="tabNavTable1" jquery1360672177504="291">Sections</a></td>
+<td id="tabNav2" class="navTabOff" height="23" width="62" sizcache="7" sizset="1"><a href="javascript:changeTabNav(2);" rel="tabNavTable2" jquery1360672177504="292">Index</a></td>
+<td id="tabNav3" class="navTabOff" height="23" width="72" sizcache="7" sizset="2"><a id="pro" href="javascript:changeTabNav(3);" rel="tabNavTable3" jquery1360672177504="293">Symptoms</a></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr sizcache="10" sizset="3">
+<td style="BORDER-LEFT: #999 1px solid; WIDTH: 200px; BORDER-RIGHT: #999 1px solid" class="leftNav no-print" rowspan="2" width="200" sizcache="10" sizset="3">
+<table border="0" cellspacing="0" cellpadding="0" width="210" sizcache="10" sizset="27">
+<tbody sizcache="10" sizset="27">
+<tr sizcache="8" sizset="3">
+<td style="DISPLAY: block; overFlow: hidden" id="tabNavTable1" class="tabContainer" jquery1360672177504="332" sizcache="7" sizset="3">
+<ul style="DISPLAY: none; overFlow: hidden" id="SecondMenu" class="MMsectionsUL" sizcache="7" sizset="3">
+<li class="ind" sizcache="7" sizset="3"><a href="/professional/cardiovascular_disorders.html">Cardiovascular Disorders</a> 
+<li class="ind" sizcache="7" sizset="4"><a href="/professional/clinical_pharmacology.html">Clinical Pharmacology</a> 
+<li class="ind" sizcache="7" sizset="5"><a href="/professional/critical_care_medicine.html">Critical Care Medicine</a> 
+<li class="ind" sizcache="7" sizset="6"><a href="/professional/dental_disorders.html">Dental Disorders</a> 
+<li class="ind" sizcache="7" sizset="7"><a href="/professional/dermatologic_disorders.html">Dermatologic Disorders</a> 
+<li class="ind" sizcache="7" sizset="8"><a href="/professional/ear_nose_and_throat_disorders.html">Ear, Nose, and Throat Disorders</a> 
+<li class="ind" sizcache="7" sizset="9"><a href="/professional/endocrine_and_metabolic_disorders.html">Endocrine and Metabolic Disorders</a> 
+<li class="ind" sizcache="7" sizset="10"><a href="/professional/eye_disorders.html">Eye Disorders</a> 
+<li class="ind" sizcache="7" sizset="11"><a href="/professional/gastrointestinal_disorders.html">Gastrointestinal Disorders</a> 
+<li class="ind" sizcache="7" sizset="12"><a href="/professional/genitourinary_disorders.html">Genitourinary Disorders</a> 
+<li class="ind" sizcache="7" sizset="13"><a href="/professional/geriatrics.html">Geriatrics</a> 
+<li class="ind" sizcache="7" sizset="14"><a href="/professional/gynecology_and_obstetrics.html">Gynecology and Obstetrics</a> 
+<li class="ind" sizcache="7" sizset="15"><a href="/professional/hematology_and_oncology.html">Hematology and Oncology</a> 
+<li class="ind" sizcache="7" sizset="16"><a href="/professional/hepatic_and_biliary_disorders.html">Hepatic and Biliary Disorders </a>
+<li class="ind" sizcache="7" sizset="17"><a href="/professional/immunology_allergic_disorders.html">Immunology; Allergic Disorders</a> 
+<li class="ind" sizcache="7" sizset="18"><a href="/professional/infectious_diseases.html">Infectious Diseases</a> 
+<li class="ind" sizcache="7" sizset="19"><a href="/professional/injuries_poisoning.html">Injuries; Poisoning</a> 
+<li class="ind" sizcache="7" sizset="20"><a href="/professional/musculoskeletal_and_connective_tissue_disorders.html">Musculoskeletal and Connective Tissue Disorders </a>
+<li class="ind" sizcache="7" sizset="21"><a href="/professional/neurologic_disorders.html">Neurologic Disorders</a> 
+<li class="ind" sizcache="7" sizset="22"><a href="/professional/nutritional_disorders.html">Nutritional Disorders</a> 
+<li class="ind" sizcache="7" sizset="23"><a href="/professional/pediatrics.html">Pediatrics</a> 
+<li class="ind" sizcache="7" sizset="24"><a href="/professional/psychiatric_disorders.html">Psychiatric Disorders</a> 
+<li class="ind" sizcache="7" sizset="25"><a href="/professional/pulmonary_disorders.html">Pulmonary Disorders</a> 
+<li class="ind" sizcache="7" sizset="26"><a class="last" href="/professional/special_subjects.html">Special Subjects</a> </li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></ul>
+<div style="WIDTH: 202px; MARGIN-BOTTOM: 25px !important; HEIGHT: 265px !important; OVERFLOW: hidden; PADDING-TOP: 8px">
+<ul id="paginate_main_ul_menu_2" class="MMsectionsUL">
+<li style="MARGIN: 0px; DISPLAY: inline-block; FLOAT: left" id="menu_part_1_menu_2" class="slide_li _current">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/cardiovascular_disorders.html">Cardiovascular Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/clinical_pharmacology.html">Clinical Pharmacology</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/critical_care_medicine.html">Critical Care Medicine</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/dental_disorders.html">Dental Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/dermatologic_disorders.html">Dermatologic Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders.html">Ear, Nose, and Throat Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/endocrine_and_metabolic_disorders.html">Endocrine and Metabolic Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/eye_disorders.html">Eye Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/gastrointestinal_disorders.html">Gastrointestinal Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/genitourinary_disorders.html">Genitourinary Disorders</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_2_menu_2" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/geriatrics.html">Geriatrics</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics.html">Gynecology and Obstetrics</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/hematology_and_oncology.html">Hematology and Oncology</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/hepatic_and_biliary_disorders.html">Hepatic and Biliary Disorders </a></li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/immunology_allergic_disorders.html">Immunology; Allergic Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/infectious_diseases.html">Infectious Diseases</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/injuries_poisoning.html">Injuries; Poisoning</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/musculoskeletal_and_connective_tissue_disorders.html">Musculoskeletal and Connective Tissue Disorders </a></li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/neurologic_disorders.html">Neurologic Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/nutritional_disorders.html">Nutritional Disorders</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_3_menu_2" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/pediatrics.html">Pediatrics</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/psychiatric_disorders.html">Psychiatric Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a href="http://www.merckmanuals.com/professional/pulmonary_disorders.html">Pulmonary Disorders</a> </li>
+<li style="WIDTH: 210px" class="ind"><a class="last" href="http://www.merckmanuals.com/professional/special_subjects.html">Special Subjects</a> </li>
+<li style="WIDTH: 210px"></li>
+<li style="WIDTH: 210px"></li>
+<li style="WIDTH: 210px"></li>
+<li style="WIDTH: 210px"></li>
+<li style="WIDTH: 210px"></li>
+<li style="WIDTH: 210px"></li></ul></li>
+<div style="PADDING-LEFT: 44px !important">
+<li style="BORDER-BOTTOM: #777 0px solid; TEXT-ALIGN: center !important; BORDER-LEFT: #777 0px solid; PADDING-LEFT: 25px; MARGIN-BOTTOM: 15px !important; FLOAT: left !important; BORDER-TOP: #777 0px solid; BORDER-RIGHT: #777 0px solid" id="dem_menu_2" class="jPaginate">
+<div id="jPag-control-back" class="jPag-control-back" jquery1360672177504="331">
+<p class="jPag-first" jquery1360672177504="324" /><span class="pointer prev"></span></div>
+<div style="WIDTH: 46px; OVERFLOW: hidden" jquery1360672177504="329">
+<ul style="WIDTH: 42px" class="jPag-pages">
+<li jquery1360672177504="326"><a style="BACKGROUND-COLOR: #fff; COLOR: #000" class="jPag-current" jquery1360672177504="320">1</a></li>
+<li jquery1360672177504="327"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="321">2</a></li>
+<li jquery1360672177504="328"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="322">3</a></li></ul></div>
+<div style="LEFT: 72px" id="jPag-control-front" class="jPag-control-front" jquery1360672177504="330"><span class="pointer next"></span>
+<p class="jPag-last" jquery1360672177504="325" /></div>
+<div style="LEFT: 95px" class="allLink"><a style="BACKGROUND-COLOR: transparent; COLOR: black; FONT-WEIGHT: normal !important; TEXT-DECORATION: underline !important" id="show_all" class="myclass" href="http://www.merckmanuals.com/professional/full-sections.html" jquery1360672177504="323">All</a></div></li></div></ul></div></td></tr>
+<tr sizcache="10" sizset="27">
+<td style="DISPLAY: none" id="tabNavTable2" class="tabContainer" jquery1360672177504="333" sizcache="10" sizset="27">
+<table style="MARGIN: 10px auto" class="segmentedTable" border="0" cellspacing="0" cellpadding="0" align="center" sizcache="9" sizset="27">
+<tbody sizcache="9" sizset="27">
+<tr sizcache="8" sizset="27">
+<td class="segmentSquare" sizcache="7" sizset="27"><a class="indexNavLink" href="/professional/index/ind_ab.html">A</a></td>
+<td class="segmentSquare" sizcache="7" sizset="28"><a class="indexNavLink" href="/professional/index/ind_ba.html">B</a></td>
+<td class="segmentSquare" sizcache="7" sizset="29"><a class="indexNavLink" href="/professional/index/ind_ca.html">C</a></td>
+<td class="segmentSquare" sizcache="7" sizset="30"><a class="indexNavLink" href="/professional/index/ind_da.html">D</a></td>
+<td class="segmentSquare" sizcache="7" sizset="31"><a class="indexNavLink" href="/professional/index/ind_ea.html">E</a></td>
+<td class="segmentSquare" sizcache="7" sizset="32"><a class="indexNavLink" href="/professional/index/ind_fa.html">F</a></td>
+<td class="segmentSquare" sizcache="7" sizset="33"><a class="indexNavLink" href="/professional/index/ind_ga.html">G</a></td>
+<td class="segmentSquare" sizcache="7" sizset="34"><a class="indexNavLink" href="/professional/index/ind_h1.html">H</a></td>
+<td class="segmentSquare" sizcache="7" sizset="35"><a class="indexNavLink" href="/professional/index/ind_ib.html">I</a></td></tr>
+<tr sizcache="8" sizset="36">
+<td class="segmentSquare" sizcache="7" sizset="36"><a class="indexNavLink" href="/professional/index/ind_ja.html">J</a></td>
+<td class="segmentSquare" sizcache="7" sizset="37"><a class="indexNavLink" href="/professional/index/ind_ka.html">K</a></td>
+<td class="segmentSquare" sizcache="7" sizset="38"><a class="indexNavLink" href="/professional/index/ind_la.html">L</a></td>
+<td class="segmentSquare" sizcache="7" sizset="39"><a class="indexNavLink" href="/professional/index/ind_ma.html">M</a></td>
+<td class="segmentSquare" sizcache="7" sizset="40"><a class="indexNavLink" href="/professional/index/ind_na.html">N</a></td>
+<td class="segmentSquare" sizcache="7" sizset="41"><a class="indexNavLink" href="/professional/index/ind_ob.html">O</a></td>
+<td class="segmentSquare" sizcache="7" sizset="42"><a class="indexNavLink" href="/professional/index/ind_pa.html">P</a></td>
+<td class="segmentSquare" sizcache="7" sizset="43"><a class="indexNavLink" href="/professional/index/ind_qf.html">Q</a></td>
+<td class="segmentSquare" sizcache="7" sizset="44"><a class="indexNavLink" href="/professional/index/ind_ra.html">R</a></td></tr>
+<tr sizcache="8" sizset="45">
+<td class="segmentSquare" sizcache="7" sizset="45"><a class="indexNavLink" href="/professional/index/ind_sa.html">S</a></td>
+<td class="segmentSquare" sizcache="7" sizset="46"><a class="indexNavLink" href="/professional/index/ind_t3.html">T</a></td>
+<td class="segmentSquare" sizcache="7" sizset="47"><a class="indexNavLink" href="/professional/index/ind_ub.html">U</a></td>
+<td class="segmentSquare" sizcache="7" sizset="48"><a class="indexNavLink" href="/professional/index/ind_va.html">V</a></td>
+<td class="segmentSquare" sizcache="7" sizset="49"><a class="indexNavLink" href="/professional/index/ind_wa.html">W</a></td>
+<td class="segmentSquare" sizcache="7" sizset="50"><a class="indexNavLink" href="/professional/index/ind_xa.html">X</a></td>
+<td class="segmentSquare" sizcache="7" sizset="51"><a class="indexNavLink" href="/professional/index/ind_ya.html">Y</a></td>
+<td class="segmentSquare" sizcache="7" sizset="52"><a class="indexNavLink" href="/professional/index/ind_za.html">Z</a></td></tr></tbody></table></td></tr>
+<tr sizcache="8" sizset="53">
+<td style="DISPLAY: none; overFlow: hidden" id="tabNavTable3" class="tabContainer" jquery1360672177504="334" sizcache="7" sizset="53">
+<ul style="DISPLAY: none; overFlow: hidden" id="FirstMenu" class="MMSymptomUL" sizcache="7" sizset="53">
+<li sizcache="7" sizset="53"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/acute_abdomen_and_surgical_gastroenterology/acute_abdominal_pain.html?tabid=tabNav3">Abdominal Pain, Acute</a> 
+<li sizcache="7" sizset="54"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/chronic_and_recurrent_abdominal_pain.html?tabid=tabNav3">Abdominal pain, Chronic</a> 
+<li sizcache="7" sizset="55"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/dermatologic_disorders/hair_disorders/alopecia.html?tabid=tabNav3">Alopecia</a> 
+<li sizcache="7" sizset="56"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/menstrual_abnormalities/amenorrhea.html?tabid=tabNav3">Amenorrhea</a> 
+<li sizcache="7" sizset="57"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/neurologic_disorders/function_and_dysfunction_of_the_cerebral_lobes/amnesias.html?tabid=tabNav3">Amnesia</a> 
+<li sizcache="7" sizset="58"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_nasal_and_pharyngeal_symptoms/overview_of_smell_and_taste_abnormalities.html?tabid=tabNav3">Anosmia</a> 
+<li sizcache="7" sizset="59"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/hematology_and_oncology/hemostasis/excessive_bleeding.html?tabid=tabNav3">Bleeding, Excessive</a> 
+<li sizcache="7" sizset="60"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/breast_disorders/breast_lumps.html?tabid=tabNav3">Breast Lumps</a> 
+<li sizcache="7" sizset="61"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/cardiovascular_disorders/symptoms_of_cardiovascular_disorders/chest_pain.html?tabid=tabNav3">Chest Pain</a> 
+<li sizcache="7" sizset="62"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/constipation.html?tabid=tabNav3">Constipation in Adults</a> 
+<li sizcache="7" sizset="63"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/constipation_in_children.html?tabid=tabNav3">Constipation in Children</a> 
+<li sizcache="7" sizset="64"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pulmonary_disorders/symptoms_of_pulmonary_disorders/cough.html?tabid=tabNav3">Cough in Adults</a> 
+<li sizcache="7" sizset="65"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/cough_in_children.html?tabid=tabNav3">Cough in Children</a> 
+<li sizcache="7" sizset="66"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/crying.html?tabid=tabNav3">Crying</a> 
+<li sizcache="7" sizset="67"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/diarrhea.html?tabid=tabNav3">Diarrhea in Adults</a> 
+<li sizcache="7" sizset="68"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/diarrhea_in_children.html?tabid=tabNav3">Diarrhea in Children</a> 
+<li sizcache="7" sizset="69"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/diplopia.html?tabid=tabNav3">Diplopia</a> 
+<li sizcache="7" sizset="70"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_ear_problems/dizziness_and_vertigo.html?tabid=tabNav3">Dizziness</a> 
+<li sizcache="7" sizset="71"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/dental_disorders/symptoms_of_dental_and_oral_disorders/xerostomia.html?tabid=tabNav3">Dry Mouth</a> 
+<li sizcache="7" sizset="72"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/menstrual_abnormalities/dysmenorrhea.html?tabid=tabNav3">Dysmenorrhea</a> 
+<li sizcache="7" sizset="73"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/dyspepsia.html?tabid=tabNav3">Dyspepsia</a> 
+<li sizcache="7" sizset="74"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/esophageal_and_swallowing_disorders/dysphagia.html?tabid=tabNav3">Dysphagia</a> 
+<li sizcache="7" sizset="75"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pulmonary_disorders/symptoms_of_pulmonary_disorders/dyspnea.html?tabid=tabNav3">Dyspnea</a> 
+<li sizcache="7" sizset="76"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/dysuria.html?tabid=tabNav3">Dysuria</a> 
+<li sizcache="7" sizset="77"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_ear_problems/earache.html?tabid=tabNav3">Earache</a> 
+<li sizcache="7" sizset="78"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_ear_problems/otorrhea.html?tabid=tabNav3">Ear Discharge</a> 
+<li sizcache="7" sizset="79"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/cardiovascular_disorders/symptoms_of_cardiovascular_disorders/edema.html?tabid=tabNav3">Edema</a> 
+<li sizcache="7" sizset="80"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/symptoms_during_pregnancy/lower-extremity_edema_during_late_pregnancy.html?tabid=tabNav3">Edema During Late Pregnancy</a> 
+<li sizcache="7" sizset="81"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_nasal_and_pharyngeal_symptoms/epistaxis.html?tabid=tabNav3">Epistaxis</a> 
+<li sizcache="7" sizset="82"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/genitourinary_disorders/male_sexual_dysfunction/overview_of_male_sexual_function.html?tabid=tabNav3">Erectile dysfunction</a> 
+<li sizcache="7" sizset="83"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/eyelid_swelling.html?tabid=tabNav3">Eyelid Swelling</a> 
+<li sizcache="7" sizset="84"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/eye_pain.html?tabid=tabNav3">Eye Pain</a> 
+<li sizcache="7" sizset="85"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/infectious_diseases/biology_of_infectious_disease/manifestations_of_infection.html?tabid=tabNav3">Fever</a> 
+<li sizcache="7" sizset="86"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/infectious_diseases/biology_of_infectious_disease/fever.html?tabid=tabNav3">Fever, Acute, in Adults</a> 
+<li sizcache="7" sizset="87"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/infectious_diseases/biology_of_infectious_disease/fever_of_unknown_origin_fuo.html?tabid=tabNav3">Fever, Chronic (FUO)</a> 
+<li sizcache="7" sizset="88"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/fever_in_infants_and_children.html?tabid=tabNav3">Fever in Infants and Children</a> 
+<li sizcache="7" sizset="89"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/floaters.html?tabid=tabNav3">Floaters</a> 
+<li sizcache="7" sizset="90"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/gas-related_complaints.html?tabid=tabNav3">Gas</a> 
+<li sizcache="7" sizset="91"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/gi_bleeding/overview_of_gi_bleeding.html?tabid=tabNav3">Gastrointestinal Bleeding</a> 
+<li sizcache="7" sizset="92"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/dental_disorders/symptoms_of_dental_and_oral_disorders/halitosis.html?tabid=tabNav3">Halitosis</a> 
+<li sizcache="7" sizset="93"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/neurologic_disorders/headache/approach_to_the_patient_with_headache.html?tabid=tabNav3">Headache</a> 
+<li sizcache="7" sizset="94"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/hearing_loss/evaluation_of_hearing_loss.html?tabid=tabNav3">Hearing Loss</a> 
+<li sizcache="7" sizset="95"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/hearing_loss/sudden_deafness.html?tabid=tabNav3">Hearing Loss: Sudden Deafness</a> 
+<li sizcache="7" sizset="96"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/hematospermia.html?tabid=tabNav3">Hematospermia</a> 
+<li sizcache="7" sizset="97"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/isolated_hematuria.html?tabid=tabNav3">Hematuria</a> 
+<li sizcache="7" sizset="98"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pulmonary_disorders/symptoms_of_pulmonary_disorders/hemoptysis.html?tabid=tabNav3">Hemoptysis</a> 
+<li sizcache="7" sizset="99"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/hiccups.html?tabid=tabNav3">Hiccups</a> 
+<li sizcache="7" sizset="100"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/dermatologic_disorders/hair_disorders/hirsutism.html?tabid=tabNav3">Hirsutism</a> 
+<li sizcache="7" sizset="101"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/neurologic_disorders/sleep_and_wakefulness_disorders/insomnia_and_excessive_daytime_sleepiness_eds.html?tabid=tabNav3">Insomnia and Excessive Daytime Sleepiness</a> 
+<li sizcache="7" sizset="102"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/dermatologic_disorders/approach_to_the_dermatologic_patient/itching.html?tabid=tabNav3">Itching</a> 
+<li sizcache="7" sizset="103"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/anorectal_disorders/pruritus_ani_anal_itching.html?tabid=tabNav3">Itching, Anal</a> 
+<li sizcache="7" sizset="104"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/hepatic_and_biliary_disorders/approach_to_the_patient_with_liver_disease/jaundice.html?tabid=tabNav3">Jaundice in Adults</a> 
+<li sizcache="7" sizset="105"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pediatrics/metabolic_electrolyte_and_toxic_disorders_in_neonates/neonatal_hyperbilirubinemia.html?tabid=tabNav3">Jaundice in Neonates</a> 
+<li sizcache="7" sizset="106"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/musculoskeletal_and_connective_tissue_disorders/symptoms_of_joint_disorders/monarticular_joint_pain.html?tabid=tabNav3">Joint Pain, Monarticular</a> 
+<li sizcache="7" sizset="107"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/musculoskeletal_and_connective_tissue_disorders/symptoms_of_joint_disorders/polyarticular_joint_pain.html?tabid=tabNav3">Joint Pain, Polyarticular</a> 
+<li sizcache="7" sizset="108"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/injuries_poisoning/sports_injury/knee_pain.html?tabid=tabNav3">Knee pain</a> 
+<li sizcache="7" sizset="109"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/lump_in_throat.html?tabid=tabNav3">Lump in Throat</a> 
+<li sizcache="7" sizset="110"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_nasal_and_pharyngeal_symptoms/nasal_congestion_and_rhinorrhea.html?tabid=tabNav3">Nasal Congestion and Rhinorrhea</a> 
+<li sizcache="7" sizset="111"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/symptoms_during_pregnancy/nausea_and_vomiting_during_early_pregnancy.html?tabid=tabNav3">Nausea and Vomiting During Early pPregnancy</a> 
+<li sizcache="7" sizset="112"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/nausea_and_vomiting.html?tabid=tabNav3">Nausea and Vomiting in Adults</a> 
+<li sizcache="7" sizset="113"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/nausea_and_vomiting_in_infants_and_children.html?tabid=tabNav3">Nausea and Vomiting in Infants and Children</a> 
+<li sizcache="7" sizset="114"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/musculoskeletal_and_connective_tissue_disorders/neck_and_back_pain/evaluation_of_neck_and_back_pain.html?tabid=tabNav3">Neck and Back Pain</a> 
+<li sizcache="7" sizset="115"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_nasal_and_pharyngeal_symptoms/neck_mass.html?tabid=tabNav3">Neck Mass</a> 
+<li sizcache="7" sizset="116"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/breast_disorders/nipple_discharge.html?tabid=tabNav3">Nipple Discharge</a> 
+<li sizcache="7" sizset="117"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/cardiovascular_disorders/symptoms_of_cardiovascular_disorders/orthostatic_hypotension.html?tabid=tabNav3">Orthostatis Hypotension</a> 
+<li sizcache="7" sizset="118"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/neurologic_disorders/pain/overview_of_pain.html?tabid=tabNav3">Pain</a> 
+<li sizcache="7" sizset="119"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/neurologic_disorders/pain/chronic_pain.html?tabid=tabNav3">Pain, Chronic</a> 
+<li sizcache="7" sizset="120"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/cardiovascular_disorders/symptoms_of_cardiovascular_disorders/palpitations.html?tabid=tabNav3">Palpitations</a> 
+<li sizcache="7" sizset="121"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/symptoms_of_gynecologic_disorders/pelvic_pain.html?tabid=tabNav3">Pelvic Pain</a> 
+<li sizcache="7" sizset="122"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/symptoms_during_pregnancy/pelvic_pain_during_early_pregnancy.html?tabid=tabNav3">Pelvic Pain During Early Pregnancy</a> 
+<li sizcache="7" sizset="123"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/polyuria.html?tabid=tabNav3">Polyuria</a> 
+<li sizcache="7" sizset="124"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/priapism.html?tabid=tabNav3">Priapism</a> 
+<li sizcache="7" sizset="125"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/red_eye.html?tabid=tabNav3">Red Eye</a> 
+<li sizcache="7" sizset="126"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/scrotal_pain.html?tabid=tabNav3">Scrotal Pain</a> 
+<li sizcache="7" sizset="127"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_nasal_and_pharyngeal_symptoms/sore_throat.html?tabid=tabNav3">Sore Throat</a> 
+<li sizcache="7" sizset="128"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/dental_disorders/symptoms_of_dental_and_oral_disorders/stomatitis.html?tabid=tabNav3">Stomatitis</a> 
+<li sizcache="7" sizset="129"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pulmonary_disorders/symptoms_of_pulmonary_disorders/stridor.html?tabid=tabNav3">Stridor</a> 
+<li sizcache="7" sizset="130"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/cardiovascular_disorders/symptoms_of_cardiovascular_disorders/syncope.html?tabid=tabNav3">Syncope</a> 
+<li sizcache="7" sizset="131"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/tearing.html?tabid=tabNav3">Tearing</a> 
+<li sizcache="7" sizset="132"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_ear_problems/tinnitus.html?tabid=tabNav3">Tinnitus</a> 
+<li sizcache="7" sizset="133"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/dental_disorders/symptoms_of_dental_and_oral_disorders/toothache_and_infection.html?tabid=tabNav3">Toothache</a> 
+<li sizcache="7" sizset="134"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/neurologic_disorders/movement_and_cerebellar_disorders/tremor.html?tabid=tabNav3">Tremor</a> 
+<li sizcache="7" sizset="135"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/urinary_frequency.html?tabid=tabNav3">Urinary Frequency</a> 
+<li sizcache="7" sizset="136"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/genitourinary_disorders/voiding_disorders/urinary_incontinence_in_adults.html?tabid=tabNav3">Urinary Incontinence in Adults</a> 
+<li sizcache="7" sizset="137"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/pediatrics/incontinence_in_children/urinary_incontinence_in_children.html?tabid=tabNav3">Urinary Incontinence in Children</a> 
+<li sizcache="7" sizset="138"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/genitourinary_disorders/voiding_disorders/urinary_retention.html?tabid=tabNav3">Urinary Retention</a> 
+<li sizcache="7" sizset="139"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/dermatologic_disorders/approach_to_the_dermatologic_patient/urticaria.html?tabid=tabNav3">Urticaria</a> 
+<li sizcache="7" sizset="140"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/symptoms_of_gynecologic_disorders/vaginal_bleeding.html?tabid=tabNav3">Vaginal Bleeding</a> 
+<li sizcache="7" sizset="141"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/symptoms_during_pregnancy/vaginal_bleeding_during_early_pregnancy.html?tabid=tabNav3">Vaginal Bleeding During Early Pregnancy</a> 
+<li sizcache="7" sizset="142"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/symptoms_during_pregnancy/vaginal_bleeding_during_late_pregnancy.html?tabid=tabNav3">Vaginal Bleeding During Late Pregnancy</a> 
+<li sizcache="7" sizset="143"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/gynecology_and_obstetrics/vaginitis_and_pelvic_inflammatory_disease_pid/vaginitis.html?tabid=tabNav3">Vaginal Itching and Discharge</a> 
+<li sizcache="7" sizset="144"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/blurred_vision.html?tabid=tabNav3">Vision, Blurred</a> 
+<li sizcache="7" sizset="145"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/acute_vision_loss.html?tabid=tabNav3">Vision Loss, Acute</a> 
+<li sizcache="7" sizset="146"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="/professional/neurologic_disorders/approach_to_the_neurologic_patient/weakness.html?tabid=tabNav3">Weakness, Generalized</a> 
+<li sizcache="7" sizset="147"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" class="last" href="/professional/pulmonary_disorders/symptoms_of_pulmonary_disorders/wheezing.html?tabid=tabNav3">Wheezing</a> </li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></ul>
+<div style="WIDTH: 204px; MARGIN-BOTTOM: 25px !important; HEIGHT: 265px !important; OVERFLOW: hidden; PADDING-TOP: 8px">
+<ul id="paginate_main_ul_menu_1" class="MMsectionsUL">
+<li style="MARGIN: 0px; DISPLAY: inline-block; FLOAT: left" id="menu_part_1_menu_1" class="slide_li _current">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/acute_abdomen_and_surgical_gastroenterology/acute_abdominal_pain.html?tabid=tabNav3">Abdominal Pain, Acute</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/chronic_and_recurrent_abdominal_pain.html?tabid=tabNav3">Abdominal pain, Chronic</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/dermatologic_disorders/hair_disorders/alopecia.html?tabid=tabNav3">Alopecia</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/menstrual_abnormalities/amenorrhea.html?tabid=tabNav3">Amenorrhea</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/neurologic_disorders/function_and_dysfunction_of_the_cerebral_lobes/amnesias.html?tabid=tabNav3">Amnesia</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_nasal_and_pharyngeal_symptoms/overview_of_smell_and_taste_abnormalities.html?tabid=tabNav3">Anosmia</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/hematology_and_oncology/hemostasis/excessive_bleeding.html?tabid=tabNav3">Bleeding, Excessive</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/breast_disorders/breast_lumps.html?tabid=tabNav3">Breast Lumps</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/cardiovascular_disorders/symptoms_of_cardiovascular_disorders/chest_pain.html?tabid=tabNav3">Chest Pain</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/constipation.html?tabid=tabNav3">Constipation in Adults</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_2_menu_1" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/constipation_in_children.html?tabid=tabNav3">Constipation in Children</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pulmonary_disorders/symptoms_of_pulmonary_disorders/cough.html?tabid=tabNav3">Cough in Adults</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/cough_in_children.html?tabid=tabNav3">Cough in Children</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/crying.html?tabid=tabNav3">Crying</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/diarrhea.html?tabid=tabNav3">Diarrhea in Adults</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/diarrhea_in_children.html?tabid=tabNav3">Diarrhea in Children</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/diplopia.html?tabid=tabNav3">Diplopia</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_ear_problems/dizziness_and_vertigo.html?tabid=tabNav3">Dizziness</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/dental_disorders/symptoms_of_dental_and_oral_disorders/xerostomia.html?tabid=tabNav3">Dry Mouth</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/menstrual_abnormalities/dysmenorrhea.html?tabid=tabNav3">Dysmenorrhea</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_3_menu_1" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/dyspepsia.html?tabid=tabNav3">Dyspepsia</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/esophageal_and_swallowing_disorders/dysphagia.html?tabid=tabNav3">Dysphagia</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pulmonary_disorders/symptoms_of_pulmonary_disorders/dyspnea.html?tabid=tabNav3">Dyspnea</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/dysuria.html?tabid=tabNav3">Dysuria</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_ear_problems/earache.html?tabid=tabNav3">Earache</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_ear_problems/otorrhea.html?tabid=tabNav3">Ear Discharge</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/cardiovascular_disorders/symptoms_of_cardiovascular_disorders/edema.html?tabid=tabNav3">Edema</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/symptoms_during_pregnancy/lower-extremity_edema_during_late_pregnancy.html?tabid=tabNav3">Edema During Late Pregnancy</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_nasal_and_pharyngeal_symptoms/epistaxis.html?tabid=tabNav3">Epistaxis</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/genitourinary_disorders/male_sexual_dysfunction/overview_of_male_sexual_function.html?tabid=tabNav3">Erectile dysfunction</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_4_menu_1" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/eyelid_swelling.html?tabid=tabNav3">Eyelid Swelling</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/eye_pain.html?tabid=tabNav3">Eye Pain</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/infectious_diseases/biology_of_infectious_disease/manifestations_of_infection.html?tabid=tabNav3">Fever</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/infectious_diseases/biology_of_infectious_disease/fever.html?tabid=tabNav3">Fever, Acute, in Adults</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/infectious_diseases/biology_of_infectious_disease/fever_of_unknown_origin_fuo.html?tabid=tabNav3">Fever, Chronic (FUO)</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/fever_in_infants_and_children.html?tabid=tabNav3">Fever in Infants and Children</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/floaters.html?tabid=tabNav3">Floaters</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/gas-related_complaints.html?tabid=tabNav3">Gas</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/gi_bleeding/overview_of_gi_bleeding.html?tabid=tabNav3">Gastrointestinal Bleeding</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/dental_disorders/symptoms_of_dental_and_oral_disorders/halitosis.html?tabid=tabNav3">Halitosis</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_5_menu_1" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/neurologic_disorders/headache/approach_to_the_patient_with_headache.html?tabid=tabNav3">Headache</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/hearing_loss/evaluation_of_hearing_loss.html?tabid=tabNav3">Hearing Loss</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/hearing_loss/sudden_deafness.html?tabid=tabNav3">Hearing Loss: Sudden Deafness</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/hematospermia.html?tabid=tabNav3">Hematospermia</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/isolated_hematuria.html?tabid=tabNav3">Hematuria</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pulmonary_disorders/symptoms_of_pulmonary_disorders/hemoptysis.html?tabid=tabNav3">Hemoptysis</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/hiccups.html?tabid=tabNav3">Hiccups</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/dermatologic_disorders/hair_disorders/hirsutism.html?tabid=tabNav3">Hirsutism</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/neurologic_disorders/sleep_and_wakefulness_disorders/insomnia_and_excessive_daytime_sleepiness_eds.html?tabid=tabNav3">Insomnia and Excessive Daytime Sleepiness</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/dermatologic_disorders/approach_to_the_dermatologic_patient/itching.html?tabid=tabNav3">Itching</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_6_menu_1" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/anorectal_disorders/pruritus_ani_anal_itching.html?tabid=tabNav3">Itching, Anal</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/hepatic_and_biliary_disorders/approach_to_the_patient_with_liver_disease/jaundice.html?tabid=tabNav3">Jaundice in Adults</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pediatrics/metabolic_electrolyte_and_toxic_disorders_in_neonates/neonatal_hyperbilirubinemia.html?tabid=tabNav3">Jaundice in Neonates</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/musculoskeletal_and_connective_tissue_disorders/symptoms_of_joint_disorders/monarticular_joint_pain.html?tabid=tabNav3">Joint Pain, Monarticular</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/musculoskeletal_and_connective_tissue_disorders/symptoms_of_joint_disorders/polyarticular_joint_pain.html?tabid=tabNav3">Joint Pain, Polyarticular</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/injuries_poisoning/sports_injury/knee_pain.html?tabid=tabNav3">Knee pain</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/lump_in_throat.html?tabid=tabNav3">Lump in Throat</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_nasal_and_pharyngeal_symptoms/nasal_congestion_and_rhinorrhea.html?tabid=tabNav3">Nasal Congestion and Rhinorrhea</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/symptoms_during_pregnancy/nausea_and_vomiting_during_early_pregnancy.html?tabid=tabNav3">Nausea and Vomiting During Early pPregnancy</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gastrointestinal_disorders/symptoms_of_gi_disorders/nausea_and_vomiting.html?tabid=tabNav3">Nausea and Vomiting in Adults</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_7_menu_1" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pediatrics/approach_to_the_care_of_normal_infants_and_children/nausea_and_vomiting_in_infants_and_children.html?tabid=tabNav3">Nausea and Vomiting in Infants and Children</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/musculoskeletal_and_connective_tissue_disorders/neck_and_back_pain/evaluation_of_neck_and_back_pain.html?tabid=tabNav3">Neck and Back Pain</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_nasal_and_pharyngeal_symptoms/neck_mass.html?tabid=tabNav3">Neck Mass</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/breast_disorders/nipple_discharge.html?tabid=tabNav3">Nipple Discharge</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/cardiovascular_disorders/symptoms_of_cardiovascular_disorders/orthostatic_hypotension.html?tabid=tabNav3">Orthostatis Hypotension</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/neurologic_disorders/pain/overview_of_pain.html?tabid=tabNav3">Pain</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/neurologic_disorders/pain/chronic_pain.html?tabid=tabNav3">Pain, Chronic</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/cardiovascular_disorders/symptoms_of_cardiovascular_disorders/palpitations.html?tabid=tabNav3">Palpitations</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/symptoms_of_gynecologic_disorders/pelvic_pain.html?tabid=tabNav3">Pelvic Pain</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/symptoms_during_pregnancy/pelvic_pain_during_early_pregnancy.html?tabid=tabNav3">Pelvic Pain During Early Pregnancy</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_8_menu_1" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/polyuria.html?tabid=tabNav3">Polyuria</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/priapism.html?tabid=tabNav3">Priapism</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/red_eye.html?tabid=tabNav3">Red Eye</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/scrotal_pain.html?tabid=tabNav3">Scrotal Pain</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_nasal_and_pharyngeal_symptoms/sore_throat.html?tabid=tabNav3">Sore Throat</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/dental_disorders/symptoms_of_dental_and_oral_disorders/stomatitis.html?tabid=tabNav3">Stomatitis</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pulmonary_disorders/symptoms_of_pulmonary_disorders/stridor.html?tabid=tabNav3">Stridor</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/cardiovascular_disorders/symptoms_of_cardiovascular_disorders/syncope.html?tabid=tabNav3">Syncope</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/tearing.html?tabid=tabNav3">Tearing</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders/approach_to_the_patient_with_ear_problems/tinnitus.html?tabid=tabNav3">Tinnitus</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_9_menu_1" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/dental_disorders/symptoms_of_dental_and_oral_disorders/toothache_and_infection.html?tabid=tabNav3">Toothache</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/neurologic_disorders/movement_and_cerebellar_disorders/tremor.html?tabid=tabNav3">Tremor</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/genitourinary_disorders/symptoms_of_genitourinary_disorders/urinary_frequency.html?tabid=tabNav3">Urinary Frequency</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/genitourinary_disorders/voiding_disorders/urinary_incontinence_in_adults.html?tabid=tabNav3">Urinary Incontinence in Adults</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/pediatrics/incontinence_in_children/urinary_incontinence_in_children.html?tabid=tabNav3">Urinary Incontinence in Children</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/genitourinary_disorders/voiding_disorders/urinary_retention.html?tabid=tabNav3">Urinary Retention</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/dermatologic_disorders/approach_to_the_dermatologic_patient/urticaria.html?tabid=tabNav3">Urticaria</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/symptoms_of_gynecologic_disorders/vaginal_bleeding.html?tabid=tabNav3">Vaginal Bleeding</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/symptoms_during_pregnancy/vaginal_bleeding_during_early_pregnancy.html?tabid=tabNav3">Vaginal Bleeding During Early Pregnancy</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/symptoms_during_pregnancy/vaginal_bleeding_during_late_pregnancy.html?tabid=tabNav3">Vaginal Bleeding During Late Pregnancy</a> </li></ul></li>
+<li style="MARGIN: 0px; DISPLAY: none; FLOAT: left" id="menu_part_10_menu_1" class="slide_li">
+<ul style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 200px; PADDING-RIGHT: 0px; HEIGHT: 235px; PADDING-TOP: 0px">
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics/vaginitis_and_pelvic_inflammatory_disease_pid/vaginitis.html?tabid=tabNav3">Vaginal Itching and Discharge</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/blurred_vision.html?tabid=tabNav3">Vision, Blurred</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/acute_vision_loss.html?tabid=tabNav3">Vision Loss, Acute</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" href="http://www.merckmanuals.com/professional/neurologic_disorders/approach_to_the_neurologic_patient/weakness.html?tabid=tabNav3">Weakness, Generalized</a> </li>
+<li style="WIDTH: 210px"><a style="FONT-SIZE: 1em; FONT-WEIGHT: bold" class="last" href="http://www.merckmanuals.com/professional/pulmonary_disorders/symptoms_of_pulmonary_disorders/wheezing.html?tabid=tabNav3">Wheezing</a> </li>
+<li style="WIDTH: 210px"></li>
+<li style="WIDTH: 210px"></li>
+<li style="WIDTH: 210px"></li>
+<li style="WIDTH: 210px"></li>
+<li style="WIDTH: 210px"></li></ul></li>
+<div style="PADDING-LEFT: 31px !important">
+<li style="BORDER-BOTTOM: #777 0px solid; TEXT-ALIGN: center !important; BORDER-LEFT: #777 0px solid; PADDING-LEFT: 25px; MARGIN-BOTTOM: 15px !important; FLOAT: left !important; BORDER-TOP: #777 0px solid; BORDER-RIGHT: #777 0px solid" id="dem_menu_1" class="jPaginate">
+<div id="jPag-control-back" class="jPag-control-back" jquery1360672177504="319">
+<p class="jPag-first" jquery1360672177504="305" /><span class="pointer prev"></span></div>
+<div style="WIDTH: 74px; OVERFLOW: hidden" jquery1360672177504="317">
+<ul style="WIDTH: 146px" class="jPag-pages">
+<li jquery1360672177504="307"><a style="BACKGROUND-COLOR: #fff; COLOR: #000" class="jPag-current" jquery1360672177504="294">1</a></li>
+<li jquery1360672177504="308"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="295">2</a></li>
+<li jquery1360672177504="309"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="296">3</a></li>
+<li jquery1360672177504="310"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="297">4</a></li>
+<li jquery1360672177504="311"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="298">5</a></li>
+<li jquery1360672177504="312"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="299">6</a></li>
+<li jquery1360672177504="313"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="300">7</a></li>
+<li jquery1360672177504="314"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="301">8</a></li>
+<li jquery1360672177504="315"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="302">9</a></li>
+<li jquery1360672177504="316"><a style="BACKGROUND-COLOR: transparent; COLOR: black" class="jPag-inactive" jquery1360672177504="303">10</a></li></ul></div>
+<div style="LEFT: 100px" id="jPag-control-front" class="jPag-control-front" jquery1360672177504="318"><span class="pointer next"></span>
+<p class="jPag-last" jquery1360672177504="306" /></div>
+<div style="LEFT: 122px" class="allLink"><a style="BACKGROUND-COLOR: transparent; COLOR: black; FONT-WEIGHT: normal !important; TEXT-DECORATION: underline !important" id="show_all" class="myclass" href="http://www.merckmanuals.com/professional/full-sections.html" jquery1360672177504="304">All</a></div></li></div></ul></div></td></tr></tbody></table>
+<div id="scrollingNav" jquery1360672177504="22" sizcache="10" sizset="148">
+<div id="inthistopicOuter" jquery1360672177504="24" sizcache="10" sizset="148">
+<div style="POSITION: relative; WIDTH: 206px; BACKGROUND: #fff; OVERFLOW: hidden; TOP: 0px; LEFT: 5px" id="inthistopicNav" class="no-print" jquery1360672177504="26" sizcache="10" sizset="148">
+<table border="0" cellspacing="0" cellpadding="0" width="100%" jquery1360672177504="28" sizcache="10" sizset="148">
+<tbody jquery1360672177504="30" sizcache="10" sizset="148">
+<tr jquery1360672177504="32">
+<td class="MMnavTitleTab" jquery1360672177504="34">In This Topic</td></tr>
+<tr jquery1360672177504="36" sizcache="10" sizset="148">
+<td style="BORDER-LEFT: #999 1px solid" jquery1360672177504="38" sizcache="10" sizset="148">
+<table style="MARGIN: 10px" class="MMnavSectionList" border="0" cellspacing="0" cellpadding="0" jquery1360672177504="40" sizcache="9" sizset="148">
+<tbody jquery1360672177504="42" sizcache="9" sizset="148">
+<tr jquery1360672177504="44" sizcache="8" sizset="148">
+<td class="MMnavSectionTitle" valign="top" colspan="7" jquery1360672177504="46" sizcache="7" sizset="148"><a class="MMtopicLnk" href="/professional/eye_disorders.html" jquery1360672177504="48">Eye Disorders</a></td></tr>
+<tr jquery1360672177504="50">
+<td jquery1360672177504="52"></td>
+<td class="MMnavSectionSubTitle" colspan="6" jquery1360672177504="54">Cataract</td></tr>
+<tr jquery1360672177504="56" sizcache="8" sizset="149">
+<td jquery1360672177504="58"></td>
+<td jquery1360672177504="60"></td>
+<td valign="top" jquery1360672177504="62"><img class="bulletDblank" border="0" alt="" src="/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="64" /></td>
+<td colspan="4" jquery1360672177504="66" sizcache="7" sizset="149"><a class="MMtopicLnk" href="#top" jquery1360672177504="68">Cataract</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="70" sizcache="8" sizset="150">
+<td jquery1360672177504="72"></td>
+<td jquery1360672177504="74"></td>
+<td jquery1360672177504="76"></td>
+<td jquery1360672177504="78"><img border="0" alt="" src="/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="80" /></td>
+<td valign="top" jquery1360672177504="82"><img class="bulletFblank" border="0" alt="" src="/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="84" /></td>
+<td colspan="2" jquery1360672177504="86" sizcache="7" sizset="150"><a class="MMtopicLnk" href="#v956548" jquery1360672177504="88">Etiology</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="90" sizcache="8" sizset="151">
+<td jquery1360672177504="92"></td>
+<td jquery1360672177504="94"></td>
+<td jquery1360672177504="96"></td>
+<td jquery1360672177504="98"><img border="0" alt="" src="/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="100" /></td>
+<td valign="top" jquery1360672177504="102"><img class="bulletFblank" border="0" alt="" src="/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="104" /></td>
+<td colspan="2" jquery1360672177504="106" sizcache="7" sizset="151"><a class="MMtopicLnk" href="#v956575" jquery1360672177504="108">Symptoms and Signs</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="110" sizcache="8" sizset="152">
+<td jquery1360672177504="112"></td>
+<td jquery1360672177504="114"></td>
+<td jquery1360672177504="116"></td>
+<td jquery1360672177504="118"><img border="0" alt="" src="/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="120" /></td>
+<td valign="top" jquery1360672177504="122"><img class="bulletFblank" border="0" alt="" src="/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="124" /></td>
+<td colspan="2" jquery1360672177504="126" sizcache="7" sizset="152"><a class="MMtopicLnk" href="#v956582" jquery1360672177504="128">Diagnosis</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="130" sizcache="8" sizset="153">
+<td jquery1360672177504="132"></td>
+<td jquery1360672177504="134"></td>
+<td jquery1360672177504="136"></td>
+<td jquery1360672177504="138"><img border="0" alt="" src="/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="140" /></td>
+<td valign="top" jquery1360672177504="142"><img class="bulletFblank" border="0" alt="" src="/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="144" /></td>
+<td colspan="2" jquery1360672177504="146" sizcache="7" sizset="153"><a class="MMtopicLnk" href="#v956589" jquery1360672177504="148">Treatment</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="150" sizcache="8" sizset="154">
+<td jquery1360672177504="152"></td>
+<td jquery1360672177504="154"></td>
+<td jquery1360672177504="156"></td>
+<td jquery1360672177504="158"><img border="0" alt="" src="/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="160" /></td>
+<td valign="top" jquery1360672177504="162"><img class="bulletFblank" border="0" alt="" src="/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="164" /></td>
+<td colspan="2" jquery1360672177504="166" sizcache="7" sizset="154"><a class="MMtopicLnk" href="#v956622" jquery1360672177504="168">Prevention</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="170" sizcache="8" sizset="155">
+<td jquery1360672177504="172"></td>
+<td jquery1360672177504="174"></td>
+<td jquery1360672177504="176"></td>
+<td jquery1360672177504="178"><img border="0" alt="" src="/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="180" /></td>
+<td valign="top" jquery1360672177504="182"><img class="bulletFblank" border="0" alt="" src="/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="184" /></td>
+<td colspan="2" jquery1360672177504="186" sizcache="7" sizset="155"><a class="MMtopicLnk" href="#v6580394" jquery1360672177504="188">Key Points</a></td></tr>
+<tr jquery1360672177504="190">
+<td jquery1360672177504="192"><img alt="" src="/site_images/mm/s.gif" width="8" height="1" jquery1360672177504="194" /></td>
+<td jquery1360672177504="196"><img alt="" src="/site_images/mm/s.gif" width="8" height="1" jquery1360672177504="198" /></td>
+<td jquery1360672177504="200"><img alt="" src="/site_images/mm/s.gif" width="13" height="1" jquery1360672177504="202" /></td>
+<td jquery1360672177504="204"><img alt="" src="/site_images/mm/s.gif" width="8" height="1" jquery1360672177504="206" /></td>
+<td jquery1360672177504="208"><img alt="" src="/site_images/mm/s.gif" width="8" height="1" jquery1360672177504="210" /></td>
+<td jquery1360672177504="212"><img alt="" src="/site_images/mm/s.gif" width="8" height="1" jquery1360672177504="214" /></td>
+<td jquery1360672177504="216"><img alt="" src="/site_images/mm/s.gif" width="108" height="1" jquery1360672177504="218" /></td></tr></tbody></table>
+<table style="MARGIN: 8px 0px 10px 10px" border="0" cellspacing="0" cellpadding="0" jquery1360672177504="220" sizcache="9" sizset="156">
+<tbody jquery1360672177504="222" sizcache="9" sizset="156">
+<tr jquery1360672177504="224" sizcache="8" sizset="156">
+<td jquery1360672177504="226" sizcache="7" sizset="156"><a class="backToTop" href="#top" jquery1360672177504="228">Back to Top</a></td>
+<td class="imageArrowUp" jquery1360672177504="230"><img alt="" src="/site_images/mm/s.gif" width="13" height="5" jquery1360672177504="232" /></td></tr></tbody></table>
+<tr jquery1360672177504="234">
+<td class="MMnavTitleBottom" jquery1360672177504="236"></td></tr></td></tr></tbody></table></div></div>
+<div id="resources" width="20%" jquery1360672177504="242" sizcache="7" sizset="157">
+<div class="MMnavTitleBar no-print" jquery1360672177504="244">Resources</div>
+<ul class="MMnavSectionUL no-print" jquery1360672177504="246" sizcache="7" sizset="157">
+<li class="ind" jquery1360672177504="248" sizcache="7" sizset="157"><a href="/professional/about/about_the_merck_manual/committed_to_providing_medical_information_merck_and_the_merck_manuals.html?WT.z_resource=About &lt;I&gt;The Merck Manual&lt;/I&gt;" jquery1360672177504="250">About <i jquery1360672177504="252">The Merck Manual</i></a> 
+<li class="ind" jquery1360672177504="254" sizcache="7" sizset="158"><a href="/professional/appendixes/ready_reference_guides/ready_reference_guides.html?WT.z_resource=Ready Reference Guides" jquery1360672177504="256">Ready Reference Guides</a> 
+<li class="ind" jquery1360672177504="258" sizcache="7" sizset="159"><a href="/professional/appendixes/trade_names_of_some_commonly_used_drugs/trade_names_of_some_commonly_used_drugs.html?WT.z_resource=Trade Names of Some Commonly Used Drugs" jquery1360672177504="260">Trade Names of Some Commonly Used Drugs</a> 
+<li class="ind" jquery1360672177504="262" sizcache="7" sizset="160"><a href="/professional/appendixes/normal_laboratory_values/normal_laboratory_values.html?WT.z_resource=Normal Laboratory Values" jquery1360672177504="264">Normal Laboratory Values</a> 
+<li class="ind" jquery1360672177504="266" sizcache="7" sizset="161"><a href="/professional/resources/clinical_calculators/name/calculator.html?WT.z_resource=Clinical Calculators" jquery1360672177504="268">Clinical Calculators</a> 
+<li class="ind" jquery1360672177504="270" sizcache="7" sizset="162"><a href="/professional/resources/multimedia/index.html?WT.z_resource=Multimedia" jquery1360672177504="272">Multimedia</a> 
+<li class="ind" jquery1360672177504="274" sizcache="7" sizset="163"><a href="/professional/resources/selected_links/selected_links.html?WT.z_resource=Selected Links" jquery1360672177504="276">Selected Links</a> </li></li></li></li></li></li></li></ul></div></div></td>
+<td class="top" width="812" sizcache="10" sizset="164">
+<table border="0" cellspacing="0" cellpadding="0" sizcache="10" sizset="164">
+<tbody sizcache="10" sizset="164">
+<tr sizcache="10" sizset="164">
+<td width="805" sizcache="10" sizset="164">
+<div style="DISPLAY: none" id="nws_breadcrumbContainers" class="no-print"><!--bc:flyout start --><!--bc:line start this will be used for flyovers --><!--bc:line end --><!--bc:line start this will be used for flyovers --><!--bc:line end --><!--bc:line start this will be used for flyovers --><!--bc:line end --><!--bc:flyout end --></div>
+<table class="print-left" border="0" cellspacing="0" cellpadding="0" width="787" sizcache="10" sizset="168"><!--bc:top start -->
+<tbody sizcache="10" sizset="168">
+<tr sizcache="10" sizset="168">
+<td colspan="3" jquery1360672177504="279" sizcache="10" sizset="168">
+<ul id="nws_breadcrumbList" class="print-b" sizcache="7" sizset="164">
+<li style="WIDTH: 80px" id="nws_breadcrumbLink_1" class="nws_breadcrumbLink print-b" jquery1360672177504="280" sizcache="7" sizset="164">
+<div sizcache="7" sizset="164"><a href="/" jquery1360672177504="13">Merck Manual</a> </div></li>
+<li class="nws_breadcrumbArrow">&gt; </li>
+<li style="WIDTH: 148px" id="nws_breadcrumbLink_2" class="nws_breadcrumbLink print-b" jquery1360672177504="281" sizcache="7" sizset="165">
+<div sizcache="7" sizset="165"><a href="/professional/index.html">Health Care Professionals</a> </div></li>
+<li class="nws_breadcrumbArrow">&gt; </li>
+<li style="WIDTH: 79px" id="nws_breadcrumbLink_3" class="nws_breadcrumbLink print-b" jquery1360672177504="282" sizcache="7" sizset="166">
+<div sizcache="7" sizset="166"><a href="/professional/eye_disorders.html">Eye Disorders</a> </div></li>
+<li class="nws_breadcrumbArrow">&gt; </li>
+<li style="WIDTH: 49px" id="nws_breadcrumbLink_4" class="nws_breadcrumbLink print-b hover" jquery1360672177504="283" sizcache="7" sizset="167">
+<div sizcache="7" sizset="167"><a href="/professional/eye_disorders/cataract/cataract.html">Cataract</a> </div>
+<div id="nws_breadcrumbDefault">4</div></li></ul>
+<div style="Z-INDEX: 9000; POSITION: absolute; DISPLAY: none; BACKGROUND: none transparent scroll repeat 0% 0%" id="nws_breadcrumbContainer_1" sizcache="10" sizset="168">
+<table id="book_popover" class="navi_pop_down no-print" border="0" cellspacing="0" cellpadding="0" width="789" sizcache="9" sizset="168">
+<tbody sizcache="9" sizset="168">
+<tr>
+<td class="popoverTopBg" colspan="4"></td></tr>
+<tr>
+<td class="popoverTopText" colspan="4"><span class="popoverBlackBold">Manuals</span> available online</td></tr>
+<tr sizcache="8" sizset="168">
+<td class="book_popover_left" height="101" width="188">
+<div id="nws_merckBook_1" jquery1360672177504="284">
+<div style="Z-INDEX: 1100; POSITION: absolute" id="nws_merckBook_1_off" jquery1360672177504="285"></div>
+<div style="Z-INDEX: 1000; POSITION: absolute" id="nws_merckBook_1_on" jquery1360672177504="286"></div></div>
+<div id="nws_merckBook_1_link" jquery1360672177504="287">'/home/index.html' + bookPageLink</div></td>
+<td style="BACKGROUND: #e7f6f6" height="101" width="7"></td>
+<td style="PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #e7f6f6; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px" height="101" width="188">
+<div id="nws_merckBook_2" jquery1360672177504="288">&amp;nbsp;</div>
+<div id="nws_merckBook_2_link" jquery1360672177504="289">'/professional/index.html'</div></td>
+<td class="book_popover_right" height="101" width="331" sizcache="7" sizset="168">These and other Manuals available<br />in print, online, and as mobile applications.<br /><br />See more at <a style="MARGIN: 0px; FLOAT: none; COLOR: #2c4d7a" href="http://www.merckmanuals.com/">MerckManuals.com</a></td></tr>
+<tr>
+<td class="popoverBottomBg" colspan="4"></td></tr></tbody></table></div>
+<div style="Z-INDEX: 9000; POSITION: absolute; DISPLAY: none; BACKGROUND: none transparent scroll repeat 0% 0%" id="nws_breadcrumbContainer_2" sizcache="10" sizset="169">
+<table id="three_column_popover" class="navi_pop_down no-print" border="0" cellspacing="0" cellpadding="0" width="789" sizcache="9" sizset="169">
+<tbody sizcache="9" sizset="169">
+<tr>
+<td class="popoverTopBg" colspan="3"></td></tr>
+<tr>
+<td class="popoverTopText" colspan="3"><span class="popoverBlackBold">Sections</span> in <span class="popoverItalic">Health Care Professionals</span></td></tr>
+<tr sizcache="8" sizset="169">
+<td class="popoverMiddleLeft3Column" sizcache="7" sizset="169">
+<ul sizcache="7" sizset="169">
+<li class="popoverLink" sizcache="7" sizset="169"><a href="http://www.merckmanuals.com/professional/cardiovascular_disorders.html">Cardiovascular Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="170"><a href="http://www.merckmanuals.com/professional/clinical_pharmacology.html">Clinical Pharmacology</a> 
+<li class="popoverLink" sizcache="7" sizset="171"><a href="http://www.merckmanuals.com/professional/critical_care_medicine.html">Critical Care Medicine</a> 
+<li class="popoverLink" sizcache="7" sizset="172"><a href="http://www.merckmanuals.com/professional/dental_disorders.html">Dental Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="173"><a href="http://www.merckmanuals.com/professional/dermatologic_disorders.html">Dermatologic Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="174"><a href="http://www.merckmanuals.com/professional/ear_nose_and_throat_disorders.html">Ear, Nose, and Throat Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="175"><a href="http://www.merckmanuals.com/professional/endocrine_and_metabolic_disorders.html">Endocrine and Metabolic Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="176"><a href="http://www.merckmanuals.com/professional/eye_disorders.html">Eye Disorders</a> </li></li></li></li></li></li></li></li></ul></td>
+<td class="popoverMiddle3Column" sizcache="7" sizset="177">
+<ul sizcache="7" sizset="177">
+<li class="popoverLink" sizcache="7" sizset="177"><a href="http://www.merckmanuals.com/professional/gastrointestinal_disorders.html">Gastrointestinal Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="178"><a href="http://www.merckmanuals.com/professional/genitourinary_disorders.html">Genitourinary Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="179"><a href="http://www.merckmanuals.com/professional/geriatrics.html">Geriatrics</a> 
+<li class="popoverLink" sizcache="7" sizset="180"><a href="http://www.merckmanuals.com/professional/gynecology_and_obstetrics.html">Gynecology and Obstetrics</a> 
+<li class="popoverLink" sizcache="7" sizset="181"><a href="http://www.merckmanuals.com/professional/hematology_and_oncology.html">Hematology and Oncology</a> 
+<li class="popoverLink" sizcache="7" sizset="182"><a href="http://www.merckmanuals.com/professional/hepatic_and_biliary_disorders.html">Hepatic and Biliary Disorders </a>
+<li class="popoverLink" sizcache="7" sizset="183"><a href="http://www.merckmanuals.com/professional/immunology_allergic_disorders.html">Immunology; Allergic Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="184"><a href="http://www.merckmanuals.com/professional/infectious_diseases.html">Infectious Diseases</a> </li></li></li></li></li></li></li></li></ul></td>
+<td class="popoverMiddleRight3Column" sizcache="7" sizset="185">
+<ul sizcache="7" sizset="185">
+<li class="popoverLink" sizcache="7" sizset="185"><a href="http://www.merckmanuals.com/professional/injuries_poisoning.html">Injuries; Poisoning</a> 
+<li class="popoverLink" sizcache="7" sizset="186"><a href="http://www.merckmanuals.com/professional/musculoskeletal_and_connective_tissue_disorders.html">Musculoskeletal and Connective Tissue Disorders </a>
+<li class="popoverLink" sizcache="7" sizset="187"><a href="http://www.merckmanuals.com/professional/neurologic_disorders.html">Neurologic Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="188"><a href="http://www.merckmanuals.com/professional/nutritional_disorders.html">Nutritional Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="189"><a href="http://www.merckmanuals.com/professional/pediatrics.html">Pediatrics</a> 
+<li class="popoverLink" sizcache="7" sizset="190"><a href="http://www.merckmanuals.com/professional/psychiatric_disorders.html">Psychiatric Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="191"><a href="http://www.merckmanuals.com/professional/pulmonary_disorders.html">Pulmonary Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="192"><a href="http://www.merckmanuals.com/professional/special_subjects.html">Special Subjects</a> </li></li></li></li></li></li></li></li></ul><img border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="1" height="1" /></td></tr>
+<tr>
+<td class="popoverBottomBg" colspan="3"></td></tr></tbody></table></div>
+<div style="Z-INDEX: 9000; POSITION: absolute; DISPLAY: none; BACKGROUND: none transparent scroll repeat 0% 0%" id="nws_breadcrumbContainer_3" sizcache="10" sizset="193">
+<table class="navi_pop_down no-print" border="0" cellspacing="0" cellpadding="0" width="789" sizcache="9" sizset="193">
+<tbody sizcache="9" sizset="193">
+<tr>
+<td class="popoverTopBg" colspan="4"></td></tr>
+<tr>
+<td class="popoverTopText" colspan="4"><span class="popoverBlackBold">Chapters</span> in <span class="popoverItalic">Eye Disorders</span></td></tr>
+<tr sizcache="8" sizset="193">
+<td class="popoverMiddleLeft" sizcache="7" sizset="193">
+<ul sizcache="7" sizset="193">
+<li class="popoverLink" sizcache="7" sizset="193"><a href="http://www.merckmanuals.com/professional/eye_disorders/approach_to_the_ophthalmologic_patient/ophthalmic_anatomy.html">Approach to the Ophthalmologic Patient</a> 
+<li class="popoverLink" sizcache="7" sizset="194"><a href="http://www.merckmanuals.com/professional/eye_disorders/symptoms_of_ophthalmologic_disorders/acute_vision_loss.html">Symptoms of Ophthalmologic Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="195"><a href="http://www.merckmanuals.com/professional/eye_disorders/refractive_error/overview_of_refractive_error.html">Refractive Error</a> </li></li></li></ul></td>
+<td class="popoverMiddle" sizcache="7" sizset="196">
+<ul sizcache="7" sizset="196">
+<li class="popoverLink" sizcache="7" sizset="196"><a href="http://www.merckmanuals.com/professional/eye_disorders/eyelid_and_lacrimal_disorders/blepharitis.html">Eyelid and Lacrimal Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="197"><a href="http://www.merckmanuals.com/professional/eye_disorders/conjunctival_and_scleral_disorders/overview_of_conjunctival_and_scleral_disorders.html">Conjunctival and Scleral Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="198"><a href="http://www.merckmanuals.com/professional/eye_disorders/corneal_disorders/introduction.html">Corneal Disorders</a> </li></li></li></ul></td>
+<td class="popoverMiddle" sizcache="7" sizset="199">
+<ul sizcache="7" sizset="199">
+<li class="popoverLink" sizcache="7" sizset="199"><a href="http://www.merckmanuals.com/professional/eye_disorders/glaucoma/overview_of_glaucoma.html">Glaucoma</a> 
+<li class="popoverLink" sizcache="7" sizset="200"><a href="http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html">Cataract</a> 
+<li class="popoverLink" sizcache="7" sizset="201"><a href="http://www.merckmanuals.com/professional/eye_disorders/uveitis_and_related_disorders/overview_of_uveitis.html">Uveitis and Related Disorders</a> </li></li></li></ul></td>
+<td class="popoverMiddleRight" sizcache="7" sizset="202">
+<ul sizcache="7" sizset="202">
+<li class="popoverLink" sizcache="7" sizset="202"><a href="http://www.merckmanuals.com/professional/eye_disorders/retinal_disorders/age-related_macular_degeneration_amd_or_armd.html">Retinal Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="203"><a href="http://www.merckmanuals.com/professional/eye_disorders/optic_nerve_disorders/the_optic_pathway.html">Optic Nerve Disorders</a> 
+<li class="popoverLink" sizcache="7" sizset="204"><a href="http://www.merckmanuals.com/professional/eye_disorders/orbital_diseases/introduction.html">Orbital Diseases</a> </li></li></li></ul><img border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="1" height="1" /></td></tr>
+<tr>
+<td class="popoverBottomBg" colspan="4"></td></tr></tbody></table></div>
+<div style="Z-INDEX: 9000; POSITION: absolute; DISPLAY: block; BACKGROUND: none transparent scroll repeat 0% 0%; TOP: 149px; LEFT: 227px" id="nws_breadcrumbContainer_4" sizcache="10" sizset="205">
+<table class="navi_pop_down no-print" border="0" cellspacing="0" cellpadding="0" width="789" sizcache="9" sizset="205">
+<tbody sizcache="9" sizset="205">
+<tr>
+<td class="popoverTopBg" colspan="4"></td></tr>
+<tr>
+<td class="popoverTopText" colspan="4"><span class="popoverBlackBold">Topics</span> in <span class="popoverItalic">Cataract</span></td></tr>
+<tr sizcache="8" sizset="205">
+<td class="popoverMiddleLeft" sizcache="7" sizset="205">
+<ul sizcache="7" sizset="205">
+<li class="popoverLink" sizcache="7" sizset="205"><a href="http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html">Cataract</a> </li></ul></td>
+<td class="popoverMiddle">
+<ul></ul></td>
+<td class="popoverMiddle">
+<ul></ul></td>
+<td class="popoverMiddleRight">
+<ul></ul><img border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="1" height="1" /></td></tr>
+<tr>
+<td class="popoverBottomBg" colspan="4"></td></tr></tbody></table></div></td></tr>
+<tr>
+<td colspan="3">
+<table style="MARGIN-TOP: 61px" id="menuTable" class="no-print" border="0" width="100%">
+<tbody>
+<tr>
+<td style="PADDING-TOP: 8px">&amp;nbsp;</td></tr></tbody></table></td></tr><!--bc:top end -->
+<tr sizcache="10" sizset="206">
+<td width="16"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td class="print-content" width="594"><span style="DISPLAY: block" class="MMheaderText">Cataract</span> </td>
+<td rowspan="2" width="172" align="right" sizcache="10" sizset="206">
+<table class="imgLink no-print" border="0" cellspacing="0" cellpadding="0" sizcache="9" sizset="206">
+<tbody sizcache="9" sizset="206">
+<tr sizcache="8" sizset="206">
+<td colspan="3">
+<p class="sm">Share This</p></td>
+<td><img border="0" alt="" src="/site_images/mm/s.gif" width="7" height="1" /></td>
+<td class="fbIcon" width="18" sizcache="7" sizset="206"><a href="http://www.facebook.com/share.php?u=http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html" jquery1360672177504="7"><img border="0" alt="" src="/site_images/mm/s.gif" width="14" height="14" /></a></td>
+<td><img border="0" alt="" src="/site_images/mm/s.gif" width="7" height="1" /></td>
+<td>
+<div class="g-plusone" data-annotation="none" data-size="small"></div></td></tr>
+<tr sizcache="8" sizset="207">
+<td style="PADDING-TOP: 8px" class="imageEmail" sizcache="7" sizset="207"><a class="iframe2" href="/professional/email_link.html?uri=/eye_disorders/cataract/cataract.html&amp;section=Eye Disorders&amp;chapter=Cataract&amp;topic=Cataract&amp;fsection=Eye Disorders&amp;fchapter=Cataract&amp;ftopic=Cataract" jquery1360672177504="290"><img border="0" alt="" src="/site_images/mm/s.gif" width="21" height="14" /></a></td>
+<td><img border="0" alt="" src="/site_images/mm/s.gif" width="7" height="1" /></td>
+<td class="imagePrint" sizcache="7" sizset="208">
+<p sizcache="7" sizset="208"><a class="imgLnkText" href="/professional/print/eye_disorders/cataract/cataract.html" jquery1360672177504="1"><img border="0" alt="" src="/site_images/mm/s.gif" width="14" height="35" /></a> </p></td>
+<td><img border="0" alt="" src="/site_images/mm/s.gif" width="12" height="1" /></td>
+<td class="twitterIcon" width="18" sizcache="7" sizset="209"><a href="http://twitter.com/share?url=http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html%3Ftag%3Dtwitter&amp;via=Merck%20Manuals&amp;text=Cataract" jquery1360672177504="8"><img border="0" alt="" src="/site_images/mm/s.gif" width="14" height="14" /></a></td>
+<td><img border="0" alt="" src="/site_images/mm/s.gif" width="7" height="1" /></td>
+<td class="inIcon" width="18" sizcache="7" sizset="210"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html&amp;title=Cataract&amp;source=Merck%20Manuals" jquery1360672177504="9"><img border="0" alt="" src="/site_images/mm/s.gif" width="14" height="14" /></a></td></tr></tbody></table></td></tr>
+<tr>
+<td width="16"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td class="navBlack no-print" width="594"></td>
+<td></td></tr>
+<tr>
+<td width="16"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td style="PADDING-BOTTOM: 16px" class="dotH no-print" height="1" width="787" colspan="2"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td></td></tr></tbody></table></td></tr>
+<tr sizcache="10" sizset="211">
+<td style="PADDING-TOP: 14px" sizcache="10" sizset="211">
+<table border="0" cellspacing="0" cellpadding="0" sizcache="10" sizset="227">
+<tbody sizcache="10" sizset="227">
+<tr sizcache="10" sizset="227">
+<td width="16"><img alt="" src="/site_images/mm/s.gif" width="16" height="1" /></td>
+<td class="print-center" valign="top" width="543" sizcache="10" sizset="227"><!--startindex --><a name="v956526"></a><a name="v956537"></a>
+<p class="MMpara" sizcache="7" sizset="213">(For developmental or congenital cataracts, see <a href="/professional/pediatrics/eye_defects_and_conditions_in_children/congenital_cataract.html">Eye Defects and Conditions in Children: Congenital Cataract</a>.)</p><a name="v956539"></a>
+<p class="MMpara"><span class="MMdefinition">A cataract is a congenital or degenerative opacity of the lens. The main symptom is gradual, painless vision blurring. Diagnosis is by ophthalmoscopy and slit-lamp examination. Treatment is surgical removal and placement of an intraocular lens.</span> </p><a name="v956541"></a>
+<p class="MMpara">Cataracts are the leading cause of blindness worldwide. In the US, almost 20% of people aged 65 to 74 have cataracts that interfere with vision.</p><a name="v6580381"></a>
+<p class="MMpara">Lens opacity can develop in several locations:</p>
+<ul class="MMbulletedSidebar">
+<li>
+<div class="MMlistPara">Central lens nucleus (nuclear cataract)</div>
+<li>
+<div class="MMlistPara">Beneath the posterior lens capsule (posterior subcapsular cataract)</div></li></li></ul><a name="v956548"></a><a name="Etiology"></a>
+<p class="MMfHead print-sub">Etiology</p><a name="v956549"></a>
+<p class="MMpara">Cataracts occur with aging. Other risk factors may include the following:</p>
+<ul class="MMbulletedSidebar">
+<li>
+<div class="MMlistPara">Trauma (sometimes causing cataracts years later)</div>
+<li>
+<div class="MMlistPara">Smoking</div>
+<li>
+<div class="MMlistPara">Alcohol use</div>
+<li>
+<div class="MMlistPara">Exposure to x-rays</div>
+<li>
+<div class="MMlistPara">Heat from infrared exposure</div>
+<li>
+<div class="MMlistPara">Systemic disease (eg, diabetes)</div>
+<li>
+<div class="MMlistPara">Uveitis</div>
+<li>
+<div class="MMlistPara">Systemic drugs (eg, corticosteroids)</div>
+<li>
+<div class="MMlistPara">Undernutrition</div>
+<li>
+<div class="MMlistPara">Chronic ultraviolet light exposure</div></li></li></li></li></li></li></li></li></li></li></ul><a name="v956573"></a>
+<p class="MMpara">Many people have no risk factors other than age. Some cataracts are congenital, associated with numerous syndromes and diseases.</p><a name="v956575"></a><a name="Symptoms and Signs"></a>
+<p class="MMfHead print-sub">Symptoms and Signs</p><a name="v956576"></a>
+<p class="MMpara">Cataracts usually develop slowly over years. Early symptoms may be loss of contrast, glare (ie, halos and starbursts around lights, not photophobia), needing more light to see well, and problems distinguishing dark blue from black. Painless blurring eventually occurs. The degree of blurring depends on the location and extent of the opacity. Double vision or ghost images occur rarely.</p><a name="v956577"></a>
+<p class="MMpara">With a nuclear cataract, distance vision worsens. Near vision may improve in the early stages because of changes in the refractive index of the lens; presbyopic patients may be temporarily able to read without glasses (second sight).</p><a name="v956578"></a>
+<p class="MMpara">A posterior subcapsular cataract disproportionately affects vision because the opacity is located at the crossing point of incoming light rays. Such cataracts reduce visual acuity more when the pupil constricts (eg, in bright light, during reading). They are also the type most likely to cause loss of contrast as well as glare, especially from bright lights or from car headlights while driving at night.</p><a name="v956579"></a>
+<p class="MMpara">Rarely, the cataract swells, occluding the trabecular drainage meshwork and causing secondary closed-angle glaucoma and pain.</p>
+<div class="MMRef" sizcache="10" sizset="227">
+<div style="PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 4px" align="center" sizcache="10" sizset="227">
+<table border="0" cellspacing="0" cellpadding="0" width="149" sizcache="9" sizset="227">
+<tbody sizcache="9" sizset="227">
+<tr sizcache="8" sizset="227">
+<td sizcache="7" sizset="227"><img alt="Photographs" align="left" src="/site_images/mm/icon_photo.gif" width="15" height="12" />
+<p class="MMRefTableHead" sizcache="7" sizset="227"><a class="iframe" href="/professional/multimedia/v956501.html?Ref=t&amp;ItemId=v956501&amp;RefId=eye_disorders/cataract/cataract&amp;Speed=256&amp;Plugin=WMP&amp;Error=" jquery1360672177504="19">Cataract</a> </p></td></tr>
+<tr sizcache="8" sizset="228">
+<td sizcache="7" sizset="228"><a class="iframe" href="/professional/multimedia/v956501.html?Ref=t&amp;ItemId=v956501&amp;RefId=eye_disorders/cataract/cataract&amp;Speed=256&amp;Plugin=WMP&amp;Error=" jquery1360672177504="20"><img class="borderGrey" border="0" alt="Cataract" src="/media/professional/thumbnails/tn_cataract_b.jpg" width="149" height="78" /></a></td></tr></tbody></table></div></div><a name="v956582"></a><a name="Diagnosis"></a>
+<p class="MMfHead print-sub">Diagnosis</p>
+<ul class="MMbulletedSidebar">
+<li>
+<div class="MMlistPara">Ophthalmoscopy followed by slit-lamp examination</div></li></ul><a name="v956587"></a>
+<p class="MMpara">Diagnosis is best made with the pupil dilated. Well-developed cataracts appear as gray, white, or yellow-brown opacities in the lens. Examination of the red reflex through the dilated pupil with the ophthalmoscope held about 30 cm away usually discloses subtle opacities. Small cataracts stand out as dark defects in the red reflex. A large cataract may obliterate the red reflex. Slit-lamp examination provides more details about the character, location, and extent of the opacity.</p><a name="v6580382"></a><a name="v6580383"></a><a name="v6580384"></a><a name="v6580385"></a><a name="v6580387"></a><a name="v6580388"></a><a name="v6580389"></a><a name="v6580392"></a>
+<table class="MMIllustrativeHalf" border="0" cellspacing="0" cellpadding="0" width="261">
+<tbody>
+<tr>
+<td colspan="3" align="middle">
+<p class="IMtitle">Sidebar 1</p></td></tr>
+<tr>
+<td class="crnrTopLt" height="4" width="4"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td style="BORDER-TOP: #cccccc 1px solid" width="253"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td class="crnrTopRt" height="4" width="4"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td></tr>
+<tr>
+<td style="BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid" colspan="3">
+<table border="0" cellspacing="0" cellpadding="0" width="259">
+<colgroup>
+<col width="249" /></colgroup>
+<tbody>
+<tr>
+<td class="MMSidebarCellTitle">Pearls &amp; Pitfalls</td></tr>
+<tr>
+<td class="MMSidebarCellTitle"></td></tr>
+<tr>
+<td class="MMSidebarCell">
+<ul class="MMbulletedSidebar">
+<li>
+<div class="MMlistPara">Examination of the red reflex through the dilated pupil with the ophthalmoscope held about 30 cm away can help identify early cataracts if a slit lamp is unavailable.</div></li></ul></td></tr></tbody></table></td></tr></tbody></table><a name="v956589"></a><a name="Treatment"></a>
+<p class="MMfHead print-sub">Treatment</p>
+<ul class="MMbulletedSidebar">
+<li>
+<div class="MMlistPara">Surgical removal of the cataract</div>
+<li>
+<div class="MMlistPara">Placement of an intraocular lens</div></li></li></ul><a name="v956596"></a>
+<p class="MMpara" sizcache="7" sizset="243">Frequent refractions and corrective lens prescription changes may help maintain useful vision during cataract development. Occasionally, long-term pupillary dilation (with <span class="MMdrugTerm" sizcache="7" sizset="243"><a class="MMterm" onmouseover="drugTerm(1,'d1654662e1747',1);" onmouseout="drugTerm('','d1654662e1747',2);">phenylephrine</a><span id="d1654662e1747" class="MMpopup" onmouseover="drugTerm(1,'d1654662e1747',1);" onmouseout="drugTerm('','d1654662e1747',2);" sizcache="7" sizset="244"><span class="MMlabel">Some Trade Names</span> <br />NEO-SYNEPHRINE<br /><span class="MLink" sizcache="7" sizset="244"><a href="/professional/lexicomp/phenylephrine.html">Click for Drug Monograph</a></span> <br /></span></span>2.5% q 4 to 8 h) is helpful for small centrally located cataracts. Indirect lighting while reading minimizes pupillary constriction and may optimize vision for close tasks.</p><a name="v956597"></a>
+<p class="MMpara">Usual indications for surgery include the following:</p>
+<ul class="MMbulletedSidebar">
+<li>
+<div class="MMlistPara">Best vision obtained with glasses is worse than 20/40 (<span class="symbol">&lt;</span> 6/12), or vision is significantly decreased under glare conditions (eg, oblique lighting while trying to read a chart) in a patient with bothersome halos or starbursts.</div>
+<li>
+<div class="MMlistPara">Patients sense that vision is limiting (eg, by preventing activities of daily living such as driving, reading, hobbies, and occupational activities).</div>
+<li>
+<div class="MMlistPara">Vision could potentially be meaningfully improved if the cataract is removed (ie, a significant portion of the vision loss must be caused by the cataract).</div></li></li></li></ul><a name="v956605"></a>
+<p class="MMpara">Far less common indications include cataracts that cause glaucoma or that obscure the fundus in patients who need periodic fundus examinations for management of diseases such as diabetic retinopathy and macular degeneration. There is no advantage to removing a cataract early.</p><a name="v956606"></a>
+<p class="MMpara">Cataract extraction is usually done using a topical or local anesthetic and IV sedation. There are 3 extraction techniques. In <b>intracapsular cataract extraction,</b> the cataract and lens capsule are removed in one piece; this technique is rarely used. In <b>extracapsular cataract extraction,</b> the hard central nucleus is removed in one piece and then the soft cortex is removed in multiple small pieces. In <b>phacoemulsification,</b> the hard central nucleus is dissolved by ultrasound and then the soft cortex is removed in multiple small pieces. Phacoemulsification uses the smallest incision, thus enabling the fastest healing, and is usually the preferred procedure. In extracapsular extraction (including phacoemulsification), the lens capsule is not removed.</p><a name="v956608"></a>
+<p class="MMpara">A plastic or silicone lens is almost always implanted intraocularly to replace the optical focusing power of the removed crystalline lens. The lens implant is usually placed on or within the lens capsule (posterior chamber lens). The lens can also be placed in front of the iris (anterior chamber lens) or attached to the iris and within the pupil (iris plane lens). Iris plane lenses are rarely used in the US because many designs led to a high frequency of postoperative complications. Multifocal intraocular lenses are newer and have different focusing zones that may reduce dependence on glasses after surgery. Patients occasionally experience glare with these lenses, especially under low-light conditions, and also have problems with reduced contrast sensitivity.</p><a name="v956609"></a>
+<p class="MMpara" sizcache="7" sizset="250">In most cases, a tapering schedule of topical antibiotics (eg, <span class="MMdrugTerm" sizcache="7" sizset="250"><a class="MMterm" onmouseover="drugTerm(1,'d1654662e1801',1);" onmouseout="drugTerm('','d1654662e1801',2);">moxifloxacin</a><span id="d1654662e1801" class="MMpopup" onmouseover="drugTerm(1,'d1654662e1801',1);" onmouseout="drugTerm('','d1654662e1801',2);" sizcache="7" sizset="251"><span class="MMlabel">Some Trade Names</span> <br />AVELOX<br /><span class="MLink" sizcache="7" sizset="251"><a href="/professional/lexicomp/moxifloxacin.html">Click for Drug Monograph</a></span> <br /></span></span>0.5% 1 drop qid) and topical corticosteroids (eg, <span class="MMdrugTerm" sizcache="7" sizset="252"><a class="MMterm" onmouseover="drugTerm(2,'d1654662e1806',1);" onmouseout="drugTerm('','d1654662e1806',2);">prednisolone</a><span id="d1654662e1806" class="MMpopup" onmouseover="drugTerm(2,'d1654662e1806',1);" onmouseout="drugTerm('','d1654662e1806',2);" sizcache="7" sizset="253"><span class="MMlabel">Some Trade Names</span> <br />ORAPRED<br />PRELONE<br /><span class="MLink" sizcache="7" sizset="253"><a href="/professional/lexicomp/prednisolone.html">Click for Drug Monograph</a></span> <br /></span></span>acetate 1% 1 drop qid) is used for up to 4 wk postsurgery. Patients often wear an eye shield while sleeping and should avoid the Valsalva maneuver, heavy lifting, excessive forward bending, and eye rubbing for several weeks.</p><a name="v956610"></a>
+<p class="MMpara">Major complications of cataract surgery are rare. Complications include the following:</p>
+<ul class="MMbulletedSidebar">
+<li>
+<div class="MMlistPara">Intraoperative: Bleeding beneath the retina, causing the intraocular contents to extrude through the incision (choroidal hemorrhage—very rare and could result in irreversible blindness), vitreous prolapsing out of the incision (vitreous loss), fragments of the cataract dislocating into the vitreous, incisional burn, and detachment of corneal endothelium and its basement membrane (Descemet membrane)</div>
+<li>
+<div class="MMlistPara">Within the first week: Endophthalmitis (infection within the eye—very rare and could result in irreversible blindness) and glaucoma</div>
+<li>
+<div class="MMlistPara">Within the first month: Cystoid macular edema</div>
+<li>
+<div class="MMlistPara">Months later: Bullous keratopathy (ie, swelling of the cornea due to damage to the corneal pump cells during cataract surgery), retinal detachment, and posterior capsular opacification (common but treatable with laser)</div></li></li></li></li></ul><a name="v956620"></a>
+<p class="MMpara">After surgery, vision returns to 20/40 (6/12) or better in 95% of eyes if there are no preexisting disorders such as amblyopia, retinopathy, macular degeneration, and glaucoma. If an intraocular lens is not implanted, contact lenses or thick glasses are needed to correct the resulting hyperopia.</p><a name="v956622"></a><a name="Prevention"></a>
+<p class="MMfHead print-sub">Prevention</p><a name="v956623"></a>
+<p class="MMpara">Many ophthalmologists recommend ultraviolet-coated eyeglasses or sunglasses as a preventive measure. Reducing risk factors such as alcohol, tobacco, and corticosteroids and controlling blood glucose in diabetes delay onset. A diet high in vitamin C, vitamin A, and carotenoids (contained in vegetables such as spinach and kale) may protect against cataracts.</p><a name="v6580394"></a><a name="Key Points"></a>
+<p class="MMfHead print-sub">Key Points</p>
+<ul class="MMbulletedSidebar">
+<li>
+<div class="MMlistPara">Modifiable risk factors for cataract include exposure to ultraviolet light; use of alcohol, tobacco, and systemic corticosteroids; and poor control of blood glucose.</div>
+<li>
+<div class="MMlistPara">Symptoms include loss of contrast, glare (halos and starbursts around lights), and eventually visual blurring.</div>
+<li>
+<div class="MMlistPara">Diagnosis is by examination with the eye dilated.</div>
+<li>
+<div class="MMlistPara">Surgical removal and placement of an intraocular lens are usually indicated if the cataract contributes to visual loss that interferes with activities of daily living, causes bothersome glare, or reaches certain degrees of severity (eg, best-corrected visual acuity worse than 20/40). </div></li></li></li></li></ul>
+<p style="CLEAR: both" align="right">Last full review/revision August 2012 by Kathryn Colby, MD, PhD</p>
+<p align="right">Content last modified November 2012</p><!--stopindex --></td>
+<td width="49"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td valign="top" width="179" sizcache="10" sizset="261">
+<table class="bbpop" border="0" cellspacing="0" cellpadding="0" sizcache="10" sizset="261">
+<tbody sizcache="10" sizset="261">
+<tr sizcache="10" sizset="261">
+<td class="no-print" width="178" sizcache="10" sizset="261">
+<div style="BORDER-BOTTOM: #ddd 1px solid; POSITION: relative; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 12px 6px; PADDING-LEFT: 0px; WIDTH: 171px; PADDING-RIGHT: 0px; HEIGHT: 180px; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0px" sizcache="10" sizset="261">
+<table class="imgLink" border="0" cellspacing="0" cellpadding="0" sizcache="9" sizset="261">
+<tbody sizcache="9" sizset="261">
+<tr sizcache="8" sizset="261">
+<td sizcache="7" sizset="261">
+<div id="sm_image_map" sizcache="7" sizset="261"><a id="like_us_facebook" href="http://www.facebook.com/MerckManual" target="_blank" jquery1360672177504="10"><img border="0" alt="" src="/site_images/mm/s.gif" width="14" height="35" /></a><a id="follow_us_twitter" href="http://www.twitter.com/MerckManual" target="_blank" jquery1360672177504="11"><img border="0" alt="" src="/site_images/mm/s.gif" width="14" height="35" /></a> </div></td></tr></tbody></table></div>
+<div style="POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 12px 6px; PADDING-LEFT: 0px; WIDTH: 171px; PADDING-RIGHT: 0px; HEIGHT: 171px; PADDING-TOP: 0px"><iframe style="BORDER-BOTTOM: #ddd 1px solid; POSITION: absolute; BORDER-LEFT: #ddd 1px solid; WIDTH: 169px; HEIGHT: 169px; BORDER-TOP: #ddd 1px solid; TOP: 0px; BORDER-RIGHT: #ddd 1px solid; LEFT: 0px" id="adbox" src="about:blank" frameborder="0" name="adbox" scrolling="no"></iframe>
+<script language="Javascript">
+//<![CDATA[
+
+                drawAdBox(adPath, numberOfAds, false);
+    		
+//]]>//
+</script>
+<img style="Z-INDEX: 100; POSITION: absolute; TOP: 0px; LEFT: 162px" src="/site_images/mm/adbox-notch-corner.gif" /></div>
+<table class="buyBook" border="0" cellspacing="0" cellpadding="0" width="171" sizcache="10" sizset="263">
+<tbody sizcache="10" sizset="263">
+<tr sizcache="10" sizset="263">
+<td sizcache="10" sizset="263">
+<table class="imgLink" border="0" cellspacing="0" cellpadding="0" sizcache="9" sizset="263">
+<tbody sizcache="9" sizset="263">
+<tr sizcache="8" sizset="263">
+<td sizcache="7" sizset="263">
+<p sizcache="7" sizset="263"><a class="imgLnkText" href="http://www.merckbooks.com/redirect/mmpe1.html" target="_blank" jquery1360672177504="2">Buy the Book</a> </p></td>
+<td class="imageBuyLanding" sizcache="7" sizset="264"><a href="http://www.merckbooks.com/redirect/mmpe1.html" target="_blank" jquery1360672177504="3"><img border="0" alt="" src="/site_images/mm/s.gif" width="52" height="35" /></a></td></tr></tbody></table>
+<div style="Z-INDEX: 1; DISPLAY: block; VISIBILITY: visible" id="pda" sizcache="10" sizset="265">
+<table class="imgLink" border="0" cellspacing="0" cellpadding="0" sizcache="9" sizset="265">
+<tbody sizcache="9" sizset="265">
+<tr sizcache="8" sizset="265">
+<td sizcache="7" sizset="265">
+<p sizcache="7" sizset="265"><a class="imgLnkText" href="http://www.merckbooks.com/redirects/MM18-PDA.html" target="_blank" jquery1360672177504="4">Mobile Versions</a> </p></td>
+<td class="imagePDALanding" sizcache="7" sizset="266"><a href="http://www.merckbooks.com/redirects/MM18-PDA.html" target="_blank" jquery1360672177504="5"><img border="0" alt="" src="/site_images/mm/s.gif" width="52" height="35" /></a></td></tr></tbody></table></div>
+<script language="Javascript">
+//<![CDATA[
+
+            if (&quot;Mobile Versions&quot;!=&quot;&quot;) {
+            	MM_showHideLayers('pda','','show');
+            }
+          
+//]]>//
+</script>
+</td></tr></tbody></table><a href="/" jquery1360672177504="14">
+<div class="proBook" width="171"></div></a></td></tr>
+<tr>
+<td></td></tr>
+<script language="JavaScript" type="text/javascript" src="/scripts/mmhe2/pronounce.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script language="VBScript">
+//<![CDATA[
+ 
+on error resume next 
+Sub pron_FSCommand(ByVal command, ByVal args)
+  call pronounceTerm(command, args)
+end sub
+
+//]]>//
+</script>
+
+<script language="VBScript">
+//<![CDATA[
+ 
+on error resume next 
+MM_FlashCanPlay = ( IsObject(CreateObject(&quot;ShockwaveFlash.ShockwaveFlash.&quot; &amp; MM_contentVersion)))
+
+//]]>//
+</script>
+
+<object id="pron" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1" height="1"><param name="_cx" value="26" /><param name="_cy" value="26" /><param name="FlashVars" value="" /><param name="Movie" value="/media/home/s.swf" /><param name="Src" value="/media/home/s.swf" /><param name="WMode" value="Transparent" /><param name="Play" value="-1" /><param name="Loop" value="0" /><param name="Quality" value="High" /><param name="SAlign" value="" /><param name="Menu" value="-1" /><param name="Base" value="" /><param name="AllowScriptAccess" value="" /><param name="Scale" value="ShowAll" /><param name="DeviceFont" value="0" /><param name="EmbedMovie" value="0" /><param name="BGColor" value="FFFFFF" /><param name="SWRemote" value="" /><param name="MovieData" value="" /><param name="SeamlessTabbing" value="1" /><param name="Profile" value="0" /><param name="ProfileAddress" value="" /><param name="ProfilePort" value="0" /><param name="AllowNetworking" value="all" /><param name="AllowFullScreen" value="false" /><param name="AllowFullScreenInteractive" value="" />
+      <embed src="/media/home/s.swf" quality="high" wmode="transparent" swliveconnect="TRUE" loop="FALSE" width="1" height="1" name="pron" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />  </object>
+<tr class="no-print">
+<td class="no-print" align="right"></td></tr></tbody></table></td></tr>
+<tr>
+<td width="16"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="522"><img alt="" src="/site_images/mm/s.gif" width="1" height="6" /></td></tr>
+<tr>
+<td class="dotH no-print" height="1" width="522"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td></tr>
+<tr>
+<td width="522"><img alt="" src="/site_images/mm/s.gif" width="1" height="20" /></td></tr></tbody></table></td>
+<td width="49"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td></tr>
+<tr sizcache="10" sizset="268">
+<td width="16"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td class="no-print" colspan="3" sizcache="10" sizset="268">
+<table border="0" cellspacing="0" cellpadding="0" sizcache="9" sizset="268">
+<tbody sizcache="9" sizset="268">
+<tr sizcache="8" sizset="268">
+<td sizcache="7" sizset="268"><a class="backToTop" href="#top">Back to Top</a></td>
+<td class="imageArrowUp"><img alt="" src="/site_images/mm/s.gif" width="13" height="5" /></td></tr></tbody></table></td></tr>
+<tr>
+<td height="25" colspan="4"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td></tr>
+<tr>
+<td width="16"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td class="dotH no-print" height="1" width="522"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td width="49"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td></tr>
+<tr sizcache="10" sizset="269">
+<td width="16"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td>
+<td class="no-print" sizcache="10" sizset="269">
+<table border="0" cellspacing="0" cellpadding="0" width="522" sizcache="10" sizset="269">
+<tbody sizcache="10" sizset="269">
+<tr sizcache="10" sizset="269">
+<td width="50%" sizcache="10" sizset="269">
+<table border="0" cellspacing="0" cellpadding="0" align="left" sizcache="9" sizset="269">
+<tbody sizcache="9" sizset="269">
+<tr sizcache="8" sizset="269">
+<td class="imageBackArrow" width="11" sizcache="7" sizset="269"><a href="/professional/eye_disorders/glaucoma/overview_of_glaucoma.html"><img border="0" alt="" src="/site_images/mm/s.gif" width="11" height="5" /></a></td>
+<td sizcache="7" sizset="270">
+<p class="textPrevNext" sizcache="7" sizset="270">Previous: <a href="/professional/eye_disorders/glaucoma/overview_of_glaucoma.html">Overview of Glaucoma</a> </p></td></tr></tbody></table></td>
+<td width="50%" sizcache="10" sizset="271">
+<table border="0" cellspacing="0" cellpadding="0" align="right" sizcache="9" sizset="271">
+<tbody sizcache="9" sizset="271">
+<tr sizcache="8" sizset="271">
+<td align="right" sizcache="7" sizset="271">
+<p class="textPrevNext" sizcache="7" sizset="271">Next: <a href="/professional/eye_disorders/uveitis_and_related_disorders/overview_of_uveitis.html">Overview of Uveitis</a> </p></td>
+<td class="imageForwardArrow" width="11" sizcache="7" sizset="272"><a href="/professional/eye_disorders/uveitis_and_related_disorders/overview_of_uveitis.html"><img border="0" alt="" src="/site_images/mm/s.gif" width="11" height="5" /></a></td></tr></tbody></table></td></tr></tbody></table></td>
+<td width="49"><img alt="" src="/site_images/mm/s.gif" width="1" height="1" /></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr sizcache="8" sizset="273">
+<td class="print-center" valign="bottom" sizcache="7" sizset="273">
+<div style="WIDTH: 529px" class="lgd">
+<div class="audio lgdText">Audio</div>
+<div class="illustration lgdText">Figures</div>
+<div class="photograph lgdText">Photographs</div>
+<div class="sidebar lgdText">Sidebars</div>
+<div class="table lgdText">Tables</div>
+<div class="video lgdText">Videos</div></div><br /><span style="PADDING-LEFT: 18px; COLOR: #999; FONT-SIZE: 0.75em" sizcache="7" sizset="273"><a style="COLOR: #999; TEXT-DECORATION: none" href="http://www.merck.com/policy/copyright/home.html">Copyright</a> &amp;nbsp; &amp;nbsp; © 2010-2013 Merck Sharp &amp; Dohme Corp., a subsidiary of Merck &amp; Co., Inc., Whitehouse Station, N.J., U.S.A. &amp;nbsp; &amp;nbsp;<a style="COLOR: #999; TEXT-DECORATION: none" href="http://www.merck.com/about/how-we-operate/privacy/" jquery1360672177504="12">Privacy</a> &amp;nbsp; &amp;nbsp;<a style="COLOR: #999; TEXT-DECORATION: none" href="http://www.merck.com/policy/terms-of-use/home.html">Terms of Use</a></span> 
+<div style="HEIGHT: 10px"></div>
+<script type="text/javascript">
+//<![CDATA[
+
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4427664-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+      
+//]]>//
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+      function addMeta(name,content){
+        var mtMeta = document.createElement('meta');
+        mtMeta.name = name;
+        mtMeta.content = content;
+        document.getElementsByTagName('head').item(0).appendChild(mtMeta);
+      }
+      addMeta(&quot;DCSext.dcsid&quot;,&quot;dcskjzmez000000wcf1sga6nx_8f4n&quot;);
+      addMeta(&quot;DCSext.sdcserver&quot;,&quot;sdc-web.merck.com&quot;);
+      addMeta(&quot;WT.sp&quot;,&quot;www.merckmanuals.com&quot;);
+    
+//]]>//
+</script>
+
+<script type="text/javascript" src="/js/webtrends.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript" src="/js/mercktracker.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript" src="/js/products.js">
+//<![CDATA[
+
+//]]>//
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var mTrack = new MerckTracker();
+
+//]]>//
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+//
+var _tag=new WebTrends();
+_tag.dcsGetId();
+//&gt;
+
+//]]>//
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+mTrack.mtManualsCollect();
+
+//]]>//
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+//
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect(mTrack);
+//&gt;
+
+//]]>//
+</script>
+</td></tr></tbody></table></div></div>
+<div id="fancybox-tmp"></div>
+<div id="fancybox-loading" jquery1360672177504="16">
+<div></div></div>
+<div id="fancybox-overlay"></div>
+<div id="fancybox-wrap" class="fancybox-ie" sizcache="7" sizset="276">
+<div id="fancybox-outer" sizcache="7" sizset="276">
+<div id="fancybox-bg-n" class="fancybox-bg"></div>
+<div id="fancybox-bg-ne" class="fancybox-bg"></div>
+<div id="fancybox-bg-e" class="fancybox-bg"></div>
+<div id="fancybox-bg-se" class="fancybox-bg"></div>
+<div id="fancybox-bg-s" class="fancybox-bg"></div>
+<div id="fancybox-bg-sw" class="fancybox-bg"></div>
+<div id="fancybox-bg-w" class="fancybox-bg"></div>
+<div id="fancybox-bg-nw" class="fancybox-bg"></div>
+<div id="fancybox-content"></div><a id="fancybox-close" jquery1360672177504="15"></a>
+<div id="fancybox-title"></div><a id="fancybox-left" href="javascript:;" jquery1360672177504="17"><span id="fancybox-left-ico" class="fancy-ico"></span></a><a id="fancybox-right" href="javascript:;" jquery1360672177504="18"><span id="fancybox-right-ico" class="fancy-ico"></span></a></div></div>
+<div id="NavFixedWrapper" sizcache="10" sizset="279">
+<div style="LEFT: 1px" id="scrollingNavFixed" jquery1360672177504="23" sizcache="10" sizset="279">
+<div id="inthistopicOuterFixed" jquery1360672177504="25" sizcache="10" sizset="279">
+<div style="POSITION: relative; WIDTH: 206px; BACKGROUND: #fff; OVERFLOW: hidden; TOP: 0px; LEFT: 5px" id="inthistopicNavFixed" class="no-print" jquery1360672177504="27" sizcache="10" sizset="279">
+<table border="0" cellspacing="0" cellpadding="0" width="100%" jquery1360672177504="29" sizcache="10" sizset="279">
+<tbody jquery1360672177504="31" sizcache="10" sizset="279">
+<tr jquery1360672177504="33">
+<td class="MMnavTitleTab" jquery1360672177504="35">In This Topic</td></tr>
+<tr jquery1360672177504="37" sizcache="10" sizset="279">
+<td style="BORDER-LEFT: #999 1px solid" jquery1360672177504="39" sizcache="10" sizset="279">
+<table style="MARGIN: 10px" class="MMnavSectionList" border="0" cellspacing="0" cellpadding="0" jquery1360672177504="41" sizcache="9" sizset="279">
+<tbody jquery1360672177504="43" sizcache="9" sizset="279">
+<tr jquery1360672177504="45" sizcache="8" sizset="279">
+<td class="MMnavSectionTitle" valign="top" colspan="7" jquery1360672177504="47" sizcache="7" sizset="279"><a class="MMtopicLnk" href="http://www.merckmanuals.com/professional/eye_disorders.html" jquery1360672177504="49">Eye Disorders</a></td></tr>
+<tr jquery1360672177504="51">
+<td jquery1360672177504="53"></td>
+<td class="MMnavSectionSubTitle" colspan="6" jquery1360672177504="55">Cataract</td></tr>
+<tr jquery1360672177504="57" sizcache="8" sizset="280">
+<td jquery1360672177504="59"></td>
+<td jquery1360672177504="61"></td>
+<td valign="top" jquery1360672177504="63"><img class="bulletDblank" border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="65" /></td>
+<td colspan="4" jquery1360672177504="67" sizcache="7" sizset="280"><a class="MMtopicLnk" href="http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html#top" jquery1360672177504="69">Cataract</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="71" sizcache="8" sizset="281">
+<td jquery1360672177504="73"></td>
+<td jquery1360672177504="75"></td>
+<td jquery1360672177504="77"></td>
+<td jquery1360672177504="79"><img border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="81" /></td>
+<td valign="top" jquery1360672177504="83"><img class="bulletFblank" border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="85" /></td>
+<td colspan="2" jquery1360672177504="87" sizcache="7" sizset="281"><a class="MMtopicLnk" href="http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html#v956548" jquery1360672177504="89">Etiology</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="91" sizcache="8" sizset="282">
+<td jquery1360672177504="93"></td>
+<td jquery1360672177504="95"></td>
+<td jquery1360672177504="97"></td>
+<td jquery1360672177504="99"><img border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="101" /></td>
+<td valign="top" jquery1360672177504="103"><img class="bulletFblank" border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="105" /></td>
+<td colspan="2" jquery1360672177504="107" sizcache="7" sizset="282"><a class="MMtopicLnk" href="http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html#v956575" jquery1360672177504="109">Symptoms and Signs</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="111" sizcache="8" sizset="283">
+<td jquery1360672177504="113"></td>
+<td jquery1360672177504="115"></td>
+<td jquery1360672177504="117"></td>
+<td jquery1360672177504="119"><img border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="121" /></td>
+<td valign="top" jquery1360672177504="123"><img class="bulletFblank" border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="125" /></td>
+<td colspan="2" jquery1360672177504="127" sizcache="7" sizset="283"><a class="MMtopicLnk" href="http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html#v956582" jquery1360672177504="129">Diagnosis</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="131" sizcache="8" sizset="284">
+<td jquery1360672177504="133"></td>
+<td jquery1360672177504="135"></td>
+<td jquery1360672177504="137"></td>
+<td jquery1360672177504="139"><img border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="141" /></td>
+<td valign="top" jquery1360672177504="143"><img class="bulletFblank" border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="145" /></td>
+<td colspan="2" jquery1360672177504="147" sizcache="7" sizset="284"><a class="MMtopicLnk" href="http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html#v956589" jquery1360672177504="149">Treatment</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="151" sizcache="8" sizset="285">
+<td jquery1360672177504="153"></td>
+<td jquery1360672177504="155"></td>
+<td jquery1360672177504="157"></td>
+<td jquery1360672177504="159"><img border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="161" /></td>
+<td valign="top" jquery1360672177504="163"><img class="bulletFblank" border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="165" /></td>
+<td colspan="2" jquery1360672177504="167" sizcache="7" sizset="285"><a class="MMtopicLnk" href="http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html#v956622" jquery1360672177504="169">Prevention</a></td></tr>
+<tr style="PADDING-TOP: 5px" jquery1360672177504="171" sizcache="8" sizset="286">
+<td jquery1360672177504="173"></td>
+<td jquery1360672177504="175"></td>
+<td jquery1360672177504="177"></td>
+<td jquery1360672177504="179"><img border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="11" jquery1360672177504="181" /></td>
+<td valign="top" jquery1360672177504="183"><img class="bulletFblank" border="0" alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="11" height="12" jquery1360672177504="185" /></td>
+<td colspan="2" jquery1360672177504="187" sizcache="7" sizset="286"><a class="MMtopicLnk" href="http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html#v6580394" jquery1360672177504="189">Key Points</a></td></tr>
+<tr jquery1360672177504="191">
+<td jquery1360672177504="193"><img alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="8" height="1" jquery1360672177504="195" /></td>
+<td jquery1360672177504="197"><img alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="8" height="1" jquery1360672177504="199" /></td>
+<td jquery1360672177504="201"><img alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="13" height="1" jquery1360672177504="203" /></td>
+<td jquery1360672177504="205"><img alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="8" height="1" jquery1360672177504="207" /></td>
+<td jquery1360672177504="209"><img alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="8" height="1" jquery1360672177504="211" /></td>
+<td jquery1360672177504="213"><img alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="8" height="1" jquery1360672177504="215" /></td>
+<td jquery1360672177504="217"><img alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="108" height="1" jquery1360672177504="219" /></td></tr></tbody></table>
+<table style="MARGIN: 8px 0px 10px 10px" border="0" cellspacing="0" cellpadding="0" jquery1360672177504="221" sizcache="9" sizset="287">
+<tbody jquery1360672177504="223" sizcache="9" sizset="287">
+<tr jquery1360672177504="225" sizcache="8" sizset="287">
+<td jquery1360672177504="227" sizcache="7" sizset="287"><a class="backToTop" href="http://www.merckmanuals.com/professional/eye_disorders/cataract/cataract.html#top" jquery1360672177504="229">Back to Top</a></td>
+<td class="imageArrowUp" jquery1360672177504="231"><img alt="" src="http://www.merckmanuals.com/site_images/mm/s.gif" width="13" height="5" jquery1360672177504="233" /></td></tr></tbody></table>
+<tr jquery1360672177504="235">
+<td class="MMnavTitleBottom" jquery1360672177504="237"></td></tr></td></tr></tbody></table></div></div>
+<div id="resourcesFixed" width="20%" jquery1360672177504="243" sizcache="7" sizset="288">
+<div class="MMnavTitleBar no-print" jquery1360672177504="245">Resources</div>
+<ul class="MMnavSectionUL no-print" jquery1360672177504="247" sizcache="7" sizset="288">
+<li class="ind" jquery1360672177504="249" sizcache="7" sizset="288"><a href="http://www.merckmanuals.com/professional/about/about_the_merck_manual/committed_to_providing_medical_information_merck_and_the_merck_manuals.html?WT.z_resource=About &lt;I&gt;The Merck Manual&lt;/I&gt;" jquery1360672177504="251">About <i jquery1360672177504="253">The Merck Manual</i></a> 
+<li class="ind" jquery1360672177504="255" sizcache="7" sizset="289"><a href="http://www.merckmanuals.com/professional/appendixes/ready_reference_guides/ready_reference_guides.html?WT.z_resource=Ready Reference Guides" jquery1360672177504="257">Ready Reference Guides</a> 
+<li class="ind" jquery1360672177504="259" sizcache="7" sizset="290"><a href="http://www.merckmanuals.com/professional/appendixes/trade_names_of_some_commonly_used_drugs/trade_names_of_some_commonly_used_drugs.html?WT.z_resource=Trade Names of Some Commonly Used Drugs" jquery1360672177504="261">Trade Names of Some Commonly Used Drugs</a> 
+<li class="ind" jquery1360672177504="263" sizcache="7" sizset="291"><a href="http://www.merckmanuals.com/professional/appendixes/normal_laboratory_values/normal_laboratory_values.html?WT.z_resource=Normal Laboratory Values" jquery1360672177504="265">Normal Laboratory Values</a> 
+<li class="ind" jquery1360672177504="267" sizcache="7" sizset="292"><a href="http://www.merckmanuals.com/professional/resources/clinical_calculators/name/calculator.html?WT.z_resource=Clinical Calculators" jquery1360672177504="269">Clinical Calculators</a> 
+<li class="ind" jquery1360672177504="271" sizcache="7" sizset="293"><a href="http://www.merckmanuals.com/professional/resources/multimedia/index.html?WT.z_resource=Multimedia" jquery1360672177504="273">Multimedia</a> 
+<li class="ind" jquery1360672177504="275" sizcache="7" sizset="294"><a href="http://www.merckmanuals.com/professional/resources/selected_links/selected_links.html?WT.z_resource=Selected Links" jquery1360672177504="277">Selected Links</a> </li></li></li></li></li></li></li></ul></div></div></div></body></html>

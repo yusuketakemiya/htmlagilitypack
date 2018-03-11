@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "951381",
+    "ThreadId": "405577",
+    "Html": "\r\n<p>I'm looking at nodes that definitely contain links.&nbsp; Sometimes I get the proper link by Node.Attributes[&quot;href&quot;] but sometimes that's null and I can't see why it sometimes works and sometimes doesn't.&nbsp; A brute force approach of looking\r\n for href=&quot; and then taking everything up to the next quote is working but I would like to understand what's going on here.</p>\r\n<p>Going to the real page the links do work and the pages do correctly display as my routine crawls them.</p>\r\n",
+    "PostedDate": "2012-12-04T13:44:28.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "983414",
+    "ThreadId": "405577",
+    "Html": "\r\n<p>Hello!</p>\r\n<p>I canot give you final solution as there is no example of the HTML. I suppose it is something to do with Xpath expression that returns incorrect nodes in the nodeset. Also,sometimes\r\n<a>tag has no href attribute, i.e. link as Ajax navigation element. &nbsp;So, try to run your Xpath on the page using something like Xpath checker for Firefox and watch the output.</p>\r\n<p>If you can provide the example page where your app malfunctions and piece of code for link extraction, I can be more specific.</p>\r\n</a>",
+    "PostedDate": "2013-01-05T17:07:36.46-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

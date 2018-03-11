@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "658323",
+    "ThreadId": "269113",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>could you post some more examples?</p>\r\n<p>Right now it's only one small example how to read html document and parse it. <br>\r\nI need example how to build html document using tags and then save it on disk. Is it possible?</p>\r\n<p>Somthing like this:<br>\r\nHtmlDoc = new htmldoc()</p>\r\n<p>doc.addtag(a);<br>\r\ndoc.addtag(p);</p>\r\n<p>Thanks,</p>\r\n<p>Alexander.</p>\r\n",
+    "PostedDate": "2011-08-15T06:38:08.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

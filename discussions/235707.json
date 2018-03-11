@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "525785",
+    "ThreadId": "235707",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I try to load a simple textfile (csv) via HtmlWeb.Load method using UNC uri format like &quot;\\\\myServer\\myPath\\MyDocument.csv&quot;</p>\r\n<p>Unfortunatly, somebody opened the file with MS Excel, so I get a System.IO.IOException &#65279;&#65279;&quot;The process cannot access the file because it is used by another process&quot;. So why that? HtmlWeb shouldn't care if the file is used, since the access should be read-only.</p>\r\n<p>&nbsp;</p>\r\n<p>Any ideas?</p>\r\n",
+    "PostedDate": "2010-11-23T04:22:46.747-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

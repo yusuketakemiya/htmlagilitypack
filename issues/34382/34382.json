@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nUsing build 1.4.6.0 loading the attached HTML and requesting the inner text caused the code to throw a StackOverflowException.\n\nExample Code:\n\n```\nHtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();\ndoc.LoadHtml(Html);\n\nstring innner = doc.DocumentNode.InnerText;\n```",
+    "LastUpdatedDate": "2016-11-10T03:21:32.037-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-08-19T07:49:49.247-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "LoadHtml(...) causes StackOverflowException",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 34382
+  },
+  "FileAttachments": [
+    {
+      "FileId": 13474,
+      "FileName": "HTML_which crashes_Html _Agility_Pack.htm",
+      "DownloadUrl": ".\\13474"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I got the same issue and reported a separate ticket.\r\n\r\nHave you found any workaround on this problem?",
+      "PostedDate": "2016-11-10T03:21:32.037-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+<cfset section="contact">
+<cfset pagetitle = "Contact Miramichi Black Rapids Lodge">
+<cfset sectionname="Contact Miramichi Black Rapids Lodge">
+<cfset description = "The Miramichi Black Rapids Lodge atmosphere is casual, inviting, and provides a welcome respite from an intense day of fly fishing. We strive to exceed customer expectations in the delivery of quality amenities and services, and our lodge shows it.">
+<cfset keywords = "Miramichi River in New Brunswick,Miramichi River, Miramichi River New Brunswick, miramichi, lodge, river, black rapids, rapids, rapids lodge, black, black rapids lodge, miramichi river, miramichi black, miramichi black rapids, sporting, salmon, fly fishing, fly casting">
+<cfparam name="URL.submitted" default="no">
+
+<cfinclude template="/scripts/header.cfm">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td valign="top">
+
+&nbsp;<br />	
+<p>Miramichi Black Rapids Lodge<br />
+P.O. Box 1025<br />
+Blackville NB E9B 1R8 Canada<br />
+  Phone: 506.843.2346<br />
+  Fax: 205.562.5014<br />
+  Email: <script type=text/javascript>
+var to   = "BRSLodge";
+var here = "westervelt.com";
+var all   = to + "@" + here;
+document.write("<a href='mailto:"+all+"'>"+all+"</a>");
+</script>
+</p>
+
+</td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td align="right">
+
+<iframe width="350" height="285" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.ca/maps?f=q&amp;hl=en&amp;geocode=&amp;q=46.760547,-65.775898&amp;ie=UTF8&amp;z=14&amp;iwloc=addr&amp;om=0&amp;ll=46.767264,-65.771713&amp;output=embed&amp;s=AARTsJqVWULastUEprfiuO68PLK7FRhCNA"></iframe><br /><small><a href="http://maps.google.ca/maps?f=q&amp;hl=en&amp;geocode=&amp;q=46.760547,-65.775898&amp;ie=UTF8&amp;z=14&amp;iwloc=addr&amp;om=0&amp;ll=46.767264,-65.771713&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+
+</td>
+</tr>
+</table>
+ 
+<hr width="85%" align="center" />
+
+<cfif URL.submitted IS "yes">
+
+<p>Thank you for submitting your comments or questions. Should you require an answer, we will make every effort to respond as soon as possible.</p>
+
+<cfelse>
+
+<h3>We Want To Hear From You</h3>
+
+<p>We welcome your questions and comments and will make every effort to respond to your needs as soon as possible.</p>
+
+<p style="font-size:10px;">Fields marked in <strong>bold</strong> are required.</p>
+
+<img src="/images/lodge-sign.jpg" class="rightimage" align="right"><form action="send.cfm" method="POST" enctype="multipart/form-data" name="Contact">
+<table>
+	<tr>
+		<td valign="top"><strong>Name</strong> </td>
+		<td valign="top"><input size="25" name="Name" maxlength="150"></td>
+	</tr>
+	<tr>
+		<td valign="top"><strong>E-mail</strong> </td>
+		<td valign="top"><input size="25" name="Email" maxlength="150"></td>
+	</tr>
+	<tr>
+		<td valign="top">Phone </td>
+		<td valign="top"><input size="10" name="Phone" maxlength="25"></td>
+	</tr>
+	<tr>
+		<td valign="top"><strong>Address</strong> </td>
+		<td valign="top"><input size="25" name="Address1" maxlength="150"></td>
+	</tr>
+	<tr>
+		<td valign="top">&nbsp; </td>
+		<td valign="top"><input size="25" name="Address2" maxlength="150"></td>
+	</tr>
+	<tr>
+		<td valign="top"><strong>City</strong> </td>
+		<td valign="top"><input size="25" name="City" maxlength="150"></td>
+	</tr>
+	<tr>
+		<td valign="top"><strong>Province or State</strong> </td>
+		<td valign="top"><input size="10" name="State" maxlength="150"></td>
+	</tr>
+	<tr>
+		<td valign="top">Zip </td>
+		<td valign="top"><input size="10" name="Zip" maxlength="150"></td>
+	</tr>
+	<tr>
+		<td valign="top">How did you hear about us? </td>
+		<td valign="top"><input size="25" name="Hear" maxlength="150"></td>
+	</tr>
+	<tr>
+		<td valign="top">My Interests<br />(check all that apply) </td>
+		<td valign="middle"><input type="checkbox" name="InterestAngling" value="1" /> Angling<br /><input type="checkbox" name="InterestWingshooting" value="1" /> Wingshooting<br /><input type="checkbox" name="InterestEco" value="1" /> Eco-Tourism</td>
+	</tr>
+	<tr>
+		<td valign="top"><strong>Comments</strong> </td>
+		<td valign="top"><textarea rows="6" cols="40" name="Comments"></textarea></td>
+	</tr>
+	<tr>
+		<td valign="middle" align="right">&nbsp;</td>
+		<td valign="middle"><input type="checkbox" name="Marketing" value="1" /> I would like to receive news from Miramichi Black Rapids Lodge</td>
+	</tr>
+	<tr>
+		<td valign="top"></td>
+		<td valign="top"><input type="submit" value="Submit"></td>
+	</tr>
+</table>
+</form>
+
+</cfif>
+
+<cfinclude template="/scripts/footer.cfm">

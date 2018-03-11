@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When assigning a value to node.Id the property calls SetId which correctly creates an Id attribute and adds it to the document NodesId dictionary via SetIdForNode, however it is never added to the nodes HtmlAttributeCollection. Therefore, when you request node.Id, GetId returns null.\n\n```\n    internal string GetId()\n\t{\n\t\tHtmlAttribute att = Attributes[\"id\"];\n\t\treturn att == null ? string.Empty : att.Value;\n\t}\n\n\tinternal void SetId(string id)\n\t{\n\t\tHtmlAttribute att = Attributes[\"id\"] ?? _ownerdocument.CreateAttribute(\"id\");\n\t\tatt.Value = id;\n\t\t_ownerdocument.SetIdForNode(this, att.Value);\n\t\tSetChanged();\n\t}\n```",
+    "LastUpdatedDate": "2015-05-10T13:01:30.933-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-05-10T13:01:30.933-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "SetID does not update attribue set",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43111
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

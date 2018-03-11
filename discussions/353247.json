@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "827418",
+    "ThreadId": "353247",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Struggled with this for a while.</p>\r\n<p>Can html agility pack currently encode only text nodes ?</p>\r\n<p>I.E : &quot;</p>\r\n<pre style=\"font-family:Consolas; font-size:13; color:black; background:white\"><span style=\"color:#a31515\">hi&nbsp;&lt;3&nbsp;Did&nbsp;you&nbsp;know&nbsp;we're stocklists blah blah, can read our blog here </span><pre style=\"font-family:Consolas; font-size:13px; color:black; background:none repeat scroll 0% 0% white\"><span style=\"color:#a31515\">&lt;a&nbsp;href='http://google.com'&gt;http://google.com&lt;/a&gt;&nbsp;blah</span>\r\n</pre>\r\n<span style=\"color:#a31515\">&lt;3&nbsp;hi</span></pre>\r\n<p>&quot;</p>\r\n<p>would become</p>\r\n<p>&quot;</p>\r\n<pre style=\"font-family:Consolas; font-size:13; color:black; background:white\"><span style=\"color:#a31515\">hi &amp;lt;3&nbsp;Did&nbsp;you&nbsp;know&nbsp;we</span>&amp;#39;<span style=\"color:#a31515\">re stocklists blah blah, can read our blog here </span><pre style=\"font-family:Consolas; font-size:13px; color:black; background:none repeat scroll 0% 0% white\"><span style=\"color:#a31515\">&lt;a&nbsp;href='http://google.com'&gt;http://google.com&lt;/a&gt;&nbsp;blah</span>\r\n</pre>\r\n<span style=\"color:#a31515\">&amp;gt;3&nbsp;hi</span></pre>\r\n<p>&quot;</p>\r\n<p>I searched over the web and found no answer. The thing is because of the processing I'm doing to the html text I don't really want for the html tags like link tag or any other to be encoded too</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a ton,</p>\r\n<p>Doru</p>\r\n",
+    "PostedDate": "2012-04-23T09:40:52.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

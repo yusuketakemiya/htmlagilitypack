@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "694682",
+    "ThreadId": "278578",
+    "Html": "\r\n<p>Hello.</p>\r\n<p>I'm developing a WP7.5 app, and I'm using HAP.<br>\r\nBut I have some syntax problems, I'm using linq and hap.<br>\r\nI have following structure:</p>\r\n<p>&lt;div id=&quot;inhalt&quot;&gt;<br>\r\n&lt;div class=&quot;content-box-s&quot;&gt;...&lt;/div&gt;<br>\r\n&lt;div class=&quot;content-box-s&quot;&gt;...&lt;/div&gt;<br>\r\n&lt;div class=&quot;content-box-s&quot;&gt;...&lt;/div&gt;<br>\r\n&lt;/div&gt;</p>\r\n<p>I'm trying to select these 3 inner div's with following query:</p>\r\n<p>var divs = htmlDoc.DocumentNode.Descendants(&quot;div&quot;).Where(x =&gt; x.Id == &quot;inhalt&quot;)<br>\r\n.Select(a =&gt; a.Descendants(&quot;div&quot;).Where(s =&gt; s.Attributes[&quot;class&quot;].Value == &quot;content-box-s&quot;));</p>\r\n<p>but I always get null...<br>\r\nPlease, what am I doing wrong?</p>\r\n<p>Thanks in advance =)</p>\r\n",
+    "PostedDate": "2011-11-07T04:44:40.717-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

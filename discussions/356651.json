@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "839241",
+    "ThreadId": "356651",
+    "Html": "\r\n<p>I want to remove the html tags that are coming in a string. How can I do this by using HTML Agility Pack?</p>\r\n",
+    "PostedDate": "2012-05-21T23:51:58.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "850117",
+    "ThreadId": "356651",
+    "Html": "<p>Hello coder,<br />If you are using C#, here is a simple REGEX function that will do the job for what you are asking.&nbsp;</p>\r\n<p>private string StripTagsRegex(string source) <br />{<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return Regex.Replace(source, \"&lt;.*?&gt;\", string.Empty);<br />}<br /><br />Kind Regards.&nbsp;</p>",
+    "PostedDate": "2012-06-17T15:50:45.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

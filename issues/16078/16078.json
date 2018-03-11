@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "current HtmlAttribute doesn't recognize values containing spaces.\n \nI've recently come across the following values that fail to get recognized properly.\n \nattribute=\"some text\"\nattribute=some text\n \nboth of the above example do not get recognized as HtmlAttributes",
+    "LastUpdatedDate": "2013-02-21T18:47:26.827-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-04-11T11:54:43.167-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Attribute parsing not recognizing spaces",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 16078
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I strongly disagree. The current behavior IS CORRECT; spaces ARE considered as attribute separators unless wrapped into double quotes.\r\n\r\nFor example the HTML <input type=radio name=MyRadButton value=MyValue checked>\r\nshould equals: <input type=\"radio\" name=\"MyRadButton\" value=\"MyValue\" checked>\r\nand not: <input type=\"radio\" name=\"MyRadButton\" value=\"MyValue checked\"> as \"rcaudin\" proposed",
+      "PostedDate": "2009-02-16T14:35:15.077-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:26.827-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

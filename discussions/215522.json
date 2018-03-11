@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "453724",
+    "ThreadId": "215522",
+    "Html": "<p>Is there&nbsp;a way to compare two HtmlNodes to see if they are equal?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Urvish Parikh</p>",
+    "PostedDate": "2010-06-09T14:21:27.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "453729",
+    "ThreadId": "215522",
+    "Html": "<p>In what way are you expecting them to equal? Some people may see it differently. Like some may say if Name and ID are equal, or just Name, or Name and InnerText.</p>\r\n<p>Right now it is just check on the object reference.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-09T14:40:14.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "453730",
+    "ThreadId": "215522",
+    "Html": "<p>In every way, attributes included. I am trying to compare two diffrent DOMs and keeping track of the differences in the DOMs.</p>",
+    "PostedDate": "2010-06-09T14:42:49.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

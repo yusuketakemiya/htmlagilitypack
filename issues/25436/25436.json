@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When parsing an HTML document that has a link element in the head that is closed like:\n \n<link />\nIt seems the parser interprets this a just an opening tag for link - and then when you write out the HtmlDocument you get:\n \n<link>\nwhich of course changes the meaning of the original HTML document.\n \nMy sample code:\n \ndoc = new HtmlAgilityPack.HtmlDocument();\ndoc.LoadHtml(templateContents);\n \nStringWriter sw = new StringWriter();\ndoc.Save(sw);\nsw.Flush();\nnewContents = sw.ToString();\n \nnewContents now has an HTML doc with unclosed link tag...",
+    "LastUpdatedDate": "2013-02-21T18:47:20.973-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-11-23T08:40:42.86-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "<link> elements not being parsed/written correctly",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 25436
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The unclosed link tag is due to the HtmlDocument's OptionWriteEmptyNodes being default to false. \r\nIf you say:\r\n\r\ndoc = new HtmlAgilityPack.HtmlDocument();\r\ndoc.OptionWriteEmptyNodes = true;\r\ndoc.LoadHtml(templateContents);\r\n\r\n[...]\r\n\r\nthe <link/> tag will be closed.",
+      "PostedDate": "2010-03-24T07:09:30.067-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-06-21T13:30:32.983-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:20.973-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1011630",
+    "ThreadId": "435708",
+    "Html": "We have a CMS with rich editor. The editor is inserting special HTML elements that serve as placeholders for videos, audios, images or blocks of text. We are migrating from regular expression to HAP to detect these elements. Intended workflow is like this:<br />\n<ol>\n<li>Load the document via HAP</li>\n<li>Detect special placeholders in the document and replace them with custom HtmlNode-derived objects</li>\n<li>\nSplit the document array of objects of two kinds - HTML and special<br />\n</li>\n</ol>\nIn order to do this I'm calling HtmlDocument.Save passing special TextWriter-derived class. I need special HtmlNode-derived class to interact with special TextWriter-derived class in a special way (it basically closes one underlying StringBuilder, creates special placeholder object and starts a new StringBuilder). In order to do this I need HtmlNode.WriteTo to be virtual, so I can override it.\r<br />\nI made it virtual for myself and compiled a custom version of HAP. But it'd be nice if this change is done to official HAP, so we can use it from NuGet.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-03-07T01:54:57.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126053",
+    "ThreadId": "435708",
+    "Html": "@Dzonny<br />\nDid have any clue how to reduce usage of memory? i think it is major feedback of HAP for crawl on multiple threads on a scale.<br />\n<br />\nbeen given a right direct for a quickly start, i will plan to make such perf improvement.<br />\n",
+    "PostedDate": "2013-11-18T07:58:28.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126281",
+    "ThreadId": "435708",
+    "Html": "Honestly I have no idea. I haven't seen any memory issue with HAP in our use case. But we don't use it for anything as intense as crawling. Our CMS may have max 100 concurrent users and wee parse relatively short HTML (news articles).\r<br />\nBasically there should be no memory leak in HAP as it's pure C# code. It does not mean that there is no excessive memory usage.<br />\n",
+    "PostedDate": "2013-11-18T15:43:18.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

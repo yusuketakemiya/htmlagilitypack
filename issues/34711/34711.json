@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have run across some situations when the head tag was not closed. In this case the parser does not detect the body, so it's missing from the HtmlDocument tree.\n\nExample\n\n```\n<html>\n<head>\n   <title>this head is wrong</title>\n\n<body>\n <p>example</p>\n</body>\n</html>\n```\n\nThe workaround that I did was to check for the presence of the __</head>__ tag in the text and if not found then add it just in front of __<body__ before loading the HtmlDocument.\n\n```\nif (!html.Contains(\"</head>\"))\n    html = html.Replace(\"<body\", \"</head><body\");\n```\n\nWould be nice to have this fixed in the parser itself.",
+    "LastUpdatedDate": "2013-12-09T10:23:51.07-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-12-02T03:11:49.913-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "body node not parsed when head not closed",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 34711
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

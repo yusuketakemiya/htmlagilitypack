@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "262408",
+    "ThreadId": "76745",
+    "Html": "<p>Sorry for the newbie question. I added a</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">using</span> HtmlAgilityPack;</pre>\r\n<pre>\r\nto the class and included the dll in the bin directory yet I still get this error.</pre>\r\n</div>",
+    "PostedDate": "2009-12-01T11:34:19.427-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262426",
+    "ThreadId": "76745",
+    "Html": "<p>Have you added a reference in your project to the HAP dll or HAP project?</p>",
+    "PostedDate": "2009-12-01T12:03:25.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262436",
+    "ThreadId": "76745",
+    "Html": "<p>Dang. I thought having it in the bin was enough...thanks!!!</p>",
+    "PostedDate": "2009-12-01T12:22:02.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262673",
+    "ThreadId": "76745",
+    "Html": "<p>Only if it's a web site type of project. For everything else, it must be referenced.</p>",
+    "PostedDate": "2009-12-02T03:32:05.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "759778",
+    "ThreadId": "76745",
+    "Html": "<p>Hello,</p>\r\n<p>&nbsp;</p>\r\n<p>I am getting this same error and I have checked and implemented your solution above but the error is still there. It would really help if you could please advise.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Compiler Error Message:&nbsp;</strong><span>CS0246: The type or namespace name 'HtmlAgilityPack' could not be found (are you missing a using directive or an assembly reference?)</span></p>\r\n<p>&nbsp;</p>\r\n<p>Many thanks,</p>\r\n<p>Dipti</p>",
+    "PostedDate": "2012-02-12T20:19:38.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "895791",
+    "ThreadId": "76745",
+    "Html": "<p>i have the reference and am having the same problem....not sure why, it seems it should be easy , i am now using vs 2010, i have tried 2008 with not luck either</p>",
+    "PostedDate": "2012-08-05T13:28:58.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

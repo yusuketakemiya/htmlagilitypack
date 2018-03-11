@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "276189",
+    "ThreadId": "80557",
+    "Html": "<p>Is there a possibility to specify an option to skip comments when loading html?</p>",
+    "PostedDate": "2010-01-12T07:23:41.28-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "276195",
+    "ThreadId": "80557",
+    "Html": "<p>There are no options currently to do that. You can however remove them. They have an NodeType of HtmlNodeType.Comment</p>",
+    "PostedDate": "2010-01-12T07:31:44.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "276424",
+    "ThreadId": "80557",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>DarthObiwan wrote:</strong><br>\r\n<p>There are no options currently to do that. You can however remove them. They have an NodeType of HtmlNodeType.Comment</p>\r\n</blockquote>\r\n<p>That's right - I was thinking of adding a patch to optimize the loading process to exclude loading comments to reduce the memory footprint and improve performance in multithreaded large-scale parsing</p>",
+    "PostedDate": "2010-01-12T13:59:36.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "276440",
+    "ThreadId": "80557",
+    "Html": "<p>I'd be interested in seeing the patch and getting some performance metrics. The memory footprint reduction will be wildly variable, since HAP keeps a reference to the original document and does substrings off of it to get the tag name, inner text, inner html. Comments are handled a little differently where the comment is copied. So it might help if you had a document with a large number of comments.</p>\r\n<p>As for the parsing speed that might not see too much improvement since it still needs to keep parsing until it finds the end of the comment. Though the parser is pretty complex I've found it to be pretty darn efficient. Every time I think I found a way to &quot;fix&quot; something that looks ugly I find that it is ugly because it is avoiding costly operations.</p>\r\n<p>With that said I'm always open to other ideas.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-12T14:17:07.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

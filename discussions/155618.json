@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "363622",
+    "ThreadId": "155618",
+    "Html": "<p>Looking at the API of the HAP, it looks like HtmlNode duplicates a lot of the methods of the framework-provided System.Xml.XmlNode. Is there a technical&nbsp;reason for this design decision?</p>\r\n<p>There seems to be a need for a .NET version of HtmlUnit[1]; that is, a browser engine that executes HTML pages and allows a developer to interact with it programmatically, but does not render content to the screen. There are a couple of components required by such a project,&nbsp;among them&nbsp;an HTML parser and a JavaScript engine, and a way for the two to communicate. HAP provides a great implementation of an HTML parser, but lacks a JavaScript engine[2] and any user interaction API. In attempting to implement an W3C-compliant HTML DOM with the objects of the HAP, the HtmlNode object is lacking a few features from the spec. Given that System.Xml.XmlNode &quot;implements the W3C Document Object Model (DOM) Level 1 Core and the Core DOM Level 2&quot;, it would seem a natural fit for this purpose. Rather than reinventing the wheel and&nbsp;manually converting&nbsp;every HtmlNode in the tree to an XmlNode (which is bound to be slow and error-prone), it would be easier if HtmlNode descended from XmlNode, if there's no technical reason for this design decision.</p>\r\n<p>--Jim</p>\r\n<p>[1] Yes, I'm fully aware that one could use IKVM to run the HtmlUnit java code directly. This introduces dependencies I'd rather not take on, in addition to binding a project to a specific version of HtmlUnit.</p>\r\n<p>[2] Jint (<a href=\"http://jint.codeplex.com\">http://jint.codeplex.com</a>) is my&nbsp;current candidate for a JavaScript engine for this project.</p>",
+    "PostedDate": "2010-02-24T03:20:45.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

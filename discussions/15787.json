@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "51247",
+    "ThreadId": "15787",
+    "Html": "\r\nHi,<br /><br />I've searched the web and I found a code that grabs the schedule from NHL.com, but this is for c# 3.0, and I am at the moment on c# 2.0. And since I am not that fluent with c# I was wondering if anyone could help out guiding me on how to get the schedule from NHL.com by using Html Agility Pack.<br />Best regards, <br />Trond<br />",
+    "PostedDate": "2007-09-29T15:14:00.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

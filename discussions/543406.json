@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1238288",
+    "ThreadId": "543406",
+    "Html": "I'd like to read out phone numbers from a HTML table. However the cell text is parsed wrongly:\r<br />\n<br />\n<strong>HTML source:</strong><br />\n<pre><code>&lt;TD class=&quot;tnum&quot;&gt;0176 \n      49329688&lt;BR&gt;4989/6492673&lt;BR&gt;123&lt;BR&gt;456&lt;BR&gt;789&lt;BR&gt;123&lt;BR&gt;456&lt;BR&gt;789&lt;BR&gt;012&lt;/TD&gt;</code></pre>\n\n<strong>Output:</strong><br />\n<pre><code>0176 \\r\\n      493296884989/6492673123456789123456789012</code></pre>\n\n<strong>Desired Output:</strong><br />\n<pre><code>0176 49329688\n4989/6492673\n123\n456\n789\n123\n456\n789\n012</code></pre>\n\nDoes someone know what's wrong?\r<br />\n<br />\n<strong>C# programm code:</strong><br />\n<pre><code>string hTMLDocumentPath = File.ReadAllText(@&quot;D:\\Temp\\fonbook_list.htm&quot;);\nHtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();\n\ndoc.LoadHtml(hTMLDocumentPath);\n\n// get phone book table in the document\nvar table = doc.DocumentNode.SelectSingleNode(&quot;//div[@id='uiScroll']/table/tbody&quot;)\n           .Descendants(&quot;tr&quot;)\n           .Select(n =&gt; n.Elements(&quot;td&quot;).Select(e =&gt; e.InnerText).ToArray());\n\n// print entries\nstring output = &quot;&quot; + Environment.NewLine;\n\nforeach (var tr in table)\n{\n    if (tr.Length == 10)\n    {\n        string[] phoneNumbers = tr[2].Replace(&quot;\\r\\n&quot;, &quot;&quot;).Replace(&quot; &quot;, &quot;&quot;).Split(new string[] { &quot;&lt;br&gt;&quot; }, StringSplitOptions.None);\n        string[] phoneTypes = tr[3].Split(new string[] { &quot;&lt;br&gt;&quot; }, StringSplitOptions.None);\n\n        output += tr[1] + Environment.NewLine;\n\n        for (int i = 0; i &lt; phoneNumbers.Length; i++)\n        {\n            output += phoneTypes[i] + &quot;: &quot; + phoneNumbers[i] + Environment.NewLine;\n        }\n    }\n\n    output += (Environment.NewLine);\n}</code></pre>\n\n",
+    "PostedDate": "2014-04-26T05:10:15.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

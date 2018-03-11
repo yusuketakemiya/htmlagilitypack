@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "414761",
+    "ThreadId": "203995",
+    "Html": "<p>Hi,</p>\r\n<p>I am trying to find all div elements that have a class=&quot;business&quot;&nbsp; attribute. If I try :</p>\r\n<p>HtmlNodeCollection nc = doc.DocumentNode.SelectNodes(&quot;//div[@class='business']&quot;);</p>\r\n<p>Here is some example html :</p>\r\n<p>&lt;div class=&quot;business&quot;&gt;</p>\r\n<p>&nbsp; &lt;div&gt;&lt;p&gt;nested div 1&lt;/p&gt;&lt;/div&gt;</p>\r\n<p>&nbsp; &lt;div&gt;&lt;p&gt;nested div 2&lt;/p&gt;&lt;/div&gt;</p>\r\n<p>&lt;/div&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>The node collection (nc variable) contains the 2 nested divs but not the outer div (not the div with class=&quot;business&quot; attribute. I've tried using / instead of // in the xpath, also no slashes at all but they return no results at all.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-05T13:54:05.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "415988",
+    "ThreadId": "203995",
+    "Html": "<p>Are you sure?</p>\r\n<p>var doc2 = new HtmlDocument();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc2.LoadHtml(&quot;&lt;div class=\\&quot;business\\&quot;&gt;&lt;div&gt;&lt;p&gt;nested div 1&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;nested div 2&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNodeCollection nc = doc2.DocumentNode.SelectNodes(&quot;//div[@class='business']&quot;);</p>\r\n<p>&nbsp;</p>\r\n<p>nc.Count == 1;</p>",
+    "PostedDate": "2010-03-09T09:00:39.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

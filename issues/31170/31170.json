@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Please try the following snippet in the HAP Explorer, you will see /div[1]/div[1]'s content is not correct, which incorrectly contains the remaining HTML elements\n \n<div class=\"block untagged\" id='qiushi_tag_1192793' title=\"2011-08-03 16:42:58\">\n \n<div class=\"content\">讲一个蜜月时的事吧，本人男，当时住星级酒店，环境感觉还行。\n<br/>-----不，哥不行-------\n<br/>在外哈皮回到酒店，天刚黑，我俩就兴奋了，于是拉紧窗帘，关大灯，各种前戏，蜜月嘛，你们懂的。正在兴奋的想那啥时，突然扭头主意到窗户上有个黄豆大亮点，当时哥就痿了，早就听说有些酒店专装摄像头盗摄视频卖钱的，没想到真让哥碰到了，哥当时那个气啊！于是下床扯开窗帘一顿狂找，新婚老婆幽怨的眼神看着我问：“你在找啥？”我说：“在找摄像头！”可费了半天劲，我也没找到摄像头，最后还是老婆眼尖，说：“你看是这个吗？”\n<br/>哥扯过窗帘来一看，尼玛！那个沟曰的用烟头在窗帘上烫了个洞啊！透过光，还得哥还以为是摄像头！\n<br/>直到现在还不敢关灯xxoo，心理有阴影啊，痿啊%>_<%、、、、果断匿了 </div>\n \n \n<div class=\"bar\" id=\"qiushi_counts_1192793\">\n<div class=\"clearfix\">\n<ul>\n<li class=\"up\" id=\"vote-up-1192793\">\n<a href=\"javascript:vote2(1192793,1)\" id=\"up-1192793\" class=\"vote\">\n<strong><span id=\"pos-score-1192793\">0</span></strong>\n</a>\n<li class=\"down\" id=\"vote-dn-1192793\" >\n<a href=\"javascript:vote2(1192793,-1)\" id=\"dn-1192793\" class=\"down\">\n<strong><span id=\"neg-score-1192793\">0</span></strong>\n</a>\n<li class=\"comment\">\n<a href=\"/new2/article/1192793#qiushi_comments_1192793\" class=\"permalink\" title=\"新窗口打开糗事#1192793\" target=\"_blank\">: :</a>\n<a href=\"/new2/article/1192793#qiushi_comments_1192793\" class=\"qiushi_comments\" id=\"c-1192793\" title=\"载入评论\">\n暂无评论\n</a>\n</li>\n</ul>\n</div>\n</div>\n \n</div>",
+    "LastUpdatedDate": "2013-02-21T18:47:05.31-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-08-04T08:19:02.117-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Parsing incorrectly when text contains '<' or '>'",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 31170
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "What encoding was the incomming data stream? I.e. I'm assuming that it was no UTF7",
+      "PostedDate": "2011-08-05T06:58:09.367-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "It is Simplified Chinese",
+      "PostedDate": "2011-08-09T06:25:15.68-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Okies, so that's the EUC-CN encoding. Was the input stream UTF8 or EUC-CN?",
+      "PostedDate": "2011-08-09T07:20:24.687-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "UTF-8, <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />",
+      "PostedDate": "2011-08-09T08:41:53.76-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "笑话不错",
+      "PostedDate": "2011-08-09T18:34:35.187-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "笑话不错",
+      "PostedDate": "2011-08-09T18:35:06.89-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:05.31-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

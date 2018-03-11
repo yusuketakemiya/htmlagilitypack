@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "446365",
+    "ThreadId": "213565",
+    "Html": "<p>Hi,</p>\r\n<p>I have a feature request for the next version, I tried to hack it by my self into the sources but I wasn't able to do it ;(</p>\r\n<p>&nbsp;</p>\r\n<p>It would be great to have an option (or do it every time) to leave out Nodes that only contain special hidden chars like &quot;\\n&quot; or &quot;\\r\\n&quot; and so on, who need this nodes?</p>\r\n<p>Because they don't have any child notes eather.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards</p>\r\n<p>Christian&nbsp;</p>",
+    "PostedDate": "2010-05-23T05:37:29.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "449135",
+    "ThreadId": "213565",
+    "Html": "<p>Those nodes are needed when writing the HtmlDocument to a file and trying to preserve original formatting as much as possible.</p>\r\n<p>You can always get all the nodes with LINQ and do a .Remove() on them.</p>",
+    "PostedDate": "2010-05-29T15:16:34.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

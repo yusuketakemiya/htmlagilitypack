@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm trying to parse HTML and convert it to Markdown in a WinRT app, and I've got the following code\n\n```\n            foreach (var x in doc.DocumentNode.SelectNodes(\"//strong\"))\n            {\n                x.ParentNode.ReplaceChild(\n                        HtmlAgilityPack.HtmlNode.CreateNode(\"**\" + x.InnerHtml + \"**\"),\n                x);\n            }\n```\nThis works in .NET4 in an MVC project. Obviously I had to change it as SelectNodes is not available in WinRT, so I replaced that with Descendants\n\n\n```\n            foreach (var x in doc.DocumentNode.Descendants(\"//strong\"))\n            {\n                x.ParentNode.ReplaceChild(\n                        HtmlAgilityPack.HtmlNode.CreateNode(\"**\" + x.InnerHtml + \"**\"),\n                x);\n            }\n```\n\nI've also tried this\n\n```\n            var query = doc.DocumentNode.Descendants(\"strong\");\n            foreach (var item in query.ToList())\n            {\n                var newNodeStr = \"**test**\";\n                var newNode = HtmlNode.CreateNode(newNodeStr);\n                item.ParentNode.ReplaceChild(newNode, item);\n            }\n```\n\nNeither of these work. It seems ReplaceChild in the WinRT build doesn't do what it is supposed to?",
+    "LastUpdatedDate": "2014-12-15T03:16:22.033-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-12-15T02:40:59.25-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ReplaceChild not working in WinRT version",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35750
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Someone on StackOverflow pointed out that Descendants does not handle XPath, so the set returned is empty. That was my issue. You can close this!",
+      "PostedDate": "2014-12-15T03:16:22.033-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

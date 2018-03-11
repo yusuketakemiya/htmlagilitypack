@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "176351",
+    "ThreadId": "52477",
+    "Html": "Hi!<br>\r\n<br>\r\nI have a xml document like this:<br>\r\n&lt;configuration&gt;<br>\r\n&nbsp; &lt;server&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;village name=&quot;test&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;strategy class=&quot;Farm&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;troop type=&quot;doll&quot;&gt;10&lt;/troop&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;target&gt;Test&lt;/target&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/strategy&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/village&gt;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; &lt;village name=&quot;default&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;strategy class=&quot;Farm&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;troop type=&quot;teddybear&quot;&gt;12&lt;/troop&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;target&gt;Test&lt;/target&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/strategy&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;/village&gt;<br>\r\n&nbsp; &lt;/server&gt;<br>\r\n&lt;/configuration&gt;<br>\r\n<br>\r\nI want to grab the troop-nodes inside the village-nodes inside the strategy-nodes. So my code is this:<br>\r\n<br>\r\nString xml = new StreamReader(&quot;configuration.xml&quot;).ReadToEnd();<br>\r\nHtmlNode farmnode = xpath.getNode(xml, &quot;//village[@name='test']//strategy[@class='Farm']&quot;);<br>\r\nforeach(HtmlNode child in farmnode.SelectNodes(&quot;//troop&quot;))<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine( child.Attributes[&quot;type&quot;].Value );<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\nThere is only one troop-node inside the village with the name &quot;test&quot;, so my output should be &quot;doll&quot; however my output is:<br>\r\n- doll<br>\r\n- teddybear<br>\r\n<br>\r\nCan someone tell me why the code is acting up like this?<br>\r\n<br>\r\nThanks \r\n",
+    "PostedDate": "2009-04-06T15:28:39.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "191340",
+    "ThreadId": "52477",
+    "Html": "<p>&quot;//&quot; starts from the top always. You should do &quot;//village[@name='test']/strategy[@class='Farm']/troop&quot;</p>",
+    "PostedDate": "2009-05-18T00:00:25.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

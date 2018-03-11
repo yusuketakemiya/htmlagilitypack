@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nI have created a service to extract HTML data in C# application. It works very well but in few URL's the dynamic HTML content is not downloaded. This problem occurs on those URLs where some of the contents on the page are loaded through ajax requests.\n\nIs there any way to download complete HTML of the page.",
+    "LastUpdatedDate": "2017-01-27T10:27:43.517-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2017-01-27T10:27:43.517-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem to read full HTML content in few URL",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43564
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

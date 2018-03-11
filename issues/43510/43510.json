@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "__Upgrade for free on Windows phone __",
+    "LastUpdatedDate": "2016-10-25T01:27:37.387-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-10-25T01:23:42.773-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Upgrade to Windows 10 mobile",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43510
+  },
+  "FileAttachments": [
+    {
+      "FileId": 16442,
+      "FileName": "Windows10-QOS.pdf",
+      "DownloadUrl": ".\\16442"
+    },
+    {
+      "FileId": 16443,
+      "FileName": "Nokia_Lumia_925_UG_en_US (1).pdf",
+      "DownloadUrl": ".\\16443"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Thank you.",
+      "PostedDate": "2016-10-25T01:27:37.387-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

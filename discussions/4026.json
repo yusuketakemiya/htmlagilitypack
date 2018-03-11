@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "12841",
+    "ThreadId": "4026",
+    "Html": "\r\nThe HtmlWeb class is great for retrieving html documents from the web.<br /><br />However, some important properties are currently not implemented.<br /><br />I've modified my source code with the following 2 properties, that compliment the request object.<br /><br />String UserAgent (req.UserAgent = UserAgent)<br />Integer TimeoutMillis (req.Timeout= TimeoutMillis)<br /><br />I've actually created an additional constructor for HtmlWeb that takes those 2 parameters and modified the Get method responsible for the request object to take the above parameter values.<br />",
+    "PostedDate": "2007-01-28T19:37:47.073-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

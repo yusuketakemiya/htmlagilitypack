@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "235439",
+    "ThreadId": "69194",
+    "Html": "<p>I've created a Branch for the upcoming version, you'll find it under the Branches folder in the source code.</p>\r\n<p>As I've stated before this update includes implementing IList&lt;T&gt; for the two major collections HtmlNodeCollection and HtmlAttributeCollection. It also has a bunch of helper functions to make querying with LINQ easier.</p>\r\n<p>I'm also trying to tackle some of the reported issues for this release. I'll probably leave some of the more complex ones for the next release. I've already included some of the submitted patches, one is pending a response from the submitter.</p>\r\n<p>I'll be adding a Unit Test project to help solidify the codebase.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-16T21:46:15.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "241055",
+    "ThreadId": "69194",
+    "Html": "<p>I've been uber busy the last few weeks and am already behind on my plans. I have however released a beta for 1.4. The beta is a snapshot of the current 1.4 branch. I've also provided binaries to download. Check out the downloads page for beta.</p>",
+    "PostedDate": "2009-10-01T13:43:13.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

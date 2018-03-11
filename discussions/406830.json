@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "956307",
+    "ThreadId": "406830",
+    "Html": "\r\n<p>I have tried this twice so far but it seems that it is not able to run in the background. &nbsp;Using this, I was able to verify that it does not go to DownLoadCompleted.<br>\r\n<br>\r\nHtmlWeb.LoadAsync(&quot;http://www.pagasa.dost.gov.ph&quot;, DownLoadCompleted);<br>\r\n<br>\r\nIs it because it is not among the supported APIs for background agents? &nbsp;I'm trying to update the live tile content by scraping a weather website. &nbsp;Are there alternatives aside from using HAP?&nbsp;</p>\r\n",
+    "PostedDate": "2012-12-14T14:05:52.183-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

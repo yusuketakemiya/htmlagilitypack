@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When i tried to add an onChange event to the HtmlDocument class I found that if you fill a node with the innerHtml.set() function, it creates a new document and then appends all children to the target node.\n\nHtmlDocument doc = new HtmlDocument();\ndoc.LoadHtml(value);\n\nRemoveAllChildren();\nAppendChildren(doc.DocumentNode.ChildNodes);\n\nBut within AppendChild(HtmlNode NewNode) the NewNode.OwnerDocument doesn't change, so if you use innerHtml.set() a lot of your memory will be filled with unused HtmlDocuments because they are still referenced by the OwnerDocument property of the appended children. This may be a small issue but for me it’s irritating when the OwnerDocument property differs inside a Document",
+    "LastUpdatedDate": "2014-04-17T04:17:46.4-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-01-10T00:00:02.56-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OwnerDocument property is inconsistent",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 33647
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

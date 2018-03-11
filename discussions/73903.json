@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "252741",
+    "ThreadId": "73903",
+    "Html": "<p>First of all</p>\r\n<p>this HAP is very useful for us to parse HTML instead of using javascript.</p>\r\n<p>Im just facing one issue i can't able to retrive style attributes like border-top,top,height</p>\r\n<p>For Example</p>\r\n<p>I have a &lt;span&nbsp; style=&quot;Border-TOP:12Px;Border-BOTTTOM:80px;TOP:490px;HEIGHT:400px&quot;/&gt;</p>\r\n<p>How can i retreive the Border-Style etc using HAP any idea</p>",
+    "PostedDate": "2009-11-03T03:12:41.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "841482",
+    "ThreadId": "73903",
+    "Html": "<p>I'm also facing the same issue.</p>",
+    "PostedDate": "2012-05-27T17:18:51.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "889361",
+    "ThreadId": "73903",
+    "Html": "<p>Simple soution is to:</p>\r\n<p>1. find the element</p>\r\n<p>2. find the style attribute</p>\r\n<p>3. do a string split of the attribute value on ';' (semicolon) -&gt; array</p>\r\n<p>4. iterate the array, splitting each item on ':' (colon)</p>\r\n<p>That will give you access to each style attribute and its value as strings.</p>",
+    "PostedDate": "2012-07-23T16:39:03.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

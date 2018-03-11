@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "43911",
+    "ThreadId": "13466",
+    "Html": "\r\nI am trying to validate the InnerText property of a &lt;fieldset&gt; tag that has a nested &lt;form&gt; tag within it.  The HtmlNode is identified correctly.  Problem is the closing &lt;/form&gt; tag in the nested form is added to the InnerText property for the parent fieldset tag.   I am using a page from W3C schools -- <a href=\"http://www.w3schools.com/tags/tryit_view.asp?filename=tryhtml_fieldset\" class=\"externalLink\">http://www.w3schools.com/tags/tryit_view.asp?filename=tryhtml_fieldset<span class=\"externalLinkIcon\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"></span></a>.<br /><br />Here is the OuterHtml for the page:<br /><br />{\"&lt;fieldset&gt;<br />&lt;legend&gt;Health information:&lt;/legend&gt;<br />&lt;form action=\"\"&gt;<br />Height &lt;input type=\"text\" size=\"3\"&gt;<br />Weight &lt;input type=\"text\" size=\"3\"&gt;<br />&lt;/form&gt;<br />&lt;/fieldset&gt;\"}<br /><br />Here is the InnerText for the same tag:<br /><br />\\r\\nHealthInformation:\\r\\n\\r\\nHeight \\r\\nWeight \\r\\n&lt;/form&gt;\\r\\n<br /><br />Is this a bug?  Is there a way to fix the source to make this start working?  Thanks for your help!<br />",
+    "PostedDate": "2007-08-06T11:31:02.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

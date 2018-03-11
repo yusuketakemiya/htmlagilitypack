@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1482714",
+    "ThreadId": "657629",
+    "Html": "Is there any solution to update the OuterHtml, like we can update the InnerHtml? Or, probably there is another solution than OuterHtml?\r<br />\n<br />\nHere is my case:\r<br />\nCurrently, I have this html string:\r<br />\n&lt;div id=&quot;table-timesheet-preview&quot; class=&quot;{MO-CSS-CLASS value=&quot;TimeSheet&quot;}&quot;&gt;\r<br />\n&lt;/div&gt;\r<br />\n<br />\nAnd I want to change it to be:\r<br />\n&lt;div id=&quot;table-timesheet-preview&quot; class='{MO-CSS-CLASS value=&quot;TimeSheet&quot;}'&gt;\r<br />\n&lt;/div&gt;\r<br />\n<br />\nMy logic is by getting the div based on &quot;table-timesheet-preview&quot;, retrieving the OuterHtml (readonly), and  ???\r<br />\n<br />\nI can't use the InnerHtml, because it only contains of the inside html of  &quot;table-timesheet-preview&quot;, not the div itself.<br />\n",
+    "PostedDate": "2016-09-02T00:25:01.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

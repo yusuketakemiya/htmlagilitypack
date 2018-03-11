@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "694212",
+    "ThreadId": "278424",
+    "Html": "\r\n<p>hey guys, I'm using HAP for WP7 to do some HTML parsing work.</p>\r\n<p>But I cannot find the SelectNodes function. There is only Descendants function and it cannot understand XPath expression.</p>\r\n<p>So is there any way to select nodes by XPath expression???</p>\r\n",
+    "PostedDate": "2011-11-05T05:03:44.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "694249",
+    "ThreadId": "278424",
+    "Html": "<p>The current version supports wp7.0 which did not include xpath. I think now with mango xpath should be supported, I'll check into it</p>",
+    "PostedDate": "2011-11-05T08:07:45.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "694289",
+    "ThreadId": "278424",
+    "Html": "<p>I have uploaded a new Nuget package that includes versions for windows phone, the one for wp7.1 includes the xpath options.</p>\r\n<p>I'll be updating version control shortly</p>",
+    "PostedDate": "2011-11-05T10:29:42.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "694385",
+    "ThreadId": "278424",
+    "Html": "<p>Great! And thanks a lot for the product!</p>",
+    "PostedDate": "2011-11-05T22:04:04.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "712347",
+    "ThreadId": "278424",
+    "Html": "<p>Windows 7.1 still knows no System.XML.Xpath so the 7.1 lib is not working with XPath support</p>",
+    "PostedDate": "2011-12-14T13:10:45.977-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

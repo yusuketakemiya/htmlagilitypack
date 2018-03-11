@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you retrieve\n\ndocument.DocumentNode.OuterHtml once, then manipulate the dom, then retrieve it again, nothing will be changed.  It is as if the .OuterHtml property freezes after the first retrieval.  Most likely it is being 'cached' after first being retrieved, causing it to get stuck on the original value.\n\nSee this discussion:\n\nhttp://stackoverflow.com/questions/25784761/html-doesnt-get-updated-with-html-agility-pack/33181688#33181688",
+    "LastUpdatedDate": "2016-04-18T09:14:08.303-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-10-16T18:34:39.82-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can only get .OuterHtml once",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 43265
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

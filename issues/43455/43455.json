@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi there, is there any support in the works for building against the .NET Standard framework (as opposed to the .NET 4.6.X ?\n\nThere was a [fork](https://github.com/zulfahmi93/HtmlAgilityPack.NetCore) someone did that ran on the old DNX runtime... but now that the RTM is released it would be fantastic to be able to move off the 4.6.X and onto .NET Standard – enabling this to be used on Mac/Linux machines.",
+    "LastUpdatedDate": "2017-02-20T17:49:02.757-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-07-21T13:17:13.19-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Suport for .NET Core / .NET Standard",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 5,
+    "Id": 43455
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

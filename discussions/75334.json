@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "257830",
+    "ThreadId": "75334",
+    "Html": "<p>i am trying to use this library and when i navigate to some site with iframes</p>\r\n<p>i can not see the elements within</p>\r\n<p>does some one know who can i look inside and if it possible .</p>\r\n<p>&nbsp;</p>\r\n<p>thanks oded</p>",
+    "PostedDate": "2009-11-17T02:31:27.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261558",
+    "ThreadId": "75334",
+    "Html": "<p>You could use XPath to get the iframe element then get the value of the src attribute. From that you should be able to download the html of iframe.</p>",
+    "PostedDate": "2009-11-29T04:48:49.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261562",
+    "ThreadId": "75334",
+    "Html": "<p>thats nice ....i did it before i thought htmlagilty took care of it .</p>\r\n<p>i explore the the hap and i found that the load document from url uses</p>\r\n<p>stream do u know what the stream downloading from the site ....</p>\r\n<p>because i got a site withe like 17 iframes ...and i want to know which i frame i downloaded</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-29T05:21:17.91-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

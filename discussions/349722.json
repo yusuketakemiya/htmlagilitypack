@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "814421",
+    "ThreadId": "349722",
+    "Html": "<p>I use HtmlAgilityPack to load HTML and write back, and I&nbsp;set OptionWriteEmptyNodes to true so as to keep the empty node, but if set OptionWriteEmptyNodes to ture, the XML declaration in origial HTML is also modified incorrectly.</p>\n<p>Here is my code:</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var doc = new HtmlDocument();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.OptionWriteEmptyNodes = true;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.LoadHtml(@\"&lt;?xml version=\"\"1.0\"\" encoding=\"\"utf-8\"\" ?&gt; This is a test&lt;br/&gt;html\");</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var postParsed = doc.DocumentNode.WriteTo();</p>\n<p>The output is:</p>\n<p>&lt;?xml version=\"1.0\" encoding=\"utf-8\" /&gt; This is a test&lt;br /&gt;html</p>\n<p>You can see that the XML declaration &lt;?xml version=\"1.0\" encoding=\"utf-8\" ?&gt; is change incorrectly to &lt;?xml version=\"1.0\" encoding=\"utf-8\" /&gt;</p>\n<p>How to avoid this issue when set OptionWriteEmptyNodes to true?</p>",
+    "PostedDate": "2012-03-22T21:04:49.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "822207",
+    "ThreadId": "349722",
+    "Html": "<p>anyone know how to resolve this issue?</p>",
+    "PostedDate": "2012-04-10T19:52:40.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

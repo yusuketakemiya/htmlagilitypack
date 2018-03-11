@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1298299",
+    "ThreadId": "564991",
+    "Html": "I am the beginner and trying to read an HTML page ( .htm page) , which is on my local drive using HtmlAgilityPack in C#.\r<br />\n<br />\n Here are the things which i did.<br />\n<ol>\n<li>Using Visual Studio 2012, first i installed HtmlAgilityPack using Package Manager Console -- NuGet.</li>\n<li>It added HtmlAgilityPack  dll to my project.</li>\n<li>Here is my code. I started running my code in debug mode, when it reached the below line\r<br />\n HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();</li>\n<li>\nI got an error saying that\r<br />\n No Source available \r<br />\n There no source code available for the current location.<br />\n</li>\n</ol>\nI am confused now. What source code it is looking for and Why it is looking for the source code as we already have the dll attached to the project\r<br />\n<br />\n So, here are my questions on this issue <br />\n<ol>\n<li>What is this error means. If it is looking for the source code, how can i get it.</li>\n<li>How can i get the same source code for the HtmlAgilityPack which it was installed</li>\n<li>how can I make it available to my application</li>\n<li>\nhow can i read the html tables<br />\n</li>\n</ol>\ntry<br />\n<pre><code>         {\n             DirectoryInfo theFolder = new DirectoryInfo(&quot;\\\\\\\\MYPC\\\\Users\\\\Desktop&quot;);\n             System.IO.FileInfo[] file = theFolder.GetFiles();\n             int len = file.Length;\n             if (file.Length &gt; 1)\n             {\n                 int intLength;\n                 fileName = Convert.ToString(file.GetValue(0));\n                 intLength = fileName.IndexOf(&quot;_&quot;);\n             }\n             string FileName = &quot;\\\\\\\\MYPC\\\\Users\\\\Desktop&quot; + fileName;\n             // Load the html document\n             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();\n             doc.Load(FileName);\n             // Get all tables in the document\n             HtmlNodeCollection tables = doc.DocumentNode.SelectNodes(&quot;//TABLE&quot;);                 \n             HtmlNodeCollection rows = tables(0).SelectNodes(&quot;.//TR&quot;);\n             for (int i = 0; i &lt; rows.Count; ++i)\n             {\n                  HtmlNodeCollection cols = rows(i).SelectNodes(&quot;.//TD&quot;);\n                 for (int j = 0; j &lt; cols.Count; ++j)\n                 {\n                     // Get the value of the column and print it\n                     string value = cols(j).InnerText;\n                     Console.WriteLine(value);\n                 }\n             }\n         }\n         catch (Exception objError)\n         {\n             throw objError;\n         } \n\n</code></pre>\n\n",
+    "PostedDate": "2014-09-02T12:47:01.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298354",
+    "ThreadId": "564991",
+    "Html": "I'd say it could be this line of code \r<br />\nstring FileName = &quot;\\\\MYPC\\Users\\Desktop&quot; + fileName;\r<br />\n<br />\nyou are missing a back slash between Desktop and filename. so it's trying to load file Desktopabc.htm<br />\n",
+    "PostedDate": "2014-09-02T14:58:46.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298448",
+    "ThreadId": "564991",
+    "Html": "Hi LeeJeary, Thanks for your response. Anyway here is what exactly happening.\r<br />\n<br />\nWhen my debug pointer going to HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument(); line in the code\r<br />\n<br />\nit is throwing the below error\r<br />\n<br />\nSource file:\r<br />\nC:......\\HtmlDocument.cs\r<br />\nModule: c:\\users........\\Debug\\HtmlAgilityPacl.dll\r<br />\nProcess:,,.exe\r<br />\n<br />\nThe source file is different from when the module was built. Would you like to use it anyway?\r<br />\n<br />\nand giving options YES &amp; NO\r<br />\n<br />\nIf i select YES - its give me the above alert for couple of other files in source code and finally fails and throws this alert.\r<br />\n<br />\nSource file information;\r<br />\n<br />\nLocating source for 'd:\\Source\\htmlagilitypack.new\\Trunk\\HtmlAgilityPack\\HtmlDocument.PathMethods.cs'. Checksum: MD5 {21 f3 9f 31 c1 6a 76 67 a7 c1 d8 6f 9b b2 66 7d}\r<br />\nThe file 'd:\\Source\\htmlagilitypack.new\\Trunk\\HtmlAgilityPack\\HtmlDocument.PathMethods.cs' does not exist.\r<br />\nLooking in script documents for 'd:\\Source\\htmlagilitypack.new\\Trunk\\HtmlAgilityPack\\HtmlDocument.PathMethods.cs'...\r<br />\nLooking in the projects for 'd:\\Source\\htmlagilitypack.new\\Trunk\\HtmlAgilityPack\\HtmlDocument.PathMethods.cs'.\r<br />\nThe file was not found in a project.\r<br />\nLooking in directory 'C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\crt\\src\\'...\r<br />\nLooking in directory 'C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\crt\\src\\vccorlib\\'...\r<br />\nLooking in directory 'C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\atlmfc\\src\\mfc\\'...\r<br />\nLooking in directory 'C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\atlmfc\\src\\atl\\'...\r<br />\nLooking in directory 'C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\atlmfc\\include'...\r<br />\nLooking in directory 'C:\\Users\\sunil\\Desktop\\HtmlAgilityPack\\Release\\1_4_0\\'...\r<br />\nThe debug source files settings for the active solution indicate that the debugger will not ask the user to find the file: d:\\Source\\htmlagilitypack.new\\Trunk\\HtmlAgilityPack\\HtmlDocument.PathMethods.cs.\r<br />\nThe debugger could not locate the source file 'd:\\Source\\htmlagilitypack.new\\Trunk\\HtmlAgilityPack\\HtmlDocument.PathMethods.cs'.\r<br />\n<br />\nIf i selects NO - it asks me to select the source code again.\r<br />\n<br />\nI installed version 1.4.6.0\r<br />\n<br />\nDo you any thoughts.<br />\n",
+    "PostedDate": "2014-09-03T00:14:20.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298461",
+    "ThreadId": "564991",
+    "Html": "\r\n<div dir=\"ltr\">I think this is just a red herring.. did you try changing the path like I mentioned?\r\n</div>\r\n<div><br>\r\n<br>\r\n<div></div>\r\n</div>\r\n",
+    "PostedDate": "2014-09-03T01:05:19.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298466",
+    "ThreadId": "564991",
+    "Html": "Hi Lee, Here is the FileName full path. I am not sure this is an issue, as the file path in filename variable is showing as below.\r<br />\n<br />\n&quot;C:\\Users\\sunil\\Desktop\\Test\\corporate-failed-201429080908.html&quot;\r<br />\n<br />\nHere is a question.\r<br />\n<br />\nWhy it is giving me an alert for the source code?\r<br />\n<br />\nhow can get the similar version of HtmlAgilityPack source code?\r<br />\n<br />\nDo i need to copy this source code to my project?\r<br />\n<br />\nLet me know.<br />\n",
+    "PostedDate": "2014-09-03T01:17:29.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298485",
+    "ThreadId": "564991",
+    "Html": "\r\n<div dir=\"ltr\">Normally the reason for this is that you have the <span style=\"font-family:arial,sans-serif; font-size:13px\">\r\nHtmlAgilityPack.</span>pdb and <span style=\"font-family:arial,sans-serif; font-size:13px\">\r\nHtmlAgilityPack.dll files included in the project and thinks that you are able to debug the dll using source code from your machine.\r\n</span>\r\n<div><span style=\"font-family:arial,sans-serif; font-size:13px\"><br>\r\n</span></div>\r\n<div><span style=\"font-family:arial,sans-serif; font-size:13px\">But the error is still going to be something with the file path as the error is being raised in the file\r\n</span><span style=\"font-family:arial,sans-serif; font-size:13px\">PathMethods.cs</span></div>\r\n<div><span style=\"font-family:arial,sans-serif; font-size:13px\"><br>\r\n</span></div>\r\n<div><font face=\"arial, sans-serif\">Let me know if thats not the case and you don't have the pdb file included and its not in your debug output folder.</font></div>\r\n<div><font face=\"arial, sans-serif\"><br>\r\n</font></div>\r\n<div><font face=\"arial, sans-serif\">you do not need to copy the source to your project you should be able to just use the dll on its own.</font></div>\r\n<div><font face=\"arial, sans-serif\"><br>\r\n</font></div>\r\n<div><font face=\"arial, sans-serif\">Lee</font></div>\r\n</div>\r\n<div><br>\r\n<br>\r\n<div></div>\r\n</div>\r\n",
+    "PostedDate": "2014-09-03T02:18:38.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298673",
+    "ThreadId": "564991",
+    "Html": "Hi Lee, thanks. got it. yes, its the file path issue. there is some permissions issue on that folder, we fixed it and it got resolved now. thanks for u r help. Sunil P<br />\n",
+    "PostedDate": "2014-09-03T10:17:01.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

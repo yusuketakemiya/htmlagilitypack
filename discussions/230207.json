@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "504479",
+    "ThreadId": "230207",
+    "Html": "<p>Hello,</p>\r\n<p>I have a document with a bunch of posts.&nbsp; I select them all like so:</p>\r\n<p>HtmlNodeCollection posts = doc.DocumentNode.SelectNodes(&quot;//div[@class='forum_post']&quot;);</p>\r\n<p>&nbsp;</p>\r\n<p>Then I iterator over them:</p>\r\n<p>foreach (HtmlNode post in posts)</p>\r\n<p>&nbsp;</p>\r\n<p>So far so good, but then, I want to select a node WITHIN a single post.</p>\r\n<p>string content = post.SelectSingleNode(&quot;//div[@class='post_content']&quot;).InnerText.Trim();</p>\r\n<p>&nbsp;</p>\r\n<p>Instead of retrieving the post_content from within the current forum_post, instead I get the first post_content div in the entire document.</p>\r\n<p>&nbsp;</p>\r\n<p>Please let me know if I am doing something wrong, or this is a bug.</p>",
+    "PostedDate": "2010-10-08T12:32:41.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "504878",
+    "ThreadId": "230207",
+    "Html": "<p>My fault. &nbsp;I forgot the dot at the beginning of the xpath.</p>",
+    "PostedDate": "2010-10-09T17:24:34.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

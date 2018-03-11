@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1083474",
+    "ThreadId": "454169",
+    "Html": "I have written a code in VB.net.\r<br />\n<br />\nThe expected output of my program would be a list of extracted links that are inside the \r<br />\n&lt;a href tag and has a word in common. \r<br />\n \r<br />\nIn my program i want to display all links that contains the word &quot;test&quot;.\r<br />\n<br />\nFor example:<br />\n<pre><code>www.drivetest.ca/\nwww.drivetest.ca/EN/bookatest/Pages/Road-Test-Booking.aspx\nwww.drivetest.ca/EN/drivereducation/Pages/Driver-Testing.aspx\nwww.cic.gc.ca/english/citizenship/cit-test.asp</code></pre>\n\nBut my program is not displaying anything at all. Where did i go wrong?\r<br />\n<br />\nHere is my code:<br />\n<pre><code> Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click\n\n        Dim webClient As New System.Net.WebClient\n        Dim WebSource As String = webClient.DownloadString(&quot;http://www.google.com.ph/search?hl=en&amp;as_q=test&amp;as_epq=&amp;as_oq=&amp;as_eq=&amp;as_nlo=&amp;as_nhi=&amp;lr=&amp;cr=countryCA&amp;as_qdr=all&amp;as_sitesearch=&amp;as_occt=any&amp;safe=images&amp;tbs=ctr%3AcountryCA&amp;as_filetype=&amp;as_rights=#as_qdr=all&amp;cr=countryCA&amp;fp=1e63a873f2e9c884&amp;hl=en&amp;lr=&amp;q=test&amp;start=20&amp;tbs=ctr:countryCA&quot;)\n        RichTextBox1.Text = WebSource\n\n        Dim links As New List(Of String)()\n        Dim htmlDoc As New HtmlAgilityPack.HtmlDocument()\n        htmlDoc.LoadHtml(WebSource)\n\n        For Each link As HtmlNode In htmlDoc.DocumentNode.SelectNodes(&quot;//a[@href]&quot;)\n\n            If link.InnerText.Contains(&quot;test&quot;) Then\n                ListBox1.Items.Add(link.InnerText)\n            End If\n\n        Next\n\n\n    End Sub</code></pre>\n\nI am currently new to this HtmlAgilityPack, I am still learning please bear with me.<br />\n",
+    "PostedDate": "2013-08-22T00:26:55.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093062",
+    "ThreadId": "454169",
+    "Html": "<strong>I think this code could help you</strong><br />\nHowever, we have to change the code a bit, and if you're a professional programmer, you can use this code.<br />\n<pre><code>Public Function GetLinkAddress(ByVal HtmlSource As String) As String\n        Dim LinkExtract As String = Nothing\n        Dim htmldoc As New HtmlAgilityPack.HtmlDocument()\n        htmldoc.LoadHtml(HtmlSource)\n        Dim qq = From t In htmldoc.DocumentNode.Descendants(&quot;a&quot;) Where t.Attributes.Contains(&quot;href&quot;) _\n                                              Select t\n        For i As Integer = 0 To qq.Count - 1\n            For m As Integer = 0 To qq(i).Attributes.Count - 1\n                If qq(i).Attributes(m).Name = &quot;href&quot; Then\n                    LinkExtract = qq(i).Attributes(m).Value\n                    Exit For\n                End If\n            Next\n        Next\n        Return LinkExtract\nEnd Function</code></pre>\n\n",
+    "PostedDate": "2013-09-16T04:56:15.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

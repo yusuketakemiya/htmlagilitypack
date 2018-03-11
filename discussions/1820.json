@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "5725",
+    "ThreadId": "1820",
+    "Html": "\r\ni'm trying to load html url as xml and i'm getting the following error:<br />\"An XML comment cannot contain '--', and '-' cannot be the last character.\"<br />here is my code:<br /><br />        private XmlDocument GetURLAsXML(string url)<br />        {<br />            HtmlWeb htmlWeb = new HtmlWeb();<br />            MemoryStream memoryStream = new MemoryStream();<br />            XmlTextWriter xmlTextWriter = new XmlTextWriter(memoryStream, null);<br />            htmlWeb.LoadHtmlAsXml(url, xmlTextWriter);<br /><br />            // rewind the memory stream<br />            memoryStream.Position = 0;<br /><br />            // create, fill, and return the xml document<br />            XmlDocument xmlDoc = new XmlDocument();<br />            string xmlDocContent = (new StreamReader(memoryStream)).ReadToEnd();<br />            xmlDoc.LoadXml(xmlDocContent);<br /><br />            return xmlDoc;<br />        }<br /><br />the url i'm actually trying to load is: http://www.diena.lv/komentari/index.php<br />",
+    "PostedDate": "2006-10-12T23:48:56.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "5921",
+    "ThreadId": "1820",
+    "Html": "\r\nThis should work - for me :-)<br /><br />HtmlAgilityPack.HtmlWeb oWeb = new HtmlAgilityPack.HtmlWeb();<br /><br />System.Xml.XmlTextWriter oTxt = new System.Xml.XmlTextWriter(\"c:\\\\temp\\\\test.xml\",null);<br /><br />string sURL = \"http://wwww.your-one.de\"<br /><br />oWeb.LoadHtmlAsXml(sURL,oTxt);<br /><br />oTxt.Close();<br /><br />Does it work for you, too? :-)<br />Regards<br />Jan Waiz<br />",
+    "PostedDate": "2006-10-18T06:13:23.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

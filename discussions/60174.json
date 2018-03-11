@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "203720",
+    "ThreadId": "60174",
+    "Html": "<p>Hello everyone,</p>\r\n<p>when i save a webside (htmlweb class), that i loaded before, the special chars (german) are destroyed. the encoding of the website is latin 1 (I use the detectencodinghtml function).</p>\r\n<p>Has anyone an idea how to solve my problem?</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you very much.</p>\r\n<p>Best regards,</p>\r\n<p>Robert</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-20T14:02:45.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204571",
+    "ThreadId": "60174",
+    "Html": "<p>Have you tried using the detect encoding overload?</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">public</span> <span style=\"color:Blue\">void</span> Load(<span style=\"color:Blue\">string</span> path, <span style=\"color:Blue\">bool</span> detectEncodingFromByteOrderMarks)\r\n</pre>\r\n</div>\r\n<p>If that doesn't work you'll need to send your own encoder</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>Load(<span style=\"color:Blue\">string</span> path, Encoding encoding, <span style=\"color:Blue\">bool</span> detectEncodingFromByteOrderMarks)<br></pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>Both of these are just small wrappers around the StreamReader class. It might be good to look into how to accomplish what you need with that class.</p>\r\n<p><strong>OR</strong></p>\r\n<p>From looking at the code it does look like HAP will try to read the encoding from the meta tag too. The ReadDocumentEncoding method on line 1498 of HtmlDocument.cs is where you'd want to look to see if the encoding is being detected properly from your html.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-23T09:29:11.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212791",
+    "ThreadId": "60174",
+    "Html": "<p><strong>Sorry for the formatting, but this forum doesnt set a minimal width so my text went on and on and on to the left...</strong></p>\r\n<p>I had the same problem. But not from a file, but from an Url.</p>\r\n<p>Normally HAP (HtmlAgilityPack) will try detect the encoding from the HTTP response headers,<br>the Content-Type specifically. But when this header is missing, the default encoding is UTF8Encoding.</p>\r\n<p>Once this method is called</p>\r\n<p>public void Load(Stream stream, bool detectEncodingFromByteOrderMarks)</p>\r\n<p>which calls</p>\r\n<p>public void Load(TextReader reader)</p>\r\n<p>If you break after ReadToEnd():</p>\r\n<p>_text = reader.ReadToEnd();<br>_documentnode = CreateNode(HtmlNodeType.Document, 0);<br>&nbsp;<br>And inspect sr.CurrentEncoding, you will see this is UTF8Encoding by default (dont take my word for it).<br>&nbsp;<br>It is at this point the problem is irreversible, the ReadToEnd method converts any special characters, such as<br>&oslash;,&aelig;,&aring;,&szlig; etc to ? (ASCII 0x3F or decimal 63).<br>&nbsp;<br>For details on why special characters become ?, read oel on Softwares &quot;The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)&quot;.<br>He also mentions how IE handles this problem. Its worth the read.<br>&nbsp;<br>When you now want to convert any InnerText with Encoding.Convert with the various encodings, this will<br>never work, because the character *IS* a questionmark, its original byte is no more.<br>&nbsp;<br>As is the case with the current release, because you dont have the actual bytes that was received from the server,<br>only the ones &quot;translated&quot; (into questionmarks) by the ReadToEnd(), you cant reparse or fix this problem.<br>&nbsp;<br>If you're lucky, your webpage contains a meta tag, &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=iso-5589-1&quot; /&gt;.<br>The HAP does have a method that detects this encoding, its called ReadDocumentEncoding,<br>and its in HtmlDocument around line 1500+. As you read from this, it actually adds an object of HtmlParseError<br>into the ParseErrors list, so you know the author knew about this issue. Its nice to know if the content<br>encodings mismatch, but the problem still remains, how do you get your beloved characters back?<br>&nbsp;<br>In this method:<br>&nbsp;<br>public void Load(Stream stream, bool detectEncodingFromByteOrderMarks)<br>&nbsp;<br>I use a MemoryStream, which stores bytes, so no conversion problems. You can also use a FileStream and<br>Path.GetRandomFileName() or Path.GetTempFileName(), this way you can inspect the HTML as it was sent from the server, before the parser gets it.<br>&nbsp;<br>I then read from the stream parameter, into the MemoryStream. Once its done I call Seek and put the read pointer at the beginning.<br>&nbsp;<br>Now I call the Load, but instead of using the stream parameter, I&nbsp; use the MemoryStream.<br>&nbsp;<br>The code will run and soon hit the Parse() method. What I wanted is to, immediately when any meta-tag is parsed,<br>to check if the content-type matched the _streamencoding. From the authors method, he compares the<br>WindowsCodePage of the Encoding object. I do the same.<br>&nbsp;<br>I create a method&nbsp; -- you could actually modify the authors method ReadDocumentEncoding. Now, I want to detect<br>this meta as early as possible, as I dont want to waste cpu cycles on parsing HTML. Therefore I call my own<br>method at the very end of CloseCurrentNode().<br>&nbsp;<br>My method throws an exception and sets a new bool _IncorrectStreamEncoding property to true, and sets the<br>encoding from the meta in either _streamencoding or _declaredencoding.<br>&nbsp;<br>This exception is caught in the Load method, which then checks if _IncorrectStreamEncoding is true. If it is, I<br>use Seek on the MemoryStream to reset it at the beginning, and call Load with my memorystream object, and the<br>encoding I got from the meta. The stream parameter is closed by the caller, and the MemoryStream is disposed<br>then the Load method gets out of scope, thanks to the Using statement. The html content is stored in _text.<br>&nbsp;<br>You might want to fix the various FormatExceptions HAP can throw at you from Encoding.GetEncoding(), by try/catch'ing them.<br>&nbsp;<br>When I wrote my method to determine if the meta contained the content type, I didnt know of the authors existing<br>method. Take note, when testing the meta, do check out the authors method, it contains some optimizations that<br>will save alot of time when its parsing. Like ONLY using _currentnode.Name.Equals(&quot;meta&quot;) is bad.<br>&nbsp;<br>Also you can use the System.Net.Mime.ContentType class to parse the &quot;content&quot; of the meta, and use<br>the CharSet property.</p>\r\n<p>And this problem, is the exact purpose of why you can use the meta-tag to set the content type and encoding,<br>also mentioned in Joels post.<br>The reason I didnt provide any code here, is because I dont consider it a very hard challenge to fix this<br>problem, given what I've written - basicly every main step to get it working. But if you're reaaally<br>desperate... you might convince me.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-16T15:09:03.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "260223",
+    "ThreadId": "60174",
+    "Html": "<p>i occurred in the same problem I m loading html page and the encoding is wrong</p>\r\n<p>HtmlAgilityPack.HtmlWeb hw = new HtmlWeb();<br>HtmlAgilityPack.HtmlDocument Doc=new&nbsp; HtmlAgilityPack.HtmlDocument();</p>\r\n<p>Doc = hw.Load(address);</p>\r\n<p>and i m getting wrong characters</p>\r\n<p>i&nbsp; also detect the encoding</p>\r\n<p>System.Text.Encoding EncDoc = HtmlAgilityPackDoc.Encoding;</p>\r\n<p>how can i fix the wrong characters?</p>\r\n<p>the parse errror says that :</p>\r\n<p>Encoding mismatch between StreamEncoding&nbsp; and DeclaredEncoding</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-24T07:21:44.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261180",
+    "ThreadId": "60174",
+    "Html": "<p>The HttpWebResponse has a property called Codepage that you can use use with the Encoding object to get the encoding from, Then you can use that encoding in the load? Just an idea</p>",
+    "PostedDate": "2009-11-27T08:44:51.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "643057",
+    "ThreadId": "60174",
+    "Html": "<p>Unfortunately HAP doesn't seem to properly detect stream encoding before parsing the stream as text, but it is what it is. This workaround requires creating a local buffer to hold the stream data:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">var</span> doc = <span style=\"color: blue;\">new</span> HtmlDocument();\r\n<span style=\"color: blue;\">var</span> request = (HttpWebRequest)HttpWebRequest.Create(_requestUri);\r\n<span style=\"color: blue;\">using</span> (<span style=\"color: blue;\">var</span> response = request.GetResponse())\r\n<span style=\"color: blue;\">using</span> (<span style=\"color: blue;\">var</span> responseStream = response.GetResponseStream())\r\n{\r\n    <span style=\"color: green;\">// To determine the page encoding the stream has to be read;</span>\r\n    <span style=\"color: green;\">// since the stream is forward-only, that means copying it to a local buffer</span>\r\n    <span style=\"color: green;\">// so it can be re-read by HtmlAgilityPack.</span>\r\n    <span style=\"color: blue;\">var</span> responseData = <span style=\"color: blue;\">new</span> <span style=\"color: blue;\">byte</span>[response.ContentLength];\r\n    responseStream.Read(responseData, 0, (<span style=\"color: blue;\">int</span>)response.ContentLength);\r\n\r\n    <span style=\"color: blue;\">using</span> (<span style=\"color: blue;\">var</span> ms = <span style=\"color: blue;\">new</span> MemoryStream(responseData))\r\n    {\r\n        <span style=\"color: green;\">// Default encoding to UTF8 if it isn't detected</span>\r\n        Encoding encoding = doc.DetectEncoding(ms) ?? Encoding.UTF8;\r\n        ms.Seek(0, SeekOrigin.Begin);\r\n        <span style=\"color: blue;\">using</span> (<span style=\"color: blue;\">var</span> sr = <span style=\"color: blue;\">new</span> StreamReader(ms, encoding))\r\n        {\r\n            doc.LoadHtml(sr.ReadToEnd());\r\n        }\r\n    }<br />    responseData = null;&nbsp;</pre>\r\n<pre>}\r\n</pre>\r\n</div>\r\n</p>\r\n<p>HTH.</p>",
+    "PostedDate": "2011-07-15T10:59:12.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "672897",
+    "ThreadId": "60174",
+    "Html": "<p>Hi hemp!<br />I just tried your example and it seems to work great except for one thing. It fails to read the entire page. So I get the first part of the page, with correct encoding, but a bit into the page it seems that the rest is not read for some reason. If I use the build in method in HtmlAgilityPack to fetch the page I do get the entire page.</p>\r\n<p>Any ideas are greatly appreciated!</p>",
+    "PostedDate": "2011-09-16T13:01:31.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "672913",
+    "ThreadId": "60174",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>gardebring wrote:</strong><br />\r\n<p>I get the first part of the page, with correct encoding, but a bit into the page it seems that the rest is not read for some reason.</p>\r\n</blockquote>\r\n<p>The issue may be that the value for response.ContentLength is shorter than the data in the response stream. I'm using it as a shortcut for determining the buffer size, but ContentLength isn't guaranteed to be correct. I would guess you're testing against a URL for which it is not.</p>\r\n<p>Try reading the response stream in chunks (in a loop) while increasing the size of the buffer as necessary; it will require a pretty big rewrite of my example, which is why I didn't do it that way. The pages I'm hitting do report ContentLength as the size of the response in bytes.</p>",
+    "PostedDate": "2011-09-16T13:30:06.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "899892",
+    "ThreadId": "60174",
+    "Html": "<p>Hi all!</p>\r\n<p>Having the same problem as described by rmoritz above. Tried the workaround hemp suggested but with special characters like &aelig; &oslash; &aring; etc. still getting converted to ?. After some searching through the System.Net namespace for something that would read my url right, I ended up using the following:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>HtmlDocument htmlDoc = <span style=\"color: blue;\">new</span> HtmlDocument(); \r\n<span style=\"color: blue;\">using</span> (System.Net.WebClient client = <span style=\"color: blue;\">new</span> System.Net.WebClient())\r\n{\r\n     <span style=\"color: blue;\">var</span> html = client.DownloadString(url);\r\n     htmlDoc.LoadHtml(html);\r\n}\r\n</pre>\r\n</div>\r\n</p>\r\n<p>I have not tested this on other machines than my own...</p>",
+    "PostedDate": "2012-08-16T05:18:17.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

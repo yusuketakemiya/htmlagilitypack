@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "69913",
+    "ThreadId": "21020",
+    "Html": "\r\nHi,<br /><br />Greate library, thank you.<br /><br />Is there a chance to port this to Compact Framework? An attempt to compile it under compact framework results in XPathNavigator class being undefined. MSDN says, this class is not available under compact framework<br />",
+    "PostedDate": "2008-01-25T04:50:43.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "input: \n\t<li><a href=\"#\" class=\"\"><span></span><div style=\"width: 135px;\">foo bar</div><p></p></a></li>\nouput: \n\t<li><a href=\"#\" class=\"\"><span></span><div style=\"width: 135px;\">foo bar</div><p></a></li>\n \nYep, I undersand thats it's shitty way to do layout with <p></p> empty tags but our great designers have another opinion. \nIs there any option to force render close part of the tag in empty case?\n \nThanks!",
+    "LastUpdatedDate": "2013-12-12T05:26:34.053-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-04-16T06:02:57.177-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Parser removes </p> part from <p></p> sequence.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 26787
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have the same problem with <br/> which is replaced with <br> when setting the InnerHtml property of a node.\r\n\r\nThanks",
+      "PostedDate": "2010-04-20T09:15:59.743-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-20T09:16:07.3-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I also have a similar problem for <option> </option> pairs - the end tag </option> is incorrectly removed from all Innerhtml string results (tested on 1.4.0.0 and 2.0 Experimental).",
+      "PostedDate": "2010-07-22T11:09:24.357-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-29T13:42:45.167-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have found that if you set OptionWriteEmptyNodes to true then the library does at least convert <p></p> to <p/>.  This still does not render the same, but you could potentially do a string replace after running HTMLAgility pack.  Of course this falls apart if you have more complex paragraph tags.  Say <P style=\"BORDER-BOTTOM: #000000 0.5pt solid; LINE-HEIGHT: 8px; MARGIN-TOP: 0px; WIDTH: 10%; MARGIN-BOTTOM: 2px\"></P>  becomes <P style=\"BORDER-BOTTOM: #000000 0.5pt solid; LINE-HEIGHT: 8px; MARGIN-TOP: 0px; WIDTH: 10%; MARGIN-BOTTOM: 2px\"/>.  Not so easy to fix.",
+      "PostedDate": "2010-11-29T13:46:20.247-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:17.13-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "We have the same problem with the dropping of </p> tags.  I am not liking this one bit.  There is nothing wrong with empty <p></p> tags.  We are providing an HTML Editor and pressing Enter adds empty <p></p> tags.  By the time we do merge processing the rendered HTML is messed up.  The users are pressing Enter to skip lines but the IE and Outlook ignore the resulting broken HTML we are getting.  I am going to have to post process after using HtmlAgilityPack and I am not likely to reuse it or to recommend it.  I cannot understand why it won't just let the empty <p></p> tags simply pass through.",
+      "PostedDate": "2013-05-30T14:52:43.32-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-12-12T05:26:34.053-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "641484",
+    "ThreadId": "264930",
+    "Html": "\r\n<p>Hi , how can i extract special characters like $ using htmlagility pack,&nbsp;</p>\r\n<p>Say If the actual &nbsp;innertext of a tag contain $12.34 , but the result of html agility pack innertext shows &amp;#036;12.34 (Means &amp;#036; in place for $.). How can i avoid this .</p>\r\n<p>The code i used is&nbsp;&nbsp;</p>\r\n<div>\r\n<pre> HtmlWeb htmlWeb = <span>new</span> HtmlWeb();\r\n\r\n HtmlAgilityPack.HtmlDocument document = htmlWeb.Load(Weburl);   \r\n\r\n HtmlNodeCollection priceNode = document.DocumentNode.SelectNodes(<span>&quot;//div[@id='somedivid']&quot;</span>);\r\n\r\n <span>string</span> _htmlprice = priceNode[0].InnerText;</pre>\r\n<pre><br></pre>\r\n</div>\r\n<p>I want to get the exact text as it is shown &nbsp;in browser</p>\r\n<p>Thanks</p>\r\n<p>Jibin Mathew</p>\r\n",
+    "PostedDate": "2011-07-12T23:27:05.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1293459",
+    "ThreadId": "264930",
+    "Html": "Those worked for me:\r<br />\n<br />\n<a href=\"http://stackoverflow.com/questions/6665488/htmlagilitypack-and-htmldecode\" rel=\"nofollow\">http://stackoverflow.com/questions/6665488/htmlagilitypack-and-htmldecode</a>\r<br />\n<br />\n<a href=\"http://stackoverflow.com/questions/3452343/c-sharp-and-htmlagilitypack-encoding-problem\" rel=\"nofollow\">http://stackoverflow.com/questions/3452343/c-sharp-and-htmlagilitypack-encoding-problem</a>\r<br />\n<br />\n(UTF-8 was one, the other one was to use the HtmlEntity.DeEntitize() )<br />\n",
+    "PostedDate": "2014-08-26T03:17:51.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1433468",
+    "ThreadId": "641047",
+    "Html": "Has anyone done any modification with the xpath finder?  I seem to be running into webpages where javascript keeps popping up the dialog box about the jit debugger.  Also other pages where .net dialog pops open and I have no choice but to quit the program.\r<br />\n<br />\nI have the source code but I have no idea what to fix in the program to make it run on some of these sites.  Has anyone encountered these issues and have fixed them?\r<br />\n<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2015-07-07T18:46:43.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

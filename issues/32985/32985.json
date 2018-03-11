@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "duplicate of 32943",
+    "ClosedDate": "2012-08-01T15:03:24.54-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In my site use ASP.NET version 3.5 but not compile to code.\nSo, i added the reference DLL ASP.NET 2.0 in my solution.\n \nDeveloped and tested in an environment IIS7 32 bit ( x86 ). Worked!\n \nBut, when put into production, with IIS7 64 bit ( x64 ), the application had the error:\n \nCould not load file or assembly 'HtmlAgilityPack' or one of its dependencies. This assembly is built by a runtime newer than the currently loaded runtime and cannot be loaded.\n \nDescription: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code. \n \nException Details: System.BadImageFormatException: Could not load file or assembly 'HtmlAgilityPack' or one of its dependencies. This assembly is built by a runtime newer than the currently loaded runtime and cannot be loaded.\n \n \nIn attached the print-scren to error...",
+    "LastUpdatedDate": "2013-05-16T05:32:56.21-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-08-01T07:04:10.153-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "This assembly is built by a runtime newer than the currently loaded runtime and cannot be loaded.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 32985
+  },
+  "FileAttachments": [
+    {
+      "FileId": 12754,
+      "FileName": "erro-htmlagilitypack-x64.jpg",
+      "DownloadUrl": ".\\12754"
+    }
+  ],
+  "Comments": []
+}

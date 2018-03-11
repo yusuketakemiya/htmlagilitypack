@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "572715",
+    "ThreadId": "247731",
+    "Html": "\r\n<p>Hello,&nbsp;</p>\r\n<p>I am trying to evaluate something like this:&nbsp;</p>\r\n<p>substring(concat('$',substring-after(substring(concat(substring-after(//div[@class='current'],'Now:'),substring-before(//a[@rel='accordion'],' ')),number(contains(//a[@rel='accordion'],'$'))*6),'$')),number(not(contains(substring-after(//div[@class='current'],'Now:'),'$')))&#43;1)</p>\r\n<p>But it always fails. Where can I find the list of supported functions by your library?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-02-27T00:38:52.467-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

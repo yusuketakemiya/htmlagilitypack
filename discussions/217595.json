@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "460728",
+    "ThreadId": "217595",
+    "Html": "Hi, I tried to gather what is written in the topic, but with no success. I believed it was sufficient to write:\r\n\r\nint count = Int32.Parse(page.DocumentNode.SelectSingleNode(&quot;count(//div)&quot;).InnerText);\r\n\r\nBut I get the error: &quot;The expression must returns a set of nodes&quot;.",
+    "PostedDate": "2010-06-28T09:31:28.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463028",
+    "ThreadId": "217595",
+    "Html": "<p>Hi, Andy00,</p>\r\n<p>I found the following approach</p>\r\n<pre>XPathNavigator nav = page.CreateNavigator();\r\ndouble count = (double)nav.Evaluate(&quot;count(//div)&quot;);\r\n</pre>",
+    "PostedDate": "2010-07-03T03:49:02.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

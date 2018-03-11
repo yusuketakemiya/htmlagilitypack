@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "547098",
+    "ThreadId": "241244",
+    "Html": "\r\n<p>I wrote a simple html file</p>\r\n<p><span style=\"color:#800000\">&lt;html&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp; &lt;head&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;testing ...&lt;/title&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp; &lt;/head&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp; &lt;body&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;n1&quot;&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;n2&quot;&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;form name=&quot;form1&quot; method=&quot;post&quot;&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;n3&quot;&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;n4&quot;&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;Text&lt;/h1&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/form&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</span><br>\r\n<span style=\"color:#800000\">&nbsp;&nbsp;&nbsp; &lt;/body&gt;</span><br>\r\n<span style=\"color:#800000\">&lt;/html&gt;</span></p>\r\n<p>and selected two nodes from this Html doc</p>\r\n<pre style=\"font-family:consolas\"><span style=\"color:#800080\">HtmlNode&nbsp;form&nbsp;=&nbsp;html.DocumentNode.SelectSingleNode(&quot;//form&quot;);</span><br><span style=\"color:#800080\">HtmlNode&nbsp;divn3&nbsp;=&nbsp;html.DocumentNode.SelectSingleNode(&quot;//div[@class='n3']&quot;);</span><br><br>what I'm getting is<br>(1) form.InnerHtml is &quot;&lt;form name=&quot;form1&quot; method=&quot;post&quot;&gt;&quot;<br>(2) form.HasChildNodes returns 'false'<br>(3) form.ParentNode equals to divn3.ParentNode<br><br>Does anyone else encounter this? Am I missing something?</pre>\r\n",
+    "PostedDate": "2011-01-10T22:45:50.837-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578303",
+    "ThreadId": "241244",
+    "Html": "<p>see it here :&nbsp;<a href=\"http://htmlagilitypack.codeplex.com/workitem/23074\">http://htmlagilitypack.codeplex.com/workitem/23074</a></p>",
+    "PostedDate": "2011-03-10T02:21:04.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

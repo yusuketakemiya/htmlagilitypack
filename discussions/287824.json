@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "732350",
+    "ThreadId": "287824",
+    "Html": "<div>\n<p>Hi,</p>\n<p>I would extract the content in attribute class=topictitle,<br /> in my example, I want get \"[IMPORTANT]\" in a string variable .</p>\n<p><span style=\"text-decoration: underline;\"><strong>CODE :</strong></span></p>\n<p>&lt;td&gt;</p>\n<p>&lt;a&nbsp;title=\"Post&eacute;: Lun 23 Jan 2012 00:56\"&nbsp;href=\"<a href=\"http://forum.downparadise.ws/viewtopic.php?f=188&amp;t=1096629\" target=\"_blank\">./viewtopic.php</a>\"&nbsp;<strong>class=\"topictitle\"</strong>&gt;&lt;span&nbsp;style=\"color:#FF0000;\"&gt;<strong>[IMPORTANT]</strong>&lt;/span&gt; *</p>\n<p>&lt;td&gt;</p>\n<p>&nbsp;</p>\n<p>If anyone have an idea,</p>\n<p>Regards</p>\n</div>",
+    "PostedDate": "2012-01-29T12:49:18.157-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "944190",
+    "ThreadId": "403853",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I've been using this excellent html parser for a little while now and recently I have a requirement for reading and writing mht files. I had to massage the mht before loading it up into the aglity pack. Simple stuff like replacing strings like '3D' and the\r\n '=\\x0d\\x0a' with empty strings. The Agility pack would otherwise fail at the loading phase.<br>\r\n<br>\r\nMy question is: Do I need to massage the file before loading into the agility pack or are there switches I can configure? Also I have a requirement to locate elements based on their in-line style and wrap a div around them. When done, I need to write out a\r\n working (valid) mht file containing the modifications. I have been working off and on on the code for a couple of weeks now and not being able to modify the mht file which is bugging me.<br>\r\n<br>\r\nDoes anyone have/had a similar requirement and would you be so kind to share your findings with me on this topic?</p>\r\n<p>Thanks in advance!&nbsp;</p>\r\n",
+    "PostedDate": "2012-11-19T12:46:36.063-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1110875",
+    "ThreadId": "403853",
+    "Html": "I too have this question.<br />\n",
+    "PostedDate": "2013-10-22T21:57:33.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

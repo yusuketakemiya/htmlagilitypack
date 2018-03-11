@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "430478",
+    "ThreadId": "209187",
+    "Html": "<p>Hello all, I've been reading everything I can find about this error but can't seem to locate a solution<br>(or at least one that I can comprehend enough to be able to implement). My problem is this - I am reading<br>and changing some attributes inside a series of local html pages, that part of the application is fine, however,<br>when the file is saved then a lot of random garbage text is inserted (or replaces existing characters). The content<br>pages that I am parsing say that they are utf-8, which is what I understand HAP uses internally? I cannot, however,<br>confirm that these pages are correctly implementing the format. The problem was very noticeable on pages with<br>some Japanese characters which were written in #xxxxx form - but it was strange because many characters of the<br>same type were unaffected. Also, on other pages that had no special codes, it converted a quotation mark to &acirc;&euro; <br>and an apostrophe to &acirc;&euro;&trade;. Random spaces seem to turn into &Acirc;.</p>\r\n<p>I found one related discussion on this site from a while ago, but I couldn't understand how they fixed it.</p>\r\n<p>Is there a way to turn off encoding altogether and just read it like single characters in a text file? I just need a way <br>to get it to stop eating my text and leave everything alone besides what I've told it explicitly to touch. It seems like<br>I remembered having a similar problem when using HTML Tidy for something else, but there was some kind of <br>option flag I was able to turn off in the settings to make it stop. <br><br>Thank you for any help you can offer!</p>",
+    "PostedDate": "2010-04-13T07:36:25.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430480",
+    "ThreadId": "209187",
+    "Html": "<p>Here is a link to the related discussion: <a href=\"http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=60174\">http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=60174</a></p>\r\n<p>Note that in my case I do not use any http requests, just a local file.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-13T07:38:01.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430675",
+    "ThreadId": "209187",
+    "Html": "<p>Ah - after rereading things a few hundred times, Darth O's info about overloading the load function was just what I needed.</p>\r\n<p>For those having a similar problem, try the following code:</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>doc.Load(fileName, System.Text.Encoding.UTF8, <span style=\"color:Blue\">false</span>);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>I believe that what this does is prevent HAP from trying to guess the encoding using the Byte Order Mark (BOM - which apparently overrides the declared type in the meta tag). Forcing it to use UTF8 in this manner seems to have solved all my present issues. :)</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-13T15:41:26.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

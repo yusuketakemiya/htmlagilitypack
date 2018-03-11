@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "239870",
+    "ThreadId": "70421",
+    "Html": "<p>Does anyone know what is the best approach for loading a page that displays XML using the HtmlAgilityPack?&nbsp; I've noticed that the InnerText of the Document element contains &quot;\\r\\n-&quot; characters throughout the text.&nbsp; As a result, when I use SelectSingleNode to grab one element, more child nodes are created than what i would have expected.&nbsp; The reason for this is because child nodes were created for the &quot;\\r\\n-&quot; characters...</p>\r\n<p>Anyone have any ideas?</p>\r\n<p>Thanks,</p>\r\n<p>Roland</p>",
+    "PostedDate": "2009-09-29T00:19:38.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "241569",
+    "ThreadId": "70421",
+    "Html": "<p>You can filter out those nodes by their NodeType. You'll see they will be HtmlNodeType.Text</p>\r\n<p>Another thing is to just loop through and eliminate them by doing a trim on their value and if they are empty, then you can remove them from the collection.</p>",
+    "PostedDate": "2009-10-02T20:33:31.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

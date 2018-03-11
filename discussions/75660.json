@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "258873",
+    "ThreadId": "75660",
+    "Html": "<p>This seems like a bug - just want to make sure I understand what's happening - maybe others have seen this -&nbsp;</p>\r\n<p>When parsing an HTML document that has a link element in the head that is closed like:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">link</span> <span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>It seems the parser interprets this a just an opening tag for link - and then when you write out the HtmlDocument you get:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">link</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>which of course changes the meaning of the original HTML document. &nbsp;Has anyone seen a similar problem?</p>\r\n<p>My sample code:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>doc = <span style=\"color:Blue\">new</span> HtmlAgilityPack.HtmlDocument();\r\ndoc.LoadHtml(templateContents);\r\n\r\nStringWriter sw = <span style=\"color:Blue\">new</span> StringWriter();\r\ndoc.Save(sw);\r\nsw.Flush();\r\nnewContents = sw.ToString();\r\n</pre>\r\n</div>\r\n<p>newContents now has an HTML doc with unclosed link tag...</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-19T15:26:42.427-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258984",
+    "ThreadId": "75660",
+    "Html": "<p>For some reason I have similar problem. When I parse meta tags</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">meta</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;keywords&quot;</span> <span style=\"color:Red\">content</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;foo&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p>I actually get</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">meta</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;keywords&quot;</span> <span style=\"color:Red\">content</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;foo&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p>and its very annoying...</p>",
+    "PostedDate": "2009-11-20T00:49:01.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

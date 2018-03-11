@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "213114",
+    "ThreadId": "62780",
+    "Html": "<p>I am trying to find a product on this website</p>\r\n<p><a>view-source:http://www.babydirect.com/p-13285-angel-line-round-crib-cherry-free-shipping.aspx</a></p>\r\n<p>i see that it have a class id has &lt;h2 <span>class</span>=&quot;<span>HeaderBlue</span>&quot;&gt;</p>\r\n<p>how would i do this using the html agility.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HtmlAgilityPack.HtmlWeb htmlWeb = new HtmlAgilityPack.HtmlWeb();</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HtmlAgilityPack.HtmlDocument doc = htmlWeb.Load(sPath);</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HtmlAgilityPack.HtmlNodeCollection links = doc.DocumentNode.SelectNodes(&quot;&lt;h2HeaderBlue&quot; + &quot;&gt;&quot;);</div>\r\n<p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HtmlAgilityPack.HtmlWeb htmlWeb = new HtmlAgilityPack.HtmlWeb();</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HtmlAgilityPack.HtmlDocument doc = htmlWeb.Load(sPath);</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HtmlAgilityPack.HtmlNodeCollection links = doc.DocumentNode.SelectNodes(&quot;&lt;h2 class=&quot; + &quot;HeaderBlue&quot; + &quot;&gt;&quot;);</p>\r\n<div></div>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-17T10:18:00.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218442",
+    "ThreadId": "62780",
+    "Html": "<p>In this instance, the webpage only has 1 H2 with class HeaderBlue. But when they change the colors to red, it might become HeaderRed, so you know.</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>HtmlWeb web = <span style=\"color:Blue\">new</span> HtmlWeb();\r\nHtmlDocument doc =web.Load(url);\r\n\r\nHtmlNode h2blue = doc.SelectSingleNode(<span style=\"color:#A31515\">&quot;//h2[@class='HeaderBlue']&quot;</span>);\r\n<span style=\"color:Blue\">if</span>( h2blue != <span style=\"color:Blue\">null</span> )\r\n{\r\n    <span style=\"color:Green\">// Do stuff.</span>\r\n}\r\n\r\n<span style=\"color:Green\">// Or</span>\r\n\r\nHtmlNodeCollection h2s = doc.SelectNodes(<span style=\"color:#A31515\">&quot;//h2[@class='HeaderBlue']&quot;</span>);\r\n<span style=\"color:Blue\">if</span>( h2s != <span style=\"color:Blue\">null</span> &amp;&amp; h2s.Count &gt; 0 )\r\n{\r\n   <span style=\"color:Blue\">foreach</span>( HtmlNode node <span style=\"color:Blue\">in</span> h2s )\r\n   {\r\n       <span style=\"color:Green\">// Do stuff.</span>\r\n   }\r\n}\r\n\r\n\r\n\r\n</pre>\r\n</div>\r\n<p>Hope this helps.</p>\r\n<p>What's used to actually traverse the path to wanted nodes is called XPath. It's used as a stylesheet for XML files, they can transform XML files into most things. You can read a short tutorial about it on <a title=\"XPath Tutorial @ W3Schools.com\" href=\"http://www.w3schools.com/XPath/default.asp\">W3Schools.com</a></p>",
+    "PostedDate": "2009-08-02T04:15:05.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

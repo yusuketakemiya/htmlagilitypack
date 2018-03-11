@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Here is a full reproduction on 1.4.2:\n \nstatic void Main()\n{\n    HtmlDocument htmlDocument = new HtmlDocument();\n    htmlDocument.LoadHtml(@\"<html><!--></html>\");\n    ToXDocument(htmlDocument);\n}\n \npublic static string ToXDocument(HtmlDocument document)\n{\n    using (StringWriter sw = new StringWriter())\n    {\n        document.OptionOutputAsXml = true;\n        document.Save(sw);\n        return sw.ToString();\n    }\n}\n \nLength cannot be less than zero.\nParameter name: length\n   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)\n   at System.String.Substring(Int32 startIndex, Int32 length)\n   at HtmlAgilityPack.HtmlNode.GetXmlComment(HtmlCommentNode comment) in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlNode.cs:line 1656\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlNode.cs:line 1450\n   at HtmlAgilityPack.HtmlNode.WriteContentTo(TextWriter outText) in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlNode.cs:line 1422\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlNode.cs:line 1548\n   at HtmlAgilityPack.HtmlNode.WriteContentTo(TextWriter outText) in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlNode.cs:line 1422\n   at HtmlAgilityPack.HtmlNode.WriteTo(TextWriter outText) in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlNode.cs:line 1494\n   at HtmlAgilityPack.HtmlDocument.Save(TextWriter writer) in C:\\Source\\htmlagilitypack\\Trunk\\HtmlAgilityPack\\HtmlDocument.cs:line 883\n   at AgilityPackBug.Program.ToXDocument(HtmlDocument document) in c:\\Users\\ben.challenor\\Desktop\\AgilityPackBug\\AgilityPackBug\\Program.cs:line 20\n   at AgilityPackBug.Program.Main() in c:\\Users\\ben.challenor\\Desktop\\AgilityPackBug\\AgilityPackBug\\Program.cs:line 12\n   at System.AppDomain._nExecuteAssembly(Assembly assembly, String[] args)\n   at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)\n   at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()\n   at System.Threading.ThreadHelper.ThreadStart_Context(Object state)\n   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\n   at System.Threading.ThreadHelper.ThreadStart()",
+    "LastUpdatedDate": "2013-02-21T18:47:04.067-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-09-08T01:08:42.37-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ArgumentOutOfRangeException exporting HTML with broken comment to XML",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 31424
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "See this SO issue: http://stackoverflow.com/questions/41689137/html-agility-pack-parsing-error#\n\nIn a nutshell, only 4 results are returned for no apparent reason. I'm guessing there's some sort of html in the page which breaks the parsing?",
+    "LastUpdatedDate": "2017-01-16T22:28:25.88-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2017-01-16T20:51:49.6-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Cannot parse all li's out of list",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43561
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "It would appear that if I just select on the (\"//li[contains(@class,'s-result-item')]\") I get 21 nodes, but after the 4th node, the nodes parent node loses the id attribute for some reason, even though the node is actually correct. That makes no sense but is probably why it's failing!",
+      "PostedDate": "2017-01-16T21:32:14.81-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "please close - user error!",
+      "PostedDate": "2017-01-16T22:28:25.88-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

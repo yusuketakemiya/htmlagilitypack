@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Attributes with namespace prefix, for example from HTML saved by MS Word:\n<html xmlns:v=\"urn:schemas-microsoft-com:vml\"\nxmlns:o=\"urn:schemas-microsoft-com:office:office\"\nxmlns:w=\"urn:schemas-microsoft-com:office:word\"\nxmlns=\"http://www.w3.org/TR/REC-html40\">\n \nare parsed incorrectly, and written like:\n<html _xmlns3a_v=\"urn:schemas-microsoft-com:vml\" _xmlns3a_o=\"urn:schemas-microsoft-com:office:office\" _xmlns3a_w=\"urn:schemas-microsoft-com:office:word\">\n \nhave found fix for this bug:\nin HtmlDocument.cs in method  public static string GetXmlName(string name) \n \nif (((name[i] >= 'a') && (name[i] <= 'z')) ||\n    ((name[i] >= '0') && (name[i] <= '9')) ||\n    //(name[i]==':') || (name[i]=='_') || (name[i]=='-') || (name[i]=='.')) // these are bads in fact\n     (name[i] == '_') || (name[i] == '-') || (name[i] == '.'))\n \nshould be:\n \nif (((name[i] >= 'a') && (name[i] <= 'z')) ||\n    ((name[i] >= '0') && (name[i] <= '9')) ||\n    (name[i]==':') || (name[i]=='_') || (name[i]=='-') || (name[i]=='.')) // these are bads in fact\n    \nbut I'm not sure - what reason commenting out ':' char in this check?",
+    "LastUpdatedDate": "2013-02-21T18:47:20.537-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-01-04T22:45:09.367-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Attributes with namespace not being parsed correctly",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 25843
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

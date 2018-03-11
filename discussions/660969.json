@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1491740",
+    "ThreadId": "660969",
+    "Html": "I'm using HtmlAgilityPack to sanitize user entered rich text and strip any harmful/unwanted text. Problem occurs though when a simple text is also treated as html node\r<br />\n<br />\nIf I enter \r<br />\n a&lt;b, c&gt;d\r<br />\nand try to sanitize it, the output generated is\r<br />\n a&lt;b, c=&quot;&quot;&gt;d&lt;/b,&gt; \r<br />\n<br />\nThe code I used was <br />\n<pre><code>HtmlDocument doc = new HtmlDocument();\ndoc.LoadHtml(value);\n// Sanitizing Logic\n\nvar result = doc.DocumentNode.WriteTo();\n</code></pre>\n\nI tried to set different parameters on HtmlDocument ('OptionCheckSyntax', 'OptionAutoCloseOnEnd', 'OptionWriteEmptyNodes') but nothing worked. Is this is a known issue or any workaround possible?<br />\n",
+    "PostedDate": "2017-01-26T15:59:13.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

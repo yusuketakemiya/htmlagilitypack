@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "464834",
+    "ThreadId": "218775",
+    "Html": "<p>I have problem with swedish letters when I get information from a page. The letters get HTML-encoded when they are displayed in the page. How can I avoid this?</p>\r\n<p>&Auml; = &Atilde;&curren;<br>&Aring; = &Atilde;&yen;</p>",
+    "PostedDate": "2010-07-08T07:11:02.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

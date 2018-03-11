@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "77026",
+    "ThreadId": "23031",
+    "Html": "\r\nHi, is there a reason why all the whitespaces of the original html code are keeped?<br /><br />This is diffrent then the other html parsers like mshtml or mozilla, which remove all whitespaces befor first and after last nonwhitespace in tags ( also the System.Xml ).<br /><br />Lanwin<br />",
+    "PostedDate": "2008-02-28T04:12:13.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "435079",
+    "ThreadId": "210455",
+    "Html": "<p>Html Agility Pack was recommended to me as a solution from another board.<br>I'm working on a C# winform app and I would like to pull down the favorites icon of any given website to be stored on the users local drive.</p>\r\n<p>Can I get this done with Htmal Agility Pack?</p>\r\n<p>&lt;link rel=<span>&quot;icon&quot;</span> href=<span>&quot;/favicon.ico&quot;</span> type=<span>&quot;image/x-icon&quot;</span> /&gt;<br>and/or<br><span>&lt;<span>link</span> <span>rel</span>=<span>&quot;SHORTCUT ICON&quot;</span> <span>href</span>=<span>&quot;../favicon.ico&quot;</span> /&gt;</span></p>",
+    "PostedDate": "2010-04-24T18:38:34.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

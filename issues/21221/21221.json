@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Your code is obviously totally incorrect in terms of HTML :). Althouth the Html agility Pack is quite resistant, it cannot correct everything.",
+    "ClosedDate": "2009-05-17T23:40:25.63-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a piece of HTML like this: \"<span> ... <2009 blah blah ...> ... </span>\". Unfortunately Agility also parses \"<2009\" as some kind of HTML tags. How can we just take it as regular memo text?",
+    "LastUpdatedDate": "2013-05-16T05:32:59.89-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-02-17T11:29:13.553-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug When Parsing Text w/ \"<\" & \">\"",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 21221
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "By making it \"&lt;2009 blah blah ... &gt;\"  as the HTML and XML specifications, perhaps  ???",
+      "PostedDate": "2009-02-18T09:51:49.13-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-17T23:40:25.63-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:24.67-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:59.89-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1290632",
+    "ThreadId": "561348",
+    "Html": "Hello,\r<br />\nat this line:<br />\n<pre><code>Dim NewHTMLString As String = XDocument.Parse(htmldoc.DocumentNode.OuterHtml).ToString()\n</code></pre>\n\nI get this error<br />\n<pre><code>The '&quot;' character, hexadecimal value 0x22, cannot be included in a name.</code></pre>\n\nThe line in the html it's having difficulties with is this:<br />\n<pre><code>if ( typeof JSON != 'object' || !JSON.stringify || !JSON.parse ) { document.write( &quot;&lt;scr&quot; + &quot;ipt type=\\&quot;text\\/javascript\\&quot; src=\\&quot;http:\\/\\/blahblah&quot;&gt;&lt;\\/script&gt;\\n&quot; ); };</code></pre>\n\nWhat can I do to fix it?<br />\n",
+    "PostedDate": "2014-08-15T17:04:08.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

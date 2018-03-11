@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "644186",
+    "ThreadId": "265688",
+    "Html": "\r\n<p><span>Hi, <br>\r\n<br>\r\nI'm looking for a way for extracting the content of an html page. <br>\r\nNow I'm using the WebBrowser control but sometimes I get some error and it is also too slow.\r\n<br>\r\n<br>\r\nSo I'm looking for an open souce library that help extracting the text without all the html tags.\r\n<br>\r\nCan HtmlAgilityPack do this ? <br>\r\nCan you explain me how can I start to do something like this with the library ? </span>\r\n</p>\r\n<p><span>The problem is that often the html content is not well formed and this give me a lots of problems.</span></p>\r\n<p><span><br>\r\nThanks a lot. <br>\r\nBye</span></p>\r\n",
+    "PostedDate": "2011-07-19T01:49:54.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

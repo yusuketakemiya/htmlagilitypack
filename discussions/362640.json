@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "859574",
+    "ThreadId": "362640",
+    "Html": "\r\n<p>Hi all</p>\r\n<p>Currently I am trying to extract a table from a page that contains multiple tables. The table that I am interested in has this html code</p>\r\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"3\" width=\"100%\" summary=\"Contains search results\">\r\n</table>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">table</span> <span style=\"color:red\">width</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;100%&quot;</span>  <span style=\"color:red\">border</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;0&quot;</span> <span style=\"color:red\">cellspacing</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;0&quot;</span> <span style=\"color:red\">cellpadding</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;3&quot;</span> <span style=\"color:red\">summary</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;Contains search results&quot;</span><span style=\"color:blue\">&gt;</span>\n\n</pre>\r\n</div>\r\nNow I want to know how I can get the node that has that summary =&quot;Contains search results&quot; attribute ?\r\n<p></p>\r\n",
+    "PostedDate": "2012-07-10T03:27:33.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "860383",
+    "ThreadId": "362640",
+    "Html": "<p>Here's one way to do it. I like to use Linq, but you can do it other ways. This shows loading the document from a file, but again, you can do it other ways. I didn't compile it, so apologies in advance if you need to tweak it a bit to get it right! But hopefully it'll give you a push in the right direction.</p>\r\n<p>&nbsp;</p>\r\n<pre>    HtmlDocument htmlDoc = new HtmlDocument();\r\n    htmlDoc.Load( \"foo.html\" );\r\n\r\n    if ( htmlDoc.DocumentNode != null ) {\r\n        var tableNode = ( from node in htmlDoc.DocumentNode.Descendants()\r\n                         where node.Name == \"table\"\r\n                         where node.Attributes.Contains( \"summary\" )\r\n                         where node.Attributes[\"summary\"].Value == \"Contains search results\"\r\n                         select node ).FirstOrDefault();\r\n                                     \r\n        if ( tableNode != null ) {\r\n            // Work with table node here\r\n        }\r\n    }</pre>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-07-11T09:13:13.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

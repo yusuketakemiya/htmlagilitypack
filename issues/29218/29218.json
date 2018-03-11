@@ -1,0 +1,241 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Parsing valid HTML 4.01 that omits optional end tags results in an incorrect parse tree.\n \nFor example, \ninput: <ul><li>a<li>b</ul> \nis parsed as: <ul><li>a<li>b</li></li></ul>\nbut should be: <ul><li>a</li><li>b</li></ul>\n \nIn practice, this means that quite commonly html documents are parsed incorrectly.  The bug does not apply to *all* optional end tags; e.g. <p> tags are correctly auto-closed.\n \nExample document:\n<html><body>\n    <ul><li>TestElem1\n        <li>TestElem2\n        <li>TestElem3 List:\n            <ul><li>Nested1\n                <li>Nested2</li>\n                <li>Nested3\n            </ul>\n        <li>TestElem4\n    </ul>\n    <p>paragraph 1\n    <p>paragraph 2\n    <p>paragraph 3\n</body></html>",
+    "LastUpdatedDate": "2013-05-09T18:17:15.903-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-10-20T03:02:09.787-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect parsing of HTML4 optional end tags",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 12,
+    "Id": 29218
+  },
+  "FileAttachments": [
+    {
+      "FileId": 11689,
+      "FileName": "htmlagilityOptionEndTags.patch",
+      "DownloadUrl": ".\\11689"
+    },
+    {
+      "FileId": 11690,
+      "FileName": "htmlagilityOptionalEndTags v2.patch",
+      "DownloadUrl": ".\\11690"
+    },
+    {
+      "FileId": 11770,
+      "FileName": "htmlagilityOptionalEndTags v3.patch",
+      "DownloadUrl": ".\\11770"
+    },
+    {
+      "FileId": 11771,
+      "FileName": "HtmlAgilityPack patched v3 binaries.7z",
+      "DownloadUrl": ".\\11771"
+    },
+    {
+      "FileId": 11841,
+      "FileName": "htmlagilityOptionalEndTags v4.patch",
+      "DownloadUrl": ".\\11841"
+    },
+    {
+      "FileId": 11842,
+      "FileName": "HtmlAgilityPack patched v4 binaries.7z",
+      "DownloadUrl": ".\\11842"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "which Html Agility Pack handles. Just modify the HtmlNode.ElementsFlags dictionary. There is an enumeration of HtmlElementFlag that sets the parsing and closing tag options for a particular tag. By default <p> is set to HtmlElementFlag.Empty | HtmlElementFlag.Closed \r\nThe closed tells HAP to auto close the tag if no end tag was found. You can easily add <li> to the list as well (this has been covered many times in the Discussions forum)",
+      "PostedDate": "2010-10-20T07:00:46.44-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "It's great news that there's a workaround, but the behavior should still be fixed - as is, this is a nasty gotcha that reflects poorly on the library, *particularly* since the library has been around for years and fails to parse valid, simple documents - and that's just a shame.  How is a user of the library to know that it can only parse normal HTML given particular flags?  Are there any more of these flags required to parse vanilla HTML?\r\n\r\nIf the fix is trivial, hopefully it will be included swiftly.",
+      "PostedDate": "2010-10-20T07:29:45.527-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-14T04:02:12.787-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-18T12:23:36.65-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-12-11T22:29:08.873-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Is there a fix in the pipeline?  According to DarthObiwan, the fix is simple...",
+      "PostedDate": "2011-01-11T06:13:07.203-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hmm, I'm doing a bit of weekend hacking, and came across this again.\r\n\r\nTurns out, just setting the HtmlElementFlag.Empty | HtmlElementFlag.Closed flags doesn't work: this produces incorrect parse trees in which the auto-closed element is left empty, followed by the nodes which should have been its children as siblings.\r\n\r\nI'll see if I can patch it; the HAP model isn't entirely clear to me, however.",
+      "PostedDate": "2011-05-14T05:36:52.62-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-14T16:07:56.61-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This turns out to be trickier that I thought - supporting optional end tags as in html doesn't quite fit into how HAP normally processes elements.  There is a method to fix element nesting, but this isn't quite sufficient.  What this method does:\r\n - only looks at start tags\r\n - only considers start tags where there's a previous open *identical* start tag\r\n - if these tags aren't separated by a \"resetter\" the previous tag is closed.\r\n - meanwhile, it's necessary to jiggle a virtual stack of previous tags per tag name, this to ensure if a element is close we know where to look.  This part isn't written to be able to generally fix up just anything, only two such nested identical tags.  It's complicated, in any case.\r\n\r\nSo to be able to patch this I needed to make that last point manageable, and that means a slight refactoring.  In the patched version, HtmlDocument's Lastnodes no longer manually updated, but rather, when an node is closed or opened, the node is responsible for registering itself.  That makes rearranging the tree a little easier since you no longer need to patch up lastparentnode or Lastnodes in as many places.\r\n\r\nThe rest is kind of simple; it'll correctly parse the above example, empty tags, and also stuff like in <dl><dt><dd><dt><dd></dl> - which is particularly tricky since the \"previous\" element need not have the same name.\r\n\r\nThe patch is definitely still in need of review, and if you like the idea, it'd need some polish to get rid of a few remaining debug statements and the like.\r\n\r\nFinally, I also added two helper methods to the XPathNavigator to make it more xml compliant (the previous implementation was barfing on xhtml)  In particular, it skips raw text nodes outside of the root element, and it skips xmlns and xmlns:... attributes.  That's not particularly nice, but at least it can generate syntactically valid xml now.\r\n\r\nHoping for some feedback,\r\n\r\n--Eamon Nerbonne",
+      "PostedDate": "2011-05-14T16:07:58.087-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-15T04:17:34.67-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I removed some of the debugging gunk; new version of the patch attached.",
+      "PostedDate": "2011-05-15T04:17:36.447-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-26T18:26:19.13-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Tremendous!\r\nI had some rather complex HTML that I was trying to scape.  It wasn't being parsed correctly by the HTML Agility Pack. I suspected it had something to do with some unclosed <br> and/or <img> tags, or other tags without an end tag.\r\n\r\nI played around with the HtmlNode.ElementsFlags table, but I couldn't find a combination that produced a correct parse.\r\n\r\nBut your patch (version 2) worked like a charm.   I haven't determined the exact problem area in the original code's parse, but yours is working and I'm going with it.",
+      "PostedDate": "2011-05-26T21:34:21.607-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-06-20T08:29:02.59-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Fixed XPathNavigable implementation to also skip namespace prefixes in patch v3.",
+      "PostedDate": "2011-06-20T08:29:04.157-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-06-20T08:30:23.483-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "added compiled binaries for those that need em.",
+      "PostedDate": "2011-06-20T08:30:24.733-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-07-13T09:47:26.67-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-07-15T01:51:17.167-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Patch updated to version 4.  Sum total changes:\r\n\r\n - Optional end tags properly supported (v1 & v2)\r\n - XPathNavigator doesn't choke on namespace declarations; strips namespace prefixes (v3)\r\n - XPathNavigator appropriately no longer causes double-encoded entities. (v4)\r\n\r\nNotes:\r\n - Doctypes are not correctly processed; this is impossible with an XPathNavigator.  Instead, doctypes render as comments.  To fix this would require a different approach that avoids XPathNavigator for creating output in the first place.\r\n - Using HtmlDocument.Save(XmlWriter) does NOT use the new code; this is an entirely different code path - so Save will still crash on documents with namespaces and will still double-encode entities!\r\n\r\n",
+      "PostedDate": "2011-07-15T01:51:35.517-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-07-15T01:58:19.543-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Binaries attached for v4 patch.",
+      "PostedDate": "2011-07-15T01:58:20.703-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The patch seems to fix a problem I was having with nested dt/dd, but now OptionFixNestedTags throws an error.  Is this intentional?\r\nError\t1\t'HtmlAgilityPack.HtmlDocument' does not contain a definition for 'OptionFixNestedTags' and no extension method 'OptionFixNestedTags' accepting a first argument of type 'HtmlAgilityPack.HtmlDocument' could be found (are you missing a using directive or an assembly reference?)",
+      "PostedDate": "2011-07-15T10:11:07.893-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Yeah, that's intentional - the old adhoc fixes aren't in the code anymore and in any case aren't necessary; the new code simply follows the spec (with a small omission concerning divs and the like in p tags).  If you want to suppress the automatic inference of optional end tags there's a new option OptionSupportOptionalEndTags, which defaults to true and you can set to false (I can't think of a reason why, however).",
+      "PostedDate": "2011-07-15T10:33:42.987-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-09-21T11:24:07.44-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-02-28T21:37:39.003-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Eamon,\r\n\r\nI made one update to your patch for this fix. I have a page which needs the optional end tags closed but the tags in the page are all caps. So on line 1148 in the function FixNestedTags I changed:\r\n\r\nstring currentNodeName = CurrentNodeName();\r\n\r\nTo:\r\n\r\nstring currentNodeName = CurrentNodeName().ToLower();\r\n\r\nIs this something you will incorporate into your patch and/or next release?\r\n\r\nThanks\r\n\r\n Glenn",
+      "PostedDate": "2012-05-04T08:44:53.62-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-09T09:36:25.963-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-11T06:36:01.247-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I have a fix which I'm going to include in svn soon. The patches provided here go way overboard for the actual issue. The bug happened when converting to support Silverlight and the actual fix is 2 lines. Sorry it has taken so long to do this.. expect many more updates coming soon",
+      "PostedDate": "2012-06-05T15:39:06.45-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "@gmacgregor if I update the patch I'll take a look at the capitalization issue.  Thanks for the heads up!  However, it sounds like DarthObiwan has resumed development, so maybe this'll get fixed in the mainline.\r\n\r\n@DarthObiwan Yeah, I imagine the patch does change more than necessary.  HAP's fairly complex, so to ensure the patch works, I needed some invariants I could understand, and likely those weren't precisely the same as the ones in the old code.\r\n\r\nHowever, the bug is certainly not fixable in just 2 lines; the requisite infrastructure just isn't there.  The approach GetResetters/FixNestedTag takes differs from the spec which is in this case also how browsers actually work.\r\n\r\nPart of the reason the patch is so large is that it also tries to fix the XPathNavigator implementation, which might be best split into a seperate path.",
+      "PostedDate": "2012-06-17T04:03:18.193-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-12-26T15:44:01.46-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:12.217-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-09T18:17:15.903-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

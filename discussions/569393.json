@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1311820",
+    "ThreadId": "569393",
+    "Html": "this:<br />\n<pre><code>myHtml.DocumentNode.SelectNodes(&quot;//div[@class='colcontent']//div[@class='titlebar']//h2[contains(.,'Films']&quot;)</code></pre>\n\nreturns null, whereas the h2 tag with Films inside does exist...<br />\nSo, is the contains() function supported ?<br />\n",
+    "PostedDate": "2014-10-09T04:21:32.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

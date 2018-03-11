@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1346478",
+    "ThreadId": "578734",
+    "Html": "<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;\n\n&lt;bookstore&gt;\n\n&lt;book&gt;\n  &lt;title lang=&quot;eng&quot;&gt;Harry Potter&lt;/title&gt;\n  &lt;price&gt;29.99&lt;/price&gt;\n&lt;/book&gt;\n\n&lt;book&gt;\n  &lt;title lang=&quot;fr&quot;&gt;Learning XML&lt;/title&gt;\n  &lt;price&gt;39.95&lt;/price&gt;\n&lt;/book&gt;\n\n&lt;/bookstore&gt;</code></pre>\n\nhi i try to get \r<br />\neng  and fr \r<br />\nbut every time i get<br />\nHarry Potter and Learning XML\r<br />\n<br />\nhow can i get eng and fr \r<br />\nwhould you pls say correct xpath for get eng and fr \r<br />\nthnks every body<br />\n",
+    "PostedDate": "2015-01-27T15:08:30.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

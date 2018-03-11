@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "993571",
+    "ThreadId": "431250",
+    "Html": "\r\n<p>Hi guys,</p>\r\n<p>i have telerik editor and creating my custom tags&nbsp;</p>\r\n<p>i want to extract all the spans that has class = &quot;xyz&quot;&nbsp;</p>\r\n<p>how can i do that ?&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>i wished to have documentation for this great dll</p>\r\n",
+    "PostedDate": "2013-01-29T04:20:14.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993579",
+    "ThreadId": "431250",
+    "Html": "\r\n<p>what you do is check the attributes using @ for the attribute</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>\r\n            StreamReader sr = <span style=\"color:blue\">new</span> StreamReader(<span style=\"color:#a31515\">@&quot;C:\\Development\\sample.htm&quot;</span>);\r\n            <span style=\"color:blue\">string</span> lines = sr.ReadToEnd();\r\n\r\n            HtmlDocument hp = <span style=\"color:blue\">new</span> HtmlDocument();\r\n            hp.LoadHtml(lines);\r\n\r\n            <span style=\"color:blue\">var</span> nodes = hp.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//span[@class='xyz']&quot;</span>);\r\n            <span style=\"color:blue\">foreach</span> (<span style=\"color:blue\">var</span> item <span style=\"color:blue\">in</span> nodes)\r\n            {\r\n                <span style=\"color:blue\">var</span> xyz = item.InnerText;\r\n            }\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>good information on xpath can be found here&nbsp;http://www.w3schools.com/xpath/xpath_syntax.asp</p>\r\n",
+    "PostedDate": "2013-01-29T04:33:54.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993643",
+    "ThreadId": "431250",
+    "Html": "\r\n<p>thanks very much.</p>\r\n",
+    "PostedDate": "2013-01-29T06:34:17.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

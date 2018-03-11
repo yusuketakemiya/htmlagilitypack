@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "918078",
+    "ThreadId": "397045",
+    "Html": "\r\n<p>Does the Html Agility Pack parse HTML5?</p>\r\n",
+    "PostedDate": "2012-09-26T13:27:40.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "945545",
+    "ThreadId": "397045",
+    "Html": "\r\n<p>Html Agility Pack should be able to parse HTML5 without any problems, so long as a logical structure expected of valid HTML is provided. After a quick look through the specification the only possibly shortfall that I could think of was embedded content;\r\n Files stored directly within the HTML itself. Even if this was the case such content is likely to be encoded in base64, alleviating some of the problems regarding accidentally using reserved HTML characters; such as '&lt;' and '&gt;'.</p>\r\n",
+    "PostedDate": "2012-11-22T02:02:15.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1411347",
+    "ThreadId": "397045",
+    "Html": "It also fails with non-self-closing tags (which <em>is</em> valid in HTML5)\r<br />\n<br />\nE.g. it converts:<br />\n<pre><code>&lt;audio controls=&quot;&quot;&gt;\n    &lt;source src=&quot;my.mp3&quot; type=&quot;audio/mpeg&quot;&gt;\n&lt;/audio&gt;</code></pre>\n\nto:<br />\n<pre><code>&lt;audio controls=&quot;&quot;&gt;\n    &lt;source src=&quot;my.mp3&quot; type=&quot;audio/mpeg&quot;&gt;&lt;/source&gt;\n&lt;/audio&gt;</code></pre>\n\nwhich is invalid.<br />\n",
+    "PostedDate": "2015-04-14T07:52:26.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

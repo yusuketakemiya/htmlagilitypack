@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "290653",
+    "ThreadId": "85327",
+    "Html": "<div>\r\n<p>Hi,</p>\r\n<p>I'm wondering if the Html Agility Pack would help me out with this??</p>\r\n<p>Background: I have to download webpages with their resources for offline viewing, however as part of this I have to &quot;rewrite&quot; the URL's for links with the HTML webpage so they work. This is fine more the standard types of links however I'm realizing now that there are some links that are dynamically created by javascript.</p>\r\n<p><strong>Question: What approach (or even existing library) could I use to transcribe a web page with dynamically generated links (from javascript) to a webpage with normal non-dynamic links.</strong> <em>(as then I can do the URL rewriting I need to do)</em></p>\r\n<p>Notes:</p>\r\n<ul>\r\n<li>It's almost as if I need to have a Javascript interpreter library that I pass the page HTML to, and it then spits out the generated java code perhaps? Then I can rewrite the links as I wish (the result would then not use the javascript dynamic approach).</li>\r\n<li>Context is a C# WinForms (3.5) application. </li>\r\n</ul>\r\n<p>Thanks</p>\r\n</div>",
+    "PostedDate": "2010-02-14T12:47:02.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290661",
+    "ThreadId": "85327",
+    "Html": "<p>HAP does not provide any mechanism for executing Javascript. Think of it as a specialized XmlDocument.</p>\r\n<p>Since you are in a WinForms app, you could use the Browser control to load the HTML. Or check out <a href=\"http://groups.google.com/group/csexwb?pli=1\">http://groups.google.com/group/csexwb</a>, there is a HtmlParser class in there that will load the HTML using MSHTML without the need to display the browser. BE WARNED however, when you start loading html and executing script- you take on all the headaches of the full load. Such as: Javascript errors that stop execution, popups, unresponsive loads, downloading all external linked resources (images, css, javascript, iframes)....and more. It can be a tough battle to fight.</p>\r\n<p>Consider this: You say the javascript builds some of the links on the page... where does the javascript get the info to build those links? Can you just grab that info and build them yourself?</p>\r\n<p>&nbsp;</p>\r\n<p>Hope this helps.</p>\r\n<p>-William</p>",
+    "PostedDate": "2010-02-14T13:40:25.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290684",
+    "ThreadId": "85327",
+    "Html": "<p>thanks - re you last point here's an example...</p>\r\n<p><br>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>&lt;script type=<span style=\"color:#A31515\">&quot;text/javascript&quot;</span>&gt;\r\n        &lt;!--\r\n            document.write(<span style=\"color:#A31515\">&quot;&lt;a href=\\&quot;</span>/home.asp\\<span style=\"color:#A31515\">&quot; onMouseOver=\\&quot;</span>MM_swapImage(<span style=\"color:#A31515\">'tab_home'</span>,<span style=\"color:#A31515\">''</span>,<span style=\"color:#A31515\">'/_includes/images/tab_home_.gif'</span>,1)\\<span style=\"color:#A31515\">&quot; onMouseOut=\\&quot;</span>MM_swapImgRestore()\\<span style=\"color:#A31515\">&quot;&gt;&lt;img src=\\&quot;</span>/includes/images/tab_home.gif\\<span style=\"color:#A31515\">&quot; alt=\\&quot;</span>Home\\<span style=\"color:#A31515\">&quot; name=\\&quot;</span>tab_home\\<span style=\"color:#A31515\">&quot; width=\\&quot;</span>45\\<span style=\"color:#A31515\">&quot; height=\\&quot;</span>18\\<span style=\"color:#A31515\">&quot; border=\\&quot;</span>0\\<span style=\"color:#A31515\">&quot; id=\\&quot;</span>tab_home\\<span style=\"color:#A31515\">&quot;&gt;&lt;\\/a&gt;&quot;</span>);\r\n\r\n            <span style=\"color:Blue\">if</span> (window.document.location.pathname.indexOf(<span style=\"color:#A31515\">&quot;mysite.asp&quot;</span>) != <span style=\"color:#A31515\">&quot;-1&quot;</span>) {\r\n                document.write(<span style=\"color:#A31515\">&quot;&lt;a href=\\&quot;</span>/mysite.asp\\<span style=\"color:#A31515\">&quot; onMouseOver=\\&quot;</span>MM_swapImage(<span style=\"color:#A31515\">'tab_my_site'</span>,<span style=\"color:#A31515\">''</span>,<span style=\"color:#A31515\">'/_includes/images/tab_my_site_.gif'</span>,1)\\<span style=\"color:#A31515\">&quot; onMouseOut=\\&quot;</span>MM_swapImgRestore()\\<span style=\"color:#A31515\">&quot;&gt;&lt;img src=\\&quot;</span>/_includes/images/tab_my_site_.gif\\<span style=\"color:#A31515\">&quot; alt=\\&quot;</span>My Site\\<span style=\"color:#A31515\">&quot; name=\\&quot;</span>tab_my_site\\<span style=\"color:#A31515\">&quot; width=\\&quot;</span>76\\<span style=\"color:#A31515\">&quot; height=\\&quot;</span>18\\<span style=\"color:#A31515\">&quot; border=\\&quot;</span>0\\<span style=\"color:#A31515\">&quot; id=\\&quot;</span>tab_my_site\\<span style=\"color:#A31515\">&quot;&gt;&lt;\\/a&gt;&quot;</span>);\r\n            }\r\n            <span style=\"color:Blue\">else</span> {\r\n                document.write(<span style=\"color:#A31515\">&quot;&lt;a href=\\&quot;</span>/mysite.asp\\<span style=\"color:#A31515\">&quot; onMouseOver=\\&quot;</span>MM_swapImage(<span style=\"color:#A31515\">'tab_my_site'</span>,<span style=\"color:#A31515\">''</span>,<span style=\"color:#A31515\">'/_includes/images/tab_my_site_.gif'</span>,1)\\<span style=\"color:#A31515\">&quot; onMouseOut=\\&quot;</span>MM_swapImgRestore()\\<span style=\"color:#A31515\">&quot;&gt;&lt;img src=\\&quot;</span>/_includes/images/tab_my_site.gif\\<span style=\"color:#A31515\">&quot; alt=\\&quot;</span>My Site\\<span style=\"color:#A31515\">&quot; name=\\&quot;</span>tab_my_site\\<span style=\"color:#A31515\">&quot; width=\\&quot;</span>76\\<span style=\"color:#A31515\">&quot; height=\\&quot;</span>18\\<span style=\"color:#A31515\">&quot; border=\\&quot;</span>0\\<span style=\"color:#A31515\">&quot; id=\\&quot;</span>tab_my_site\\<span style=\"color:#A31515\">&quot;&gt;&lt;\\/a&gt;&quot;</span>);\r\n            }\r\n\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2010-02-14T16:11:06.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290688",
+    "ThreadId": "85327",
+    "Html": "<p>Ouch. Yep- worst case scenario.</p>\r\n<p>HAP can get you the script tag, and then you can do some creative parsing on the script text- or you'll need to render it as I mentioned above.</p>\r\n<p>You could also try a hybrid approach- get the script from HAP and inject it into a Browser to get it to render those document.write calls. But...I have a feeling that you're situation is more complex than the code sample you show above&nbsp;that probably won't really work for you.</p>\r\n<p>Best of luck!<br>-William&nbsp;</p>",
+    "PostedDate": "2010-02-14T16:44:32.46-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290689",
+    "ThreadId": "85327",
+    "Html": "<p>thanks :)</p>\r\n<p>Tried a firefox &quot;download as webfile&quot; and noted they didn't cover this scenario either</p>",
+    "PostedDate": "2010-02-14T16:54:05.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290727",
+    "ThreadId": "85327",
+    "Html": "<p>another example I found</p>\r\n<p>\r\n<pre></pre>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>&lt;script type=<span style=\"color:#A31515\">&quot;text/javascript&quot;</span>&gt;\r\n<span style=\"color:Blue\">var</span> fo = <span style=\"color:Blue\">new</span> FlashObject(<span style=\"color:#A31515\">&quot;/homepage/ia/flash/hero/banner.swf?q=1&quot;</span>, <span style=\"color:#A31515\">&quot;hero&quot;</span>, <span style=\"color:#A31515\">&quot;642&quot;</span>, <span style=\"color:#A31515\">&quot;250&quot;</span>, <span style=\"color:#A31515\">&quot;8&quot;</span>, <span style=\"color:#A31515\">&quot;#ffffff&quot;</span>);\r\nfo.addParam(<span style=\"color:#A31515\">&quot;wmode&quot;</span>, <span style=\"color:#A31515\">&quot;transparent&quot;</span>);\r\nfo.addParam(<span style=\"color:#A31515\">&quot;allowScriptAccess&quot;</span>, <span style=\"color:#A31515\">&quot;always&quot;</span>);\r\nfo.addParam(<span style=\"color:#A31515\">&quot;base&quot;</span>, <span style=\"color:#A31515\">&quot;/homepage/ia/flash/hero/&quot;</span>);\r\nfo.write(<span style=\"color:#A31515\">&quot;flashContent&quot;</span>);\r\n&lt;/script&gt;\r\n\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2010-02-14T22:49:41.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

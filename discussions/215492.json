@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "453627",
+    "ThreadId": "215492",
+    "Html": "<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>doc.OptionOutputAsXml = <span style=\"color:blue\">true</span>; \r\n<span style=\"color:blue\">using</span> (<span style=\"color:blue\">var</span> memoryStream = <span style=\"color:blue\">new</span> MemoryStream()) \r\n{ \r\n   doc.Save(memoryStream); \r\n   memoryStream.Position = 0; \r\n   _xDocument = XDocument.Load(memoryStream, LoadOptions.None); \r\n} \r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p>Exception when loading memorystream to xdocument (unclosed elements). Tryed to read memory stream to string - html is incomplete. So, I think in HtmlDocument.Save method internal stream doesn't get flushed or closed and that's why I get incomplete html document.</p>\r\n<p>Maybe I incorrectly saving?</p>",
+    "PostedDate": "2010-06-09T10:30:41.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

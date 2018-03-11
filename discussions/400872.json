@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "932751",
+    "ThreadId": "400872",
+    "Html": "\r\n<p>I'm currently working on a project where the HTML is not well formed, the developer has forgot to close one of their DD tags before opening the next dd tag.</p>\r\n<p><span style=\"font-size:10pt\">In browser or for other tags this results in an auto close, where as with HtmlAgility this is current causing it to catch all of the subsequent dd tags.</span></p>\r\n<p><span style=\"font-size:10pt\">Here is the HTML</span></p>\r\n<p>&nbsp;</p>\r\n<p>&quot;&lt;dd&gt;36 - SHORT &lt;div class=\\&quot;invMsg0\\&quot;&gt; In Stock. &lt;/div&gt; &lt;dt&gt;Price:&lt;/dt&gt; &lt;dd style=\\&quot;margin-bottom: 15px;\\&quot;&gt;&lt;span class=\\&quot;strike intlPrice\\&quot; usprice='$350.00'&gt; $350.00 &lt;/span&gt;&amp;nbsp;&amp;nbsp; &lt;span class=\\&quot;sale\r\n intlPrice\\&quot; usprice='$122.50'&gt; $122.50 &lt;/span&gt; \\r\\</p>\r\n<p>n &lt;span class=\\&quot;price intlPrice\\&quot; usprice='$122.50'&gt;$122.50&lt;/span&gt; &lt;/dd&gt; &lt;dt&gt;&lt;label for=\\&quot;qty2\\&quot;&gt;Qty:&lt;/label&gt;&lt;/dt&gt; &lt;dd&gt; &lt;select id=\\&quot;qty2\\&quot; name=\\&quot;quantity_1\\&quot; onchange=\\&quot;javascript:updateSCupdate(this.value,\r\n '315201_3539253');\\&quot;&gt; &lt;option selected=\\&quot;\\&quot; value=\\&quot;1\\&quot;&gt;1 &lt;option value=\\&quot;2\\&quot;&gt;2</p>\r\n<p>&lt;option value=\\&quot;3\\&quot;&gt;3 &lt;option value=\\&quot;4\\&quot;&gt;4 &lt;option value=\\&quot;5\\&quot;&gt;5 &lt;option value=\\&quot;6\\&quot;&gt;6 &lt;option value=\\&quot;7\\&quot;&gt;7 &lt;option value=\\&quot;8\\&quot;&gt;8 &lt;option value=\\&quot;9\\&quot;&gt;9 &lt;option value=\\&quot;10\\&quot;&gt;10 &lt;/select&gt; &lt;/dd&gt;\r\n &lt;/dd&gt;&quot;</p>\r\n<p>&nbsp;</p>\r\n<p>Is there any way to get HTMLAgility to auto close the DD tag when it sees the first DT ?&nbsp;</p>\r\n",
+    "PostedDate": "2012-10-25T19:40:45.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

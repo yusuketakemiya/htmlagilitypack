@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "646144",
+    "ThreadId": "266216",
+    "Html": "<p>I have a string of text which can contain many nodes like paragraphs headers and pictures.</p>\n<p>The first node may or may not be a paragraph. e.g</p>\n<p>&lt;p&gt;fhfhjvhvhlvhjv&lt;/p&gt;</p>\n<p>fchcjcjlcl</p>\n<p>&lt;h1&gt;hjchjc&lt;/h1&gt;</p>\n<p>&nbsp;</p>\n<p>I want to ensure all my text is wrapped in a p tag so the above would become</p>\n<p>&lt;p&gt;</p>\n<p>&lt;p&gt;fhfhjvhvhlvhjv&lt;/p&gt;</p>\n<p>&lt;p&gt;fchcjcjlcl&lt;/p&gt;</p>\n<p>&lt;h1&gt;hjchjc&lt;/h1&gt;</p>\n<p>&lt;/p&gt;</p>\n<p>However I only want to add the surrounding tags if they do not already exist.</p>\n<p>I somehow need to select all text that is not already in a node and wrap it in&nbsp;paragraphg tags?</p>\n<div style=\"background-color: white; color: black;\">\n<pre>  <span style=\"color: blue;\">public</span> <span style=\"color: blue;\">string</span> WrapParagraph(<span style=\"color: blue;\">string</span> input)\r\n        {\r\n            HtmlDocument doc = <span style=\"color: blue;\">new</span> HtmlDocument();\r\n            doc.LoadHtml(input);\r\n            String parsedtext;\r\n            HtmlNode n = doc.DocumentNode.ParentNode;\r\n            <span style=\"color: blue;\">if</span> (n != <span style=\"color: blue;\">null</span> &amp;&amp; n.ParentNode.Name !=<span style=\"color: #a31515;\">\"//p\"</span>)\r\n            {\r\n                n.InsertBefore(HtmlNode.CreateNode(<span style=\"color: #a31515;\">\"&lt;p&gt;\"</span>), n);\r\n                doc.DocumentNode.WriteTo();\r\n            }\r\n            <span style=\"color: blue;\">return</span> parsedtext = doc.DocumentNode.InnerHtml.ToString();\r\n\r\n        }\r\n</pre>\n</div>",
+    "PostedDate": "2011-07-22T07:15:40.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

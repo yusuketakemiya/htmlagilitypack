@@ -1,0 +1,22 @@
+Index: HtmlEntity.cs
+===================================================================
+--- HtmlEntity.cs	(revision 107034)
++++ HtmlEntity.cs	(working copy)
+@@ -632,7 +632,7 @@
+ 												fromBase = 10;
+ 											}
+ 											int code = Convert.ToInt32(codeStr, fromBase);
+- 											sb.Append(Convert.ToChar(code));
++ 											sb.Append(Char.ConvertFromUtf32(code));
+  										}
+                                         catch
+                                         {
+@@ -653,7 +653,7 @@
+                                         {
+                                             // we found one
+                                             code = (int) o;
+-                                            sb.Append(Convert.ToChar(code));
++                                            sb.Append(Char.ConvertFromUtf32(code));
+                                         }
+                                     }
+                                     entity.Remove(0, entity.Length);

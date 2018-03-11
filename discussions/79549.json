@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "272368",
+    "ThreadId": "79549",
+    "Html": "<p>Hi All,</p>\r\n<p>I need to crawl this website whereby i need to get all the cell contents.</p>\r\n<p>The Url of the website that I want to crawl : <a href=\"http://www.dartmouth.edu/~floods/MasterList.htm\">http://www.dartmouth.edu/~floods/MasterList.htm</a></p>\r\n<p>I'm able to get the content but the number of &quot;count&quot; doesn't seem accurate.</p>\r\n<p>According to the website, there are 2 tables.</p>\r\n<p>But I want to crawl the first table ,hence i write this:</p>\r\n<p>HtmlNodeCollection table = html.DocumentNode.SelectNodes(&quot;//table[1]&quot;);</p>\r\n<p>After that, I want to get the data from each cell of each row from the table.So i wrote this:</p>\r\n<pre> foreach (HtmlNode row in table[1].SelectNodes(&quot;//tr&quot;))\r\n {\r\n      foreach (HtmlNode cell in row.SelectNodes(&quot;//td/font/text()&quot;))\r\n     {\r\n            Console.WriteLine(&quot;cell: &quot; + cell.InnerText);\r\n      }\r\n}</pre>\r\n<pre>Suppose there are 30 Columns per row.And 80 rows per table. But when I'm debugging,it shows me the number of counter of inner foreach loop is total of row*column in a row..I'm really have no idea how it calculates the counter.</pre>\r\n<p>(Suppose a row will have 30 columns/cells.But the number of counter shows that it counts row*column in a row.)(The inner foreach loop counter is already 2k plus,but the number should be 30).</p>\r\n<p>&nbsp;</p>\r\n<p>I hope you guys understand my problem.Is it the way I code got problem?or the selectnode got bug?</p>\r\n<p>Please help.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you.</p>\r\n<p>&nbsp;</p>\r\n<p>IM:cassgks_87@hotmail.com</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-02T02:57:25.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "48719",
+    "ThreadId": "14979",
+    "Html": "\r\nHi all, based on another post I have a baseline test which is simply not working: it appears HtmlAgilityPack is not reliably storing InnerText or InnerHtml?<br /><br />NOTE this INTENTIONALLY gets all options across both SELECTs (otherwise I'd use \".//option\"):<br /><br />        HtmlDocument doc = new HtmlDocument();<br />        StringReader st = new StringReader(\"&lt;html&gt;&lt;select id=\\\"s1\\\"&gt;&lt;option value=\\\"1\\\"&gt;One&lt;/option&gt;&lt;option value=\\\"2\\\"&gt;Two&lt;/option&gt;&lt;/select&gt;&lt;select id=\\\"s2\\\"&gt;&lt;option value=\\\"3\\\"&gt;Three&lt;/option&gt;&lt;option value=\\\"4\\\"&gt;Four&lt;/option&gt;&lt;/select&gt;&lt;/html&gt;\");<br />        doc.Load(st);<br />        HtmlNodeCollection options = doc.DocumentNode.SelectNodes(\"//option<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40value\">@value</a>\");<br />        System.Console.WriteLine(\"Listing options for document\");<br />        foreach (HtmlNode option in options)<br />        {<br />            System.Console.WriteLine(\"option value '{0}', text '{1}'\", option.Attributes<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%22value%22\">\"value\"</a>.Value, option.InnerText);<br />        }<br /><br />Produces:<br /><br />Listing options for document<br />option value '1', text ''<br />option value '2', text ''<br />option value '3', text ''<br />option value '4', text ''<br /><br />Instead of expected:<br /><br />option value '1', text 'One'<br />option value '2', text 'Two'<br />option value '3', text 'Three'<br />option value '4', text 'Four'<br /><br />any ideas? It looks like I have to discard HtmlAgilityPack but I'm really trying to avoid it?<br />",
+    "PostedDate": "2007-09-11T04:16:15.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61364",
+    "ThreadId": "14979",
+    "Html": "\r\nLook at this posting ? : <a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=http%3a%2f%2fwww.codeplex.com%2fhtmlagilitypack%2fThread%2fView.aspx%3fThreadId%3d14982\">http://www.codeplex.com/htmlagilitypack/Thread/View.aspx?ThreadId=14982</a><br />",
+    "PostedDate": "2007-12-05T13:04:57.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

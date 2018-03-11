@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "464830",
+    "ThreadId": "218773",
+    "Html": "<p>I want to get the img src attribute for an image which is located into a div. <br>This is the codesection where the div is (there are more code on the page)</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">div</span> <span style=\"color:red\">style</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;margin-bottom: 0.5em;&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\t\t\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">img</span> <span style=\"color:red\">title</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;Politisk stand-up p&aring; TV Almedalen&quot;</span> <span style=\"color:red\">src</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;/files/19bb5457cd518d4bba183d9c9e6994ce/resources/ResourceWebImage/thumbnails/bild4_large.jpg?1278351465&quot;</span> <span style=\"color:red\">alt</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;Politisk stand-up p&aring; TV Almedalen&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\t\t<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">div</span><span style=\"color:blue\">&gt;</span>\r\n\t\t\r\n</pre>\r\n</div>\r\nHow do I get this?</p>",
+    "PostedDate": "2010-07-08T07:05:08.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

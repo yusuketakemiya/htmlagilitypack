@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "684230",
+    "ThreadId": "275899",
+    "Html": "\r\n<p><span>When the &lt;form&gt;</span>&nbsp;<span>tag is</span>&nbsp;<span>being sought<span>, you can not</span>&nbsp;<span>get</span>&nbsp;<span>its children.&nbsp;</span></span>InnerText&nbsp;<span>is also</span>&nbsp;<span>not</span>&nbsp;<span>true.&nbsp;<span>Please\r\n check</span>&nbsp;<span>this,</span>&nbsp;<span>it is important.</span></span></p>\r\n<p><span><span>Thanks!</span></span></p>\r\n",
+    "PostedDate": "2011-10-14T04:32:28.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "695311",
+    "ThreadId": "275899",
+    "Html": "<p>it's got to do with overlapping, if you want it to work, just do HtmlNode.ElementsFlags.Remove(\"form\") before loading the html.</p>\r\n<p>original answer was found here, http://stackoverflow.com/questions/2385840/how-to-get-all-input-elements-in-a-form-with-htmlagilitypack</p>",
+    "PostedDate": "2011-11-08T06:30:00.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

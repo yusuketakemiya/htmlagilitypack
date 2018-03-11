@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "72451",
+    "ThreadId": "21743",
+    "Html": "\r\nThe value of a tag's ID attribute must be treated as case sensitive, but the GetElementById method is ignoring case and, in one instance, returning the wrong element for me. For better or for worse, I have a page having an element with id=\"Table1\" and one with id=\"table1\", and the code<br /><br />  HtmlNode table = htmlDoc.GetElementbyId(\"Table1\");<br /><br />and it's giving me the second table.<br />",
+    "PostedDate": "2008-02-07T13:52:58.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "72620",
+    "ThreadId": "21743",
+    "Html": "<div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />edgrogan wrote:<br />The value of a tag's ID attribute must be treated as case sensitive, but the GetElementById method is ignoring case and, in one instance, returning the wrong element for me. For better or for worse, I have a page having an element with id=\"Table1\" and one with id=\"table1\", and the code<br /><br />&amp;&nbsp;</div>",
+    "PostedDate": "2008-02-08T08:44:51.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

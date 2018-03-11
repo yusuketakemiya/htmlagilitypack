@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1011001",
+    "ThreadId": "435536",
+    "Html": "How can i remove all the attributes other than some specific attributes.\r<br />\n<br />\nEg: i have tags say &lt;div&gt;&lt;p&gt; and &lt;img&gt; \r<br />\n&lt;div&gt; and &lt;p&gt; tag can have the following attributes<br />\n<pre><code>    1)id\n    2)styleName\n    3)typeName</code></pre>\n\nand &lt;img&gt; can have the follwoing <br />\n<pre><code>                 1)source\n                 2)alt\n                 3)id\n                 4)typeName\n                 5)styleName</code></pre>\n\nHow can i remove if there are any other attributes? <br />\n",
+    "PostedDate": "2013-03-05T23:33:02.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

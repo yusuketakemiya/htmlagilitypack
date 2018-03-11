@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "533055",
+    "ThreadId": "237638",
+    "Html": "\r\n<p>I have a webbrowser for send bulkemail,the user can drag and drop database fields like &quot;&lt;=FirstName&gt;&quot; to the webbrowser.</p>\r\n<p>How can I replace The &quot;&lt;=FirstName&gt;&quot; with the datatable or dataset field FirstName Value?</p>\r\n<p>Thanks</p>\r\n<p>Eric</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-08T11:55:18.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "534431",
+    "ThreadId": "237638",
+    "Html": "\r\n<p>No body gif me a answer how todo that?</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-11T11:36:48.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "534814",
+    "ThreadId": "237638",
+    "Html": "\r\n<p>Are you sure, that people will understand what you asked? Where is htmlagilitypack in your question?</p>\r\n",
+    "PostedDate": "2010-12-12T22:29:12.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "535167",
+    "ThreadId": "237638",
+    "Html": "\r\n<p>Thats is just the question how can i do that with htmlagilitypack and VB.Net webbrowsere.body.innerhtml?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-13T12:27:47.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "535414",
+    "ThreadId": "237638",
+    "Html": "\r\n<p>You can parse html with htmlagilitypack, change html and send this changed html to webbrowser (with filled textboxes and etc...). But I personally would preffer other approach: access DOM on webbrowser control. You will save on some unneeded processing.\r\n Your choice.</p>\r\n",
+    "PostedDate": "2010-12-14T01:23:00.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "206660",
+    "ThreadId": "60967",
+    "Html": "<p>Hi,</p>\r\n<p>I'm new to the HTML agility pack and I'm looking for a way to use the it with HTML pages that contain forms. I have found a couple mentions of an add on library that has a FormsProcessor (<span>HtmlAgilityPack.AddOns.FormProcessor)</span> but I haven't been able to find it anywhere. Can someone point me in the right direction?</p>\r\n<p>Thanks,</p>\r\n<p>Don</p>",
+    "PostedDate": "2009-06-29T09:23:54.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208423",
+    "ThreadId": "60967",
+    "Html": "<p>I recently had this same problem and was able to finally resolve it today, by creatively using Google's Cache.</p>\r\n<p><a title=Here href=\"http://74.125.47.132/search?q=cache:IKZRy1hc9WkJ:www.dotnetjunkies.com/WebLog/joshuagough/archive/2006/01/20/134825.aspx+inurl:dotnetjunkies+inurl:joshuagough+site:www.dotnetjunkies.com&cd=41&hl=en&ct=clnk&gl=us&client=firefox-a\">Here</a> is the original article.</p>\r\n<p>And <a title=Here href=\"http://apps.ultravioletconsulting.com/projects/uvcwebtransform/source/FormProcessor.zip\">Here</a> is the direct link.</p>\r\n<p>Hope I could help!</p>",
+    "PostedDate": "2009-07-03T14:07:48.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "213881",
+    "ThreadId": "60967",
+    "Html": "<p>Hi,</p>\r\n<p>i just tested Joshua Gogh's FormProcessor and it works great.</p>\r\n<p>Thanks for pointing out...</p>",
+    "PostedDate": "2009-07-20T10:12:10.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

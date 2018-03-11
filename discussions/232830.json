@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "514716",
+    "ThreadId": "232830",
+    "Html": "\r\n<p>I am trying to use the pack to read some content; but apparently I am getting a version thats intended for mobile devices.</p>\r\n<p>When I check the actual page source with the one I got, there are differences.</p>\r\n<p>I like to have the version for regular web page. Any suggestions?</p>\r\n",
+    "PostedDate": "2010-10-29T12:39:03.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514718",
+    "ThreadId": "232830",
+    "Html": "\r\n<p>setting the UserAgent to mozilla firefox seem to work.</p>\r\n",
+    "PostedDate": "2010-10-29T12:44:21.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

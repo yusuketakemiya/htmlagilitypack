@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "475116",
+    "ThreadId": "222097",
+    "Html": "<p>some times, one result will be missing when we update two htmlnodes in two parallel threads.</p>\r\n<p>&nbsp;</p>\r\n<p>Parallel.ForEach(HtmlNodes,node=&gt; node.SetAttributeValue(&quot;value&quot;,&quot;some text&quot;));</p>\r\n<p>if you want to see more detail code,you can get test code from http://sparrow.codeplex.com/SourceControl/changeset/view/9aa74a1a1b89#Tests%2fSparrow.HtmlTemplate.Tests%2fCheckboxTest.cs</p>",
+    "PostedDate": "2010-07-31T20:55:08.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

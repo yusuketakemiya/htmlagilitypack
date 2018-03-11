@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "142867",
+    "ThreadId": "42985",
+    "Html": "Hi,<br>\r\n<br>\r\nHtml Agility Pack is a great product, but... I am a bit confused with the license. Is anybody using it in the commercial solutions? How can I use it with commercial closed-source software?<br>\r\n<br>\r\nBest regards, Oleg Yaroshevych. \r\n",
+    "PostedDate": "2008-12-24T09:40:14.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "148596",
+    "ThreadId": "42985",
+    "Html": "Any feedback?<br>\r\n",
+    "PostedDate": "2009-01-19T21:37:05.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171988",
+    "ThreadId": "42985",
+    "Html": "I don't think you can, because even though it isn't defined as non-commerical, you have to share it under a similar license i.e. distribute the source code.<br>\r\n<br>\r\nYou can however speak directly to the developers and have this license waived with their consent.<br>\r\n",
+    "PostedDate": "2009-03-25T11:57:54.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185032",
+    "ThreadId": "42985",
+    "Html": "I disagree.&nbsp; The license states:<br>\r\n<ul>\r\n    <li><span id=\"ctl00_ctl00_MasterContent_Content_licenseText\">each\r\n    contributor grants you a non-exclusive, worldwide, royalty-free\r\n    copyright license...</span>\r\n    <ul>\r\n        <li><span id=\"ctl00_ctl00_MasterContent_Content_licenseText\">to reproduce its contribution, prepare derivative\r\n        works of its contribution, and distribute its contribution or any\r\n        derivative works that you create.</span></li>\r\n        <li><span id=\"ctl00_ctl00_MasterContent_Content_licenseText\"> to make, have\r\n        made, use, sell, offer for sale, import, and/or otherwise dispose of\r\n        its contribution in the software or derivative works of the\r\n        contribution in the software.</span></li>\r\n    </ul>\r\n    </li>\r\n    <li><span id=\"ctl00_ctl00_MasterContent_Content_licenseText\">do not use their trademarks, brand, etc</span></li>\r\n    <li><span id=\"ctl00_ctl00_MasterContent_Content_licenseText\">leave copyrights in the software</span></li>\r\n    <li><span id=\"ctl00_ctl00_MasterContent_Content_licenseText\">if you distribute the source, include the full source</span></li>\r\n    <li><span id=\"ctl00_ctl00_MasterContent_Content_licenseText\">if you distribute the binary, comply with this license</span></li>\r\n</ul>\r\nread the license tab.&nbsp; Its pretty clear and &quot;open&quot; <br>\r\n",
+    "PostedDate": "2009-04-29T08:34:40.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186012",
+    "ThreadId": "42985",
+    "Html": "Looks like the license was changed to a more appropriate one on April 24, 2009.<br>\r\n<br>\r\n&nbsp;&nbsp; http://htmlagilitypack.codeplex.com/license<br>\r\n<br>\r\nThe old version said you couldn't dance to HtmlAgilityPack in public without providing source code or some such thing.<br>\r\n<br>\r\n-Mike<br>\r\n",
+    "PostedDate": "2009-05-01T14:46:36.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186041",
+    "ThreadId": "42985",
+    "Html": "Team,<br>\r\n<br>\r\nThanks for changing the license. This solves all issues.<br>\r\n<br>\r\nBest regards, Oleg Yaroshevych. \r\n",
+    "PostedDate": "2009-05-01T17:03:05.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "191326",
+    "ThreadId": "42985",
+    "Html": "<p>I changed the licence recently because there were many questions about it. Back then, when CodePlex opened, there were not so many choices :)</p>",
+    "PostedDate": "2009-05-17T23:53:17.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

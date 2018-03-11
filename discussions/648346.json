@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1454537",
+    "ThreadId": "648346",
+    "Html": "Hi!<br />\n<br />\nI'm writing a web crawler, and I get a StackOverflowException in HtmlNodeCollection.GetEnumerator(), but on the call stack there are a lot of HtmlNode.CloseNode() calls:<br />\n<br />\nHtmlAgilityPack.dll!HtmlAgilityPack.HtmlNode.CloseNode(HtmlAgilityPack.HtmlNode endnode) Line 1679\tC#<br />\nHtmlAgilityPack.dll!HtmlAgilityPack.HtmlNode.CloseNode(HtmlAgilityPack.HtmlNode endnode) Line 1679\tC#<br />\nHtmlAgilityPack.dll!HtmlAgilityPack.HtmlNode.CloseNode(HtmlAgilityPack.HtmlNode endnode) Line 1679\tC#<br />\n...<br />\n<br />\nLine 1679 is: <code>foreach (HtmlNode child in _childnodes)</code><br />\n<br />\n<br />\nI don't know what page it is on. However, even if I knew what pages it was on, what can I do about it? <code>OptionFixNestedTags</code> doesn't help, and since StackOverflowException can't be caught, I'm not sure what I can do about it.<br />\n<br />\n<br />\nAny ideas?<br />\n",
+    "PostedDate": "2015-12-04T00:58:30.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

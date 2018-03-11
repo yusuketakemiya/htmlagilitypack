@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "277273",
+    "ThreadId": "80867",
+    "Html": "<p>I'm trying to post a click to a Telerik DropDown in a given an .ASPX page (or Xpath to its DIV).&nbsp; Language is c#.&nbsp; I'm just trying to get it to either grab the first item in its list of values, or ideally a specific value.&nbsp;</p>\r\n<p>Any ideas ?&nbsp;</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-01-14T11:46:34.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

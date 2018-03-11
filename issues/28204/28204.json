@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The html of the page source is:\n<dl>\n   <dt>Blood Pressure</dt>\n   <dd>120 / 180</dd>\n</dl>\n \nAfter we transform it to xml, it looks like this:\n<dl>\n   <dt>Blood Pressure\n      <dd>120 / 180</dd>\n   </dt>\n</dl>\n \n \nHere are the commands we are using:\nString html = HTML;\nString pattern = \"<!--(.|\\n)+?-->\";\n \nhtml = System.Text.RegularExpressions.Regex.Replace(html, pattern, \"\");\nHtmlDocument htmlDoc = new HtmlDocument();\nhtmlDoc.LoadHtml(html);\nhtmlDoc.OptionOutputAsXml = true;\n \n//Prevent multiple threads from both trying to access temp.xml\nXmlDocument xmlDoc = new XmlDocument();\nlock (file)\n{\n    htmlDoc.Save(\"temp.xml\");\n    xmlDoc.Load(\"temp.xml\");\n}\n \nreturn xmlDoc;\n \n \nOf course, this makes it difficult to write xpath statements to access the elements, because the hierarchy has changed.  I look through existing bugs and even through the source and good not find any indication of existing bugs or a reason specifying the format being as such.\nThanks.",
+    "LastUpdatedDate": "2013-02-21T18:47:14.213-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-07-21T06:48:49.857-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Invalid formatting for dl, dt, dd source",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 28204
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The same error applies to <li> tags:\r\n\r\nhttp://htmlagilitypack.codeplex.com/workitem/29218",
+      "PostedDate": "2010-10-20T03:04:18.46-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:14.213-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

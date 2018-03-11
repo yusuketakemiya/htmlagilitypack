@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "90649",
+    "ThreadId": "27170",
+    "Html": "\r\nHi,<br /><br />I'm trying to take an HTML (or XHTML) page as input, do some node modifications (which I've got working brilliantly) and then save as XHTML. I'm falling down at the last hurdle, though- It's outputting a lot of gibberish in the saved XHTML (when saving as XML). For instance, this:<br /><br />&lt;!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"<br />    \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"&gt;<br />&lt;html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"&gt;<br /><br />becomes:<br /><br />&lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;&lt;span&gt;&lt;!--CTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"<br />    \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dt --&gt;<br />&lt;html <i>xml3a</i>lang=\"en\" lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<br /><br />Am I missing something obvious?<br />",
+    "PostedDate": "2008-05-05T16:01:23.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "90847",
+    "ThreadId": "27170",
+    "Html": "\r\nJust realised the library doesn't do XHTML at all. Still, I don't know why my XML is coming out as gibberish...<br />",
+    "PostedDate": "2008-05-06T13:50:25.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

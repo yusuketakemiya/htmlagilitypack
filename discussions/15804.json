@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "51287",
+    "ThreadId": "15804",
+    "Html": "\r\nHi everyone,<br /><br />First of all I would like to say thank you. Because this tool help me a lot.<br /><br />Actually I'm facing a problem when dealing with some node which closing tag is optional.<br />For example --  definition list<br /><br />&lt;dl&gt;<br />      &lt;dt&gt; 1st entry --<br />      &lt;dd&gt; 11111<br />      &lt;dt&gt; 2nd entry --<br />      &lt;dd&gt; 22222<br />      &lt;dt&gt; 3rdt entry --<br />      &lt;dd&gt; 33333<br />&lt;/dl&gt;<br /><br />When I select the inner text of first &lt;dt&gt; node<br />The result that I get is --&gt; \" 1st entry -- 11111 2nd entry -- 22222 3rd entry -- 33333\"<br /><br />The HTML is valid because &lt;/dt&gt; closing tag is optional in this case.<br />But the result that result should be --&gt; \" 1st entry --\" <br /><br />Could anyone please guide me how can I solve this problem.<br />Thanks in advance.<br />",
+    "PostedDate": "2007-09-30T04:24:01.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58664",
+    "ThreadId": "15804",
+    "Html": "\r\nThe Html Agility Pack knows very little about what HTML really is. It basically parses a tag soup :-)<br />However there is the notion of Nested Tags and associated Resetters Tags in it.<br />It knows for example about the fact that, obviously, TR that basically closes TD automatically (because that helps bonehead guys like me who forget to close TD tags...).<br /><br />It does not know about DL, DT, DD, etc... But, if you are willing to change the source code, find the GetResetters method in the code, and add the tags DT, DL, etc...<br />",
+    "PostedDate": "2007-11-17T10:02:58.96-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

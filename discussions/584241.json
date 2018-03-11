@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1359153",
+    "ThreadId": "584241",
+    "Html": "<img src=\"https://social.msdn.microsoft.com/Forums/getfile/617918\" alt=\"Image\" /><br />\n<pre><code>string id=&quot;1-1&quot;;\n public async void ExampLoad(string id)\n        {\n            var httpClient = new HttpClient();\n            string srtHtml = await httpClient.GetStringAsync(&quot;http://dictionary.cambridge.org/dictionary/british/appeal&quot;);\n            var htmlDoc = new HtmlDocument();\n            htmlDoc.LoadHtml(srtHtml);\n\n            List&lt;Models.EnglishDictionary&gt; arrays = new List&lt;Models.EnglishDictionary&gt;();\n            var NewListNodeHtml = htmlDoc.GetElementbyId(&quot;entryContent&quot;);\n            if(NewListNodeHtml!=null)\n            {\n                var SenseBlock = NewListNodeHtml.Descendants(&quot;div&quot;).Where(x =&gt; x.GetAttributeValue(&quot;id&quot;, &quot;&quot;) == id);\n                if(SenseBlock!=null)\n                {\n                    foreach(var node in SenseBlock)\n                    {\n                        Dictionaries = new Models.EnglishDictionary();\n                        var ul = node.Descendants(&quot;div&quot;).FirstOrDefault(x =&gt; x.GetAttributeValue(&quot;class&quot;, &quot;&quot;) == &quot;extraexamps&quot;);\n                        if(ul!=null)\n                        {\n                            Dictionaries.Examp = ul.InnerText.Trim();\n                        }\n                        arrays.Add(Dictionaries);\n                    }\n                }\n            }\n            lstExample1_1.ItemsSource = arrays;\n        }</code></pre>\n\nHow to get of all  ul tags in id 1-1.<br />\n",
+    "PostedDate": "2015-03-02T22:03:25.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

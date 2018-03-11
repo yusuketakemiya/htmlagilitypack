@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1023691",
+    "ThreadId": "438648",
+    "Html": "Hi , <br />\n <br />\nHow to extract all the .class data from an stylesheet for the classes listed in an string list.<br />\n<br />\nEg:<br />\n<strong>1) i have a list of string</strong> <br />\n<br />\nhtmlClassNames[0]=&quot;abc&quot;<br />\nhtmlClassNames[1]=&quot;def&quot;<br />\n<pre><code>          .\n          .\n          .</code></pre>\n\nhtmlClassNames[n]=&quot;xyz&quot;<br />\n<br />\n<strong>2)a css file say style.css</strong><br />\ni want to extract all the class data from the style.css <br />\n<strong>ie</strong>     .abc{style}<br />\n<pre><code>        .def{style}\n</code></pre>\n\nand also if there say <strong>div .abc{style}</strong><br />\n<br />\nhow can i achieve this?<br />\n",
+    "PostedDate": "2013-04-01T02:49:19.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

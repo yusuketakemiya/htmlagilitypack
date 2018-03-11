@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "766829",
+    "ThreadId": "315893",
+    "Html": "\r\n<p>&#65279;&lt;h3 class=&quot;my-subject&quot;&gt;a&lt;/h3&gt;</p>\r\n<p>&lt;ul class='ex'&gt;....&lt;/ul&gt;<br>\r\n&lt;ul class='ex'&gt;....&lt;/ul&gt;<br>\r\n&lt;ul class='ex'&gt;....&lt;/ul&gt;<br>\r\n&lt;ul class='ex'&gt;....&lt;/ul&gt;<br>\r\n&lt;ul class='ex'&gt;....&lt;/ul&gt;<br>\r\n&lt;ul class='ex'&gt;....&lt;/ul&gt;</p>\r\n<p>&#65279;&lt;h3 class=&quot;my-subject&quot;&gt;b&lt;/h3&gt;</p>\r\n<p>&lt;ul class='ex'&gt;....&lt;/ul&gt;<br>\r\n&lt;ul class='ex'&gt;....&lt;/ul&gt;<br>\r\n&lt;ul class='ex'&gt;....&lt;/ul&gt;<br>\r\n&lt;ul class='ex'&gt;....&lt;/ul&gt;<br>\r\n&lt;ul class='ex'&gt;....&lt;/ul&gt;<br>\r\n&lt;ul class='ex'&gt;....&lt;/ul&gt;</p>\r\n<p>how can i get just 6 siblings ul.ex &nbsp;via &nbsp;&lt;h3 class=&quot;my-subject&quot;&gt;a&lt;/h3&gt;</p>\r\n<p>and get next 6 ul via&nbsp;&#65279;&lt;h3 class=&quot;my-subject&quot;&gt;b&lt;/h3&gt; ?</p>\r\n<p>&nbsp;thanks&nbsp;</p>\r\n<p>HAP doesn't support xpath axis ?&nbsp;</p>\r\n<p><a href=\"http://www.w3school.com.cn/xpath/xpath_axes.asp\">http://www.w3school.com.cn/xpath/xpath_axes.asp</a></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-02-14T21:46:20.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

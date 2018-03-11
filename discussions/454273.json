@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1083851",
+    "ThreadId": "454273",
+    "Html": "I'm trying to use HTML Agility pack to valid HTML entered by users, but it's not working for me. For example the following\r<br />\n<br />\nhtmlDoc.Loadhtml(&quot;&lt;div&gt;&lt;b&gt;hello&lt;/div&gt;&quot;)\r<br />\n<br />\ngives me a htmlDoc.ParseErrors as 0.  Why would that be?<br />\n",
+    "PostedDate": "2013-08-22T14:19:36.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

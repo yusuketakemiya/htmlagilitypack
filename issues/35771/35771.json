@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The method call HtmlEntity.DeEntitize fails to correctly decode HTML escapes whose numeric value is greater than 65535 (0xFFFF), which causes trouble with the Supplementary Multilingual Planes of Unicode. For example, the escape `&#128264;` is decoded as the string `\"&##128264;\"` instead of the character U+1F508 (which maps to 0xD83D 0xDD08 in UTF-16).\n\nThe problem is with the use of `System.Convert.ToChar(Int32)`: for values above 65535, this causes an OverflowException to be thrown. Since .NET 2.0, there exists the static method `System.Char.ConvertFromUtf32(Int32)`, which takes a numeric Unicode codepoint and returns a string with the correct UTF-16 representation (which is either one or two `char`s long). Replacing the calls to `Convert.ToChar` with `Char.ConvertFromUtf32` fixes the problem (since `StringBuilder.Append` can work with both `char`s and `string`s).\n\nA patch is attached.",
+    "LastUpdatedDate": "2015-01-01T06:49:32.753-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-12-26T09:58:44.387-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "[patch] HtmlEntity.DeEntitize fails on numeric entities > 0xFFFF",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35771
+  },
+  "FileAttachments": [
+    {
+      "FileId": 14088,
+      "FileName": "html-entity-high-unicode.patch",
+      "DownloadUrl": ".\\14088"
+    }
+  ],
+  "Comments": []
+}

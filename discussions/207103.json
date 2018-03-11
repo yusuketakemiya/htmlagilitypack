@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "422893",
+    "ThreadId": "207103",
+    "Html": "<p>How can i extract contents of &lt;title&gt; and &lt;head&gt; of html page directly from&nbsp; the internet(using url) ??</p>",
+    "PostedDate": "2010-03-23T22:17:19.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "428633",
+    "ThreadId": "207103",
+    "Html": "<p>Hi, <br>It very simple, try this code:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\"><br>string</span> title = htmlDoc.DocumentNode.SelectSingleNode(<span style=\"color:#A31515\">&quot;//title&quot;</span>).InnerText;\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-07T22:59:40.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

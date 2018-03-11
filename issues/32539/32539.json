@@ -1,0 +1,95 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Even after having isolated to a child node via SelectNodes(), applying SelectSingleNode() to the child will search from the root above (presume from root, above anyway). This behaviour is unexpected, I expect it to search from the isolated child and below only.\n \nExample:\n \n<HTML>\n <HEAD><TITLE> HTML Agility Bug Demo</TITLE></HEAD>\n <BODY>\n\t<somestuff>stuff here</somestuff>\n\t<table>\n\t\t<tr><td>first row</td></tr>\n\t\t<tr><td>second row</td></tr>\n\t\t<tr><td>third row</td></tr>\n\t</table>\n </BODY>\n</HTML>\n \nHtmlAgilityPack.HtmlDocument doc = new HtmlDocument();\ndoc.Load(@\"HtmlAgilityBugDemo.html\");\t\t\t\t\nHtmlNodeCollection rowNodes = doc.DocumentNode.SelectNodes(\"//table/tr\");\nforeach (HtmlNode row in rowNodes)\t\t\t\t\n{\n\tstring test1 = row.InnerText; // Works, enumerates correctly\n\tstring test2 = row.SelectSingleNode(\"//td\").InnerText; // This ALWAYS returns \"first row\" !!\n\tstring test3 = row.SelectSingleNode(\"//somestuff\").InnerText; // Found somestuff. But no stuff within this node !!\n}",
+    "LastUpdatedDate": "2013-07-31T05:24:50.79-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-04-06T05:50:24.8-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "SelectSingleNode searches from root when called from child",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 6,
+    "Id": 32539
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have exactly the same problem. \r\nCalling SelectSingleNode method on a node sometimes returns the first result in the document and not the first result Inside the node…\r\nVery annoing bug !",
+      "PostedDate": "2012-04-11T13:38:15.823-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-04-12T14:33:34.423-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Yes very annoying as it's a common thing to do.\r\n\r\nI've got around it, or rather contended with it, by loading the child's InnerHtml into a new doc and using that. A heavy weight solution.",
+      "PostedDate": "2012-04-13T20:00:45.483-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Html Agility Pack is using XPath to address nodes. See the XPath examples at http://msdn.microsoft.com/en-us/library/ms256086.aspx. Html Agility Pack is doing exactly what you’ve asked it to do. The current node ‘row’ is the current context, not the root of a new document. Thus “//td” ask for the first <td> element in the whole document, which is always “first row” in your example.\r\n\r\nIf you want to search the current node and its children, use “.//td” and “.//somestuff”.\r\n",
+      "PostedDate": "2012-04-23T14:05:04.183-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-04-23T14:07:22.08-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I stand corrected, and surprised.\r\n\r\nTesting with XMLDocument,\r\n\r\n\t\t\tXmlDocument doc = new XmlDocument();\r\n\t\t\tdoc.LoadXml(xml);\r\n\t\t\tvar rowNodes =  doc.SelectNodes(\"//table/tr\");\r\n\t\t\tforeach (XmlNode row in rowNodes)\r\n\t\t\t{\t\t\t\t\r\n\t\t\t\tstring test1 = row.InnerText; // Works, enumerates correctly\r\n\t\t\t\tstring test2 = row.SelectSingleNode(\"//td\").InnerText; // This ALWAYS returns \"first row\" !!\r\n\t\t\t\tstring test3 = row.SelectSingleNode(\"//somestuff\").InnerText; // Found somestuff. But no stuff within this node !!\r\n\t\t\t}\r\n\r\nThe result is the same, so as ThomasGat says it's expected XPath behaviour and is corrected by the simple use of \".\" to denote current node.",
+      "PostedDate": "2012-04-23T18:30:53.807-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "the  issue  come  from this  function \r\n private HtmlDocument LoadUrl(Uri uri, string method, WebProxy proxy, NetworkCredential creds)\r\n\t\t{\r\n\t\t\tHtmlDocument doc = new HtmlDocument();\r\n\t\t\tdoc.OptionAutoCloseOnEnd = false;\r\n\t\t\tdoc.OptionFixNestedTags = true;\r\n\t\t\t_statusCode = Get(uri, method, null, doc, proxy, creds);\r\n\t\t\tif (_statusCode == HttpStatusCode.NotModified)\r\n\t\t\t{\r\n\t\t\t\t// read cached encoding\r\n\t\t\t\tdoc.DetectEncodingAndLoad(GetCachePath(uri));\r\n\t\t\t}\r\n\t\t\treturn doc;\r\n\t\t}\r\njust change  the  variable  doc.OptionFixNestedTags = false; \r\n",
+      "PostedDate": "2012-05-05T11:03:58.22-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "it's  not  xpath  question.  I  will  try  to  fix  it later.",
+      "PostedDate": "2012-05-05T11:06:39.343-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-09-30T01:50:26.48-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:00.82-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-07-31T05:24:50.79-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

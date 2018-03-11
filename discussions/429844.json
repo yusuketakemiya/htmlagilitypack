@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "987856",
+    "ThreadId": "429844",
+    "Html": "\r\n<p>hi,</p>\r\n<p>can someone give me hrlp about how can i use html agilitypack to get string from a html code for example i have this html code:</p>\r\n<p>&nbsp;</p>\r\n<pre><code><span class=\"str\"><span><span><pre><code><span class=\"str\">&quot;&lt;font color=\\&quot;blue\\&quot;&gt;123456789&lt;br&gt;&lt;font color=\\&quot;black\\&quot;&gt;This book tells the story of her life from A to Z. &lt;br&gt;&quot;</span></code></pre>\n</span></span></span></code></pre>\r\n<p>&nbsp;</p>\r\n<pre>the string i want my function to return must be:</pre>\r\n<pre><pre><code>123456789</code></pre>\n<pre><code>This book tells the story of her life from A to Z.</code></pre>\n<br></pre>\r\n<pre>(format isn't constant so using regex doesn't help. i just want to do something like what <a rel=\"nofollow\" href=\"http://htmledit.squarefree.com/\">htmledit.squarefree.com</a> does. if it is hard to implent styles. i can skip styles and just want to get strings)</pre>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-16T17:19:34.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "991876",
+    "ThreadId": "429844",
+    "Html": "\r\n<p>Can you put up some more samples of the string a problem I see here is that its not correctly formatted html no end tags for the fonts.</p>\r\n<p>&nbsp;</p>\r\n<p>using Regex try this</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>        Regex r = <span style=\"color:blue\">new</span> Regex(<span style=\"color:#a31515\">&quot;((?:&lt;font ([^&gt;])*&gt;)(?&lt;number&gt;[0-9]*))[&lt;].*(?:&lt;font ([^&gt;])*&gt;)(?&lt;title&gt;([^&lt;]|$)*)&quot;</span>);\n        Match m = r.Match(<span style=\"color:#a31515\">&quot;&lt;font color=\\&quot;blue\\&quot;&gt;123456789&lt;br&gt;&lt;font color=\\&quot;black\\&quot;&gt;This book tells the story of her life from A to Z. &lt;br&gt;&quot;</span>);\n        <span style=\"color:blue\">string</span> title = m.Groups[<span style=\"color:#a31515\">&quot;title&quot;</span>].Value;\n        <span style=\"color:blue\">string</span> number = m.Groups[<span style=\"color:#a31515\">&quot;number&quot;</span>].Value;\n</pre>\r\n</div>\r\n<p></p>\r\n<p><span><span><span><span></p>\r\n<p>&nbsp;</p>\r\n<p>this will work in any way with different attributes etc on the font tags and with or without br at the ends.</p>\r\n<p>&nbsp;</p>\r\n<p>Hope this helps even if no help with htmlagilitypack</p>\r\n<p>&nbsp;</p>\r\n<p>Lee</p>\r\n</span></span></span></span>\r\n<p></p>\r\n",
+    "PostedDate": "2013-01-24T22:48:09.98-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

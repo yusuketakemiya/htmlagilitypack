@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1468127",
+    "ThreadId": "652956",
+    "Html": "Hello,<br />\nI want to List URL of an Website. It works via Regex and Agility pack - on Windows form Apps.<br />\n<br />\nNow I want to perform this Task in a UWP app. Unfortunately there is no System.web.UI;<br />\n<br />\nSo I tied this Code from :<br />\n(<a href=\"http://www.microsoft-programmierer.de/Details?d=1325&amp;a=9&amp;f=181&amp;l=0&amp;v=d&amp;t=UWP-HtmlAgilityPack:-.SelectedNodes()-nicht-in-Windows-Apps\" rel=\"nofollow\">AgilityUWP</a>)<br />\nand Combine it with:<br />\n<a href=\"http://www.codeproject.com/Articles/659019/Scraping-HTML-DOM-elements-using-HtmlAgilityPack-H\" rel=\"nofollow\">http://www.codeproject.com/Articles/659019/Scraping-HTML-DOM-elements-using-HtmlAgilityPack-H</a><br />\n<br />\n<br />\nSo I made the following Code. But this one only get me the URL of the page I am on. But I am looking for all URLs in the Body of the HTML Page:<br />\n<pre><code>    private void button_Click(object sender, RoutedEventArgs e)\n    {\n\n\n        HtmlDocument htmlDoc = new HtmlDocument();\n        htmlDoc.LoadHtml(InputTextBox.Text);\n\n        HtmlNode docNodes = htmlDoc.DocumentNode;\n        var aTags = htmlDoc.DocumentNode.Descendants();\n\n        int counter = 1;\n        if (aTags != null)\n        {\n            foreach(var aTag in aTags)\n            {\n                UrlList.Items.Add(counter + &quot;. &quot; + aTag.InnerHtml);\n                counter++;\n            }\n\n        }\n\n    }</code></pre>\n\n",
+    "PostedDate": "2016-03-27T02:28:26.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

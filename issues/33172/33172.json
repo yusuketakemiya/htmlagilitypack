@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();\ndoc.Load(fileStream.AsStreamForRead());\nstring html = doc.DocumentNode.OuterHtml;\n \nthe html i am getting is not well formed. \n<link href=\"css/style.css\" type=\"text/css\" rel=\"stylesheet\"/> got converted to \n<link href=\"css/style.css\" type=\"text/css\" rel=\"stylesheet\">\n \nthe closing '/' is getting missed in all the Nodes which are closed inline.",
+    "LastUpdatedDate": "2013-02-21T18:46:56.87-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-09-26T13:21:22.913-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "doc.DocumentNode.OuterHtml not giving well formed html : HAP on Win8 :",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33172
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

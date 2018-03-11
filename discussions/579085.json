@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1347784",
+    "ThreadId": "579085",
+    "Html": "Hi,\r<br />\n<br />\nI would like to ask if I use HtmlWeb.load([url]) method - is the whole html page loaded or just DOM tree with empty nodes? If the whole html page, is there something that could be used to only load empty DOM tree nodes and if needed the content of the nodes would be extracted from the server responses containing only these little chunks I requested?\r<br />\n<br />\nThanks a lot for your answer!<br />\n",
+    "PostedDate": "2015-01-31T09:46:30.483-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

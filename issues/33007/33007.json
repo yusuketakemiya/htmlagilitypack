@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2012-08-13T16:13:26.937-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\nwhen I try to use the HAP 1.4.5 Binaries for .NET 2.0 I'm getting an error because I have to reference the mscorlib 4.0.\nWhen I load the binary in ILSpy it shows the following:\n \n// D:\\DL\\HtmlAgilityPack.1.4.5\\Net20\\HtmlAgilityPack.dll\n// HtmlAgilityPack, Version=1.4.5.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a\n \n// Architecture: AnyCPU (64-bit preferred)\n// Runtime: .NET 4.0\n \nkind regards\n \nJacob",
+    "LastUpdatedDate": "2013-05-16T05:32:55.703-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-08-09T23:23:27.277-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HAP 1.4.5 Net20-Binaries build for .NET 4.0",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 33007
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I get this as well :(",
+      "PostedDate": "2012-08-13T11:47:27.59-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "FYI I just compiled the project myself for 2.0 and that worked.  ",
+      "PostedDate": "2012-08-13T12:24:23.27-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Fixed for the Codeplex binaries.\r\n\r\nNote it is recommended to use the Nuget package. It is updated before the codeplex site. ",
+      "PostedDate": "2012-08-13T16:13:19.947-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-08-13T16:13:26.937-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:46:57.653-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:55.703-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

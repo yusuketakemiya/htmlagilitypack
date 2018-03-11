@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "For <option> </option> HTML tag pairs - the end tag </option> is incorrectly removed from all Innerhtml string results (fails on 1.4.0.0 and 2.0 Experimental) when present in the original html.\n \nThe start tag is kept intact.",
+    "LastUpdatedDate": "2013-02-21T18:47:14.067-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-07-22T11:13:45.407-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect removal of </option> end tags on Innerhtml retrieval",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 28232
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

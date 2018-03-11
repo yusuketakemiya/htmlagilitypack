@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "XPath navigation in attached document doesn't work, though it works in other Xpath navigators (FireFox-Xpather, SketchPath)\nThe problem is in <form> tag\nXpath = /html/body/div[1]/div[@id='mid']/div[@id='content']/form/input[1] // null\n  \n \n \n\t\t\n \n\t\t\n\t\t\n \n\t&lt;/form&gt;\n \n \n</form>\"",
+    "LastUpdatedDate": "2013-02-21T18:47:17.75-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-03-30T09:55:52.953-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XPath Navigation Broken",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 26635
+  },
+  "FileAttachments": [
+    {
+      "FileId": 9961,
+      "FileName": "trav_html.txt",
+      "DownloadUrl": ".\\9961"
+    }
+  ],
+  "Comments": []
+}

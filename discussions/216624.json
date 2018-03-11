@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "457588",
+    "ThreadId": "216624",
+    "Html": "<p>I am trying to use the new Linq to Objects syntax for working with HAP, but don't seem to be getting any items in my HtmlNodeCollections. In the below code, I am trying to parse and load some Html into an HtmlNodeCollection (I hate XPath and am very happy to be able to not have to use it!)</p>\r\n<p>In the below code I can see that the HtmlDocument is succesfully parsed and contains tons of nodes. Yet the HtmlNodeCollection has zero items:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>HtmlDocument doc = <span style=\"color:blue\">new</span> HtmlDocument();\r\ndoc.LoadHtml(html);\r\nHtmlNodeCollection hnc = <span style=\"color:blue\">new</span> HtmlNodeCollection(doc.DocumentNode);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p>Later on I intend to work with this node collection by doing things like this:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>IEnumerable&lt;HtmlNode&gt; paragraphs = hnc.Where(p =&gt; p.Name.ToLower() == <span style=\"color:#a31515\">&quot;p&quot;</span>);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>and:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>IEnumerable&lt;HtmlAttribute&gt; hrefs = hnc.Where(p =&gt; p.Attributes.Contains(<span style=\"color:#a31515\">&quot;href&quot;</span>)).Select(p =&gt; p.Attributes.Single(q =&gt; q.Name == <span style=\"color:#a31515\">&quot;href&quot;</span>));\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p>But if the HtmlNodeCollection doesn't actually contain all the nodes... well, then, my plans are for naught.</p>",
+    "PostedDate": "2010-06-19T09:13:37.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457594",
+    "ThreadId": "216624",
+    "Html": "<p>You'll need to use the new functions on like DescendantNodes() on the DocumentNode. Descendants and DescendantNodes both get you the entire collection of all nodes below the document node. I forgot to remove DescendantNodes and just leave Descendants. They both do the same thing, I will probably deprecate one of them in the next release</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>HmlDocument doc = <span style=\"color:blue\">new</span> HtmlDocument();\r\ndoc.LoadHtml(html);\r\nIEnumerable&lt;HtmlNode&gt; paragraphs = doc.DocumentElement.DocumentNode.DescendantNodes().Where(p =&gt; p.Name.ToLower() == <span style=\"color:#a31515\">&quot;p&quot;</span>);\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-19T10:17:16.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457642",
+    "ThreadId": "216624",
+    "Html": "<p>Perfect. Thanks.</p>",
+    "PostedDate": "2010-06-19T14:22:39.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

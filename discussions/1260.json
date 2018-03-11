@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "4078",
+    "ThreadId": "1260",
+    "Html": "\r\nHi, Simon.<br /><br />I've got the following code (notated a bit for you). The problem is I can't seem to get the output stream to get the entire output of a transformed HtmlDocument. It gets cut off about 500 chrs or so from the end of the stream. <br /><br />Any ideas? I've tried changing options on the HtmlDocument, as well as messing with different types of Stream objects, and declaring the capacity of the MemoryStreams, and specifying the encoding, with no luck. This code doesn't look like it will print very well, but hopefully the format will be okay when it posts.<br /><br />Thank you very much for the awesome tool, and for any help you can provide. Please feel free to email me if you'd like me to email a zip of the code. iamthepants <a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%5bat%5d\">[at]</a> g m a i l<br /><br />Thanks!<br />STA<br /><br />   Public Shared Function getFeedStream(ByVal FeedURL As String, ByVal FeedXSLT As String, ByVal FeedUser As String, ByVal FeedPwd As String, Optional ByVal ApplyXHTMLConverter As Boolean = False, Optional ByVal isDebug As Boolean = False) As Stream<br /><br />      Dim oWorkStream As New MemoryStream<br />      Dim oOutputStream As New MemoryStream<br />      oWorkStream = getPageContent(FeedURL)<br />      ' getPageContent returns a memorystream filled with the httpwebresponse<br /><br />      If ApplyXHTMLConverter Then<br />        Dim oXFormedDoc As New HtmlDocument<br />        oXFormedDoc.OptionOutputAsXml = True<br />        oXFormedDoc.OptionWriteEmptyNodes = False<br />        Try<br />          oXFormedDoc.Load(oWorkStream)<br />          ' This Save works fine: output is exactly as expected<br />          oXFormedDoc.Save(\"C:\\External\\FeedApps\\PFeedV2\\DATA\\LOGS\\DirectOutput.xml\")<br />          ' This Save is short by 500-1000 chrs (varies depending on page/HTMLDocument options)<br />          oXFormedDoc.Save(oOutputStream)<br />        Catch ex As Exception<br />          Call AppendToGeneralErrorLog(Date.Now.ToShortTimeString &amp; \": Error Line 194 (oXFormedDoc.Load) \" &amp; ex.Message)<br />        End Try<br />        oOutputStream.Position = 0<br />      End If<br />      If isDebug Then<br />        Dim oSR As StreamReader = New StreamReader(oOutputStream)<br />        Dim oSW As StreamWriter = System.IO.File.CreateText(ConfigurationManager.AppSettings(\"LogFileDirectory\") &amp; \"\\feeddebug.txt\")<br />        oSW.Write(oSR.ReadToEnd())<br />        oSW.Flush()<br />        'oSW.Close()<br />        oOutputStream.Position = 0<br />      End If<br />      Dim oFeedDoc As XPath.XPathDocument<br />      If Not FeedXSLT = vbNullString Then<br />        Dim oXSLT As XslCompiledTransform = New XslCompiledTransform<br />        Try<br />          Dim oFeedXSLT As XmlReader = XmlReader.Create(New StringReader(FeedXSLT))<br />          oXSLT.Load(oFeedXSLT)<br />          oFeedDoc = New XPath.XPathDocument(oOutputStream)<br />          oWorkStream = New MemoryStream<br />          oXSLT.Transform(oFeedDoc, Nothing, oOutputStream)<br />          oOutputStream.Position = 0<br />        Catch ex As Exception<br />          '   Result = \"Error transforming responseStream with xslt\"<br />        End Try<br />      End If<br />      Return oOutputStream<br />    End Function<br /><br />",
+    "PostedDate": "2006-09-06T12:32:33.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "4159",
+    "ThreadId": "1260",
+    "Html": "\r\nHi,<br /><br />If you look at the code, HtmlDocument.Save(Stream) is just a wrapper. All Save methods end up calling DocumentNode.WriteTo.<br /><br />Have you tried using Flush? Are you sure the input HTTP stream is ok? Do you get the same problems if you replace HTTP streams by file streams?<br /><br />Just ideas on top of my head :-)<br />Simon.<br />",
+    "PostedDate": "2006-09-07T13:09:44.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "4180",
+    "ThreadId": "1260",
+    "Html": "\r\nYes, I'm sure the HTTP input stream is fine, because if I output from HtmlDocument using oXFormedDoc.Save(\"C:\\External\\FeedApps\\PFeedV2\\DATA\\LOGS\\DirectOutput.xml\") the output is fine. It's only when I output it as a stream that it spits out incomplete xhtml.<br /><br />I just tried writing directly to a string using<br />sFoo = oXFormedDoc.DocumentNode.WriteContentTo()<br />and that worked fine, too. I'll try writing that string into a new memorystream and then write it to file the same way as I'm doing now to try to rule out the agility pack as the source of this issue.<br /><br />Thanks again,<br />STA<br />",
+    "PostedDate": "2006-09-07T16:36:35.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "4182",
+    "ThreadId": "1260",
+    "Html": "\r\nHmmm... must be something in your code.<br /><br />When I do this (write to string, then write that string back into my oOutputStream object), my outputstream object has all the data I'm looking for. So oXFormedDoc.Save(oOutputStream) apparently isn't flushing? Anyway, I'll either do what works below, or I'll modify your source code to try to fix this.<br /><br />      If ApplyXHTMLConverter Then<br />        Dim oXFormedDoc As New HtmlDocument<br />        oXFormedDoc.OptionOutputAsXml = True<br />        oXFormedDoc.OptionWriteEmptyNodes = False<br />        Try<br />          Dim sFoo As String<br />          oXFormedDoc.Load(oWorkStream)<br />          sFoo = oXFormedDoc.DocumentNode.WriteTo()<br />          oOutputStream = New MemoryStream(Encoding.UTF8.GetBytes(sFoo))<br />        Catch ex As Exception<br />          Call AppendToGeneralErrorLog(Date.Now.ToShortTimeString &amp; \": Error Line 194 (oXFormedDoc.Load) \" &amp; ex.Message)<br />        End Try<br />        oOutputStream.Position = 0<br />      End If<br /><br /><br />",
+    "PostedDate": "2006-09-07T16:58:40.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "10420",
+    "ThreadId": "1260",
+    "Html": "\r\nHi<br /><br />I can confirm that there is a bug in the Save(Stream) method. In fact it is in the Save(TextWriter writer). The current implementation is <br /><br />public void Save(TextWriter writer)<br />{<br />  if (writer == null)<br />  {<br />    throw new ArgumentNullException(\"writer\");<br />  }<br />  DocumentNode.WriteTo(writer);<br />}<br /><br />The correct implementation should be<br /><br />public void Save(TextWriter writer)<br />{<br />  if (writer == null)<br />  {<br />    throw new ArgumentNullException(\"writer\");<br />  }<br />  DocumentNode.WriteTo(writer);<br />  writer.Flush();<br />}<br /><br />This is how it's done in the Save(XmlWriter writer)<br /><br />Regards<br />Rodion<br />",
+    "PostedDate": "2007-01-04T02:55:24.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "28054",
+    "ThreadId": "1260",
+    "Html": "<div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />rodion wrote:<br />Hi<br /><br />I can confirm that there is a bug in the Save(Stream) method. In fact it is in the Save(TextWriter writer). The current implementation is <br /><br />public void Save(TextWriter writer)<br />{<br />  if (writer == null)<br />  {<br />    throw new ArgumentNullException(\"writer\");<br />  }<br />  DocumentNode.WriteTo(writer);<br />}<br /><br />The correct implementation should be<br /><br />public void Save(TextWriter writer)<br />{<br />  if (writer == null)<br />  {<br />    throw new ArgumentNullException(\"writer\");<br />  }<br />  DocumentNode.WriteTo(writer);<br />  writer.Flush();<br />}<br /><br />This is how it's done in the Save(XmlWriter writer)<br /><br />Regards<br />Rodion<br /><br /></div><br />I was having the same problems.  I made the modifications to the HtmlDocument.cs file that rodion suggested (adding writer.Flush()) and it worked perfectly.  Thanks rodion!<br />",
+    "PostedDate": "2007-03-27T11:16:53.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "485359",
+    "ThreadId": "1260",
+    "Html": "<p>I had exactly the same issue. I applied Rodion's fix and it work perfectly now. Thanks Rodion!</p>\r\n<p>Would it be possible to include this fix in the release?</p>",
+    "PostedDate": "2010-08-26T12:42:35.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

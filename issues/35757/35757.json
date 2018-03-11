@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nI am not sure, if this was already raised. ( If it is, I'm very sorry ).\n\nI'm having an issue with the HTML Agility Pack, every time I try to save the document, it always omits the end-tag whenever the said element does not have an inner value.\n\nExample:\nBefore: <meta name=\"metaName\" content=\"metaContent\"/>\nAfter Saving: <meta name=metaName\" content=\"metaContent\">\n\nI believe this is a huge problem not only for design, but also on checking HTML standards.\n\nIf this can be answered, I will be very grateful.\n\nThank you very much.\n\nRespectfully",
+    "LastUpdatedDate": "2014-12-21T19:29:53.983-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2014-12-21T19:17:41.47-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "[Issue]End-Tag Always Omitted",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35757
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Oh, sorry.\r\n\r\nI found out a work-around for this issue, though I think it should be already set by default.\n( Set OptionWriteEmptyNodes to true )\r\n\r\nAnyways, sorry for the disturbance.\r\n\r\nThanks!",
+      "PostedDate": "2014-12-21T19:29:53.983-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

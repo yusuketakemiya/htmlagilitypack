@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1399606",
+    "ThreadId": "616928",
+    "Html": "I want to get text into class it like &quot;pos-4275...&quot;. Definitely, The html agility pack on universal(not silverlight). \r<br />\n<img src=\"http://i.imgur.com/2WX028g.png\" alt=\"Image\" />\r<br />\n<br />\nvar httpClient = new HttpClient();<br />\n<pre><code>    string strhtml = await httpClient.GetStringAsync(&quot;http://&quot;);\n\n    var htmlDocument = new HtmlDocument();\n    htmlDocument.LoadHtml(strhtml);\n    List&lt;SmartThesuarus&gt; arrays = new List&lt;SmartThesuarus&gt;();\n    var information_content = htmlDocument.GetElementbyId(&quot;content&quot;);\n    if (information_content != null)\n    {\n        var cdo_cloud = information_content.Descendants(&quot;div&quot;).Where(x =&gt; x.GetAttributeValue(&quot;class&quot;, &quot;&quot;) == &quot;&quot;);\n        if (cdo_cloud != null)\n        {\n            foreach (var node in cdo_cloud)\n            {\n\n\n            }\n        }\n\n    }\n    return arrays;</code></pre>\n\n",
+    "PostedDate": "2015-04-02T18:54:30.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

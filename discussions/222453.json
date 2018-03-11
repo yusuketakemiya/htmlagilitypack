@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "476456",
+    "ThreadId": "222453",
+    "Html": "<p>I have several html documents that I need to extract data out off.&nbsp; Currently I am using MS Excel to exctract the tables from the html pages, my company would like to get away from this practice.&nbsp; I'm still realatively new to programming so bare with me.&nbsp;</p>\r\n<p>First Question.&nbsp; How do I Parse a web page&nbsp;from an external (not mine) website or with a saved html document to my Harddrive, the examples that I have seen are vary vague.&nbsp;</p>\r\n<p>I have used the HAPExplorer to get to the table that I need in one of my HTML documents however the XPath looks like this: /html[1]/body[1]/table[1]/tr[4]/td[1]/table[1]/tr[2]/td[3]/placeholder[1]/table[1]/tr[1]/td[1]/table[1]/tr[2]/td[2]/table[1]/tr[1]/td[1]/table[1]/tr[2]/td[1]/div[1]/table[3]/tr[1]/td[1].&nbsp; How in the world do I write this in code?</p>\r\n<p>Any assistance would be greatly welcomed.</p>",
+    "PostedDate": "2010-08-04T07:39:35.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476900",
+    "ThreadId": "222453",
+    "Html": "<p>Relativly new to programming? Hum...</p>\r\n<p>Just to give you an idea of what you've walked into; these links will help you lean XPath: <a title=\"http://www.w3schools.com/xpath/default.asp\" href=\"http://www.w3schools.com/xpath/default.asp\">http://www.w3schools.com/xpath/default.asp</a></p>\r\n<p>An XmlDocument object has a method called &quot;&quot; which given the Xpath above will allow you to select data from the structure of the xml.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">using</span> System;\r\n<span style=\"color:blue\">using</span> System.Collections.Generic;\r\n<span style=\"color:blue\">using</span> System.Linq;\r\n<span style=\"color:blue\">using</span> System.Text;\r\n<span style=\"color:blue\">using</span> System.Xml;\r\n\r\n<span style=\"color:blue\">namespace</span> ConsoleApplication1\r\n{\r\n    <span style=\"color:blue\">class</span> Program\r\n    {\r\n        <span style=\"color:blue\">static</span> <span style=\"color:blue\">void</span> Main(<span style=\"color:blue\">string</span>[] args)\r\n        {\r\n            XmlDocument _xmlDocument = <span style=\"color:blue\">new</span> XmlDocument();\r\n\r\n            _xmlDocument.Load(<span style=\"color:#a31515\">&quot;&quot;</span>); <span style=\"color:gray\">///</span><span style=\"color:green\">&lt;- Takes a file name to load from. LoadXml takes string data</span>\r\n\r\n            XmlNodeList _nodeList = _xmlDocument.SelectNodes(<span style=\"color:#a31515\">&quot;&quot;</span>); <span style=\"color:gray\">///</span><span style=\"color:green\">&lt;- place query here</span>\r\n                                                                  <span style=\"color:gray\">///</span><span style=\"color:green\"> _nodeList is populated with </span>\r\n                                                                  <span style=\"color:gray\">///</span><span style=\"color:green\"> the result of the xpath query</span>\r\n                                                                  <span style=\"color:gray\">///</span><span style=\"color:green\"> or null</span>\r\n        }\r\n    }\r\n}\r\n\r\n</pre>\r\n</div>\r\n<p>So if you have the xml data saved as files, you can load them with the &quot;.Load&quot; method.</p>\r\n<p>(NB: This is just a first step, not a complete solution)</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-05T06:59:57.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

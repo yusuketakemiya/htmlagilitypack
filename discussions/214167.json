@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "448552",
+    "ThreadId": "214167",
+    "Html": "<p>Hello,</p>\r\n<p>First of all I would like to say that Html Agility Pack is great and it's pleasure to use it!</p>\r\n<p>As I can expected you have some unit tests for this project, so you can check its integrity during refactoring, am I right? If yes, then is it possible to get those tests? I saw some tests in source code repository, but there are maybe 10 test only - I don't think that it's all you have ;)</p>\r\n<p>I would like to play around with your code and it would be extremely useful for me to have those tests - then I can check if I don't break something.</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-05-28T01:25:05.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "448608",
+    "ThreadId": "214167",
+    "Html": "<p>So far that's all the tests we have. I just started adding them a few weeks ago. I took over development last year and now feel more familiar with the  code base to write effective unit tests. I have a few on my local computer but I'm not sure if they'd be helpful, I'm still trying to suss out the best way to partition the tests. Since they are going to need a massive amount of external files.</p>\r\n<p>I only get an hour or two a week to work on the library atm. If you do come up with some tests to help you with your development let me know if you think I could use them. Once my current build is stable again I'll make another source code submission.</p>",
+    "PostedDate": "2010-05-28T04:24:37.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "449461",
+    "ThreadId": "214167",
+    "Html": "<p>Thank you for the fast answer. I hope you will be able to write more tests in near feature, because they are really usful.</p>\r\n<p>Of course if I have any good tests I will send them to you - maybe they will help you. But for now I don't know if I have time to write them.</p>\r\n<p>Good luck!</p>",
+    "PostedDate": "2010-05-30T23:16:39.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

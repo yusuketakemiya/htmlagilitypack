@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1017726",
+    "ThreadId": "437205",
+    "Html": "Hello,\r<br />\n<br />\nI have been struggling to resolve this problem I am having over the past couple of days. Say, I want to get all the text() from an HTMLdocument, however I only want to know and retrieve of the node that contains text. Example:\r<br />\n<br />\nforeach (var textNode in node.SelectNodes(&quot;.//text()&quot;))\r<br />\n//do stuff here\r<br />\n<br />\nHowever, when it comes to retrieving the XPath of the textNode, I get the full XPath including the text node:\r<br />\n<br />\n/html[1]/body[1]/div[1]/a[1]/#text\r<br />\n<br />\nYet I only want the containing node of the text, for example:\r<br />\n<br />\n/html[1]/body[1]/div[1]/a[1]\r<br />\n<br />\nCould anyone point me toward a better XPath solution to retrieve all nodes that contains text but only retrieve the XPath up until the containing node?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-03-19T08:23:31.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

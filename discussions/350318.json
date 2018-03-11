@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "816561",
+    "ThreadId": "350318",
+    "Html": "\r\n<p>&nbsp;</p>\r\n<p>Hi. I'm trying to screen scrape the results which are displayed in the Search Results table of, for example, this webpage :</p>\r\n<p><a href=\"http://beta.sharkscope.com/#Player-Statistics//networks/PokerStars/players/WushuTM\">http://beta.sharkscope.com/#Player-Statistics//networks/PokerStars/players/WushuTM</a></p>\r\n<p>However, the values displayed in the table aren't actually in the HTML source? I'm assuming they're set using the style of the &quot;mainplayergrid&quot; table. Is it possible to use the HTMLAgility pack to access these values?<span style=\"color:#0000ff; font-size:x-small\"><span style=\"color:#0000ff; font-size:x-small\"><span style=\"color:#0000ff; font-size:x-small\">\r\n</p>\r\n<p><span lang=\"EN-GB\"></span></p>\r\n&nbsp;</span></span></span>\r\n<p></p>\r\n",
+    "PostedDate": "2012-03-28T06:53:30.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

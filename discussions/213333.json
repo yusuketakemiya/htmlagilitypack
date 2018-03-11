@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "445523",
+    "ThreadId": "213333",
+    "Html": "<p>New development is going on in trunk. I ran into some issues with changing Hastables over to Dictionary's. They work a bit differently and the parser was relying on Hastables to actually return null objects from items in the table.</p>\r\n<p>Furthermore Visual Studio 2005 support will be dropped. For now you will still be able to compile to .NET 2.0 via VS2008. The reason being is I need the C# 3.5 compiler to handle partial classes when differing between Silverlight and full framework. It's one of those cool hidden features of VS. You can use features from C# 3.5 and still run the code under 2.0. Partial methods is one of those features.</p>",
+    "PostedDate": "2010-05-20T11:55:47.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "452062",
+    "ThreadId": "213333",
+    "Html": "<p>Trunk should be stable again. I'm pretty sure I tracked down all the places where HAP was relying on the feature that Hashtables will return null if a key is not found. When switching to a generic dictionary I had changed these to ContainsKey calls thinking it was just checking to see if the item didn't exist in the Hashtable. It was actually expecting the key to exist but the return of that key to be null.</p>\r\n<p>So now HAP no longer has any non-generic collections.</p>",
+    "PostedDate": "2010-06-05T13:51:39.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

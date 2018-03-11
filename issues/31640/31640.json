@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When I set InnerHtml property of a html node, it swallows the white-spaces. For example, if I want to change InnerHtml of a Html Text Node like that:\n\"This text will be highlighted\"\nwith this html code:\n\"This text will be <span class=\"hl\">highlighted</span>\"\nit produces the result as:\n\"This text will be<span class=\"hl\">highlighted</span>\"\nIt removes the white spaces before and after the span tag.\nPlease see this post for detail:\nhttp://stackoverflow.com/questions/7896297/preserve-white-space-with-htmlagilitypack",
+    "LastUpdatedDate": "2013-02-21T18:47:03.447-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-10-25T16:35:45.783-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Setting to HtmlNode.InnerHtml doesn't preserve white-spaces",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 31640
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1056178",
+    "ThreadId": "446894",
+    "Html": "Hi,\r<br />\n<br />\nCan I convert a string with HTML tags with a properly formatted string?\r<br />\n<br />\nI mean &lt;TR&gt;Test&lt;/TR&gt;&lt;TR&gt;Test2&lt;/TR&gt;\r<br />\nCan this be, \r<br />\n<br />\nTest\r<br />\nTest2<br />\n",
+    "PostedDate": "2013-06-12T22:16:43.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

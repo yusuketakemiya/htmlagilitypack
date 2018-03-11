@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "983314",
+    "ThreadId": "428589",
+    "Html": "\r\n<p>example:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;StringBuilder sbXml = new StringBuilder();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StringWriter sw = new StringWriter(sbXml);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlTextWriter tw = new XmlTextWriter(sw);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlWeb htmlWeb = new HtmlWeb();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; htmlWeb.LoadHtmlAsXml(&quot;<a href=\"http://finance.qq.com/a/20121126/000974.htm\">http://finance.qq.com/a/20121126/000974.htm</a>&quot;, tw);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; richTextBox1.Text = sbXml.ToString();</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-05T05:10:51.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

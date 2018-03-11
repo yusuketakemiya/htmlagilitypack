@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "224124",
+    "ThreadId": "65888",
+    "Html": "<p>Hello, This&nbsp;is a design issue.</p>\r\n<p>I wish to extract from an html files some text. the problem is that there are some html files that the xpath different then other html pages.</p>\r\n<p>What I&nbsp;am trying &nbsp;to achieve is to try extract data untill I succedd. lets say&nbsp;I am trying XPATH1 and it failed, then I want to try XPATH2...</p>\r\n<p>How to do this?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-16T20:23:31.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224918",
+    "ThreadId": "65888",
+    "Html": "<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"font-family:'Segoe UI'\"><span style=\"white-space:normal\"><span style=\"font-family:Consolas\"><span style=\"white-space:pre\"><div style=\"color:Black;background-color:White\"><pre><span style=\"color:Green\">/*\r\nxpath.for.pagename.txt:\r\nSTART CONTENT\r\n# Retrieves the headline\r\n# If XYZ this element exists.\r\n/body/html/div[id='head']/text()\r\n# IF ZYX this element exists, not the above.\r\n/body/html/div[id='headline']/text()\r\nEND CONTENT\r\n*/</span>\r\n\r\n<span style=\"color:Green\">// How you organize these xpaths is up to you.</span>\r\n<span style=\"color:Blue\">const</span> <span style=\"color:Blue\">string</span> XPathFile = <span style=\"color:#A31515\">&quot;xpath.for.pagename.txt&quot;</span>;\r\n\r\nHtmlNode result = <span style=\"color:Blue\">null</span>;\r\n<span style=\"color:Blue\">foreach</span>(<span style=\"color:Blue\">string</span> xpath <span style=\"color:Blue\">in</span> File.ReadAllLines(XPathFile))\r\n{\r\n    <span style=\"color:Green\">// Skip comments</span>\r\n    <span style=\"color:Blue\">if</span>( xpath.StartsWith(<span style=\"color:#A31515\">&quot;#&quot;</span>) )\r\n        <span style=\"color:Blue\">continue</span>;\r\n    result = doc.SelectSingleNode(xpath);\r\n    <span style=\"color:Blue\">if</span>( result == <span style=\"color:Blue\">null</span> )\r\n        <span style=\"color:Blue\">continue</span>;\r\n    <span style=\"color:Green\">// Make sure you got the right node, let's say you only want TextNodes.</span>\r\n    <span style=\"color:Blue\">if</span>( result.Name == HtmlNode.HtmlNodeTypeNameText )\r\n        <span style=\"color:Blue\">break</span>;\r\n}\r\n\r\n<span style=\"color:Blue\">if</span>( result != <span style=\"color:Blue\">null</span> )\r\n{\r\n     MessageBox.Show(result.InnerText);\r\n}\r\n</pre>\r\n</div>\r\n<br></span></span></span></span></pre>\r\n<pre>Its very basic. You can build around this idea.</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-18T06:37:55.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

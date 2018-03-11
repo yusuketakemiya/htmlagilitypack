@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1470695",
+    "ThreadId": "653763",
+    "Html": "Hi <br />\n<br />\nI am aware of the following code to load an html string <br />\n<br />\nstring astr = &quot;&lt;p&gt; This is first Program &lt;/p&gt;&quot;;<br />\nvar htmlDoc = new HtmlAgilityPack.HtmlDocument();<br />\n // load the html string to htmldocument object<br />\n htmlDoc.LoadHtml(astr);<br />\n<br />\nbut i would like to load an encoded string for example the encoded string is as follow<br />\n<pre><code>&amp;quot;&amp;lt;p&amp;gt; This is first Program &amp;lt;/p&amp;gt;</code></pre>\n\nthe reason for this is for example i have a string which is <br />\nFor patients with heart failure or ejection fraction &lt; 40%, ACE-inhibitors (or ARB’s if history of ACE-inhibitors intolerance) should be considered.6. Other more routine options are listed below.<br />\n<br />\nwhen i load the string below is the result for me <br />\nFor patients with heart failure or ejection fraction &lt; 40%,=&quot;&quot; ace-inhibitors=&quot;&quot; (or=&quot;&quot; arb’s=&quot;&quot; if=&quot;&quot; history=&quot;&quot; of=&quot;&quot; ace-inhibitors=&quot;&quot; intolerance)=&quot;&quot; should=&quot;&quot; be=&quot;&quot; considered.=&quot;&quot;  6.=&quot;&quot; other=&quot;&quot; more=&quot;&quot; routine=&quot;&quot; options=&quot;&quot; are=&quot;&quot; listed=&quot;&quot;&gt;<br />\n<br />\nPlease i would like to know the solution for this problem <br />\n<br />\nThanks in Advance,<br />\nRaj.<br />\n",
+    "PostedDate": "2016-04-19T20:17:43.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

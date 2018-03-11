@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "107800",
+    "ThreadId": "32497",
+    "Html": "<p>Hi guys!</p>\r\n<p>In HtmlNodeCollection I found that it have capacity only 140 elements. Could you fix this issue and add method Capacity analogoous to ArrayList.</p>\r\n",
+    "PostedDate": "2008-07-29T12:55:29.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

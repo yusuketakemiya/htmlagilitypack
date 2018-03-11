@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "230447",
+    "ThreadId": "67805",
+    "Html": "<p>Hi,</p>\r\n<p>I have an html file (that was created using frontpage) with the following:</p>\r\n<p>&lt;!--webbot bot=&quot;SaveResults&quot; s-email-format=&quot;TEXT/PRE&quot; s-email-address=&quot;newaccountsetup@xyz.com&quot; b-email-label-fields=&quot;TRUE&quot; b-email-replyto-from-field=&quot;TRUE&quot; s-email-replyto=&quot;Req_Email&quot; b-email-subject-from-field=&quot;TRUE&quot; s-email-subject=&quot;NAME&quot; s-date-format=&quot;%m/%d/%Y&quot; s-time-format=&quot;%I:%M %p&quot; s-builtin-fields=&quot;Date Time&quot; s-form-fields=&quot;NEW_EMPLOYEE MODIFY_ACCOUNTS ---------- Requestor Req_Email NAME EMPLOYMENT TITLE EMPLOYEE_ID ADDRESS CITY STATE ZIP COUNTRY LOCATIONPHONE EMPLOYEEEXTENSION DEPARTMENT MANAGER MANAGER_PHONE MANAGER_EXTENSION FAX DISTRICT GM COSTCENTER STARTDATE&quot; u-confirmation-url=&quot;confirm.htm&quot; startspan --&gt;</p>\r\n<p>Which is contained in between a form tag. I need to retrieve the 's-email-address' field from this webbot tag. Can someone tell me how I could do this?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2009-09-02T16:25:09.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "230452",
+    "ThreadId": "67805",
+    "Html": "<p>since it's a comment tag HAP won't parse the attributes. One way would be to just replace the &lt;!--webbot with &lt;webbot and find the next --&gt; and make it /&gt;. Then HAP would see it as a regular tag. Another way would be to take that node, grab it's full text and parse it on it's own. with htmldocument</p>",
+    "PostedDate": "2009-09-02T17:00:21.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

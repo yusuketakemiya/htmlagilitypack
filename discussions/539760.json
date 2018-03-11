@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1225338",
+    "ThreadId": "539760",
+    "Html": "I'm struggling to get the &lt;tr&gt; rows and &lt;td&gt; cell values out of an HTML table. I got the table out of the doc by using:<br />\n<pre><code>HtmlNodeCollection tables = doc.DocumentNode.SelectNodes(&quot;//table&quot;);</code></pre>\n\nAnd then getting the 4th table (the one I want) using:<br />\n<pre><code>HtmlNodeCollection rows = tables[3].SelectNodes(&quot;tr&quot;);</code></pre>\n\nThe rows.count is 635.\r<br />\n<br />\nAnd now, this code just seems to give me the first row.  I can't get the other 364 rows for some reason.  I've tried various foreach loops, too.  Just flailing. :)<br />\n<pre><code>            for (int j = 0; j &lt; rows.Count; j++)\n            {\n                HtmlNodeCollection cols = rows[j].SelectNodes(&quot;td&quot;);\n                //HtmlNodeCollection cols = row.SelectNodes(&quot;/td&quot;);\n                for (int i = 0; i &lt;= cols.Count; i++)\n                {\n                    this.textBoxPageHTML.AppendText(&quot;column &quot; + i.ToString()); \n                    this.textBoxPageHTML.AppendText(cols[i].InnerText);\n                    this.textBoxPageHTML.AppendText(System.Environment.NewLine);\n                }\n            }</code></pre>\n\n",
+    "PostedDate": "2014-03-21T12:27:39.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

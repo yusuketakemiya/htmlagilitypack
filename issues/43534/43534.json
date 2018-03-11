@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello I want use HTML Agility Pack to etract  direct link By a website. \nI try to make different tuto but SelectNodes  doesn't exist in Htmlnodes it's the same thing for load.\nIn a lot of tuto they propose to make like this:\n\n```\nHtmlWeb web = new HtmlWeb();\nHtmlDocument doc = web.Load(URL);\n```\nand like this:\n```\ndoc.DocumentNode.Selectnodes(\"//div[@class='content']//a[@href]\");\n```\nbut VS say Htmlnode doesn't contain a definition for 'Selectnodes'.",
+    "LastUpdatedDate": "2016-11-24T04:33:28.947-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-11-24T04:33:28.947-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Don't fine SelectNodes in HTMLnode [C#]",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43534
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

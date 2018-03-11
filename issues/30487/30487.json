@@ -1,0 +1,61 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nParsing some sample websites, i received an error saying body element not found.\nI have downloaded the page giving me the error and modified it until body element is not null.\n \nHtmlNode oBody = objDocument.DocumentNode.SelectSingleNode(\"//body\");\n \nIt appears that if a <script> tag is closed with </SCRIPT> instead of </script>, agility pack can't understand the following <body> tag.\nIt also appends this to ParseErrors with the \"Start tag <body> was not found\" string.\n \nThe error disappears when the tag closure matches by case.",
+    "LastUpdatedDate": "2013-02-21T18:47:08.457-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-04-06T11:16:25.243-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Body element not found if mismatched tags are used in Head",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 30487
+  },
+  "FileAttachments": [
+    {
+      "FileId": 11597,
+      "FileName": "file_problem.htm",
+      "DownloadUrl": ".\\11597"
+    },
+    {
+      "FileId": 11598,
+      "FileName": "file_ok.htm",
+      "DownloadUrl": ".\\11598"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Fixed file attached, the only difference is \"</SCRIPT>\" is changed into \"</script>\".",
+      "PostedDate": "2011-04-06T11:17:30.707-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:08.457-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

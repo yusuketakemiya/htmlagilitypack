@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This belongs in Discussions, not Issues",
+    "ClosedDate": "2010-03-24T05:28:15.107-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Dear \nI want to read whole form data from other website.\nCan u provide me a coding.\nThank",
+    "LastUpdatedDate": "2013-05-16T05:32:57.953-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-03-23T20:43:21.767-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "I want to read whole form data from other website.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 26559
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

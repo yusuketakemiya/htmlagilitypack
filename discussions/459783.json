@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1101204",
+    "ThreadId": "459783",
+    "Html": "Hello,\r<br />\n<br />\nwe're using HtmlAgilityPack for some years now, but only recently we are trying to understand CDATA parsing. I understand that a comment node is created in case a node text is surrounded by &lt;![CDATA[ ... ]]&gt;.\r<br />\n<br />\nIn case a &lt;link&gt; node text contains CDATA, we very much have a problem here as with the default settings, this is actually not allowed. I read <a href=\"https://htmlagilitypack.codeplex.com/discussions/253940\" rel=\"nofollow\">https://htmlagilitypack.codeplex.com/discussions/253940</a> to learn this.\r<br />\n<br />\nDid anyone have this problem before? Can I easily solve this? I am not sure that calling HtmlNode.ElementsFlags.Remove(&quot;link&quot;); is such a good idea.\r<br />\n<br />\nRegards,\r<br />\nUta<br />\n",
+    "PostedDate": "2013-10-01T00:34:22.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

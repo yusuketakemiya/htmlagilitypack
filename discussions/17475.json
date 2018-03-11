@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "57049",
+    "ThreadId": "17475",
+    "Html": "\r\nIs it possible to do pattern matching? The page I'm extracting data from has:<br /><br />&lt;tr class=\"row1\"&gt;<br />&lt;td&gt;some text&lt;/td&gt;<br />&lt;/tr&gt;<br />&lt;tr class=\"row0\"&gt;<br /> &lt;td&gt;some more text&lt;/td&gt;<br />&lt;/tr&gt;<br /><br />I'm trying to match just on row whether it's 0 or 1 but I can't seem to find a way to use a variable to do something like:<br /><br />HtmlNodeCollection row1 = table<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=0\">0</a>.SelectNodes(\"//tr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40class%3d%27row%2f%2a%27\">@class='row/*'</a>\");<br />where the \"/*\" is a wild card to match anything after row<br /><br />I think if I can use pattern matching I can select nodes that contain the class row regardless of it having class=row1 or class=row0<br /><br />Thanks,<br />Ben<br />",
+    "PostedDate": "2007-11-06T21:09:19.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58660",
+    "ThreadId": "17475",
+    "Html": "\r\nWelcome to XPATH :-)<br />SelectNodes(\"//tr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=starts-with%28%40class%2c%20%27row\">starts-with(@class, 'row</a>)]);<br />should do the trick<br /><br />If you want smarter XPATH pattern matching, you should have a look to EXSLT.NET (http://mvp-xml.sourceforge.net/exslt/)<br />",
+    "PostedDate": "2007-11-17T09:53:44.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "59608",
+    "ThreadId": "17475",
+    "Html": "\r\nI keep getting this error:<br /> Message: \"'//*matches(<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40class\">@class</a>,'free')' has an invalid token.\"<br /><br />when i do the following:<br />doc.DocumentNode.SelectNodes(\"//*matches(<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%40class\">@class</a>='free')\")<br /><br />Goal: I want to look into the entire dom for class name that has 'free' in the name.<br /><br />I also ventured into 'contains' with no luck.<br /><br />Any help would be greatly appreciated.<br /><br />Thanks a lot<br />Murali Bala<br />",
+    "PostedDate": "2007-11-23T15:27:39.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "61360",
+    "ThreadId": "17475",
+    "Html": "\r\nA small corrrection to the code of simonm:<br /><br />SelectNodes(\"//tr<a href=\"http://www.codeplex.com/htmlagilitypack/Wiki/View.aspx?title=%5bstarts-with%28%40class%2c%20%27row%27%29%5d\">[starts-with(@class, 'row')]</a>);<br />",
+    "PostedDate": "2007-12-05T12:33:22.347-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "65164",
+    "ThreadId": "17475",
+    "Html": "\r\nTo add to bsd12673's question<br />I have a scenarios and I wanted to see if HTMLAgilityPack is useful in solving this problem scenario, if yes is there a sample code to look at<br /><br /><b><i>Scenario</i> :</b> On a webportal that sells products it has a page where search results are displayed listing all the products matching the criteria. No matter what the criteria is, the products are displayed in the same style on the UI. Is it possible to extract partial data from the rendered html, like I only want to extract product name, product sku number and may be description. <br /><br />I am new to ASP.net and C# if you can help me with a small sample of code it would be really helpful.<br /><br />I appreciate your efforts.<br /><br />Regards,<br />Vishal<br />",
+    "PostedDate": "2007-12-27T16:14:14.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

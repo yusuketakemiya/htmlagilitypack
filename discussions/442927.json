@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1040773",
+    "ThreadId": "442927",
+    "Html": "Hi, i'm new in this project and I would to use this for parse html but i don't succeed to import the .dll file.\r<br />\nWhen I do, visual studio out &quot;a Superior reference or an incomaptible assembly can't be add to this project..&quot;\r<br />\n<br />\nCan I have an explication how to import, plz ?\r<br />\n<br />\nThanks a lot.<br />\n",
+    "PostedDate": "2013-05-08T02:46:29.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040788",
+    "ThreadId": "442927",
+    "Html": "Ok, it's resolve. \r<br />\nI've imported the .dll with Nugget Manager. Easy way.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-05-08T03:35:18.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

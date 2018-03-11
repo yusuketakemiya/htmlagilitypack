@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "132654",
+    "ThreadId": "39966",
+    "Html": "Hi,<br>\r\n<br>\r\nI am using the FormsProcessor add to parse an HTTPS site. I am able to bypass the authentication step successfully. But I am not able to parse an actual URL from the site. The thing is that to access that URL I have to sign in first, then the site automatically forwards me to the URL I want. So how to do that programatically? Please help!!<br>\r\n<br>\r\nI am using the default sample code:<br>\r\n<br>\r\nFormProcessor p = new FormProcessor();<br>\r\n<br>\r\nstring userName = “********”;<br>\r\nstring password = “********”;<br>\r\n<br>\r\nForm form = p.GetForm(&quot;https://myaccount.verizonwireless.com/vzs/loginform&quot;, &quot;//form[@name='loginForm']&quot;, FormQueryModeEnum.Nested);<br>\r\n<br>\r\nform[&quot;j_username&quot;].SetAttributeValue(&quot;value&quot;, userName);<br>\r\nform[&quot;j_password&quot;].SetAttributeValue(&quot;value&quot;, password);<br>\r\n<br>\r\nHtmlDocument doc = p.SubmitForm(form);<br>\r\n<br>\r\nstring strBal = doc.DocumentNode.SelectSingleNode<br>\r\n(&quot;//span[@class='redText']&quot;).InnerText;<br>\r\n<br>\r\nstrBal = System.Web.HttpUtility.HtmlDecode(strBal);<br>\r\nstrBal = strBal.Substring(1).Trim();<br>\r\n",
+    "PostedDate": "2008-11-14T09:27:32.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134304",
+    "ThreadId": "39966",
+    "Html": "I am in a similar boat, but do not know where to begin.  I have a secure URL that needs a username/password to access.  There is no redirect, but as I said, I do not know where to begin.  If someone could point me in the right direction, I would apprecaite it. <br>\r\n<br>\r\n**edit**<br>\r\nWhen I go to the secure URL, I am redirected to a login page.  Once logged in correctly, I am sent back to the orignal secure URL.\r\n",
+    "PostedDate": "2008-11-21T09:35:29.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

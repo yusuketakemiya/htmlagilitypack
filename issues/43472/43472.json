@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'd expect node.SelectNodes(\"//div\") to return all divs that are descendents of node. Instead, it returns all divs in the document. It is behaving as if node == document.DocumentNode.\n\n```\n            var doc = new HtmlDocument();\n            doc.LoadHtml(\"<div class=\\\"a\\\"><div class=\\\"b\\\"></div></div>\");\n            var outer = doc.DocumentNode.SelectSingleNode(\"/div\");\n            var inner1 = outer.SelectNodes(\"/div\");\n            var inner2 = outer.SelectNodes(\"//div\");\n            Debug.Assert(inner2.Count == 1); //fails\n```\n\nXElement XPath queries behave differently:\n\n```\nXElement root = new XElement(\"div\",\n    new XElement(\"div\"\n)\n);\nvar el = root.XPathSelectElement(\"/div\").XPathSelectElements(\"//div\");\nConsole.WriteLine(el);\n```\n\nExecute this in LINQPad to see that only one div was output.\n\nSo it looks like this is a bug. If not, it's not useful behavior.",
+    "LastUpdatedDate": "2016-09-01T00:53:26.5-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-08-13T07:15:21.85-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlNode.SelectNodes behaves strangely with \"//...\" selector",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 43472
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

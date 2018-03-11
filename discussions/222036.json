@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "474875",
+    "ThreadId": "222036",
+    "Html": "<p>Hello,</p>\r\n<p>I've tried downloading the &quot;HtmlAgilityPack.Documentation.chm&quot; file a couple of times, and when it opens the contents to the left will open correctly; however, the main content window only displays:</p>\r\n<p style=\"padding-left:30px\">Navigation to the webpage was canceled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n<p style=\"padding-left:30px\">What you can try:&nbsp;&nbsp;&nbsp; &nbsp;</p>\r\n<p style=\"padding-left:30px\">Retype the address.&nbsp;&nbsp;</p>\r\n<p>Is anyone else having this problem?.. &nbsp;or does anyone else have an idea as to why it's happening?</p>\r\n<p>Thanks in advance,</p>\r\n<p>George</p>",
+    "PostedDate": "2010-07-30T12:29:11.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "474885",
+    "ThreadId": "222036",
+    "Html": "<p>Right click on the file and select properties and then click the Unblock button. Windows XP SP3, Vista, 7 disable chm's</p>",
+    "PostedDate": "2010-07-30T12:44:33.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

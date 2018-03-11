@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "270810",
+    "ThreadId": "79091",
+    "Html": "<p><span id=\"result_box\"><span title=Hola>Hello<br></span><span title=\"Me gustaría capturar las filas que contengan una clase con un determinado texto &quot;match no-date-repetition&quot;\">I like to capture the rows that contain a class with a text &quot;no-match date-repetition&quot;<br></span><span title=\"El problema es que algunas contienen la cadena &quot;even expanded&quot; y otras &quot;odd expanded&quot; además de &quot;match no-date repetition&quot;\">The problem is that some contain the string &quot;even expanded&quot; and other &quot;odd expanded&quot; besides &quot;no-match date repetition&quot;</span></span></p>\r\n<p>For Each node As HtmlAgilityPack.HtmlNode In document.DocumentNode.SelectNodes(&quot;//tr[@class='<span style=\"color:#ff0000\"><strong>even expanded</strong></span> match no-date-repetition']&quot;)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Write(node.InnerHtml.ToString)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Write(&quot;&lt;/br&gt;&quot;)<br>Next</p>\r\n<p><span id=\"result_box\"><span style=\"background-color:#ffffff\" title=\"Podría yo utilizar esto?\">Could I use this?</span></span></p>\r\n<p>For Each node As HtmlAgilityPack.HtmlNode In document.DocumentNode.SelectNodes(&quot;//tr[@class='<strong><span style=\"color:#ff0000\">%</span> </strong>match<strong> </strong>no-date-repetition']&quot;)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Write(node.InnerHtml.ToString)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Write(&quot;&lt;/br&gt;&quot;)<br>Next</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-12-26T05:49:35.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270940",
+    "ThreadId": "79091",
+    "Html": "<p>You should check .NET XPATH syntax as this is XPATH-related, not Html Agility Pack-related (as Html Agility Pack just reuses .NET XPATH implementation).</p>\r\n<p>I don't think this is possible though... It's easier (but ok, less elegant...) to write an OR filter, like</p>\r\n<p>//tr[@class='even expanded match<strong> </strong>no-date-repetition' or @class='odd expanded match<strong> </strong>no-date-repetition']</p>",
+    "PostedDate": "2009-12-27T03:29:31.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422554",
+    "ThreadId": "79091",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>elwilly wrote:</strong><br>\r\n<p><span id=\"result_box\"><span style=\"background-color:#ffffff\" title=\"Podría yo utilizar esto?\">Could I use this?</span></span></p>\r\n<p>For Each node As HtmlAgilityPack.HtmlNode In document.DocumentNode.SelectNodes(&quot;//tr[@class='<strong><span style=\"color:#ff0000\">%</span> </strong>match<strong> </strong>no-date-repetition']&quot;)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Write(node.InnerHtml.ToString)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Write(&quot;&lt;/br&gt;&quot;)<br>Next</p>\r\n</blockquote>\r\n<p>I know it's an old issue. But i thought for future references someone might stumble upon this as i did myself when trying to find a solution to a similair problem...</p>\r\n<p>&nbsp;</p>\r\n<p>XPath has a contains-functions as well as a starts-with that is useful in scenarios like these...</p>\r\n<p>So instead of the above this should yield the wanted result</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">For</span> <span style=\"color:Blue\">Each</span> node <span style=\"color:Blue\">As</span> HtmlAgilityPack.HtmlNode <span style=\"color:Blue\">In</span> document.DocumentNode.SelectNodes(<span style=\"color:#A31515\">&quot;//tr[contains(@class,'match no-date-repetition']&quot;</span>)\r\n            Response.Write(node.InnerHtml.ToString)\r\n            Response.Write(<span style=\"color:#A31515\">&quot;&lt;/br&gt;&quot;</span>)\r\n<span style=\"color:Blue\">Next</span></pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2010-03-23T07:09:10.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993434",
+    "ThreadId": "79091",
+    "Html": "\r\n<p>Hi Trappski,</p>\r\n<p>&nbsp;</p>\r\n<p>Can you help me with match() of HTMLAgility.</p>\r\n<p>How to handle the case sensitivity?</p>\r\n<p>&nbsp;</p>\r\n<p>Eg: If i want to select both &quot;div&quot; & &quot;DIV&quot; node how one can do this?</p>\r\n",
+    "PostedDate": "2013-01-28T22:58:49.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993587",
+    "ThreadId": "79091",
+    "Html": "\r\n<p>I have tried this piece of code and it returns both div tags so it's not case sensative.</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre style=\"color:black\">            HtmlDocument hp = <span style=\"color:blue\">new</span> HtmlDocument();\r\n            hp.LoadHtml(<span style=\"color:#a31515\">&quot;&lt;form&gt;<div>Hello</div><div>Me 2</div>&lt;/form&gt;&quot;</span>);\r\n\r\n            <span style=\"color:blue\">var</span> nodes = hp.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//div&quot;</span>);</pre>\r\n<pre style=\"color:black\"><br></pre>\r\n<pre>Is this all you were looking for? A case insensitive tag search?</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2013-01-29T04:44:46.26-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993958",
+    "ThreadId": "79091",
+    "Html": "\r\n<p>Hi LeeJeary,</p>\r\n<p>Thank you for replying but the same piece of code giving a case sensitive&nbsp;behavior to me.</p>\r\n<pre>            HtmlDocument hp = <span>new</span> HtmlDocument();\n            hp.LoadHtml(&quot;&lt;form&gt;&lt;div&gt;&lt;DIV&gt;sdf&lt;/DIV&gt;&lt;/div&gt;HelloMe 2&lt;/form&gt;&quot;);\n\n            <span>var</span> small = hp.DocumentNode.SelectNodes(<span>&quot;//div&quot;</span>);</pre>\r\n<pre><pre>           var caps= hp.DocumentNode.SelectNodes(&quot;//DIV&quot;);<span style=\"font-size:1em\">\t</span></pre>\n</pre>\r\n<pre> <pre><span style=\"color:#ff0000\"><strong>small.Count<span style=\"font-size:1em\">=1</span></strong></span></pre>\n<pre><span style=\"color:#ff0000\"><strong><span style=\"font-size:1em\">caps.Count=1</span></strong></span></pre>\n</pre>\r\n",
+    "PostedDate": "2013-01-29T20:47:26.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993964",
+    "ThreadId": "79091",
+    "Html": "\r\n<p>Very unusual&nbsp;</p>\r\n<p>mine has</p>\r\n<p>small.Count == 2</p>\r\n<p>caps == null;</p>\r\n<p>What version of the dll are you using? I'm using the version from NuGet 1.4.6.</p>\r\n<p>tested with different .net frameworks 3.5-4.5 and all work.</p>\r\n",
+    "PostedDate": "2013-01-29T21:54:04.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993965",
+    "ThreadId": "79091",
+    "Html": "\r\n<p>You could try this option</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>            AP.HtmlDocument hp = <span style=\"color:blue\">new</span> AP.HtmlDocument();\n            hp.LoadHtml(<span style=\"color:#a31515\">&quot;&lt;form&gt;&lt;div&gt;<span style=\"font-size:1em\">HelloMe 2&lt;/div&gt;&lt;DIV&gt;</span><span style=\"font-size:1em\">sdf&lt;/DIV&gt;</span>&lt;/form&gt;&quot;</span>);\n\n            <span style=\"color:blue\">var</span> small = hp.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//div | //DIV&quot;</span>);\n            <span style=\"color:blue\">var</span> caps = hp.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//DIV&quot;</span>);\n</pre>\r\n<pre><br></pre>\r\n<pre>I replaced the upper case tag DIV with img and it worked.</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>small.Count == 2</p>\r\n<p>caps.Count == 1</p>\r\n",
+    "PostedDate": "2013-01-29T21:59:29.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993971",
+    "ThreadId": "79091",
+    "Html": "\r\n<p>I have downloaded from the following :</p>\r\n<p>http://htmlagilitypack.codeplex.com/releases/view/90925</p>\r\n",
+    "PostedDate": "2013-01-29T22:29:16.02-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993977",
+    "ThreadId": "79091",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>arsh wrote:</strong><br>\r\n<p>I have downloaded from the following :</p>\r\n<p>http://htmlagilitypack.codeplex.com/releases/view/90925</p>\r\n</blockquote>\r\n<p>I downloaded the same version tried it on version .Net 2.0 and .Net 4.0. Visual studio version 2010 and 2012 and still getting the same results where small.Count is 2 and caps is null.</p>\r\n<p>Sorry not much more help as cant reproduce the issue.. :-/&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-29T22:45:16.557-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993984",
+    "ThreadId": "79091",
+    "Html": "\r\n<p>Well Thanks &nbsp;Lee for your help :-)&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>just for your reference following is my code :</p>\r\n<p><br>\r\n&nbsp;HtmlDocument NewXmlDoc = new HtmlDocument();&nbsp;</p>\r\n<p>string xmlFile =&quot;Path';</p>\r\n<p>NewXmlDoc.Load(xmlFile &#43; &quot;Test.html&quot;);</p>\r\n<p>&nbsp;HtmlNodeCollection ConditionalList = null;</p>\r\n<p>&nbsp; ConditionalList = NewXmlDoc.DocumentNode.SelectNodes(&quot;//div&quot;);</p>\r\n<p>&nbsp;</p>\r\n<p>and xml file looks like the below:</p>\r\n<p><strong>&lt;TextFlow fontFamily=&quot;Arial&quot;&gt;&nbsp;</strong></p>\r\n<p><strong><span style=\"color:#008080\">&nbsp;</span></strong></p>\r\n<p><strong></p>\r\n<div>&lt;div&gt;This is in smal&lt;/div&gt;</div>\r\n</strong>\r\n<div></div>\r\n<p></p>\r\n<p><span style=\"font-size:10pt\"></p>\r\n<div style=\"display:inline!important\"><strong>&lt;DIV&gt;This is in Caps&lt;/DIV&gt;</strong></div>\r\n</span>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n<p><strong>&lt;/TextFlow&gt;</strong></p>\r\n",
+    "PostedDate": "2013-01-29T22:58:05.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994084",
+    "ThreadId": "79091",
+    "Html": "\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">Hi LeeJeary,</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">&nbsp;</span><span style=\"color:#1f497d; font-size:11pt\">&nbsp;problem was the version i guess ., it was 1.4.0 ! can you check it once.</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">&nbsp;</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">Well now I have switch to 1.4.6 and it worked :-)</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">&nbsp;</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">Anyways thanks for looking into it.</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">&nbsp;</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">Regards,</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">Salma</span></p>\r\n",
+    "PostedDate": "2013-01-30T04:03:47.97-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994114",
+    "ThreadId": "79091",
+    "Html": "\r\n<p>Perfect.. Glad it's working.. </p>\r\n<p>Lee</p>\r\n<div>On Jan 30, 2013 11:04 PM, &quot;arsh&quot; &lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt; wrote:<br type=\"attribution\">\r\n<blockquote style=\"margin:0 0 0 .8ex; border-left:1px #ccc solid; padding-left:1ex\">\r\n<div>\r\n<p>From: arsh</p>\r\n<div>\r\n<p></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">Hi LeeJeary,</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\"></span><span style=\"color:#1f497d; font-size:11pt\">problem was the version i guess ., it was 1.4.0 ! can you check it once.</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\"></span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">Well now I have switch to 1.4.6 and it worked :-)</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\"></span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">Anyways thanks for looking into it.</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\"></span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">Regards,</span></p>\r\n<p><span style=\"font-size:11pt; color:#1f497d\">Salma</span></p>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://htmlagilitypack.codeplex.com/discussions/79091#post994084\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:htmlagilitypack@discussions.codeplex.com?subject=[htmlagilitypack:79091]\" target=\"_blank\">htmlagilitypack@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:htmlagilitypack@discussions.codeplex.com\" target=\"_blank\">\r\nhtmlagilitypack@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://htmlagilitypack.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n",
+    "PostedDate": "2013-01-30T05:08:55.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "463587",
+    "ThreadId": "218397",
+    "Html": "<p>I am trying to turn html into xhtml to go into a larger xml document. Unfortuantely I seem to have an issue with lists, I always end up with them in the format:</p>\r\n<p>&lt;ul&gt;</p>\r\n<p>&lt;li&gt;item1</p>\r\n<p>&lt;li&gt;item2</p>\r\n<p>&lt;/li&gt;&lt;/li&gt;</p>\r\n<p>&lt;/ul&gt;</p>\r\n<p>Meaning the li tags are nested in each other, this fails validation I need to get them in the form</p>\r\n<p>&lt;ul&gt;</p>\r\n<p>&lt;li&gt;item1&lt;/li&gt;</p>\r\n<p>&lt;li&gt;item2&lt;/li&gt;</p>\r\n<p>&lt;/ul&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>Any ideas if this is possible, I would think this is the more logical ordering anyway.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-05T18:27:28.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463751",
+    "ThreadId": "218397",
+    "Html": "What was the source html that you were using?",
+    "PostedDate": "2010-07-06T06:50:03.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463829",
+    "ThreadId": "218397",
+    "Html": "<p>The source HTML lists look something like this:</p>\r\n<p><br>&lt;UL&gt;<br>&lt;LI&gt;NVQ Level 3 in Fabrication and Welding Engineering <br>&lt;LI&gt;Level 3 Certificate in Engineering <br>&lt;LI&gt;Level&amp;nbsp;2 Key Skill in Application of Number <br>&lt;LI&gt;Level&amp;nbsp;2 Key Skill in Communication <br>&lt;LI&gt;Level&amp;nbsp;2 Key Skill in Information Technology <br>&lt;LI&gt;Level 2 Key Skill in Working with Others <br>&lt;LI&gt;Level 2 Key Skill in Improving Own Learning &amp;amp; Performance&lt;/LI&gt;&lt;/UL&gt;</p>\r\n<p>It was made in a WebBrowser control in .NET which I believe is a wrapper of internet explorer in edit mode.</p>\r\n<p>As you can see all but the last &lt;/li&gt; tag is omitted. The capitalization is actually how it is in the document. The correction to this to get it into xhtml seems to put all the &lt;/li&gt; tags at the end which is understandable but I would say wrong. The schema for the xml I am trying to produce actually won't support it in that format, it doesn't like the nesting of &lt;li&gt; in &lt;li&gt;.</p>",
+    "PostedDate": "2010-07-06T09:07:57.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

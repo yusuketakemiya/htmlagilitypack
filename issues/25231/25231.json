@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When i load the string into the document all of the html is there.\n \nHtmlDocument doc = new HtmlDocument();\ndoc.LoadHtml(output.ToString());\n \nThe string is html, a dropdown element with options\n...Any html page info(headers, html tags and such)...\n<ul><li>\n<select>\n    <option selected=\"selected\" value=\"\"></option>\n    <option value=\"10 Radial Arm Saw\">10 Radial Arm Saw - </option>\n    <option value=\"18V Packing\">18V Packing - </option>\n</select>\n</li></ul>\n...(any closing tags needed for page)...\nTried to get this as close as possible without giving to much unessacary code. There is some onchnage events in the sleect and a name and id attribute.\n \nThe main thing i am doing is trying to strip the UL's out of the page code. And it works, but when i go to writeout the string using\n \ndoc.DocumentNode.WriteTo() \n \nI get this below. Notice all the closing option tags were stripped off.\n \n...Any html page info(headers, html tags and such)...\n<ul><li>\n<select>\n    <option selected=\"selected\" value=\"\">\n    <option value=\"10 Radial Arm Saw\">10 Radial Arm Saw -\n    <option value=\"18V Packing\">18V Packing -\n</select>\n</li></ul>\n...(any closing tags needed for page)...\n \nI tried fooling with option setting and sometimes get this(below), it add the \"/\" to the openning option tag\n \n...Any html page info(headers, html tags and such)...\n<ul><li>\n<select>\n    <option selected=\"selected\" value=\"\"/></option>\n    <option value=\"10 Radial Arm Saw\"/>10 Radial Arm Saw - </option>\n    <option value=\"18V Packing\"/>18V Packing - </option>\n</select>\n</li></ul>\n...(any closing tags needed for page)...\n \nAnyone have any suggestiosn or ideas to what is going on?\nNot performing any type of filtering or such yet, just printing out the extra string in the doc.DocumentNode. This is wher I am tracing all my problems back too.\n \nThis also leads to slowness problems further along in the code, when i go to parse out the UL tag, and i believe it is straing on the malformed \"option tags\".\n \nthanks",
+    "LastUpdatedDate": "2013-11-27T10:17:01.413-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-11-05T13:58:39.1-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Document.WriteTo() striping tags",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 25231
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

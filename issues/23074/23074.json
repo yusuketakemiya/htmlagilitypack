@@ -1,0 +1,105 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This bug has been fixed as of 1.4.5. It is available in nuget, here on codeplex and via the source code",
+    "ClosedDate": "2012-08-23T06:57:50.91-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, found parsing problem with following html code:\n \n<html id=\"thisisTest\">\n\t<head>\n\t\t<title>TT</title>\n\t</head>\n\t<body id=\"test\">\n\t\t<form>\n\t\t\t<b>test</b>\n\t\t</form>\n\t\t<br />\n\t\tThis is plain text\n\t\t<span>\n\t\t\t<b>BOLD</b>\n\t\t\twhee\n\t\t</span>wheeagain\n\t</body>\n</html>\n \nAll going well for HTML, HEAD, TITLE, BODY tag, they all appear as proper child tree (e.g. HEAD is child of HTML, TITLE is child of HEAD etc.) but then you get to BODY tag, all elements in the BODY tag pear as it children no matter in what tag they are located in. Good example is FORM tag.",
+    "LastUpdatedDate": "2013-05-16T05:32:58.657-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-06-15T03:06:10.58-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Parsing problem",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 23074
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "In the HtmlNode class there is a list of elements and what the parser should do with those elements.\r\nComment out Following line and you will get the behavior your are expecting.\r\nElementsFlags.Add(\"form\", HtmlElementFlag.CanOverlap | HtmlElementFlag.Empty);\r\n\r\nThis is where the power and the drawbacks HAP has when parsing Html. This line helps it deal with malformed code but unfortunately also ends up parsing it wrong when the code is correct. I'm thinking of making an xml format to define these better to make it easier to tweak. Also the list shouldn't be in html node, it should be it's own separate strongly typed collection. ",
+      "PostedDate": "2009-10-02T22:02:39.81-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-04-21T11:08:11.943-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This seems to be a recurring issue for a lot of people.  At least 6 have voted to fix it in various tracked issues.  My team is currently just using the dlls.  We could get the source but it seems like overkill to fix such an easy thing... We have been using the pack for about a year now and so far this is the only issue that would inspire us to have the source.  Is it possible to fix it for all?",
+      "PostedDate": "2010-04-21T11:16:23.54-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "You can change this without recompiling. The ElementFlags list is a static property on the HtmlNode class. \r\nIt can be removed with \r\n            HtmlNode.ElementsFlags.Remove(\"form\");\r\nbefore doing the document load",
+      "PostedDate": "2010-04-21T19:13:42.8-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-18T12:23:24.4-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-03-10T02:21:17.943-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-04-03T15:30:24.327-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-27T02:21:26.37-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-05-24T06:34:26.077-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This bug is also fixed by the patch to http://htmlagilitypack.codeplex.com/workitem/29218.",
+      "PostedDate": "2012-08-23T06:11:00.957-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-08-23T06:57:50.91-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:22.957-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:32:58.657-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

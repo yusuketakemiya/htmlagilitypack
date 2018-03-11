@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1318393",
+    "ThreadId": "571104",
+    "Html": "I'm trying to parse html page(<a href=\"http://news.tut.by/politics/\" rel=\"nofollow\">http://news.tut.by/politics/</a>)<br />\nusing this code<br />\n<pre><code>            string htmlPage = &quot;&quot;;\n        \n            using (var client = new HttpClient())\n            {\n                htmlPage = await client.GetStringAsync(&quot;&quot;);\n            }\n     \n            HtmlDocument page = new HtmlDocument();\n            page.LoadHtml(htmlPage);\n\n            List&lt;NewsHeader&gt; innerList = new List&lt;NewsHeader&gt;();\n\n            foreach (var all_li in page.DocumentNode.SelectNodes(&quot;//div[@class='list_category m-s_comment m-s_head m-s_time']//ul[@class='b-lists']//li[@class='lists__li ni']&quot;))\n            {\n                NewsHeader header = new NewsHeader();\n                header.image = all_li.SelectSingleNode(&quot;.//div[@class='media']//a//img&quot;).Attributes[&quot;src&quot;].Value;\n                header.title = all_li.SelectSingleNode(&quot;.//div[@class='wrap_fix']//a&quot;).InnerText.Trim();\n                header.pubDate = all_li.SelectSingleNode(&quot;.//div[@class='block-meta']//ul//li&quot;).InnerText.Trim();\n                header.link = all_li.SelectSingleNode(&quot;.//div[@class='wrap_fix']//a&quot;).Attributes[&quot;href&quot;].Value;\n                innerList.Add(header);\n            }</code></pre>\n\nthe problem is that when i run it, the following string gets only first 6 elements<br />\n<pre><code>page.DocumentNode.SelectNodes(&quot;//div[@class='list_category m-s_comment m-s_head m-s_time']//ul[@class='b-lists']//li[@class='lists__li ni']&quot;)</code></pre>\n\nbut when i put this (//div[@class='list_category m-s_comment m-s_head m-s_time']//ul[@class='b-lists']//li[@class='lists__li ni']) in HAP testbed program,the program gets all the 27 elements<br />\n<br />\nSo i can't find why does this problem occur.<br />\nP.S. using it in c# in windows phone application<br />\n",
+    "PostedDate": "2014-11-02T07:39:57.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

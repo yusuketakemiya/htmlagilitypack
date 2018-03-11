@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "423458",
+    "ThreadId": "207254",
+    "Html": "<p>I was searching internet to find how to use HtmlWeb.Load() method under internet service where proxy server and authentication is required.&nbsp; But didn't find the required information. Later on i've figured out the code and now my application is working find under secured corporate internet where proxy and authentication is must. Below is the code for those who might face the similar situation.</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlWeb web = new HtmlWeb();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; web.UseCookies = true;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.Net.WebProxy wp=new System.Net.WebProxy();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wp.UseDefaultCredentials=true;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NetworkCredential nc = (NetworkCredential)CredentialCache.DefaultCredentials;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlDocument doc = web.Load(&quot;http://www.dsebd.org&quot;,&quot;GET&quot;, wp,nc);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Set the XPath query<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string path = @&quot;//td[@bgcolor='#FFF3E9']&quot;;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get all columns in the document<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlNodeCollection cols = doc.DocumentNode.SelectNodes(path);</p>\r\n<p>Hope this will be useful for you.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-25T02:46:58.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "474006",
+    "ThreadId": "207254",
+    "Html": "Dear shamim078\r\nI have created a project to get Html in a authenticated web page, and I code like you, But the html I get ( in &quot;doc&quot; object) is wrong, it is a message alert me must be login and response to login page.\r\nCan you help me.\r\nI want to get html of this adress: http://slave.vatgia.com/raovat/post.php?iCat=2605.\r\nThanks for you time.\r\n",
+    "PostedDate": "2010-07-28T21:19:05.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "479566",
+    "ThreadId": "207254",
+    "Html": "<p>hoc sinh tgt &gt;&gt;&gt;&gt; It's different things - you need to POST username password and store session in cookies... I would advise to use httpwebrequest/httpwebresponse and then parse resulting html with htmlagilitypack.</p>",
+    "PostedDate": "2010-08-12T01:27:17.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

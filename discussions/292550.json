@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "739471",
+    "ThreadId": "292550",
+    "Html": "\r\n<p>Hello. I am using latest build of htmlagilitypack. I downloaded and run the build to get the dll file.</p>\r\n<p>Runtime version : v2.0.50727</p>\r\n<p>&nbsp;</p>\r\n<p>Now i am using this method to load web pages</p>\r\n<p>&nbsp; hdMyDoc = hwWeb.Load(srPageUrl);</p>\r\n<p>&nbsp;</p>\r\n<p>My question is what is the default timeout for this ? And how can i change the default timeout ?</p>\r\n<p>&nbsp;</p>\r\n<p>I am able to override the default encoding like this</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hwWeb = new HtmlWeb<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoDetectEncoding = false,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OverrideEncoding = Encoding.GetEncoding(&quot;iso-8859-9&quot;),<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for the answers.</p>\r\n",
+    "PostedDate": "2012-02-04T05:09:09.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

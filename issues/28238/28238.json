@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I get the following error:\nThe type 'System.Xml.XPath.IXPathNavigable' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.\n \nwhen I try the following\nHtmlWeb hw = new HtmlWeb();\nHtmlDocument doc = hw.Load(url);\n \nurl is the string represntation of the url of the web site (it is a correct string, I tried.)\nI added HtmlAgilityPack.dll , System.XML as a reference, and added 'using System.XML' and 'using HtmlAgilityPack' statement. (but the version of System.XML seems to be 3.5)\nI also tried to create a project using .Net framework 2.0, and added  System.Xml v2.0 reference, it also did not work.",
+    "LastUpdatedDate": "2013-02-21T18:47:13.923-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2010-07-23T04:53:00.747-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HtmlAgilityPack reference error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 28238
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I am having the same issue. Tried everything but cant resolve this error",
+      "PostedDate": "2011-05-25T17:17:12.98-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-04-23T08:00:45.207-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:13.923-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

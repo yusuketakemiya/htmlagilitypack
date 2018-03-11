@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a website which has to div tags with attribute class=\"xyz\".\n\nTo find the div (and it's childs) I tried:\n\nvar result = doc.DocumentNode.Descendants(\"div\")\n.Where(d => d.Attributes.Contains(\"class\") && \nd.Attributes[\"class\"].Value.Contains(\"pricebox\"));\n\nthere should be two results but I only get one. \n\nany ideas?",
+    "LastUpdatedDate": "2015-10-13T00:01:52.697-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-10-13T00:01:52.697-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "problems to find multiple results",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 43259
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

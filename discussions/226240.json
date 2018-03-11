@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "489797",
+    "ThreadId": "226240",
+    "Html": "<p>Wouldn't it be much more elegant to do the attribute type casting like GetAtributeValue&lt;string&gt;(&quot;attribute&quot;) for example instead of GetAttributeValue(&quot;atribute&quot;,&quot;&quot;) ?</p>\r\n<p>I can make those changes for you, if you want:)</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-06T10:42:50.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

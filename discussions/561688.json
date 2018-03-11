@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1291725",
+    "ThreadId": "561688",
+    "Html": "Hello!\r<br />\n<br />\nFirst of all, thanks for a great piece of software! Neat and powerful!\r<br />\n<br />\nI use it for a quite specialized web spider that parse selected info from a site of mine. My use of HTML Agility Pack is rather basic I think.\r<br />\n<br />\nI'd like to keep track of how many bytes my program reads from the web. Cannot find any obvious solution for this, so I might as well ask.\r<br />\n<br />\nCurrently, I load pages more or less by using snippets like this (error handling excluded for sake of readability):<br />\n<pre><code>var webPage = new HtmlWeb();\nHtmlDocument htmlDoc = webPage.Load(uriBillboardSearch);                    \n\n// Some parsing...                </code></pre>\n\nI was thinking of using HtmlDocument.Save() and count bytes but it seems a waste of work and it would only count what I have read, not what I have transferred from the web to my client.\r<br />\n<br />\nI am aware of that this might not be an HTML Agility Pack thing at all, but if anyone have some ideas I would be grateful!\r<br />\n<br />\nthanks!\r<br />\n<br />\n/Moriarty<br />\n",
+    "PostedDate": "2014-08-20T07:40:43.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1291736",
+    "ThreadId": "561688",
+    "Html": "Of course I came up with one possible solution just after I posted this. Using System.Net namespace, I can download the web page as a string before passing it on to HTML Agility Pack:<br />\n<pre><code>var wc = new WebClient();\nvar htmlText = wc.DownloadString(uriBillboardSearch);\nvar htmlDoc = new HtmlDocument();\nhtmlDoc.LoadHtml(htmlText);</code></pre>\n\nhtmlText.Length would hold the size of downloaded content, right?<br />\n<br />\nIn other words, instead of HtmlWeb.Load() use WebClient.DownloadString combined with HtmlDocument.LoadHtml().<br />\nIs there any better way or a way? Any other thoughts? <br />\n<br />\nThanks!<br />\n<br />\n//M<br />\n",
+    "PostedDate": "2014-08-20T08:12:36.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

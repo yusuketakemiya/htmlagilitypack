@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Currently project with referencing HtmlAgilityPack.v1.4.9.4 can not pass \"Windows App Certification Kit\" with error message\n\nDebug configuration test\nFAILED\n\nDebug configuration\n•Error Found: The debug configuration test detected the following errors:◦The binary HtmlAgilityPack.dll is built in debug mode.\n•Impact if not fixed:  Windows Store doesn’t allow a debug version of an app. \n•How to fix:  Please make sure the app isn’t linking to any debug versions of a framework and it is built with release configuration with optimization enabled. If this is a managed app please make sure you have installed the correct version of .NET framework. \n\n\nmore users crying here:\nhttps://social.msdn.microsoft.com/Forums/en-US/765cf6d6-8cb5-48b8-b249-3868c8399920/certification-failure-due-to-htmlagilitypackdll-errorhelp?forum=wpdevelop\n\nPlease, verify that dlls  deployed to nuget are assembled in the 'release' configuration.",
+    "LastUpdatedDate": "2016-07-15T00:05:35.84-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2016-07-12T04:19:28.76-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "*high* Can not pass \"Windows App Certification Kit\"",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 43450
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "only passed certification v1.4.9.2\nhttps://www.nuget.org/packages/HtmlAgilityPack/1.4.9.2\nwhich has \"NetCore45\\HtmlAgilityPack.dll\" marked as\n[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]\nother versions can not pass certification : (",
+      "PostedDate": "2016-07-12T04:30:42.82-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-07-12T05:29:05.973-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Same issue here... I hope this will be fixed soon.",
+      "PostedDate": "2016-07-12T05:29:40.19-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "A new version 1.4.9.5 i out, maybe the issue is fixed now? The problem is the Visual Studio Certification toolkit does not see it as Debug and says it Passed the test but the Dev Center sees it and my apps fails to certify. I switched back to version 1.4.9.2 because of this.",
+      "PostedDate": "2016-07-14T10:21:02.823-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "@dinchy87 thanks,\non v1.4.9.5 certification passed without any issues.\ni think this 'work item' can be closed.",
+      "PostedDate": "2016-07-15T00:05:35.84-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

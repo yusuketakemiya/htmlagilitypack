@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "484697",
+    "ThreadId": "224785",
+    "Html": "<p>Lets suppose I have a web form which creates a new user account. Lets suppose a user registration form and I want to load my form in a browser and then let my script or code fill the values in text boxes and click the I agree check box and then click submit button</p>\r\n<p>Is this achievable using html agility. If yes, any exmaple ? If no, any other tool ?</p>\r\n<p>Thanks</p>\r\n<p>Yasir</p>",
+    "PostedDate": "2010-08-25T08:12:31.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "484716",
+    "ThreadId": "224785",
+    "Html": "<p>HTML Agility Pack does not do this, it is simply an HTML Parser. For testing HTML user interfaces you'll want to use something like Selenium http://seleniumhq.org/</p>",
+    "PostedDate": "2010-08-25T08:48:15.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

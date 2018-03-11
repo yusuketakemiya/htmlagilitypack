@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "931383",
+    "ThreadId": "400535",
+    "Html": "\r\n<p>I have a method that has a string param (html).</p>\r\n<p>I use it to construct HtmlDocument and query it. My question is do I need to dispose of HtmlDocument somehow? If yes, how? it does not implement IDisposable.....</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2012-10-23T16:09:32.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "985908",
+    "ThreadId": "400535",
+    "Html": "\r\n<p><strong>+1</strong></p>\r\n<p>I would also like to know the answer to this question. I am parsing a BIG HTML document (~1.5 Mb string send into LoadHtml), and the tree is taking up approximately 250 Mb of memory. After I've done my parsing, I would like to release the HtmlDocument from\r\n memory.</p>\r\n",
+    "PostedDate": "2013-01-12T08:49:32.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "988344",
+    "ThreadId": "400535",
+    "Html": "\r\n<p>Any chance one of the project members can help with this?</p>\r\n<p>One of the Stack Overflow answers suggests setting the doc to null and then doing GC.Collect() - surely there has to be better way then forcing garbage collection....</p>\r\n<ul>\r\n<li><span style=\"font-size:10pt\">http://stackoverflow.com/questions/10183535/memory-problems-when-using-htmlagilitypack</span>\r\n</li><li><span style=\"font-size:10pt\">http://stackoverflow.com/questions/9014611/system-outofmemoryexception-in-htmldocument-of-htmlagilitypack</span>\r\n</li></ul>\r\n",
+    "PostedDate": "2013-01-17T11:30:01.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

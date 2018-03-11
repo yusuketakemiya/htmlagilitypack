@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It has taken me a while to track this one down.\n \nThe W3C states that \"By default, SGML requires that all attribute values be delimited using either double quotation marks (ASCII decimal 34) or single quotation marks (ASCII decimal 39). Single quote marks can be included within the attribute value when the value is delimited by double quote marks, and vice versa.\"\n \nI had html that used a single quote to delimit the attribute value with embedded double quotes.\n \nThe WriteAttribute (TextWriter outText, HtmlAttribute att) method currently assumes to use double quotes which can give some strange problems.\n \nI managed to solve the probelm by replacing:\n \noutText.Write(\" \" + name + \"=\\\"\" + att.Value + \"\\\"\");\n \nwith\n \n if (att.Value.Contains(\"\\\"\"))\n {\n         // Wrap with single quote, not double\n         outText.Write(\" \" + name + \"='\" + att.Value + \"'\");\n }\nelse\n{\n        outText.Write(\" \" + name + \"=\\\"\" + att.Value + \"\\\"\");\n}\n \nCan someone please check my reasoning and include in the code.\n \nThanks",
+    "LastUpdatedDate": "2013-02-21T18:47:25.657-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2008-08-27T07:03:07.637-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug in HtmlNode: WriteAttribute",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 18161
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "275411",
+    "ThreadId": "80349",
+    "Html": "<p>Hi all,</p>\r\n<p>I am new to Html Agility Pack and I have got some basic questions for which I could not find any simple answers.</p>\r\n<p>First of all I would like to load the content&nbsp;of a page in Unicode so I'm doing something like this:</p>\r\n<p>HtmlAgilityPack.HtmlWeb htmlWeb = new HtmlAgilityPack.HtmlWeb();<br> htmlWeb.AutoDetectEncoding = true;<br> HtmlAgilityPack.HtmlDocument htmlDoc = htmlWeb.Load(&quot;http://www.google.co.jp/&quot;);<br> tbLog.Text = htmlDoc.GetElementbyId(&quot;ghead&quot;).InnerText;</p>\r\n<p>The trouble is that what is displayed is not Unicode:</p>\r\n<p><span style=\"font-size:12pt;font-style:normal;font-variant:normal;font-weight:400;line-height:115%\" lang=EN-US>�E�F�u �</span><span style=\"font-size:12pt;font-style:normal;font-variant:normal;font-weight:400;line-height:115%\">摜</span><span style=\"font-size:12pt;font-style:normal;font-variant:normal;font-weight:400;line-height:115%\" lang=EN-US> ���� �n�} �j���[�X ���� Gmail ���̑� &amp;#9660;�|�� �u���O YouTube �J�����_�[ �ʐ^ �h�L�������g ���[�_�[ �T�C�g �O���[�v �T�[�r�X�ꗗ &amp;raquo; iGoogle | �����ݒ� | ���O�C��</span></p>\r\n<p>What&rsquo;s wrong with what am I doing?</p>\r\n<p>Also, and this is my second question, how can I get the html entities (<span style=\"font-size:12pt;font-style:normal;font-variant:normal;font-weight:400;line-height:115%\" lang=EN-US>&amp;#9660; and &amp;raquo;) to be replaced by their actual characters.</span></p>\r\n<p><span style=\"font-size:12pt;font-style:normal;font-variant:normal;font-weight:400;line-height:115%\" lang=EN-US>Thanks in advance!</span></p>\r\n<p><span style=\"font-size:12pt;font-style:normal;font-variant:normal;font-weight:400;line-height:115%\" lang=EN-US>Ben</span></p>",
+    "PostedDate": "2010-01-10T12:15:06.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

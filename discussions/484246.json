@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1151572",
+    "ThreadId": "484246",
+    "Html": "I have built an HTML sanitizer using a white list, but the problem encountered is that text like this: &quot;&lt; 1&quot;  gets accepted as a valid HtmlNodeType.Element??? Because of this, it gets removed via the white list processing, when it's valid text entered by a user and not an actual node of any kind.<br />\n<br />\nThe following as an excerpt of my sanitizer with the entry point to processing:<br />\n<pre><code> public string RetainWhiteListedItems(string HTMLToScrub) {\n            if (string.IsNullOrWhiteSpace(HTMLToScrub)) return HTMLToScrub;            \n\n            HtmlDocument HTMLDoc = new HtmlDocument();\n            HTMLDoc.OptionWriteEmptyNodes = true;\n            HTMLDoc.LoadHtml(HttpUtility.HtmlDecode(HTMLToScrub));            \n\n            /*THIS CHECK LETS A DOCUMENT THAT IS JUST &quot;&lt; 1&quot; CONTINUE AS IT SEES IT AS \n            A VALID ELEMENT WITH A NAME OF &quot;1&quot;*/\n            if (HTMLDoc.DocumentNode.ChildNodes.Where(node =&gt; node.NodeType == HtmlNodeType.Element).Any()) { \n                IList&lt;HtmlNode&gt; hnc = HTMLDoc.DocumentNode.Descendants().ToList();\n                if (hnc.Count == 0) {\n                    return HTMLToScrub;\n                }\n\n                //remove non-white list nodes\n                for (int i = hnc.Count - 1; i &gt;= 0; i--) {\n                   HtmlNode htmlNode = hnc[i];\n                  //if the htmlnode is not in the whitelist, turf it\n                  //...all other processing for attributes, scripting etc....\n                }\n           } \n}</code></pre>\n\nDoes the HtmlNodeType.Element and/or the HtmlNode not validate that the element is in fact an html element?  Is there something else i need to do to get this functionality?  I'd like to have it so if a user enters text using less than/greater than symbols that are not tags/html elements to simply bypass being processed by the sanitzer<br />\n<br />\nthx<br />\n",
+    "PostedDate": "2014-01-09T16:26:23.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

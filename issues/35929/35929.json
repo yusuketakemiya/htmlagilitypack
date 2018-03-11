@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi\nIt seems there is some issues with asp.net 5.\nI install the htmlagility pack from the nugget source.\nSome of methods has error so I can not build my project but it works when I try the view in browser option!!!\nit seems there is some problem with core :\n\nSeverity\tCode\tDescription\tProject\tFile\tLine\nError\tCS1503\tArgument 1: cannot convert from 'string' to 'System.IO.Stream'\tInfoBay.ASP.NET Core 5.0\tD:\\ToDoProjects\\InfoX\\InfoBay\\Framework\\Helpers_Html.cs\t52\n\nthis error occurred on this line :\n                HtmlDocument hd = new HtmlDocument();\n                this line has error : hd.Save(fp, System.Text.Encoding.Unicode);\n\nHave you ever try to run html agility pack with asp.net 5?\nPlease let me know if there is a solution.\nThanks\nMohsen",
+    "LastUpdatedDate": "2015-04-11T21:33:38.797-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-04-11T21:33:38.797-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ASP.Net 5",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35929
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

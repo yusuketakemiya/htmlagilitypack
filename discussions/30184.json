@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "100580",
+    "ThreadId": "30184",
+    "Html": "Hi,<br>\r\n<br>\r\nI'd be grateful if someone could nudge me in the right direction here. I have just downloaded the Agility Pack and am playing, however I'm a little stuck. I want to find all &quot;&lt;h1&gt;&quot;&nbsp;&nbsp;tags, for example,&nbsp;on a page so I thought the best way was to adapt one of the examples.<br>\r\n<br>\r\nSo, I tried this line&nbsp;<br>\r\n<span style=\"font-size:13px;color:#008080\">\r\n<p>HtmlNodeCollection</p>\r\n</span>\r\n<p><span style=\"font-size:13px\">atts = _doc.DocumentNode.SelectNodes(</span><span style=\"font-size:13px;color:#800000\">&quot;//h1&quot;</span><span style=\"font-size:13px\">);\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n<br>\r\nHowever it always returns null - the document definately contains heading tags and that is the correct XPath expression.<br>\r\n<br>\r\nSo I've&nbsp;missed something&nbsp;- but what?<br>\r\n<br>\r\nThanks for any help<br>\r\n<br>\r\nJC<br>\r\n",
+    "PostedDate": "2008-06-24T09:00:05.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "100725",
+    "ThreadId": "30184",
+    "Html": "The forums seems to be *very* quiet, but incase anyone is listening - I'm having very little success with htmlagilitypack as it doesnt seem to work that well. For example I pointed the sample code 'GetDocLinks' at&nbsp;'<a href=\"http://www.w3schools.com/TAGS/tag_hn.asp\">http://www.w3schools.com/TAGS/tag_hn.asp</a>' and all it returned was:<br>\r\n<br>\r\nLinked urls:<br>\r\n/favicon.ico<br>\r\n/stdtheme.css<br>\r\nReferenced urls:<br>\r\n<br>\r\nIt also completely failed to pick out any other tags. SO - does anyone have recommendations for what's happning or perhaps another product with better support material.<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2008-06-25T02:30:32.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "104110",
+    "ThreadId": "30184",
+    "Html": "Did you check whether your html page is properly loaded ?<br>\r\n",
+    "PostedDate": "2008-07-11T02:24:27.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

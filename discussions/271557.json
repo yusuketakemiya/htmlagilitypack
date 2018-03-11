@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "667864",
+    "ThreadId": "271557",
+    "Html": "\r\n<p>I know people will think it's crazy, but I'd like to use HAP with an existing VB6 project. I've gone through the process of opening a VS 2010 command prompt, and executing</p>\r\n<p>tlbexp HtmlAgilityPack.dll /out:HtmlAgilityPack.tlb</p>\r\n<p>regasm /tlb:HtmlAgilityPack.tlb HtmlAgilityPack.dll</p>\r\n<p>gacutil /i HtmlAgilityPack.dll</p>\r\n<p>However, while it's possible to set a reference to tHAP in VB6, nothing is actually exposed. Has anyone used HAP with COM, and if so, what steps are required? Thanks,</p>\r\n<p>Gordon</p>\r\n",
+    "PostedDate": "2011-09-05T15:16:55.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

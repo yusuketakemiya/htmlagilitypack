@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nIf I load a HTML-Document with the OptionWriteEmptyNodes set to true, all form elements are rendered selfclosing even if they contain input fields. \n\nThe following code demonstrates the problem:\n```\n\tpublic class Program\n\t{\n\t\tprivate static void Main(string[] args)\n\t\t{\n\t\t\tstring html = \n@\"\n\n\t\n\t\t\n\t\t\tTest\n\t\t\n\t\n\n\";\n\n\t\t\tHtmlDocument doc = new HtmlDocument();\n\t\t\tdoc.OptionWriteEmptyNodes = true;\n\t\t\tdoc.LoadHtml(html);\n\n\t\t\tConsole.WriteLine(doc.DocumentNode.OuterHtml);\n\n\t\t\tdoc = new HtmlDocument();\n\t\t\tdoc.OptionWriteEmptyNodes = false;\n\t\t\tdoc.LoadHtml(html);\n\n\t\t\tConsole.WriteLine(doc.DocumentNode.OuterHtml);\n\t\t\tConsole.ReadKey();\n\t\t}\n\t}\n\n```\nThe above code generates the following output:\n\n```\n\n        \n                \n                        Test\n                \n        \n\n\n\n\n        \n                \n                        Test\n                \n        \n\n```\n\nThis behavior is also mentioned (including a fix) in this discussion http://htmlagilitypack.codeplex.com/discussions/7121 but there seems to be no Issue for it.\n\nThanks for your Help\nCheers Meini",
+    "LastUpdatedDate": "2013-02-21T18:46:54-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2013-02-08T07:41:49.84-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OptionWriteEmptyNodes leads to wrong form tags",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 33748
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

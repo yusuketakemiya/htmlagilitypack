@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "138332",
+    "ThreadId": "41671",
+    "Html": "i was trying to do some screen scrape tests on twitter.com and i keep getting a &quot;500 Internal Server Error&quot; response. i've added the &quot;useragent&quot; header and the &quot;accept&quot; headers to the&nbsp;HtmlWeb class with no luck. any thoughts?<br>\r\n",
+    "PostedDate": "2008-12-06T17:20:56.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

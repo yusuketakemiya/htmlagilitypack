@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "First of all, such operations should be the same\nnode.Remove() and node.Parent.RemoveChild(node)\n \nbut they are not, first one does not call RemoveChild on its parent, instead it directly removes its own node from children nodes. This is bug in terms of code design (very easy to fix though).\n \nSecond -- removing node does not refresh (does not invalidates internal members \"changed\") content of parents, grandparents, and so on. Luckily the method which dynamically creates InnerHtml is public, so after\nnode.Remove()\nyou can call\nnode.Parent.Parent.WriteContentTo()\ninstead\nnode.Parent.Parent.InnerHtml",
+    "LastUpdatedDate": "2014-12-03T12:35:52.55-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-05-30T00:06:20.497-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issues with Remove -- lack of refreshing, asymmetry",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 30772
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

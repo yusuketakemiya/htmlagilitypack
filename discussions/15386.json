@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "49983",
+    "ThreadId": "15386",
+    "Html": "\r\nI'm trying to use the HtmlAgilityPack (great work by the way) but I keep getting pages from a cache somewhere (work servers or elsewhere - not sure).<br /><br />Is there a way that I can request that a fresh page be retrieved from the actual web site?<br /><br />Thanks<br /><br />Susan<br />",
+    "PostedDate": "2007-09-19T21:56:29.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "58666",
+    "ThreadId": "15386",
+    "Html": "\r\nHi,<br /><br />First, you have to know what cache you are really hitting. The Html Agility Pack has a very basic cache that you can disable setting HtmlWeb.UsingCache to false.<br />Then for server cache, by default, the Html Agility Pack does not send any header relative to that, so if there is still a problem, you will have to investigate... Welcome to HTTP programming :-)<br />",
+    "PostedDate": "2007-11-17T10:12:45.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

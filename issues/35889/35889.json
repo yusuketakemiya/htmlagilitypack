@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When i use firefox xpath tool work fine that the xpath \" id('mainTable')/tbody[1]/tr/td/table/tbody/tr/td/table/tbody/tr/td[2]/a \" returns six records.\n But  when i use HTMLDocument to Load it, it return only two records. \nand  I use the Save() function to save to a file  and look. it  become  very chaotic. the six records in a table Separated in three tables.\nwhat should I do?",
+    "LastUpdatedDate": "2015-03-17T19:52:16.18-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-03-17T19:52:16.18-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Html Agility Pack load become chaotic!!!",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35889
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

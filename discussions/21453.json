@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "71450",
+    "ThreadId": "21453",
+    "Html": "\r\nHi, this is a great product. Just three notes I've come up with while using it for a project:<br /><br />1. You seem to be missing a RemoveAttribute method.<br /><br />2. You seem not to have attributes extend Node. If I use, say<br /><br />  HtmlNodeCollection attributes = el.selectNodes(\".//@alt[contains(.,\\\"pizza\\\")]\");<br /><br />so that I can change \"pizza\" to \"sandwich\" in image alt text, I get a message telling me that attributes can't be in a node collection. Instead I have to do<br /><br />  HtmlNodeCollection images = el.selectNodes(\".//img[contains(@alt,\\\"pizza\\\")]\");<br /><br />and then set the alt attribute of each of the returned images. This isn't a horrible thing in this example, just less direct, but imagine instead that I wanted to change \"pizza.example.com\" to \"pizza.example.org\" in every attribute where it appears, whether a src or an href or a codebase and I wanted to select based on \".//@*[contains(.,\\\"pizza\\\")]\". I can't. Instead, I have to go the second route--but then, for each element returned, I have to figure out which attribute is the one that contained the pattern that I want to replace. Either that, or instead of using @* I have to go the second route once for each of the individual attributes that might contain a match--@href, @src, etc.<br /><br />3. How come you collapsed Node and Element, instead of having a distinct HtmlElement type?<br />",
+    "PostedDate": "2008-02-03T06:59:04.2-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "74964",
+    "ThreadId": "21453",
+    "Html": "<div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />edgrogan wrote:<br />Hi, this is a great product. Just three notes I've come up with while using it for a project:<br /><br />1. You seem to be missing a RemoveAttribute method.<br /><b>snip</b><br /><br /></div>I figured it out: node.Attributes.Remove(\"foo\");<br />",
+    "PostedDate": "2008-02-19T08:27:26.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

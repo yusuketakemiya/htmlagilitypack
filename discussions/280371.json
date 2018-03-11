@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "701683",
+    "ThreadId": "280371",
+    "Html": "\r\n<p>Hey,</p>\r\n<p>&nbsp;</p>\r\n<p>im trying to load an webpage, but my application fires me an exception</p>\r\n<p>'gzip' is not a supported encoding name.</p>\r\n<p>&nbsp;</p>\r\n<p>how to correct this ?</p>\r\n",
+    "PostedDate": "2011-11-22T02:25:16.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

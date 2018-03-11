@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When loading a document from an HTTP URL, using an HtmlWeb instance, you can't assign OptionComputeChecksum to true to the document \"before Parse\".\nEven the \"PreHandleDocument\" event is too late.\n3 options:\n 1. Add parameters to the HtmlWeb.Load method.\n 2. Add members to HtmlWeb class, relative to the options of the created documents.\n 3. Create another event (PreLoadDocument?) allowing to initialize of the document options.\nMy preference is the 3rd one.\nThank's.",
+    "LastUpdatedDate": "2013-02-21T18:47:10.203-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-01-03T02:59:13.497-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Unable to use Checksum when loading document using HtmlWeb.Load",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 29887
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

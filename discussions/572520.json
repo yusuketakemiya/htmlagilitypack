@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1323835",
+    "ThreadId": "572520",
+    "Html": "Can the Html Agility Pack help me access the elements of an html table in a specific column very quickly?\r<br />\n<br />\n<a href=\"http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.testtools.uitesting.htmlcontrols.htmltable.aspx\" rel=\"nofollow\">HtmlTable</a> does not contain an easy or quick way to access an entire column and model it as a List, for example.\r<br />\n<br />\nDoes Html Agility Pack make this possible / easier / faster?\r<br />\n<br />\nThanks,\r<br />\nTyler<br />\n",
+    "PostedDate": "2014-11-19T08:36:24.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

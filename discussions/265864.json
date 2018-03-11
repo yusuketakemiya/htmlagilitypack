@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "644908",
+    "ThreadId": "265864",
+    "Html": "\r\n<pre><span style=\"color:gray\">See below:<br><br>///</span> <span style=\"color:gray\">&lt;summary&gt;</span>\r\n        <span style=\"color:gray\">///</span><span style=\"color:green\"> Gets or Sets the text between the start and end tags of the object.</span>\r\n        <span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;/summary&gt;</span>\r\n        <span style=\"color:blue\">public</span> <span style=\"color:blue\">virtual</span> <span style=\"color:blue\">string</span> InnerText\r\n        {\r\n            <span style=\"color:blue\">get</span>\r\n            {\r\n                <span style=\"color:blue\">if</span> (_nodetype == HtmlNodeType.Text)\r\n                {\r\n                    <span style=\"color:blue\">return</span> ((HtmlTextNode) <span style=\"color:blue\">this</span>).Text;\r\n                }\r\n\r\n                <span style=\"color:blue\">if</span> (_nodetype == HtmlNodeType.Comment)\r\n                {\r\n                    <span style=\"color:blue\">return</span> ((HtmlCommentNode) <span style=\"color:blue\">this</span>).Comment;\r\n                }\r\n\r\n                <span style=\"color:green\">// note: right now, this method is *slow*, because we recompute everything.</span>\r\n                <span style=\"color:green\">// it could be optimised like innerhtml</span>\r\n                <span style=\"color:blue\">if</span> (!HasChildNodes)\r\n                {\r\n                    <span style=\"color:blue\">return</span> <span style=\"color:blue\">string</span>.Empty;\r\n                }\r\n\r\n               <span style=\"color:#ff0000\"><strong> string s = null;\r\n                foreach (HtmlNode node in ChildNodes)\r\n                {\r\n                    s &#43;= node.InnerText;\r\n                }</strong></span>\r\n                <span style=\"color:blue\">return</span> s;\r\n            }\r\n        }\r\n</pre>\r\n",
+    "PostedDate": "2011-07-20T04:23:40.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

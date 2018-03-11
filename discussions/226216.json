@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "489744",
+    "ThreadId": "226216",
+    "Html": "<p>When using javascript in the browser I can get image locations even if the image didn't have the x/y coord set via css or attribute. &nbsp;If I render DOM with the agility pack, will I be able to get the x/y coord of elements such as images and links?</p>",
+    "PostedDate": "2010-09-06T07:34:18.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "489789",
+    "ThreadId": "226216",
+    "Html": "<p>no, Html Agility Pack is not a renderer, it is just a parser. It takes the HTML and creates a hierarchical object structure.&nbsp; To do what you need you'll have to use a rendering engine like the .NET WebBrowser control or the Gecko# library. The first allows you to use Internet Explorer to render a page, the later uses to the Gecko rendering engine found in Firefox. Even with those I'm not sure if the x/y coordinates are easily available, it may take some work doing hit testing to find out</p>",
+    "PostedDate": "2010-09-06T10:06:31.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

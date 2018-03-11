@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1008764",
+    "ThreadId": "435018",
+    "Html": "Good day everyone. I have a some problem, when execute my program.  \t<br />\nIn the method of Loading, appear a dialog box to select the file. Don't understand why it occurs and how to remove it. How to make so that the code is executed completely.<br />\n<br />\n<img src=\"http://www.host2pic.ru/images/b72117294e6ad66c1d611f42cfc2574d.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-03-01T04:32:13.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1008769",
+    "ThreadId": "435018",
+    "Html": "Of course, i attached 'dll' file to my project, as u can c:<br />\n<img src=\"http://www.host2pic.ru/images/938b7c80da992a9b0246669a5a7d049b.jpg\" alt=\"Image\" /><br />\n\t<br />\ncan someone explain to me where I'm wrong<br />\n",
+    "PostedDate": "2013-03-01T04:35:56.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1008779",
+    "ThreadId": "435018",
+    "Html": "will add more when the second time I run the project, the method загруза appears exception &quot;Argument Exception was unhandled&quot; -  path contains invalid characters.<br />\nWhat is than mean? How improve this?<br />\n",
+    "PostedDate": "2013-03-01T04:49:02.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

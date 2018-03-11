@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "549972",
+    "ThreadId": "241939",
+    "Html": "\r\n<p>The official Html Agility Pack package has been uploaded. You can see the information at\r\n<a href=\"http://nuget.org/Packages/Packages/Details/Html-Agility-Pack-1-4-0\">http://nuget.org/Packages/Packages/Details/Html-Agility-Pack-1-4-0\r\n</a></p>\r\n<p>There is an unofficial package that someone else uploaded, it has the default NuGet icon. I've asked for it to be removed.</p>\r\n",
+    "PostedDate": "2011-01-15T16:57:01.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "550019",
+    "ThreadId": "241939",
+    "Html": "\r\n<p>Agreed, we should delete the other one. &nbsp;Unfortunately, I'm hitting a strange glitch that's preventing me from deleting it. &nbsp;I suspect that the fact that the name has spaces is triggering a bug in the web site. &nbsp;Anyway, let's ignore it for\r\n now, and I'll try to find a way to delete it.</p>\r\n<p>thanks!<br>\r\nDavid&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-15T21:34:10.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "550177",
+    "ThreadId": "241939",
+    "Html": "\r\n<p>Thanks for looking into David.</p>\r\n",
+    "PostedDate": "2011-01-16T11:00:28.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "550242",
+    "ThreadId": "241939",
+    "Html": "\r\n<p>I opened a <a href=\"http://orchardgallery.codeplex.com/workitem/170\">bug</a> to track this.</p>\r\n",
+    "PostedDate": "2011-01-16T15:37:21.293-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

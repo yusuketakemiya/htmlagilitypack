@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "250262",
+    "ThreadId": "73248",
+    "Html": "<p>I'm having a bit of trouble using starts-with and I'm not quite sure what I'm doing wrong.</p>\r\n<p>My xPath statment is: <strong>div[starts_with(@id,'special_item')]//span[@class='specialspan']/a/@href</strong></p>\r\n<p>When I run myHtmlNode.SelectSingleNode(sPath) the object throws the following:</p>\r\n<p><span style=\"color:#ff0000\">&quot;Namespace Manager or XsltContext needed. This query has a prefix, variable, or user-defined function.&quot;</span></p>\r\n<p>Can anyone see what I'm doing wrong?</p>\r\n<p>Thanks much!</p>\r\n<p>-Z</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-27T10:35:18.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "257126",
+    "ThreadId": "73248",
+    "Html": "<p>I'm not sure if this is the reason, but it is a good place to start looking:</p>\r\n<p>.NET (and by extension, HtmlAgilityPack) only support xPath 1.0, so if any of that is part of xPath 2.0, it will not work in AgilityPack</p>",
+    "PostedDate": "2009-11-14T10:29:59.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

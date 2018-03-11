@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Example:\n \n<table bgcolor=\"#ffcc00\" border=\"1\" style=\"border-collapse: collapse; font-family:Arial; font-size:9pt; color:#000000\" />\n \nAllow working with individual properties withing the style attribute of an element.",
+    "LastUpdatedDate": "2013-07-08T12:39:47.67-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2012-05-27T17:20:47.893-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Please add style properties options",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32779
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "220650",
+    "ThreadId": "64791",
+    "Html": "<p>My site is about to go live and I have some big issue with content maneged pages.. Please help</p>\r\n<p>I have lot of articles in the database and while showing it in the site I replace the newline chracter with &lt;br /&gt; using following code...</p>\r\n<p>string article = details.Replace(System.Environment.Newline, &quot;&lt;br /&gt;&quot;);</p>\r\n<p>But its making issues if my articles have tables or lists in the content.. The above code will put &lt;br /&gt; after each tags of the table.. so I will have &lt;br /&gt; between all the &lt;tr&gt;, &lt;td&gt;, &lt;tbody&gt; etc.. resulting in a malformed HTML and its making lot of issues while display..</p>\r\n<p>I want to replace only the new lines in content not between the tags..</p>\r\n<p>URGENT help pleaes.. this is the only issue to be solved for me to go live</p>",
+    "PostedDate": "2009-08-06T23:13:10.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "220651",
+    "ThreadId": "64791",
+    "Html": "<p>My situaltion is like this</p>\r\n<p>DB has following data<br>---</p>\r\n<p>This is the first line.</p>\r\n<p>This is the second line.</p>\r\n<p>&lt;ul&gt;<br>&nbsp;&lt;li&gt;This is the first list item &lt;/li&gt;<br>&nbsp;&lt;li&gt;This is the second list item &lt;/li&gt;<br>&lt;/ul&gt;</p>\r\n<p>&lt;table&gt;<br>&nbsp;&lt;tr&gt;<br>&nbsp;&nbsp; &lt;td&gt;This is a cell data&lt;/td&gt;<br>&nbsp;&lt;/tr&gt;<br>&lt;/table&gt;</p>\r\n<p>---</p>\r\n<p>Now I want to show the data in the user side.. If I will simply put it to a literal the first and second paragraph will come together..&nbsp; So I want to put a &lt;br /&gt; between them while showing..</p>\r\n<p>The simple way is to replace all \\n with &lt;br /&gt;.. But that will put &lt;br /&gt; everywhere even after &lt;ul&gt;, &lt;li&gt;, &lt;table&gt; and everywhere...</p>",
+    "PostedDate": "2009-08-06T23:14:16.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "220676",
+    "ThreadId": "64791",
+    "Html": "<p>This sounds like a question you can ask on <a title=\"Ask technical questions on StackOverflow (SO)\" href=\"http://www.stackoverflow.com\">StackOverflow.com</a></p>\r\n<p>Questions are usually answered within 30minutes, atleast some kind of reply.</p>",
+    "PostedDate": "2009-08-07T01:35:58.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

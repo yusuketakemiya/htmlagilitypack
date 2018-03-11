@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "853761",
+    "ThreadId": "360967",
+    "Html": "\r\n<p>Why the version here at codeplex isn't the latest? 1.4.4</p>\r\n<p><a href=\"http://nuget.org/packages/HtmlAgilityPack\">http://nuget.org/packages/HtmlAgilityPack</a></p>\r\n<p>&nbsp;</p>\r\n<p>Also, when I install the package from nugget, it does not have XML comments for classes/methods. It would be great the have that.</p>\r\n",
+    "PostedDate": "2012-06-26T05:29:51.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "853765",
+    "ThreadId": "360967",
+    "Html": "<p>The nugget 1.4.4 version is the stable one?</p>\r\n<p>Which one is the stable version?</p>",
+    "PostedDate": "2012-06-26T05:38:07.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

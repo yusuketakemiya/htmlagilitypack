@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "683557",
+    "ThreadId": "275700",
+    "Html": "\r\n<p>Dear Sirs,</p>\r\n<p>I have the following HTML line code in my document:</p>\r\n<p>&lt;v:image xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; id=&quot;theImage&quot; style='behavior: url(#default#VML); display:inline-block;position:absolute; height:79px; width:567px;top:0;left:0;border:0;z-index:1;' src=&quot;http://www.xyz.com&quot; /&gt;</p>\r\n<p>I need to extract the node collection of these &quot;v:image&quot; tags (since I need to change the src attribute).</p>\r\n<p>With html image tag I used for instance this one: <span style=\"font-family:Consolas; color:#2b91af; font-size:x-small\">\r\n<span style=\"font-family:Consolas; color:#2b91af; font-size:x-small\"><span style=\"font-family:Consolas; color:#2b91af; font-size:x-small\"><span style=\"font-family:Consolas; color:#2b91af; font-size:x-small\">HtmlNodeCollection\r\n</span></span></span></span><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\">images = doc.DocumentNode.SelectNodes(</span></span><span style=\"font-family:Consolas; color:#a31515; font-size:x-small\"><span style=\"font-family:Consolas; color:#a31515; font-size:x-small\"><span style=\"font-family:Consolas; color:#a31515; font-size:x-small\">&quot;//img[@src]&quot;</span></span></span><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\">);</span></span></p>\r\n<p></p>\r\n<p>What should I do with v:image ?</p>\r\n<p>Many thanks in advance and Best Regards.</p>\r\n<p>Sergio</p>\r\n<p></p>\r\n",
+    "PostedDate": "2011-10-13T01:43:09.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "530274",
+    "ThreadId": "236919",
+    "Html": "\r\n<p>Sorry if the question has been asked and answered.</p>\r\n<p>Is there a way to disable any modification of source HTML when doing a save on an HTML document?</p>\r\n<p>All I want to do is load some HTML, find a tag or two, inspect them, maybe modify them and re-save the file.</p>\r\n<p>&nbsp;</p>\r\n<p>Regardless of altering the HTML in way, any time I load HTML and do a save on it, it changes tags and tries to optimize or fix things.&nbsp; I want to stop this behavior.</p>\r\n<p>&nbsp;</p>\r\n<p>Please help.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2010-12-02T12:30:12.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

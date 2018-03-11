@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "456907",
+    "ThreadId": "216429",
+    "Html": "Wondering if this application supports scraping a password protected site?  I have not taken a thorough look at it.  Wondering if anyone has done this using Html Agility Pack.",
+    "PostedDate": "2010-06-17T12:56:57.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456913",
+    "ThreadId": "216429",
+    "Html": "<p>It depends on how the site is password protected. It does support passing in credentials that use basic auth. It also supports using a proxy and trying to fake cookies to a degree.</p>",
+    "PostedDate": "2010-06-17T13:05:14.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456916",
+    "ThreadId": "216429",
+    "Html": "<p>Essentially, I would like to use Html Agility Pack&nbsp;to scrape html from a site that has pages with a .do extension.&nbsp; I believe this is&nbsp;Java extension.&nbsp; I have a username and password to log into the target site that I need to scrape information from, so once I log in I need to browse to a couple pages scraping info from them.&nbsp;</p>\r\n<p>Not sure what is meant by it supporting passing in credentials that use basic auth.&nbsp; Thank you for any information provided.</p>",
+    "PostedDate": "2010-06-17T13:11:03.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457110",
+    "ThreadId": "216429",
+    "Html": "<p>Use HttpWebRequest HttpWebResponse to send/receive from/to server: GET, POST html pages. Htmlagilitypack is good for parsing html, but not best as http client.</p>",
+    "PostedDate": "2010-06-18T00:49:59.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "521580",
+    "ThreadId": "234602",
+    "Html": "\r\n<p>i need to scrape the text of blog posts to build a summary description of the blog posts similar to what techmeme.com does. not a problem when it's one or a handful of blog posts. however, the possible blogs from which to scrape the text is variable and\r\n unlimited. how would you go about doing this?<br>\r\n<br>\r\ni've used the html agility pack and yql in the past, but there's nothing built-in either of those solutions to handle this requirement.<br>\r\n<br>\r\none thought i had was to search for div ids and div attributes named things like content, post, article etc and see how that worked - not really leaning this direction. the other idea was to search for the biggest text node in the html document and assume that's\r\n the node i want - could lead to some false positives. the final idea was to endeavor to create a crowdsourced data repository on google apps that would allow for the community to manage (read: create, update, delete) the xpath mappings for most of the popular\r\n news/blog platforms then you could query this list by domain or blog platform type and get the requisite xpath - but this seems like a hella undertaking.<br>\r\n<br>\r\nof course, i know some of you have ideas that will work better than any of my hare-brained ideas.<br>\r\n<br>\r\nwhat are your thoughts?</p>\r\n",
+    "PostedDate": "2010-11-13T13:05:33.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

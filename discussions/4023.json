@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "12832",
+    "ThreadId": "4023",
+    "Html": "\r\nIs it possible for HtmlToText to ignore invalid HTML?  For example:<br /><br />&lt;b&gt;Here&lt;/b&gt; is a &lt;funny tag&gt; HTML<br /><br />should return<br /><br />Here is a &lt;funny tag&gt; HTML<br /><br />Any help/direction would be greatly appreciated.  Thanks.<br /><br />",
+    "PostedDate": "2007-01-28T15:40:46.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

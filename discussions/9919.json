@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "32252",
+    "ThreadId": "9919",
+    "Html": "\r\nFor people who want to screen scrape a web page but first must login here are two extra methods to HtmlWeb that will accomplish this. Also check out John's blog for more on how to login -- http://aspzone.com/blogs/john/archive/2006/05/11/1778.aspx<br /><br />    public HtmlDocument Login( string loginUri, string loginData, string requestUri )<br />    {<br />      try<br />      {<br />        // Reference: http://aspzone.com/blogs/john/archive/2006/05/11/1778.aspx<br /><br />        // cookieContainer is used to store the cookies used by the login<br />        CookieContainer cookieContainer = new CookieContainer();<br /><br />        // First hit the login page<br />        HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create( loginUri );<br />        req.CookieContainer = cookieContainer;<br />        req.Method = \"POST\";<br />        req.ContentType = \"application/x-www-form-urlencoded\";<br />        System.Text.ASCIIEncoding encoding = new System.Text.ASCIIEncoding();<br />        byte[] loginDataBytes = encoding.GetBytes( loginData );<br />        req.ContentLength = loginDataBytes.Length;<br />        Stream stream = req.GetRequestStream();<br />        stream.Write( loginDataBytes, 0, loginDataBytes.Length );<br />        stream.Close();<br /><br />        HttpWebResponse res = (HttpWebResponse)req.GetResponse();<br />        // Then grab the content of the desired page<br />        req = (HttpWebRequest)HttpWebRequest.Create( requestUri );<br />        req.CookieContainer = cookieContainer;<br />        req.Method = \"GET\";<br />        res = (HttpWebResponse)req.GetResponse();<br /><br /><br />        System.Text.Encoding respenc;<br /><br />        if ( ( res.ContentEncoding != null ) &amp;&amp; ( res.ContentEncoding.Length &gt; 0 ) )<br />        {<br />          respenc = System.Text.Encoding.GetEncoding( res.ContentEncoding );<br />        }<br />        else<br />        {<br />          respenc = null;<br />        }<br /><br />        HtmlDocument doc = new HtmlDocument();<br />        Stream s = res.GetResponseStream();<br />        if ( respenc != null )<br />        {<br />          doc.Load( s, respenc );<br />        }<br />        else<br />        {<br />          doc.Load( s, true );<br />        }<br />        res.Close();<br /><br />        return doc;<br />      }<br />      catch<br />      {<br />        return new HtmlDocument();<br />      }<br />    }<br /><br />    public void LoadHtmlAsXml( HtmlDocument doc, string xsltUrl, XmlTextWriter writer )<br />    {<br />      XslCompiledTransform xslt = new XslCompiledTransform();<br />      xslt.Load( xsltUrl );<br />      xslt.Transform( doc, writer );<br />    }<br />",
+    "PostedDate": "2007-05-05T11:27:53.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "42966",
+    "ThreadId": "9919",
+    "Html": "\r\nhi<br />http://aspzone.com/blogs/john/archive/2006/05/11/1778.aspx<br />is not running please refer me<br />thanks<br />",
+    "PostedDate": "2007-07-30T06:35:02.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

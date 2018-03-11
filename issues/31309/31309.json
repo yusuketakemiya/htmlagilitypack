@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "During correction(parsing), the Html tags <LI> are not closed properly... example:\nBefore parsing:\n<ol>\n<li>A\n<li>B\n<li>C\n</ol>\n \nAfter parsing:\n<ol>\n<li>A\n<li>B\n<li>C\n</li></li></li>\n</ol>\n \nSo, in the DOM TREE results that node <ol>  has only one child node.\n \nSorry for my english.",
+    "LastUpdatedDate": "2013-02-21T18:47:04.38-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2011-08-25T03:49:21.193-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "List parsing problem.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 31309
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Please close this issue.\r\nFound where is the problem when analyse source code . The property OptionFixNestedTags must be setted to True (Default == false).\r\n",
+      "PostedDate": "2011-08-25T04:55:02.503-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:47:04.38-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

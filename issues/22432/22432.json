@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "The No1 goal of Html Agility Pack is to keep original HTML compatible, not to be 100% ok with standards.",
+    "ClosedDate": "2009-05-17T23:32:35.54-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "According to XML specs an element content is at least a char data, i.e. #x09 | #x0A | #x0D | [#x20-#xD7FF] and other Unicode symbols. Values in HTML element content such as #x09 | #x10 | #x1D are not filtered which provides an invalid XML. I am not aware of HTML specs but I believe that such non-printable chars are also forbidden.\n \nExample: http://publisher.pdfchm.net/cmp-books/ - Line: 52, Col: 7789 a #0C value in text leads to invalid XML.",
+    "LastUpdatedDate": "2013-05-16T05:32:58.787-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2009-05-16T18:52:54.69-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Non-printable chars in HTML element content",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 22432
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

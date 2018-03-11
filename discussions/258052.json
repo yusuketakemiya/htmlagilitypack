@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "614494",
+    "ThreadId": "258052",
+    "Html": "\r\n<p>Hi all,</p>\r\n<p>I've written a patch adding support for optional ends tags (issue 29218).&nbsp; I've mailed simon mourier, but didn't get a reply; I'm assuming he's no longer the maintainer or the email is out of date.</p>\r\n<p>The patch should allow parsing things like unclosed &lt;p&gt; and &lt;li&gt; tags and still get the correct parse tree (the current implementation leaves unclosed &lt;p&gt; tags empty, and nests unclosed &lt;li&gt; tags).&nbsp; A review would be appreciated,\r\n and hopefully a merge, eventually.</p>\r\n<p>I've attached the patch to issue 29218: http://htmlagilitypack.codeplex.com/workitem/29218</p>\r\n<p>So what do you think?</p>\r\n<p>-Eamon Nerbonne</p>\r\n",
+    "PostedDate": "2011-05-18T03:13:32.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

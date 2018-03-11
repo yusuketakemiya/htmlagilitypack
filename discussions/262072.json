@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "630249",
+    "ThreadId": "262072",
+    "Html": "\r\n<p>I need to parse HTML for images and replace those tags with a new tag that just has the text that is contained in the alternate. Can someone show how to do this with both linq and standard usage?</p>\r\n<p>I've using a linq sample now to replace paragraphs. But, I'm getting a read only error.</p>\r\n<p><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HtmlDocument doc = new HtmlDocument();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.LoadHtml(html);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IEnumerable&lt;HtmlNode&gt; paragraphs = doc.DocumentNode.DescendantNodes().Where(p =&gt; p.Name.ToLower() == &quot;p&quot;);\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (HtmlNode p in paragraphs)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.InnerText = &quot;Hello World&quot;;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n",
+    "PostedDate": "2011-06-20T15:03:25.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

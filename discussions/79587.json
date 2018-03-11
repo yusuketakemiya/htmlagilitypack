@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "272494",
+    "ThreadId": "79587",
+    "Html": "<p>Hello</p>\r\n<p>I was following the information in this thread: <a href=\"http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=24346\">http://htmlagilitypack.codeplex.com/Thread/View.aspx?ThreadId=24346</a>&nbsp;for when I wanted to remove all of the &lt;font&gt; tags from an HtmlDocument. When I did this, it reversed the order of the attributes. Before I remove the child nodes, the xpath comes back as:</p>\r\n<p>1<br>2<br>3<br>4<br>5<br>6</p>\r\n<p>and so on.</p>\r\n<p>When I execute this code:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>HtmlNodeCollection nc = doc.DocumentNode.SelectNodes(<span style=\"color:#A31515\">&quot;//font&quot;</span>);\r\n            <span style=\"color:Blue\">if</span> (nc != <span style=\"color:Blue\">null</span>)\r\n            {\r\n                <span style=\"color:Blue\">foreach</span> (HtmlNode nd <span style=\"color:Blue\">in</span> nc)\r\n                    nd.ParentNode.RemoveChild(nd, <span style=\"color:Blue\">true</span>);\r\n            }\r\n</pre>\r\n<pre>The order is reversed:</pre>\r\n<pre>6<br>5<br>4<br>3<br>2<br>1</pre>\r\n<pre>Has anyone experienced this? And does anyone know why/how I can get around it?</pre>\r\n<pre>Thanks</pre>\r\n</div>",
+    "PostedDate": "2010-01-02T19:20:51.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "530146",
+    "ThreadId": "79587",
+    "Html": "\r\n<p>I am also seeing similar behavior with RemoveChild(n, true):</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>                <span style=\"color:blue\">var</span> nodes = doc.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//font|//em|//strong|//b|//i&quot;</span>);\r\n\r\n                <span style=\"color:blue\">if</span> (nodes != <span style=\"color:blue\">null</span> &amp;&amp; nodes.Count &gt; 0)\r\n                {\r\n                    <span style=\"color:blue\">foreach</span> (<span style=\"color:blue\">var</span> n <span style=\"color:blue\">in</span> nodes)\r\n                    {\r\n                        n.ParentNode.RemoveChild(n, <span style=\"color:blue\">true</span>);\r\n                    }\r\n                }\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>My node order seems to be reversed as well.&nbsp; Is there a different way to get around this problem?</p>\r\n",
+    "PostedDate": "2010-12-02T08:54:06.693-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "550261",
+    "ThreadId": "79587",
+    "Html": "\r\n<p>The &quot;prev&quot; reference is unnecessary. &nbsp;Looping backwards through the children and inserting after the parent works. &nbsp;Here is the updated RemoveChild method.</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;public HtmlNode RemoveChild(HtmlNode oldChild, bool keepGrandChildren)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (oldChild == null)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;throw new ArgumentNullException(&quot;oldChild&quot;);</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if ((oldChild._childnodes != null) &amp;&amp; keepGrandChildren)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// get prev sibling</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//HtmlNode prev = oldChild.PreviousSibling;</p>\r\n<p><span></span>int count = oldChild._childnodes.Count;<br>\r\n&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// reroute grand children to ourselves<span>\r\n</span></p>\r\n<p>for (var i = count - 1; i &gt;= 0; i--)<span> </span>{</p>\r\n<p><span></span>//looping through children backwards allows us to insert after the parent</p>\r\n<p>&nbsp;<span> </span>//and end up with the same node order<span> </span></p>\r\n<p>HtmlNode grandchild = oldChild._childnodes[i];<span> </span></p>\r\n<p>//InsertAfter(grandchild, prev);<span> </span></p>\r\n<p>InsertAfter(grandchild, oldChild);<span> </span></p>\r\n<p>}</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RemoveChild(oldChild);</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_outerchanged = true;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_innerchanged = true;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return oldChild;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n",
+    "PostedDate": "2011-01-16T17:33:42.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

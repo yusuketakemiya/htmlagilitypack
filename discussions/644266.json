@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1442064",
+    "ThreadId": "644266",
+    "Html": "I just download the nuget package for 1.4.9 and the both of the Portable Class Library versions of HtmlAgilityPack.dll do not have strong names. Was this an oversight?<br />\n",
+    "PostedDate": "2015-08-26T13:55:08.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

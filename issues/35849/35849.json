@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "```\nstring actual = @\"<p>Test</p\"; //missing \">\"\nstring expected = string.Empty;\n\nHtmlAgilityPack.HtmlDocument hd = new HtmlAgilityPack.HtmlDocument();\n\nhd.LoadHtml(actual);\nhd.ParseErrors.Count(); // Should be 1 but is 0\n```\n\nI saw in the Sourcecode that it is only checked if the ElementName is identical. But it should be checked also if  the Elements are correctly closed.\n\nI appreciate any workaround or fix.",
+    "LastUpdatedDate": "2015-02-16T03:04:59.643-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmlagilitypack",
+    "ReportedDate": "2015-02-16T03:04:59.643-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Elements are not checked if they are complete",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 35849
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,14 @@
+Index: C:/workingfolder/dev/projects/DataHarvester/DataHarvester.WebData/includes/htmlagilitypack/HtmlAgilityPack/HtmlDocument.cs
+===================================================================
+--- C:/workingfolder/dev/projects/DataHarvester/DataHarvester.WebData/includes/htmlagilitypack/HtmlAgilityPack/HtmlDocument.cs	(revision 1450)
++++ C:/workingfolder/dev/projects/DataHarvester/DataHarvester.WebData/includes/htmlagilitypack/HtmlAgilityPack/HtmlDocument.cs	(working copy)
+@@ -1518,8 +1518,7 @@
+ 								string charset = NameValuePairList.GetNameValuePairsValue(content.Value, "charset");
+ 								if (charset != null)
+ 								{
++									// cdonnelly 26 Jul 2006: charset needs whitespace trimmed.
++									_declaredencoding = Encoding.GetEncoding(charset.Trim());
+-									_declaredencoding = Encoding.GetEncoding(charset);
+ 									if (_onlyDetectEncoding)
+ 									{
+ 										throw new EncodingFoundException(_declaredencoding);

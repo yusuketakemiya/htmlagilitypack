@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "718624",
+    "ThreadId": "284563",
+    "Html": "\r\n<p>It seems that HtmlNode.Line does not refresh/reupdate after performing document manipulations such as adding and removing nodes. Is this a known issue? is there a way to force it to refresh?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-12-30T03:39:08.94-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

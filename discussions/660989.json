@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1491784",
+    "ThreadId": "660989",
+    "Html": "I am looking for the &quot;official&quot; repository for 1.4.9.5, it looks like the code here is at least 6 months old with no activity; I am struggling with a bug that It looks like I need to fix inside the agility pack itself dealing with an exception (also reported by other users of a package called Fazzle(sp)?)\r<br />\n<br />\nAny pointers would be appreciated.  I am looking for what matches the nuget feed if possible.\r<br />\n<br />\nThanks,\r<br />\nJohn<br />\n",
+    "PostedDate": "2017-01-27T08:47:17.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1494129",
+    "ThreadId": "660989",
+    "Html": "John, did you ever find the source? I'm assuming it's what is posted here, but I prefer not chasing down the wrong path fixing this missing method issue.<br />\n",
+    "PostedDate": "2017-03-15T17:17:37.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

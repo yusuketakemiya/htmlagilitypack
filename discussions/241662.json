@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "548790",
+    "ThreadId": "241662",
+    "Html": "\r\n<p>I'm using VB.net. I'm able to successfully parse through the HTML and return 20 nodes that I'm interested in by doing the following.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>        <span style=\"color:blue\">Dim</span> WebGet = <span style=\"color:blue\">New</span> HtmlWeb()\r\n        <span style=\"color:blue\">Dim</span> Document = WebGet.Load(Forum)\r\n        <span style=\"color:blue\">Dim</span> i <span style=\"color:blue\">As</span> <span style=\"color:blue\">Integer</span> = 0<br>&nbsp;       <span style=\"color:blue\">For</span> <span style=\"color:blue\">Each</span> Thread <span style=\"color:blue\">In</span> Document.DocumentNode.SelectNodes(<span style=\"color:#a31515\">&quot;//tr[@class='title']&quot;</span>)\r\n            i = i &#43; 1\r\n        <span style=\"color:blue\">Next</span>\r\n        MsgBox(i)\r\n<br>Doing this i can individually load a node into my HTMLNode object &quot;Thread&quot;.<br><br>What i can't figure out is how to search for ChildNodes in the Node i just loaded into &quot;Thread&quot;. I need to search through each node<br>and find the InnerHTML values of it's child nodes.<br><br>For instance, each node in Thread will have a child node with attribute &quot;username&quot;. I need to find that child node, and retrieve it's InnterHTML</pre>\r\n</div>\r\n",
+    "PostedDate": "2011-01-13T08:56:54.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549015",
+    "ThreadId": "241662",
+    "Html": "\r\n<p>It may just be missing: ...&nbsp;Thread.ToString() ... just started learning this but that's the first thing I'd try.</p>\r\n<p>hth,</p>\r\n<p>tom</p>\r\n",
+    "PostedDate": "2011-01-13T15:26:36.807-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549045",
+    "ThreadId": "241662",
+    "Html": "\r\n<p>I worked around it by finding the index of the child node in Thread, and then just using:</p>\r\n<p>Thread.DescendantNodes(10)</p>\r\n<p>It only works if the nodes on my page remain pretty much static, which they do, so it will work for me. I still wish there was a slightly more elegant way to search for child nodes within nodes.</p>\r\n",
+    "PostedDate": "2011-01-13T16:09:14.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549057",
+    "ThreadId": "241662",
+    "Html": "\r\n<p>Selecting produces collections, you're collecting attributes, i.e. &quot;class&quot;, and I think that's the problem, nodes are tags, attributes aren't.</p>\r\n<p>Think that's why you had to use an index, because you have a collection of different tags all with the same attribute. If you select a tag collection, the children will be tags.</p>\r\n<p>hth, tom</p>\r\n",
+    "PostedDate": "2011-01-13T16:46:20.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
